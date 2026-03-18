@@ -8,28 +8,32 @@ import neo4j, { Driver } from "neo4j-driver";
 declare global {
   // 개발 환경에서 Hot Reload 시 드라이버가 중복 생성되지 않도록 global에 캐시
   // eslint-disable-next-line no-var
-  var _neo4jDriver: Driver | undefined;
+  var _neo4jDriver: Driver | undefined | null;
 }
 
-function createDriver(): Driver {
-  const uri      = process.env.NEO4J_URI!;
-  const username = process.env.NEO4J_USERNAME!;
-  const password = process.env.NEO4J_PASSWORD!;
+function createDriver(): Driver | null {
+  const uri      = process.env.NEO4J_URI;
+  const username = process.env.NEO4J_USERNAME;
+  const password = process.env.NEO4J_PASSWORD;
 
   if (!uri || !username || !password) {
-    throw new Error(
-      "Neo4j 환경 변수가 설정되지 않았습니다. (.env.local 파일을 확인하세요)"
-    );
+    console.warn("⚠️ [Neo4j] 환경 변수가 설정되지 않았습니다. DB 연동이 비활성화됩니다.");
+    return null;
   }
 
-  return neo4j.driver(uri, neo4j.auth.basic(username, password), {
-    maxConnectionPoolSize: 50,
-    connectionAcquisitionTimeout: 5000,
-  });
+  try {
+    return neo4j.driver(uri, neo4j.auth.basic(username, password), {
+      maxConnectionPoolSize: 50,
+      connectionAcquisitionTimeout: 5000,
+    });
+  } catch (e) {
+    console.error("⚠️ [Neo4j] 드라이버 초기화 실패:", e);
+    return null;
+  }
 }
 
 // 싱글턴: 개발 환경에서는 global 캐시, 프로덕션에서는 모듈 레벨 변수
-const driver: Driver =
+const driver: Driver | null =
   process.env.NODE_ENV === "development"
     ? (global._neo4jDriver ??= createDriver())
     : createDriver();
@@ -51,6 +55,8 @@ export async function runQuery<T = Record<string, unknown>>(
   cypher: string,
   params: Record<string, unknown> = {}
 ): Promise<T[]> {
+  if (!driver) return [];
+
   const session = driver.session();
   try {
     const result = await session.run(cypher, params);

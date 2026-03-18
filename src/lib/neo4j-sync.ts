@@ -15,15 +15,25 @@ import { getPersonDetail } from "./tmdb";
 // Vercel serverless 환경에서 드라이버 싱글턴 재사용
 declare global {
   // eslint-disable-next-line no-var
-  var _neo4jSyncDriver: ReturnType<typeof neo4j.driver> | undefined;
+  var _neo4jSyncDriver: ReturnType<typeof neo4j.driver> | undefined | null;
 }
 
 function getSyncDriver() {
-  if (!global._neo4jSyncDriver) {
-    global._neo4jSyncDriver = neo4j.driver(
-      process.env.NEO4J_URI!,
-      neo4j.auth.basic(process.env.NEO4J_USERNAME!, process.env.NEO4J_PASSWORD!)
-    );
+  if (global._neo4jSyncDriver === undefined) {
+    if (!process.env.NEO4J_URI || !process.env.NEO4J_USERNAME || !process.env.NEO4J_PASSWORD) {
+      console.warn("⚠️ [neo4j-sync] Neo4j 환경 변수가 없습니다. DB 연결을 건너뜁니다.");
+      global._neo4jSyncDriver = null;
+      return null;
+    }
+    try {
+      global._neo4jSyncDriver = neo4j.driver(
+        process.env.NEO4J_URI,
+        neo4j.auth.basic(process.env.NEO4J_USERNAME, process.env.NEO4J_PASSWORD)
+      );
+    } catch (e) {
+      console.error("⚠️ [neo4j-sync] 드라이버 초기화 실패:", e);
+      global._neo4jSyncDriver = null;
+    }
   }
   return global._neo4jSyncDriver;
 }
@@ -33,6 +43,8 @@ function getSyncDriver() {
  */
 export async function personExistsInNeo4j(tmdbId: number): Promise<boolean> {
   const driver  = getSyncDriver();
+  if (!driver) return false;
+
   const session = driver.session();
   try {
     const result = await session.run(
@@ -54,6 +66,8 @@ export async function personExistsInNeo4j(tmdbId: number): Promise<boolean> {
  */
 export async function syncPersonToNeo4j(tmdbId: number): Promise<void> {
   const driver  = getSyncDriver();
+  if (!driver) return;
+
   const session = driver.session();
 
   try {

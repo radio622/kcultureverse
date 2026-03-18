@@ -10,12 +10,8 @@
  * }
  */
 import { NextRequest, NextResponse } from "next/server";
+import driver from "@/lib/neo4j";
 import neo4j from "neo4j-driver";
-
-const driver = neo4j.driver(
-  process.env.NEO4J_URI!,
-  neo4j.auth.basic(process.env.NEO4J_USERNAME!, process.env.NEO4J_PASSWORD!)
-);
 
 export async function GET(req: NextRequest) {
   const from = Number(req.nextUrl.searchParams.get("from"));
@@ -30,6 +26,10 @@ export async function GET(req: NextRequest) {
 
   if (from === to) {
     return NextResponse.json({ found: false, error: "같은 인물입니다." }, { status: 400 });
+  }
+
+  if (!driver) {
+    return NextResponse.json({ found: false, error: "데이터베이스에 연결할 수 없습니다." }, { status: 503 });
   }
 
   const session = driver.session();
