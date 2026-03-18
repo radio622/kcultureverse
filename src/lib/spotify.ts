@@ -291,6 +291,20 @@ export async function getArtistFull(id: string): Promise<CosmosData> {
           relationType: rel.role === "member" || rel.role === "group" ? "SAME_GROUP" : "PRODUCER",
           relationKeyword: roleLabel,
         });
+      } else if (!found) {
+        const mockId = `mb_${Date.now()}_${Math.random()}`;
+        satelliteMap.set(mockId, {
+          spotifyId: mockId,
+          name: rel.name,
+          imageUrl: null,
+          genres: [],
+          popularity: 0,
+          previewUrl: null,
+          previewTrackName: null,
+          spotifyUrl: '#',
+          relationType: rel.role === "member" || rel.role === "group" ? "SAME_GROUP" : "PRODUCER",
+          relationKeyword: roleLabel,
+        });
       }
     }
 
@@ -402,6 +416,20 @@ export async function getArtistFull(id: string): Promise<CosmosData> {
           relationType: g.type,
           relationKeyword: g.count >= 2 ? `${g.label} (${g.count}곡)` : g.label,
         });
+      } else if (!found) {
+        const mockId = `mb_${Date.now()}_${Math.random()}`;
+        satelliteMap.set(mockId, {
+          spotifyId: mockId,
+          name: g.name,
+          imageUrl: g.img ?? null,
+          genres: [],
+          popularity: 0,
+          previewUrl: null,
+          previewTrackName: null,
+          spotifyUrl: '#',
+          relationType: g.type,
+          relationKeyword: g.count >= 2 ? `${g.label} (${g.count}곡)` : g.label,
+        });
       }
     }
   }
@@ -410,12 +438,22 @@ export async function getArtistFull(id: string): Promise<CosmosData> {
   // LAYER 4: Fallback (여전히 부족하면 대표 K-POP 위성으로 채움)
   // ═══════════════════════════════════════════════════════════════
   if (satelliteMap.size < 3) {
+    const FALLBACK_NAMES: Record<string, string> = {
+      "3Nrfpe0tUJi4K4DXYWgMUX": "BTS",
+      "41MozSoPIsD1dJM0CLPjZF": "BLACKPINK",
+      "7n2Ycct7Beij7Dj7meI4X0": "TWICE",
+      "3HqSLMAZ3g3d5poNaI7GOU": "IU",
+      "1z4g3DjTBBZKhvAroFlhOM": "Red Velvet",
+      "4Kxlr1PRlDKEB0ekOCyHgX": "검정치마",
+      "3cjEqqelV9zb41pAfcwrPM": "EXO",
+    };
+    
     for (const fallbackId of FALLBACK_KPOP_IDS) {
       if (satelliteMap.size >= 8) break;
       if (fallbackId === id || satelliteMap.has(fallbackId)) continue;
       satelliteMap.set(fallbackId, {
         spotifyId: fallbackId,
-        name: "...",
+        name: FALLBACK_NAMES[fallbackId] || "K-POP Artist",
         imageUrl: null,
         genres: [],
         popularity: 0,
