@@ -293,10 +293,8 @@ export default async function PersonPage({ params }: Props) {
                       style={{ display: "block", textDecoration: "none" }}
                     >
                       <article
-                        className="glass-card"
-                        style={{ overflow: "hidden", padding: 0, transition: "transform 0.2s" }}
-                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.transform = "translateY(-4px)")}
-                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.transform = "translateY(0)")}
+                        className="glass-card hover-effect"
+                        style={{ overflow: "hidden", padding: 0 }}
                       >
                         <div style={{ aspectRatio: "2/3", position: "relative", background: "var(--bg-elevated)" }}>
                           {wpImg ? (

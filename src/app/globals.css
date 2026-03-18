@@ -411,3 +411,5 @@ a {
       radial-gradient(ellipse at 60% 80%, rgba(124, 58, 237, 0.06) 0%, transparent 50%);
   }
 }
+.hover-effect { transition: transform 0.2s; }
+.hover-effect:hover { transform: translateY(-4px); }

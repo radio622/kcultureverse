@@ -324,18 +324,11 @@ export default async function WorkPage({ params }: Props) {
                       style={{ display: "block", textDecoration: "none" }}
                     >
                       <div
-                        className="glass-card"
+                        className="glass-card hover-effect"
                         style={{
                           overflow: "hidden",
                           padding: 0,
-                          transition: "transform 0.2s",
                         }}
-                        onMouseEnter={(e) =>
-                          ((e.currentTarget as HTMLElement).style.transform = "translateY(-3px)")
-                        }
-                        onMouseLeave={(e) =>
-                          ((e.currentTarget as HTMLElement).style.transform = "translateY(0)")
-                        }
                       >
                         <div
                           style={{
