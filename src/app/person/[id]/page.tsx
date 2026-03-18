@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
+import GraphUniverseWrapper from "@/components/GraphUniverseWrapper";
 import { getPersonDetail, getTmdbImage } from "@/lib/tmdb";
 import type { Metadata } from "next";
 import { ArrowLeft, Star, Calendar, MapPin, Film, Tv } from "lucide-react";
@@ -322,6 +323,30 @@ export default async function PersonPage({ params }: Props) {
               </div>
             </section>
           )}
+
+          {/* ── 3D 우주 관계망 섹션 ── */}
+          <section aria-labelledby="graph-heading" style={{ marginTop: 56 }}>
+            <div style={{ marginBottom: 24 }}>
+              <h2
+                id="graph-heading"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "1.25rem",
+                  fontWeight: 700,
+                  marginBottom: 8,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                }}
+              >
+                🌌 우주 관계망
+              </h2>
+              <p style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>
+                드래그로 회전 · 스크롤로 줌 · 클릭으로 이동 · 우클릭(인물)으로 관계망 확장
+              </p>
+            </div>
+            <GraphUniverseWrapper initialPersonId={Number(id)} height={560} />
+          </section>
         </div>
       </div>
 
