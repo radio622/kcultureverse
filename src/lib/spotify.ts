@@ -205,11 +205,14 @@ export async function getArtistFull(id: string): Promise<CosmosData> {
   // ═══════════════════════════════════════════════════════════════
   // LAYER 1: Spotify 피처링 (곡에 함께 크레딧된 아티스트)
   // ═══════════════════════════════════════════════════════════════
-  const tracksData = await spotifyFetch<{ tracks: { items: (SpotifyTrack & { artists?: { id: string; name: string }[] })[] } }>(
-    `/search?type=track&q=${encodeURIComponent(core.name)}&limit=20&market=KR`,
+  const tracksData = await spotifyFetch<{ tracks: (SpotifyTrack & { artists?: { id: string; name: string }[] })[] }>(
+    `/artists/${id}/top-tracks?market=KR`,
     0
-  ).catch(() => ({ tracks: { items: [] } }));
-  const validTracks = tracksData.tracks?.items ?? [];
+  ).catch((err) => {
+    console.warn("[Layer 1] Top tracks fetch failed:", err);
+    return { tracks: [] };
+  });
+  const validTracks = tracksData.tracks ?? [];
 
   // 피처링 트랙별로 곡 이름을 기록하여 관계 설명에 활용
   const featuredTrackMap = new Map<string, string[]>(); // artistId → [곡 이름들]
@@ -428,7 +431,8 @@ export async function getArtistFull(id: string): Promise<CosmosData> {
   // ═══════════════════════════════════════════════════════════════
   // FINAL: Spotify 일괄 데이터 로드 (429 에러 원천 차단: 1번만 호출)
   // ═══════════════════════════════════════════════════════════════
-  const finalIds = Array.from(satelliteMap.keys());
+  const finalIds = Array.from(satelliteMap.keys()).filter(id => !id.startsWith("mb_"));
+  // Spotify 제한 /artists?ids=...는 최대 50개지만 15개로 캡을 씌우고 있으니 안심
   if (finalIds.length > 0) {
     try {
       const data = await spotifyFetch<{ artists: SpotifyArtist[] }>(
