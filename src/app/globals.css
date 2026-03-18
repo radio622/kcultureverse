@@ -342,3 +342,72 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── 반응형 레이아웃 (Mobile-First) ─────────────────── */
+
+/* 소형 폰 (≤ 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* 카드 그리드: 2열로 고정 */
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  /* Hero 텍스트 크기 조정 */
+  h1 { font-size: 1.75rem !important; }
+  h2 { font-size: 1.35rem !important; }
+
+  /* 버튼 전체 너비 */
+  .btn-full-mobile { width: 100%; justify-content: center; }
+
+  /* glass-card 모바일 패딩 */
+  .glass-card { border-radius: 12px; }
+}
+
+/* 태블릿 (481px ~ 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+/* 데스크탑 (≥ 1024px) */
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* 터치 디바이스: hover 효과 비활성화 (성능 절약) */
+@media (hover: none) {
+  .glass-card:hover {
+    background: var(--bg-glass);
+    border-color: var(--border);
+    transform: none;
+  }
+
+  .btn-primary:hover {
+    transform: none;
+  }
+}
+
+/* 고해상도 디스플레이 (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .starfield {
+    /* Retina에서 더 선명한 그라디언트 */
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, rgba(124, 58, 237, 0.06) 0%, transparent 50%);
+  }
+}
