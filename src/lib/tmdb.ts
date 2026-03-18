@@ -112,6 +112,7 @@ export async function getTrendingKoreanShows(): Promise<TmdbWork[]> {
 }
 
 // 통합 검색 (인물 + 영화 + 드라마)
+// TMDb /search/multi 는 person/movie/tv 가 섞여 반환되므로 unknown 경유 캐스팅 사용
 export async function searchAll(query: string) {
   if (!query.trim()) return { people: [], movies: [], shows: [] };
   const res = await fetch(
@@ -120,10 +121,11 @@ export async function searchAll(query: string) {
   );
   if (!res.ok) return { people: [], movies: [], shows: [] };
   const data = await res.json();
-  const results: TmdbWork[] = data.results ?? [];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const results: any[] = data.results ?? [];
   return {
     people: results.filter((r) => r.media_type === "person") as TmdbPerson[],
-    movies: results.filter((r) => r.media_type === "movie"),
-    shows:  results.filter((r) => r.media_type === "tv"),
+    movies: results.filter((r) => r.media_type === "movie")  as TmdbWork[],
+    shows:  results.filter((r) => r.media_type === "tv")     as TmdbWork[],
   };
 }
