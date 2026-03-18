@@ -8,6 +8,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import GraphUniverseWrapper from "@/components/GraphUniverseWrapper";
 import { getPersonDetail, getTmdbImage } from "@/lib/tmdb";
+import { personExistsInNeo4j, syncPersonToNeo4j } from "@/lib/neo4j-sync";
 import type { Metadata } from "next";
 import { ArrowLeft, Star, Calendar, MapPin, Film, Tv } from "lucide-react";
 
@@ -30,6 +31,14 @@ export default async function PersonPage({ params }: Props) {
   const person = await getPersonDetail(Number(id));
   if (!person) notFound();
 
+  // 페이지 진입 시 JIT Neo4j 자동 확장
+  // 유저가 어떤 인물을 처음 방문하면 자동으로 우주에 별이 탄생합니다
+  const tmdbId = Number(id);
+  const existsInNeo4j = await personExistsInNeo4j(tmdbId).catch(() => true); // 오류시 skip
+  if (!existsInNeo4j) {
+    // fire-and-forget — 응답 시간에 영향 없이 백그라운드 저장
+    syncPersonToNeo4j(tmdbId).catch(() => {});
+  }
   const profileImg = getTmdbImage(person.profile_path, "w500");
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const credits = (person as any).combined_credits;

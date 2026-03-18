@@ -14,6 +14,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { runQuery } from "@/lib/neo4j";
 import { getPersonDetail, getTmdbImage } from "@/lib/tmdb";
+import { syncPersonToNeo4j } from "@/lib/neo4j-sync";
 import neo4j from "neo4j-driver";
 
 export async function GET(
@@ -56,19 +57,22 @@ export async function GET(
       { tmdbId: neo4j.int(tmdbId) }
     );
 
-    // 2. Neo4j에 데이터가 없으면 JIT — TMDb에서 가져와서 응답
+    // 2. Neo4j에 데이터가 없으면 JIT — TMDb에서 가져와서 응답 + 백그라운드 저장
     if (rows.length === 0) {
       const person = await getPersonDetail(tmdbId);
       if (!person) {
         return NextResponse.json({ error: "인물을 찾을 수 없습니다." }, { status: 404 });
       }
 
-      // TODO: 백그라운드에서 Neo4j에 비동기 저장 (Phase 0-3 단계에서 구현 예정)
+      // 🔥 Fire-and-forget: 유저 응답을 블로킹하지 않고 백그라운드에서 Neo4j에 저장
+      // 이 인물을 처음 방문한 유저가 "우주를 확장"시키는 순간!
+      syncPersonToNeo4j(tmdbId).catch(() => {/* 조용한 실패 — UI에 영향 없음 */});
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const credits = (person as any).combined_credits?.cast ?? [];
 
       return NextResponse.json({
-        source: "tmdb-live",  // 클라이언트에서 캐시 미적용 여부 판단용
+        source: "tmdb-live",  // 이번에는 TMDb로 응답, 다음 방문부터는 Neo4j에서 빠르게 응답
         person: {
           tmdbId,
           name: person.name,
