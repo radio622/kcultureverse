@@ -1,251 +1,324 @@
-/**
- * KCultureVerse — 메인 랜딩 페이지
- * ─ Server Component (데이터 fetch)
- * ─ 구성: Hero + 검색창(Client) + 트렌딩 인물/작품 카드 그리드
- */
-import { Suspense } from "react";
-import Header from "@/components/Header";
-import SearchHero from "@/components/SearchHero";
-import TrendingSection from "@/components/TrendingSection";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "KCultureVerse — K-Culture 유니버스 맵",
-  description:
-    "배우, 가수, 감독들이 어떻게 연결되어 있는지 3D 우주 지도로 탐험하세요. K-드라마, K-팝, 한국 영화의 모든 관계를 한눈에 보여드립니다.",
-};
+import { useState, useCallback, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import type { CosmosArtist } from "@/lib/types";
 
-// ── 스켈레톤 로딩 UI ─────────────────────────────────
-function TrendingSkeleton() {
-  return (
-    <section style={{ padding: "60px 0" }}>
-      <div className="container">
-        <div className="skeleton" style={{ height: 32, width: 200, marginBottom: 32 }} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 20 }}>
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i}>
-              <div className="skeleton" style={{ aspectRatio: "2/3", borderRadius: 12, marginBottom: 12 }} />
-              <div className="skeleton" style={{ height: 18, width: "80%", marginBottom: 8 }} />
-              <div className="skeleton" style={{ height: 14, width: "50%" }} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ── 페이지 컴포넌트 (Server Component) ───────────────
-export default function HomePage() {
-  return (
-    <>
-      <Header />
-
-      <main
-        role="main"
-        id="main-content"
-        style={{ position: "relative", zIndex: 1 }}
-      >
-        {/* ① Hero + 검색 영역 */}
-        <SearchHero />
-
-        {/* ② 트렌딩 섹션 (Suspense Streaming) */}
-        <Suspense fallback={<TrendingSkeleton />}>
-          <TrendingSection />
-        </Suspense>
-
-        {/* ③ 소개 / 기능 설명 섹션 */}
-        <FeaturesSection />
-
-        {/* ④ CTA */}
-        <CtaSection />
-      </main>
-
-      <footer
-        role="contentinfo"
-        style={{
-          borderTop: "1px solid var(--border)",
-          padding: "32px 0",
-          textAlign: "center",
-          color: "var(--text-muted)",
-          fontSize: "0.85rem",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        <div className="container">
-          <p>© 2026 KCultureVerse · K-Culture의 모든 연결을 탐험하다</p>
-          <p style={{ marginTop: 8 }}>
-            Data provided by{" "}
-            <a
-              href="https://www.themoviedb.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "var(--primary-light)" }}
-            >
-              TMDb
-            </a>{" "}
-            &{" "}
-            <a
-              href="https://spotify.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "var(--secondary)" }}
-            >
-              Spotify
-            </a>
-          </p>
-        </div>
-      </footer>
-    </>
-  );
-}
-
-// ── 기능 소개 섹션 ────────────────────────────────────
-const FEATURES = [
-  {
-    icon: "🌌",
-    title: "3D 유니버스 맵",
-    desc: "K-Culture의 모든 인물과 작품이 3D 우주에서 별처럼 연결됩니다. 직접 탐험하고 회전하며 관계를 발견하세요.",
-  },
-  {
-    icon: "🔗",
-    title: "6단계 연결 탐색",
-    desc: "배우 A와 배우 B는 몇 단계를 거쳐 연결될까요? 최단 경로를 찾아 예상치 못한 연결고리를 발견하세요.",
-  },
-  {
-    icon: "🤖",
-    title: "AI 추천 서비스",
-    desc: '"이 목소리 느낌이 좋아" 단 하나의 문장으로 나에게 딱 맞는 아티스트를 추천받으세요.',
-  },
-  {
-    icon: "📡",
-    title: "실시간 데이터 확장",
-    desc: "검색할수록 유니버스가 넓어집니다. 인디 밴드부터 국민 배우까지, K-Culture 생태계 전체를 담습니다.",
-  },
+// 추천 아티스트 (홈 화면 기본 표시)
+const FEATURED_ARTISTS = [
+  { id: "3Nrfpe0tUJi4K4DXYWgMUX", name: "BTS", emoji: "🌟" },
+  { id: "41MozSoPIsD1dJM0CLPjZF", name: "BLACKPINK", emoji: "🌸" },
+  { id: "28ot3wh4oNmoFOdVajibBl", name: "NMIXX", emoji: "💥" },
+  { id: "4Kxlr1PRlDKEB0ekOCyHgX", name: "검정치마", emoji: "🖤" },
+  { id: "5rm0sBnflaCLmMMlS1cNMr", name: "백아", emoji: "🌙" },
+  { id: "1Ur5YlAlza6E69KPH88Fti", name: "이박사", emoji: "🪘" },
 ];
 
-function FeaturesSection() {
-  return (
-    <section
-      aria-labelledby="features-heading"
-      style={{ padding: "80px 0" }}
-    >
-      <div className="container">
-        <h2
-          id="features-heading"
-          style={{
-            fontFamily: "var(--font-display)",
-            textAlign: "center",
-            marginBottom: "56px",
-            fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
-          }}
-        >
-          왜 <span className="gradient-text">KCultureVerse</span>인가요?
-        </h2>
+export default function HomePage() {
+  const router = useRouter();
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState<CosmosArtist[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [showResults, setShowResults] = useState(false);
+  const debounceRef = useRef<ReturnType<typeof setTimeout>>(null);
+  const starsRef = useRef<{ id: number; x: number; y: number; size: number; opacity: number; duration: number; delay: number }[]>([]);
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "24px",
-          }}
-        >
-          {FEATURES.map((f, i) => (
-            <article
-              key={f.title}
-              className="glass-card"
-              style={{
-                padding: "32px 24px",
-                cursor: "default",
-                animationDelay: `${i * 0.1}s`,
-              }}
-            >
-              <div
-                aria-hidden="true"
-                style={{ fontSize: "2.5rem", marginBottom: "20px", lineHeight: 1 }}
-              >
-                {f.icon}
-              </div>
-              <h3
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "1.1rem",
-                  marginBottom: "12px",
-                  color: "var(--text-primary)",
-                }}
-              >
-                {f.title}
-              </h3>
-              <p
-                style={{
-                  fontSize: "0.9rem",
-                  color: "var(--text-secondary)",
-                  lineHeight: 1.7,
-                }}
-              >
-                {f.desc}
-              </p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+  // 별 생성
+  useEffect(() => {
+    starsRef.current = Array.from({ length: 50 }, (_, i) => ({
+      id: i,
+      x: (i * 137.5) % 100,
+      y: (i * 97.3) % 100,
+      size: 1 + (i % 3) * 0.5,
+      opacity: 0.15 + (i % 5) * 0.1,
+      duration: 2 + (i % 4),
+      delay: (i % 30) * 0.2,
+    }));
+  }, []);
 
-// ── CTA 섹션 ──────────────────────────────────────────
-function CtaSection() {
+  // 검색 (디바운스 300ms)
+  const handleSearch = useCallback((value: string) => {
+    setQuery(value);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+
+    if (!value.trim()) {
+      setResults([]);
+      setShowResults(false);
+      return;
+    }
+
+    debounceRef.current = setTimeout(async () => {
+      setIsSearching(true);
+      try {
+        const res = await fetch(`/api/spotify/search?q=${encodeURIComponent(value)}`);
+        const data = await res.json();
+        setResults(Array.isArray(data) ? data : []);
+        setShowResults(true);
+      } catch {
+        setResults([]);
+      } finally {
+        setIsSearching(false);
+      }
+    }, 300);
+  }, []);
+
+  const handleArtistSelect = useCallback((id: string) => {
+    router.push(`/from/${id}`);
+  }, [router]);
+
   return (
-    <section
-      aria-labelledby="cta-heading"
+    <div
       style={{
-        padding: "80px 0 120px",
-        textAlign: "center",
+        minHeight: "100svh",
+        position: "relative",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "20px",
       }}
     >
-      <div className="container">
+      {/* 성운 배경 */}
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          background: `radial-gradient(ellipse 80% 60% at 50% 40%, #0c1029 0%, #0a0d20 40%, #060a14 100%)`,
+          zIndex: 0,
+        }}
+      />
+
+      {/* 별 */}
+      {starsRef.current.map((star) => (
         <div
+          key={star.id}
+          className="star"
           style={{
-            maxWidth: 640,
-            margin: "0 auto",
-            padding: "56px 40px",
-            borderRadius: "24px",
-            background: "linear-gradient(135deg, rgba(124,58,237,0.15) 0%, rgba(6,182,212,0.1) 100%)",
-            border: "1px solid rgba(124,58,237,0.25)",
-          }}
-        >
-          <h2
-            id="cta-heading"
+            position: "fixed",
+            left: `${star.x}%`,
+            top: `${star.y}%`,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            "--opacity-min": star.opacity * 0.3,
+            "--opacity-max": star.opacity,
+            "--duration": `${star.duration}s`,
+            "--delay": `${star.delay}s`,
+          } as React.CSSProperties}
+        />
+      ))}
+
+      {/* 메인 콘텐츠 */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          width: "100%",
+          maxWidth: 480,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 40,
+        }}
+      >
+        {/* 로고 + 서브타이틀 */}
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: 14, letterSpacing: "0.2em", color: "var(--accent-core)", marginBottom: 12, textTransform: "uppercase" }}>
+            K · C U L T U R E
+          </div>
+          <h1
             style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(1.5rem, 3vw, 2rem)",
-              marginBottom: "16px",
+              fontSize: "clamp(28px, 8vw, 48px)",
+              fontWeight: 700,
+              background: "linear-gradient(135deg, #fff 0%, var(--accent-core) 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+              margin: 0,
+              lineHeight: 1.1,
             }}
           >
-            지금 바로 탐험을 시작하세요
-          </h2>
-          <p
-            style={{
-              color: "var(--text-secondary)",
-              marginBottom: "32px",
-              fontSize: "1rem",
-            }}
-          >
-            좋아하는 배우나 가수의 이름을 검색하는 것만으로
-            <br />
-            K-Culture의 거대한 연결망이 눈앞에 펼쳐집니다.
+            Universe
+          </h1>
+          <p style={{ fontSize: 14, color: "var(--text-muted)", marginTop: 10 }}>
+            아티스트의 음악 우주로 여행하세요
           </p>
-          <a
-            href="/explore"
-            id="cta-explore-btn"
-            className="btn btn-primary"
-            style={{ fontSize: "1rem", padding: "14px 36px" }}
+        </div>
+
+        {/* 검색창 */}
+        <div style={{ width: "100%", position: "relative" }}>
+          <div style={{ display: "flex", gap: 8 }}>
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => handleSearch(e.target.value)}
+              onFocus={() => query && setShowResults(true)}
+              onBlur={() => setTimeout(() => setShowResults(false), 200)}
+              placeholder="아티스트 검색... (BTS, 블랙핑크...)"
+              className="search-input"
+              autoComplete="off"
+              style={{
+                flex: 1,
+                padding: "14px 18px",
+                fontSize: 16,
+              }}
+            />
+            {isSearching && (
+              <div
+                style={{
+                  position: "absolute",
+                  right: 16,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  width: 16,
+                  height: 16,
+                  border: "2px solid var(--accent-core)",
+                  borderTop: "2px solid transparent",
+                  borderRadius: "50%",
+                  animation: "spin 0.8s linear infinite",
+                }}
+              />
+            )}
+          </div>
+
+          {/* 검색 결과 드롭다운 */}
+          {showResults && results.length > 0 && (
+            <div
+              style={{
+                position: "absolute",
+                top: "calc(100% + 8px)",
+                left: 0,
+                right: 0,
+                background: "rgba(10, 14, 26, 0.98)",
+                border: "1px solid var(--border-glass)",
+                borderRadius: 12,
+                overflow: "hidden",
+                zIndex: 100,
+                maxHeight: 320,
+                overflowY: "auto",
+              }}
+            >
+              {results.map((artist) => (
+                <button
+                  key={artist.spotifyId}
+                  onClick={() => handleArtistSelect(artist.spotifyId)}
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                    padding: "12px 16px",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    transition: "background 0.15s ease",
+                    minHeight: "var(--touch-target)",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLButtonElement).style.background = "rgba(167,139,250,0.08)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLButtonElement).style.background = "none";
+                  }}
+                >
+                  {artist.imageUrl ? (
+                    <Image
+                      src={artist.imageUrl}
+                      alt={artist.name}
+                      width={36}
+                      height={36}
+                      style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        width: 36,
+                        height: 36,
+                        borderRadius: "50%",
+                        background: "rgba(167,139,250,0.15)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: 14,
+                        color: "var(--accent-core)",
+                        flexShrink: 0,
+                      }}
+                    >
+                      {artist.name.charAt(0)}
+                    </div>
+                  )}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 14, color: "var(--text-primary)", fontWeight: 500 }}>
+                      {artist.name}
+                    </div>
+                    <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 2 }}>
+                      {artist.genres.slice(0, 2).join(" · ") || "Artist"}
+                    </div>
+                  </div>
+                  <span style={{ fontSize: 11, color: "var(--text-muted)" }}>→</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* 추천 아티스트 */}
+        <div style={{ width: "100%" }}>
+          <p style={{ fontSize: 11, color: "var(--text-muted)", marginBottom: 12, letterSpacing: "0.1em", textTransform: "uppercase" }}>
+            추천
+          </p>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 8,
+            }}
           >
-            🌌 유니버스 탐색하기
-          </a>
+            {FEATURED_ARTISTS.map((artist) => (
+              <button
+                key={artist.id}
+                onClick={() => handleArtistSelect(artist.id)}
+                style={{
+                  padding: "14px 8px",
+                  background: "var(--surface-glass)",
+                  border: "1px solid var(--border-glass)",
+                  borderRadius: 12,
+                  cursor: "pointer",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: 6,
+                  transition: "background 0.2s ease, border-color 0.2s ease",
+                  minHeight: "var(--touch-target)",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLButtonElement;
+                  el.style.background = "rgba(167,139,250,0.1)";
+                  el.style.borderColor = "rgba(167,139,250,0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLButtonElement;
+                  el.style.background = "var(--surface-glass)";
+                  el.style.borderColor = "var(--border-glass)";
+                }}
+              >
+                <span style={{ fontSize: 22 }}>{artist.emoji}</span>
+                <span style={{ fontSize: 12, color: "var(--text-secondary)", fontWeight: 500 }}>
+                  {artist.name}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-    </section>
+
+      <style>{`
+        @keyframes spin {
+          to { transform: translateY(-50%) rotate(360deg); }
+        }
+      `}</style>
+    </div>
   );
 }
