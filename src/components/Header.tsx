@@ -7,6 +7,7 @@ import { Search, Globe, Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/explore", label: "탐색하기" },
+  { href: "/connect", label: "연결 탐색기" },
   { href: "/trending", label: "트렌딩" },
 ];
 
