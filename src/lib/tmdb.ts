@@ -89,6 +89,23 @@ export interface TmdbWork {
   media_type?: "movie" | "tv" | "person";
 }
 
+export interface TmdbWorkDetail extends TmdbWork {
+  genres: { id: number; name: string }[];
+  runtime?: number;          // 영화 (분)
+  episode_run_time?: number[]; // 드라마 (에피소드당 분)
+  number_of_episodes?: number;
+  number_of_seasons?: number;
+  status: string;
+  tagline?: string;
+  vote_count: number;
+  production_countries: { name: string }[];
+  spoken_languages: { name: string }[];
+  credits?: {
+    cast: (TmdbPerson & { character: string; order: number })[]
+    crew: (TmdbPerson & { job: string; department: string })[]
+  };
+}
+
 // 한국 인기 영화 목록
 export async function getTrendingKoreanMovies(): Promise<TmdbWork[]> {
   const res = await fetch(
@@ -128,4 +145,24 @@ export async function searchAll(query: string) {
     movies: results.filter((r) => r.media_type === "movie")  as TmdbWork[],
     shows:  results.filter((r) => r.media_type === "tv")     as TmdbWork[],
   };
+}
+
+// 영화 상세 정보
+export async function getMovieDetail(tmdbId: number): Promise<TmdbWorkDetail | null> {
+  const res = await fetch(
+    `${BASE_URL}/movie/${tmdbId}?language=ko-KR&append_to_response=credits`,
+    { headers, next: { revalidate: 86400 } }
+  );
+  if (!res.ok) return null;
+  return res.json();
+}
+
+// 드라마(TV) 상세 정보
+export async function getShowDetail(tmdbId: number): Promise<TmdbWorkDetail | null> {
+  const res = await fetch(
+    `${BASE_URL}/tv/${tmdbId}?language=ko-KR&append_to_response=credits`,
+    { headers, next: { revalidate: 86400 } }
+  );
+  if (!res.ok) return null;
+  return res.json();
 }
