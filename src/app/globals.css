@@ -413,3 +413,5 @@ a {
 }
 .hover-effect { transition: transform 0.2s; }
 .hover-effect:hover { transform: translateY(-4px); }
+.hover-text-primary { transition: color 0.2s; }
+.hover-text-primary:hover { color: var(--text-primary) !important; }

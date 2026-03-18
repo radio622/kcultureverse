@@ -90,6 +90,7 @@ export default async function PersonPage({ params }: Props) {
           {/* 뒤로가기 */}
           <Link
             href="/explore"
+            className="hover-text-primary"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -99,8 +100,6 @@ export default async function PersonPage({ params }: Props) {
               marginBottom: 32,
               transition: "color 0.2s",
             }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--text-primary)")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "var(--text-muted)")}
           >
             <ArrowLeft size={16} />
             탐색으로 돌아가기
