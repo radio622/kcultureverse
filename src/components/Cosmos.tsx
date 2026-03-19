@@ -329,6 +329,14 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
           // Torus 래핑: 카메라 기준 상대 위치를 우주 범위 안으로 순환
           const relX = wrap(node.x + camX, UNIVERSE_W / 2);
           const relY = wrap(node.y + camY, UNIVERSE_H / 2);
+
+          // ── Phase 0: Viewport Culling — 시야 밖 노드 건너뛰기 ──
+          // Fog가 900px 밖을 완전히 가리므로, 1200px 밖은 계산할 필요 없음
+          if (Math.abs(relX) > 1200 || Math.abs(relY) > 1200) {
+            el.style.opacity = "0";
+            return;
+          }
+
           const screenX = cw + relX;
           const screenY = ch + relY;
 
