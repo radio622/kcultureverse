@@ -179,11 +179,12 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
       return Math.max(lo, Math.min(hi, v));
     }
 
-    function animate(now: number) {
+    function animate(time: number) {
       animFrameRef.current = requestAnimationFrame(animate);
-      if (now - lastFrame < INTERVAL) return;
-      lastFrame = now;
+      if (time - lastFrame < INTERVAL) return;
+      lastFrame = time;
 
+      const now = Date.now();
       const elapsed = now - startTimeRef.current;
       const container = containerRef.current;
       if (!container) return;
@@ -225,7 +226,7 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
         warpProgress = warpTargetRef.current.progress;
         targetId = warpTargetRef.current.id;
       }
-      const mountElapsed = now - startTimeRef.current;
+      const mountElapsed = Math.max(0, now - startTimeRef.current);
       const mountFade = Math.min(1, mountElapsed / 1000); // 1초 동안 1로 페이드인
 
       // ── 우주 레이어 전체를 카메라 오프셋만큼 이동 ───────
