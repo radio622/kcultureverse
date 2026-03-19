@@ -10,7 +10,7 @@
 import fs from "fs";
 import path from "path";
 import type { Metadata } from "next";
-import { pickHubArtist } from "@/data/hub-artists";
+import { pickHubArtist, HUB_ARTISTS } from "@/data/hub-artists";
 import type { CosmosData } from "@/lib/types";
 import { buildDeepSpaceNodes } from "@/lib/deep-space";
 import CosmosClient from "@/components/CosmosClient";
@@ -28,8 +28,19 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  // 1. 시간대 기반 허브 아티스트 선택 (서버 사이드, Math.random 아님)
-  const hub = pickHubArtist();
+  // 1. 홈 첫 화면 아티스트: 사용자 지정 5명 중 시간 기반 선택
+  //    (JSON 데이터가 확실한 아티스트들로 제한)
+  const FEATURED_IDS = [
+    "3Nrfpe0tUJi4K4DXYWgMUX",  // BTS
+    "41MozSoPIsD1dJM0CLPjZF",  // BLACKPINK
+    "6WeDO4GynFmK4OxwkBzMW8",  // 검정치마
+    "5rHUhS9Ya0S63WI9LFmCSx",  // 백아
+    "5wVJpXzuKV6Xj7Yhsf2uYx",  // 한로로
+  ];
+  const hour = new Date().getHours();
+  const featuredIdx = hour % FEATURED_IDS.length;
+  const hub = HUB_ARTISTS.find(h => h.spotifyId === FEATURED_IDS[featuredIdx])
+    ?? pickHubArtist();
 
   // 2. Pre-baked JSON 즉시 로드 (API 호출 0회)
   let cosmosData: CosmosData | null = null;
@@ -37,6 +48,8 @@ export default function HomePage() {
     const filePath = path.join(process.cwd(), "public", "data", "hub", `${hub.spotifyId}.json`);
     const raw = fs.readFileSync(filePath, "utf-8");
     cosmosData = JSON.parse(raw) as CosmosData;
+    // JSON의 core.name이 부정확할 수 있으므로 hub-artists.ts의 nameKo로 보정
+    cosmosData.core.name = hub.nameKo;
   } catch {
     // JSON 없으면 최소한의 코어 데이터로 fallback
     cosmosData = {

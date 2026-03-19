@@ -429,10 +429,10 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
           const initial = node.name.charAt(0);
           const hue = (node.name.split("").reduce((a, c) => a + c.charCodeAt(0), 0) * 47) % 360;
           return (
-            <div
+            <button
               key={`ds-${node.spotifyId}`}
-              ref={(el) => { deepSpaceRefs.current[i] = el; }}
-              onClick={() => node.canDive && onDeepSpaceTap?.(node.spotifyId)}
+              ref={(el) => { deepSpaceRefs.current[i] = el as unknown as HTMLDivElement; }}
+              onClick={() => onDeepSpaceTap?.(node.spotifyId)}
               style={{
                 position: "absolute",
                 left: `calc(50% + ${node.x}px)`,
@@ -443,8 +443,11 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
                 alignItems: "center",
                 gap: 4,
                 willChange: "opacity",
-                cursor: node.canDive ? "pointer" : "default",
-                opacity: 0, // rAF가 초기값 설정
+                cursor: "pointer",
+                opacity: 0,
+                background: "none",
+                border: "none",
+                padding: 0,
               }}
             >
               {/* 원형 이니셜 */}
@@ -478,7 +481,7 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
               >
                 {node.name}
               </span>
-            </div>
+            </button>
           );
         })}
       </div>
