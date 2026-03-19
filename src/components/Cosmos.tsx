@@ -195,12 +195,12 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
         const dx = wt.x - camera.current.x;
         const dy = wt.y - camera.current.y;
         
-        // 거리에 비례하여 이동 (점점 느려지는 ease-out 곡선)
-        camera.current.x += dx * 0.08;
-        camera.current.y += dy * 0.08;
+        // 거리에 비례하여 이동 (점점 느려지는 ease-out 곡선, 속도를 조금 줄여 우아하게)
+        camera.current.x += dx * 0.035;
+        camera.current.y += dy * 0.035;
 
         // 목표에 거의 도달했다면 실제로 라우팅 실행
-        if (Math.hypot(dx, dy) < 15 && !wt.done) {
+        if (Math.hypot(dx, dy) < 5 && !wt.done) {
           wt.done = true;
           onDeepSpaceTap?.(wt.id); // 화면 전환 시작
         }
@@ -492,12 +492,12 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
                 padding: 0,
               }}
             >
-              {/* 원형 이니셜 */}
+              {/* 원형 이니셜 또는 사진 */}
               <div style={{
                 width: node.size,
                 height: node.size,
                 borderRadius: "50%",
-                background: `hsl(${hue},30%,18%)`,
+                background: node.imageUrl ? `url(${node.imageUrl}) center/cover no-repeat` : `hsl(${hue},30%,18%)`,
                 border: `1px solid ${node.accent}50`,
                 boxShadow: `0 0 ${node.size / 2}px ${node.accent}20`,
                 display: "flex",
@@ -507,7 +507,7 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
                 fontWeight: 600,
                 color: node.accent,
               }}>
-                {initial}
+                {!node.imageUrl && initial}
               </div>
               {/* 이름 라벨 */}
               <span

@@ -44,4 +44,5 @@ export interface DeepSpaceNode {
   y: number;
   size: number;           // 노드 크기 (20~34px)
   canDive: boolean;       // pre-baked JSON이 있어 다이브 가능한지
+  imageUrl?: string | null;
 }

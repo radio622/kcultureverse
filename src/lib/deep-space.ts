@@ -45,10 +45,18 @@ export function buildDeepSpaceNodes(currentCoreId: string): DeepSpaceNode[] {
     const x = Math.cos(angle) * radius;
     const y = Math.sin(angle) * radius * 0.55; // Y축 55% 압축 → 타원 원근감
 
-    // pre-baked JSON 존재 여부 확인
+    // pre-baked JSON 존재 여부 확인 및 이미지 추출
     const jsonPath = path.join(hubDir, `${hub.spotifyId}.json`);
     let canDive = false;
-    try { canDive = fs.existsSync(jsonPath); } catch { /* ignore */ }
+    let imageUrl: string | null = null;
+    try { 
+      if (fs.existsSync(jsonPath)) {
+        canDive = true;
+        const raw = fs.readFileSync(jsonPath, "utf-8");
+        const json = JSON.parse(raw);
+        imageUrl = json.core?.imageUrl || null;
+      }
+    } catch { /* ignore */ }
 
     // 노드 크기: 인덱스 기반 (가까운 것은 크게, 먼 것은 작게)
     const size = 30 - (i / others.length) * 10; // 30px → 20px
@@ -61,6 +69,7 @@ export function buildDeepSpaceNodes(currentCoreId: string): DeepSpaceNode[] {
       y: Math.round(y),
       size: Math.round(size),
       canDive,
+      imageUrl,
     });
   });
 

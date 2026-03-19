@@ -51,15 +51,6 @@ export default function HomePage() {
     // JSON의 core 데이터가 다른 아티스트(예: 선우정아)로 오염되었을 수 있으므로
     // hub-artists.ts의 공식 데이터를 강제로 덮어씌움
     cosmosData.core.name = hub.nameKo;
-    
-    // 만약 JSON의 이름이 원래 허브의 영문/한글 이름이 아닌 완전히 다른 이름(ex: 선우정아)인 경우,
-    // imageUrl과 previewUrl도 오염된 것이므로 null로 초기화하여 폴백 UI(이니셜)를 띄우게 함.
-    // (선우정아 ID: 00iP5z19F6kM7L3gMhF4oD)
-    if (raw.includes('"name": "선우정아"') && hub.nameKo !== "선우정아") {
-      cosmosData.core.imageUrl = null;
-      cosmosData.core.previewUrl = null;
-      cosmosData.core.previewTrackName = null;
-    }
   } catch {
     // JSON 없으면 최소한의 코어 데이터로 fallback
     cosmosData = {

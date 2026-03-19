@@ -86,16 +86,10 @@ export default async function FromPage({ params }: Props) {
     const filePath = path.join(process.cwd(), "public", "data", "hub", `${id}.json`);
     const raw = fs.readFileSync(filePath, "utf-8");
     prebaked = JSON.parse(raw) as CosmosData;
-    
-    // 오염된 데이터(선우정아 등)를 허브 데이터로 복구
+    // 허브 이름 명시적 할당 (만약을 대비해 한글 이름 사용)
     const hub = HUB_ARTISTS.find(h => h.spotifyId === id);
     if (hub) {
       prebaked.core.name = hub.nameKo;
-      if (raw.includes('"name": "선우정아"') && hub.nameKo !== "선우정아") {
-        prebaked.core.imageUrl = null;
-        prebaked.core.previewUrl = null;
-        prebaked.core.previewTrackName = null;
-      }
     }
   } catch { /* JSON 없음 → 2번으로 */ }
 

@@ -150,19 +150,13 @@ const FALLBACK_KPOP_IDS = [
   "3cjEqqelV9zb41pAfcwrPM", // EXO
 ];
 
+import { HUB_ARTISTS } from "@/data/hub-artists";
+
 /**
  * 코어 아티스트 기본 정보만 빠르게 반환 (서버 컴포넌트용, ~1초 이내)
  * Spotify 에러(429 밴 등) 발생 시 iTunes를 통해 자체적으로 가짜 Core를 합성해 반환(생존 모드).
  */
 export async function getArtistCore(id: string): Promise<CosmosArtist> {
-  const FALLBACKS: Record<string, string> = {
-    "3Nrfpe0tUJi4K4DXYWgMUX": "BTS",
-    "41MozSoPIsD1dJM0CLPjZF": "BLACKPINK",
-    "28ot3wh4oNmoFOdVajibBl": "NMIXX",
-    "4Kxlr1PRlDKEB0ekOCyHgX": "검정치마",
-    "5rm0sBnflaCLmMMlS1cNMr": "백아",
-    "1Ur5YlAlza6E69KPH88Fti": "이박사",
-  };
 
   try {
     const artistData = await spotifyFetch<SpotifyArtist>(`/artists/${id}`);
@@ -170,7 +164,7 @@ export async function getArtistCore(id: string): Promise<CosmosArtist> {
     return toCosmosArtist(artistData, audio.previewUrl, audio.trackName);
   } catch (err: any) {
     console.warn("[getArtistCore] Spotify API 차단! iTunes Fallback 작동", err.message);
-    const fallbackName = FALLBACKS[id] || "Unknown Artist";
+    const fallbackName = HUB_ARTISTS.find(h => h.spotifyId === id)?.nameKo || "Unknown Artist";
     
     // 생존 모드: iTunes API 로 코어 프로필 이미지와 음악 강제 추출
     const itunesRes = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(fallbackName)}&entity=song&limit=1&country=KR`);

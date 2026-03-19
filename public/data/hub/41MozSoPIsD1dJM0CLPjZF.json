@@ -1,12 +1,12 @@
 {
   "core": {
     "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
-    "name": "BLACKPINK",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/00/3e/16/003e1619-3133-a934-3263-5749ee119625/8809519880736_cover.jpg/600x600bb.jpg",
+    "name": "블랙핑크",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/2b/ce/4b2bce80-c909-1022-a065-e537863ba49d/8809519881153_cover.jpg/600x600bb.jpg",
     "genres": [],
     "popularity": 80,
-    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/69/06/a8/6906a8ae-c1ac-444f-7217-2989a3ed7ea3/mzaf_14545849858977821875.plus.aac.p.m4a",
-    "previewTrackName": "뛰어(JUMP)",
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/40/89/0f/40890f11-e61c-9bd3-c548-b6874a4baa0d/mzaf_6634066664029695725.plus.aac.p.m4a",
+    "previewTrackName": "GO",
     "spotifyUrl": "https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF"
   },
   "satellites": [
