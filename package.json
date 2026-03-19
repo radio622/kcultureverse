@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "seed": "tsx scripts/seed-neo4j.ts"
+    "seed": "tsx scripts/seed-neo4j.ts",
+    "prebake": "tsx scripts/prebake.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.2",

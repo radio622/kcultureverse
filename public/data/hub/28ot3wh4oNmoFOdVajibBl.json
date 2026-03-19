@@ -1,0 +1,146 @@
+{
+  "core": {
+    "spotifyId": "28ot3wh4oNmoFOdVajibBl",
+    "name": "NMIXX",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fd/d4/44/fdd444f2-5584-8e40-9891-fe7cbc03af9e/8809928955155.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/89/c7/11/89c7114a-a27f-c78e-ad40-f717f08ccda0/mzaf_6877575705952491004.plus.aac.p.m4a",
+    "previewTrackName": "Blue Valentine",
+    "spotifyUrl": "https://open.spotify.com/artist/28ot3wh4oNmoFOdVajibBl"
+  },
+  "satellites": [
+    {
+      "spotifyId": "mb_1773889939485_0.8460724898551292",
+      "name": "JINI",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889939755_0.6484268612979533",
+      "name": "배이",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889939837_0.8507183364998434",
+      "name": "해원",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889939919_0.1890627501155996",
+      "name": "지우",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889940001_0.9448720329920748",
+      "name": "규진",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889940105_0.6948164032552647",
+      "name": "LILY",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889940187_0.4600208057082862",
+      "name": "설윤",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889941053_0.3485326306647325",
+      "name": "배이",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    },
+    {
+      "spotifyId": "mb_1773889941154_0.507171234667882",
+      "name": "해원",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    },
+    {
+      "spotifyId": "mb_1773889941237_0.45515020769428405",
+      "name": "JINI",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    },
+    {
+      "spotifyId": "mb_1773889941322_0.35183616692817954",
+      "name": "지우",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    }
+  ]
+}

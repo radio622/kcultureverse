@@ -1,0 +1,74 @@
+{
+  "core": {
+    "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
+    "name": "BLACKPINK",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/00/3e/16/003e1619-3133-a934-3263-5749ee119625/8809519880736_cover.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/69/06/a8/6906a8ae-c1ac-444f-7217-2989a3ed7ea3/mzaf_14545849858977821875.plus.aac.p.m4a",
+    "previewTrackName": "뛰어(JUMP)",
+    "spotifyUrl": "https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF"
+  },
+  "satellites": [
+    {
+      "spotifyId": "mb_1773889869615_0.8072213535527663",
+      "name": "YG Family",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "공식 콜라보"
+    },
+    {
+      "spotifyId": "mb_1773889869721_0.9668411911589092",
+      "name": "JENNIE",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889869851_0.5629127813735514",
+      "name": "JISOO",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889869907_0.9578788963523558",
+      "name": "LISA",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773889869958_0.9359794308855653",
+      "name": "ROSÉ",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    }
+  ]
+}

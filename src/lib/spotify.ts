@@ -311,7 +311,9 @@ export async function getArtistFull(id: string): Promise<CosmosData> {
     // 2b. 레코딩 크레딧 (프로듀서, 작곡가 등 — 빈도 기반 랭킹)
     if (satelliteMap.size < 12) {
       const recCredits = await getRecordingCredits(core.name, mbid);
-      const topCredits = recCredits.slice(0, 4); // 상위 4명
+      // 🚨 필터링 임계값: 피처링은 1곡도 인정하지만, 그 외(프로듀서, 작곡/편곡)는 최소 2곡 이상(강한 협업)만 노출
+      const filteredCredits = recCredits.filter(c => c.role === "featured" || c.count >= 2);
+      const topCredits = filteredCredits.slice(0, 4); // 상위 4명
 
       for (const credit of topCredits) {
         if (satelliteMap.size >= 15) break;
@@ -393,7 +395,8 @@ export async function getArtistFull(id: string): Promise<CosmosData> {
     const allGenius = [
       ...Array.from(producerCounts.entries()).map(([n, d]) => ({ name: n, count: d.count, img: d.imageUrl, type: "PRODUCER" as const, label: "프로듀서" })),
       ...Array.from(writerCounts.entries()).map(([n, d]) => ({ name: n, count: d.count, img: d.imageUrl, type: "WRITER" as const, label: "작곡/작사" })),
-    ].sort((a, b) => b.count - a.count).slice(0, 3);
+    ].filter(g => g.count >= 2) // 🚨 노이즈 방지: 최소 2곡 이상 협업자만 허용
+     .sort((a, b) => b.count - a.count).slice(0, 3);
 
     for (const g of allGenius) {
       if (satelliteMap.size >= 15) break;
@@ -503,16 +506,12 @@ function mbRoleToKorean(role: string): string | null {
     member: "그룹 멤버",
     group: "소속 그룹",
     collaboration: "공식 콜라보",
-    producer: "프로듀서",
+    producer: "전담 프로듀서",
     composer: "작곡",
     lyricist: "작사",
     arranger: "편곡",
     featured: "피처링",
-    performer: "연주 참여",
-    mixer: "믹싱",
-    remixer: "리믹서",
-    musician: "세션",
-    engineer: "엔지니어",
+    // 🚨 스태프 노이즈 필터링 (엔지니어, 세션, 믹싱 등은 라벨 매핑에서 제외하여 표시 안함)
   };
   return map[role] ?? null;
 }

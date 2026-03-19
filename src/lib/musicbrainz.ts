@@ -190,15 +190,11 @@ function mapRelationType(mbType: string): string | null {
     "co-producer": "producer",
     "vocal": "featured",
     "guest": "featured",
-    "instrument": "musician",
-    "performer": "performer",
-    "mix": "mixer",
+    // 노이즈 역할(퍼포머, 악기, 믹싱, 레코딩, 리믹서 등)은 과감히 매핑 제외
     "composer": "composer",
     "lyricist": "lyricist",
     "writer": "composer",
     "arranger": "arranger",
-    "recording": "engineer",
-    "remixer": "remixer",
   };
   return mapping[mbType] ?? null;
 }
