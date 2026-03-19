@@ -16,7 +16,7 @@ interface Props {
 }
 
 const PEEK_HEIGHT    = 72;         // 미니플레이어 높이
-const EXPANDED_VH   = 55;         // 확장 시 뷰포트 비율
+const EXPANDED_VH   = 38;         // 확장 시 뷰포트 비율 (55 -> 38로 축소해 배경 가림 최소화)
 const DRAG_THRESHOLD = 44;         // 상태 전환 트리거 드래그 거리 (px)
 
 export default function BottomSheet({ state, onStateChange, children }: Props) {

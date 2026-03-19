@@ -33,6 +33,7 @@ export default function CosmosClient({
   const [sheetState, setSheetState] = useState<SheetState>("collapsed");
   const [copied, setCopied]         = useState(false);
   const [introVisible, setIntroVisible] = useState(!!introName);
+  const [isWarping, setIsWarping] = useState(false); // 다이브 타임(화면 애니메이션용)
 
   // ── 위성 데이터 ─────────────────────────────────────────────
   const [satellites, setSatellites] = useState<SatelliteNode[]>(initialSatellites ?? []);
@@ -74,8 +75,8 @@ export default function CosmosClient({
     return () => { cancelled = true; };
   }, [artistId, initialSatellites]);
 
-  // ── 우주 push-up (바텀시트가 올라올 때 우주를 살짝 위로) ────
-  const cosmosShift = sheetState === "expanded" ? -110 : sheetState === "peek" ? -36 : 0;
+  // ── 우주 push-up (바텀시트가 올라올 때 덜 밀려올라가게 축소) ────
+  const cosmosShift = sheetState === "expanded" ? -50 : sheetState === "peek" ? -36 : 0;
 
   // ── 포커스 핸들러 ──────────────────────────────────────────
   const handleFocus = useCallback(
@@ -196,13 +197,15 @@ export default function CosmosClient({
         </div>
       )}
 
-      {/* ── Cosmos (우주 시각화) ── push-up 애니메이션 ── */}
+      {/* ── Cosmos (우주 시각화) ── push-up & 워프 애니메이션 ── */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          transform: `translateY(${cosmosShift}px)`,
-          transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1)",
+          transform: `translateY(${cosmosShift}px) ${isWarping ? 'scale(4) translateZ(0)' : 'scale(1) translateZ(0)'}`,
+          opacity: isWarping ? 0 : 1,
+          transition: "transform 0.7s cubic-bezier(1, 0, 0, 1), opacity 0.5s ease-in",
+          pointerEvents: isWarping ? "none" : "auto",
         }}
       >
         <Cosmos
@@ -211,9 +214,36 @@ export default function CosmosClient({
           onCoreTap={() => handleFocus(null)}
           onSatelliteTap={handleFocus}
           deepSpaceNodes={deepSpaceNodes}
-          onDeepSpaceTap={(spotifyId) => router.push(`/from/${spotifyId}`)}
+          onDeepSpaceTap={(spotifyId) => {
+            if (isWarping) return;
+            setIsWarping(true);
+            setTimeout(() => {
+              router.push(`/from/${spotifyId}`);
+            }, 600); // 0.6초간 워프 후 화면 전환
+          }}
         />
       </div>
+
+      {/* 워프 오버레이: 다른 우주 진입 시 화면이 잠깐 하얗게 빛남 */}
+      {isWarping && (
+        <div style={{
+          position: "fixed",
+          inset: 0,
+          background: "radial-gradient(circle at center, #ffffffcc 0%, transparent 60%)",
+          opacity: 0,
+          animation: "warpFlash 0.7s ease-out forwards",
+          pointerEvents: "none",
+          zIndex: 9999,
+        }} />
+      )}
+
+      <style>{`
+        @keyframes warpFlash {
+          0% { opacity: 0; }
+          70% { opacity: 1; transform: scale(1.5); }
+          100% { opacity: 0; transform: scale(2); }
+        }
+      `}</style>
 
       {/* ── 공유 버튼 ────────────────────────────────── */}
       <button
