@@ -76,6 +76,10 @@ const PAN_LIMIT  = 1200;
 export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, deepSpaceNodes = [], onDeepSpaceTap }: Props) {
   const containerRef   = useRef<HTMLDivElement>(null);
   const universeRef    = useRef<HTMLDivElement>(null);
+  
+  // 카메라 워프 타겟 (심우주 다이브 시 부드러운 패닝용)
+  const warpTargetRef = useRef<{ x: number, y: number, id: string, done: boolean } | null>(null);
+
   const satelliteRefs  = useRef<(HTMLDivElement | null)[]>([]);
   const deepSpaceRefs  = useRef<(HTMLDivElement | null)[]>([]);
   const starRefs       = useRef<(HTMLDivElement | null)[]>([]);
@@ -184,8 +188,23 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
       const container = containerRef.current;
       if (!container) return;
 
-      // ── 관성 처리 ────────────────────────────────────────
-      if (!drag.current.active) {
+      // ── 관성 및 워프 이동 처리 ────────────────────────────────
+      if (warpTargetRef.current) {
+        // 워프 타겟이 설정되면 관성을 무시하고 해당 방향으로 카메라를 부드럽게 끌어당김
+        const wt = warpTargetRef.current;
+        const dx = wt.x - camera.current.x;
+        const dy = wt.y - camera.current.y;
+        
+        // 거리에 비례하여 이동 (점점 느려지는 ease-out 곡선)
+        camera.current.x += dx * 0.08;
+        camera.current.y += dy * 0.08;
+
+        // 목표에 거의 도달했다면 실제로 라우팅 실행
+        if (Math.hypot(dx, dy) < 15 && !wt.done) {
+          wt.done = true;
+          onDeepSpaceTap?.(wt.id); // 화면 전환 시작
+        }
+      } else if (!drag.current.active) {
         const speed = Math.hypot(drag.current.velX, drag.current.velY);
         if (speed > 0.3) {
           drag.current.velX *= FRICTION;
@@ -432,7 +451,11 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
             <button
               key={`ds-${node.spotifyId}`}
               ref={(el) => { deepSpaceRefs.current[i] = el as unknown as HTMLDivElement; }}
-              onClick={() => onDeepSpaceTap?.(node.spotifyId)}
+              onClick={() => {
+                if (warpTargetRef.current) return;
+                // 바로 이동하지 않고 warpTarget을 지정하여 rAF에서 부드럽게 패닝되도록 함
+                warpTargetRef.current = { x: -node.x, y: -node.y, id: node.spotifyId, done: false };
+              }}
               style={{
                 position: "absolute",
                 left: `calc(50% + ${node.x}px)`,

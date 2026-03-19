@@ -33,7 +33,6 @@ export default function CosmosClient({
   const [sheetState, setSheetState] = useState<SheetState>("collapsed");
   const [copied, setCopied]         = useState(false);
   const [introVisible, setIntroVisible] = useState(!!introName);
-  const [isWarping, setIsWarping] = useState(false); // 다이브 타임(화면 애니메이션용)
 
   // ── 위성 데이터 ─────────────────────────────────────────────
   const [satellites, setSatellites] = useState<SatelliteNode[]>(initialSatellites ?? []);
@@ -129,8 +128,16 @@ export default function CosmosClient({
   }, []);
 
   const handleShare = useCallback(async () => {
-    const url   = window.location.href;
-    const title = `${core.name}로부터`;
+    // 포커스된 위성이 있으면 위성 타겟, 없으면 코어 타겟
+    const isSatelliteTarget = focusedIndex !== null && data.satellites[focusedIndex];
+    const targetId = isSatelliteTarget ? data.satellites[focusedIndex].spotifyId : core.spotifyId;
+    const targetName = isSatelliteTarget ? data.satellites[focusedIndex].name : core.name;
+    
+    // 타겟 아티스트의 K-Culture Universe 다이브 주소를 생성
+    const origin = typeof window !== "undefined" ? window.location.origin : "";
+    const url = `${origin}/from/${targetId}`;
+    const title = `${targetName}로부터`;
+
     if (navigator.share) {
       try { await navigator.share({ title, url }); return; } catch { /* 취소 */ }
     }
@@ -197,15 +204,13 @@ export default function CosmosClient({
         </div>
       )}
 
-      {/* ── Cosmos (우주 시각화) ── push-up & 워프 애니메이션 ── */}
+      {/* ── Cosmos (우주 시각화) ── 카메라 팬을 이용한 워프 ── */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          transform: `translateY(${cosmosShift}px) ${isWarping ? 'scale(4) translateZ(0)' : 'scale(1) translateZ(0)'}`,
-          opacity: isWarping ? 0 : 1,
-          transition: "transform 0.7s cubic-bezier(1, 0, 0, 1), opacity 0.5s ease-in",
-          pointerEvents: isWarping ? "none" : "auto",
+          transform: `translateY(${cosmosShift}px)`,
+          transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1)",
         }}
       >
         <Cosmos
@@ -214,36 +219,9 @@ export default function CosmosClient({
           onCoreTap={() => handleFocus(null)}
           onSatelliteTap={handleFocus}
           deepSpaceNodes={deepSpaceNodes}
-          onDeepSpaceTap={(spotifyId) => {
-            if (isWarping) return;
-            setIsWarping(true);
-            setTimeout(() => {
-              router.push(`/from/${spotifyId}`);
-            }, 600); // 0.6초간 워프 후 화면 전환
-          }}
+          onDeepSpaceTap={(spotifyId) => router.push(`/from/${spotifyId}`)}
         />
       </div>
-
-      {/* 워프 오버레이: 다른 우주 진입 시 화면이 잠깐 하얗게 빛남 */}
-      {isWarping && (
-        <div style={{
-          position: "fixed",
-          inset: 0,
-          background: "radial-gradient(circle at center, #ffffffcc 0%, transparent 60%)",
-          opacity: 0,
-          animation: "warpFlash 0.7s ease-out forwards",
-          pointerEvents: "none",
-          zIndex: 9999,
-        }} />
-      )}
-
-      <style>{`
-        @keyframes warpFlash {
-          0% { opacity: 0; }
-          70% { opacity: 1; transform: scale(1.5); }
-          100% { opacity: 0; transform: scale(2); }
-        }
-      `}</style>
 
       {/* ── 공유 버튼 ────────────────────────────────── */}
       <button
@@ -283,7 +261,7 @@ export default function CosmosClient({
           )}
         </svg>
         <span className="share-btn-text" style={{ fontSize: 12, fontWeight: 500, color: copied ? "#22c55e" : "#a78bfa", whiteSpace: "nowrap" }}>
-          {copied ? "복사됨!" : `${core.name}로부터`}
+          {copied ? "복사됨!" : `${focusedIndex !== null && data.satellites[focusedIndex] ? data.satellites[focusedIndex].name : core.name}로부터`}
         </span>
       </button>
 
