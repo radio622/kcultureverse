@@ -164,7 +164,31 @@ export async function getArtistCore(id: string): Promise<CosmosArtist> {
     return toCosmosArtist(artistData, audio.previewUrl, audio.trackName);
   } catch (err: any) {
     console.warn("[getArtistCore] Spotify API 차단! iTunes Fallback 작동", err.message);
-    const fallbackName = HUB_ARTISTS.find(h => h.spotifyId === id)?.nameKo || "Unknown Artist";
+    let fallbackName = HUB_ARTISTS.find(h => h.spotifyId === id)?.nameKo;
+    
+    // 만약 허브가 아닌 일반 위성 아티스트로 다이브한 경우, 캐시 파일들 안에서 이름을 스캔해옵니다. (선우정아 오염 방지!)
+    if (!fallbackName) {
+      try {
+        const fs = require('fs');
+        const path = require('path');
+        const hubDir = path.join(process.cwd(), "public", "data", "hub");
+        const files = fs.readdirSync(hubDir);
+        for (const file of files) {
+          if (!file.endsWith('.json')) continue;
+          const raw = fs.readFileSync(path.join(hubDir, file), "utf-8");
+          if (!raw.includes(id)) continue; // 빠른 스캐닝
+          const data = JSON.parse(raw);
+          const sat = data.satellites?.find((s: any) => s.spotifyId === id);
+          if (sat) {
+            fallbackName = sat.name;
+            break;
+          }
+        }
+      } catch (e) {
+        console.error("[getArtistCore] 캐시 검색 실패", e);
+      }
+    }
+    fallbackName = fallbackName || "Unknown Artist";
     
     // 생존 모드: iTunes API 로 코어 프로필 이미지와 음악 강제 추출
     const itunesRes = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(fallbackName)}&entity=song&limit=1&country=KR`);
