@@ -84,8 +84,9 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
         )}
       </div>
 
-      {/* 이름 라벨 */}
+      {/* 이름 라벨 — data-label으로 Dynamic Fog 연동 */}
       <span
+        data-label="true"
         style={{
           fontSize: isCore ? 13 : 10,
           fontWeight: isCore ? 600 : 400,

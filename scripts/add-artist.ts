@@ -127,13 +127,16 @@ async function main() {
     nebula2: "${colors.nebula2}",
   },`;
 
-  // ]; 직전에 삽입
-  const insertPoint = hubContent.lastIndexOf("];");
-  if (insertPoint === -1) {
-    console.error("❌ hub-artists.ts 파일 형식 오류: ]; 를 찾을 수 없습니다");
+  // HUB_ARTISTS 배열의 마지막 }; 뒤에 있는 ];\n 패턴을 정확히 찾아 삽입
+  // (함수 내부의 ];와 혼동 방지: HUB_ARTISTS 배열 닫기는 반드시 "},\n];" 패턴 직전)
+  const arrayEndPattern = /\},\s*\n\];/;
+  const match = arrayEndPattern.exec(hubContent);
+  if (!match) {
+    console.error("❌ hub-artists.ts 파일 형식 오류: HUB_ARTISTS 배열 종료부를 찾을 수 없습니다");
     process.exit(1);
   }
-
+  // match.index는 }, 의 시작점 → }, 이후, ]; 앞에 삽입
+  const insertPoint = match.index + match[0].indexOf("]");
   const newContent = hubContent.slice(0, insertPoint) + newEntry + "\n" + hubContent.slice(insertPoint);
   fs.writeFileSync(HUB_FILE, newContent, "utf-8");
   console.log(`✅ hub-artists.ts에 추가 완료`);

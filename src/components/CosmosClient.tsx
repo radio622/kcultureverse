@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import type { CosmosArtist, CosmosData, SatelliteNode } from "@/lib/types";
 import Cosmos from "./Cosmos";
 import BottomSheet from "./BottomSheet";
@@ -11,40 +11,59 @@ import { useAudio } from "@/hooks/useAudio";
 interface Props {
   artistId: string;
   core: CosmosArtist;
+  /** 홈에서 pre-baked JSON을 넘겨받으면 /api/cosmos fetch를 건너뜀 */
+  initialSatellites?: SatelliteNode[];
+  /** 허브 주제색 (진입 애니메이션 텍스트 등에 사용) */
+  hubColor?: string;
+  /** 홈에서 넘어온 경우 인트로 텍스트 표시용 */
+  introName?: string;
 }
 
-export default function CosmosClient({ artistId, core }: Props) {
+export default function CosmosClient({
+  artistId,
+  core,
+  initialSatellites,
+  hubColor,
+  introName,
+}: Props) {
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
   const [sheetState, setSheetState] = useState<"collapsed" | "expanded">("collapsed");
   const [copied, setCopied] = useState(false);
+  const [introVisible, setIntroVisible] = useState<boolean>(!!introName);
 
-  // 위성 데이터는 별도 상태로 관리 (처음엔 빈 배열, 백그라운드 로드 후 채워짐)
-  const [satellites, setSatellites] = useState<SatelliteNode[]>([]);
-  const [satelliteLoading, setSatelliteLoading] = useState(true);
+  // ── 위성 데이터 ────────────────────────────────────────────────
+  // initialSatellites가 있으면 즉시 사용 (API fetch 없음)
+  const [satellites, setSatellites] = useState<SatelliteNode[]>(initialSatellites ?? []);
+  const [satelliteLoading, setSatelliteLoading] = useState(!initialSatellites);
 
   const audio = useAudio();
 
-  // 코어 데이터로 즉시 CosmosData 구성 (위성 없이 먼저 렌더링)
   const data: CosmosData = { core, satellites };
 
-  // 마운트 후 백그라운드에서 위성 데이터 비동기 로드
+  // ── 인트로 텍스트 타이머 ───────────────────────────────────────
   useEffect(() => {
+    if (!introName) return;
+    const t = setTimeout(() => setIntroVisible(false), 1800);
+    return () => clearTimeout(t);
+  }, [introName]);
+
+  // ── 위성 데이터 로드 (initialSatellites 없을 때만) ────────────
+  useEffect(() => {
+    if (initialSatellites) return; // pre-baked 있으면 스킵
+
     let cancelled = false;
 
     async function loadSatellites() {
       try {
         setSatelliteLoading(true);
         const res = await fetch(`/api/cosmos/${artistId}`, {
-          signal: AbortSignal.timeout(30000), // 30초 타임아웃
+          signal: AbortSignal.timeout(30000),
         });
         if (!res.ok) throw new Error(`API error ${res.status}`);
         const cosmosData: CosmosData = await res.json();
-        if (!cancelled) {
-          setSatellites(cosmosData.satellites ?? []);
-        }
+        if (!cancelled) setSatellites(cosmosData.satellites ?? []);
       } catch (err) {
         console.error("[CosmosClient] 위성 로드 실패:", err);
-        // 실패해도 화면은 이미 코어로 표시 중 → 사용자에게 영향 없음
       } finally {
         if (!cancelled) setSatelliteLoading(false);
       }
@@ -52,40 +71,41 @@ export default function CosmosClient({ artistId, core }: Props) {
 
     loadSatellites();
     return () => { cancelled = true; };
-  }, [artistId]);
+  }, [artistId, initialSatellites]);
 
+  // ── push-up 오프셋 (바텀시트 상태 기반) ───────────────────────
+  const cosmosTranslateY = sheetState === "expanded" ? -100 : 0;
+
+  // ── 포커스 핸들러 ─────────────────────────────────────────────
   const handleFocus = useCallback(
     (index: number | null) => {
       setFocusedIndex(index);
 
       if (index === null) {
+        // 코어 클릭: 음악 재생 (previewUrl 있으면 즉시, 없으면 preview API)
         if (data.core.previewUrl) {
           audio.play(data.core.previewUrl, data.core.previewTrackName || data.core.name, data.core.spotifyId);
         } else {
           fetch(`/api/spotify/preview?name=${encodeURIComponent(data.core.name)}`)
-            .then(res => res.json())
-            .then(preview => {
-              if (preview.previewUrl) audio.play(preview.previewUrl, preview.trackName || data.core.name, data.core.spotifyId);
-            });
+            .then(r => r.json())
+            .then(p => { if (p.previewUrl) audio.play(p.previewUrl, p.trackName || data.core.name, data.core.spotifyId); });
         }
+        setSheetState("collapsed");
         return;
       }
 
       const satellite = data.satellites[index];
       if (!satellite) return;
 
-      setSheetState("expanded");
-
+      // 위성 클릭 시 4가지 동시:
+      // 1. 음악 재생
       if (satellite.previewUrl) {
         audio.play(satellite.previewUrl, satellite.previewTrackName || satellite.name, satellite.spotifyId);
-      } else {
-        fetch(`/api/spotify/preview?name=${encodeURIComponent(satellite.name)}`)
-          .then(res => res.json())
-          .then(preview => {
-            if (preview.previewUrl) audio.play(preview.previewUrl, preview.trackName || satellite.name, satellite.spotifyId);
-          });
       }
+      // 2. 바텀시트 expanded
+      setSheetState("expanded");
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [data, audio]
   );
 
@@ -98,21 +118,17 @@ export default function CosmosClient({ artistId, core }: Props) {
     const title = `${core.name}로부터`;
 
     if (navigator.share) {
-      try {
-        await navigator.share({ title, url });
-        return;
-      } catch { /* 취소 시 무시 */ }
+      try { await navigator.share({ title, url }); return; } catch { /* 취소 */ }
     }
-
     try {
       await navigator.clipboard.writeText(url);
     } catch {
-      const textarea = document.createElement("textarea");
-      textarea.value = url;
-      document.body.appendChild(textarea);
-      textarea.select();
+      const ta = document.createElement("textarea");
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
       document.execCommand("copy");
-      document.body.removeChild(textarea);
+      document.body.removeChild(ta);
     }
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -128,7 +144,58 @@ export default function CosmosClient({ artistId, core }: Props) {
         background: "var(--bg-cosmos)",
       }}
     >
-      {/* 공유 버튼 */}
+      {/* ── 인트로 오버레이 ──────────────────────────── */}
+      {introName && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 80,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            pointerEvents: "none",
+            animation: "introFadeOut 1.8s ease-out forwards",
+          }}
+        >
+          <p style={{ fontSize: 11, letterSpacing: "0.25em", color: hubColor ?? "var(--accent-core)", textTransform: "uppercase", marginBottom: 12, opacity: 0.8 }}>
+            오늘의 우주
+          </p>
+          <h2 style={{
+            fontSize: "clamp(22px, 6vw, 40px)",
+            fontWeight: 700,
+            color: "#fff",
+            textShadow: `0 0 40px ${hubColor ?? "var(--accent-core)"}`,
+            textAlign: "center",
+            lineHeight: 1.2,
+            margin: 0,
+          }}>
+            {introName}의 세계
+          </h2>
+        </div>
+      )}
+
+      {/* ── Cosmos (우주 시각화) ───────────────────────── */}
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          transform: `translateY(${cosmosTranslateY}px)`,
+          transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+          animation: "cosmosReveal 1.2s ease-out both",
+          animationDelay: introName ? "0.6s" : "0s",
+        }}
+      >
+        <Cosmos
+          data={data}
+          focusedIndex={focusedIndex}
+          onCoreTap={() => handleFocus(null)}
+          onSatelliteTap={handleFocus}
+        />
+      </div>
+
+      {/* ── 공유 버튼 ────────────────────────────────── */}
       <button
         onClick={handleShare}
         aria-label="공유 링크 복사"
@@ -170,8 +237,8 @@ export default function CosmosClient({ artistId, core }: Props) {
         </span>
       </button>
 
-      {/* 위성 로딩 인디케이터 */}
-      {satelliteLoading && (
+      {/* ── 위성 로딩 인디케이터 (pre-baked 없을 때만) ── */}
+      {satelliteLoading && !initialSatellites && (
         <div
           style={{
             position: "absolute",
@@ -194,21 +261,11 @@ export default function CosmosClient({ artistId, core }: Props) {
             background: "var(--accent-core)",
             animation: "pulse 1.5s ease-in-out infinite",
           }} />
-          <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
-            관계망 분석 중...
-          </span>
+          <span style={{ fontSize: 11, color: "var(--text-muted)" }}>관계망 분석 중...</span>
         </div>
       )}
 
-      {/* 우주 시각화 */}
-      <Cosmos
-        data={data}
-        focusedIndex={focusedIndex}
-        onCoreTap={() => handleFocus(null)}
-        onSatelliteTap={handleFocus}
-      />
-
-      {/* Bottom Sheet */}
+      {/* ── Bottom Sheet ─────────────────────────────── */}
       <BottomSheet state={sheetState} onStateChange={setSheetState}>
         <>
           <MiniPlayer
@@ -231,6 +288,15 @@ export default function CosmosClient({ artistId, core }: Props) {
         @keyframes pulse {
           0%, 100% { opacity: 0.4; transform: scale(0.8); }
           50% { opacity: 1; transform: scale(1.2); }
+        }
+        @keyframes introFadeOut {
+          0%   { opacity: 1; transform: scale(1); }
+          70%  { opacity: 1; }
+          100% { opacity: 0; transform: scale(1.05); }
+        }
+        @keyframes cosmosReveal {
+          0%   { opacity: 0; transform: translateY(var(--push-y, 0px)) scale(0.92); }
+          100% { opacity: 1; transform: translateY(var(--push-y, 0px)) scale(1); }
         }
       `}</style>
     </div>

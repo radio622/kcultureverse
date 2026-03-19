@@ -10,7 +10,7 @@
  * nebula  : CSS --bg-nebula 오버라이드 (성운 배경 컬러)
  * nebula2 : CSS --bg-nebula-2 오버라이드 (성운 보조 컬러)
  *
- * Spotify ID 검증 방법: iTunes API로 교차 검증 완료
+ * Spotify ID 검증: iTunes API + Wikidata API 교차검증 완료 (2026-03-19)
  */
 
 export interface HubArtist {
@@ -23,7 +23,7 @@ export interface HubArtist {
 }
 
 export const HUB_ARTISTS: HubArtist[] = [
-  // ── 대형 아이돌 / 글로벌 ───────────────────────────────────────
+  // 0: ── 대형 아이돌 / 글로벌 ──────────────────────────────────
   {
     spotifyId: "3Nrfpe0tUJi4K4DXYWgMUX",
     name: "BTS",
@@ -32,6 +32,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a0a2e",
     nebula2: "#130820",
   },
+  // 1:
   {
     spotifyId: "41MozSoPIsD1dJM0CLPjZF",
     name: "BLACKPINK",
@@ -40,6 +41,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#2a0a14",
     nebula2: "#1a060e",
   },
+  // 2:
   {
     spotifyId: "3HqSLMAZ3g3d5poNaI7GOU",
     name: "IU",
@@ -48,7 +50,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#041a20",
     nebula2: "#021014",
   },
-  // ── 힙합 / 크로스오버 ──────────────────────────────────────────
+  // 3: ── 힙합 / 크로스오버 ─────────────────────────────────────
   {
     spotifyId: "2Ek1q2haOnxVqhvVKqMvJe",
     name: "Zico",
@@ -57,6 +59,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a1400",
     nebula2: "#120e00",
   },
+  // 4:
   {
     spotifyId: "3yY2jUvSFTDMzPDqBOkO0E",
     name: "Jay Park",
@@ -65,6 +68,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#041a10",
     nebula2: "#021008",
   },
+  // 5:
   {
     spotifyId: "2w9zwq3AkvD4mVLDyo3i1L",
     name: "Epik High",
@@ -73,7 +77,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#041428",
     nebula2: "#020c1a",
   },
-  // ── K-인디 씬 ─────────────────────────────────────────────────
+  // 6: ── K-인디 씬 ──────────────────────────────────────────────
   {
     spotifyId: "0Kv3muNFnLPfFSnJlKZGsS",
     name: "Hyukoh",
@@ -82,6 +86,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a0c04",
     nebula2: "#120802",
   },
+  // 7:
   {
     spotifyId: "6liAMWkB0u95sm91IkwMpK",
     name: "Heize",
@@ -90,6 +95,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#10062e",
     nebula2: "#0a0420",
   },
+  // 8:
   {
     spotifyId: "6WeDO4GynFmK4OxwkBzMW8",
     name: "The Black Skirts",
@@ -98,7 +104,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#0a0c10",
     nebula2: "#060808",
   },
-  // ── 4세대 아이돌 ──────────────────────────────────────────────
+  // 9: ── 4세대 아이돌 ───────────────────────────────────────────
   {
     spotifyId: "28ot3wh4oNmoFOdVajibBl",
     name: "NMIXX",
@@ -107,6 +113,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#200a28",
     nebula2: "#140618",
   },
+  // 10:
   {
     spotifyId: "0L8ExT028jH3ddEcZwqJJ5",
     name: "Stray Kids",
@@ -115,6 +122,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#20040a",
     nebula2: "#140206",
   },
+  // 11:
   {
     spotifyId: "2AfmfGFbe0XWe6oFCAxnME",
     name: "(G)I-DLE",
@@ -123,6 +131,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a1600",
     nebula2: "#100e00",
   },
+  // 12:
   {
     spotifyId: "0NdObd21P2DSFo0iLGmYqZ",
     name: "NewJeans",
@@ -131,7 +140,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#041a0c",
     nebula2: "#021008",
   },
-  // ── 뉴웨이브 ──────────────────────────────────────────────────
+  // 13: ── 뉴웨이브 ───────────────────────────────────────────────
   {
     spotifyId: "6HaGTQPmzraZdZR615C3bq",
     name: "BIBI",
@@ -140,6 +149,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a0420",
     nebula2: "#0e0214",
   },
+  // 14:
   {
     spotifyId: "3tVQdUvClmAT7URs9V3rsp",
     name: "pH-1",
@@ -148,7 +158,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#041814",
     nebula2: "#020e0c",
   },
-  // ── K-인디 레전드 & 뉴웨이브 (2026.03 추가) ───────────────────
+  // 15: ── K-인디 레전드 & 뉴웨이브 ────────────────────────────
   {
     spotifyId: "5rHUhS9Ya0S63WI9LFmCSx",
     name: "Baek A",
@@ -157,6 +167,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a0424",
     nebula2: "#100218",
   },
+  // 16:
   {
     spotifyId: "6OSMGFNb20nNBw4a2vWxMT",
     name: "Autumn Vacation",
@@ -165,6 +176,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a0e04",
     nebula2: "#100802",
   },
+  // 17:
   {
     spotifyId: "1Juf4OqydiYBfBx4TtMtH9",
     name: "Unnieneibalgwan",
@@ -173,6 +185,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#0e1a04",
     nebula2: "#080e02",
   },
+  // 18:
   {
     spotifyId: "1BwU3fTprQmvrVc8Rl9SHw",
     name: "Lee Baksa",
@@ -181,6 +194,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a1804",
     nebula2: "#100e02",
   },
+  // 19:
   {
     spotifyId: "5wVJpXzuKV6Xj7Yhsf2uYx",
     name: "Han Roro",
@@ -189,6 +203,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#04101a",
     nebula2: "#020810",
   },
+  // 20:
   {
     spotifyId: "3WbKkfwmDLgVwR9ExchFVC",
     name: "Nell",
@@ -197,6 +212,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#04141a",
     nebula2: "#020c10",
   },
+  // 21:
   {
     spotifyId: "2XFSeoCf8No50etmN8b4Sy",
     name: "Linus's Blanket",
@@ -205,6 +221,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#041a0e",
     nebula2: "#020e08",
   },
+  // 22:
   {
     spotifyId: "00iP5z19F6kM7L3gMhF4oD",
     name: "Deli Spice",
@@ -213,6 +230,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a0804",
     nebula2: "#100402",
   },
+  // 23:
   {
     spotifyId: "6a14ZNuq4LsSkVHQR0kWd9",
     name: "Through the Sloe",
@@ -221,6 +239,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#0e0424",
     nebula2: "#080218",
   },
+  // 24:
   {
     spotifyId: "4O5NReb5AzwlP3dFQGeTuD",
     name: "Julia's Heart",
@@ -229,6 +248,7 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a0414",
     nebula2: "#10020c",
   },
+  // 25:
   {
     spotifyId: "1gq4XavqmZhqOzEkpFBz1j",
     name: "Broccoli You Too",
@@ -237,12 +257,85 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#041a0c",
     nebula2: "#020e06",
   },
+  // 26: ── Wikidata 기반 추가 아티스트 (2026-03-19) ─────────────
+  {
+    spotifyId: "6OwKE9Ez6ALxpTaKcT5ayv",
+    name: "AKMU",
+    nameKo: "악동뮤지션",
+    accent: "#e46b67",
+    nebula: "#1b0f0e",
+    nebula2: "#0f0a0a",
+  },
+  // 27:
+  {
+    spotifyId: "4Kxlr1PRlDKEB0ekOCyHgX",
+    name: "BIGBANG",
+    nameKo: "빅뱅",
+    accent: "#dc67e4",
+    nebula: "#1a0e1b",
+    nebula2: "#0f0a0f",
+  },
+  // 28:
+  {
+    spotifyId: "0Sadg1vgvaPqGTOjxu0N6c",
+    name: "Girls' Generation",
+    nameKo: "소녀시대",
+    accent: "#e48967",
+    nebula: "#1b120e",
+    nebula2: "#0f0c0a",
+  },
+  // 29:
+  {
+    spotifyId: "1TTx0YcbKUtJIZY1HEnh9B",
+    name: "J.Y. Park",
+    nameKo: "박진영",
+    accent: "#8b67e4",
+    nebula: "#120e1b",
+    nebula2: "#0c0a0f",
+  },
+  // 30:
+  {
+    spotifyId: "52Gsa9Zypqztm2DeNkQfCm",
+    name: "Seo Taiji",
+    nameKo: "서태지",
+    accent: "#e46778",
+    nebula: "#1b0e10",
+    nebula2: "#0f0a0b",
+  },
+  // 31:
+  {
+    spotifyId: "6sxtN9maIhNAu663hY5g6B",
+    name: "Yoon Sang",
+    nameKo: "윤상",
+    accent: "#67e48d",
+    nebula: "#0e1b12",
+    nebula2: "#0a0f0c",
+  },
+  // 32:
+  {
+    spotifyId: "7sS12h1hMwOqXiB5vYdlu8",
+    name: "Toy",
+    nameKo: "토이",
+    accent: "#e4c767",
+    nebula: "#1b180e",
+    nebula2: "#0f0e0a",
+  },
+  // 33:
+  {
+    spotifyId: "4hDVt8U6lhZNnXpFcXwYwS",
+    name: "Yoon Mirae",
+    nameKo: "윤미래",
+    accent: "#677ae4",
+    nebula: "#0e101b",
+    nebula2: "#0a0b0f",
+  },
 ];
 
 /**
- * 시간대 기반으로 허브 아티스트 후보 풀을 좁히고, 그 중 하나를 반환.
- * - 하루 동안 여러 번 들어오면 시간대마다 다른 분위기
+ * 시간대 기반으로 허브 아티스트 후보 풀을 좁히고, 하나를 반환.
+ * - 하루 동안 시간대마다 다른 분위기를 연출
  * - 같은 시간대에서도 약간의 랜덤성 유지
+ * - 인덱스 범위 초과 자동 방어
  */
 export function pickHubArtist(hourOverride?: number): HubArtist {
   const hour = hourOverride ?? new Date().getHours();
@@ -254,97 +347,32 @@ export function pickHubArtist(hourOverride?: number): HubArtist {
     [0, 19, 20, 22, 24],
     [0, 19, 20, 22, 24],
     [0, 19, 20, 22, 24],
-    [3, 4, 5, 17, 21],            // 4~7시  : 지코, 박재범, 에픽하이, 가을방학, 라이너스
-    [3, 4, 5, 17, 21],
-    [3, 4, 5, 17, 21],
-    [3, 4, 5, 17, 21],
-    [6, 7, 8, 16, 23, 25],        // 8~11시 : 혁오, 헤이즈, 검정치마, 백아, 슬로, 브로콜리
-    [6, 7, 8, 16, 23, 25],
-    [6, 7, 8, 16, 23, 25],
-    [6, 7, 8, 16, 23, 25],
-    [9, 10, 11, 12, 18],          // 12~15시: NMIXX, 스키즈, 아이들, 뉴진스, 이박사
-    [9, 10, 11, 12, 18],
-    [9, 10, 11, 12, 18],
-    [9, 10, 11, 12, 18],
-    [13, 14, 15, 24, 25],         // 16~19시: 비비, pH-1, 언니네이발관, 줄리아하트, 브로콜리
-    [13, 14, 15, 24, 25],
-    [13, 14, 15, 24, 25],
-    [13, 14, 15, 24, 25],
-    [0, 1, 2, 3, 6, 16],          // 20~23시: 혼합 하이라이트
-    [1, 4, 7, 13, 17, 22],
-    [2, 5, 8, 14, 20, 23],
-    [0, 6, 9, 12, 19, 21],
+    [3, 4, 5, 16, 21],            // 4~7시  : 지코, 박재범, 에픽하이, 가을방학, 라이너스
+    [3, 4, 5, 16, 21],
+    [3, 4, 5, 16, 21],
+    [3, 4, 5, 16, 21],
+    [6, 7, 8, 15, 23, 25],        // 8~11시 : 혁오, 헤이즈, 검정치마, 백아, 슬로, 브로콜리
+    [6, 7, 8, 15, 23, 25],
+    [6, 7, 8, 15, 23, 25],
+    [6, 7, 8, 15, 23, 25],
+    [9, 10, 11, 12, 18, 27],      // 12~15시: NMIXX, 스키즈, 아이들, 뉴진스, 이박사, 빅뱅
+    [9, 10, 11, 12, 18, 27],
+    [9, 10, 11, 12, 18, 27],
+    [9, 10, 11, 12, 18, 27],
+    [13, 14, 24, 25, 26, 28],     // 16~19시: 비비, pH-1, 줄리아하트, 브로콜리, AKMU, 소녀시대
+    [13, 14, 24, 25, 26, 28],
+    [13, 14, 24, 25, 26, 28],
+    [13, 14, 24, 25, 26, 28],
+    [0, 1, 2, 3, 6, 29, 30],      // 20~23시: 혼합 하이라이트
+    [1, 4, 7, 13, 17, 31, 32],
+    [2, 5, 8, 14, 20, 33],
+    [0, 6, 9, 12, 19, 26, 27],
   ];
 
-  // 유효 인덱스만 필터 (배열 범위 초과 방어)
   const raw = poolByHour[hour] ?? [0];
   const pool = raw.filter((i) => i < n);
   if (!pool.length) return HUB_ARTISTS[0];
 
   const idx = pool[Math.floor(Math.random() * pool.length)];
-  return HUB_ARTISTS[idx  {
-    spotifyId: "6OwKE9Ez6ALxpTaKcT5ayv",
-    name: "AKMU",
-    nameKo: "악동뮤지션",
-    accent: "#e46b67",
-    nebula: "#1b0f0e",
-    nebula2: "#0f0a0a",
-  },
-  {
-    spotifyId: "4Kxlr1PRlDKEB0ekOCyHgX",
-    name: "BIGBANG",
-    nameKo: "빅뱅",
-    accent: "#dc67e4",
-    nebula: "#1a0e1b",
-    nebula2: "#0f0a0f",
-  },
-  {
-    spotifyId: "0Sadg1vgvaPqGTOjxu0N6c",
-    name: "Girls' Generation",
-    nameKo: "소녀시대",
-    accent: "#e48967",
-    nebula: "#1b120e",
-    nebula2: "#0f0c0a",
-  },
-  {
-    spotifyId: "1TTx0YcbKUtJIZY1HEnh9B",
-    name: "J.Y. Park",
-    nameKo: "박진영",
-    accent: "#8b67e4",
-    nebula: "#120e1b",
-    nebula2: "#0c0a0f",
-  },
-  {
-    spotifyId: "52Gsa9Zypqztm2DeNkQfCm",
-    name: "Seo Taiji",
-    nameKo: "서태지",
-    accent: "#e46778",
-    nebula: "#1b0e10",
-    nebula2: "#0f0a0b",
-  },
-  {
-    spotifyId: "6sxtN9maIhNAu663hY5g6B",
-    name: "Yoon Sang",
-    nameKo: "윤상",
-    accent: "#67e48d",
-    nebula: "#0e1b12",
-    nebula2: "#0a0f0c",
-  },
-  {
-    spotifyId: "7sS12h1hMwOqXiB5vYdlu8",
-    name: "Toy",
-    nameKo: "토이",
-    accent: "#e4c767",
-    nebula: "#1b180e",
-    nebula2: "#0f0e0a",
-  },
-  {
-    spotifyId: "4hDVt8U6lhZNnXpFcXwYwS",
-    name: "Yoon Mirae",
-    nameKo: "윤미래",
-    accent: "#677ae4",
-    nebula: "#0e101b",
-    nebula2: "#0a0b0f",
-  },
-];
+  return HUB_ARTISTS[idx];
 }
