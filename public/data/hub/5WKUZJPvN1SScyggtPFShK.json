@@ -1,0 +1,86 @@
+{
+  "core": {
+    "spotifyId": "5WKUZJPvN1SScyggtPFShK",
+    "name": "너드커넥션",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/f9/77/7af977be-cf12-73f4-7534-a54359205405/cover_KM0019696_1.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d0/b6/c8/d0b6c853-b1c3-b4c4-ba2b-8b0baa1e51b7/mzaf_16774218591059411033.plus.aac.p.m4a",
+    "previewTrackName": "좋은 밤 좋은 꿈",
+    "spotifyUrl": "https://open.spotify.com/artist/5WKUZJPvN1SScyggtPFShK"
+  },
+  "satellites": [
+    {
+      "spotifyId": "mb_1773909330269_0.727726978974563",
+      "name": "최승원",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909330517_0.13837336844510895",
+      "name": "박재현",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909330639_0.19432171090627004",
+      "name": "서영주",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909330798_0.22291495453739796",
+      "name": "서영주",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909330903_0.5514760639096631",
+      "name": "신연태",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909332619_0.3398383719659438",
+      "name": "서영주",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링 (2곡 참여)"
+    }
+  ]
+}

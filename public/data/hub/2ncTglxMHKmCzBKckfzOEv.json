@@ -1,0 +1,98 @@
+{
+  "core": {
+    "spotifyId": "2ncTglxMHKmCzBKckfzOEv",
+    "name": "알레프",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/9d/8f/9e/9d8f9e48-175a-fd6f-b0ee-f34bdc5df765/8809900757418.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/01/a0/4d/01a04db2-f8d2-bff0-42a3-b2df20b9f582/mzaf_6791980625937985966.plus.aac.p.m4a",
+    "previewTrackName": "첫사랑은 기준이 되는 걸 너는 알까",
+    "spotifyUrl": "https://open.spotify.com/artist/2ncTglxMHKmCzBKckfzOEv"
+  },
+  "satellites": [
+    {
+      "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
+      "name": "BTS",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
+      "name": "BLACKPINK",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "7n2Ycct7Beij7Dj7meI4X0",
+      "name": "TWICE",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/7n2Ycct7Beij7Dj7meI4X0",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "3HqSLMAZ3g3d5poNaI7GOU",
+      "name": "IU",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/3HqSLMAZ3g3d5poNaI7GOU",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "1z4g3DjTBBZKhvAroFlhOM",
+      "name": "Red Velvet",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/1z4g3DjTBBZKhvAroFlhOM",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "4Kxlr1PRlDKEB0ekOCyHgX",
+      "name": "검정치마",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/4Kxlr1PRlDKEB0ekOCyHgX",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "3cjEqqelV9zb41pAfcwrPM",
+      "name": "EXO",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/3cjEqqelV9zb41pAfcwrPM",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    }
+  ]
+}

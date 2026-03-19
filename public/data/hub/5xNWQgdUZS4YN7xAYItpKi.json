@@ -1,0 +1,110 @@
+{
+  "core": {
+    "spotifyId": "5xNWQgdUZS4YN7xAYItpKi",
+    "name": "참깨와 솜사탕",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/06/9c/09/069c0975-b958-a946-e070-94cb422d3f01/cover_KM0015908_1.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/1e/06/b0/1e06b09c-9588-ce29-fbed-791cb8720462/mzaf_3468556120353846718.plus.aac.p.m4a",
+    "previewTrackName": "묘 (Cat)",
+    "spotifyUrl": "https://open.spotify.com/artist/5xNWQgdUZS4YN7xAYItpKi"
+  },
+  "satellites": [
+    {
+      "spotifyId": "mb_1773909484937_0.7339171347718214",
+      "name": "OFFONOFF",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "소속 그룹"
+    },
+    {
+      "spotifyId": "mb_1773909485188_0.11364288802564038",
+      "name": "CLUBESKIMO",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "소속 그룹"
+    },
+    {
+      "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
+      "name": "BTS",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
+      "name": "BLACKPINK",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "7n2Ycct7Beij7Dj7meI4X0",
+      "name": "TWICE",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/7n2Ycct7Beij7Dj7meI4X0",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "3HqSLMAZ3g3d5poNaI7GOU",
+      "name": "IU",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/3HqSLMAZ3g3d5poNaI7GOU",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "1z4g3DjTBBZKhvAroFlhOM",
+      "name": "Red Velvet",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/1z4g3DjTBBZKhvAroFlhOM",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "4Kxlr1PRlDKEB0ekOCyHgX",
+      "name": "검정치마",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/4Kxlr1PRlDKEB0ekOCyHgX",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    }
+  ]
+}

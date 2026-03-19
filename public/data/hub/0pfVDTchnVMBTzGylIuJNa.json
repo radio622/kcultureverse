@@ -1,0 +1,13 @@
+{
+  "core": {
+    "spotifyId": "0pfVDTchnVMBTzGylIuJNa",
+    "name": "이적",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/49/6b/ca/mzi.kiznsfbv.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 0,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/df/17/3c/df173c1c-3d13-971c-1476-72dc7b010d7e/mzaf_12254722545518746256.plus.aac.p.m4a",
+    "previewTrackName": "하늘을 달리다",
+    "spotifyUrl": "https://open.spotify.com/artist/0pfVDTchnVMBTzGylIuJNa"
+  },
+  "satellites": []
+}

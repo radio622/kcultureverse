@@ -1,224 +1,451 @@
 [
   {
-    "spotifyId": "00iP5z19F6kM7L3gMhF4oD",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "0Kv3muNFnLPfFSnJlKZGsS",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
     "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
     "name": "BTS",
-    "imageUrl": null,
+    "nameKo": "BTS",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d7/01/06/d70106f0-31f5-721b-471b-551bf083d677/ticket.ecruyjar.png/600x600bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
     "name": "BLACKPINK",
-    "imageUrl": null,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/00/3e/16/003e1619-3133-a934-3263-5749ee119625/8809519880736_cover.jpg/300x300bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "7n2Ycct7Beij7Dj7meI4X0",
     "name": "TWICE",
-    "imageUrl": null,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/7a/b6/41/7ab641b0-790c-626c-8a6f-bcbc4fbc299f/20180409_6PM_TWICE_5_MAIN_COVER_IMAGE.jpg/300x300bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "3HqSLMAZ3g3d5poNaI7GOU",
     "name": "IU",
-    "imageUrl": null,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/e3/56/1e/e3561eb5-de12-790d-569b-53fa22e6b491/cover_KM0019422_1.jpg/300x300bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "1z4g3DjTBBZKhvAroFlhOM",
     "name": "Red Velvet",
-    "imageUrl": null,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/e2/36/4b/e2364b01-f3f9-c67f-7194-81854a14e540/dj.lcmtrdtw.jpg/300x300bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "4Kxlr1PRlDKEB0ekOCyHgX",
     "name": "검정치마",
-    "imageUrl": null,
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/be/ce/5c/bece5cff-2caf-6d8a-9c21-3035537d2a4d/Album_cover_1400X1400.jpg/300x300bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "3cjEqqelV9zb41pAfcwrPM",
     "name": "EXO",
-    "imageUrl": null,
-    "genres": []
-  },
-  {
-    "spotifyId": "0L8ExT028jH3ddEcZwqJJ5",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "0NdObd21P2DSFo0iLGmYqZ",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "0Sadg1vgvaPqGTOjxu0N6c",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "1BwU3fTprQmvrVc8Rl9SHw",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "1Juf4OqydiYBfBx4TtMtH9",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "1TTx0YcbKUtJIZY1HEnh9B",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "1gq4XavqmZhqOzEkpFBz1j",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "28ot3wh4oNmoFOdVajibBl",
-    "name": "NMIXX",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fd/d4/44/fdd444f2-5584-8e40-9891-fe7cbc03af9e/8809928955155.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "2AfmfGFbe0XWe6oFCAxnME",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/97/f7/95/97f795bb-178f-53c6-8c4e-f1fa0f559846/EXO_DIGITAL_COVER.jpg/300x300bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "2Ek1q2haOnxVqhvVKqMvJe",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "2XFSeoCf8No50etmN8b4Sy",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "2w9zwq3AkvD4mVLDyo3i1L",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "3WbKkfwmDLgVwR9ExchFVC",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "3tVQdUvClmAT7URs9V3rsp",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "name": "지코",
+    "nameKo": "지코",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c0/c6/e6/c0c6e63d-c8d9-879f-4a49-e188e7cfff42/198704893582_Cover.jpg/600x600bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "3yY2jUvSFTDMzPDqBOkO0E",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "name": "박재범",
+    "nameKo": "박재범",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c9/98/8e/c9988e81-4b47-969d-eb3f-7dbf10926875/8809380634810_Cover.jpg/600x600bb.jpg",
     "genres": []
   },
   {
-    "spotifyId": "4O5NReb5AzwlP3dFQGeTuD",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "spotifyId": "2w9zwq3AkvD4mVLDyo3i1L",
+    "name": "에픽하이",
+    "nameKo": "에픽하이",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/c3/56/b2/c356b23d-6844-46a8-bbfc-1206dbfcde52/08809114102691_Cover.jpg/600x600bb.jpg",
     "genres": []
   },
   {
-    "spotifyId": "4hDVt8U6lhZNnXpFcXwYwS",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "52Gsa9Zypqztm2DeNkQfCm",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "5rHUhS9Ya0S63WI9LFmCSx",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "5wVJpXzuKV6Xj7Yhsf2uYx",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "6HaGTQPmzraZdZR615C3bq",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "6OSMGFNb20nNBw4a2vWxMT",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "6OwKE9Ez6ALxpTaKcT5ayv",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "6WeDO4GynFmK4OxwkBzMW8",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
-    "genres": []
-  },
-  {
-    "spotifyId": "6a14ZNuq4LsSkVHQR0kWd9",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "spotifyId": "0Kv3muNFnLPfFSnJlKZGsS",
+    "name": "혁오",
+    "nameKo": "혁오",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/20/de/43/20de43fe-733e-3734-cab9-7bd787411260/Cover_HYUKOH_23.jpg/600x600bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "6liAMWkB0u95sm91IkwMpK",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "name": "헤이즈",
+    "nameKo": "헤이즈",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1b/c1/05/1bc105f3-72f2-03be-0d05-6e302f74d757/8809534465840_Cover.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "6WeDO4GynFmK4OxwkBzMW8",
+    "name": "검정치마",
+    "nameKo": "검정치마",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/be/ce/5c/bece5cff-2caf-6d8a-9c21-3035537d2a4d/Album_cover_1400X1400.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "28ot3wh4oNmoFOdVajibBl",
+    "name": "엔믹스",
+    "nameKo": "엔믹스",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/fd/d4/44/fdd444f2-5584-8e40-9891-fe7cbc03af9e/8809928955155.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "0L8ExT028jH3ddEcZwqJJ5",
+    "name": "스트레이 키즈",
+    "nameKo": "스트레이 키즈",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/96/b8/45/96b84544-f6e1-2702-f2d5-d5bda08f354e/SKZ_5_STAR_COVER.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "2AfmfGFbe0XWe6oFCAxnME",
+    "name": "(여자)아이들",
+    "nameKo": "(여자)아이들",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/03/66/9c/03669cc2-6893-8fd6-b55c-4540a9561f15/cover_KM0016163_1.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "0NdObd21P2DSFo0iLGmYqZ",
+    "name": "뉴진스",
+    "nameKo": "뉴진스",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bf/68/ca/bf68ca64-4acd-543f-bc78-455f11f06105/196922889738_Cover.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "6HaGTQPmzraZdZR615C3bq",
+    "name": "비비",
+    "nameKo": "비비",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d1/9c/69/d19c69a1-6c6e-2a62-325c-0d79f00041d3/cover_KM0022696_1.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "3tVQdUvClmAT7URs9V3rsp",
+    "name": "pH-1",
+    "nameKo": "pH-1",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/de/b8/ea/deb8eaf6-0e44-8286-37a4-a7ffe60e6d7e/8809704411707_Cover.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "5rHUhS9Ya0S63WI9LFmCSx",
+    "name": "백아",
+    "nameKo": "백아",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/a4/ae/f3/a4aef345-7ec9-8c09-a462-7389200876f9/BaekA_Amor_3000.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "6OSMGFNb20nNBw4a2vWxMT",
+    "name": "가을방학",
+    "nameKo": "가을방학",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/df/a3/ad/dfa3adbb-8a56-d9c8-daad-b38d91bc9423/8806197948451.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "1Juf4OqydiYBfBx4TtMtH9",
+    "name": "언니네이발관",
+    "nameKo": "언니네이발관",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5b/34/61/5b346190-7b3a-f4e5-f87b-33b4f620236b/8809259900497.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "1BwU3fTprQmvrVc8Rl9SHw",
+    "name": "이박사",
+    "nameKo": "이박사",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/95/be/f8/95bef82b-54d6-123e-2f34-6f45660eca91/191953456577.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "5wVJpXzuKV6Xj7Yhsf2uYx",
+    "name": "한로로",
+    "nameKo": "한로로",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/c2/ef/87/c2ef8779-f3bb-5a1c-ef6f-c27185e62446/8809936067307.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "3WbKkfwmDLgVwR9ExchFVC",
+    "name": "넬",
+    "nameKo": "넬",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/82/20/8e/82208ea5-ebf1-b282-19be-44f91dea046d/8809231381283_Cover.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "2XFSeoCf8No50etmN8b4Sy",
+    "name": "라이너스의 담요",
+    "nameKo": "라이너스의 담요",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/dc/7d/4f/dc7d4fa1-ef68-82f9-746f-e78a85f3c338/8809388749097_Cover.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "00iP5z19F6kM7L3gMhF4oD",
+    "name": "델리스파이스",
+    "nameKo": "델리스파이스",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/04/62/a8/0462a83a-7fc6-1842-d83c-469024f2466e/cover_KM0017058_1.png/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "6a14ZNuq4LsSkVHQR0kWd9",
+    "name": "through the sloe",
+    "nameKo": "through the sloe",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/13/c1/26/13c126c7-a93c-c2ba-646d-6518593abe16/artwork.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "4O5NReb5AzwlP3dFQGeTuD",
+    "name": "줄리아하트",
+    "nameKo": "줄리아하트",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d1/87/7d/d1877d52-685f-f459-ffbc-7affb6ff381b/8809717460280.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "1gq4XavqmZhqOzEkpFBz1j",
+    "name": "브로콜리너마저",
+    "nameKo": "브로콜리너마저",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/61/f6/c6/61f6c69c-2995-10a2-f681-404b6860d2c3/887928026677.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "6OwKE9Ez6ALxpTaKcT5ayv",
+    "name": "악동뮤지션",
+    "nameKo": "악동뮤지션",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/e4/a2/80/e4a28015-490b-255a-ff26-aadd6257cfa1/AKMU_DS.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "0Sadg1vgvaPqGTOjxu0N6c",
+    "name": "소녀시대",
+    "nameKo": "소녀시대",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/02/5f/0c/025f0c9a-6346-ed15-e7c3-055c442ac580/asset.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "1TTx0YcbKUtJIZY1HEnh9B",
+    "name": "박진영",
+    "nameKo": "박진영",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/20/a3/69/20a3695f-ee6f-2697-b1a4-252a58d96d03/8809661190479_cover.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "52Gsa9Zypqztm2DeNkQfCm",
+    "name": "서태지",
+    "nameKo": "서태지",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/99/1f/3b/991f3b5e-d3a7-5c7d-b50b-48f8c7c58e42/8809704420709_Cover.jpg/600x600bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "6sxtN9maIhNAu663hY5g6B",
-    "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "name": "윤상",
+    "nameKo": "윤상",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/7f/e2/2a/7fe22aed-a893-8407-59d4-45811ebfd6a2/8809231389838_Cover.jpg/600x600bb.jpg",
     "genres": []
   },
   {
     "spotifyId": "7sS12h1hMwOqXiB5vYdlu8",
+    "name": "토이",
+    "nameKo": "토이",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/01/ee/75/01ee7590-d7e5-3fc6-1e4d-5100d4276cd1/cover_KM0015175_1.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "4hDVt8U6lhZNnXpFcXwYwS",
+    "name": "윤미래",
+    "nameKo": "윤미래",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/81/20/00/81200060-5c3c-4f8d-bf55-c6836f644632/COVER-_DS.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "04L3elxyr0XFua2Ek3domW",
     "name": "선우정아",
-    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "nameKo": "선우정아",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1d/49/8f/1d498f55-ea5c-2a0f-6c5a-77364494d5e2/swja_serenade_3000.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "0JGN9XIqm3vfg7hhPHjExI",
+    "name": "리쌍",
+    "nameKo": "리쌍",
+    "imageUrl": null,
+    "genres": []
+  },
+  {
+    "spotifyId": "0pfVDTchnVMBTzGylIuJNa",
+    "name": "이적",
+    "nameKo": "이적",
+    "imageUrl": null,
+    "genres": []
+  },
+  {
+    "spotifyId": "64RfnYDHtR3ZaLdtxAjPDA",
+    "name": "듀스",
+    "nameKo": "듀스",
+    "imageUrl": null,
+    "genres": []
+  },
+  {
+    "spotifyId": "41lcf5k3PkUdxupYLkcjCd",
+    "name": "도시",
+    "nameKo": "도시",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/11/ba/53/11ba5374-ecdd-ba2d-5a79-c8a671ca3998/8809658310644_Cover.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "1tpzH7XBT9sUJx4CMB4hCp",
+    "name": "못",
+    "nameKo": "못",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/34/f2/8a/34f28ada-b7bb-63dd-2942-d541c6cc6077/Mot_1st_Non-Linear_3000.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "0oN8IZB1C3lY1ABKwJOu1I",
+    "name": "장기하와 얼굴들",
+    "nameKo": "장기하와 얼굴들",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9b/45/f1/9b45f13a-49c6-6c93-e935-39246149e425/8809603546029.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "07OePkse2fcvU9wlVftNMl",
+    "name": "새소년",
+    "nameKo": "새소년",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9d/83/29/9d832953-ab16-06cc-d0e1-3adf8f5f9e11/SESONEON_NANCHUN_3000.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "7zhojNyxff5HeS5mIgUVmU",
+    "name": "보수동쿨러",
+    "nameKo": "보수동쿨러",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/2e/1a/af/2e1aaf8a-b681-9d33-87b4-755ffee428d0/yeah_I_don_t_want_it_cover.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "2PsnDm6aGMnPFcqyyII5iQ",
+    "name": "푸른새벽",
+    "nameKo": "푸른새벽",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/eb/10/29/eb102994-6c80-b6c9-b11a-f37dc31d6ec0/dj.inbsilsx.png/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "0ndvlJnYkMJZhet7fVhk9C",
+    "name": "다브다",
+    "nameKo": "다브다",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/e0/b7/f5/e0b7f5c1-6917-14d3-02f9-9f236959b2b7/But_All_The_Shining_Things_Are_3000.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "08J6v4qHZz06ua0qAicWmE",
+    "name": "김사월",
+    "nameKo": "김사월",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/11/19/26/11192632-2770-d5f7-c899-23c260fe981b/8809764905437.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "6S4fsREHT1NEjTb3lYD2pG",
+    "name": "쏜애플",
+    "nameKo": "쏜애플",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/51/0a/5b/510a5b3c-405a-630d-d3ea-ea520bc86fb8/Strange_Weather.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "5WKUZJPvN1SScyggtPFShK",
+    "name": "Nerd Connection",
+    "nameKo": "너드커넥션",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/f9/77/7af977be-cf12-73f4-7534-a54359205405/cover_KM0019696_1.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "7EVlq3yUVHbHZZsaYSOcXt",
+    "name": "김뜻돌",
+    "nameKo": "김뜻돌",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/84/5f/87/845f8771-6288-9972-a7f7-ecbb72c78705/8809712287776.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "6evmYxFbDSIHilUaYC9MhL",
+    "name": "자우림",
+    "nameKo": "자우림",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/c7/33/d7/c733d734-7b29-64cc-ef29-a7e644c74cf6/8809550047594.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "29UQ130XMQDR55X4Rmjapd",
+    "name": "밍기뉴",
+    "nameKo": "밍기뉴",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/e0/a7/84/e0a7841e-91d7-4f0e-0446-0453be4661df/8809912871720.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "2kxVxKOgoefmgkwoHipHsn",
+    "name": "실리카겔",
+    "nameKo": "실리카겔",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e3/ad/bd/e3adbde9-d73c-b362-2fb5-0638c2f94aac/8809851799765.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "5KOhn3Gjbd4DUavli5No5f",
+    "name": "코토바",
+    "nameKo": "코토바",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7d/32/db/7d32dbbf-e41a-267e-b8f5-8ee6f8ed99e5/8809795744487.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "64sY7LsUjNE3ifONkftTXC",
+    "name": "ADOY",
+    "nameKo": "아도이",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3e/cd/9e/3ecd9e69-40d5-febf-f8b9-2ba3a99b88ee/196006101732.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "5q9adPv91NFr8q2ZcKmX0V",
+    "name": "Cosmic Boy",
+    "nameKo": "유라",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3c/b9/66/3cb966fc-f06a-d1f7-ea98-bf3920fc54a0/5021732447449.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "7K1yj70w0ldP7bMDqiiHMo",
+    "name": "아슬",
+    "nameKo": "아슬",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/6f/4b/2d/6f4b2d71-5222-65e0-778c-df7b2c2a2539/8809712280616.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "18r9qka1AKwgqzUzaLdxhm",
+    "name": "이고도",
+    "nameKo": "이고도",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ea/67/1d/ea671da0-bbe8-a939-e7c4-b3053723c488/LeeGoDo_Mouse_3000.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "2ncTglxMHKmCzBKckfzOEv",
+    "name": "알레프",
+    "nameKo": "알레프",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/9d/8f/9e/9d8f9e48-175a-fd6f-b0ee-f34bdc5df765/8809900757418.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "4uU7KfTjcjyKUGWSaTzLu7",
+    "name": "015B & 오왠",
+    "nameKo": "015B",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ae/98/c7/ae98c7e6-eeff-d73f-22b3-7a9d2c42932e/888344232260.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "71kRpwy6xTeG2OXXkRJdkA",
+    "name": "국카스텐",
+    "nameKo": "국카스텐",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/84/69/32/84693236-6775-4804-0bac-992df7aea9b9/KM0001894-_-1227.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "0gqEtTORPrOqWJWElLvDQ3",
+    "name": "카더가든",
+    "nameKo": "카더가든",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/a1/f1/d9/a1f1d9ed-4367-b40e-42ac-27992280a208/Car_the_garden.jpg/600x600bb.jpg",
+    "genres": []
+  },
+  {
+    "spotifyId": "5xNWQgdUZS4YN7xAYItpKi",
+    "name": "Colde",
+    "nameKo": "참깨와 솜사탕",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/06/9c/09/069c0975-b958-a946-e070-94cb422d3f01/cover_KM0015908_1.jpg/600x600bb.jpg",
     "genres": []
   }
 ]

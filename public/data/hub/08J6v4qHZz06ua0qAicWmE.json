@@ -1,0 +1,62 @@
+{
+  "core": {
+    "spotifyId": "08J6v4qHZz06ua0qAicWmE",
+    "name": "김사월",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/11/19/26/11192632-2770-d5f7-c899-23c260fe981b/8809764905437.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/de/cc/21/decc21ac-b4b4-797f-5060-be6cf94a78bd/mzaf_5808892661512236778.plus.aac.p.m4a",
+    "previewTrackName": "사랑하는 사람들에게 가장 상처 주는 키를 우리는 모두 가지고 있어",
+    "spotifyUrl": "https://open.spotify.com/artist/08J6v4qHZz06ua0qAicWmE"
+  },
+  "satellites": [
+    {
+      "spotifyId": "mb_1773909309487_0.02822401281542497",
+      "name": "김사월X김해원",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "소속 그룹"
+    },
+    {
+      "spotifyId": "mb_1773909309827_0.5099469845627447",
+      "name": "김사월X김해원",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "소속 그룹"
+    },
+    {
+      "spotifyId": "mb_1773909311078_0.542723305228677",
+      "name": "김해원",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "편곡 (3곡 참여)"
+    },
+    {
+      "spotifyId": "mb_1773909311183_0.4186649784854558",
+      "name": "김해원",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "전담 프로듀서 (3곡 참여)"
+    }
+  ]
+}

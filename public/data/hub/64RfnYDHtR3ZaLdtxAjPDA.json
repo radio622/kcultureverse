@@ -1,0 +1,13 @@
+{
+  "core": {
+    "spotifyId": "64RfnYDHtR3ZaLdtxAjPDA",
+    "name": "듀스",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/50/53/26/5053265c-1ac9-6d82-daab-8ad204d01445/cover_KM0020996_1.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 0,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/91/4b/a1/914ba103-7893-1c62-463d-38a9bd6d346f/mzaf_15061271142656656155.plus.aac.p.m4a",
+    "previewTrackName": "나를 돌아봐",
+    "spotifyUrl": "https://open.spotify.com/artist/64RfnYDHtR3ZaLdtxAjPDA"
+  },
+  "satellites": []
+}

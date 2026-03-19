@@ -1,0 +1,74 @@
+{
+  "core": {
+    "spotifyId": "64sY7LsUjNE3ifONkftTXC",
+    "name": "아도이",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3e/cd/9e/3ecd9e69-40d5-febf-f8b9-2ba3a99b88ee/196006101732.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/86/f9/3b/86f93be2-9c83-dcfa-acf8-447865388b8b/mzaf_9655269862280066653.plus.aac.p.m4a",
+    "previewTrackName": "Wonder",
+    "spotifyUrl": "https://open.spotify.com/artist/64sY7LsUjNE3ifONkftTXC"
+  },
+  "satellites": [
+    {
+      "spotifyId": "mb_1773909392514_0.5207362771392542",
+      "name": "정다영",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909392968_0.10436129418439055",
+      "name": "정다영",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909393078_0.7544515574598004",
+      "name": "오주환",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909393201_0.10776504874734794",
+      "name": "지",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909393324_0.2581003423100676",
+      "name": "조조",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    }
+  ]
+}

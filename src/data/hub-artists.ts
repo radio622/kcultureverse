@@ -365,6 +365,222 @@ export const HUB_ARTISTS: HubArtist[] = [
     nebula: "#1a0610",
     nebula2: "#100208",
   },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "41lcf5k3PkUdxupYLkcjCd",
+    name: "dosii",
+    nameKo: "도시",
+    accent: "#38bdf8",
+    nebula: "#082f49",
+    nebula2: "#0c4a6e",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "1tpzH7XBT9sUJx4CMB4hCp",
+    name: "Mot",
+    nameKo: "못",
+    accent: "#a78bfa",
+    nebula: "#2e1065",
+    nebula2: "#4c1d95",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "0oN8IZB1C3lY1ABKwJOu1I",
+    name: "Kiha & The Faces",
+    nameKo: "장기하와 얼굴들",
+    accent: "#f472b6",
+    nebula: "#831843",
+    nebula2: "#be185d",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "07OePkse2fcvU9wlVftNMl",
+    name: "SE SO NEON",
+    nameKo: "새소년",
+    accent: "#fb923c",
+    nebula: "#7c2d12",
+    nebula2: "#9a3412",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "7zhojNyxff5HeS5mIgUVmU",
+    name: "Bosudongcooler",
+    nameKo: "보수동쿨러",
+    accent: "#4ade80",
+    nebula: "#14532d",
+    nebula2: "#166534",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "2PsnDm6aGMnPFcqyyII5iQ",
+    name: "Bluedawn",
+    nameKo: "푸른새벽",
+    accent: "#94a3b8",
+    nebula: "#0f172a",
+    nebula2: "#1e293b",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "0ndvlJnYkMJZhet7fVhk9C",
+    name: "DABDA",
+    nameKo: "다브다",
+    accent: "#facc15",
+    nebula: "#713f12",
+    nebula2: "#854d0e",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "08J6v4qHZz06ua0qAicWmE",
+    name: "Kim Sawol",
+    nameKo: "김사월",
+    accent: "#fb7185",
+    nebula: "#881337",
+    nebula2: "#9f1239",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "6S4fsREHT1NEjTb3lYD2pG",
+    name: "THORNAPPLE",
+    nameKo: "쏜애플",
+    accent: "#38bdf8",
+    nebula: "#082f49",
+    nebula2: "#0c4a6e",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "5WKUZJPvN1SScyggtPFShK",
+    name: "Nerd Connection",
+    nameKo: "너드커넥션",
+    accent: "#a78bfa",
+    nebula: "#2e1065",
+    nebula2: "#4c1d95",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "7EVlq3yUVHbHZZsaYSOcXt",
+    name: "Meaningful Stone",
+    nameKo: "김뜻돌",
+    accent: "#f472b6",
+    nebula: "#831843",
+    nebula2: "#be185d",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "6evmYxFbDSIHilUaYC9MhL",
+    name: "Jaurim",
+    nameKo: "자우림",
+    accent: "#fb923c",
+    nebula: "#7c2d12",
+    nebula2: "#9a3412",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "29UQ130XMQDR55X4Rmjapd",
+    name: "mingginyu",
+    nameKo: "밍기뉴",
+    accent: "#4ade80",
+    nebula: "#14532d",
+    nebula2: "#166534",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "2kxVxKOgoefmgkwoHipHsn",
+    name: "Silica Gel",
+    nameKo: "실리카겔",
+    accent: "#94a3b8",
+    nebula: "#0f172a",
+    nebula2: "#1e293b",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "5KOhn3Gjbd4DUavli5No5f",
+    name: "cotoba",
+    nameKo: "코토바",
+    accent: "#facc15",
+    nebula: "#713f12",
+    nebula2: "#854d0e",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "64sY7LsUjNE3ifONkftTXC",
+    name: "ADOY",
+    nameKo: "아도이",
+    accent: "#fb7185",
+    nebula: "#881337",
+    nebula2: "#9f1239",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "5q9adPv91NFr8q2ZcKmX0V",
+    name: "youra",
+    nameKo: "유라",
+    accent: "#38bdf8",
+    nebula: "#082f49",
+    nebula2: "#0c4a6e",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "7K1yj70w0ldP7bMDqiiHMo",
+    name: "Aseul",
+    nameKo: "아슬",
+    accent: "#a78bfa",
+    nebula: "#2e1065",
+    nebula2: "#4c1d95",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "18r9qka1AKwgqzUzaLdxhm",
+    name: "Lee Godo",
+    nameKo: "이고도",
+    accent: "#f472b6",
+    nebula: "#831843",
+    nebula2: "#be185d",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "2ncTglxMHKmCzBKckfzOEv",
+    name: "ALEPH",
+    nameKo: "알레프",
+    accent: "#fb923c",
+    nebula: "#7c2d12",
+    nebula2: "#9a3412",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "4uU7KfTjcjyKUGWSaTzLu7",
+    name: "015B",
+    nameKo: "015B",
+    accent: "#4ade80",
+    nebula: "#14532d",
+    nebula2: "#166534",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "71kRpwy6xTeG2OXXkRJdkA",
+    name: "Guckkasten",
+    nameKo: "국카스텐",
+    accent: "#94a3b8",
+    nebula: "#0f172a",
+    nebula2: "#1e293b",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "0gqEtTORPrOqWJWElLvDQ3",
+    name: "Car, the garden",
+    nameKo: "카더가든",
+    accent: "#facc15",
+    nebula: "#713f12",
+    nebula2: "#854d0e",
+  },
+  // ── Playlist Additions ──
+  {
+    spotifyId: "5xNWQgdUZS4YN7xAYItpKi",
+    name: "Chamsom",
+    nameKo: "참깨와 솜사탕",
+    accent: "#fb7185",
+    nebula: "#881337",
+    nebula2: "#9f1239",
+  },
 ];
 
 /**

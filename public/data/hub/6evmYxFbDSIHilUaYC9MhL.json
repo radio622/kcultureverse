@@ -1,0 +1,74 @@
+{
+  "core": {
+    "spotifyId": "6evmYxFbDSIHilUaYC9MhL",
+    "name": "자우림",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/c7/33/d7/c733d734-7b29-64cc-ef29-a7e644c74cf6/8809550047594.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b1/c6/50/b1c6502b-5af1-4637-9fbc-abc7235f8351/mzaf_3828476756359733017.plus.aac.p.m4a",
+    "previewTrackName": "스물다섯, 스물하나",
+    "spotifyUrl": "https://open.spotify.com/artist/6evmYxFbDSIHilUaYC9MhL"
+  },
+  "satellites": [
+    {
+      "spotifyId": "mb_1773909352817_0.14541745134979178",
+      "name": "구태훈",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909353084_0.9214998000004959",
+      "name": "김진만",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909353208_0.7316304992732472",
+      "name": "김윤아",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909353338_0.3988355652863177",
+      "name": "이선규",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773909354132_0.3878078153666513",
+      "name": "김병찬",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "전담 프로듀서 (2곡 참여)"
+    }
+  ]
+}

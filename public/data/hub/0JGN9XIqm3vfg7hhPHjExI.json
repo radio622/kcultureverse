@@ -1,0 +1,13 @@
+{
+  "core": {
+    "spotifyId": "0JGN9XIqm3vfg7hhPHjExI",
+    "name": "리쌍",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a5/f8/e0/a5f8e0e1-ff11-1c93-4e6d-31e9ea9bf86e/mzi.kumhcbtw.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 0,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/50/f4/e4/50f4e44c-70f9-ff67-75f3-e4fb691d8cdc/mzaf_2837304234395498143.plus.aac.p.m4a",
+    "previewTrackName": "Ballerino",
+    "spotifyUrl": "https://open.spotify.com/artist/0JGN9XIqm3vfg7hhPHjExI"
+  },
+  "satellites": []
+}
