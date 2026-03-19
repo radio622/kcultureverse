@@ -27,11 +27,11 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
     <div
       className="glass-card"
       style={{
-        width: 240,
-        padding: "14px",
+        width: 170,
+        padding: "10px",
         display: "flex",
         flexDirection: "column",
-        gap: 10,
+        gap: 6,
         border: isActive
           ? "1px solid rgba(167,139,250,0.55)"
           : "1px solid var(--border-glass)",
@@ -125,11 +125,11 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
       {/* ── 관계 키워드 태그 ────────────────────────── */}
       {(artist as { relationKeyword?: string }).relationKeyword && (
         <div style={{
-          padding: "3px 8px",
+          padding: "2px 6px",
           background: "rgba(167,139,250,0.12)",
           border: "1px solid rgba(167,139,250,0.25)",
           borderRadius: 6,
-          fontSize: 10,
+          fontSize: 9,
           color: "var(--accent-core)",
           fontWeight: 600,
           display: "inline-flex",
@@ -145,10 +145,10 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
       {/* ── 이름 + 장르 ─────────────────────────────── */}
       <div>
         <h3 style={{
-          fontSize: 15,
+          fontSize: 13,
           fontWeight: 600,
           color: "var(--text-primary)",
-          margin: "0 0 5px",
+          margin: "0 0 3px",
           overflow: "hidden",
           textOverflow: "ellipsis",
           whiteSpace: "nowrap",
@@ -173,7 +173,7 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
             </span>
           ))}
           {displayGenres.length === 0 && (
-            <span style={{ fontSize: 10, color: "var(--text-muted)" }}>K-POP</span>
+            <span style={{ fontSize: 9, color: "var(--text-muted)" }}>K-POP</span>
           )}
         </div>
       </div>
@@ -183,9 +183,9 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
         <div style={{
           display: "flex",
           justifyContent: "space-between",
-          fontSize: 10,
+          fontSize: 9,
           color: "var(--text-muted)",
-          marginBottom: 4,
+          marginBottom: 2,
         }}>
           <span>인기도</span>
           <span style={{ color: "var(--text-secondary)" }}>{artist.popularity}</span>
@@ -208,7 +208,7 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
 
       {/* ── 미리듣기 / Spotify 표시 ─────────────────── */}
       <div style={{
-        fontSize: 11,
+        fontSize: 10,
         color: hasPreview ? "var(--text-secondary)" : "#1db954",
         display: "flex",
         alignItems: "center",
@@ -246,14 +246,14 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
         onClick={onDive}
         style={{
           width: "100%",
-          padding: "9px 0",
-          borderRadius: 9,
+          padding: "7px 0",
+          borderRadius: 8,
           background: isActive
             ? "rgba(167,139,250,0.18)"
             : "rgba(255,255,255,0.04)",
           border: "1px solid rgba(167,139,250,0.3)",
           color: "var(--accent-core)",
-          fontSize: 12,
+          fontSize: 11,
           fontWeight: 500,
           cursor: "pointer",
           transition: "background 0.2s ease, transform 0.15s ease",

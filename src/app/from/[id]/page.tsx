@@ -106,6 +106,7 @@ export default async function FromPage({ params }: Props) {
         <FloatingSearch />
         <BackButton />
         <CosmosClient
+          key={id} // 새로운 우주 진입 시 상태 완벽 초기화 (이전 위성 잔류 방지)
           artistId={id}
           core={prebaked.core}
           initialSatellites={prebaked.satellites}
@@ -132,7 +133,7 @@ export default async function FromPage({ params }: Props) {
     <>
       <FloatingSearch />
       <BackButton />
-      <CosmosClient artistId={id} core={core} deepSpaceNodes={deepSpaceNodes} />
+      <CosmosClient key={id} artistId={id} core={core} deepSpaceNodes={deepSpaceNodes} />
     </>
   );
 }

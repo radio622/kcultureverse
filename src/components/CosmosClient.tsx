@@ -87,14 +87,14 @@ export default function CosmosClient({
       if (index === null) {
         if (data.core.previewUrl) {
           audio.play(data.core.previewUrl, data.core.previewTrackName || data.core.name, data.core.spotifyId);
-          setSheetState("peek"); // 코어 클릭→peek (카드리스트 없이 플레이어만)
+          setSheetState("expanded"); // 코어 클릭 → 즉시 위성 카드들을 볼 수 있게 쫙 폄
         } else {
           fetch(`/api/spotify/preview?name=${encodeURIComponent(data.core.name)}`)
             .then(r => r.json())
             .then(p => {
               if (p.previewUrl) {
                 audio.play(p.previewUrl, p.trackName || data.core.name, data.core.spotifyId);
-                setSheetState("peek");
+                setSheetState("expanded");
               }
             });
         }

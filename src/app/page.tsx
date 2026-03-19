@@ -97,6 +97,7 @@ export default function HomePage() {
 
       {/* 즉시 우주 진입 — API 0회, 애니메이션 즉시 시작 */}
       <CosmosClient
+        key={hub.spotifyId}
         artistId={hub.spotifyId}
         core={cosmosData.core}
         initialSatellites={cosmosData.satellites}
