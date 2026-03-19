@@ -10,8 +10,9 @@
 
 - **가까운 별**은 이름과 이미지가 선명하게 보이고,
 - **먼 별**은 안개에 가려 뿌옇게 보입니다.
-- 화면을 **드래그/스크롤**하면 카메라가 이동하면서, 다가가는 쪽의 별들이 안개를 벗고 서서히 드러납니다.
-- 아티스트 별을 **클릭**하면 즉시 음악이 흘러나오고, 하단에 연관 아티스트 카드가 나타나 옆으로 넘기며 다른 곡들을 미리 들을 수 있습니다.
+- 화면을 **드래그**하면 카메라가 이동하면서, 다가가는 쪽의 별들이 안개를 벗고 서서히 드러납니다 (Dynamic Fog).
+- 아티스트 별을 **클릭**하면 즉시 음악이 흘러나오고, 하단에 연관 아티스트 카드가 나타나 옆으로 넘기며 탐험할 수 있습니다.
+- 카드의 **"이 아티스트의 우주로 →"** 버튼으로 새로운 우주로 다이브하고, **"← 이전"** 버튼으로 돌아올 수 있습니다.
 
 ---
 
@@ -19,11 +20,11 @@
 
 | 영역 | 기술 |
 |------|------|
-| **프레임워크** | Next.js 15 (App Router) |
+| **프레임워크** | Next.js 16 (App Router, Turbopack) |
 | **언어** | TypeScript |
 | **스타일링** | Vanilla CSS + CSS Variables |
-| **애니메이션** | Framer Motion + CSS @keyframes + rAF |
-| **3D/2.5D** | CSS `perspective` + `translateZ` + Dynamic Fog (Three.js 미사용) |
+| **애니메이션** | Framer Motion + CSS @keyframes + rAF (60fps) |
+| **2.5D 효과** | CSS `perspective` + `translateZ` + Dynamic Fog (rAF 실시간) |
 | **데이터** | Pre-baked JSON (외부 API 실시간 의존 0%) |
 | **배포** | Vercel |
 
@@ -34,25 +35,30 @@
 ```
 src/
 ├── app/
-│   ├── page.tsx              ← 홈 (즉시 우주 진입)
-│   ├── from/[id]/page.tsx    ← 아티스트 우주 (서버 컴포넌트)
+│   ├── page.tsx              ← 홈 (즉시 우주 진입, API 0회)
+│   ├── from/[id]/page.tsx    ← 아티스트 우주 (pre-baked 우선)
 │   ├── admin/page.tsx        ← Admin 아티스트 관리
+│   ├── not-found.tsx         ← 커스텀 404 (우주 테마)
+│   ├── error.tsx             ← 전역 에러 페이지
 │   └── api/
 │       ├── admin/add-artist/ ← CLI 스크립트 연동
-│       ├── cosmos/[id]/      ← 위성 데이터 (캐시 헤더 적용)
+│       ├── cosmos/[id]/      ← 위성 데이터 (캐시 헤더)
 │       └── spotify/          ← 검색/미리듣기/상세
 ├── components/
-│   ├── Cosmos.tsx            ← 2.5D 우주 시각화 (Dynamic Fog + Pan)
+│   ├── Cosmos.tsx            ← 2.5D 우주 시각화 (Dynamic Fog + Pan + Inertia)
 │   ├── CosmosClient.tsx      ← 클라이언트 오케스트레이터
 │   ├── CosmosNode.tsx        ← 개별 별 노드
 │   ├── BottomSheet.tsx       ← 3단계 바텀시트 (collapsed/peek/expanded)
 │   ├── ResonanceDeck.tsx     ← 가로 스크롤 캐러셀
-│   ├── ArtistCard.tsx        ← 아티스트 카드
-│   └── MiniPlayer.tsx        ← 미니 플레이어
+│   ├── ArtistCard.tsx        ← 아티스트 카드 (이퀄라이저 오버레이)
+│   ├── MiniPlayer.tsx        ← 미니 플레이어 (파동 인디케이터)
+│   ├── FloatingSearch.tsx    ← 플로팅 검색 (로컬 인덱스 우선)
+│   ├── BackButton.tsx        ← 히스토리 인식 뒤로가기 버튼
+│   └── ErrorBoundary.tsx     ← React 에러 경계
 ├── data/
-│   └── hub-artists.ts        ← 허브 아티스트 마스터 목록 (34명, 컬러 테마 포함)
+│   └── hub-artists.ts        ← 허브 아티스트 마스터 목록 (34명, 컬러 테마)
 ├── hooks/
-│   └── useAudio.ts           ← 오디오 재생 (fadeIn/fadeOut + 자동재생 차단 대응)
+│   └── useAudio.ts           ← 오디오 재생 (fadeIn/fadeOut + 자동재생 대응)
 └── lib/
     ├── spotify.ts            ← Spotify + iTunes fallback
     ├── musicbrainz.ts        ← MusicBrainz 크레딧
@@ -60,12 +66,12 @@ src/
     └── types.ts              ← CosmosArtist, SatelliteNode, CosmosData
 
 scripts/
-├── prebake.ts                ← 안전한 Pre-bake (8초 딜레이, SKIP, 재시작 가능)
+├── prebake.ts                ← Pre-bake (8초 딜레이, SKIP, 재시작 가능)
 └── add-artist.ts             ← CLI 아티스트 추가 (검증→등록→Pre-bake→인덱스)
 
 public/data/
-├── hub/{spotifyId}.json      ← 34개의 Pre-baked 우주 데이터
-└── search-index.json         ← 로컬 검색 인덱스 (37명+)
+├── hub/{spotifyId}.json      ← Pre-baked 우주 데이터
+└── search-index.json         ← 로컬 검색 인덱스
 ```
 
 ---
@@ -123,32 +129,38 @@ http://localhost:3000/admin
 - CLI & Admin 아티스트 추가 자동화
 - Wikidata API 기반 Spotify ID 자동 추출
 
-### 🔲 Step 2: 홈 화면 리디자인
-- 검색창 → 즉시 우주 진입 (API 호출 0회)
-- 산란형(Scatter) 레이아웃으로 자연스러운 별 배치
-- 시간대 기반 테마 아티스트 & 컬러 교체
-- 시네마틱 진입 애니메이션
+### ✅ Step 2: 홈 화면 즉시 우주 진입 (완료)
+- 서버 컴포넌트 전환 → `fs.readFileSync`로 API 0회 즉시 렌더링
+- 산란형(Scatter) 레이아웃 — 시드 기반 결정적 오프셋
+- 시간대 기반 테마 아티스트 & 허브 고유 컬러
+- 플로팅 검색 (로컬 인덱스 우선 → Spotify 최후 5회/분 제한)
 
-### 🔲 Step 3: 2.5D 동적 안개 + 드래그 탐색
-- CSS perspective 기반 깊이감
-- **Dynamic Fog:** 카메라 이동 시 가까운 별이 안개를 벗고 드러남 (rAF 실시간 계산)
-- 드래그 팬 + 관성(inertia) + 배경 별 패럴랙스
+### ✅ Step 3: 2.5D 동적 안개 + 드래그 탐색 (완료)
+- **Dynamic Fog:** 화면 정중앙 기준 실시간 blur/opacity 보간 (카메라 이동 반응)
+- **드래그 팬:** Pointer Events (터치+마우스 통합), PAN_LIMIT ±380px
+- **관성(Inertia):** friction 0.91 자연 감속
+- **패럴랙스 별:** near/mid/far 3레이어 속도 차등
+- **Vignette:** 화면 가장자리 어두운 그라데이션
 
-### 🔲 Step 4: 바텀시트 + 음악 UX
-- 3단계 바텀시트 (collapsed/peek/expanded)
-- 별 클릭 → 음악 재생 + 카드 스크롤 + 카메라 이동 동시 발생
-- 캐러셀 스와이프 시 크로스페이드 곡 전환
+### ✅ Step 4: 바텀시트 + 음악 UX (완료)
+- **3단계 바텀시트:** collapsed(숨김) / peek(72px 미니플레이어) / expanded(55vh 카드)
+- 별 클릭 → 즉시 음악 재생 + expanded 전환 동시 발생
+- **ArtistCard:** 활성 시 이퀄라이저 파동 오버레이 + accent 줄
+- **MiniPlayer:** "탭하면 관련 아티스트 보기" 힌트, 4개 파동 바
+- 우주 push-up: peek -36px / expanded -110px
 
-### 🔲 Step 5: 닫힌 우주 탐험 + 안전장치
-- Dive: pre-baked 아티스트만 우주 전환 (실시간 API 0회)
-- 히스토리 스택 + 뒤로가기
-- 에러 경계 + 이미지 fallback
+### ✅ Step 5: 닫힌 우주 탐험 + 안전장치 (완료)
+- **ErrorBoundary:** 전역 에러 경계 (레이아웃에 적용)
+- **커스텀 404/500 페이지:** 우주 테마 UI + "우주로 돌아가기" 버튼
+- **BackButton:** 히스토리 인식 뒤로가기 (직접 방문 시 홈으로 fallback)
+- **from/[id]:** pre-baked JSON 우선 → Spotify fallback → 404 순서
+- **이미지 도메인 확장:** Last.fm, Discogs, Wikimedia 추가
 
 ---
 
 ## 🏗 아키텍처 원칙
 
-### 방어적 데이터 전략
+### 방어적 데이터 전략 (Closed Universe)
 ```
 Pre-bake 파이프라인 (오프라인, 안전하게):
   CLI/Admin → getArtistFull() → public/data/hub/{id}.json
@@ -157,9 +169,9 @@ Pre-bake 파이프라인 (오프라인, 안전하게):
 런타임 (유저 접속 시):
   홈 접속   → fs.readFile(JSON) → 즉시 렌더링 (외부 API 0회)
   별 탐험   → CSS translate + Dynamic Fog (60fps GPU 가속)
-  별 클릭   → useAudio.play() (API 0회)
-  Dive     → fetch(/data/hub/{id}.json) → 200이면 전환, 404이면 Spotify 링크
-  검색      → 로컬 인덱스 우선 → Spotify는 최후 수단 (분당 5회 제한)
+  별 클릭   → useAudio.play() + BottomSheet expanded
+  Dive     → pre-baked JSON 우선 → Spotify fallback → 404
+  검색      → 로컬 인덱스 우선 → Spotify 최후 수단 (분당 5회 제한)
 ```
 
 > **Spotify가 완전히 서비스를 중단해도, 이 사이트는 정상 운영됩니다.**
@@ -193,6 +205,19 @@ Pre-bake 파이프라인 (오프라인, 안전하게):
 | 힙합/크로스오버 | 지코, 박재범, 에픽하이, 윤미래, 비비, pH-1 |
 | K-인디 | 혁오, 검정치마, 백아, 가을방학, 언니네이발관, 한로로, 넬, 라이너스의 담요, 델리스파이스, Through the Sloe, 줄리아하트, 브로콜리너마저, 헤이즈 |
 | 레전드 | 서태지, 빅뱅, 박진영, 악동뮤지션, 윤상, 토이, 이박사 |
+
+---
+
+## 📝 개발 진행 기록
+
+| 날짜 | 작업 |
+|------|------|
+| 2026-03-18 | 초기 세팅, Spotify/MusicBrainz 연동, Pre-bake 파이프라인 구축 |
+| 2026-03-18 | Admin 패널, CLI 추가 스크립트, 아티스트 34명 확대 |
+| 2026-03-19 | 홈 즉시 우주 진입, Scatter 레이아웃, 플로팅 검색 (Step 2) |
+| 2026-03-19 | Dynamic Fog, 드래그 팬, 관성, 패럴랙스, Vignette (Step 3) |
+| 2026-03-19 | 3단계 BottomSheet, 음악 재생 UX, ArtistCard 이퀄라이저 (Step 4) |
+| 2026-03-19 | ErrorBoundary, 404/500, BackButton, 이미지 도메인 확장 (Step 5) |
 
 ---
 
