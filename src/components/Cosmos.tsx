@@ -78,7 +78,7 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
   const universeRef    = useRef<HTMLDivElement>(null);
   
   // 카메라 워프 타겟 (심우주 다이브 시 부드러운 패닝용)
-  const warpTargetRef = useRef<{ x: number, y: number, id: string, done: boolean } | null>(null);
+  const warpTargetRef = useRef<{ x: number, y: number, id: string, done: boolean, progress?: number } | null>(null);
 
   const satelliteRefs  = useRef<(HTMLDivElement | null)[]>([]);
   const deepSpaceRefs  = useRef<(HTMLDivElement | null)[]>([]);
@@ -217,6 +217,17 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
       const camX = camera.current.x;
       const camY = camera.current.y;
 
+      // ── 페이드 애니메이션 (마운트인 & 다이브아웃) ──────────────
+      let warpProgress = 0;
+      let targetId: string | null = null;
+      if (warpTargetRef.current && !warpTargetRef.current.done) {
+        warpTargetRef.current.progress = Math.min(1, (warpTargetRef.current.progress || 0) + 0.015); // 약 1초 동안 1도달
+        warpProgress = warpTargetRef.current.progress;
+        targetId = warpTargetRef.current.id;
+      }
+      const mountElapsed = now - startTimeRef.current;
+      const mountFade = Math.min(1, mountElapsed / 1000); // 1초 동안 1로 페이드인
+
       // ── 우주 레이어 전체를 카메라 오프셋만큼 이동 ───────
       const uni = universeRef.current;
       if (uni) {
@@ -269,6 +280,14 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
 
         const isFocused = focusedIndex === i;
         const scale     = isFocused ? 1.35 : 1;
+        let finalOpacity = isFocused ? 1 : opacity;
+
+        // 마운트 시 서서히 나타나는 효과 (기존 코어는 그대로 두고 위성들만 스르륵 나타남)
+        finalOpacity *= mountFade;
+        // 다이브 페이드아웃 효과 (워프 대상은 남고 나머지는 서서히 사라짐)
+        if (targetId && data.satellites[i].spotifyId !== targetId) {
+          finalOpacity *= (1 - warpProgress);
+        }
 
         // ── DOM 직접 조작 (React 리렌더 없이 60fps 유지) ────
         // 위성 노드는 universeRef 내부에 있으므로, camX/camY가 이미 반영됨
@@ -276,7 +295,7 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
         el.style.transform = `translate(calc(${cw + worldX}px - 50%), calc(${ch + worldY}px - 50%)) scale(${scale})`;
         el.style.zIndex    = isFocused ? "10" : "5";
         el.style.filter    = isFocused ? "none" : `blur(${blur.toFixed(2)}px)`;
-        el.style.opacity   = isFocused ? "1" : opacity.toFixed(3);
+        el.style.opacity   = finalOpacity.toFixed(3);
 
         // 이름 라벨: blur 심하면 숨김
         const label = el.querySelector<HTMLElement>("[data-label]");
@@ -298,13 +317,18 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
 
           const dist = Math.hypot(screenX - cw, screenY - ch);
           const t    = Math.max(0, Math.min(1, (dist - DEEP_FOG_CLEAR) / (DEEP_FOG_FULL - DEEP_FOG_CLEAR)));
-          const opacity = 1 - t * (1 - DEEP_FOG_ALPHA);
+          let finalOpacity = 1 - t * (1 - DEEP_FOG_ALPHA);
 
-          el.style.opacity = opacity.toFixed(3);
+          finalOpacity *= mountFade;
+          if (targetId && node.spotifyId !== targetId) {
+            finalOpacity *= (1 - warpProgress);
+          }
+
+          el.style.opacity = finalOpacity.toFixed(3);
 
           // 이름 라벨: 멀면 숨김
           const label = el.querySelector<HTMLElement>("[data-deep-label]");
-          if (label) label.style.display = opacity < 0.35 ? "none" : "";
+          if (label) label.style.display = finalOpacity < 0.35 ? "none" : "";
         });
       }
     }
