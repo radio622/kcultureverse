@@ -84,6 +84,11 @@ export default function CosmosClient({
 
       // ── 코어 클릭 ──────────────────────────────────────────
       if (index === null) {
+        if (focusedIndex === null) {
+          // 이미 코어 포커스 상태라면 바텀시트 토글
+          setSheetState(prev => prev === "expanded" ? "collapsed" : "expanded");
+          return;
+        }
         if (data.core.previewUrl) {
           audio.play(data.core.previewUrl, data.core.previewTrackName || data.core.name, data.core.spotifyId);
           setSheetState("expanded"); // 코어 클릭 → 즉시 위성 카드들을 볼 수 있게 쫙 폄

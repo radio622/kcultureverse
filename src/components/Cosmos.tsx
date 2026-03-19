@@ -438,7 +438,26 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
               size={focusedIndex === i ? 58 : 46}
               isCore={false}
               isFocused={focusedIndex === i}
-              onClick={() => onSatelliteTap(i)}
+              onClick={() => {
+                if (focusedIndex === i) {
+                  if (warpTargetRef.current) return;
+                  // 현재 시점의 궤도 상 위치(worldX, worldY) 역산하여 워프 다이브 타겟 설정
+                  const elapsed = Date.now() - startTimeRef.current;
+                  const { ringIdx, posInRing } = getRingForIndex(i);
+                  const ring    = RINGS[ringIdx];
+                  const scatter = scatterOffsets[i] ?? { radiusFactor: 1, angleOffset: 0 };
+                  const actualRadius = ring.radius * scatter.radiusFactor;
+                  const baseAngle    = (posInRing / ring.count) * 2 * Math.PI + scatter.angleOffset;
+                  const angle        = baseAngle + elapsed * ring.speed;
+
+                  const worldX = Math.cos(angle) * actualRadius;
+                  const worldY = Math.sin(angle) * actualRadius * 0.5;
+
+                  warpTargetRef.current = { x: -worldX, y: -worldY, id: satellite.spotifyId, done: false };
+                } else {
+                  onSatelliteTap(i);
+                }
+              }}
             />
           </div>
         ))}
