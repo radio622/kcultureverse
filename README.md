@@ -1,84 +1,199 @@
-# 🌌 K-Culture Universe Map (가칭)
+# 🌌 K-Culture Universe Map
 
-## 📌 프로젝트 비전
-K-Culture(음악, 영화, 드라마, 예술 등)를 구성하는 모든 인물들(가수, 배우, 감독, 인플루언서 등)의 **관계망(Connection)**을 시각적으로 탐험할 수 있는 3D 유니버스 맵입니다. 
-구글 어스처럼 광활한 문화를 탐험하며, 아티스트 간의 협업, 접점, 그리고 콘텐츠를 통합적으로 연결하는 궁극의 K-콘텐츠 백과사전이자 탐색 플랫폼을 목표로 합니다.
-
-## 🎯 핵심 기능 (Core Features)
-
-1. **3D 유니버스 관계망 시각화**
-   * 인물을 하나의 '별'이나 '행성'으로 표현하여, 3D 공간에서 돌려가며 탐색
-   * 인물 간의 관계(협업, 소속사, 작품 등)를 '선(Link)'으로 연결
-2. **케빈 베이컨의 6단계 법칙 (Degrees of Separation)**
-   * "배우 A와 가수 B는 몇 단계를 거쳐야 아는 사이가 될까?"
-   * 접점이 없는 두 사람 간의 최단 연결 고리 추적 기능
-3. **콘텐츠 통합 검색 및 OTT 연동**
-   * 흩어진 OTT(Netflix, Tving, Wavve 등), YouTube, Spotify 링크를 하나의 인물/작품 페이지에 통합 제공
-4. **유저 참여형 생태계 (크라우드소싱 & 커뮤니티)**
-   * 유저들이 직접 누락된 관계나 정보를 제안하고 피드백하여 데이터베이스를 성장시킴
-   * 리뷰, 평점, 팬들의 의견 공유 공간 제공
+> K-Culture(음악, 영화, 드라마, 예술)를 구성하는 아티스트들의 **관계 우주**를 시각적으로 탐험하는 인터랙티브 웹 앱.
 
 ---
 
-## 🛠 추천 기술 스택 (Tech Stack)
+## ✨ 핵심 비전
 
-이 프로젝트는 **'관계 데이터(Relationship)'**와 **'3D 시각화'**가 핵심입니다. 따라서 아래의 특화된 기술을 사용하는 것을 강력히 추천합니다.
+사이트에 접속하면, 랜덤으로 선택된 아티스트를 중심으로 수많은 **별(연관 아티스트)**들이 은하수처럼 흩어져 떠 있습니다.
 
-### 1. 프론트엔드 (웹 UI & 3D 시각화)
-* **프레임워크:** **`Next.js (React)`** (빠른 초기 로딩, 뛰어난 SEO로 향후 검색 노출에 매우 유리)
-* **3D 렌더링 & 시각화:** **`Three.js`** + **`React Force Graph 3D`** (수많은 노드(인물)들을 우주처럼 3D로 뿌려주고 시각화하는 데 최적화)
-* **스타일링:** `Tailwind CSS` 또는 순수 `Vanilla CSS` (아름답고 부드러운 애니메이션과 다크모드, 우주 느낌의 테마 적용)
-* **배포 플랫폼:** **`Vercel`** (GitHub과 연동하여 무료 배포 가능, 극강의 호환성)
-
-### 2. 백엔드 & 데이터베이스 (가장 중요 🌟)
-* **데이터베이스:** **`Neo4j` (그래프 데이터베이스)**
-  * *이유:* 일반적인 관계형 데이터베이스(MySQL 등)는 "A와 B가 몇 단계 건너 아는 사이인가?"를 계산할 때 엄청나게 느려집니다. `Neo4j`는 노드(점)와 엣지(선)로 데이터를 저장하여 이 프로젝트에 완벽하게 부합합니다.
-* **백엔드/API:** `Node.js` (또는 수집을 위한 `Python` 스크립트)
-
-### 3. 초기 데이터 수집 (외부 API)
-* 웹 스크래핑 및 무료 API 연동
-  * **영화/드라마:** `TMDb API`, `KOFIC(영화진흥위원회) API`
-  * **음악:** `Spotify API`, `YouTube Data API`
-  * **기본 인물 정보:** `Wikidata`, `나무위키(파싱)`
+- **가까운 별**은 이름과 이미지가 선명하게 보이고,
+- **먼 별**은 안개에 가려 뿌옇게 보입니다.
+- 화면을 **드래그/스크롤**하면 카메라가 이동하면서, 다가가는 쪽의 별들이 안개를 벗고 서서히 드러납니다.
+- 아티스트 별을 **클릭**하면 즉시 음악이 흘러나오고, 하단에 연관 아티스트 카드가 나타나 옆으로 넘기며 다른 곡들을 미리 들을 수 있습니다.
 
 ---
 
-## 🚀 개발 로드맵 (Phased Plan)
+## 🛠 기술 스택
 
-### Phase 1: MVP (Minimum Viable Product) 데이터 구축 및 2D/3D 기초 시각화
-* 핵심 타겟: 음악(아이돌/가수/작곡가) 및 주요 영화/드라마(배우/감독) 
-* TMDb와 Spotify API를 이용해 초기 데이터를 쓸어 담아 Neo4j DB를 구축합니다.
-* 웹상에서 검색하면 인물 간의 관계도(그래프)가 나오고, 협업 횟수 등을 보여줍니다.
-
-### Phase 2: OTT 연동 & 3D 경험 고도화
-* 단순한 연결망을 넘어 '우주' 모드를 도입하여 부드러운 3D 줌인/줌아웃 인터랙션을 추가합니다.
-* 각 작품을 클릭하면 넷플릭스, 티빙 등 바로가기 링크를 제공합니다.
-
-### Phase 3: 유저 참여 기능 (커뮤니티) 도입
-* 소셜 로그인(구글, 카카오 등)을 구현합니다.
-* 유저들이 정보 수정을 요청하거나('A가 B의 뮤직비디오에 까메오로 나왔어요!' 등) 리뷰를 남길 수 있게 합니다.
-
-### Phase 4: 생태계 확장 (인플루언서 / 크리에이터 / 수익화)
-* 유튜버, 인스타그램 인플루언서, 웹툰 작가 등으로 영역을 넓힙니다.
-* 트래픽이 모이면, OTT 가입 제휴 링크, 굿즈/티켓 판매, 광고 등으로 수익모델을 구체화합니다.
+| 영역 | 기술 |
+|------|------|
+| **프레임워크** | Next.js 15 (App Router) |
+| **언어** | TypeScript |
+| **스타일링** | Vanilla CSS + CSS Variables |
+| **애니메이션** | Framer Motion + CSS @keyframes + rAF |
+| **3D/2.5D** | CSS `perspective` + `translateZ` + Dynamic Fog (Three.js 미사용) |
+| **데이터** | Pre-baked JSON (외부 API 실시간 의존 0%) |
+| **배포** | Vercel |
 
 ---
 
-## 📝 진행 상황 및 트러블슈팅 기록 (Known Issues & Future Plans)
+## 📂 프로젝트 구조
 
-### 🚨 현재 당면한 주요 이슈 (Current Issues)
-1. **Spotify API 권한(403) 및 데이터 차단 문제**
-   * 일반적인 Client Credentials 토큰으로 `/artists/{id}/top-tracks` 및 일부 기본 API 접근 시 **403 Forbidden** 에러 및 Rate Limit이 발생하는 현상 확인 (Spotify의 최신 무료 API 정책 제한 또는 앱 승인 이슈 추정).
-   * 현재는 치명적 에러로 UI가 보이지 않는 현상을 막기 위해 **임시 Fallback 맵**과 iTunes API 생존 모드를 사용하여 예외 처리 완료.
-2. **크레딧 기반 관계 추출의 한계 (정밀도 및 파편화)**
-   * MusicBrainz/Genius API에서 피처링, 작곡, 편곡, 믹싱 등 '크레딧' 기반으로 연관성을 추적한 결과, 인디 아티스트(예: 검정치마)의 경우 실제로 믹싱과 프로듀싱을 맡은 **해외 엔지니어/세션 연주자들이 연관 노드로 지나치게 많이 노출**되는 현상 발생.
-   * 기획상 유저가 기대하는 '비슷한 음악을 하는 아티스트'나 '활동 반경이 겹치는 친숙한 연관 아티스트'의 느낌보다는 아티스트 관계도가 너무 전문적으로 파편화되어 표시됨.
+```
+src/
+├── app/
+│   ├── page.tsx              ← 홈 (즉시 우주 진입)
+│   ├── from/[id]/page.tsx    ← 아티스트 우주 (서버 컴포넌트)
+│   ├── admin/page.tsx        ← Admin 아티스트 관리
+│   └── api/
+│       ├── admin/add-artist/ ← CLI 스크립트 연동
+│       ├── cosmos/[id]/      ← 위성 데이터 (캐시 헤더 적용)
+│       └── spotify/          ← 검색/미리듣기/상세
+├── components/
+│   ├── Cosmos.tsx            ← 2.5D 우주 시각화 (Dynamic Fog + Pan)
+│   ├── CosmosClient.tsx      ← 클라이언트 오케스트레이터
+│   ├── CosmosNode.tsx        ← 개별 별 노드
+│   ├── BottomSheet.tsx       ← 3단계 바텀시트 (collapsed/peek/expanded)
+│   ├── ResonanceDeck.tsx     ← 가로 스크롤 캐러셀
+│   ├── ArtistCard.tsx        ← 아티스트 카드
+│   └── MiniPlayer.tsx        ← 미니 플레이어
+├── data/
+│   └── hub-artists.ts        ← 허브 아티스트 마스터 목록 (34명, 컬러 테마 포함)
+├── hooks/
+│   └── useAudio.ts           ← 오디오 재생 (fadeIn/fadeOut + 자동재생 차단 대응)
+└── lib/
+    ├── spotify.ts            ← Spotify + iTunes fallback
+    ├── musicbrainz.ts        ← MusicBrainz 크레딧
+    ├── genius.ts             ← Genius 크레딧
+    └── types.ts              ← CosmosArtist, SatelliteNode, CosmosData
 
-### 🔭 앞으로 해야 할 많은 작업들 (Future Work)
-1. **연관 아티스트 기준(알고리즘) 재정의 및 필터링**
-   * 단순 엔지니어/스태프 크레딧은 가중치를 낮추거나 아예 필터링하고, **장르가 유사하거나 실질적인 음악 콜라보(피처링/공동 작사 등)를 한 주력 아티스트 위주**로 노출되도록 로직 개선 필요.
-2. **안정적인 데이터 소스(API) 및 유저 인증 구조 확보**
-   * Spotify Web API 사용 제한을 극복하기 위해, 서버에서 OAuth 인증을 붙여 우회하거나, 크롤러/대안 API(TMDb, Last.fm 통합 등) 기반으로 전략 수정.
-3. **Neo4j 그래프 DB 본격 연동 (캐싱/저장 아키텍처 전환)**
-   * 현재처럼 화면을 열 때마다 매번 3~4개의 외부 API를 실시간 병렬 호출하는 것은 속도와 Rate Limit 면에서 매우 비효율적임.
-   * 배치 작업(Cron)으로 아티스트 관계 데이터를 사전에 긁어와 우리의 Neo4j 데이터베이스에 **[노드]-[관계]->[노드]** 형태로 미리 예쁘게 정제해 저장해두고, 클라이언트는 오직 Neo4j에서 한 번에 쿼리해오도록 아키텍처 대공사가 필요함.
+scripts/
+├── prebake.ts                ← 안전한 Pre-bake (8초 딜레이, SKIP, 재시작 가능)
+└── add-artist.ts             ← CLI 아티스트 추가 (검증→등록→Pre-bake→인덱스)
+
+public/data/
+├── hub/{spotifyId}.json      ← 34개의 Pre-baked 우주 데이터
+└── search-index.json         ← 로컬 검색 인덱스 (37명+)
+```
+
+---
+
+## 🚀 시작하기
+
+### 1. 설치
+```bash
+npm install
+```
+
+### 2. 환경변수 (.env.local)
+```env
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+GENIUS_ACCESS_TOKEN=your_genius_token
+```
+
+### 3. Pre-bake 데이터 생성
+```bash
+npm run prebake
+```
+> 기존 JSON이 있으면 자동 SKIP. 새 아티스트만 처리합니다. (아티스트 간 8초 대기)
+
+### 4. 개발 서버
+```bash
+npm run dev
+```
+→ `http://localhost:3000` 에서 확인
+
+### 5. 아티스트 추가 (2가지 방법)
+
+**CLI (추천):**
+```bash
+# Spotify 웹에서 아티스트 검색 → URL의 ID 복사
+npm run add-artist -- "아티스트이름" "SpotifyID" "한글이름"
+
+# 예시:
+npm run add-artist -- "Nell" "3WbKkfwmDLgVwR9ExchFVC" "넬"
+```
+> 자동으로: iTunes 교차검증 → 중복검사 → 컬러 생성 → hub-artists.ts 추가 → Pre-bake → 인덱스 갱신
+
+**Admin 페이지:**
+```
+http://localhost:3000/admin
+```
+> 웹 UI에서 이름과 Spotify ID를 입력하면 동일한 파이프라인이 실행됩니다.
+
+---
+
+## 🗺 개발 로드맵
+
+### ✅ Step 1: Pre-bake 데이터 파이프라인 (완료)
+- 34명의 허브 아티스트 Pre-baked JSON 생성
+- CLI & Admin 아티스트 추가 자동화
+- Wikidata API 기반 Spotify ID 자동 추출
+
+### 🔲 Step 2: 홈 화면 리디자인
+- 검색창 → 즉시 우주 진입 (API 호출 0회)
+- 산란형(Scatter) 레이아웃으로 자연스러운 별 배치
+- 시간대 기반 테마 아티스트 & 컬러 교체
+- 시네마틱 진입 애니메이션
+
+### 🔲 Step 3: 2.5D 동적 안개 + 드래그 탐색
+- CSS perspective 기반 깊이감
+- **Dynamic Fog:** 카메라 이동 시 가까운 별이 안개를 벗고 드러남 (rAF 실시간 계산)
+- 드래그 팬 + 관성(inertia) + 배경 별 패럴랙스
+
+### 🔲 Step 4: 바텀시트 + 음악 UX
+- 3단계 바텀시트 (collapsed/peek/expanded)
+- 별 클릭 → 음악 재생 + 카드 스크롤 + 카메라 이동 동시 발생
+- 캐러셀 스와이프 시 크로스페이드 곡 전환
+
+### 🔲 Step 5: 닫힌 우주 탐험 + 안전장치
+- Dive: pre-baked 아티스트만 우주 전환 (실시간 API 0회)
+- 히스토리 스택 + 뒤로가기
+- 에러 경계 + 이미지 fallback
+
+---
+
+## 🏗 아키텍처 원칙
+
+### 방어적 데이터 전략
+```
+Pre-bake 파이프라인 (오프라인, 안전하게):
+  CLI/Admin → getArtistFull() → public/data/hub/{id}.json
+                                  (8초 딜레이, iTunes fallback, 재시작 가능)
+
+런타임 (유저 접속 시):
+  홈 접속   → fs.readFile(JSON) → 즉시 렌더링 (외부 API 0회)
+  별 탐험   → CSS translate + Dynamic Fog (60fps GPU 가속)
+  별 클릭   → useAudio.play() (API 0회)
+  Dive     → fetch(/data/hub/{id}.json) → 200이면 전환, 404이면 Spotify 링크
+  검색      → 로컬 인덱스 우선 → Spotify는 최후 수단 (분당 5회 제한)
+```
+
+> **Spotify가 완전히 서비스를 중단해도, 이 사이트는 정상 운영됩니다.**
+
+### API 리스크 대응 현황
+| API | 현재 상태 | 대응 |
+|-----|----------|------|
+| Spotify Search/Artists | 🔴 403 차단 | iTunes fallback 100% 대체 |
+| MusicBrainz | 🟡 1req/s 제한 | Pre-bake 8초 딜레이 |
+| iTunes Search | 🟢 정상 | 주 데이터 소스 |
+| Genius | 🟡 일부 제한 | 크레딧 보조 데이터 |
+| Wikidata | 🟢 정상 | Spotify ID 자동 추출 |
+
+---
+
+## 🔮 장기 비전
+
+- **Neo4j 그래프 DB 전환:** 아티스트 관계를 그래프 DB에 저장하여 진정한 무한 탐험
+- **LLM 연동 (Gemini Flash / GPT-5 Mini):** 아티스트 관계/컬러 자동 추천
+- **유저 참여:** 관계 제안, 리뷰, 평점 기능
+- **콘텐츠 확장:** 영화, 드라마, 웹툰, 인플루언서까지 영역 확대
+- **수익화:** OTT 제휴 링크, 공연 티켓 연동
+
+---
+
+## 📊 허브 아티스트 현황 (34명)
+
+| 카테고리 | 아티스트 |
+|---------|---------|
+| 대형 아이돌 | BTS, BLACKPINK, 아이유, 소녀시대, 뉴진스, NMIXX, 스트레이 키즈, (여자)아이들 |
+| 힙합/크로스오버 | 지코, 박재범, 에픽하이, 윤미래, 비비, pH-1 |
+| K-인디 | 혁오, 검정치마, 백아, 가을방학, 언니네이발관, 한로로, 넬, 라이너스의 담요, 델리스파이스, Through the Sloe, 줄리아하트, 브로콜리너마저, 헤이즈 |
+| 레전드 | 서태지, 빅뱅, 박진영, 악동뮤지션, 윤상, 토이, 이박사 |
+
+---
+
+*Built with 💜 by Jitigravity — 2026*
