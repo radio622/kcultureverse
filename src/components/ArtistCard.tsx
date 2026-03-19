@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import type { CosmosArtist } from "@/lib/types";
 
@@ -10,9 +11,17 @@ interface Props {
 }
 
 export default function ArtistCard({ artist, isActive, onDive }: Props) {
+  const [imgError, setImgError] = useState(false);
   const displayGenres = artist.genres.slice(0, 2);
   const initial       = artist.name.charAt(0).toUpperCase();
   const hasPreview    = !!artist.previewUrl;
+  const showImage     = !!artist.imageUrl && !imgError;
+
+  // 이름 기반 고유 색상
+  const hue = (artist.name.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0) * 47) % 360;
+  const initialBg    = `hsl(${hue},30%,18%)`;
+  const initialColor = `hsl(${hue},65%,65%)`;
+
 
   return (
     <div
@@ -52,21 +61,22 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
           aspectRatio: "1",
           borderRadius: 10,
           overflow: "hidden",
-          background: "var(--bg-nebula)",
+          background: showImage ? "var(--bg-nebula)" : initialBg,
           position: "relative",
           flexShrink: 0,
         }}
       >
-        {artist.imageUrl ? (
+        {showImage ? (
           <Image
-            src={artist.imageUrl}
+            src={artist.imageUrl!}
             alt={artist.name}
             fill
             style={{ objectFit: "cover" }}
             sizes="212px"
-            onError={() => {/* 이미지 로드 실패 시 fallback은 CSS로 처리 */}}
+            onError={() => setImgError(true)}
           />
         ) : (
+          /* 이미지 없거나 실패 → 이니셜 */
           <div
             style={{
               width: "100%",
@@ -75,8 +85,7 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
               alignItems: "center",
               justifyContent: "center",
               fontSize: 52,
-              color: "var(--accent-core)",
-              background: "rgba(167,139,250,0.08)",
+              color: initialColor,
               fontWeight: 300,
             }}
           >

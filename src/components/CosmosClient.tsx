@@ -248,7 +248,7 @@ export default function CosmosClient({
             </>
           )}
         </svg>
-        <span style={{ fontSize: 12, fontWeight: 500, color: copied ? "#22c55e" : "#a78bfa", whiteSpace: "nowrap" }}>
+        <span className="share-btn-text" style={{ fontSize: 12, fontWeight: 500, color: copied ? "#22c55e" : "#a78bfa", whiteSpace: "nowrap" }}>
           {copied ? "복사됨!" : `${core.name}로부터`}
         </span>
       </button>

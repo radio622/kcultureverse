@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import type { CosmosArtist } from "@/lib/types";
 
@@ -12,6 +13,8 @@ interface Props {
 }
 
 export default function CosmosNode({ artist, size, isCore, isFocused, onClick }: Props) {
+  const [imgError, setImgError] = useState(false);
+
   const glowColor = isCore
     ? "0 0 24px var(--accent-glow), 0 0 48px var(--accent-glow)"
     : isFocused
@@ -19,6 +22,12 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
     : "0 0 8px rgba(167, 139, 250, 0.15)";
 
   const initial = artist.name.charAt(0).toUpperCase();
+  const showImage = !!artist.imageUrl && !imgError;
+
+  // 이니셜 배경 색상을 아티스트 이름 기반으로 결정 (같은 아티스트는 항상 같은 색)
+  const hue = (artist.name.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0) * 47) % 360;
+  const initialBg = `hsl(${hue},35%,20%)`;
+  const initialColor = `hsl(${hue},70%,70%)`;
 
   return (
     <button
@@ -33,7 +42,6 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
         border: "none",
         cursor: "pointer",
         padding: 0,
-        // 터치 타겟 최소 44px
         minWidth: Math.max(size, 44),
         minHeight: Math.max(size, 44),
         justifyContent: "center",
@@ -46,26 +54,33 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
           height: size,
           borderRadius: "50%",
           overflow: "hidden",
-          border: `2px solid ${isCore ? "var(--accent-core)" : isFocused ? "rgba(167,139,250,0.6)" : "rgba(255,255,255,0.15)"}`,
+          border: `2px solid ${
+            isCore
+              ? "var(--accent-core)"
+              : isFocused
+              ? "rgba(167,139,250,0.6)"
+              : "rgba(255,255,255,0.15)"
+          }`,
           boxShadow: glowColor,
           animation: isCore ? "core-pulse 3s ease-in-out infinite" : undefined,
           flexShrink: 0,
           position: "relative",
-          background: "var(--bg-nebula)",
+          background: showImage ? "var(--bg-nebula)" : initialBg,
           transition: "box-shadow 0.3s ease, border-color 0.3s ease",
         }}
       >
-        {artist.imageUrl ? (
+        {showImage ? (
           <Image
-            src={artist.imageUrl}
+            src={artist.imageUrl!}
             alt={artist.name}
             width={size}
             height={size}
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
+            onError={() => setImgError(true)}
             unoptimized={false}
           />
         ) : (
-          // 이미지 없을 때 이니셜 fallback
+          /* 이미지 없거나 실패 → 이니셜 fallback */
           <div
             style={{
               width: "100%",
@@ -74,9 +89,8 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
               alignItems: "center",
               justifyContent: "center",
               fontSize: size * 0.38,
-              fontWeight: 600,
-              color: "var(--accent-core)",
-              background: "rgba(167, 139, 250, 0.1)",
+              fontWeight: 700,
+              color: initialColor,
             }}
           >
             {initial}
@@ -90,7 +104,11 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
         style={{
           fontSize: isCore ? 13 : 10,
           fontWeight: isCore ? 600 : 400,
-          color: isCore ? "var(--text-primary)" : isFocused ? "var(--text-primary)" : "var(--text-secondary)",
+          color: isCore
+            ? "var(--text-primary)"
+            : isFocused
+            ? "var(--text-primary)"
+            : "var(--text-secondary)",
           textAlign: "center",
           maxWidth: size + 20,
           overflow: "hidden",
