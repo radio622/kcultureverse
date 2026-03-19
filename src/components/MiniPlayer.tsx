@@ -78,8 +78,11 @@ export default function MiniPlayer({
           ))}
         </div>
 
-        {/* 트랙명 */}
-        <div style={{ flex: 1, minWidth: 0 }}>
+        {/* 트랙명 (클릭하면 재생/정지 토글) */}
+        <div
+          onClick={(e) => { if (isPlaying) { e.stopPropagation(); onStop(); } }}
+          style={{ flex: 1, minWidth: 0, cursor: isPlaying ? "pointer" : "default" }}
+        >
           <span
             style={{
               fontSize: 12,
@@ -92,12 +95,12 @@ export default function MiniPlayer({
               transition: "color 0.3s ease",
             }}
           >
-            {trackName ?? "재생 준비 중..."}
+            {isPlaying ? "⏸ " : ""}{trackName ?? "재생 준비 중..."}
           </span>
           {/* peek 상태에서 "위로 스와이프" 힌트 */}
           {sheetState === "peek" && (
             <span style={{ fontSize: 10, color: "var(--text-muted)", display: "block", marginTop: 1 }}>
-              탭하면 관련 아티스트 보기
+              {isPlaying ? "탭하면 일시정지" : "탭하면 관련 아티스트 보기"}
             </span>
           )}
         </div>

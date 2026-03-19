@@ -103,6 +103,8 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
 
   // 카메라 오프셋 (camera = 우주 전체가 얼마나 이동했는지)
   const camera = useRef({ x: 0, y: 0 });
+  // 줌 레벨 (1 = 기본, 0.4 = 엀청 축소, 2.5 = 최대 확대)
+  const zoomRef = useRef(1);
   // 드래그 상태
   const drag = useRef({
     active: false,
@@ -113,6 +115,8 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
     velX: 0,
     velY: 0,
   });
+  // 핀치 줌 상태
+  const pinch = useRef({ active: false, startDist: 0, startZoom: 1 });
 
   const stars = useMemo(() => generateStars(200), []);
 
@@ -175,11 +179,53 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
     el.addEventListener("pointerup",   onUp);
     el.addEventListener("pointercancel", onUp);
 
+    // ── 핀치 줌 (터치) + 휠 줌 (마우스) ───────────────────
+    function onTouchStart(e: TouchEvent) {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        const dx = e.touches[0].clientX - e.touches[1].clientX;
+        const dy = e.touches[0].clientY - e.touches[1].clientY;
+        pinch.current.active = true;
+        pinch.current.startDist = Math.hypot(dx, dy);
+        pinch.current.startZoom = zoomRef.current;
+        drag.current.active = false; // 드래그 중단
+      }
+    }
+    function onTouchMove(e: TouchEvent) {
+      if (e.touches.length === 2 && pinch.current.active) {
+        e.preventDefault();
+        const dx = e.touches[0].clientX - e.touches[1].clientX;
+        const dy = e.touches[0].clientY - e.touches[1].clientY;
+        const dist = Math.hypot(dx, dy);
+        const scale = dist / pinch.current.startDist;
+        zoomRef.current = Math.max(0.4, Math.min(2.5, pinch.current.startZoom * scale));
+      }
+    }
+    function onTouchEnd(e: TouchEvent) {
+      if (e.touches.length < 2) {
+        pinch.current.active = false;
+      }
+    }
+    function onWheel(e: WheelEvent) {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? 0.92 : 1.08; // 스크롤 다운 = 축소, 업 = 확대
+      zoomRef.current = Math.max(0.4, Math.min(2.5, zoomRef.current * delta));
+    }
+
+    el.addEventListener("touchstart", onTouchStart, { passive: false });
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    el.addEventListener("touchend", onTouchEnd);
+    el.addEventListener("wheel", onWheel, { passive: false });
+
     return () => {
       el.removeEventListener("pointerdown", onDown);
       el.removeEventListener("pointermove", onMove);
       el.removeEventListener("pointerup",   onUp);
       el.removeEventListener("pointercancel", onUp);
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("wheel", onWheel);
     };
   }, []);
 
@@ -244,10 +290,11 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
       const mountElapsed = Math.max(0, now - startTimeRef.current);
       const mountFade = Math.min(1, mountElapsed / 1000); // 1초 동안 1로 페이드인
 
-      // ── 우주 레이어 전체를 카메라 오프셋만큼 이동 ───────
+      // ── 우주 레이어 전체를 카메라 오프셋 + 줌 적용 ──────
+      const zoom = zoomRef.current;
       const uni = universeRef.current;
       if (uni) {
-        uni.style.transform = `translate(${camX}px, ${camY}px)`;
+        uni.style.transform = `translate(${camX}px, ${camY}px) scale(${zoom})`;
       }
 
       // ── 패럴랙스 별 이동 ──────────────────────────────────
