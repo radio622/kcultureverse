@@ -12,6 +12,7 @@ import path from "path";
 import type { Metadata } from "next";
 import { pickHubArtist } from "@/data/hub-artists";
 import type { CosmosData } from "@/lib/types";
+import { buildDeepSpaceNodes } from "@/lib/deep-space";
 import CosmosClient from "@/components/CosmosClient";
 import FloatingSearch from "@/components/FloatingSearch";
 
@@ -53,6 +54,9 @@ export default function HomePage() {
     };
   }
 
+  // 3. 심우주 노드 생성 (현재 코어 제외한 나머지 허브 아티스트들)
+  const deepSpaceNodes = buildDeepSpaceNodes(hub.spotifyId);
+
   return (
     <>
       {/* 허브 아티스트의 고유 컬러 CSS 변수 주입 */}
@@ -75,6 +79,7 @@ export default function HomePage() {
         initialSatellites={cosmosData.satellites}
         hubColor={hub.accent}
         introName={hub.nameKo}
+        deepSpaceNodes={deepSpaceNodes}
       />
     </>
   );

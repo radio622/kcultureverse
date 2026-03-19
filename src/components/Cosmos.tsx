@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useMemo } from "react";
-import type { CosmosData } from "@/lib/types";
+import type { CosmosData, DeepSpaceNode } from "@/lib/types";
 import CosmosNode from "./CosmosNode";
 
 interface Props {
@@ -9,6 +9,9 @@ interface Props {
   focusedIndex: number | null;
   onCoreTap: () => void;
   onSatelliteTap: (index: number) => void;
+  /** 심우주 노드 (먼 배경에 흐릿하게 보이는 다른 허브 아티스트들) */
+  deepSpaceNodes?: DeepSpaceNode[];
+  onDeepSpaceTap?: (spotifyId: string) => void;
 }
 
 // ── 궤도 링 설정 (Step 3: 반경 확대로 광활한 우주 공간) ──────────
@@ -56,22 +59,28 @@ function getRingForIndex(index: number): { ringIdx: number; posInRing: number } 
   return { ringIdx: RINGS.length - 1, posInRing: index - (acc - RINGS[RINGS.length - 1].count) };
 }
 
-// ── Dynamic Fog 상수 ────────────────────────────────────────────
-const FOG_CLEAR  = 160;   // 이 반경 안쪽은 완전 선명
-const FOG_FULL   = 500;   // 이 반경 바깥은 최대 흐림
-const FOG_BLUR   = 5;     // 최대 blur (px)
-const FOG_ALPHA  = 0.25;  // 최소 opacity
+// ── Dynamic Fog 상수 (기존 위성용) ───────────────────────────────
+const FOG_CLEAR  = 160;
+const FOG_FULL   = 500;
+const FOG_BLUR   = 5;
+const FOG_ALPHA  = 0.25;
 
-// ── 카메라 이동 경계 (코어 노드가 화면에서 완전히 사라지지 않도록)
-const PAN_LIMIT  = 380;
+// ── 심우주 Fog 상수 (더 넓은 범위) ────────────────────────
+const DEEP_FOG_CLEAR = 200;
+const DEEP_FOG_FULL  = 900;
+const DEEP_FOG_ALPHA = 0.08; // 심우주는 더 희미하게
 
-export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap }: Props) {
-  const containerRef  = useRef<HTMLDivElement>(null);
-  const universeRef   = useRef<HTMLDivElement>(null); // 드래그되는 우주 레이어
-  const satelliteRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const starRefs      = useRef<(HTMLDivElement | null)[]>([]);
-  const animFrameRef  = useRef<number>(0);
-  const startTimeRef  = useRef<number>(Date.now());
+// ── 카메라 이동 경계 (PAN_LIMIT 확대: 380 → 1200)
+const PAN_LIMIT  = 1200;
+
+export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, deepSpaceNodes = [], onDeepSpaceTap }: Props) {
+  const containerRef   = useRef<HTMLDivElement>(null);
+  const universeRef    = useRef<HTMLDivElement>(null);
+  const satelliteRefs  = useRef<(HTMLDivElement | null)[]>([]);
+  const deepSpaceRefs  = useRef<(HTMLDivElement | null)[]>([]);
+  const starRefs       = useRef<(HTMLDivElement | null)[]>([]);
+  const animFrameRef   = useRef<number>(0);
+  const startTimeRef   = useRef<number>(Date.now());
 
   // 카메라 오프셋 (camera = 우주 전체가 얼마나 이동했는지)
   const camera = useRef({ x: 0, y: 0 });
@@ -86,7 +95,7 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap }
     velY: 0,
   });
 
-  const stars = useMemo(() => generateStars(100), []);
+  const stars = useMemo(() => generateStars(200), []);
 
   // 위성별 결정적 오프셋 (시드 기반)
   const scatterOffsets = useMemo(() =>
@@ -254,11 +263,36 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap }
         const label = el.querySelector<HTMLElement>("[data-label]");
         if (label) label.style.display = blur > 2.8 ? "none" : "";
       });
+      // ── 심우주 노드 Dynamic Fog (4프레임당 1회 업데이트 — 성능 최적화)
+      const deepFrame = Math.floor(now / (INTERVAL * 4));
+      if (deepFrame !== (animate as any).__lastDeepFrame) {
+        (animate as any).__lastDeepFrame = deepFrame;
+
+        deepSpaceNodes.forEach((node, i) => {
+          const el = deepSpaceRefs.current[i];
+          if (!el) return;
+
+          // 심우주 노드는 universeRef 내부에 있으므로 camX/camY가 이미 반영됨
+          // 실제 화면 좌표: 우주 원점(cw,ch) + 노드 오프셋 + 카메라 오프셋
+          const screenX = cw + node.x + camX;
+          const screenY = ch + node.y + camY;
+
+          const dist = Math.hypot(screenX - cw, screenY - ch);
+          const t    = Math.max(0, Math.min(1, (dist - DEEP_FOG_CLEAR) / (DEEP_FOG_FULL - DEEP_FOG_CLEAR)));
+          const opacity = 1 - t * (1 - DEEP_FOG_ALPHA);
+
+          el.style.opacity = opacity.toFixed(3);
+
+          // 이름 라벨: 멀면 숨김
+          const label = el.querySelector<HTMLElement>("[data-deep-label]");
+          if (label) label.style.display = opacity < 0.35 ? "none" : "";
+        });
+      }
     }
 
     animFrameRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animFrameRef.current);
-  }, [data.satellites, focusedIndex, scatterOffsets, stars]);
+  }, [data.satellites, focusedIndex, scatterOffsets, stars, deepSpaceNodes]);
 
   return (
     <div
@@ -389,6 +423,64 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap }
             />
           </div>
         ))}
+
+        {/* ── 심우주 노드 (경량 div — next/image 없이 이니셜+CSS만) ─ */}
+        {deepSpaceNodes.map((node, i) => {
+          const initial = node.name.charAt(0);
+          const hue = (node.name.split("").reduce((a, c) => a + c.charCodeAt(0), 0) * 47) % 360;
+          return (
+            <div
+              key={`ds-${node.spotifyId}`}
+              ref={(el) => { deepSpaceRefs.current[i] = el; }}
+              onClick={() => node.canDive && onDeepSpaceTap?.(node.spotifyId)}
+              style={{
+                position: "absolute",
+                left: `calc(50% + ${node.x}px)`,
+                top:  `calc(50% + ${node.y}px)`,
+                transform: "translate(-50%, -50%)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 4,
+                willChange: "opacity",
+                cursor: node.canDive ? "pointer" : "default",
+                opacity: 0, // rAF가 초기값 설정
+              }}
+            >
+              {/* 원형 이니셜 */}
+              <div style={{
+                width: node.size,
+                height: node.size,
+                borderRadius: "50%",
+                background: `hsl(${hue},30%,18%)`,
+                border: `1px solid ${node.accent}50`,
+                boxShadow: `0 0 ${node.size / 2}px ${node.accent}20`,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: node.size * 0.4,
+                fontWeight: 600,
+                color: node.accent,
+              }}>
+                {initial}
+              </div>
+              {/* 이름 라벨 */}
+              <span
+                data-deep-label="true"
+                style={{
+                  fontSize: 9,
+                  color: `${node.accent}aa`,
+                  whiteSpace: "nowrap",
+                  maxWidth: node.size + 30,
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
+              >
+                {node.name}
+              </span>
+            </div>
+          );
+        })}
       </div>
 
       {/* ── 화면 가장자리 안개 그라데이션 (vignette) ───────── */}

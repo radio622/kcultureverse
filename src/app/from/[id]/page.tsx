@@ -20,6 +20,7 @@ import { getArtistCore } from "@/lib/spotify";
 import CosmosClient from "@/components/CosmosClient";
 import FloatingSearch from "@/components/FloatingSearch";
 import BackButton from "@/components/BackButton";
+import { buildDeepSpaceNodes } from "@/lib/deep-space";
 import type { CosmosData } from "@/lib/types";
 
 interface Props {
@@ -87,6 +88,7 @@ export default async function FromPage({ params }: Props) {
   } catch { /* JSON 없음 → 2번으로 */ }
 
   if (prebaked) {
+    const deepSpaceNodes = buildDeepSpaceNodes(id);
     return (
       <>
         <FloatingSearch />
@@ -95,6 +97,7 @@ export default async function FromPage({ params }: Props) {
           artistId={id}
           core={prebaked.core}
           initialSatellites={prebaked.satellites}
+          deepSpaceNodes={deepSpaceNodes}
         />
       </>
     );
@@ -111,11 +114,13 @@ export default async function FromPage({ params }: Props) {
 
   if (!core) notFound();
 
+  const deepSpaceNodes = buildDeepSpaceNodes(id);
+
   return (
     <>
       <FloatingSearch />
       <BackButton />
-      <CosmosClient artistId={id} core={core} />
+      <CosmosClient artistId={id} core={core} deepSpaceNodes={deepSpaceNodes} />
     </>
   );
 }

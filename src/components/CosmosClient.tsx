@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
-import type { CosmosArtist, CosmosData, SatelliteNode } from "@/lib/types";
+import { useRouter } from "next/navigation";
+import type { CosmosArtist, CosmosData, SatelliteNode, DeepSpaceNode } from "@/lib/types";
 import Cosmos from "./Cosmos";
 import BottomSheet, { type SheetState } from "./BottomSheet";
 import ResonanceDeck from "./ResonanceDeck";
@@ -11,12 +12,11 @@ import { useAudio } from "@/hooks/useAudio";
 interface Props {
   artistId: string;
   core: CosmosArtist;
-  /** 홈에서 pre-baked JSON을 넘겨받으면 /api/cosmos fetch를 건너뜀 */
   initialSatellites?: SatelliteNode[];
-  /** 허브 주제색 */
   hubColor?: string;
-  /** 인트로 텍스트 표시용 */
   introName?: string;
+  /** 심우주 노드 (다른 허브 아티스트 배경) */
+  deepSpaceNodes?: DeepSpaceNode[];
 }
 
 export default function CosmosClient({
@@ -25,7 +25,9 @@ export default function CosmosClient({
   initialSatellites,
   hubColor,
   introName,
+  deepSpaceNodes = [],
 }: Props) {
+  const router = useRouter();
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
   // ── 3단계 바텀시트 상태 ─────────────────────────────────────
   const [sheetState, setSheetState] = useState<SheetState>("collapsed");
@@ -208,6 +210,8 @@ export default function CosmosClient({
           focusedIndex={focusedIndex}
           onCoreTap={() => handleFocus(null)}
           onSatelliteTap={handleFocus}
+          deepSpaceNodes={deepSpaceNodes}
+          onDeepSpaceTap={(spotifyId) => router.push(`/from/${spotifyId}`)}
         />
       </div>
 

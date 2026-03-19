@@ -34,3 +34,14 @@ export interface AudioState {
   currentArtistId: string | null;
   progress: number;              // 0~1
 }
+
+/** 심우주(Deep Space) 경량 노드 — 먼 곳에 보이는 다른 허브 아티스트 */
+export interface DeepSpaceNode {
+  spotifyId: string;
+  name: string;           // nameKo (한글)
+  accent: string;         // 허브 고유 컬러
+  x: number;              // 사전 계산된 화면 좌표 (px, 중심 기준)
+  y: number;
+  size: number;           // 노드 크기 (20~34px)
+  canDive: boolean;       // pre-baked JSON이 있어 다이브 가능한지
+}
