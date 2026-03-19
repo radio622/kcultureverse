@@ -70,8 +70,23 @@ const DEEP_FOG_CLEAR = 200;
 const DEEP_FOG_FULL  = 900;
 const DEEP_FOG_ALPHA = 0.08; // 심우주는 더 희미하게
 
-// ── 카메라 이동 경계 (PAN_LIMIT 확대: 380 → 1200)
-const PAN_LIMIT  = 1200;
+// ── 무한 루프 우주 (Torus Topology) ─────────────────────────────
+const UNIVERSE_W = 4000;   // 우주 가로 크기: x ∈ [-2000, +2000)
+const UNIVERSE_H = 3000;   // 우주 세로 크기: y ∈ [-1500, +1500)
+
+/** 좌표를 [-half, +half) 범위로 순환 (모듈러 래핑) */
+function wrap(val: number, half: number): number {
+  const size = half * 2;
+  return ((val + half) % size + size) % size - half;
+}
+
+/** Torus 공간에서 from → to 최단 이동량 반환 */
+function shortestDelta(from: number, to: number, half: number): number {
+  const size = half * 2;
+  let d = ((to - from) % size + size) % size;
+  if (d > half) d -= size;
+  return d;
+}
 
 export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, deepSpaceNodes = [], onDeepSpaceTap }: Props) {
   const containerRef   = useRef<HTMLDivElement>(null);
@@ -144,8 +159,8 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
       drag.current.lastX = e.clientX;
       drag.current.lastY = e.clientY;
 
-      camera.current.x = clamp(e.clientX - drag.current.startX, -PAN_LIMIT, PAN_LIMIT);
-      camera.current.y = clamp(e.clientY - drag.current.startY, -PAN_LIMIT, PAN_LIMIT);
+      camera.current.x = e.clientX - drag.current.startX;
+      camera.current.y = e.clientY - drag.current.startY;
     }
 
     function onUp() {
@@ -193,8 +208,8 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
       if (warpTargetRef.current) {
         // 워프 타겟이 설정되면 관성을 무시하고 해당 방향으로 카메라를 부드럽게 끌어당김
         const wt = warpTargetRef.current;
-        const dx = wt.x - camera.current.x;
-        const dy = wt.y - camera.current.y;
+        const dx = shortestDelta(camera.current.x, wt.x, UNIVERSE_W / 2);
+        const dy = shortestDelta(camera.current.y, wt.y, UNIVERSE_H / 2);
         
         // 거리에 비례하여 이동 (점점 느려지는 ease-out 곡선, 속도를 조금 줄여 우아하게)
         camera.current.x += dx * 0.035;
@@ -210,8 +225,8 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
         if (speed > 0.3) {
           drag.current.velX *= FRICTION;
           drag.current.velY *= FRICTION;
-          camera.current.x = clamp(camera.current.x + drag.current.velX, -PAN_LIMIT, PAN_LIMIT);
-          camera.current.y = clamp(camera.current.y + drag.current.velY, -PAN_LIMIT, PAN_LIMIT);
+          camera.current.x += drag.current.velX;
+          camera.current.y += drag.current.velY;
         }
       }
 
@@ -311,12 +326,13 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
           const el = deepSpaceRefs.current[i];
           if (!el) return;
 
-          // 심우주 노드는 universeRef 내부에 있으므로 camX/camY가 이미 반영됨
-          // 실제 화면 좌표: 우주 원점(cw,ch) + 노드 오프셋 + 카메라 오프셋
-          const screenX = cw + node.x + camX;
-          const screenY = ch + node.y + camY;
+          // Torus 래핑: 카메라 기준 상대 위치를 우주 범위 안으로 순환
+          const relX = wrap(node.x + camX, UNIVERSE_W / 2);
+          const relY = wrap(node.y + camY, UNIVERSE_H / 2);
+          const screenX = cw + relX;
+          const screenY = ch + relY;
 
-          const dist = Math.hypot(screenX - cw, screenY - ch);
+          const dist = Math.hypot(relX, relY);
           const t    = Math.max(0, Math.min(1, (dist - DEEP_FOG_CLEAR) / (DEEP_FOG_FULL - DEEP_FOG_CLEAR)));
           let finalOpacity = 1 - t * (1 - DEEP_FOG_ALPHA);
 
@@ -326,6 +342,8 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
           }
 
           el.style.opacity = finalOpacity.toFixed(3);
+          // Torus: 래핑된 좌표로 위치 동적 갱신 (universeRef 밖이므로 직접 배치)
+          el.style.transform = `translate(calc(${screenX}px - 50%), calc(${screenY}px - 50%))`;
 
           // 이름 라벨: 멀면 숨김
           const label = el.querySelector<HTMLElement>("[data-deep-label]");
@@ -486,72 +504,69 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
             />
           </div>
         ))}
+      </div>
 
-        {/* ── 심우주 노드 (경량 div — next/image 없이 이니셜+CSS만) ─ */}
-        {deepSpaceNodes.map((node, i) => {
-          const initial = node.name.charAt(0);
-          const hue = (node.name.split("").reduce((a, c) => a + c.charCodeAt(0), 0) * 47) % 360;
-          return (
-            <button
-              key={`ds-${node.spotifyId}`}
-              ref={(el) => { deepSpaceRefs.current[i] = el as unknown as HTMLDivElement; }}
-              onClick={() => {
-                if (warpTargetRef.current) return;
-                // 바로 이동하지 않고 warpTarget을 지정하여 rAF에서 부드럽게 패닝되도록 함
-                warpTargetRef.current = { x: -node.x, y: -node.y, id: node.spotifyId, done: false };
-              }}
+      {/* ── 심우주 노드 (universeRef 밖 — Torus 래핑으로 위치 동적 갱신) ─ */}
+      {deepSpaceNodes.map((node, i) => {
+        const initial = node.name.charAt(0);
+        const hue = (node.name.split("").reduce((a, c) => a + c.charCodeAt(0), 0) * 47) % 360;
+        return (
+          <button
+            key={`ds-${node.spotifyId}`}
+            ref={(el) => { deepSpaceRefs.current[i] = el as unknown as HTMLDivElement; }}
+            onClick={() => {
+              if (warpTargetRef.current) return;
+              warpTargetRef.current = { x: -node.x, y: -node.y, id: node.spotifyId, done: false };
+            }}
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 4,
+              willChange: "transform, opacity",
+              cursor: "pointer",
+              opacity: 0,
+              background: "none",
+              border: "none",
+              padding: 0,
+              zIndex: 3,
+            }}
+          >
+            <div style={{
+              width: node.size,
+              height: node.size,
+              borderRadius: "50%",
+              background: node.imageUrl ? `url(${node.imageUrl}) center/cover no-repeat` : `hsl(${hue},30%,18%)`,
+              border: `1px solid ${node.accent}50`,
+              boxShadow: `0 0 ${node.size / 2}px ${node.accent}20`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: node.size * 0.4,
+              fontWeight: 600,
+              color: node.accent,
+            }}>
+              {!node.imageUrl && initial}
+            </div>
+            <span
+              data-deep-label="true"
               style={{
-                position: "absolute",
-                left: `calc(50% + ${node.x}px)`,
-                top:  `calc(50% + ${node.y}px)`,
-                transform: "translate(-50%, -50%)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 4,
-                willChange: "opacity",
-                cursor: "pointer",
-                opacity: 0,
-                background: "none",
-                border: "none",
-                padding: 0,
+                fontSize: 9,
+                color: `${node.accent}aa`,
+                whiteSpace: "nowrap",
+                maxWidth: node.size + 30,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
               }}
             >
-              {/* 원형 이니셜 또는 사진 */}
-              <div style={{
-                width: node.size,
-                height: node.size,
-                borderRadius: "50%",
-                background: node.imageUrl ? `url(${node.imageUrl}) center/cover no-repeat` : `hsl(${hue},30%,18%)`,
-                border: `1px solid ${node.accent}50`,
-                boxShadow: `0 0 ${node.size / 2}px ${node.accent}20`,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: node.size * 0.4,
-                fontWeight: 600,
-                color: node.accent,
-              }}>
-                {!node.imageUrl && initial}
-              </div>
-              {/* 이름 라벨 */}
-              <span
-                data-deep-label="true"
-                style={{
-                  fontSize: 9,
-                  color: `${node.accent}aa`,
-                  whiteSpace: "nowrap",
-                  maxWidth: node.size + 30,
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {node.name}
-              </span>
-            </button>
-          );
-        })}
-      </div>
+              {node.name}
+            </span>
+          </button>
+        );
+      })}
 
       {/* ── 화면 가장자리 안개 그라데이션 (vignette) ───────── */}
       <div
