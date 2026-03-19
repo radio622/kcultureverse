@@ -21,6 +21,7 @@ import CosmosClient from "@/components/CosmosClient";
 import FloatingSearch from "@/components/FloatingSearch";
 import BackButton from "@/components/BackButton";
 import { buildDeepSpaceNodes } from "@/lib/deep-space";
+import { HUB_ARTISTS } from "@/data/hub-artists";
 import type { CosmosData } from "@/lib/types";
 
 interface Props {
@@ -85,6 +86,17 @@ export default async function FromPage({ params }: Props) {
     const filePath = path.join(process.cwd(), "public", "data", "hub", `${id}.json`);
     const raw = fs.readFileSync(filePath, "utf-8");
     prebaked = JSON.parse(raw) as CosmosData;
+    
+    // 오염된 데이터(선우정아 등)를 허브 데이터로 복구
+    const hub = HUB_ARTISTS.find(h => h.spotifyId === id);
+    if (hub) {
+      prebaked.core.name = hub.nameKo;
+      if (raw.includes('"name": "선우정아"') && hub.nameKo !== "선우정아") {
+        prebaked.core.imageUrl = null;
+        prebaked.core.previewUrl = null;
+        prebaked.core.previewTrackName = null;
+      }
+    }
   } catch { /* JSON 없음 → 2번으로 */ }
 
   if (prebaked) {
