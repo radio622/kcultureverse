@@ -1616,6 +1616,107 @@
       "spotifyUrl": "#",
       "x": 1595.7,
       "y": 954
+    },
+    "manual_MTBDTQ": {
+      "name": "10CM",
+      "nameKo": "10CM",
+      "image": null,
+      "genres": [
+        "K-Pop",
+        "포크",
+        "싱어송라이터"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/84/b2/b1/84b2b1a8-4575-4a62-1b2f-59907cf3e740/mzaf_7834598123037802355.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_MTBDTQ",
+      "x": -114.7,
+      "y": 547.7
+    },
+    "manual_Q3J1c2g": {
+      "name": "Crush",
+      "nameKo": "Crush",
+      "image": null,
+      "genres": [
+        "OST",
+        "인디 팝",
+        "K-Pop",
+        "팝"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bb/7f/f5/bb7ff5a7-87b8-2e2c-a2ce-1f40d19aabc5/mzaf_11552351934799265549.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_Q3J1c2g",
+      "x": 672.3,
+      "y": 808
+    },
+    "manual_7J6U64KY67mE": {
+      "name": "Jannabi",
+      "nameKo": "Jannabi",
+      "image": null,
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b1/a4/0a/b1a40a3e-65ca-f51b-3bb9-12145d970895/mzaf_509885747699732949.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_7J6U64KY67mE",
+      "x": -1149.5,
+      "y": -500.3
+    },
+    "manual_67O867mo6rCE7IKs7LaY6r": {
+      "name": "BOL4",
+      "nameKo": "BOL4",
+      "image": null,
+      "genres": [
+        "K-Pop",
+        "싱어송라이터"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/0c/58/54/0c585442-48d1-656e-5fbc-dc9ced630733/mzaf_18090886930911224435.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_67O867mo6rCE7IKs7LaY6r",
+      "x": -1561.3,
+      "y": 373.3
+    },
+    "manual_7Y-07YK0": {
+      "name": "Paul Kim",
+      "nameKo": "Paul Kim",
+      "image": null,
+      "genres": [
+        "K-Pop",
+        "OST"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/84/d7/b8/84d7b813-6d1d-820b-505b-f0f64ea2c0c7/mzaf_16414148379951129833.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_7Y-07YK0",
+      "x": 479.6,
+      "y": 345.1
+    },
+    "manual_66mc66Gc66ed7Iqk": {
+      "name": "MeloMance",
+      "nameKo": "MeloMance",
+      "image": null,
+      "genres": [
+        "K-Pop",
+        "싱어송라이터",
+        "OST"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/15/d1/c1/15d1c176-b17a-07fd-458a-a078d9c6396d/mzaf_14430555757380281533.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_66mc66Gc66ed7Iqk",
+      "x": -797.3,
+      "y": -348.2
+    },
+    "manual_7ISx7Iuc6rK9": {
+      "name": "Sung Si Kyung",
+      "nameKo": "Sung Si Kyung",
+      "image": null,
+      "genres": [
+        "K-Pop",
+        "OST"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/7f/cb/ae/7fcbae10-e463-ca59-2094-81cf875e199e/mzaf_3664734411788512450.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_7ISx7Iuc6rK9",
+      "x": 1365.4,
+      "y": -1257.6
     }
   },
   "edges": [
@@ -3934,6 +4035,132 @@
       "4Kxlr1PRlDKEB0ekOCyHgX",
       0.7,
       "hub_satellite"
+    ],
+    [
+      "manual_MTBDTQ",
+      "manual_Q3J1c2g",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_MTBDTQ",
+      "manual_7J6U64KY67mE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_MTBDTQ",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_MTBDTQ",
+      "manual_7Y-07YK0",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_MTBDTQ",
+      "manual_66mc66Gc66ed7Iqk",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_MTBDTQ",
+      "manual_7ISx7Iuc6rK9",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Q3J1c2g",
+      "manual_7J6U64KY67mE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Q3J1c2g",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Q3J1c2g",
+      "manual_7Y-07YK0",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Q3J1c2g",
+      "manual_66mc66Gc66ed7Iqk",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Q3J1c2g",
+      "manual_7ISx7Iuc6rK9",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_7J6U64KY67mE",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_7J6U64KY67mE",
+      "manual_7Y-07YK0",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_7J6U64KY67mE",
+      "manual_66mc66Gc66ed7Iqk",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_7J6U64KY67mE",
+      "manual_7ISx7Iuc6rK9",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      "manual_7Y-07YK0",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      "manual_66mc66Gc66ed7Iqk",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      "manual_7ISx7Iuc6rK9",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_7Y-07YK0",
+      "manual_66mc66Gc66ed7Iqk",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_7Y-07YK0",
+      "manual_7ISx7Iuc6rK9",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_66mc66Gc66ed7Iqk",
+      "manual_7ISx7Iuc6rK9",
+      0.35,
+      "same_playlist"
     ]
   ]
 }
