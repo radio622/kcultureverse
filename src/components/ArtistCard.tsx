@@ -11,32 +11,50 @@ interface Props {
 
 export default function ArtistCard({ artist, isActive, onDive }: Props) {
   const displayGenres = artist.genres.slice(0, 2);
+  const initial       = artist.name.charAt(0).toUpperCase();
+  const hasPreview    = !!artist.previewUrl;
 
   return (
     <div
       className="glass-card"
       style={{
-        width: 260,
-        padding: "16px",
+        width: 240,
+        padding: "14px",
         display: "flex",
         flexDirection: "column",
-        gap: 12,
+        gap: 10,
         border: isActive
-          ? "1px solid rgba(167, 139, 250, 0.5)"
+          ? "1px solid rgba(167,139,250,0.55)"
           : "1px solid var(--border-glass)",
-        boxShadow: isActive ? "0 0 20px rgba(167, 139, 250, 0.15)" : "none",
-        transition: "border-color 0.3s ease, box-shadow 0.3s ease",
+        boxShadow: isActive
+          ? "0 0 24px rgba(167,139,250,0.18), 0 8px 24px rgba(0,0,0,0.4)"
+          : "0 4px 16px rgba(0,0,0,0.3)",
+        transition: "border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease",
+        transform: isActive ? "translateY(-4px) scale(1.01)" : "translateY(0) scale(1)",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      {/* 아티스트 이미지 */}
+      {/* ── 활성 시 상단 강조 줄 ───────────────────── */}
+      {isActive && (
+        <div style={{
+          position: "absolute",
+          top: 0, left: 0, right: 0,
+          height: 2,
+          background: "linear-gradient(90deg, transparent, var(--accent-core), transparent)",
+        }} />
+      )}
+
+      {/* ── 아티스트 이미지 ────────────────────────── */}
       <div
         style={{
           width: "100%",
           aspectRatio: "1",
-          borderRadius: 12,
+          borderRadius: 10,
           overflow: "hidden",
           background: "var(--bg-nebula)",
           position: "relative",
+          flexShrink: 0,
         }}
       >
         {artist.imageUrl ? (
@@ -45,7 +63,8 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
             alt={artist.name}
             fill
             style={{ objectFit: "cover" }}
-            sizes="228px"
+            sizes="212px"
+            onError={() => {/* 이미지 로드 실패 시 fallback은 CSS로 처리 */}}
           />
         ) : (
           <div
@@ -55,62 +74,90 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 48,
+              fontSize: 52,
               color: "var(--accent-core)",
+              background: "rgba(167,139,250,0.08)",
+              fontWeight: 300,
             }}
           >
-            {artist.name.charAt(0)}
+            {initial}
+          </div>
+        )}
+
+        {/* 재생 중 오버레이 */}
+        {isActive && (
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0,0,0,0.35)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
+            {/* 파동 이퀄라이저 */}
+            <div style={{ display: "flex", gap: 4, alignItems: "flex-end" }}>
+              {[0,1,2,3,4].map(i => (
+                <div
+                  key={i}
+                  style={{
+                    width: 4,
+                    borderRadius: 2,
+                    background: "var(--accent-core)",
+                    animation: `cardWave ${0.4 + i * 0.1}s ease-in-out infinite alternate`,
+                    height: `${10 + i * 4}px`,
+                  }}
+                />
+              ))}
+            </div>
           </div>
         )}
       </div>
-      
-      {/* 관계망 키워드 (연결고리 증명) */}
-      {(artist as any).relationKeyword && (
+
+      {/* ── 관계 키워드 태그 ────────────────────────── */}
+      {(artist as { relationKeyword?: string }).relationKeyword && (
         <div style={{
-          marginTop: -6,
-          marginBottom: 4,
-          padding: "4px 8px",
-          background: "rgba(167, 139, 250, 0.15)",
-          border: "1px solid rgba(167, 139, 250, 0.3)",
+          padding: "3px 8px",
+          background: "rgba(167,139,250,0.12)",
+          border: "1px solid rgba(167,139,250,0.25)",
           borderRadius: 6,
-          fontSize: 11,
+          fontSize: 10,
           color: "var(--accent-core)",
           fontWeight: 600,
-          display: "inline-block",
-          alignSelf: "flex-start"
+          display: "inline-flex",
+          alignItems: "center",
+          gap: 4,
+          alignSelf: "flex-start",
         }}>
-          🔗 {(artist as any).relationKeyword}
+          <span>🔗</span>
+          {(artist as { relationKeyword?: string }).relationKeyword}
         </div>
       )}
 
-      {/* 이름 */}
+      {/* ── 이름 + 장르 ─────────────────────────────── */}
       <div>
-        <h3
-          style={{
-            fontSize: 16,
-            fontWeight: 600,
-            color: "var(--text-primary)",
-            margin: "0 0 6px",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
-          }}
-        >
+        <h3 style={{
+          fontSize: 15,
+          fontWeight: 600,
+          color: "var(--text-primary)",
+          margin: "0 0 5px",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap",
+        }}>
           {artist.name}
         </h3>
 
-        {/* 장르 태그 */}
-        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-          {displayGenres.map((genre) => (
+        <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+          {displayGenres.map(genre => (
             <span
               key={genre}
               style={{
                 fontSize: 10,
-                padding: "2px 8px",
+                padding: "2px 7px",
                 borderRadius: 20,
-                background: "rgba(167, 139, 250, 0.12)",
+                background: "rgba(167,139,250,0.1)",
                 color: "var(--accent-core)",
-                border: "1px solid rgba(167, 139, 250, 0.2)",
+                border: "1px solid rgba(167,139,250,0.18)",
               }}
             >
               {genre}
@@ -122,103 +169,99 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
         </div>
       </div>
 
-      {/* Popularity 게이지 */}
+      {/* ── 인기도 게이지 ────────────────────────────── */}
       <div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            fontSize: 10,
-            color: "var(--text-muted)",
-            marginBottom: 4,
-          }}
-        >
+        <div style={{
+          display: "flex",
+          justifyContent: "space-between",
+          fontSize: 10,
+          color: "var(--text-muted)",
+          marginBottom: 4,
+        }}>
           <span>인기도</span>
-          <span>{artist.popularity}</span>
+          <span style={{ color: "var(--text-secondary)" }}>{artist.popularity}</span>
         </div>
-        <div
-          style={{
-            height: 3,
+        <div style={{
+          height: 3,
+          borderRadius: 2,
+          background: "rgba(255,255,255,0.07)",
+          overflow: "hidden",
+        }}>
+          <div style={{
+            height: "100%",
+            width: `${artist.popularity}%`,
+            background: "linear-gradient(90deg, var(--accent-core), var(--accent-blue, #60a5fa))",
             borderRadius: 2,
-            background: "rgba(255,255,255,0.08)",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              height: "100%",
-              width: `${artist.popularity}%`,
-              background: "linear-gradient(90deg, var(--accent-core), var(--accent-blue))",
-              borderRadius: 2,
-            }}
-          />
+            transition: "width 0.4s ease",
+          }} />
         </div>
       </div>
 
-      {/* 트랙 정보 or Spotify 링크 */}
-      {artist.previewUrl ? (
-        <div
-          style={{
-            fontSize: 11,
-            color: "var(--text-secondary)",
-            display: "flex",
-            alignItems: "center",
-            gap: 6,
-          }}
-        >
-          <span style={{ color: "var(--accent-core)" }}>▶</span>
-          <span
-            style={{
+      {/* ── 미리듣기 / Spotify 표시 ─────────────────── */}
+      <div style={{
+        fontSize: 11,
+        color: hasPreview ? "var(--text-secondary)" : "#1db954",
+        display: "flex",
+        alignItems: "center",
+        gap: 5,
+      }}>
+        {hasPreview ? (
+          <>
+            <span style={{ color: "var(--accent-core)", fontSize: 9 }}>▶</span>
+            <span style={{
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "nowrap",
-            }}
+            }}>
+              {artist.previewTrackName ?? "미리듣기 가능"}
+            </span>
+          </>
+        ) : (
+          <a
+            href={artist.spotifyUrl || undefined}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={e => e.stopPropagation()}
+            style={{ color: "#1db954", textDecoration: "none", display: "flex", alignItems: "center", gap: 4 }}
           >
-            {artist.previewTrackName ?? "미리듣기"}
-          </span>
-        </div>
-      ) : (
-        <a
-          href={artist.spotifyUrl || undefined}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            fontSize: 11,
-            color: "#1db954",
-            textDecoration: "none",
-            display: "flex",
-            alignItems: "center",
-            gap: 4,
-          }}
-        >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="#1db954">
-            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-          </svg>
-          Spotify에서 듣기 →
-        </a>
-      )}
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="#1db954">
+              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+            </svg>
+            Spotify에서 듣기
+          </a>
+        )}
+      </div>
 
-      {/* Dive Into 버튼 */}
+      {/* ── Dive Into 버튼 ────────────────────────────── */}
       <button
         onClick={onDive}
         style={{
           width: "100%",
-          padding: "10px 0",
-          borderRadius: 10,
+          padding: "9px 0",
+          borderRadius: 9,
           background: isActive
-            ? "rgba(167, 139, 250, 0.2)"
-            : "rgba(255, 255, 255, 0.05)",
-          border: "1px solid rgba(167, 139, 250, 0.3)",
+            ? "rgba(167,139,250,0.18)"
+            : "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(167,139,250,0.3)",
           color: "var(--accent-core)",
-          fontSize: 13,
+          fontSize: 12,
           fontWeight: 500,
           cursor: "pointer",
-          transition: "background 0.2s ease",
-          minHeight: "var(--touch-target)",
+          transition: "background 0.2s ease, transform 0.15s ease",
+          letterSpacing: "0.03em",
         }}
+        onMouseEnter={e => (e.currentTarget.style.background = "rgba(167,139,250,0.22)")}
+        onMouseLeave={e => (e.currentTarget.style.background = isActive ? "rgba(167,139,250,0.18)" : "rgba(255,255,255,0.04)")}
       >
-        Dive Into →
+        이 아티스트의 우주로 →
       </button>
+
+      <style>{`
+        @keyframes cardWave {
+          from { transform: scaleY(0.5); }
+          to   { transform: scaleY(1.4); }
+        }
+      `}</style>
     </div>
   );
 }

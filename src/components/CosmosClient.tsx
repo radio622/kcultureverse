@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect } from "react";
 import type { CosmosArtist, CosmosData, SatelliteNode } from "@/lib/types";
 import Cosmos from "./Cosmos";
-import BottomSheet from "./BottomSheet";
+import BottomSheet, { type SheetState } from "./BottomSheet";
 import ResonanceDeck from "./ResonanceDeck";
 import MiniPlayer from "./MiniPlayer";
 import { useAudio } from "@/hooks/useAudio";
@@ -13,9 +13,9 @@ interface Props {
   core: CosmosArtist;
   /** 홈에서 pre-baked JSON을 넘겨받으면 /api/cosmos fetch를 건너뜀 */
   initialSatellites?: SatelliteNode[];
-  /** 허브 주제색 (진입 애니메이션 텍스트 등에 사용) */
+  /** 허브 주제색 */
   hubColor?: string;
-  /** 홈에서 넘어온 경우 인트로 텍스트 표시용 */
+  /** 인트로 텍스트 표시용 */
   introName?: string;
 }
 
@@ -27,30 +27,29 @@ export default function CosmosClient({
   introName,
 }: Props) {
   const [focusedIndex, setFocusedIndex] = useState<number | null>(null);
-  const [sheetState, setSheetState] = useState<"collapsed" | "expanded">("collapsed");
-  const [copied, setCopied] = useState(false);
-  const [introVisible, setIntroVisible] = useState<boolean>(!!introName);
+  // ── 3단계 바텀시트 상태 ─────────────────────────────────────
+  const [sheetState, setSheetState] = useState<SheetState>("collapsed");
+  const [copied, setCopied]         = useState(false);
+  const [introVisible, setIntroVisible] = useState(!!introName);
 
-  // ── 위성 데이터 ────────────────────────────────────────────────
-  // initialSatellites가 있으면 즉시 사용 (API fetch 없음)
+  // ── 위성 데이터 ─────────────────────────────────────────────
   const [satellites, setSatellites] = useState<SatelliteNode[]>(initialSatellites ?? []);
   const [satelliteLoading, setSatelliteLoading] = useState(!initialSatellites);
 
   const audio = useAudio();
-
   const data: CosmosData = { core, satellites };
 
-  // ── 인트로 텍스트 타이머 ───────────────────────────────────────
+  // ── 인트로 타이머 ───────────────────────────────────────────
   useEffect(() => {
     if (!introName) return;
     const t = setTimeout(() => setIntroVisible(false), 1800);
     return () => clearTimeout(t);
   }, [introName]);
+  void introVisible; // ESLint suppress (향후 사용 예정)
 
-  // ── 위성 데이터 로드 (initialSatellites 없을 때만) ────────────
+  // ── 위성 데이터 로드 (pre-baked 없을 때만) ─────────────────
   useEffect(() => {
-    if (initialSatellites) return; // pre-baked 있으면 스킵
-
+    if (initialSatellites) return;
     let cancelled = false;
 
     async function loadSatellites() {
@@ -73,36 +72,49 @@ export default function CosmosClient({
     return () => { cancelled = true; };
   }, [artistId, initialSatellites]);
 
-  // ── push-up 오프셋 (바텀시트 상태 기반) ───────────────────────
-  const cosmosTranslateY = sheetState === "expanded" ? -100 : 0;
+  // ── 우주 push-up (바텀시트가 올라올 때 우주를 살짝 위로) ────
+  const cosmosShift = sheetState === "expanded" ? -110 : sheetState === "peek" ? -36 : 0;
 
-  // ── 포커스 핸들러 ─────────────────────────────────────────────
+  // ── 포커스 핸들러 ──────────────────────────────────────────
   const handleFocus = useCallback(
     (index: number | null) => {
       setFocusedIndex(index);
 
+      // ── 코어 클릭 ──────────────────────────────────────────
       if (index === null) {
-        // 코어 클릭: 음악 재생 (previewUrl 있으면 즉시, 없으면 preview API)
         if (data.core.previewUrl) {
           audio.play(data.core.previewUrl, data.core.previewTrackName || data.core.name, data.core.spotifyId);
+          setSheetState("peek"); // 코어 클릭→peek (카드리스트 없이 플레이어만)
         } else {
           fetch(`/api/spotify/preview?name=${encodeURIComponent(data.core.name)}`)
             .then(r => r.json())
-            .then(p => { if (p.previewUrl) audio.play(p.previewUrl, p.trackName || data.core.name, data.core.spotifyId); });
+            .then(p => {
+              if (p.previewUrl) {
+                audio.play(p.previewUrl, p.trackName || data.core.name, data.core.spotifyId);
+                setSheetState("peek");
+              }
+            });
         }
-        setSheetState("collapsed");
         return;
       }
 
+      // ── 위성 클릭 ─────────────────────────────────────────
       const satellite = data.satellites[index];
       if (!satellite) return;
 
-      // 위성 클릭 시 4가지 동시:
-      // 1. 음악 재생
+      // 1) 즉시 음악 재생 (사용자 인터랙션이 있는 동안 → autoplay 허용)
       if (satellite.previewUrl) {
         audio.play(satellite.previewUrl, satellite.previewTrackName || satellite.name, satellite.spotifyId);
+      } else {
+        // previewUrl 없으면 서버에서 조회 시도
+        fetch(`/api/spotify/preview?name=${encodeURIComponent(satellite.name)}`)
+          .then(r => r.json())
+          .then(p => {
+            if (p.previewUrl) audio.play(p.previewUrl, p.trackName || satellite.name, satellite.spotifyId);
+          });
       }
-      // 2. 바텀시트 expanded
+
+      // 2) 바텀시트를 peek → expanded로 (위성클릭: 연관 아티스트 카드 표시)
       setSheetState("expanded");
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -114,9 +126,8 @@ export default function CosmosClient({
   }, []);
 
   const handleShare = useCallback(async () => {
-    const url = window.location.href;
+    const url   = window.location.href;
     const title = `${core.name}로부터`;
-
     if (navigator.share) {
       try { await navigator.share({ title, url }); return; } catch { /* 취소 */ }
     }
@@ -159,7 +170,14 @@ export default function CosmosClient({
             animation: "introFadeOut 1.8s ease-out forwards",
           }}
         >
-          <p style={{ fontSize: 11, letterSpacing: "0.25em", color: hubColor ?? "var(--accent-core)", textTransform: "uppercase", marginBottom: 12, opacity: 0.8 }}>
+          <p style={{
+            fontSize: 11,
+            letterSpacing: "0.25em",
+            color: hubColor ?? "var(--accent-core)",
+            textTransform: "uppercase",
+            marginBottom: 12,
+            opacity: 0.8,
+          }}>
             오늘의 우주
           </p>
           <h2 style={{
@@ -176,15 +194,13 @@ export default function CosmosClient({
         </div>
       )}
 
-      {/* ── Cosmos (우주 시각화) ───────────────────────── */}
+      {/* ── Cosmos (우주 시각화) ── push-up 애니메이션 ── */}
       <div
         style={{
-          width: "100%",
-          height: "100%",
-          transform: `translateY(${cosmosTranslateY}px)`,
-          transition: "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-          animation: "cosmosReveal 1.2s ease-out both",
-          animationDelay: introName ? "0.6s" : "0s",
+          position: "absolute",
+          inset: 0,
+          transform: `translateY(${cosmosShift}px)`,
+          transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1)",
         }}
       >
         <Cosmos
@@ -237,7 +253,7 @@ export default function CosmosClient({
         </span>
       </button>
 
-      {/* ── 위성 로딩 인디케이터 (pre-baked 없을 때만) ── */}
+      {/* ── 위성 로딩 인디케이터 ─────────────────────── */}
       {satelliteLoading && !initialSatellites && (
         <div
           style={{
@@ -265,7 +281,7 @@ export default function CosmosClient({
         </div>
       )}
 
-      {/* ── Bottom Sheet ─────────────────────────────── */}
+      {/* ── Bottom Sheet (3단계) ─────────────────────── */}
       <BottomSheet state={sheetState} onStateChange={setSheetState}>
         <>
           <MiniPlayer
@@ -273,6 +289,8 @@ export default function CosmosClient({
             trackName={audio.currentTrackName}
             progress={audio.progress}
             onStop={audio.stop}
+            sheetState={sheetState}
+            onExpand={() => setSheetState("expanded")}
           />
           <ResonanceDeck
             satellites={data.satellites}
@@ -287,16 +305,12 @@ export default function CosmosClient({
       <style>{`
         @keyframes pulse {
           0%, 100% { opacity: 0.4; transform: scale(0.8); }
-          50% { opacity: 1; transform: scale(1.2); }
+          50%       { opacity: 1;   transform: scale(1.2); }
         }
         @keyframes introFadeOut {
-          0%   { opacity: 1; transform: scale(1); }
+          0%   { opacity: 1; }
           70%  { opacity: 1; }
-          100% { opacity: 0; transform: scale(1.05); }
-        }
-        @keyframes cosmosReveal {
-          0%   { opacity: 0; transform: translateY(var(--push-y, 0px)) scale(0.92); }
-          100% { opacity: 1; transform: translateY(var(--push-y, 0px)) scale(1); }
+          100% { opacity: 0; }
         }
       `}</style>
     </div>
