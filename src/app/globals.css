@@ -230,3 +230,92 @@ body {
   .cosmos-node--core { animation: none; }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* ── Step 5: 뒤로가기 버튼 ────────────────────────────────────── */
+.back-btn {
+  position: fixed;
+  top: 16px;
+  left: 70px; /* FloatingSearch(42px) + 간격 */
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: rgba(10,14,26,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  color: rgba(200,190,255,0.75);
+  font-size: 12px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: background 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+}
+.back-btn:hover {
+  background: rgba(167,139,250,0.15);
+  border-color: rgba(167,139,250,0.3);
+}
+
+/* ── Step 5: 토스트 알림 ──────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  padding: 10px 18px;
+  background: rgba(10,14,26,0.92);
+  border: 1px solid rgba(167,139,250,0.25);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  backdrop-filter: blur(12px);
+  animation: toastIn 0.25s ease, toastOut 0.3s ease 2.7s forwards;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes toastOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ── Step 5: 이미지 로딩 shimmer ─────────────────────────────── */
+.img-placeholder {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.04) 0%,
+    rgba(255,255,255,0.09) 50%,
+    rgba(255,255,255,0.04) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ── Step 5: resonance-deck 카드 폭 수정 (ArtistCard 240px 맞춤) */
+.resonance-deck__card {
+  scroll-snap-align: center;
+  flex: 0 0 240px;
+}
+
+/* ── Step 5: 검색 input 타입 초기화 ─────────────────────────── */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2.5'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E") center/14px no-repeat;
+  cursor: pointer;
+}
+

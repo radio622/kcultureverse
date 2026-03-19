@@ -5,22 +5,42 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "i.scdn.co", // Spotify 아티스트 이미지
+        hostname: "i.scdn.co",          // Spotify CDN 아티스트 이미지
       },
       {
         protocol: "https",
-        hostname: "mosaic.scdn.co", // Spotify 모자이크 이미지
+        hostname: "mosaic.scdn.co",      // Spotify 모자이크 이미지
       },
       {
         protocol: "https",
-        hostname: "image.tmdb.org", // TMDb (기존 유지)
+        hostname: "image.tmdb.org",      // TMDb
         pathname: "/t/p/**",
       },
       {
         protocol: "https",
-        hostname: "**.mzstatic.com", // iTunes Fallback 이미지 허용
+        hostname: "**.mzstatic.com",     // iTunes / Apple Music 이미지
+      },
+      {
+        protocol: "https",
+        hostname: "lastfm.freetls.fastly.net", // Last.fm 아티스트 이미지 (fallback)
+      },
+      {
+        protocol: "https",
+        hostname: "*.discogs.com",       // Discogs 아티스트 이미지 (fallback)
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org", // Wikimedia / Wikipedia 이미지
       },
     ],
+    // 최적화 품질
+    formats: ["image/avif", "image/webp"],
+    // 로컬 캐시 TTL (1일)
+    minimumCacheTTL: 86400,
+  },
+  // 실험적: 큰 pre-baked JSON 읽기 최적화
+  experimental: {
+    optimizeServerReact: true,
   },
 };
 
