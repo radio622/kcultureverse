@@ -84,23 +84,24 @@ export default function CosmosClient({
 
       // ── 코어 클릭 ──────────────────────────────────────────
       if (index === null) {
-        if (focusedIndex === null) {
-          // 이미 코어 포커스 상태라면 바텀시트 토글
-          setSheetState(prev => prev === "expanded" ? "collapsed" : "expanded");
-          return;
-        }
+        // 무조건 코어 음악 재생 (최초 진입 시 아무도 포커스되지 않은 상태에서 클릭하는 경우 포함)
         if (data.core.previewUrl) {
           audio.play(data.core.previewUrl, data.core.previewTrackName || data.core.name, data.core.spotifyId);
-          setSheetState("expanded"); // 코어 클릭 → 즉시 위성 카드들을 볼 수 있게 쫙 폄
         } else {
           fetch(`/api/spotify/preview?name=${encodeURIComponent(data.core.name)}`)
             .then(r => r.json())
             .then(p => {
               if (p.previewUrl) {
                 audio.play(p.previewUrl, p.trackName || data.core.name, data.core.spotifyId);
-                setSheetState("expanded");
               }
             });
+        }
+
+        // 바텀시트 동작: 코어가 이미 활성 상태였다면 토글, 아니면 단순히 펼침
+        if (focusedIndex === null) {
+          setSheetState(prev => prev === "expanded" ? "collapsed" : "expanded");
+        } else {
+          setSheetState("expanded");
         }
         return;
       }
