@@ -1,0 +1,50 @@
+{
+  "core": {
+    "spotifyId": "5rHUhS9Ya0S63WI9LFmCSx",
+    "name": "선우정아",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d9/60/a0/d960a006-a283-872a-7396-8e6b9e81fde2/mzaf_6853986720601676992.plus.aac.p.m4a",
+    "previewTrackName": "알 수 없는 작곡가",
+    "spotifyUrl": "https://open.spotify.com/artist/5rHUhS9Ya0S63WI9LFmCSx"
+  },
+  "satellites": [
+    {
+      "spotifyId": "mb_1773890904686_0.8433011106734047",
+      "name": "임현종",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "전담 프로듀서 (2곡 참여)"
+    },
+    {
+      "spotifyId": "mb_1773890904765_0.36288319346665576",
+      "name": "전해성",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "전담 프로듀서 (2곡 참여)"
+    },
+    {
+      "spotifyId": "mb_1773890904861_0.8863538996941863",
+      "name": "김현아",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    }
+  ]
+}

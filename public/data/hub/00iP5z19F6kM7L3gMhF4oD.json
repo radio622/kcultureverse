@@ -1,0 +1,62 @@
+{
+  "core": {
+    "spotifyId": "00iP5z19F6kM7L3gMhF4oD",
+    "name": "선우정아",
+    "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/98/04/3298040b-05bb-e0d8-1228-67f8d2e818f6/8809380630959.jpg/600x600bb.jpg",
+    "genres": [],
+    "popularity": 80,
+    "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d9/60/a0/d960a006-a283-872a-7396-8e6b9e81fde2/mzaf_6853986720601676992.plus.aac.p.m4a",
+    "previewTrackName": "알 수 없는 작곡가",
+    "spotifyUrl": "https://open.spotify.com/artist/00iP5z19F6kM7L3gMhF4oD"
+  },
+  "satellites": [
+    {
+      "spotifyId": "mb_1773890971788_0.4658834909318893",
+      "name": "15인의 소띠들",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    },
+    {
+      "spotifyId": "mb_1773890972037_0.679622905993511",
+      "name": "DAMI",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    },
+    {
+      "spotifyId": "mb_1773890972090_0.301729034402512",
+      "name": "정세운",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    },
+    {
+      "spotifyId": "mb_1773890972173_0.22799847769001236",
+      "name": "송은이",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    }
+  ]
+}
