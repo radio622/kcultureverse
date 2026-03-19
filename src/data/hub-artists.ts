@@ -282,5 +282,69 @@ export function pickHubArtist(hourOverride?: number): HubArtist {
   if (!pool.length) return HUB_ARTISTS[0];
 
   const idx = pool[Math.floor(Math.random() * pool.length)];
-  return HUB_ARTISTS[idx];
+  return HUB_ARTISTS[idx  {
+    spotifyId: "6OwKE9Ez6ALxpTaKcT5ayv",
+    name: "AKMU",
+    nameKo: "악동뮤지션",
+    accent: "#e46b67",
+    nebula: "#1b0f0e",
+    nebula2: "#0f0a0a",
+  },
+  {
+    spotifyId: "4Kxlr1PRlDKEB0ekOCyHgX",
+    name: "BIGBANG",
+    nameKo: "빅뱅",
+    accent: "#dc67e4",
+    nebula: "#1a0e1b",
+    nebula2: "#0f0a0f",
+  },
+  {
+    spotifyId: "0Sadg1vgvaPqGTOjxu0N6c",
+    name: "Girls' Generation",
+    nameKo: "소녀시대",
+    accent: "#e48967",
+    nebula: "#1b120e",
+    nebula2: "#0f0c0a",
+  },
+  {
+    spotifyId: "1TTx0YcbKUtJIZY1HEnh9B",
+    name: "J.Y. Park",
+    nameKo: "박진영",
+    accent: "#8b67e4",
+    nebula: "#120e1b",
+    nebula2: "#0c0a0f",
+  },
+  {
+    spotifyId: "52Gsa9Zypqztm2DeNkQfCm",
+    name: "Seo Taiji",
+    nameKo: "서태지",
+    accent: "#e46778",
+    nebula: "#1b0e10",
+    nebula2: "#0f0a0b",
+  },
+  {
+    spotifyId: "6sxtN9maIhNAu663hY5g6B",
+    name: "Yoon Sang",
+    nameKo: "윤상",
+    accent: "#67e48d",
+    nebula: "#0e1b12",
+    nebula2: "#0a0f0c",
+  },
+  {
+    spotifyId: "7sS12h1hMwOqXiB5vYdlu8",
+    name: "Toy",
+    nameKo: "토이",
+    accent: "#e4c767",
+    nebula: "#1b180e",
+    nebula2: "#0f0e0a",
+  },
+  {
+    spotifyId: "4hDVt8U6lhZNnXpFcXwYwS",
+    name: "Yoon Mirae",
+    nameKo: "윤미래",
+    accent: "#677ae4",
+    nebula: "#0e101b",
+    nebula2: "#0a0b0f",
+  },
+];
 }
