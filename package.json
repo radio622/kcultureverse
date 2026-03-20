@@ -14,11 +14,10 @@
     "universe:rebuild": "tsx scripts/prebake.ts && tsx scripts/build-graph.ts && tsx scripts/compute-layout.ts",
     "build-universe-v5": "tsx scripts/build-universe-v5.ts",
     "v5:purge-fallback": "tsx scripts/purge-fallback-satellites.ts",
-    "v5:crawl-credits": "tsx scripts/crawl-featured-credits.ts",
-    "v5:crawl-writers": "tsx scripts/crawl-writer-credits.ts",
+    "v5:crawl-bfs": "tsx scripts/v5.4-bfs-crawler.ts",
     "v5:prebake-disco": "tsx scripts/prebake-discography.ts",
-    "v5:build": "tsx scripts/build-universe-v5.ts",
-    "v5:full-gap-fix": "tsx scripts/crawl-writer-credits.ts && tsx scripts/prebake-discography.ts && tsx scripts/build-universe-v5.ts"
+    "v5:build": "tsx scripts/v5.4-build-universe.ts",
+    "v5:full-gap-fix": "tsx scripts/v5.4-bfs-crawler.ts && tsx scripts/prebake-discography.ts && tsx scripts/v5.4-build-universe.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.2",
@@ -39,6 +38,7 @@
     "@types/react-dom": "^19",
     "dotenv": "^16.6.1",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "tsx": "^4.21.0",
     "typescript": "^5"
   }
