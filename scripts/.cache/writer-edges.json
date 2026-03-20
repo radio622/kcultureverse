@@ -1968,5 +1968,945 @@
     "role": "featured",
     "count": 1,
     "weight": 0.6
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "89d4a76a-d8d4-4600-ac9e-19415320b7f4",
+    "targetName": "방찬",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 12,
+    "weight": 1
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "89d4a76a-d8d4-4600-ac9e-19415320b7f4",
+    "targetName": "방찬",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 12,
+    "weight": 1
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "391d07b5-43b2-4d57-9283-7b7fcf1a00eb",
+    "targetName": "창빈",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 11,
+    "weight": 1
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "391d07b5-43b2-4d57-9283-7b7fcf1a00eb",
+    "targetName": "창빈",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 11,
+    "weight": 1
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "5b3334c9-c065-420c-82dd-df1d3c46ef86",
+    "targetName": "한",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 10,
+    "weight": 1
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "5b3334c9-c065-420c-82dd-df1d3c46ef86",
+    "targetName": "한",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 10,
+    "weight": 1
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "89d4a76a-d8d4-4600-ac9e-19415320b7f4",
+    "targetName": "방찬",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 8,
+    "weight": 0.95
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "391d07b5-43b2-4d57-9283-7b7fcf1a00eb",
+    "targetName": "창빈",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 8,
+    "weight": 0.95
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "5b3334c9-c065-420c-82dd-df1d3c46ef86",
+    "targetName": "한",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 8,
+    "weight": 0.95
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "8deab5c7-3cc0-4aa2-8384-7d5738c415b9",
+    "targetName": "베르사최",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 6,
+    "weight": 0.95
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "2207c581-e4ba-4738-bae6-7761f6510a86",
+    "targetName": "필릭스",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 6,
+    "weight": 0.85
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "459b84e0-2636-45e3-96c8-af114dfbd9be",
+    "targetName": "현진",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 5,
+    "weight": 0.8
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "2acf77db-be3f-431a-9f81-c35f7cd8c598",
+    "targetName": "아이엔",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 5,
+    "weight": 0.8
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "612b949b-2df4-46c5-a6d8-93a8f01c66b8",
+    "targetName": "리노",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 5,
+    "weight": 0.8
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "0c720022-fdd2-4b9f-a73a-245c1362fb5f",
+    "targetName": "승민",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 5,
+    "weight": 0.8
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "89d4a76a-d8d4-4600-ac9e-19415320b7f4",
+    "targetName": "방찬",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 4,
+    "weight": 0.75
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "8deab5c7-3cc0-4aa2-8384-7d5738c415b9",
+    "targetName": "베르사최",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 3,
+    "weight": 0.7
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "8049e9de-c803-47d2-b083-5e2780e2a1fb",
+    "targetName": "채강해",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "05574747-639f-402d-b6b1-cf5c3f25926b",
+    "targetName": "RESTART",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "89d4a76a-d8d4-4600-ac9e-19415320b7f4",
+    "targetName": "방찬",
+    "relation": "PRODUCER",
+    "role": "producer",
+    "count": 2,
+    "weight": 0.65
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "f755d632-d097-4233-9a06-adfeddafe423",
+    "targetName": "조성호",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "4561aee5-6cf6-41a6-9b7b-f7be15a00a65",
+    "targetName": "이창섭",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "99fcd732-b610-4167-8008-5a900414eb47",
+    "targetName": "이민혁",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "38f29c6c-b76b-4628-98da-6091fff6ce9c",
+    "targetName": "PENIEL",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "96cf556c-758c-4020-8a0f-bb487515685d",
+    "targetName": "서은광",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "c5819a2a-2c20-4555-98d7-23ee3e17414e",
+    "targetName": "Daniel Kim",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "d55147b5-d0b9-4f15-b3bc-e47d73d4a35a",
+    "targetName": "주찬양",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "1796a3f6-12a4-4e2c-b5f3-d67eaef699a7",
+    "targetName": "3RACHA",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "0L8ExT028jH3ddEcZwqJJ5",
+    "sourceName": "Stray Kids",
+    "targetMbid": "e6ac2d77-315e-4f92-9513-8b277342534e",
+    "targetName": "Tiger JK",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "c62e0aeb-d7e2-406a-9036-d14881661e0e",
+    "targetName": "JEON SOYEON",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 18,
+    "weight": 1
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "50259c88-f747-4279-8d97-694cabde390f",
+    "targetName": "MINNIE",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 16,
+    "weight": 1
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "c62e0aeb-d7e2-406a-9036-d14881661e0e",
+    "targetName": "JEON SOYEON",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 12,
+    "weight": 1
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "c62e0aeb-d7e2-406a-9036-d14881661e0e",
+    "targetName": "JEON SOYEON",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 10,
+    "weight": 1
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "eb2eb5dd-4eb6-4a73-8c52-8ddc86f8f5d1",
+    "targetName": "MIYEON",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 10,
+    "weight": 1
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "d9da9b6b-e338-499b-b196-244d2c944659",
+    "targetName": "叶叔华",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 10,
+    "weight": 1
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "e7385b1f-6356-45e0-ae5e-f690f19ec508",
+    "targetName": "YUQI",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 10,
+    "weight": 1
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "c62e0aeb-d7e2-406a-9036-d14881661e0e",
+    "targetName": "JEON SOYEON",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 7,
+    "weight": 0.9
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "e0e66b18-bead-441e-ac8b-133e0158f494",
+    "targetName": "홍승성",
+    "relation": "PRODUCER",
+    "role": "producer",
+    "count": 5,
+    "weight": 0.8
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "50259c88-f747-4279-8d97-694cabde390f",
+    "targetName": "MINNIE",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 5,
+    "weight": 0.8999999999999999
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "2777540c-d2b7-43b7-8cf4-8895f3e5d1ca",
+    "targetName": "빅싼초",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 4,
+    "weight": 0.85
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "e2b299c8-3064-48c0-9c65-6c82766b8a60",
+    "targetName": "Pop Time",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 4,
+    "weight": 0.75
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "e2b299c8-3064-48c0-9c65-6c82766b8a60",
+    "targetName": "Pop Time",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 4,
+    "weight": 0.85
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "1408021e-97c0-40cd-98dc-75cdc06cbd92",
+    "targetName": "BreadBeat",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 4,
+    "weight": 0.75
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "50259c88-f747-4279-8d97-694cabde390f",
+    "targetName": "MINNIE",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 4,
+    "weight": 0.85
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "2777540c-d2b7-43b7-8cf4-8895f3e5d1ca",
+    "targetName": "빅싼초",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 3,
+    "weight": 0.7
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "19467b18-69bd-4c66-a96d-a82fa48f2ec5",
+    "targetName": "전재희",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 3,
+    "weight": 0.7
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "dc0a3c08-5d4c-4b7a-9493-0ade7b63a290",
+    "targetName": "Kako",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 3,
+    "weight": 0.7
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "1408021e-97c0-40cd-98dc-75cdc06cbd92",
+    "targetName": "BreadBeat",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 3,
+    "weight": 0.7999999999999999
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "e7385b1f-6356-45e0-ae5e-f690f19ec508",
+    "targetName": "YUQI",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 3,
+    "weight": 0.7999999999999999
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "dc0a3c08-5d4c-4b7a-9493-0ade7b63a290",
+    "targetName": "Kako",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 2,
+    "weight": 0.65
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "dc0a3c08-5d4c-4b7a-9493-0ade7b63a290",
+    "targetName": "Kako",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "9a1e87c0-a7a0-4610-9317-7fcadf7ce408",
+    "targetName": "Boytoy",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "ca27fbf3-5631-4048-9549-8117212c7387",
+    "targetName": "FCM 후디니",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 2,
+    "weight": 0.65
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "ca27fbf3-5631-4048-9549-8117212c7387",
+    "targetName": "FCM 후디니",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "e7385b1f-6356-45e0-ae5e-f690f19ec508",
+    "targetName": "YUQI",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "4138c7d5-2343-4380-9366-b2a3f7bf5ed2",
+    "targetName": "JENCI",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "59bc26bf-b624-4dd0-af08-043a70cfb88d",
+    "targetName": "김제이미",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "91cc8667-f979-4e01-95fb-05e971d11e32",
+    "targetName": "수경",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "2AfmfGFbe0XWe6oFCAxnME",
+    "sourceName": "(G)I-DLE",
+    "targetMbid": "8fb957e7-7534-4f9a-9755-bbf18027d1a2",
+    "targetName": "JAMIE",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "98be0695-56d4-4da8-8d0c-87d83d5ecd55",
+    "targetName": "Gigi",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 4,
+    "weight": 0.85
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "071409d0-ce21-4f03-a111-aec4dbc1590d",
+    "targetName": "Erika de Casier",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 3,
+    "weight": 0.7999999999999999
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "2cacf9a5-4665-46f6-b2b5-5e8a9235cb4d",
+    "targetName": "Frankie Scoca",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 3,
+    "weight": 0.7999999999999999
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "071409d0-ce21-4f03-a111-aec4dbc1590d",
+    "targetName": "Erika de Casier",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 3,
+    "weight": 0.7999999999999999
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "3a416991-7f91-4b6a-877a-1ec5f23f9d88",
+    "targetName": "Fine Glindvad Jensen",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "8927fc90-0ed6-4687-806f-0c0cb7b0efb9",
+    "targetName": "FRNK",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "3a416991-7f91-4b6a-877a-1ec5f23f9d88",
+    "targetName": "Fine Glindvad Jensen",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "417bfcd0-4771-4189-af43-d0f7dd8fb3ea",
+    "targetName": "김연서",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 2,
+    "weight": 0.65
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "dae456c7-7acd-4d14-9402-42d8b78efc7b",
+    "targetName": "Danielle",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "0NdObd21P2DSFo0iLGmYqZ",
+    "sourceName": "NewJeans",
+    "targetMbid": "d48b3d32-f26f-41a9-a103-418fb2d16589",
+    "targetName": "250",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "3tVQdUvClmAT7URs9V3rsp",
+    "sourceName": "pH-1",
+    "targetMbid": "d8ffd773-4f48-40a8-9a68-7d049e3e98f7",
+    "targetName": "GroovyRoom",
+    "relation": "PRODUCER",
+    "role": "producer",
+    "count": 2,
+    "weight": 0.65
+  },
+  {
+    "source": "5rHUhS9Ya0S63WI9LFmCSx",
+    "sourceName": "Baek A",
+    "targetMbid": "4308fdc4-7f8a-42f0-aaea-a8b397da5e3c",
+    "targetName": "Nelson Riddle",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 2,
+    "weight": 0.65
+  },
+  {
+    "source": "5rHUhS9Ya0S63WI9LFmCSx",
+    "sourceName": "Baek A",
+    "targetMbid": "c2531c38-56c9-4ac1-9d55-173b01893a3c",
+    "targetName": "Edna Alexander",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "5rHUhS9Ya0S63WI9LFmCSx",
+    "sourceName": "Baek A",
+    "targetMbid": "2c067d68-6d54-4405-b265-294c473f5e60",
+    "targetName": "Sidney Mitchell",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "5rHUhS9Ya0S63WI9LFmCSx",
+    "sourceName": "Baek A",
+    "targetMbid": "b5e80f97-c0d5-4699-bd97-ae60396ede74",
+    "targetName": "Maceo Pinkard",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 2,
+    "weight": 0.75
+  },
+  {
+    "source": "5rHUhS9Ya0S63WI9LFmCSx",
+    "sourceName": "Baek A",
+    "targetMbid": "6f24a757-c6ac-4f4f-adc7-b5aaf4931403",
+    "targetName": "Nora Lee King",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "5rHUhS9Ya0S63WI9LFmCSx",
+    "sourceName": "Baek A",
+    "targetMbid": "3db5dfb1-1b91-4038-8268-ae04d15b6a3e",
+    "targetName": "Doris Day",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "5rHUhS9Ya0S63WI9LFmCSx",
+    "sourceName": "Baek A",
+    "targetMbid": "fbe054ec-a143-4101-9e9e-64abc5ff5ac9",
+    "targetName": "Nat King Cole",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "5rHUhS9Ya0S63WI9LFmCSx",
+    "sourceName": "Baek A",
+    "targetMbid": "63ad9345-cbaf-4836-b997-27cd76a8fa33",
+    "targetName": "Oscar Moore",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "5rHUhS9Ya0S63WI9LFmCSx",
+    "sourceName": "Baek A",
+    "targetMbid": "eea8a864-fcda-4602-9569-38ab446decd6",
+    "targetName": "Louis Armstrong",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "5wVJpXzuKV6Xj7Yhsf2uYx",
+    "sourceName": "Han Roro",
+    "targetMbid": "273bbfe9-b0dd-48f8-9d9f-fa3230881206",
+    "targetName": "遠藤ゆりか",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 4,
+    "weight": 0.75
+  },
+  {
+    "source": "3WbKkfwmDLgVwR9ExchFVC",
+    "sourceName": "Nell",
+    "targetMbid": "026d0290-159d-44da-be5f-aa5234d53273",
+    "targetName": "김종완",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 32,
+    "weight": 1
+  },
+  {
+    "source": "3WbKkfwmDLgVwR9ExchFVC",
+    "sourceName": "Nell",
+    "targetMbid": "026d0290-159d-44da-be5f-aa5234d53273",
+    "targetName": "김종완",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 31,
+    "weight": 1
+  },
+  {
+    "source": "3WbKkfwmDLgVwR9ExchFVC",
+    "sourceName": "Nell",
+    "targetMbid": "026d0290-159d-44da-be5f-aa5234d53273",
+    "targetName": "김종완",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 10,
+    "weight": 1
+  },
+  {
+    "source": "3WbKkfwmDLgVwR9ExchFVC",
+    "sourceName": "Nell",
+    "targetMbid": "0ea71c61-7916-4ab6-b992-e9b9ce43c4cd",
+    "targetName": "이정훈",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 3,
+    "weight": 0.7999999999999999
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "b2fd016a-7495-4604-9ad3-54dfaebfee1a",
+    "targetName": "연진",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 9,
+    "weight": 1
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "b2fd016a-7495-4604-9ad3-54dfaebfee1a",
+    "targetName": "연진",
+    "relation": "WRITER",
+    "role": "composer",
+    "count": 8,
+    "weight": 1
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "b2fd016a-7495-4604-9ad3-54dfaebfee1a",
+    "targetName": "연진",
+    "relation": "WRITER",
+    "role": "lyricist",
+    "count": 8,
+    "weight": 1
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "b2fd016a-7495-4604-9ad3-54dfaebfee1a",
+    "targetName": "연진",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 7,
+    "weight": 0.9
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "54b5d845-a4fe-4c78-a3cb-bdea9649eece",
+    "targetName": "박민준",
+    "relation": "PRODUCER",
+    "role": "producer",
+    "count": 4,
+    "weight": 0.75
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "b2fd016a-7495-4604-9ad3-54dfaebfee1a",
+    "targetName": "연진",
+    "relation": "PRODUCER",
+    "role": "producer",
+    "count": 4,
+    "weight": 0.75
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "54b5d845-a4fe-4c78-a3cb-bdea9649eece",
+    "targetName": "박민준",
+    "relation": "PRODUCER",
+    "role": "arranger",
+    "count": 3,
+    "weight": 0.7
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "529cd49e-4e53-43e0-8133-2c8a786d6b54",
+    "targetName": "이용희",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 2,
+    "weight": 0.65
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "dae724b5-c4f8-4e0b-b950-55ccfa4bbf57",
+    "targetName": "조휴일",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "targetMbid": "0b650d70-7270-494c-8c4a-a7ed1204c263",
+    "targetName": "스윗 소로우",
+    "relation": "PRODUCER",
+    "role": "featured",
+    "count": 1,
+    "weight": 0.6
   }
 ]

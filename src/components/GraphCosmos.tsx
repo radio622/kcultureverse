@@ -454,7 +454,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     ctx.globalAlpha = 1;
   }, [focusedId, hop1, hop2, highlightPath, hoverNode, focusChangedAt, graphData.nodes]);
 
-  // ── 링크 색상 (Task 3-3: hop1 엣지만 표시) ────────────────
+  // ── 링크 색상 (V5.4: 평상시는 유령선, 포커스 시에만 발광) ────────
   const linkColor = useCallback((link: {
     relation: V5EdgeRelation;
     source: string | { id: string };
@@ -466,12 +466,14 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
 
     if (highlightEdges.has(key)) return "#fbbf24"; // 경로 탐색 하이라이트
 
-    // Focus Mode: hop1 엣지만 색상 표시
+    // Focus Mode: hop1 엣지만 색상 표시, 나머지는 거의 안 보이게
     if (focusedId && graphData.nodes[focusedId]) {
-      if (!focusEdgeKeys.has(key)) return "rgba(167,139,250,0.03)";
+      if (!focusEdgeKeys.has(key)) return "rgba(167,139,250,0.02)";
+      return EDGE_COLORS[link.relation] ?? "rgba(255,255,255,0.4)";
     }
 
-    return EDGE_COLORS[link.relation] ?? "rgba(255,255,255,0.08)";
+    // 기본 모드 (첫 화면): 선을 유령선 레이어로 낮춤
+    return "rgba(255,255,255,0.03)";
   }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes]);
 
   // ── 링크 폭 ────────────────────────────────────────────────
@@ -483,9 +485,16 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     const srcId = typeof link.source === "string" ? link.source : link.source.id;
     const tgtId = typeof link.target === "string" ? link.target : link.target.id;
     const key = [srcId, tgtId].sort().join("||");
+    
     if (highlightEdges.has(key)) return 3;
-    if (focusedId && graphData.nodes[focusedId] && !focusEdgeKeys.has(key)) return 0.1;
-    return EDGE_WIDTH[link.relation] ?? 0.5;
+    
+    if (focusedId && graphData.nodes[focusedId]) {
+      if (!focusEdgeKeys.has(key)) return 0.05;
+      return (EDGE_WIDTH[link.relation] ?? 0.5) * 1.5; // 강조 시 선 굵기 1.5배 증가
+    }
+    
+    // 기본 모드 (안 보일 정도로 얇게)
+    return 0.15;
   }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes]);
 
   // ── nodePointerAreaPaint: LOD에 맞는 히트영역 (클릭 인식) ─
