@@ -12,7 +12,9 @@
     "build-graph": "tsx scripts/build-graph.ts",
     "compute-layout": "tsx scripts/compute-layout.ts",
     "universe:rebuild": "tsx scripts/prebake.ts && tsx scripts/build-graph.ts && tsx scripts/compute-layout.ts",
-    "build-universe-v5": "tsx scripts/build-universe-v5.ts"
+    "build-universe-v5": "tsx scripts/build-universe-v5.ts",
+    "v5:purge-fallback": "tsx scripts/purge-fallback-satellites.ts",
+    "v5:crawl-credits": "tsx scripts/crawl-featured-credits.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.2",
