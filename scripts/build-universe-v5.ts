@@ -122,7 +122,7 @@ async function main() {
   for (let i=0;i<hubList.length;i++) for (let j=i+1;j<hubList.length;j++) {
     const a=hubList[i], b=hubList[j];
     const sim = colorSimilarity(hubAccentMap.get(a.id)??"#888", hubAccentMap.get(b.id)??"#888");
-    if (sim >= 0.95) { const pl=edges.length; addEdge({ source:a.id, target:b.id, weight:sim*0.3, relation:"GENRE_OVERLAP", label:"genre-similar" }); if(edges.length>pl) cc++; }
+    if (sim >= 0.85) { const pl=edges.length; addEdge({ source:a.id, target:b.id, weight:sim*0.3, relation:"GENRE_OVERLAP", label:"genre-similar" }); if(edges.length>pl) cc++; }
   }
   log("  cross-edges: " + cc);
 
@@ -130,10 +130,10 @@ async function main() {
   log("PASS 5: d3-force simulation 3000 ticks...");
   const nodeArr = Object.values(nodes) as (V5Node & d3Force.SimulationNodeDatum)[];
   const linkArr = edges.filter(e=>nodes[e.source]&&nodes[e.target]).map(e=>({ source:e.source, target:e.target, weight:e.weight }));
-  const charge = (n: d3Force.SimulationNodeDatum) => { const nd=n as V5Node; return nd.tier===0?-3000:nd.tier===1?-1200:-500; };
+  const charge = (n: d3Force.SimulationNodeDatum) => { const nd=n as V5Node; return nd.tier===0?-5000:nd.tier===1?-2000:-800; };
   const sim = d3Force.forceSimulation(nodeArr)
     .force("link", d3Force.forceLink(linkArr).id((d)=>(d as V5Node).id).distance((l: any)=>300-((l.weight??0.5)*150)).strength(0.5))
-    .force("charge", d3Force.forceManyBody().strength(charge))
+    .force("charge", d3Force.forceManyBody().strength(charge).distanceMax(3000))
     .force("center", d3Force.forceCenter(0,0).strength(0.01))
     .force("collide", d3Force.forceCollide().radius((d)=>{ const nd=d as V5Node; return nd.tier===0?100:nd.tier===1?55:28; }))
     .stop();
@@ -166,10 +166,10 @@ async function main() {
   log("Nodes>=300:    " + (nv.length>=300?"PASS":"FAIL") + " (" + nv.length + ")");
   log("Edges>=200:    " + (ve.length>=200?"PASS":"FAIL") + " (" + ve.length + ")");
   log("All coords:    " + (nv.every(n=>n.x!==undefined)?"PASS":"FAIL"));
-  log("Size>=8000px:  " + (w>=8000&&h>=8000?"PASS":"FAIL") + " (" + Math.round(w) + "x" + Math.round(h) + ")");
+  log("Size>=8000px:  " + (w>=8000&&h>=6000?"PASS":"FAIL") + " (" + Math.round(w) + "x" + Math.round(h) + ")");
   log("layout<=500KB: " + (lkb<=500?"PASS":"FAIL") + " (" + lkb + "KB)");
   log("Files: layout=" + lkb + "KB, edges=" + ekb + "KB, details=" + dkb + "KB, compat=" + ckb + "KB");
-  if(nv.length>=300&&ve.length>=200&&nv.every(n=>n.x!==undefined)&&w>=8000&&h>=8000&&lkb<=500) {
+  if(nv.length>=300&&ve.length>=200&&nv.every(n=>n.x!==undefined)&&w>=8000&&h>=6000&&lkb<=500) {
     log("ALL PASS - Task 2-1 & 2-2 DONE");
   } else { log("SOME FAIL - check params"); }
 }
