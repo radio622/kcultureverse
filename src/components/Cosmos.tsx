@@ -9,15 +9,10 @@ interface Props {
   focusedIndex: number | null;
   onCoreTap: () => void;
   onSatelliteTap: (index: number) => void;
-  /** 심우주 노드 (먼 배경에 흐릿하게 보이는 다른 허브 아티스트들) */
   deepSpaceNodes?: DeepSpaceNode[];
   onDeepSpaceTap?: (spotifyId: string) => void;
-  /** 현재 재생 중인 아티스트 ID */
-  playingArtistId?: string | null;
-  /** 현재 재생 중인 곡 이름 */
-  playingTrackName?: string | null;
-  /** 재생 정지 콜백 */
-  onStopPlay?: () => void;
+  /** 외부에서 특정 위성으로 카메라 워프를 강제하기 위한 ID (카드 클릭용) */
+  activeDiveTargetId?: string | null;
 }
 
 // ── 궤도 링 설정 (Step 3: 반경 확대로 광활한 우주 공간) ──────────
@@ -94,7 +89,7 @@ function shortestDelta(from: number, to: number, half: number): number {
   return d;
 }
 
-export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, deepSpaceNodes = [], onDeepSpaceTap, playingArtistId, playingTrackName, onStopPlay }: Props) {
+export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, deepSpaceNodes = [], onDeepSpaceTap, activeDiveTargetId }: Props) {
   const containerRef   = useRef<HTMLDivElement>(null);
   const zoomWrapperRef = useRef<HTMLDivElement>(null);
   const universeRef    = useRef<HTMLDivElement>(null);
@@ -137,6 +132,37 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
       };
     }),
   [data.satellites]);
+
+  // ── 외부에서 activeDiveTargetId가 주어지면 해당 위성으로 카메라 워프 발동 ──
+  useEffect(() => {
+    if (!activeDiveTargetId) return;
+    if (warpTargetRef.current) return; // 이미 진행 중이면 무시
+
+    // 대상이 위성인지 확인
+    const idx = data.satellites.findIndex(s => s.spotifyId === activeDiveTargetId);
+    if (idx !== -1) {
+      const elapsed = Date.now() - startTimeRef.current;
+      const { ringIdx, posInRing } = getRingForIndex(idx);
+      const ring    = RINGS[ringIdx];
+      const scatter = scatterOffsets[idx] ?? { radiusFactor: 1, angleOffset: 0 };
+      const actualRadius = ring.radius * scatter.radiusFactor;
+      const baseAngle    = (posInRing / ring.count) * 2 * Math.PI + scatter.angleOffset;
+      const angle        = baseAngle + elapsed * ring.speed;
+
+      const worldX = Math.cos(angle) * actualRadius;
+      const worldY = Math.sin(angle) * actualRadius * 0.5;
+
+      // 카메라가 대상으로 관성을 무시하고 부드럽게 날아가도록 설정
+      warpTargetRef.current = { x: -worldX, y: -worldY, id: activeDiveTargetId, done: false };
+      return;
+    }
+
+    // 대상이 심우주 노드인지 확인
+    const dsNode = deepSpaceNodes.find(n => n.spotifyId === activeDiveTargetId);
+    if (dsNode) {
+      warpTargetRef.current = { x: -dsNode.x, y: -dsNode.y, id: dsNode.spotifyId, done: false };
+    }
+  }, [activeDiveTargetId, data.satellites, deepSpaceNodes, scatterOffsets]);
 
   // ── 드래그 이벤트 핸들러 (pointerEvent로 터치+마우스 통합) ────
   useEffect(() => {
@@ -547,8 +573,6 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
             isCore
             isFocused={false}
             onClick={onCoreTap}
-            playingTrackName={playingArtistId === data.core.spotifyId ? playingTrackName : null}
-            onStopPlay={playingArtistId === data.core.spotifyId ? onStopPlay : undefined}
           />
         </div>
 
@@ -569,8 +593,6 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
               size={focusedIndex === i ? 58 : 46}
               isCore={false}
               isFocused={focusedIndex === i}
-              playingTrackName={playingArtistId === satellite.spotifyId ? playingTrackName : null}
-              onStopPlay={playingArtistId === satellite.spotifyId ? onStopPlay : undefined}
               onClick={() => {
                 if (focusedIndex === i) {
                   if (warpTargetRef.current) return;

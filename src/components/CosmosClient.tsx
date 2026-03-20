@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import type { CosmosArtist, CosmosData, SatelliteNode, DeepSpaceNode } from "@/lib/types";
 import Cosmos from "./Cosmos";
@@ -35,6 +35,10 @@ export default function CosmosClient({
   const [introVisible, setIntroVisible] = useState(!!introName);
   // ── 워프(다이브) 페이드아웃 ─────────────────────────────────
   const [isWarping, setIsWarping] = useState(false);
+  const [diveTargetId, setDiveTargetId] = useState<string | null>(null);
+
+  // ── 스와이프 디바운스 타이머 ────────────────────────────────
+  const swipeTimeoutRef = useRef<number | null>(null);
 
   // ── 위성 데이터 ─────────────────────────────────────────────
   const [satellites, setSatellites] = useState<SatelliteNode[]>(initialSatellites ?? []);
@@ -80,10 +84,25 @@ export default function CosmosClient({
   const cosmosShift = sheetState === "expanded" ? -50 : sheetState === "peek" ? -36 : 0;
 
    // ── 포커스 핸들러 ────────────────────────────────────
-  // 카드 스크롤 시에는 포커스만 변경 (음악 재생 안 함)
+  // 카드 스크롤 시 0.4초 머무르면 자동 음악 재생 (Debounce)
   const handleSatelliteFocus = useCallback((index: number) => {
     setFocusedIndex(index);
-  }, []);
+    if (swipeTimeoutRef.current) window.clearTimeout(swipeTimeoutRef.current);
+    
+    swipeTimeoutRef.current = window.setTimeout(() => {
+      const satellite = data.satellites[index];
+      if (!satellite) return;
+      if (satellite.previewUrl) {
+        audio.play(satellite.previewUrl, satellite.previewTrackName || satellite.name, satellite.spotifyId);
+      } else {
+        fetch(`/api/spotify/preview?name=${encodeURIComponent(satellite.name)}`)
+          .then(r => r.json())
+          .then(p => {
+            if (p.previewUrl) audio.play(p.previewUrl, p.trackName || satellite.name, satellite.spotifyId);
+          });
+      }
+    }, 400);
+  }, [data, audio]);
 
   const handleFocus = useCallback(
     (index: number | null) => {
@@ -132,31 +151,21 @@ export default function CosmosClient({
     [data, audio]
   );
 
-  // ── 위성 카드 탭 (데크에서 카드 클릭시) — 음악 재생/정지 토글 ──
+  // ── 위성 카드 탭 (데크에서 카드 클릭시) — 카메라 워프 발동 ──
   const handleCardTap = useCallback((index: number) => {
     const satellite = data.satellites[index];
     if (!satellite) return;
-
-    // 현재 재생 중인 곡과 같으면 정지
-    if (audio.isPlaying && audio.currentArtistId === satellite.spotifyId) {
-      audio.stop();
-      return;
-    }
-
-    // 새 곡 재생
-    if (satellite.previewUrl) {
-      audio.play(satellite.previewUrl, satellite.previewTrackName || satellite.name, satellite.spotifyId);
-    } else {
-      fetch(`/api/spotify/preview?name=${encodeURIComponent(satellite.name)}`)
-        .then(r => r.json())
-        .then(p => {
-          if (p.previewUrl) audio.play(p.previewUrl, p.trackName || satellite.name, satellite.spotifyId);
-        });
-    }
-  }, [data, audio]);
+    // 카드 자체를 클릭하면 카메라가 그 위성으로 날아가는 "워프 다이브" 발동!
+    setDiveTargetId(satellite.spotifyId);
+  }, [data]);
 
   const handleDive = useCallback((spotifyId: string) => {
-    // 부드러운 전환: 페이드아웃 → router.push (페이지 전체 새로고침 방지)
+    // 버튼("이 아티스트의 우주로") 클릭도 동일하게 워프 카메라 연출 발동
+    setDiveTargetId(spotifyId);
+  }, []);
+
+  // ── 카메라가 목표 위성에 도달했을 때 불리는 최종 다이브(페이드) ──
+  const finishDive = useCallback((spotifyId: string) => {
     setIsWarping(true);
     audio.stop();
     setTimeout(() => {
@@ -269,10 +278,8 @@ export default function CosmosClient({
           onCoreTap={() => handleFocus(null)}
           onSatelliteTap={handleFocus}
           deepSpaceNodes={deepSpaceNodes}
-          onDeepSpaceTap={(spotifyId) => router.push(`/from/${spotifyId}`)}
-          playingArtistId={audio.currentArtistId}
-          playingTrackName={audio.currentTrackName}
-          onStopPlay={audio.stop}
+          onDeepSpaceTap={finishDive}
+          activeDiveTargetId={diveTargetId}
         />
       </div>
 
