@@ -101,7 +101,7 @@ export default function CosmosClient({
             if (p.previewUrl) audio.play(p.previewUrl, p.trackName || satellite.name, satellite.spotifyId);
           });
       }
-    }, 400);
+    }, 250);
   }, [data, audio]);
 
   const handleFocus = useCallback(

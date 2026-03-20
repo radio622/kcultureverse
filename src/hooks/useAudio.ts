@@ -65,6 +65,15 @@ export function useAudio() {
     // 같은 곡이면 스킵
     if (audio.src === previewUrl && !audio.paused) return;
 
+    // ✨ 핵심 UI 즉시 갱신 (오디오 다운로드 대기 전에 라벨부터 변경)
+    setState((prev) => ({
+      ...prev,
+      currentTrackName: trackName,
+      currentArtistId: artistId,
+      isPlaying: true,
+      progress: 0
+    }));
+
     // 이전 곡 페이드아웃
     if (!audio.paused) {
       await fadeOut(audio, 250);
@@ -76,9 +85,8 @@ export function useAudio() {
     try {
       await audio.play();
       fadeIn(audio, 0.75, 400);
-      setState({ isPlaying: true, currentTrackName: trackName, currentArtistId: artistId, progress: 0 });
     } catch {
-      // autoplay 정책 차단 — 조용히 실패
+      // autoplay 정책 차단 — 조용히 실패 (이름은 놔두고 애니메이션만 멈춤)
       setState((prev) => ({ ...prev, isPlaying: false }));
     }
   }, [fadeOut, fadeIn]);
