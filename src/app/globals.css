@@ -303,6 +303,11 @@ body {
   100% { background-position: -200% center; }
 }
 
+@keyframes trackPulse {
+  0%, 100% { opacity: 0.75; }
+  50%      { opacity: 1; }
+}
+
 /* ── Step 5: resonance-deck 카드 폭 수정 (ArtistCard 240px 맞춤) */
 .resonance-deck__card {
   scroll-snap-align: center;

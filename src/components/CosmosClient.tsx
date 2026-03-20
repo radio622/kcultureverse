@@ -33,6 +33,8 @@ export default function CosmosClient({
   const [sheetState, setSheetState] = useState<SheetState>("collapsed");
   const [copied, setCopied]         = useState(false);
   const [introVisible, setIntroVisible] = useState(!!introName);
+  // ── 워프(다이브) 페이드아웃 ─────────────────────────────────
+  const [isWarping, setIsWarping] = useState(false);
 
   // ── 위성 데이터 ─────────────────────────────────────────────
   const [satellites, setSatellites] = useState<SatelliteNode[]>(initialSatellites ?? []);
@@ -154,8 +156,13 @@ export default function CosmosClient({
   }, [data, audio]);
 
   const handleDive = useCallback((spotifyId: string) => {
-    window.location.href = `/from/${spotifyId}`;
-  }, []);
+    // 부드러운 전환: 페이드아웃 → router.push (페이지 전체 새로고침 방지)
+    setIsWarping(true);
+    audio.stop();
+    setTimeout(() => {
+      router.push(`/from/${spotifyId}`);
+    }, 450); // CSS transition과 동기화
+  }, [router, audio]);
 
   const handleShare = useCallback(async () => {
     // 포커스된 위성이 있으면 위성 타겟, 없으면 코어 타겟
@@ -234,6 +241,19 @@ export default function CosmosClient({
         </div>
       )}
 
+      {/* ── 워프 페이드아웃 오버레이 ─────────────────────── */}
+      {isWarping && (
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 90,
+          background: "var(--bg-cosmos)",
+          opacity: 1,
+          animation: "warpFadeIn 0.45s ease-out forwards",
+          pointerEvents: "all",
+        }} />
+      )}
+
       {/* ── Cosmos (우주 시각화) ── 카메라 팬을 이용한 워프 ── */}
       <div
         style={{
@@ -250,6 +270,9 @@ export default function CosmosClient({
           onSatelliteTap={handleFocus}
           deepSpaceNodes={deepSpaceNodes}
           onDeepSpaceTap={(spotifyId) => router.push(`/from/${spotifyId}`)}
+          playingArtistId={audio.currentArtistId}
+          playingTrackName={audio.currentTrackName}
+          onStopPlay={audio.stop}
         />
       </div>
 
@@ -354,6 +377,10 @@ export default function CosmosClient({
           0%   { opacity: 1; }
           70%  { opacity: 1; }
           100% { opacity: 0; }
+        }
+        @keyframes warpFadeIn {
+          0%   { opacity: 0; }
+          100% { opacity: 1; }
         }
       `}</style>
     </div>

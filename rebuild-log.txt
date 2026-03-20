@@ -1,0 +1,606 @@
+
+> kcultureverse@0.1.0 prebake
+> tsx scripts/prebake.ts
+
+🌌 K-Culture Universe Pre-bake 스크립트 시작
+   출력 경로: /Users/ji/Documents/Jitigravity/public/data/hub
+   대상 아티스트: 62명
+   아티스트 간 대기시간: 8초
+
+[1/62] (2%) BTS — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/3Nrfpe0tUJi4K4DXYWgMUX
+[1/62] (2%) BTS — ✅ 완료 (위성 11명)
+[1/62] (2%) BTS — ⏳ 8초 대기 중...
+[2/62] (3%) BLACKPINK — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/41MozSoPIsD1dJM0CLPjZF
+[2/62] (3%) BLACKPINK — ✅ 완료 (위성 5명)
+[2/62] (3%) BLACKPINK — ⏳ 8초 대기 중...
+[3/62] (5%) IU — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/3HqSLMAZ3g3d5poNaI7GOU
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[3/62] (5%) IU — ✅ 완료 (위성 6명)
+[3/62] (5%) IU — ⏳ 8초 대기 중...
+[4/62] (6%) Zico — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/2Ek1q2haOnxVqhvVKqMvJe
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[4/62] (6%) Zico — ✅ 완료 (위성 7명)
+[4/62] (6%) Zico — ⏳ 8초 대기 중...
+[5/62] (8%) Jay Park — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/3yY2jUvSFTDMzPDqBOkO0E
+[5/62] (8%) Jay Park — ✅ 완료 (위성 4명)
+[5/62] (8%) Jay Park — ⏳ 8초 대기 중...
+[6/62] (10%) Epik High — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/2w9zwq3AkvD4mVLDyo3i1L
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[6/62] (10%) Epik High — ✅ 완료 (위성 7명)
+[6/62] (10%) Epik High — ⏳ 8초 대기 중...
+[7/62] (11%) Hyukoh — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/0Kv3muNFnLPfFSnJlKZGsS
+[7/62] (11%) Hyukoh — ✅ 완료 (위성 7명)
+[7/62] (11%) Hyukoh — ⏳ 8초 대기 중...
+[8/62] (13%) Heize — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/6liAMWkB0u95sm91IkwMpK
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[8/62] (13%) Heize — ✅ 완료 (위성 7명)
+[8/62] (13%) Heize — ⏳ 8초 대기 중...
+[9/62] (15%) The Black Skirts — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/6WeDO4GynFmK4OxwkBzMW8
+[9/62] (15%) The Black Skirts — ✅ 완료 (위성 6명)
+[9/62] (15%) The Black Skirts — ⏳ 8초 대기 중...
+[10/62] (16%) NMIXX — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/28ot3wh4oNmoFOdVajibBl
+[10/62] (16%) NMIXX — ✅ 완료 (위성 8명)
+[10/62] (16%) NMIXX — ⏳ 8초 대기 중...
+[11/62] (18%) Stray Kids — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/0L8ExT028jH3ddEcZwqJJ5
+[11/62] (18%) Stray Kids — ✅ 완료 (위성 9명)
+[11/62] (18%) Stray Kids — ⏳ 8초 대기 중...
+[12/62] (19%) (G)I-DLE — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/2AfmfGFbe0XWe6oFCAxnME
+[12/62] (19%) (G)I-DLE — ✅ 완료 (위성 10명)
+[12/62] (19%) (G)I-DLE — ⏳ 8초 대기 중...
+[13/62] (21%) NewJeans — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/0NdObd21P2DSFo0iLGmYqZ
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[13/62] (21%) NewJeans — ✅ 완료 (위성 7명)
+[13/62] (21%) NewJeans — ⏳ 8초 대기 중...
+[14/62] (23%) BIBI — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/6HaGTQPmzraZdZR615C3bq
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[14/62] (23%) BIBI — ✅ 완료 (위성 7명)
+[14/62] (23%) BIBI — ⏳ 8초 대기 중...
+[15/62] (24%) pH-1 — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/3tVQdUvClmAT7URs9V3rsp
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX
+[15/62] (24%) pH-1 — ✅ 완료 (위성 8명)
+[15/62] (24%) pH-1 — ⏳ 8초 대기 중...
+[16/62] (26%) Baek A — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/5rHUhS9Ya0S63WI9LFmCSx
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[16/62] (26%) Baek A — ✅ 완료 (위성 7명)
+[16/62] (26%) Baek A — ⏳ 8초 대기 중...
+[17/62] (27%) Autumn Vacation — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/6OSMGFNb20nNBw4a2vWxMT
+[17/62] (27%) Autumn Vacation — ✅ 완료 (위성 6명)
+[17/62] (27%) Autumn Vacation — ⏳ 8초 대기 중...
+[18/62] (29%) Unnieneibalgwan — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/1Juf4OqydiYBfBx4TtMtH9
+[18/62] (29%) Unnieneibalgwan — ✅ 완료 (위성 8명)
+[18/62] (29%) Unnieneibalgwan — ⏳ 8초 대기 중...
+[19/62] (31%) Lee Baksa — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/1BwU3fTprQmvrVc8Rl9SHw
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[19/62] (31%) Lee Baksa — ✅ 완료 (위성 8명)
+[19/62] (31%) Lee Baksa — ⏳ 8초 대기 중...
+[20/62] (32%) Han Roro — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/5wVJpXzuKV6Xj7Yhsf2uYx
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[20/62] (32%) Han Roro — ✅ 완료 (위성 7명)
+[20/62] (32%) Han Roro — ⏳ 8초 대기 중...
+[21/62] (34%) Nell — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/3WbKkfwmDLgVwR9ExchFVC
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[21/62] (34%) Nell — ✅ 완료 (위성 7명)
+[21/62] (34%) Nell — ⏳ 8초 대기 중...
+[22/62] (35%) Linus's Blanket — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/2XFSeoCf8No50etmN8b4Sy
+[22/62] (35%) Linus's Blanket — ✅ 완료 (위성 8명)
+[22/62] (35%) Linus's Blanket — ⏳ 8초 대기 중...
+[23/62] (37%) Deli Spice — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/00iP5z19F6kM7L3gMhF4oD
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[23/62] (37%) Deli Spice — ✅ 완료 (위성 7명)
+[23/62] (37%) Deli Spice — ⏳ 8초 대기 중...
+[24/62] (39%) Through the Sloe — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/6a14ZNuq4LsSkVHQR0kWd9
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[24/62] (39%) Through the Sloe — ✅ 완료 (위성 7명)
+[24/62] (39%) Through the Sloe — ⏳ 8초 대기 중...
+[25/62] (40%) Julia's Heart — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/4O5NReb5AzwlP3dFQGeTuD
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[25/62] (40%) Julia's Heart — ✅ 완료 (위성 7명)
+[25/62] (40%) Julia's Heart — ⏳ 8초 대기 중...
+[26/62] (42%) Broccoli You Too — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/1gq4XavqmZhqOzEkpFBz1j
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[26/62] (42%) Broccoli You Too — ✅ 완료 (위성 7명)
+[26/62] (42%) Broccoli You Too — ⏳ 8초 대기 중...
+[27/62] (44%) AKMU — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/6OwKE9Ez6ALxpTaKcT5ayv
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[27/62] (44%) AKMU — ✅ 완료 (위성 7명)
+[27/62] (44%) AKMU — ⏳ 8초 대기 중...
+[28/62] (45%) BIGBANG — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/4Kxlr1PRlDKEB0ekOCyHgX
+[28/62] (45%) BIGBANG — ✅ 완료 (위성 5명)
+[28/62] (45%) BIGBANG — ⏳ 8초 대기 중...
+[29/62] (47%) Girls' Generation — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/0Sadg1vgvaPqGTOjxu0N6c
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[29/62] (47%) Girls' Generation — ✅ 완료 (위성 7명)
+[29/62] (47%) Girls' Generation — ⏳ 8초 대기 중...
+[30/62] (48%) J.Y. Park — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/1TTx0YcbKUtJIZY1HEnh9B
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[30/62] (48%) J.Y. Park — ✅ 완료 (위성 8명)
+[30/62] (48%) J.Y. Park — ⏳ 8초 대기 중...
+[31/62] (50%) Seo Taiji — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/52Gsa9Zypqztm2DeNkQfCm
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX
+[31/62] (50%) Seo Taiji — ✅ 완료 (위성 8명)
+[31/62] (50%) Seo Taiji — ⏳ 8초 대기 중...
+[32/62] (52%) Yoon Sang — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/6sxtN9maIhNAu663hY5g6B
+[32/62] (52%) Yoon Sang — ✅ 완료 (위성 3명)
+[32/62] (52%) Yoon Sang — ⏳ 8초 대기 중...
+[33/62] (53%) Toy — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/7sS12h1hMwOqXiB5vYdlu8
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[33/62] (53%) Toy — ✅ 완료 (위성 7명)
+[33/62] (53%) Toy — ⏳ 8초 대기 중...
+[34/62] (55%) Yoon Mirae — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/4hDVt8U6lhZNnXpFcXwYwS
+[34/62] (55%) Yoon Mirae — ✅ 완료 (위성 3명)
+[34/62] (55%) Yoon Mirae — ⏳ 8초 대기 중...
+[35/62] (56%) Sunwoo Jung-a — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/04L3elxyr0XFua2Ek3domW
+[35/62] (56%) Sunwoo Jung-a — ✅ 완료 (위성 3명)
+[35/62] (56%) Sunwoo Jung-a — ⏳ 8초 대기 중...
+[36/62] (58%) Leessang — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/0JGN9XIqm3vfg7hhPHjExI
+[36/62] (58%) Leessang — ✅ 완료 (위성 7명)
+[36/62] (58%) Leessang — ⏳ 8초 대기 중...
+[37/62] (60%) Lee Juk — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/0pfVDTchnVMBTzGylIuJNa
+[37/62] (60%) Lee Juk — ✅ 완료 (위성 3명)
+[37/62] (60%) Lee Juk — ⏳ 8초 대기 중...
+[38/62] (61%) Deux — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/64RfnYDHtR3ZaLdtxAjPDA
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[38/62] (61%) Deux — ✅ 완료 (위성 7명)
+[38/62] (61%) Deux — ⏳ 8초 대기 중...
+[39/62] (63%) dosii — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/41lcf5k3PkUdxupYLkcjCd
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[39/62] (63%) dosii — ✅ 완료 (위성 8명)
+[39/62] (63%) dosii — ⏳ 8초 대기 중...
+[40/62] (65%) Mot — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/1tpzH7XBT9sUJx4CMB4hCp
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[40/62] (65%) Mot — ✅ 완료 (위성 7명)
+[40/62] (65%) Mot — ⏳ 8초 대기 중...
+[41/62] (66%) Kiha & The Faces — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/0oN8IZB1C3lY1ABKwJOu1I
+[41/62] (66%) Kiha & The Faces — ✅ 완료 (위성 9명)
+[41/62] (66%) Kiha & The Faces — ⏳ 8초 대기 중...
+[42/62] (68%) SE SO NEON — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/07OePkse2fcvU9wlVftNMl
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[42/62] (68%) SE SO NEON — ✅ 완료 (위성 7명)
+[42/62] (68%) SE SO NEON — ⏳ 8초 대기 중...
+[43/62] (69%) Bosudongcooler — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/7zhojNyxff5HeS5mIgUVmU
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[43/62] (69%) Bosudongcooler — ✅ 완료 (위성 8명)
+[43/62] (69%) Bosudongcooler — ⏳ 8초 대기 중...
+[44/62] (71%) Bluedawn — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/2PsnDm6aGMnPFcqyyII5iQ
+[44/62] (71%) Bluedawn — ✅ 완료 (위성 5명)
+[44/62] (71%) Bluedawn — ⏳ 8초 대기 중...
+[45/62] (73%) DABDA — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/0ndvlJnYkMJZhet7fVhk9C
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[45/62] (73%) DABDA — ✅ 완료 (위성 7명)
+[45/62] (73%) DABDA — ⏳ 8초 대기 중...
+[46/62] (74%) Kim Sawol — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/08J6v4qHZz06ua0qAicWmE
+[46/62] (74%) Kim Sawol — ✅ 완료 (위성 4명)
+[46/62] (74%) Kim Sawol — ⏳ 8초 대기 중...
+[47/62] (76%) THORNAPPLE — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/6S4fsREHT1NEjTb3lYD2pG
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[47/62] (76%) THORNAPPLE — ✅ 완료 (위성 7명)
+[47/62] (76%) THORNAPPLE — ⏳ 8초 대기 중...
+[48/62] (77%) Nerd Connection — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/5WKUZJPvN1SScyggtPFShK
+[48/62] (77%) Nerd Connection — ✅ 완료 (위성 6명)
+[48/62] (77%) Nerd Connection — ⏳ 8초 대기 중...
+[49/62] (79%) Meaningful Stone — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/7EVlq3yUVHbHZZsaYSOcXt
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[49/62] (79%) Meaningful Stone — ✅ 완료 (위성 7명)
+[49/62] (79%) Meaningful Stone — ⏳ 8초 대기 중...
+[50/62] (81%) Jaurim — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/6evmYxFbDSIHilUaYC9MhL
+[50/62] (81%) Jaurim — ✅ 완료 (위성 6명)
+[50/62] (81%) Jaurim — ⏳ 8초 대기 중...
+[51/62] (82%) mingginyu — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/29UQ130XMQDR55X4Rmjapd
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[51/62] (82%) mingginyu — ✅ 완료 (위성 7명)
+[51/62] (82%) mingginyu — ⏳ 8초 대기 중...
+[52/62] (84%) Silica Gel — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/2kxVxKOgoefmgkwoHipHsn
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[52/62] (84%) Silica Gel — ✅ 완료 (위성 7명)
+[52/62] (84%) Silica Gel — ⏳ 8초 대기 중...
+[53/62] (85%) cotoba — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/5KOhn3Gjbd4DUavli5No5f
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[53/62] (85%) cotoba — ✅ 완료 (위성 7명)
+[53/62] (85%) cotoba — ⏳ 8초 대기 중...
+[54/62] (87%) ADOY — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/64sY7LsUjNE3ifONkftTXC
+[54/62] (87%) ADOY — ✅ 완료 (위성 7명)
+[54/62] (87%) ADOY — ⏳ 8초 대기 중...
+[55/62] (89%) youra — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/5q9adPv91NFr8q2ZcKmX0V
+[55/62] (89%) youra — ✅ 완료 (위성 7명)
+[55/62] (89%) youra — ⏳ 8초 대기 중...
+[56/62] (90%) Aseul — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/7K1yj70w0ldP7bMDqiiHMo
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[56/62] (90%) Aseul — ✅ 완료 (위성 7명)
+[56/62] (90%) Aseul — ⏳ 8초 대기 중...
+[57/62] (92%) Lee Godo — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/18r9qka1AKwgqzUzaLdxhm
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[57/62] (92%) Lee Godo — ✅ 완료 (위성 7명)
+[57/62] (92%) Lee Godo — ⏳ 8초 대기 중...
+[58/62] (94%) ALEPH — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/2ncTglxMHKmCzBKckfzOEv
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[58/62] (94%) ALEPH — ✅ 완료 (위성 7명)
+[58/62] (94%) ALEPH — ⏳ 8초 대기 중...
+[59/62] (95%) 015B — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/4uU7KfTjcjyKUGWSaTzLu7
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[59/62] (95%) 015B — ✅ 완료 (위성 7명)
+[59/62] (95%) 015B — ⏳ 8초 대기 중...
+[60/62] (97%) Guckkasten — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/71kRpwy6xTeG2OXXkRJdkA
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[60/62] (97%) Guckkasten — ✅ 완료 (위성 7명)
+[60/62] (97%) Guckkasten — ⏳ 8초 대기 중...
+[61/62] (98%) Car, the garden — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/0gqEtTORPrOqWJWElLvDQ3
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX,3cjEqqelV9zb41pAfcwrPM
+[61/62] (98%) Car, the garden — ✅ 완료 (위성 7명)
+[61/62] (98%) Car, the garden — ⏳ 8초 대기 중...
+[62/62] (100%) Chamsom — 🔍 데이터 수집 중...
+[getArtistCore] Spotify API 차단! iTunes Fallback 작동 Spotify API error 403: /artists/5xNWQgdUZS4YN7xAYItpKi
+[Spotify API] 일괄 로드 실패: Spotify API error 403: /artists?ids=3Nrfpe0tUJi4K4DXYWgMUX,41MozSoPIsD1dJM0CLPjZF,7n2Ycct7Beij7Dj7meI4X0,3HqSLMAZ3g3d5poNaI7GOU,1z4g3DjTBBZKhvAroFlhOM,4Kxlr1PRlDKEB0ekOCyHgX
+[62/62] (100%) Chamsom — ✅ 완료 (위성 8명)
+
+📋 검색 인덱스(search-index.json) 생성 중...
+✅ 검색 인덱스 생성 완료 — 65명 등록
+
+═══════════════════════════════════════
+         Pre-bake 완료 리포트
+═══════════════════════════════════════
+  ✅ BTS             위성 11명
+  ✅ BLACKPINK       위성 5명
+  ✅ IU              위성 6명
+  ✅ Zico            위성 7명
+  ✅ Jay Park        위성 4명
+  ✅ Epik High       위성 7명
+  ✅ Hyukoh          위성 7명
+  ✅ Heize           위성 7명
+  ✅ The Black Skirts 위성 6명
+  ✅ NMIXX           위성 8명
+  ✅ Stray Kids      위성 9명
+  ✅ (G)I-DLE        위성 10명
+  ✅ NewJeans        위성 7명
+  ✅ BIBI            위성 7명
+  ✅ pH-1            위성 8명
+  ✅ Baek A          위성 7명
+  ✅ Autumn Vacation 위성 6명
+  ✅ Unnieneibalgwan 위성 8명
+  ✅ Lee Baksa       위성 8명
+  ✅ Han Roro        위성 7명
+  ✅ Nell            위성 7명
+  ✅ Linus's Blanket 위성 8명
+  ✅ Deli Spice      위성 7명
+  ✅ Through the Sloe 위성 7명
+  ✅ Julia's Heart   위성 7명
+  ✅ Broccoli You Too 위성 7명
+  ✅ AKMU            위성 7명
+  ✅ BIGBANG         위성 5명
+  ✅ Girls' Generation 위성 7명
+  ✅ J.Y. Park       위성 8명
+  ✅ Seo Taiji       위성 8명
+  ✅ Yoon Sang       위성 3명
+  ✅ Toy             위성 7명
+  ✅ Yoon Mirae      위성 3명
+  ✅ Sunwoo Jung-a   위성 3명
+  ✅ Leessang        위성 7명
+  ✅ Lee Juk         위성 3명
+  ✅ Deux            위성 7명
+  ✅ dosii           위성 8명
+  ✅ Mot             위성 7명
+  ✅ Kiha & The Faces 위성 9명
+  ✅ SE SO NEON      위성 7명
+  ✅ Bosudongcooler  위성 8명
+  ✅ Bluedawn        위성 5명
+  ✅ DABDA           위성 7명
+  ✅ Kim Sawol       위성 4명
+  ✅ THORNAPPLE      위성 7명
+  ✅ Nerd Connection 위성 6명
+  ✅ Meaningful Stone 위성 7명
+  ✅ Jaurim          위성 6명
+  ✅ mingginyu       위성 7명
+  ✅ Silica Gel      위성 7명
+  ✅ cotoba          위성 7명
+  ✅ ADOY            위성 7명
+  ✅ youra           위성 7명
+  ✅ Aseul           위성 7명
+  ✅ Lee Godo        위성 7명
+  ✅ ALEPH           위성 7명
+  ✅ 015B            위성 7명
+  ✅ Guckkasten      위성 7명
+  ✅ Car, the garden 위성 7명
+  ✅ Chamsom         위성 8명
+───────────────────────────────────────
+  성공: 62/62명
+═══════════════════════════════════════
+
+> kcultureverse@0.1.0 universe:rebuild
+> tsx scripts/prebake.ts && tsx scripts/build-graph.ts && tsx scripts/compute-layout.ts
+
+🌌 K-Culture Universe Pre-bake 스크립트 시작
+   출력 경로: /Users/ji/Documents/Jitigravity/public/data/hub
+   대상 아티스트: 62명
+   아티스트 간 대기시간: 8초
+
+[1/62] (2%) BTS — ✅ SKIP (이미 존재, 위성 11명)
+[2/62] (3%) BLACKPINK — ✅ SKIP (이미 존재, 위성 5명)
+[3/62] (5%) IU — ✅ SKIP (이미 존재, 위성 6명)
+[4/62] (6%) Zico — ✅ SKIP (이미 존재, 위성 7명)
+[5/62] (8%) Jay Park — ✅ SKIP (이미 존재, 위성 4명)
+[6/62] (10%) Epik High — ✅ SKIP (이미 존재, 위성 7명)
+[7/62] (11%) Hyukoh — ✅ SKIP (이미 존재, 위성 7명)
+[8/62] (13%) Heize — ✅ SKIP (이미 존재, 위성 7명)
+[9/62] (15%) The Black Skirts — ✅ SKIP (이미 존재, 위성 6명)
+[10/62] (16%) NMIXX — ✅ SKIP (이미 존재, 위성 8명)
+[11/62] (18%) Stray Kids — ✅ SKIP (이미 존재, 위성 9명)
+[12/62] (19%) (G)I-DLE — ✅ SKIP (이미 존재, 위성 10명)
+[13/62] (21%) NewJeans — ✅ SKIP (이미 존재, 위성 7명)
+[14/62] (23%) BIBI — ✅ SKIP (이미 존재, 위성 7명)
+[15/62] (24%) pH-1 — ✅ SKIP (이미 존재, 위성 8명)
+[16/62] (26%) Baek A — ✅ SKIP (이미 존재, 위성 7명)
+[17/62] (27%) Autumn Vacation — ✅ SKIP (이미 존재, 위성 6명)
+[18/62] (29%) Unnieneibalgwan — ✅ SKIP (이미 존재, 위성 8명)
+[19/62] (31%) Lee Baksa — ✅ SKIP (이미 존재, 위성 8명)
+[20/62] (32%) Han Roro — ✅ SKIP (이미 존재, 위성 7명)
+[21/62] (34%) Nell — ✅ SKIP (이미 존재, 위성 7명)
+[22/62] (35%) Linus's Blanket — ✅ SKIP (이미 존재, 위성 8명)
+[23/62] (37%) Deli Spice — ✅ SKIP (이미 존재, 위성 7명)
+[24/62] (39%) Through the Sloe — ✅ SKIP (이미 존재, 위성 7명)
+[25/62] (40%) Julia's Heart — ✅ SKIP (이미 존재, 위성 7명)
+[26/62] (42%) Broccoli You Too — ✅ SKIP (이미 존재, 위성 7명)
+[27/62] (44%) AKMU — ✅ SKIP (이미 존재, 위성 7명)
+[28/62] (45%) BIGBANG — ✅ SKIP (이미 존재, 위성 5명)
+[29/62] (47%) Girls' Generation — ✅ SKIP (이미 존재, 위성 7명)
+[30/62] (48%) J.Y. Park — ✅ SKIP (이미 존재, 위성 8명)
+[31/62] (50%) Seo Taiji — ✅ SKIP (이미 존재, 위성 8명)
+[32/62] (52%) Yoon Sang — ✅ SKIP (이미 존재, 위성 3명)
+[33/62] (53%) Toy — ✅ SKIP (이미 존재, 위성 7명)
+[34/62] (55%) Yoon Mirae — ✅ SKIP (이미 존재, 위성 3명)
+[35/62] (56%) Sunwoo Jung-a — ✅ SKIP (이미 존재, 위성 3명)
+[36/62] (58%) Leessang — ✅ SKIP (이미 존재, 위성 7명)
+[37/62] (60%) Lee Juk — ✅ SKIP (이미 존재, 위성 3명)
+[38/62] (61%) Deux — ✅ SKIP (이미 존재, 위성 7명)
+[39/62] (63%) dosii — ✅ SKIP (이미 존재, 위성 8명)
+[40/62] (65%) Mot — ✅ SKIP (이미 존재, 위성 7명)
+[41/62] (66%) Kiha & The Faces — ✅ SKIP (이미 존재, 위성 9명)
+[42/62] (68%) SE SO NEON — ✅ SKIP (이미 존재, 위성 7명)
+[43/62] (69%) Bosudongcooler — ✅ SKIP (이미 존재, 위성 8명)
+[44/62] (71%) Bluedawn — ✅ SKIP (이미 존재, 위성 5명)
+[45/62] (73%) DABDA — ✅ SKIP (이미 존재, 위성 7명)
+[46/62] (74%) Kim Sawol — ✅ SKIP (이미 존재, 위성 4명)
+[47/62] (76%) THORNAPPLE — ✅ SKIP (이미 존재, 위성 7명)
+[48/62] (77%) Nerd Connection — ✅ SKIP (이미 존재, 위성 6명)
+[49/62] (79%) Meaningful Stone — ✅ SKIP (이미 존재, 위성 7명)
+[50/62] (81%) Jaurim — ✅ SKIP (이미 존재, 위성 6명)
+[51/62] (82%) mingginyu — ✅ SKIP (이미 존재, 위성 7명)
+[52/62] (84%) Silica Gel — ✅ SKIP (이미 존재, 위성 7명)
+[53/62] (85%) cotoba — ✅ SKIP (이미 존재, 위성 7명)
+[54/62] (87%) ADOY — ✅ SKIP (이미 존재, 위성 7명)
+[55/62] (89%) youra — ✅ SKIP (이미 존재, 위성 7명)
+[56/62] (90%) Aseul — ✅ SKIP (이미 존재, 위성 7명)
+[57/62] (92%) Lee Godo — ✅ SKIP (이미 존재, 위성 7명)
+[58/62] (94%) ALEPH — ✅ SKIP (이미 존재, 위성 7명)
+[59/62] (95%) 015B — ✅ SKIP (이미 존재, 위성 7명)
+[60/62] (97%) Guckkasten — ✅ SKIP (이미 존재, 위성 7명)
+[61/62] (98%) Car, the garden — ✅ SKIP (이미 존재, 위성 7명)
+[62/62] (100%) Chamsom — ✅ SKIP (이미 존재, 위성 8명)
+
+📋 검색 인덱스(search-index.json) 생성 중...
+✅ 검색 인덱스 생성 완료 — 65명 등록
+
+═══════════════════════════════════════
+         Pre-bake 완료 리포트
+═══════════════════════════════════════
+  ✅ BTS             위성 11명
+  ✅ BLACKPINK       위성 5명
+  ✅ IU              위성 6명
+  ✅ Zico            위성 7명
+  ✅ Jay Park        위성 4명
+  ✅ Epik High       위성 7명
+  ✅ Hyukoh          위성 7명
+  ✅ Heize           위성 7명
+  ✅ The Black Skirts 위성 6명
+  ✅ NMIXX           위성 8명
+  ✅ Stray Kids      위성 9명
+  ✅ (G)I-DLE        위성 10명
+  ✅ NewJeans        위성 7명
+  ✅ BIBI            위성 7명
+  ✅ pH-1            위성 8명
+  ✅ Baek A          위성 7명
+  ✅ Autumn Vacation 위성 6명
+  ✅ Unnieneibalgwan 위성 8명
+  ✅ Lee Baksa       위성 8명
+  ✅ Han Roro        위성 7명
+  ✅ Nell            위성 7명
+  ✅ Linus's Blanket 위성 8명
+  ✅ Deli Spice      위성 7명
+  ✅ Through the Sloe 위성 7명
+  ✅ Julia's Heart   위성 7명
+  ✅ Broccoli You Too 위성 7명
+  ✅ AKMU            위성 7명
+  ✅ BIGBANG         위성 5명
+  ✅ Girls' Generation 위성 7명
+  ✅ J.Y. Park       위성 8명
+  ✅ Seo Taiji       위성 8명
+  ✅ Yoon Sang       위성 3명
+  ✅ Toy             위성 7명
+  ✅ Yoon Mirae      위성 3명
+  ✅ Sunwoo Jung-a   위성 3명
+  ✅ Leessang        위성 7명
+  ✅ Lee Juk         위성 3명
+  ✅ Deux            위성 7명
+  ✅ dosii           위성 8명
+  ✅ Mot             위성 7명
+  ✅ Kiha & The Faces 위성 9명
+  ✅ SE SO NEON      위성 7명
+  ✅ Bosudongcooler  위성 8명
+  ✅ Bluedawn        위성 5명
+  ✅ DABDA           위성 7명
+  ✅ Kim Sawol       위성 4명
+  ✅ THORNAPPLE      위성 7명
+  ✅ Nerd Connection 위성 6명
+  ✅ Meaningful Stone 위성 7명
+  ✅ Jaurim          위성 6명
+  ✅ mingginyu       위성 7명
+  ✅ Silica Gel      위성 7명
+  ✅ cotoba          위성 7명
+  ✅ ADOY            위성 7명
+  ✅ youra           위성 7명
+  ✅ Aseul           위성 7명
+  ✅ Lee Godo        위성 7명
+  ✅ ALEPH           위성 7명
+  ✅ 015B            위성 7명
+  ✅ Guckkasten      위성 7명
+  ✅ Car, the garden 위성 7명
+  ✅ Chamsom         위성 8명
+───────────────────────────────────────
+  성공: 62/62명
+═══════════════════════════════════════
+🌌 관계 그래프 생성 시작
+
+  ✅ BTS — 코어 + 위성 11명
+  ✅ 블랙핑크 — 코어 + 위성 5명
+  ✅ 아이유 — 코어 + 위성 6명
+  ✅ 지코 — 코어 + 위성 7명
+  ✅ 박재범 — 코어 + 위성 4명
+  ✅ 에픽하이 — 코어 + 위성 7명
+  ✅ 혁오 — 코어 + 위성 7명
+  ✅ 헤이즈 — 코어 + 위성 7명
+  ✅ 검정치마 — 코어 + 위성 6명
+  ✅ 엔믹스 — 코어 + 위성 8명
+  ✅ 스트레이 키즈 — 코어 + 위성 9명
+  ✅ (여자)아이들 — 코어 + 위성 10명
+  ✅ 뉴진스 — 코어 + 위성 7명
+  ✅ 비비 — 코어 + 위성 7명
+  ✅ pH-1 — 코어 + 위성 8명
+  ✅ 백아 — 코어 + 위성 7명
+  ✅ 가을방학 — 코어 + 위성 6명
+  ✅ 언니네이발관 — 코어 + 위성 8명
+  ✅ 이박사 — 코어 + 위성 8명
+  ✅ 한로로 — 코어 + 위성 7명
+  ✅ 넬 — 코어 + 위성 7명
+  ✅ 라이너스의 담요 — 코어 + 위성 8명
+  ✅ 델리스파이스 — 코어 + 위성 7명
+  ✅ through the sloe — 코어 + 위성 7명
+  ✅ 줄리아하트 — 코어 + 위성 7명
+  ✅ 브로콜리너마저 — 코어 + 위성 7명
+  ✅ 악동뮤지션 — 코어 + 위성 7명
+  ✅ 빅뱅 — 코어 + 위성 5명
+  ✅ 소녀시대 — 코어 + 위성 7명
+  ✅ 박진영 — 코어 + 위성 8명
+  ✅ 서태지 — 코어 + 위성 8명
+  ✅ 윤상 — 코어 + 위성 3명
+  ✅ 토이 — 코어 + 위성 7명
+  ✅ 윤미래 — 코어 + 위성 3명
+  ✅ 선우정아 — 코어 + 위성 3명
+  ✅ 리쌍 — 코어 + 위성 7명
+  ✅ 이적 — 코어 + 위성 3명
+  ✅ 듀스 — 코어 + 위성 7명
+  ✅ 도시 — 코어 + 위성 8명
+  ✅ 못 — 코어 + 위성 7명
+  ✅ 장기하와 얼굴들 — 코어 + 위성 9명
+  ✅ 새소년 — 코어 + 위성 7명
+  ✅ 보수동쿨러 — 코어 + 위성 8명
+  ✅ 푸른새벽 — 코어 + 위성 5명
+  ✅ 다브다 — 코어 + 위성 7명
+  ✅ 김사월 — 코어 + 위성 4명
+  ✅ 쏜애플 — 코어 + 위성 7명
+  ✅ 너드커넥션 — 코어 + 위성 6명
+  ✅ 김뜻돌 — 코어 + 위성 7명
+  ✅ 자우림 — 코어 + 위성 6명
+  ✅ 밍기뉴 — 코어 + 위성 7명
+  ✅ 실리카겔 — 코어 + 위성 7명
+  ✅ 코토바 — 코어 + 위성 7명
+  ✅ 아도이 — 코어 + 위성 7명
+  ✅ 유라 — 코어 + 위성 7명
+  ✅ 아슬 — 코어 + 위성 7명
+  ✅ 이고도 — 코어 + 위성 7명
+  ✅ 알레프 — 코어 + 위성 7명
+  ✅ 015B — 코어 + 위성 7명
+  ✅ 국카스텐 — 코어 + 위성 7명
+  ✅ 카더가든 — 코어 + 위성 7명
+  ✅ 참깨와 솜사탕 — 코어 + 위성 8명
+
+📊 허브 데이터 62명 로드 완료
+
+🔗 그래프 생성 완료:
+   노드: 225개
+   엣지: 422개
+
+💾 저장: /Users/ji/Documents/Jitigravity/public/data/graph.json
+   크기: 115.7KB
+🌌 Torus Force-Directed Layout 계산 시작
+
+   노드: 225개, 엣지: 422개
+
+   300회 반복 시뮬레이션 시작...
+   [50/300] 0.1초 경과
+   [100/300] 0.2초 경과
+   [150/300] 0.2초 경과
+   [200/300] 0.3초 경과
+   [250/300] 0.4초 경과
+   [300/300] 0.5초 경과
+
+✅ 시뮬레이션 완료 (0.5초)
+
+💾 좌표 포함 graph.json 저장 완료
+   크기: 123.9KB
+
+📊 좌표 분포 통계:
+   X: [-1994, 1983]
+   Y: [-1427, 1493]
+[main 7971879] 🌌 MusicBrainz v2 우주 생성: 38명 전체 크레딧 갱신
+ 51 files changed, 3956 insertions(+), 6143 deletions(-)
+To github.com:radio622/kcultureverse.git
+   596d66b..7971879  main -> main

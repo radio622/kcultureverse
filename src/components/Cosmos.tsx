@@ -12,6 +12,12 @@ interface Props {
   /** 심우주 노드 (먼 배경에 흐릿하게 보이는 다른 허브 아티스트들) */
   deepSpaceNodes?: DeepSpaceNode[];
   onDeepSpaceTap?: (spotifyId: string) => void;
+  /** 현재 재생 중인 아티스트 ID */
+  playingArtistId?: string | null;
+  /** 현재 재생 중인 곡 이름 */
+  playingTrackName?: string | null;
+  /** 재생 정지 콜백 */
+  onStopPlay?: () => void;
 }
 
 // ── 궤도 링 설정 (Step 3: 반경 확대로 광활한 우주 공간) ──────────
@@ -88,7 +94,7 @@ function shortestDelta(from: number, to: number, half: number): number {
   return d;
 }
 
-export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, deepSpaceNodes = [], onDeepSpaceTap }: Props) {
+export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, deepSpaceNodes = [], onDeepSpaceTap, playingArtistId, playingTrackName, onStopPlay }: Props) {
   const containerRef   = useRef<HTMLDivElement>(null);
   const zoomWrapperRef = useRef<HTMLDivElement>(null);
   const universeRef    = useRef<HTMLDivElement>(null);
@@ -541,6 +547,8 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
             isCore
             isFocused={false}
             onClick={onCoreTap}
+            playingTrackName={playingArtistId === data.core.spotifyId ? playingTrackName : null}
+            onStopPlay={playingArtistId === data.core.spotifyId ? onStopPlay : undefined}
           />
         </div>
 
@@ -561,6 +569,8 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
               size={focusedIndex === i ? 58 : 46}
               isCore={false}
               isFocused={focusedIndex === i}
+              playingTrackName={playingArtistId === satellite.spotifyId ? playingTrackName : null}
+              onStopPlay={playingArtistId === satellite.spotifyId ? onStopPlay : undefined}
               onClick={() => {
                 if (focusedIndex === i) {
                   if (warpTargetRef.current) return;

@@ -10,9 +10,13 @@ interface Props {
   isCore: boolean;
   isFocused: boolean;
   onClick: () => void;
+  /** 이 별에서 현재 재생 중인 곡 이름 (null이면 재생 안 함) */
+  playingTrackName?: string | null;
+  /** 재생 정지 콜백 */
+  onStopPlay?: () => void;
 }
 
-export default function CosmosNode({ artist, size, isCore, isFocused, onClick }: Props) {
+export default function CosmosNode({ artist, size, isCore, isFocused, onClick, playingTrackName, onStopPlay }: Props) {
   const [imgError, setImgError] = useState(false);
   // Self-healing: imageUrl이 없으면 브라우저에서 직접 iTunes API fetch (Vercel IP 차단 회피)
   const [resolvedImageUrl, setResolvedImageUrl] = useState<string | null>(artist.imageUrl ?? null);
@@ -120,7 +124,7 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
         )}
       </div>
 
-      {/* 이름 라벨 — data-label으로 Dynamic Fog 연동 */}
+      {/* 이름 라벨 — data-label로 Dynamic Fog 연동 */}
       <span
         data-label="true"
         style={{
@@ -141,6 +145,41 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
       >
         {artist.name}
       </span>
+
+      {/* ── 재생 중인 곡 이름 표시 (별 이름 하단) ────────── */}
+      {playingTrackName && (
+        <button
+          data-label="true"
+          onClick={(e) => {
+            e.stopPropagation();
+            onStopPlay?.();
+          }}
+          style={{
+            background: "rgba(167,139,250,0.12)",
+            border: "1px solid rgba(167,139,250,0.3)",
+            borderRadius: 12,
+            padding: "2px 8px",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            gap: 4,
+            maxWidth: size + 30,
+            animation: "trackPulse 2s ease-in-out infinite",
+          }}
+        >
+          <span style={{ fontSize: 8, color: "var(--accent-core)" }}>⏸</span>
+          <span style={{
+            fontSize: 9,
+            color: "var(--accent-core)",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+            fontWeight: 500,
+          }}>
+            {playingTrackName}
+          </span>
+        </button>
+      )}
     </button>
   );
 }
