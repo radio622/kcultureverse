@@ -311,10 +311,10 @@ body {
   50%      { opacity: 1; }
 }
 
-/* ── Step 5: resonance-deck 카드 폭 수정 (ArtistCard 240px 맞춤) */
+/* ── Step 5: resonance-deck 카드 폭 수정 (ArtistCard 130px 맞춤) */
 .resonance-deck__card {
   scroll-snap-align: center;
-  flex: 0 0 240px;
+  flex: 0 0 130px;
 }
 
 /* ── Step 5: 검색 input 타입 초기화 ─────────────────────────── */
@@ -374,7 +374,7 @@ input[type="search"]::-webkit-search-cancel-button {
 /* ── 태블릿 ───────────────────────────────────────────────────── */
 @media (min-width: 481px) and (max-width: 768px) {
   .resonance-deck__card {
-    flex: 0 0 230px;
+    flex: 0 0 130px;
   }
 }
 
