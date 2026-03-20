@@ -1125,10 +1125,13 @@
     "mb_1773909309487_0.02822401281542497": {
       "name": "김사월X김해원",
       "nameKo": "김사월X김해원",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/c6/98/e6/c698e661-a3c1-4145-f1a9-8b1f75125505/cover.jpg/400x400bb.jpg",
+      "genres": [
+        "싱어송라이터",
+        "포크"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/88/77/29/887729ef-d5f3-9040-b588-d8b0b413281b/mzaf_17547143217481591156.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 1601.2,
       "y": 1264.8
@@ -1136,10 +1139,13 @@
     "mb_1773909309827_0.5099469845627447": {
       "name": "김사월X김해원",
       "nameKo": "김사월X김해원",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/c6/98/e6/c698e661-a3c1-4145-f1a9-8b1f75125505/cover.jpg/400x400bb.jpg",
+      "genres": [
+        "싱어송라이터",
+        "포크"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/88/77/29/887729ef-d5f3-9040-b588-d8b0b413281b/mzaf_17547143217481591156.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 1868.1,
       "y": 842.1
@@ -1147,10 +1153,13 @@
     "mb_1773909311078_0.542723305228677": {
       "name": "김해원",
       "nameKo": "김해원",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music62/v4/bf/51/25/bf5125fc-1539-4649-58d3-c7529219ece4/edit_Sea_And_Myself_cover.jpg/400x400bb.jpg",
+      "genres": [
+        "싱어송라이터",
+        "OST"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/33/34/11/33341103-577b-f6be-e855-946600d715a8/mzaf_6950307860053099718.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 1762.9,
       "y": -1066.8
@@ -1158,10 +1167,13 @@
     "mb_1773909311183_0.4186649784854558": {
       "name": "김해원",
       "nameKo": "김해원",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music62/v4/bf/51/25/bf5125fc-1539-4649-58d3-c7529219ece4/edit_Sea_And_Myself_cover.jpg/400x400bb.jpg",
+      "genres": [
+        "싱어송라이터",
+        "OST"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/33/34/11/33341103-577b-f6be-e855-946600d715a8/mzaf_6950307860053099718.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1627.7,
       "y": 1250.7
@@ -1191,10 +1203,14 @@
     "mb_1773909330269_0.727726978974563": {
       "name": "최승원",
       "nameKo": "최승원",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/83/34/8b/83348b75-8ce9-3b4b-156c-6d3e79c60335/888272091472_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "Soundtrack",
+        "Inspirational",
+        "Musicals"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/67/a5/bd/67a5bd33-c2dc-d293-8630-bd669e8131a2/mzaf_10353376052243335873.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1380.3,
       "y": -983.2
@@ -1202,10 +1218,13 @@
     "mb_1773909330517_0.13837336844510895": {
       "name": "박재현",
       "nameKo": "박재현",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/d9/bc/b8/d9bcb898-5833-de32-283d-4318e11085f2/8809492030180_cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop",
+        "어린이 음악"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/51/76/93/517693b5-0815-4443-6640-7548840953d4/mzaf_3732718091796454606.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -137.5,
       "y": -917.5
@@ -1213,10 +1232,15 @@
     "mb_1773909330639_0.19432171090627004": {
       "name": "서영주",
       "nameKo": "서영주",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d4/8d/9f/d48d9f3d-9a40-0a97-c0ab-40c88530ff9d/888272148114_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "OST",
+        "TV OST",
+        "록",
+        "K-Pop"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/36/0b/63360b43-f1b5-f839-8937-83a18e231091/mzaf_5563949491026944880.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 1677.4,
       "y": 415.1
@@ -1224,10 +1248,15 @@
     "mb_1773909330798_0.22291495453739796": {
       "name": "서영주",
       "nameKo": "서영주",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d4/8d/9f/d48d9f3d-9a40-0a97-c0ab-40c88530ff9d/888272148114_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "OST",
+        "TV OST",
+        "록",
+        "K-Pop"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/36/0b/63360b43-f1b5-f839-8937-83a18e231091/mzaf_5563949491026944880.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 1499,
       "y": -1105.2
@@ -1246,10 +1275,15 @@
     "mb_1773909332619_0.3398383719659438": {
       "name": "서영주",
       "nameKo": "서영주",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d4/8d/9f/d48d9f3d-9a40-0a97-c0ab-40c88530ff9d/888272148114_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "OST",
+        "TV OST",
+        "록",
+        "K-Pop"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/36/0b/63360b43-f1b5-f839-8937-83a18e231091/mzaf_5563949491026944880.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1954.3,
       "y": -1068.4
@@ -1279,10 +1313,12 @@
     "mb_1773909352817_0.14541745134979178": {
       "name": "구태훈",
       "nameKo": "구태훈",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/36/bf/a3/36bfa336-16d4-f994-510c-c7385aa6f88b/8809818850966_cover.jpg/400x400bb.jpg",
+      "genres": [
+        "싱어롱"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/c6/b0/cc/c6b0cc9b-9aa2-75da-e25c-d9561d00d9a8/mzaf_13866279652017385812.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 822.8,
       "y": 681.9
@@ -1290,10 +1326,12 @@
     "mb_1773909353084_0.9214998000004959": {
       "name": "김진만",
       "nameKo": "김진만",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/ac/15/3f/ac153f8c-0e56-0f46-2fae-ab2c36d7353c/8809522690698.jpg/400x400bb.jpg",
+      "genres": [
+        "サウンドトラック"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/1f/a5/34/1fa53494-e92f-1543-5a72-1bb0e5a0d397/mzaf_17846959433830990136.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 1756.2,
       "y": 29.3
@@ -1301,10 +1339,14 @@
     "mb_1773909353208_0.7316304992732472": {
       "name": "김윤아",
       "nameKo": "김윤아",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cd/83/cd/cd83cd55-fd54-dc05-8f66-f072df25e48e/8809550047556.jpg/400x400bb.jpg",
+      "genres": [
+        "록",
+        "K-Pop",
+        "OST"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/03/c0/9c/03c09cb0-d42a-cd83-d75f-f742727729aa/mzaf_11506383699424628519.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 1022.3,
       "y": -483.4
@@ -1312,10 +1354,14 @@
     "mb_1773909353338_0.3988355652863177": {
       "name": "이선규",
       "nameKo": "이선규",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/1d/1b/5f/1d1b5fd8-4471-6b51-f088-c48c8d29a9df/1963620772476_cover.jpg/400x400bb.jpg",
+      "genres": [
+        "뉴에이지",
+        "록",
+        "K-Pop"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/34/87/69/34876932-ade0-1d94-f094-83049a8851c7/mzaf_9802906556808572248.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 1612.3,
       "y": 644.9
@@ -1323,10 +1369,13 @@
     "mb_1773909354132_0.3878078153666513": {
       "name": "김병찬",
       "nameKo": "김병찬",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/d1/a0/b5/d1a0b5b2-3fd8-3feb-b29b-9838f233386b/cover_KM0014995_1.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop",
+        "サウンドトラック"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/ac/b5/63/acb56349-77a5-896f-2909-1c32e1ec18ba/mzaf_10858903666486341091.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 529.1,
       "y": -907
@@ -1378,10 +1427,12 @@
     "mb_1773909392514_0.5207362771392542": {
       "name": "정다영",
       "nameKo": "정다영",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3e/cd/9e/3ecd9e69-40d5-febf-f8b9-2ba3a99b88ee/196006101732.jpg/400x400bb.jpg",
+      "genres": [
+        "Korean Indie"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/86/f9/3b/86f93be2-9c83-dcfa-acf8-447865388b8b/mzaf_9655269862280066653.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1251.5,
       "y": -1486.9
@@ -1389,10 +1440,13 @@
     "mb_1773909392968_0.10436129418439055": {
       "name": "정다영",
       "nameKo": "정다영",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3e/cd/9e/3ecd9e69-40d5-febf-f8b9-2ba3a99b88ee/196006101732.jpg/400x400bb.jpg",
+      "genres": [
+        "한국 인디",
+        "얼터너티브"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/86/f9/3b/86f93be2-9c83-dcfa-acf8-447865388b8b/mzaf_9655269862280066653.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 1863.1,
       "y": -515.9
@@ -1400,10 +1454,12 @@
     "mb_1773909393078_0.7544515574598004": {
       "name": "오주환",
       "nameKo": "오주환",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3e/cd/9e/3ecd9e69-40d5-febf-f8b9-2ba3a99b88ee/196006101732.jpg/400x400bb.jpg",
+      "genres": [
+        "Korean Indie"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/86/f9/3b/86f93be2-9c83-dcfa-acf8-447865388b8b/mzaf_9655269862280066653.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1532.9,
       "y": -704.4
@@ -1411,10 +1467,14 @@
     "mb_1773909393201_0.10776504874734794": {
       "name": "지",
       "nameKo": "지",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/02/c5/18/02c518f5-ac06-3321-622e-08d9429fd968/192562556672_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop",
+        "Dance",
+        "Soundtrack"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/9d/33/63/9d336348-a241-963f-e820-c9e03c96109e/mzaf_17277267855618989086.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1609.7,
       "y": -376.8
@@ -1422,10 +1482,16 @@
     "mb_1773909393324_0.2581003423100676": {
       "name": "조조",
       "nameKo": "조조",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e5/5e/26/e55e26a9-47c4-3092-e198-e264e8e0a0b7/106877_1.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop",
+        "R&B/소울",
+        "팝",
+        "홀리데이",
+        "외화"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a7/71/2a/a7712a4d-614f-b9f9-1813-18622f5271f7/mzaf_5306290856522967760.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 749.1,
       "y": -427.1
@@ -1444,10 +1510,13 @@
     "mb_1773909404464_0.9897952847672198": {
       "name": "USA for Africa",
       "nameKo": "USA for Africa",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music/y2005/m01/d20/h14/s05.bkornbke.jpg/400x400bb.jpg",
+      "genres": [
+        "록",
+        "팝"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7f/d8/4b/7fd84bad-f49b-c516-799c-80746ec291ff/mzaf_10847887636031808951.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 843,
       "y": -1394.2
@@ -1455,10 +1524,13 @@
     "mb_1773909404723_0.03804632592957491": {
       "name": "Artists United Against Apartheid",
       "nameKo": "Artists United Against Apartheid",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/7b/82/78/7b8278e9-01a6-cb80-ac99-830c7d00fb9c/19UMGIM79705.rgb.jpg/400x400bb.jpg",
+      "genres": [
+        "팝",
+        "록"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/2e/6b/85/2e6b852e-2660-1a8a-945e-f675693563f3/mzaf_11026016298774266620.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1778.3,
       "y": -584.3
@@ -1466,10 +1538,15 @@
     "mb_1773909404843_0.3732063376016236": {
       "name": "Tedham Porterhouse",
       "nameKo": "Tedham Porterhouse",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f8/ff/c0/f8ffc056-55b4-2033-657d-32492d1eea25/827969239926.jpg/400x400bb.jpg",
+      "genres": [
+        "Rock",
+        "Contemporary Folk",
+        "Singer/Songwriter",
+        "Soundtrack"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/0d/07/ce/0d07cef9-c7a5-013c-1414-aa9f9370ebfe/mzaf_10130407559827284152.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -377.4,
       "y": -1075.9
@@ -1477,10 +1554,16 @@
     "mb_1773909404953_0.8436083205770629": {
       "name": "Robert Milkwood Thomas",
       "nameKo": "Robert Milkwood Thomas",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/44/20/0d/44200da9-f754-cf25-118b-db61e03a19e9/dj.qgfyggio.jpg/400x400bb.jpg",
+      "genres": [
+        "록",
+        "컨템포러리 포크",
+        "OST",
+        "싱어송라이터",
+        "포크 록"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f3/36/25/f336250d-8f83-2dfa-a625-1a48c63eea03/mzaf_8781691795723244841.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1457.9,
       "y": -1337.1
@@ -1488,10 +1571,18 @@
     "mb_1773909405059_0.5641802661459566": {
       "name": "Jack Frost",
       "nameKo": "Jack Frost",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/11/d0/4a/11d04a39-cb85-d09d-b6b5-9fc471b3a657/888272074864_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "힙합/랩",
+        "Urbano latino",
+        "일렉트로닉",
+        "올드스쿨 랩",
+        "어린이 음악",
+        "J-Pop",
+        "록"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/34/42/30/344230f5-1820-d485-5ca8-5025b56fcdc9/mzaf_18303552627085359838.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1704.8,
       "y": -1217.3
@@ -1499,10 +1590,12 @@
     "mb_1773909405247_0.6064516142230572": {
       "name": "Traveling Wilburys",
       "nameKo": "Traveling Wilburys",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/2e/50/a1/2e50a171-3ec4-f0f9-a965-336c88e753e9/0888072392809.jpg/400x400bb.jpg",
+      "genres": [
+        "Rock"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/84/f4/c9/84f4c984-31fe-0399-798d-200c11c600ab/mzaf_6771712420730218807.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": 516.5,
       "y": -625.1
@@ -1510,10 +1603,15 @@
     "mb_1773909405368_0.02064586356481002": {
       "name": "Golden Chords",
       "nameKo": "Golden Chords",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e3/5b/3f/e35b3f74-6d42-120b-ec08-8fe9fca18b5f/194606001865.png/400x400bb.jpg",
+      "genres": [
+        "Alternative",
+        "Hip-Hop/Rap",
+        "Dance",
+        "Jazz"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/44/61/07/44610743-72b2-d02e-ba52-746b6bfdb25c/mzaf_12590890701384660567.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1836.5,
       "y": -250.2
@@ -1598,10 +1696,12 @@
     "mb_1773909484937_0.7339171347718214": {
       "name": "OFFONOFF",
       "nameKo": "OFFONOFF",
-      "image": null,
-      "genres": [],
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/83/6b/40/836b4093-0e77-2121-21b7-42765bc1a9f1/80928575.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
       "popularity": 0,
-      "previewUrl": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ae/70/b4/ae70b45e-5dac-4464-75e3-d3c7de7b06af/mzaf_12666916440474110938.plus.aac.p.m4a",
       "spotifyUrl": "#",
       "x": -1472.9,
       "y": 929.4
@@ -1620,11 +1720,11 @@
     "manual_MTBDTQ": {
       "name": "10CM",
       "nameKo": "10CM",
-      "image": null,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/13/e6/e8/13e6e889-c2a5-95f0-2936-5c3994fb306e/888272134100_Cover.jpg/400x400bb.jpg",
       "genres": [
+        "Soundtrack",
         "K-Pop",
-        "포크",
-        "싱어송라이터"
+        "Folk"
       ],
       "popularity": 50,
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/84/b2/b1/84b2b1a8-4575-4a62-1b2f-59907cf3e740/mzaf_7834598123037802355.plus.aac.p.m4a",
@@ -1635,12 +1735,10 @@
     "manual_Q3J1c2g": {
       "name": "Crush",
       "nameKo": "Crush",
-      "image": null,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/70/f8/eb/70f8ebc1-34f2-c47b-7cc8-9fc2de76ba54/16UMGIM07982.rgb.jpg/400x400bb.jpg",
       "genres": [
-        "OST",
-        "인디 팝",
-        "K-Pop",
-        "팝"
+        "Pop",
+        "Rock"
       ],
       "popularity": 50,
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bb/7f/f5/bb7ff5a7-87b8-2e2c-a2ce-1f40d19aabc5/mzaf_11552351934799265549.plus.aac.p.m4a",
@@ -1651,7 +1749,7 @@
     "manual_7J6U64KY67mE": {
       "name": "Jannabi",
       "nameKo": "Jannabi",
-      "image": null,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/fc/a9/b2/fca9b2d4-b1ed-92e8-2e5f-1838d77cbce7/cover-_NEW.jpg/400x400bb.jpg",
       "genres": [
         "K-Pop"
       ],
@@ -1664,10 +1762,11 @@
     "manual_67O867mo6rCE7IKs7LaY6r": {
       "name": "BOL4",
       "nameKo": "BOL4",
-      "image": null,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/56/bf/9c/56bf9cc9-5303-7331-970e-5b5e0e6da98e/8804775084331.jpg/400x400bb.jpg",
       "genres": [
         "K-Pop",
-        "싱어송라이터"
+        "Rock",
+        "Singer/Songwriter"
       ],
       "popularity": 50,
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/0c/58/54/0c585442-48d1-656e-5fbc-dc9ced630733/mzaf_18090886930911224435.plus.aac.p.m4a",
@@ -1678,10 +1777,11 @@
     "manual_7Y-07YK0": {
       "name": "Paul Kim",
       "nameKo": "Paul Kim",
-      "image": null,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/a5/b2/8e/a5b28ea5-ca18-d328-dc68-87224279a84c/191953335933.jpg/400x400bb.jpg",
       "genres": [
         "K-Pop",
-        "OST"
+        "OST",
+        "R&B/소울"
       ],
       "popularity": 50,
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/84/d7/b8/84d7b813-6d1d-820b-505b-f0f64ea2c0c7/mzaf_16414148379951129833.plus.aac.p.m4a",
@@ -1692,11 +1792,11 @@
     "manual_66mc66Gc66ed7Iqk": {
       "name": "MeloMance",
       "nameKo": "MeloMance",
-      "image": null,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/50/f0/fc/50f0fcea-7360-47c0-37d6-4440e97e2862/cover_KM0014772_1.jpg/400x400bb.jpg",
       "genres": [
-        "K-Pop",
-        "싱어송라이터",
-        "OST"
+        "Soundtrack",
+        "Singer/Songwriter",
+        "K-Pop"
       ],
       "popularity": 50,
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/15/d1/c1/15d1c176-b17a-07fd-458a-a078d9c6396d/mzaf_14430555757380281533.plus.aac.p.m4a",
@@ -1707,7 +1807,7 @@
     "manual_7ISx7Iuc6rK9": {
       "name": "Sung Si Kyung",
       "nameKo": "Sung Si Kyung",
-      "image": null,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/4f/04/c2/4f04c25c-4790-b71c-8512-f0e658f07ed1/20..jpg/400x400bb.jpg",
       "genres": [
         "K-Pop",
         "OST"
@@ -1717,6 +1817,395 @@
       "spotifyUrl": "https://open.spotify.com/artist/manual_7ISx7Iuc6rK9",
       "x": 1365.4,
       "y": -1257.6
+    },
+    "manual_QkxBQ0tQSU5L": {
+      "name": "BLACKPINK",
+      "nameKo": "BLACKPINK",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ad/fb/d1/adfbd142-6d36-839e-0e3e-4a5b5f632783/ANTCD-A0000017441.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/69/06/a8/6906a8ae-c1ac-444f-7217-2989a3ed7ea3/mzaf_14545849858977821875.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_QkxBQ0tQSU5L",
+      "x": 1406.3,
+      "y": -312.2
+    },
+    "manual_SVZF": {
+      "name": "IVE",
+      "nameKo": "IVE",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e6/c1/eb/e6c1eb1d-830b-c8b5-4e3b-0735daad8bea/199806315972.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/39/1a/94/391a9472-35af-ad98-63d9-19ac7bae7d11/mzaf_9762626172241575246.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_SVZF",
+      "x": 1373.3,
+      "y": 270.8
+    },
+    "manual_S2lpaUtpaWk": {
+      "name": "KiiiKiii",
+      "nameKo": "KiiiKiii",
+      "image": null,
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a8/b6/87/a8b687ed-860d-5da9-f9d5-02dc94e98516/mzaf_17275371173713193127.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_S2lpaUtpaWk",
+      "x": 483.5,
+      "y": -430.9
+    },
+    "manual_QVRFRVo": {
+      "name": "ATEEZ",
+      "nameKo": "ATEEZ",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6d/5b/5a/6d5b5aa0-fc09-04a1-293f-0da97ae3c66e/196873997797.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop",
+        "댄스"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8f/66/93/8f669394-5dac-f495-c193-5b872e063179/mzaf_10525671093729447175.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_QVRFRVo",
+      "x": -283.9,
+      "y": -906.5
+    },
+    "manual_TEUgU1NFUkFGSU0": {
+      "name": "LE SSERAFIM",
+      "nameKo": "LE SSERAFIM",
+      "image": null,
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d0/46/5e/d0465e7a-48c9-4863-71b4-dcf3732be2ed/mzaf_16343066430882034672.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_TEUgU1NFUkFGSU0",
+      "x": 243.6,
+      "y": -50.2
+    },
+    "manual_ai1ob3Bl": {
+      "name": "j-hope",
+      "nameKo": "j-hope",
+      "image": null,
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3c/d4/f6/3cd4f6f7-467c-6e30-9097-ba7240e8fdac/mzaf_5581632862236790046.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_ai1ob3Bl",
+      "x": 507.2,
+      "y": 492.7
+    },
+    "manual_KEcpSS1ETEU": {
+      "name": "i-dle",
+      "nameKo": "i-dle",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7b/59/56/7b59565a-c6bd-a615-9cc2-955cb8481dfb/8804775254703.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b1/2d/68/b12d68cc-43c0-b624-e436-a37429949e11/mzaf_2502016916124139192.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_KEcpSS1ETEU",
+      "x": -317.4,
+      "y": -111.2
+    },
+    "manual_SUxMSVQ": {
+      "name": "ILLIT",
+      "nameKo": "ILLIT",
+      "image": null,
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b7/87/74/b7877496-087a-014d-07d1-cb8f934e6465/mzaf_6580320150417650379.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_SUxMSVQ",
+      "x": 695.7,
+      "y": 39.8
+    },
+    "manual_QkFCWU1PTlNURVI": {
+      "name": "BABYMONSTER",
+      "nameKo": "BABYMONSTER",
+      "image": null,
+      "genres": [
+        "R&B/소울",
+        "댄스",
+        "한국 힙합",
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4e/e9/01/4ee90181-000b-3138-d476-991a5d2190fe/mzaf_988779685436638231.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_QkFCWU1PTlNURVI",
+      "x": 104.4,
+      "y": -382.6
+    },
+    "manual_QlRT": {
+      "name": "BTS",
+      "nameKo": "BTS",
+      "image": null,
+      "genres": [],
+      "popularity": 50,
+      "previewUrl": null,
+      "spotifyUrl": "https://open.spotify.com/artist/manual_QlRT",
+      "x": -1133.8,
+      "y": 313
+    },
+    "manual_VFdT": {
+      "name": "TWS",
+      "nameKo": "TWS",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/97/1a/65/971a6558-1373-bf4d-4281-d984f117ea4c/198704698750_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/da/6b/c6/da6bc61e-82c5-f312-7acc-6d6f3b3e9973/mzaf_7307185038784941582.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_VFdT",
+      "x": -14.1,
+      "y": -55.2
+    },
+    "manual_SVRaWQ": {
+      "name": "ITZY",
+      "nameKo": "ITZY",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/4f/af/b5/4fafb598-6a1e-c9cb-2cf4-4e2189cc5f10/190296490002.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/97/8e/1b/978e1b18-8d88-19e8-e615-44a94ccb3952/mzaf_15847343202523171169.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_SVRaWQ",
+      "x": -1257.2,
+      "y": 13.4
+    },
+    "manual_RU5IWVBFTg": {
+      "name": "ENHYPEN",
+      "nameKo": "ENHYPEN",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1c/89/10/1c891026-08a1-bbcd-e18e-b5acfe0bd2c7/196922402876_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/15/9f/61/159f61b2-1253-9555-f81d-065d31930507/mzaf_3733756114863038963.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_RU5IWVBFTg",
+      "x": 41.1,
+      "y": -743.4
+    },
+    "manual_TkNU": {
+      "name": "NCT 127",
+      "nameKo": "NCT 127",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f1/96/2a/f1962a29-9325-450d-f11a-49014622dcdf/00888735945144_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e4/65/37/e46537b9-ec9d-b6ac-a3e8-21a9a266cede/mzaf_10916102628929410167.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_TkNU",
+      "x": 1690.6,
+      "y": 184.6
+    },
+    "manual_S0FUU0VZRQ": {
+      "name": "KATSEYE",
+      "nameKo": "KATSEYE",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ad/92/ca/ad92ca90-90f5-eb46-7a56-e7b6b88584f7/25UMGIM37394.rgb.jpg/400x400bb.jpg",
+      "genres": [
+        "Pop"
+      ],
+      "popularity": 50,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b7/cb/8d/b7cb8d66-bf88-2df6-6e00-411126cba3d5/mzaf_7123490845567859253.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_S0FUU0VZRQ",
+      "x": 522.8,
+      "y": 933.3
+    },
+    "manual_U3RyYXkgS2lkcw": {
+      "name": "Stray Kids",
+      "nameKo": "Stray Kids",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/72/33/69/7233691c-aefe-252d-678b-faa9b3455200/8809928958965_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop",
+        "Electronica"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3f/58/d4/3f58d47b-4d4c-2b22-5ba5-c5ca66c5f26b/mzaf_7069320622919057855.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_U3RyYXkgS2lkcw",
+      "x": 74.6,
+      "y": 688.7
+    },
+    "manual_Tk1JWFg": {
+      "name": "NMIXX",
+      "nameKo": "NMIXX",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a7/5d/54/a75d54db-b997-d410-b6dd-25f7e766392a/8809928955148_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/42/0c/58/420c58be-a3d9-bb61-2a3a-ecd321957c73/mzaf_14878337150019931313.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_Tk1JWFg",
+      "x": -1395.8,
+      "y": -260.1
+    },
+    "manual_VFdJQ0U": {
+      "name": "TWICE",
+      "nameKo": "TWICE",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b3/a8/e2/b3a8e208-ebd1-831e-4d00-2bdddd99f54a/8809928955766_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/79/8c/4e/798c4e9a-dc99-efa1-1b7d-8194e26a4f8b/mzaf_16685424372021073272.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_VFdJQ0U",
+      "x": 120.4,
+      "y": 270.2
+    },
+    "manual_RVhP": {
+      "name": "EXO",
+      "nameKo": "EXO",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3a/10/77/3a1077bc-cfb4-dc63-eb69-bf8bc7d7245e/asset.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop",
+        "Christmas",
+        "Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/32/aa/af/32aaaf08-d360-704f-f383-61e741cfe88b/mzaf_8326348149614908714.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_RVhP",
+      "x": -938,
+      "y": -34
+    },
+    "manual_WkVST0JBU0VPTkU": {
+      "name": "ZEROBASEONE",
+      "nameKo": "ZEROBASEONE",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/be/dc/bf/bedcbfe4-baf5-2fdd-5e98-88a70f8ae13f/4547366768886.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b2/84/61/b284613d-868c-9a8f-bb1b-9105e364986f/mzaf_10529892972271339858.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_WkVST0JBU0VPTkU",
+      "x": -326.7,
+      "y": 145.5
+    },
+    "manual_WklDTw": {
+      "name": "ZICO",
+      "nameKo": "ZICO",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c0/c6/e6/c0c6e63d-c8d9-879f-4a49-e188e7cfff42/198704893582_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/65/20/c4/6520c44c-0ef9-7a1d-3fc9-4c19b6f50834/mzaf_10775253176465188493.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_WklDTw",
+      "x": 1381.8,
+      "y": -697.7
+    },
+    "manual_SklTT08": {
+      "name": "JISOO",
+      "nameKo": "JISOO",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e5/0f/50/e50f5026-6fb6-24c3-9907-0f358cb6a76f/054391226037.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/38/93/14/38931491-05d7-6401-febe-dc4586f21fbc/mzaf_3830875523538563480.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_SklTT08",
+      "x": 1144.3,
+      "y": -64.2
+    },
+    "manual_TUVPVlY": {
+      "name": "MEOVV",
+      "nameKo": "MEOVV",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/da/91/72/da917246-9ee7-2147-1426-d2288d25d662/8800335179325_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop",
+        "Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7c/9b/c4/7c9bc4ec-87d3-3380-9232-ea0e5b2cd593/mzaf_9058700597149357186.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_TUVPVlY",
+      "x": 887.3,
+      "y": -308.3
+    },
+    "manual_Qk9ZTkVYVERPT1I": {
+      "name": "BOYNEXTDOOR",
+      "nameKo": "BOYNEXTDOOR",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8c/03/16/8c03163b-065d-5f3c-ba55-73c4603a3c05/198704289064_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop",
+        "Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b0/29/da/b029da0d-f3cd-231a-dabc-0704776df26f/mzaf_4183191705776683622.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_Qk9ZTkVYVERPT1I",
+      "x": 1075.8,
+      "y": 233.3
+    },
+    "manual_YWVzcGE": {
+      "name": "aespa",
+      "nameKo": "aespa",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1a/26/5d/1a265da7-ff45-8df0-ee94-7b79becfc7d9/888735949562.png/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/91/84/e5/9184e5d0-54c8-eccc-e62c-e3175a88b396/mzaf_13467227653896090925.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_YWVzcGE",
+      "x": 1163.3,
+      "y": 530.2
+    },
+    "manual_QXBpbms": {
+      "name": "Apink",
+      "nameKo": "Apink",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f7/ac/d5/f7acd52e-d02b-7f97-03df-f3e6119fc0d3/888272173352_Cover.jpg/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/16/d0/08/16d008d7-bbaf-f65f-5086-8d42f5bae063/mzaf_10664666588944434366.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_QXBpbms",
+      "x": 352.7,
+      "y": -925.7
+    },
+    "manual_REs": {
+      "name": "DK",
+      "nameKo": "DK",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music117/v4/cb/a0/23/cba023c5-96f6-7c49-e931-c03e1248350e/4562250641380_cover.png/400x400bb.jpg",
+      "genres": [
+        "エレクトロニック",
+        "ロック",
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ea/c7/fd/eac7fd78-efed-f86e-bc54-f6f5e291746e/mzaf_16861944449113202199.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_REs",
+      "x": 513,
+      "y": -245.7
+    },
+    "manual_SGVhcnRzMkhlYXJ0cw": {
+      "name": "Hearts2Hearts",
+      "nameKo": "Hearts2Hearts",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/78/b9/fb/78b9fb30-169a-eab0-38e9-8df725f8f2d6/888735954603.png/400x400bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/01/3c/36/013c3684-7121-8f9f-6eb5-00b610ac055c/mzaf_16203782190977593201.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_SGVhcnRzMkhlYXJ0cw",
+      "x": -856.6,
+      "y": 268.4
+    },
+    "manual_QUxMREFZIFBST0pFQ1Q": {
+      "name": "ALLDAY PROJECT",
+      "nameKo": "ALLDAY PROJECT",
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ff/fd/c6/fffdc68c-4288-ff7f-344f-8c7359435baf/8800320193350_cover.jpg/400x400bb.jpg",
+      "genres": [
+        "댄스",
+        "한국 힙합",
+        "힙합/랩",
+        "K-Pop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/30/d1/08/30d10814-011e-3241-1bc0-6b4a2f01004a/mzaf_1613142162888158229.plus.aac.p.m4a",
+      "spotifyUrl": "https://open.spotify.com/artist/manual_QUxMREFZIFBST0pFQ1Q",
+      "x": 361.4,
+      "y": 616.6
     }
   },
   "edges": [
@@ -4161,6 +4650,2976 @@
       "manual_7ISx7Iuc6rK9",
       0.35,
       "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_SVZF",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_S2lpaUtpaWk",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_QVRFRVo",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_TEUgU1NFUkFGSU0",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_ai1ob3Bl",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_KEcpSS1ETEU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_SUxMSVQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_QkFCWU1PTlNURVI",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_QlRT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_S2lpaUtpaWk",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_QVRFRVo",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_TEUgU1NFUkFGSU0",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_ai1ob3Bl",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_KEcpSS1ETEU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_SUxMSVQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_QkFCWU1PTlNURVI",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_QlRT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVZF",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_QVRFRVo",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_TEUgU1NFUkFGSU0",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_ai1ob3Bl",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_KEcpSS1ETEU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_SUxMSVQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_QkFCWU1PTlNURVI",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_QlRT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_TEUgU1NFUkFGSU0",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_ai1ob3Bl",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_KEcpSS1ETEU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_SUxMSVQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_QkFCWU1PTlNURVI",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_QlRT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_ai1ob3Bl",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_KEcpSS1ETEU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_SUxMSVQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_QkFCWU1PTlNURVI",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_QlRT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_KEcpSS1ETEU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_SUxMSVQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_QkFCWU1PTlNURVI",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_QlRT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_SUxMSVQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_QkFCWU1PTlNURVI",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_QlRT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_QkFCWU1PTlNURVI",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_QlRT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_QlRT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_VFdT",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QlRT",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_SVRaWQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdT",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_RU5IWVBFTg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_TkNU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_S0FUU0VZRQ",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TkNU",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_U3RyYXkgS2lkcw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_Tk1JWFg",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_U3RyYXkgS2lkcw",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_VFdJQ0U",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Tk1JWFg",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_RVhP",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_VFdJQ0U",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_WkVST0JBU0VPTkU",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_RVhP",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WkVST0JBU0VPTkU",
+      "manual_WklDTw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WkVST0JBU0VPTkU",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WkVST0JBU0VPTkU",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WkVST0JBU0VPTkU",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WkVST0JBU0VPTkU",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WkVST0JBU0VPTkU",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WkVST0JBU0VPTkU",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WkVST0JBU0VPTkU",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WkVST0JBU0VPTkU",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WklDTw",
+      "manual_SklTT08",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WklDTw",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WklDTw",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WklDTw",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WklDTw",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WklDTw",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WklDTw",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_WklDTw",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SklTT08",
+      "manual_TUVPVlY",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SklTT08",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SklTT08",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SklTT08",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SklTT08",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SklTT08",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SklTT08",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TUVPVlY",
+      "manual_Qk9ZTkVYVERPT1I",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TUVPVlY",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TUVPVlY",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TUVPVlY",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TUVPVlY",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_TUVPVlY",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Qk9ZTkVYVERPT1I",
+      "manual_YWVzcGE",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Qk9ZTkVYVERPT1I",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Qk9ZTkVYVERPT1I",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Qk9ZTkVYVERPT1I",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_Qk9ZTkVYVERPT1I",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_YWVzcGE",
+      "manual_QXBpbms",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_YWVzcGE",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_YWVzcGE",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_YWVzcGE",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QXBpbms",
+      "manual_REs",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QXBpbms",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QXBpbms",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_REs",
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_REs",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_SGVhcnRzMkhlYXJ0cw",
+      "manual_QUxMREFZIFBST0pFQ1Q",
+      0.35,
+      "same_playlist"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_MTBDTQ",
+      0.20412414523193148,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_Q3J1c2g",
+      0.17677669529663687,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_7J6U64KY67mE",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.24999999999999994,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_7Y-07YK0",
+      0.24999999999999994,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_66mc66Gc66ed7Iqk",
+      0.20412414523193148,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkxBQ0tQSU5L",
+      "manual_7ISx7Iuc6rK9",
+      0.24999999999999994,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVZF",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVZF",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVZF",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVZF",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVZF",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVZF",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVZF",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_S2lpaUtpaWk",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_QVRFRVo",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_TEUgU1NFUkFGSU0",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_ai1ob3Bl",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_KEcpSS1ETEU",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_SUxMSVQ",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_7J6U64KY67mE",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.17677669529663687,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_7Y-07YK0",
+      0.17677669529663687,
+      "genre_overlap"
+    ],
+    [
+      "manual_QkFCWU1PTlNURVI",
+      "manual_7ISx7Iuc6rK9",
+      0.17677669529663687,
+      "genre_overlap"
+    ],
+    [
+      "manual_VFdT",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_VFdT",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_VFdT",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_VFdT",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_VFdT",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_VFdT",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_VFdT",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_SVRaWQ",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_RU5IWVBFTg",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_TkNU",
+      "manual_MTBDTQ",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_TkNU",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
+    ],
+    [
+      "manual_TkNU",
+      "manual_7J6U64KY67mE",
+      0.5,
+      "genre_overlap"
+    ],
+    [
+      "manual_TkNU",
+      "manual_67O867mo6rCE7IKs7LaY6r",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_TkNU",
+      "manual_7Y-07YK0",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_TkNU",
+      "manual_66mc66Gc66ed7Iqk",
+      0.2886751345948129,
+      "genre_overlap"
+    ],
+    [
+      "manual_TkNU",
+      "manual_7ISx7Iuc6rK9",
+      0.35355339059327373,
+      "genre_overlap"
+    ],
+    [
+      "manual_S0FUU0VZRQ",
+      "manual_Q3J1c2g",
+      0.25,
+      "genre_overlap"
     ]
   ]
 }
