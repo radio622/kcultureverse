@@ -138,6 +138,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
   const [hoverNode, setHoverNode] = useState<string | null>(null);
 
   // d3 force-graph용 데이터 변환
+  // 호츠는 d3가 자유롭게 배치하도록 놓아두고 시뮬 완료 후 fitView
   const forceData = useMemo(() => ({
     nodes: Object.values(graphData.nodes).map((n) => ({ ...n })),
     links: graphData.edges.map((e) => ({
@@ -149,11 +150,17 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     })),
   }), [graphData]);
 
+  // 시뮬 완료 시: fitView
+  const handleEngineStop = useCallback(() => {
+    const fg = fgRef.current as { zoomToFit?: (ms: number, padding: number) => void } | null;
+    fg?.zoomToFit?.(600, 80);
+  }, []);
+
   // 포커스된 아티스트로 카메라 Fly-To
   useEffect(() => {
     if (!focusedId || !fgRef.current) return;
     const node = graphData.nodes[focusedId];
-    if (!node?.x || !node?.y) return;
+    if (node?.x === undefined || node?.y === undefined) return;
     const fg = fgRef.current as { centerAt: (x: number, y: number, ms: number) => void; zoom: (z: number, ms: number) => void };
     fg.centerAt(node.x, node.y, 900);
     fg.zoom(2.8, 900);
@@ -187,13 +194,12 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       // 일반 클릭: 카메라 이동 + 아티스트 선택
       if (node.x !== undefined && node.y !== undefined) {
         fg.centerAt(node.x, node.y, 800);
-        fg.zoom(2.8, 800);
       }
       setHighlightPath(new Set());
       setHighlightEdges(new Set());
       onArtistSelect(node.id);
-      // URL을 조용히 변경 (페이지 리로드 없음)
-      window.history.pushState(null, "", `/from/${node.id}`);
+      // URL을 조용히 변경 — /universe 경로 유지! (/from/ID 로 변경하면 Next.js가 페이지 전환함)
+      window.history.replaceState(null, "", `/universe?artist=${node.id}`);
     }
   }, [pathfindingFrom, graphData, onArtistSelect]);
 
@@ -383,37 +389,31 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       <ForceGraph2D
         ref={fgRef}
         graphData={forceData}
-        // 좌표는 prebake 시점에 계산됨 → 물리 시뮬 OFF
-        cooldownTicks={0}
-        warmupTicks={0}
-        // 배경 투명 (CSS background에 의존)
+        // 시뮬: 200 tick 후 완전 종료 → CPU 부하 해소, shadow canvas 정상 동작
+        cooldownTicks={200}
+        onEngineStop={handleEngineStop}
+        // 배경
         backgroundColor="rgba(0,0,0,0)"
-        // 노드
+        // 노드: 기본 원형 렌더링 (shadow canvas 히트 테스트 100% 호환)
         nodeId="id"
-        nodeCanvasObject={paintNode}
-        nodeCanvasObjectMode={() => "replace"}
-        nodePointerAreaPaint={(node: V5Node & { x?: number; y?: number }, color: string, ctx: CanvasRenderingContext2D) => {
-          const radius = node.tier === 0 ? 36 : node.tier === 1 ? 20 : 10;
-          ctx.beginPath();
-          ctx.arc(node.x ?? 0, node.y ?? 0, radius, 0, 2 * Math.PI);
-          ctx.fillStyle = color;
-          ctx.fill();
-        }}
-        // 링크
-        linkColor={linkColor}
-        linkWidth={linkWidth}
-        linkDirectionalParticles={(link: { relation: V5EdgeRelation }) =>
-          link.relation === "GENRE_OVERLAP" ? 0 : 1
-        }
-        linkDirectionalParticleWidth={(link: { relation: V5EdgeRelation }) =>
-          link.relation === "INDIRECT" ? 1 : 2
-        }
-        linkDirectionalParticleColor={linkColor}
-        linkDirectionalParticleSpeed={0.003}
+        nodeLabel={(node: V5Node) => node.nameKo || node.name}
+        nodeColor={(node: V5Node) => node.accent || (node.tier === 0 ? "#c084fc" : node.tier === 1 ? "#86efac" : "#60a5fa")}
+        nodeRelSize={6}
+        nodeVal={(node: V5Node) => node.tier === 0 ? 12 : node.tier === 1 ? 4 : 1}
+        // 링크: 단순화 (파티클/방향 화살표 제거 → shadow canvas 부하 최소화)
+        linkColor={() => "rgba(167,139,250,0.15)"}
+        linkWidth={0.5}
         // 이벤트
-        onNodeClick={handleNodeClick}
-        onNodeRightClick={handleNodeRightClick}
-        onNodeHover={(node: V5Node | null) => setHoverNode(node?.id ?? null)}
+        onNodeClick={(node: V5Node) => {
+          console.log("🟢 NODE CLICKED:", node.id, node.nameKo || node.name);
+          handleNodeClick(node);
+        }}
+        onNodeHover={(node: V5Node | null) => {
+          setHoverNode(node?.id ?? null);
+          if (typeof document !== "undefined") {
+            document.body.style.cursor = node ? "pointer" : "default";
+          }
+        }}
         // 스타일
         width={typeof window !== "undefined" ? window.innerWidth : 375}
         height={typeof window !== "undefined" ? window.innerHeight : 812}

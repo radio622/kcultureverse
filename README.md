@@ -46,8 +46,9 @@ src/
 │       ├── cosmos/[id]/            ← 위성 데이터 (캐시 헤더)
 │       └── spotify/                ← 검색/미리듣기
 ├── components/
-│   ├── Cosmos.tsx                  ← 2.5D 우주 시각화 (Dynamic Fog + Pan + Torus)
-│   ├── CosmosClient.tsx            ← 클라이언트 오케스트레이터
+│   ├── GraphCosmos.tsx             ← ⭐ V5 Canvas 우주 (react-force-graph-2d)
+│   ├── Cosmos.tsx                  ← 2.5D 우주 시각화 (V4, Dynamic Fog + Pan + Torus)
+│   ├── CosmosClient.tsx            ← 클라이언트 오케스트레이터 (V4)
 │   ├── CosmosNode.tsx              ← 개별 별 노드 (self-healing 이미지 fetch)
 │   ├── BottomSheet.tsx             ← 3단계 바텀시트
 │   ├── ResonanceDeck.tsx           ← 가로 스크롤 캐러셀
@@ -62,6 +63,7 @@ src/
     ├── spotify.ts                  ← Spotify 검색 + iTunes 미리듣기 fallback
     ├── musicbrainz.ts              ← MusicBrainz v2: 앨범 크레딧 + 발매일 연표
     ├── genius.ts                   ← Genius API (현재 비활성화 — Vercel IP 차단)
+    ├── graph-v5.ts                 ← ⭐ V5 그래프 타입 (V5Node, V5Edge, UniverseGraphV5)
     ├── deep-space.ts               ← 심우주 노드 생성 (graph.json 좌표 활용)
     ├── graph.ts                    ← UniverseGraph 타입 + 크레딧 기반 edge weight
     └── types.ts                    ← CosmosArtist, SatelliteNode, AlbumRelease 등
@@ -71,12 +73,14 @@ scripts/                            ← ⚠️ 로컬 전용 (Pre-bake 파이프
 ├── add-artist.ts                   ← CLI 아티스트 추가
 ├── ingest-playlist.ts              ← Spotify 플레이리스트 일괄 입력
 ├── build-graph.ts                  ← hub JSON → graph.json (크레딧 edge weight)
-└── compute-layout.ts               ← Torus Force-Directed 레이아웃 계산
+├── compute-layout.ts               ← Torus Force-Directed 레이아웃 계산
+└── build-universe-v5.ts            ← ⭐ V5 그래프 빌더 (hub JSON → universe-graph-v5.json)
 
 public/data/
 ├── hub/{spotifyId}.json            ← Pre-baked 우주 데이터 (위성 + 크레딧)
 ├── releases/{spotifyId}.json       ← 앨범 발매일 연표 (Admin LLM 팩트체크 대비)
-├── graph.json                      ← 관계 그래프 + Force-Directed 좌표
+├── graph.json                      ← 관계 그래프 + Force-Directed 좌표 (V4)
+├── universe-graph-v5.json          ← ⭐ V5 그래프 (75노드 + 282엣지 + 사전계산 좌표)
 └── search-index.json               ← 로컬 검색 인덱스
 ```
 
@@ -310,6 +314,7 @@ Pre-bake 파이프라인 (로컬, 오프라인):
 | `npm run build-graph` | hub/*.json → graph.json 생성 (크레딧 edge weight) |
 | `npm run compute-layout` | graph.json → Force-Directed 좌표 계산 |
 | `npm run universe:rebuild` | build-graph + compute-layout 순차 실행 |
+| `npm run build-universe-v5` | ⭐ V5 그래프 빌드 (hub JSON → universe-graph-v5.json) |
 | `npx tsx scripts/ingest-playlist.ts <URL>` | 플레이리스트 일괄 입력 |
 
 ---
@@ -334,6 +339,10 @@ Pre-bake 파이프라인 (로컬, 오프라인):
 | 2026-03-20 | Admin 페이지 개선: Universe Rebuild GUI + CLI 참조 가이드 |
 | 2026-03-20 | **UX 고도화:** Seamless Dive (router.push + 페이드아웃), In-Node Track Display (별 위 곡 이름 표시 + 정지 토글) |
 | 2026-03-20 | MusicBrainz v2 엔진: 62명 허브 아티스트 전체 크레딧 갱신 + Universe Rebuild 완료 |
+| 2026-03-20 | **V5 Universe 아키텍처 도입:** 단일 Canvas SPA로 전환 |
+| 2026-03-20 | `react-force-graph-2d` + `universe-graph-v5.json` 75노드/282엣지 초기 빌드 |
+| 2026-03-20 | **Shadow Canvas 히트 테스트 디버깅:** onNodeClick 정상 동작 확인 |
+| 2026-03-20 | **history.pushState 페이지 전환 버그 수정:** `/universe` 경로 내 URL 유지 |
 
 ---
 
