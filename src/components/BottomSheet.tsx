@@ -16,7 +16,7 @@ interface Props {
 }
 
 const PEEK_HEIGHT    = 72;         // 미니플레이어 높이
-const EXPANDED_VH   = 38;         // 확장 시 뷰포트 비율 (55 -> 38로 축소해 배경 가림 최소화)
+const EXPANDED_VH   = 42;         // 확장 시 뷰포트 비율 (38 → 42로 증가: 카드 컴팩트화에 맞춰 여유 확보)
 const DRAG_THRESHOLD = 44;         // 상태 전환 트리거 드래그 거리 (px)
 
 export default function BottomSheet({ state, onStateChange, children }: Props) {
@@ -123,7 +123,12 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              style={{ height: "100%", overflow: "hidden" }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                height: "100%",
+                overflow: "hidden",
+              }}
             >
               {children}
             </motion.div>

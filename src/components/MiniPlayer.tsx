@@ -30,6 +30,7 @@ export default function MiniPlayer({
           alignItems: "center",
           gap: 10,
           cursor: "default",
+          flexShrink: 0,    // ← 절대 찌그러지지 않음
         }}
       >
         {/* 별 아이콘 */}
@@ -47,6 +48,7 @@ export default function MiniPlayer({
       style={{
         padding: "0 20px",
         cursor: sheetState === "peek" ? "pointer" : "default",
+        flexShrink: 0,    // ← 절대 찌그러지지 않음
         borderBottom: sheetState === "expanded" ? "1px solid rgba(167,139,250,0.12)" : "none",
         background: (isPlaying && sheetState === "expanded")
           ? "rgba(167,139,250,0.06)"

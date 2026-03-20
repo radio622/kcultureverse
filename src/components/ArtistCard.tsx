@@ -56,11 +56,11 @@ export default function ArtistCard({ artist, isActive, onTap, onDive }: Props) {
       className="glass-card"
       onClick={onTap}
       style={{
-        width: 170,
-        padding: "10px",
+        width: 130,
+        padding: "8px",
         display: "flex",
         flexDirection: "column",
-        gap: 6,
+        gap: 5,
         border: isActive
           ? "1px solid rgba(167,139,250,0.55)"
           : "1px solid var(--border-glass)",
@@ -114,7 +114,7 @@ export default function ArtistCard({ artist, isActive, onTap, onDive }: Props) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: 52,
+              fontSize: 40,
               color: initialColor,
               fontWeight: 300,
             }}

@@ -74,6 +74,7 @@ export default function ResonanceDeck({
       onScroll={handleScroll}
       role="listbox"
       aria-label="관련 아티스트"
+      style={{ flex: "1 1 0", minHeight: 0 }}
     >
       {satellites.map((satellite, i) => (
         <div key={satellite.spotifyId} className="resonance-deck__card" role="option">
