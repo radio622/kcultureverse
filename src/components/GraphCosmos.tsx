@@ -181,6 +181,8 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
   // 포커스된 아티스트로 카메라 Fly-To
   useEffect(() => {
     if (!focusedId || !fgRef.current) return;
+    // 그래프에 없는 아티스트(위성 only)이면 카메라 이동 안 함
+    if (!graphData.nodes[focusedId]) return;
     
     // JSON의 원본 좌표가 아닌, 시뮬레이션 완료 후의 런타임 좌표를 사용!
     const simNode = simulatedNodesRef.current.get(focusedId);
@@ -240,8 +242,12 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
   }, []);
 
   // ── Focus Mode: 선택된 노드 + 1-hop 이웃 ─────────────────────
+  // ⚠️ focusedId가 그래프에 없는 아티스트(위성 only)이면 Focus Mode를 끄지 않으면
+  //    모든 노드가 opacity 0.15로 사라져서 "화면이 꺼지는" 블랙아웃처럼 보인다!
   const focusSet = useMemo(() => {
     if (!focusedId) return null;
+    // 그래프에 존재하는 노드인지 확인
+    if (!graphData.nodes[focusedId]) return null; // ← 핵심: 없으면 Focus Mode OFF
     const set = new Set<string>();
     set.add(focusedId);
     for (const e of graphData.edges) {
@@ -249,7 +255,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       else if (e.target === focusedId) set.add(e.source);
     }
     return set;
-  }, [focusedId, graphData.edges]);
+  }, [focusedId, graphData.edges, graphData.nodes]);
 
   // ── LOD 기반 노드 커스텀 렌더링 ─────────────────────────────
   const paintNode = useCallback((
