@@ -40,7 +40,7 @@ interface LayoutNode {
   nameKo: string;
   x: number;
   y: number;
-  tier: 0 | 1 | 2;
+  degree: number;
   accent?: string;
 }
 
@@ -82,8 +82,8 @@ interface HopItem {
   nameKo: string;
   image: string | null;
   relation: string;
-  label: string;
-  tier: 0 | 1 | 2;
+  label?: string;
+  degree: number;
   accent?: string;
 }
 
@@ -149,7 +149,7 @@ export default function UniversePage() {
       for (const n of layoutFile.nodes) {
         nodesMap[n.id] = {
           id: n.id, name: n.name, nameKo: n.nameKo,
-          x: n.x, y: n.y, tier: n.tier, accent: n.accent,
+          x: n.x, y: n.y, degree: n.degree ?? 0, accent: n.accent,
           image: null, genres: [], popularity: 0,
           previewUrl: null, previewTrackName: null, spotifyUrl: null,
         };
@@ -261,7 +261,7 @@ export default function UniversePage() {
           image: nb.image,
           relation: e.relation,
           label: e.label,
-          tier: nb.tier,
+          degree: nb.degree ?? 0,
           accent: nb.accent,
           weight: e.weight,
         };

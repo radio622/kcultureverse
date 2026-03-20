@@ -1,31 +1,16 @@
 "use client";
 
 /**
- * 🌌 GraphCosmos — Universe V5.3 Canvas 렌더러
+ * 🌌 GraphCosmos — Universe V5.5 Canvas 렌더러
  *
- * V5.3 마스터 플랜 Phase 3 구현:
- *   Task 3-1. Zero Physics + 정적 지도 모드
- *     - cooldownTicks=0, 브라우저 물리엔진 완전 OFF
- *     - JSON 사전 계산 좌표(node.x, node.y)만 신뢰
+ * V5.5 핵심 원칙: 모든 아티스트는 평등한 별이다.
+ * 별의 크기와 밝기는 오직 degree(연결된 간선 수)에 비례하는
+ * 연속적(continuous) 스케일로만 자연 결정된다.
+ * tier(계급) 시스템 완전 폐지.
  *
- *   Task 3-2. LOD 3단계 렌더링
- *     - far  (scale < 0.4):  2px 빛나는 점 (허브만 5px + 흐린 이름)
- *     - mid  (0.4–1.5):     허브: 원+이름(18px), 기타: 점+이름
- *     - close (scale ≥ 1.5): 0촌: 큰 사진(48px), 1촌: 중간 사진(28px), 2촌: 이니셜(16px)
- *
- *   Task 3-3. 1촌/2촌 BFS 포커스 시스템 (Hairball 방지)
- *     - 인접 리스트 useMemo로 1회 빌드
- *     - focusedId 변경 → BFS 2단계 → hop1, hop2, focusEdges Set
- *     - paintNode: focused / hop1 / hop2 / unfocused 4가지 상태
- *     - paintLink: hop1 엣지만 표시 (weight 상위 15개 Hairball 방지)
- *     - 2촌 선은 기본 숨김
- *
- *   Task 3-4. Star Bloom 전환 애니메이션
- *     - focusChangedAt 타임스탬프 기반 보간
- *     - 0~400ms: 1촌 확대 + 이미지 페이드인
- *     - 이미지 LRU 캐시 50장
- *
- * Next.js SSR 호환: dynamic import + ssr:false 로 사용할 것
+ * LOD 3단계: far (< 0.4), mid (0.4-1.5), close (≥ 1.5)
+ * BFS 포커스: 클릭 시 1/2촌 하이라이트, Star Bloom 애니메이션
+ * Zero Physics: 사전 계산 좌표만 사용 (브라우저 물리 OFF)
  */
 
 import {
@@ -272,12 +257,14 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
   ) => {
     const x = node.x ?? 0;
     const y = node.y ?? 0;
-    const isHub = node.tier === 0;
+    const deg = node.degree ?? 0;
     const isFocused = node.id === focusedId;
     const isHop1 = hop1.has(node.id);
     const isHop2 = hop2.has(node.id);
     const isOnPath = highlightPath.has(node.id);
     const isHovered = node.id === hoverNode;
+    // degree 기반 연속 스케일 — "거대별"인지를 판단하는 것이 아니라 자연스러운 크기 비례
+    const isMajor = deg >= 15; // 연결이 많은 별 (이름 표시 등에만 사용)
 
     // Star Bloom 보간: 0~BLOOM_DURATION_MS
     const bloomProgress = focusChangedAt > 0
@@ -292,12 +279,12 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     // LOD 레벨 결정
     const lod = globalScale < 0.4 ? "far" : globalScale < 1.5 ? "mid" : "close";
 
-    // ── FAR: 빛나는 점 ─────────────────────────────────────
+    // ── FAR: 빛나는 점 (degree 비례 크기) ────────────────────
     if (lod === "far") {
-      const r = isHub ? 5 : node.tier === 1 ? 2.5 : 1.2;
+      const r = 1.0 + Math.sqrt(deg) * 0.5; // degree=0→1, degree=25→3.5, degree=100→6
 
-      // 허브: 글로우
-      if (isHub || isFocused) {
+      // 큰 별 or 포커스: 글로우
+      if (isMajor || isFocused) {
         const glow = ctx.createRadialGradient(x, y, 0, x, y, r * 3);
         glow.addColorStop(0, (node.accent || "#c084fc") + "60");
         glow.addColorStop(1, "transparent");
@@ -309,14 +296,14 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
 
       ctx.beginPath();
       ctx.arc(x, y, isFocused ? r * 1.8 : r, 0, 2 * Math.PI);
-      ctx.fillStyle = isHub
-        ? (isFocused ? "#fff" : node.accent || "#c084fc")
+      ctx.fillStyle = isFocused ? "#fff"
+        : isMajor ? (node.accent || "#c084fc")
         : isHop1 ? "rgba(255,255,255,0.8)"
         : "rgba(255,255,255,0.25)";
       ctx.fill();
 
-      // 허브 이름 (far에서도 표시)
-      if (isHub && globalScale > 0.25) {
+      // 연결이 많은 별: 이름 표시 (far에서도)
+      if (isMajor && globalScale > 0.25) {
         ctx.font = `500 ${Math.max(8, 10 / globalScale)}px Inter, sans-serif`;
         ctx.fillStyle = "rgba(255,255,255,0.55)";
         ctx.textAlign = "center";
@@ -328,13 +315,13 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       return;
     }
 
-    // ── MID: 원 + 이름 ─────────────────────────────────────
+    // ── MID: 원 + 이름 (degree 비례) ──────────────────────────
     if (lod === "mid") {
-      const r = isHub ? 18 : node.tier === 1 ? 9 : 4;
+      const r = 3 + Math.sqrt(deg) * 2; // degree=0→3, degree=25→13, degree=100→23
       const displayR = isHovered ? r * 1.12 : r;
 
       // 글로우
-      if (isHub || isFocused || isHop1) {
+      if (isMajor || isFocused || isHop1) {
         const glow = ctx.createRadialGradient(x, y, 0, x, y, displayR * 2);
         glow.addColorStop(0, (node.accent || "#c084fc") + "35");
         glow.addColorStop(1, "transparent");
@@ -346,18 +333,18 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
 
       ctx.beginPath();
       ctx.arc(x, y, displayR, 0, 2 * Math.PI);
-      ctx.fillStyle = isHub ? "rgba(167,139,250,0.2)" : "rgba(255,255,255,0.08)";
+      ctx.fillStyle = isMajor ? "rgba(167,139,250,0.2)" : "rgba(255,255,255,0.08)";
       ctx.strokeStyle = isFocused ? "#ffffff"
         : isHop1 ? (node.accent || "#c084fc")
         : "rgba(255,255,255,0.25)";
       ctx.lineWidth = isFocused ? 2.5 : isHop1 ? 1.5 : 0.8;
       ctx.fill(); ctx.stroke();
 
-      // 이름
-      if (isHub || isHop1 || isFocused) {
-        const fontSize = isHub ? 11 : 9;
-        ctx.font = `${isHub ? 600 : 400} ${fontSize}px Inter, sans-serif`;
-        ctx.fillStyle = isHub ? "#fff" : "rgba(255,255,255,0.7)";
+      // 이름 (큰 별 or 포커스/1촌)
+      if (isMajor || isHop1 || isFocused) {
+        const fontSize = deg >= 25 ? 11 : 9;
+        ctx.font = `${deg >= 25 ? 600 : 400} ${fontSize}px Inter, sans-serif`;
+        ctx.fillStyle = deg >= 25 ? "#fff" : "rgba(255,255,255,0.7)";
         ctx.textAlign = "center";
         ctx.textBaseline = "top";
         ctx.fillText(node.nameKo || node.name, x, y + displayR + 3);
@@ -367,8 +354,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       return;
     }
 
-    // ── CLOSE: 사진 + 전체 정보 ────────────────────────────
-    const r = isFocused ? 40 : isHop1 ? 26 : isHop2 ? 14 : isHub ? 36 : 20;
+    // ── CLOSE: 사진 + 전체 정보 (degree 비례) ──────────────────
+    const baseR = 10 + Math.sqrt(deg) * 4; // degree=0→10, degree=25→30, degree=100→50
+    const r = isFocused ? Math.max(40, baseR) : isHop1 ? Math.max(26, baseR * 0.8) : isHop2 ? 14 : baseR;
 
     // Star Bloom: focused/hop1는 bloomProgress로 크기 보간
     const animR = (isFocused || isHop1)
@@ -388,7 +376,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     }
 
     // 이미지 또는 이니셜
-    if (node.image && (isFocused || isHop1 || isHub)) {
+    if (node.image && (isFocused || isHop1 || isMajor)) {
       const img = getCachedImage(node.image);
       const imgAlpha = (isFocused || isHop1) ? bloomProgress : 1;
       ctx.globalAlpha = isVisible ? imgAlpha : 0.07;
@@ -411,7 +399,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       // 이니셜 원
       ctx.beginPath();
       ctx.arc(x, y, animR, 0, 2 * Math.PI);
-      ctx.fillStyle = isHub ? "rgba(167,139,250,0.15)" : "rgba(255,255,255,0.06)";
+      ctx.fillStyle = isMajor ? "rgba(167,139,250,0.15)" : "rgba(255,255,255,0.06)";
       ctx.fill();
 
       // 이니셜 텍스트
@@ -430,13 +418,13 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     ctx.strokeStyle = isFocused ? "#ffffff"
       : isOnPath ? "#fbbf24"
       : isHop1 ? (node.accent || "#c084fc")
-      : isHub ? (node.accent || "#c084fc")
+      : isMajor ? (node.accent || "#c084fc")
       : "rgba(255,255,255,0.2)";
     ctx.lineWidth = isFocused ? 3 : isHop1 ? 2 : 1;
     ctx.stroke();
 
     // 이름 라벨
-    if (isFocused || isHop1 || isHub) {
+    if (isFocused || isHop1 || isMajor) {
       const label = node.nameKo || node.name;
       ctx.font = `${isFocused ? 700 : 600} ${isFocused ? 13 : 10}px Inter, sans-serif`;
       const tw = ctx.measureText(label).width;
@@ -497,7 +485,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     return 0.15;
   }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes]);
 
-  // ── nodePointerAreaPaint: LOD에 맞는 히트영역 (클릭 인식) ─
+  // ── nodePointerAreaPaint: LOD에 맞는 히트영역 (degree 비례) ─
   const nodePointerAreaPaint = useCallback((
     node: V5Node & { x?: number; y?: number },
     color: string,
@@ -506,15 +494,15 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
   ) => {
     const x = node.x ?? 0;
     const y = node.y ?? 0;
-    const isHub = node.tier === 0;
+    const deg = node.degree ?? 0;
     const lod = globalScale < 0.4 ? "far" : globalScale < 1.5 ? "mid" : "close";
     const isFocused = node.id === focusedId;
     const isHop1 = hop1.has(node.id);
 
     let r = 6; // 최소 히트 반지름
-    if (lod === "far")   r = isHub ? 8    : node.tier === 1 ? 5    : 3.5;
-    else if (lod === "mid")   r = isHub ? 22   : node.tier === 1 ? 12   : 6;
-    else /* close */          r = isFocused ? 44 : isHop1 ? 30 : isHub ? 40 : 22;
+    if (lod === "far")        r = 3 + Math.sqrt(deg) * 0.8;
+    else if (lod === "mid")   r = 5 + Math.sqrt(deg) * 2.5;
+    else /* close */          r = isFocused ? 44 : isHop1 ? 30 : 12 + Math.sqrt(deg) * 4;
 
     ctx.beginPath();
     ctx.arc(x, y, r * 1.15, 0, 2 * Math.PI); // 히트 영역은 시각보다 15% 크게
@@ -577,7 +565,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
         nodeCanvasObjectMode={() => "replace"}
         nodeCanvasObject={paintNode}
         nodePointerAreaPaint={nodePointerAreaPaint}
-        nodeVal={(node: V5Node) => node.tier === 0 ? 16 : node.tier === 1 ? 5 : 2}
+        nodeVal={(node: V5Node) => Math.max(2, Math.sqrt(node.degree ?? 0) * 3)}
         linkColor={linkColor}
         linkWidth={linkWidth}
         onNodeClick={(node: V5Node) => {
