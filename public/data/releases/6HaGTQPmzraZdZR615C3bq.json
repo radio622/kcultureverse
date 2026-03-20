@@ -1,0 +1,80 @@
+{
+  "spotifyId": "6HaGTQPmzraZdZR615C3bq",
+  "name": "BIBI",
+  "mbid": "2c89e930-7769-403f-8145-f215bb8fb5ba",
+  "albums": [
+    {
+      "title": "Bibi Blocksberg präsentiert: Schullieder für kleine Hexen",
+      "releaseDate": "2000-06-26",
+      "type": "Album",
+      "mbReleaseGroupId": "7288906d-dedf-3abc-bfaf-71bce59f3a02",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Bibi Blocksberg präsentiert Hexenstarke Sommerlieder",
+      "releaseDate": "2003",
+      "type": "Album",
+      "mbReleaseGroupId": "1ac0a4c8-8f1c-4a0f-af57-b47f5641adfa",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Englisch mit BiBi BLOCKSBERG: Das Hex-Tagebuch - A Diary Called James",
+      "releaseDate": "2008-06-16",
+      "type": "Album",
+      "mbReleaseGroupId": "6584d911-c85f-4eac-8449-07387675426e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hexenfest in Stonehenge: Englisch Lernen mit Bibi Blocksberg 2",
+      "releaseDate": "2013-05-24",
+      "type": "Album",
+      "mbReleaseGroupId": "8850a869-bc85-4fb8-9a52-59b2315f6e53",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hexkraft gesucht",
+      "releaseDate": "2014-10-10",
+      "type": "Album",
+      "mbReleaseGroupId": "ffb282b3-f3bf-4b82-8d86-8a9dd8b71e79",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hexen hexen überall",
+      "releaseDate": "2015-10-09",
+      "type": "Album",
+      "mbReleaseGroupId": "8ea2925c-9084-44f8-8149-ee2179624cca",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Bibi Blocksberg erzählt 3 Tiergeschichten",
+      "releaseDate": "2018",
+      "type": "Album",
+      "mbReleaseGroupId": "0f651afc-b63d-4dae-ad54-dd856316b447",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Bibi Blocksberg: Das Musical",
+      "releaseDate": null,
+      "type": "Album",
+      "mbReleaseGroupId": "2a952546-37b0-3402-9563-f20b080a467f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Bibi Blocksberg präsentiert: Verhexte Winterlieder",
+      "releaseDate": null,
+      "type": "Album",
+      "mbReleaseGroupId": "3e016f3a-38d4-3ed4-bced-e94a8d694a91",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    }
+  ],
+  "lastUpdated": "2026-03-20T17:32:38.524Z"
+}

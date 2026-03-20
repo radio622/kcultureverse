@@ -1,0 +1,128 @@
+{
+  "spotifyId": "6WeDO4GynFmK4OxwkBzMW8",
+  "name": "The Black Skirts",
+  "mbid": "a697464c-69b1-4bbc-88cc-570c025a25e5",
+  "albums": [
+    {
+      "title": "201",
+      "releaseDate": "2008-11-13",
+      "type": "Album",
+      "mbReleaseGroupId": "68e84b50-5c44-3729-934c-3e271591be06",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Don't You Worry Baby (I'm Only Swimming)",
+      "releaseDate": "2011-07-13",
+      "type": "Album",
+      "mbReleaseGroupId": "6346c2bb-bcf8-4b72-a5a2-a1b91f16302d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hollywood",
+      "releaseDate": "2015-04-09",
+      "type": "Single",
+      "mbReleaseGroupId": "045306b5-e3bc-4a4a-8d87-baad6b9e969b",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "EVERYTHING",
+      "releaseDate": "2016-01-29",
+      "type": "Single",
+      "mbReleaseGroupId": "0c5cb148-1803-447e-bb70-9b8dc8762d41",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "내 고향 서울엔",
+      "releaseDate": "2016-03-15",
+      "type": "Single",
+      "mbReleaseGroupId": "9faeadb5-516f-4adb-a4f6-c34c5972f4f3",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "또 오해영 OST - Part. 7",
+      "releaseDate": "2016-06-14",
+      "type": "Single",
+      "mbReleaseGroupId": "cdcdf9db-76ac-43a5-aae9-c4d11197b117",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "TEAM BABY",
+      "releaseDate": "2017-05-30",
+      "type": "Album",
+      "mbReleaseGroupId": "872c10f4-7dd3-4e68-a91f-869836bfc0ad",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "THIRSTY",
+      "releaseDate": "2019-02-12",
+      "type": "Album",
+      "mbReleaseGroupId": "449a5d9a-c842-4e43-9dcc-c5d0f35c4f68",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "로맨스는 별책부록 OST - Part. 5",
+      "releaseDate": "2019-03-03",
+      "type": "Single",
+      "mbReleaseGroupId": "1f63afbe-c7ee-4bda-8408-273a41bdfa09",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Good Luck To You, Girl Scout!",
+      "releaseDate": "2021-05-01",
+      "type": "EP",
+      "mbReleaseGroupId": "6b34a5c8-a206-49a3-8f37-9258ed604254",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "유미의 세포들 OST - Part. 3",
+      "releaseDate": "2021-09-25",
+      "type": "Single",
+      "mbReleaseGroupId": "681bc3c0-4927-4194-9cf8-b06e8967c72e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "空港路",
+      "releaseDate": "2021-12-01",
+      "type": "Single",
+      "mbReleaseGroupId": "df323bcd-5e7b-4277-80aa-0af7fc678be7",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "DREAM LIKE ME",
+      "releaseDate": "2022-06-01",
+      "type": "Single",
+      "mbReleaseGroupId": "399f4596-e041-4ec4-979e-30c4e3a8eb6d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "어린양",
+      "releaseDate": "2022-08-04",
+      "type": "Single",
+      "mbReleaseGroupId": "b36e4fe2-ac5a-4a7d-bd00-29161e4d8385",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "TEEN TROUBLES",
+      "releaseDate": "2022-09-15",
+      "type": "Album",
+      "mbReleaseGroupId": "038312ef-40a2-441e-a9ab-6ebfccb28ac6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    }
+  ],
+  "lastUpdated": "2026-03-20T17:32:07.536Z"
+}

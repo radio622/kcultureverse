@@ -1,0 +1,304 @@
+{
+  "spotifyId": "2AfmfGFbe0XWe6oFCAxnME",
+  "name": "(G)I-DLE",
+  "mbid": "0068ae6c-7156-40f9-a81f-39294af6a549",
+  "albums": [
+    {
+      "title": "I am",
+      "releaseDate": "2018-05-02",
+      "type": "EP",
+      "mbReleaseGroupId": "339da7f1-e728-44fa-9837-36f76ff64598",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "ONE",
+      "releaseDate": "2018-06-17",
+      "type": "Single",
+      "mbReleaseGroupId": "da4229c9-0ad2-4b6f-b92d-872ce3060bf9",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "한(一)",
+      "releaseDate": "2018-08-14",
+      "type": "Single",
+      "mbReleaseGroupId": "10b53ec1-543e-4c10-9f18-2e538480d2ff",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "달려! (Relay)",
+      "releaseDate": "2018-11-19",
+      "type": "Single",
+      "mbReleaseGroupId": "e9e2b094-c5e7-44c7-9313-87540ea819c3",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I made",
+      "releaseDate": "2019-02-26",
+      "type": "EP",
+      "mbReleaseGroupId": "fd75fe5a-f853-4839-aeab-0f3008d03676",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "그녀의 사생활 OST Part 1",
+      "releaseDate": "2019-04-11",
+      "type": "Single",
+      "mbReleaseGroupId": "c670a4e7-3965-4f2d-aff1-41452c461501",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Uh-Oh",
+      "releaseDate": "2019-06-26",
+      "type": "Single",
+      "mbReleaseGroupId": "83c45234-cb5e-4635-b865-46ff3bbcd3ae",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "LATATA (Japanese ver.)",
+      "releaseDate": "2019-06-28",
+      "type": "Single",
+      "mbReleaseGroupId": "9ddfcc3e-6532-4f75-9ad9-2832d17fcb3f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "LATATA",
+      "releaseDate": "2019-07-29",
+      "type": "EP",
+      "mbReleaseGroupId": "fbc29bd0-6b95-44ae-9a92-203195e0541a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Queendom < Box of Pandora > Pt. 1",
+      "releaseDate": "2019-10-18",
+      "type": "Single",
+      "mbReleaseGroupId": "c14973f9-b824-412c-9015-30121a447daa",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Sugar Man 3, EPISODE.8",
+      "releaseDate": "2020-02-01",
+      "type": "Single",
+      "mbReleaseGroupId": "e7bd40b1-4ce7-4a56-9e83-2d008fdcc3d0",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I trust",
+      "releaseDate": "2020-04-06",
+      "type": "EP",
+      "mbReleaseGroupId": "e1853ec9-57b6-4528-a522-f5728d25ee47",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "LATATA (English ver.)",
+      "releaseDate": "2020-05-15",
+      "type": "Single",
+      "mbReleaseGroupId": "c652a57e-48b0-4ec5-9384-d9e259401038",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "i’M THE TREND",
+      "releaseDate": "2020-07-07",
+      "type": "Single",
+      "mbReleaseGroupId": "27d1bf3d-76ee-4cc0-8121-95a9d2114c3b",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "DUMDi DUMDi",
+      "releaseDate": "2020-08-03",
+      "type": "Single",
+      "mbReleaseGroupId": "0f7d1494-8eaa-4de9-a0d5-caad56d710e1",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Oh my god (Japanese ver.)",
+      "releaseDate": "2020-08-19",
+      "type": "Single",
+      "mbReleaseGroupId": "f8a542d9-1c16-4b34-9cfa-b65a2d9524ed",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Oh my god",
+      "releaseDate": "2020-08-26",
+      "type": "EP",
+      "mbReleaseGroupId": "db3455a5-c761-4cef-9d05-2ba7f5010c98",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "MORE",
+      "releaseDate": "2020-10-28",
+      "type": "Single",
+      "mbReleaseGroupId": "42c02272-d1ae-46c7-8ccf-f7efeeffaef0",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I burn",
+      "releaseDate": "2021-01-11",
+      "type": "EP",
+      "mbReleaseGroupId": "9e54b383-0428-4acb-b5e6-8e051d02fa75",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "HWAA(火花)",
+      "releaseDate": "2021-01-27",
+      "type": "Single",
+      "mbReleaseGroupId": "9b55d180-858d-46cd-8350-13ad1761a206",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Last Dance",
+      "releaseDate": "2021-04-29",
+      "type": "Single",
+      "mbReleaseGroupId": "da850513-c71a-47f5-8e7a-d6ad649c2002",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I NEVER DIE",
+      "releaseDate": "2022-03-14",
+      "type": "Album",
+      "mbReleaseGroupId": "f2ce706f-f28d-4062-95f8-f0104efcea2e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I love",
+      "releaseDate": "2022-10-17",
+      "type": "EP",
+      "mbReleaseGroupId": "5cae6816-c82e-4ae5-8bad-192066284836",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I feel",
+      "releaseDate": "2023-05-15",
+      "type": "EP",
+      "mbReleaseGroupId": "e988de57-e00e-4dae-91d8-d147bf18e70a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I DO",
+      "releaseDate": "2023-07-13",
+      "type": "Single",
+      "mbReleaseGroupId": "586d24a0-dd2d-44bc-931f-41768ebf71d3",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "HEAT",
+      "releaseDate": "2023-10-05",
+      "type": "EP",
+      "mbReleaseGroupId": "5359766c-801e-4075-8553-09cac24f65fd",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Wife",
+      "releaseDate": "2024-01-21",
+      "type": "Single",
+      "mbReleaseGroupId": "9ef58cc8-63fe-4410-855c-c5a2505cefd6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "2",
+      "releaseDate": "2024-01-29",
+      "type": "Album",
+      "mbReleaseGroupId": "871503b4-da86-4c80-8371-58f6888f03a2",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Abracadabra",
+      "releaseDate": "2024-03-08",
+      "type": "Single",
+      "mbReleaseGroupId": "e0d9f47a-ec1a-4524-9bbb-ec7eb5a8891a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "This Time Around",
+      "releaseDate": "2024-03-15",
+      "type": "Single",
+      "mbReleaseGroupId": "e1556996-2deb-4290-9c05-62ed5e4fbeba",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Klaxon",
+      "releaseDate": "2024-07-08",
+      "type": "Single",
+      "mbReleaseGroupId": "0a291d6f-62f4-4e08-a1f2-e1c9b3003f89",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I SWAY",
+      "releaseDate": "2024-07-08",
+      "type": "EP",
+      "mbReleaseGroupId": "1bfb866b-a0c9-4d62-aa0f-3975e08e8c38",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "We are",
+      "releaseDate": "2025-05-19",
+      "type": "EP",
+      "mbReleaseGroupId": "85b4143a-d444-485c-b777-0ffd5076eba4",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "′나 혼자만 레벨업:ARISE′ OST",
+      "releaseDate": "2025-07-03",
+      "type": "Single",
+      "mbReleaseGroupId": "071c79b2-86dc-43ef-8b36-4b40ad43f015",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "傷つくのは嫌いだから",
+      "releaseDate": "2025-09-26",
+      "type": "Single",
+      "mbReleaseGroupId": "11eb167c-79eb-4199-9f14-b7e19d4d868a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "i‐dle",
+      "releaseDate": "2025-10-03",
+      "type": "EP",
+      "mbReleaseGroupId": "91518b35-2567-4b2d-95f9-135361183fe5",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mono",
+      "releaseDate": "2026-01-27",
+      "type": "Single",
+      "mbReleaseGroupId": "c669f230-9b65-46c3-808c-99a26d44b464",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    }
+  ],
+  "lastUpdated": "2026-03-20T17:32:27.741Z"
+}

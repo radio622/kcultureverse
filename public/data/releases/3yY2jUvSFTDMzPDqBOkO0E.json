@@ -1,0 +1,864 @@
+{
+  "spotifyId": "3yY2jUvSFTDMzPDqBOkO0E",
+  "name": "Jay Park",
+  "mbid": "f59c5520-5f46-4d2c-b2c4-822eabf53419",
+  "albums": [
+    {
+      "title": "Xero",
+      "releaseDate": "1997",
+      "type": "EP",
+      "mbReleaseGroupId": "c6aa40a3-479d-4a28-89e7-609816899293",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hybrid Theory",
+      "releaseDate": "1999",
+      "type": "EP",
+      "mbReleaseGroupId": "ea2c867d-ee9f-4d84-bea1-53cfab453aed",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hybrid Theory",
+      "releaseDate": "1999",
+      "type": "EP",
+      "mbReleaseGroupId": "bb88a3e0-c69a-450c-a547-d1e52d32f895",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hybrid Theory (Linkin Park - Demos from 02-2000)",
+      "releaseDate": "2000",
+      "type": "Album",
+      "mbReleaseGroupId": "30fa49db-9902-401c-9dee-13c379911044",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Plaster (David Kahne Mix 1 of 4)",
+      "releaseDate": "2000",
+      "type": "Single",
+      "mbReleaseGroupId": "6ef9e0a1-0849-422c-8439-293011eebbea",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hybrid Theory",
+      "releaseDate": "2000-05-07",
+      "type": "Album",
+      "mbReleaseGroupId": "b5b4bb4b-8ba5-3acf-88cb-4cae2699d8da",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Studio Finals 5/7/00",
+      "releaseDate": "2000-05-07",
+      "type": "Album",
+      "mbReleaseGroupId": "a73ca4bc-db1f-4449-895c-cbc7b1064219",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "6 Tracks",
+      "releaseDate": "2000-05-08",
+      "type": "EP",
+      "mbReleaseGroupId": "0e42667e-d7ca-4e99-97e5-1df5b6b6b406",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "One Step Closer",
+      "releaseDate": "2000-12",
+      "type": "Single",
+      "mbReleaseGroupId": "82a5b1af-70cd-41a3-affa-dea3917166f9",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Points of Authority",
+      "releaseDate": "2001",
+      "type": "Single",
+      "mbReleaseGroupId": "de4c4fe7-490b-4b52-a0fe-d2bd33b7fd1f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Crawling",
+      "releaseDate": "2001-04-23",
+      "type": "Single",
+      "mbReleaseGroupId": "62ff49fa-1f3f-3d43-ba79-4e15918fa676",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Papercut",
+      "releaseDate": "2001-06-18",
+      "type": "Single",
+      "mbReleaseGroupId": "37d3bb2f-6232-3ca2-ba92-786656739e03",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "In the End",
+      "releaseDate": "2001-09",
+      "type": "Single",
+      "mbReleaseGroupId": "f38ae9f7-30a2-37e0-9046-f69b39f64c55",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "My Own Summer (Shove It) [Live 2-23-02]",
+      "releaseDate": "2002",
+      "type": "Single",
+      "mbReleaseGroupId": "c1c7a074-0b9c-415d-94a7-6d511ab9974e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Reanimation (Internal Demo)",
+      "releaseDate": "2002",
+      "type": "Album",
+      "mbReleaseGroupId": "284ead6b-3233-4d0b-aa23-0d9287cf4a5a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Pushing Me Away",
+      "releaseDate": "2002",
+      "type": "Single",
+      "mbReleaseGroupId": "9244c8ec-ee33-4c4b-949e-7a613e1e8ec6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Frgt/10",
+      "releaseDate": "2002",
+      "type": "Single",
+      "mbReleaseGroupId": "dc3e23cb-17c3-4b9a-9b13-496b6b8e99f1",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "My<Dsmbr",
+      "releaseDate": "2002",
+      "type": "Single",
+      "mbReleaseGroupId": "dcd358b3-d2ae-4993-b066-a70f3a9231e1",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Enth E Nd / Frgt/10",
+      "releaseDate": "2002",
+      "type": "Single",
+      "mbReleaseGroupId": "f908a2fe-5c01-4f33-ab8b-e850df6d8009",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "In the End: Live & Rare",
+      "releaseDate": "2002-03-27",
+      "type": "EP",
+      "mbReleaseGroupId": "280754fc-4e7b-36b2-8c2e-d295dd93ef0b",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Underground V2.0",
+      "releaseDate": "2002-11-18",
+      "type": "EP",
+      "mbReleaseGroupId": "49abaf1e-b66c-3118-9cb6-cee53691b7df",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Breaking the Habit",
+      "releaseDate": "2003",
+      "type": "Single",
+      "mbReleaseGroupId": "87da2213-0caa-349e-abe8-4bd083e0a3b9",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Lying from You",
+      "releaseDate": "2003-03-16",
+      "type": "Single",
+      "mbReleaseGroupId": "bb01c349-ee10-497e-b087-9686bed41c47",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Somewhere I Belong",
+      "releaseDate": "2003-03-17",
+      "type": "Single",
+      "mbReleaseGroupId": "97f302f8-fcd7-3d89-82e8-2f31a998687d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Meteora",
+      "releaseDate": "2003-03-24",
+      "type": "Album",
+      "mbReleaseGroupId": "09474d62-17dd-3a4f-98fb-04c65f38a479",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Faint",
+      "releaseDate": "2003-05-26",
+      "type": "Single",
+      "mbReleaseGroupId": "399c6a18-ba40-3e82-947b-623745aeeb0b",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Numb",
+      "releaseDate": "2003-08",
+      "type": "Single",
+      "mbReleaseGroupId": "bf6cfe90-ad3f-3b56-b758-403b442cbb4b",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "From the Inside",
+      "releaseDate": "2003-12",
+      "type": "Single",
+      "mbReleaseGroupId": "d0568697-34dc-3faf-a25f-a58ccf706a99",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Dirt Off Your Shoulder/Lying from You",
+      "releaseDate": "2004-11-15",
+      "type": "Single",
+      "mbReleaseGroupId": "a3ea5d93-476e-4f23-bbb7-7a3e4196abc6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Underground 4.0",
+      "releaseDate": "2004-11-22",
+      "type": "EP",
+      "mbReleaseGroupId": "7b0030b7-2966-35a0-a94c-ae108a708eb0",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Collision Course",
+      "releaseDate": "2004-11-29",
+      "type": "EP",
+      "mbReleaseGroupId": "8ef859e3-feb2-4dd1-93da-22b91280d768",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Numb/Encore",
+      "releaseDate": "2004-11-30",
+      "type": "Single",
+      "mbReleaseGroupId": "7c1014eb-454c-3867-8854-3c95d265f8de",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Underground 6",
+      "releaseDate": "2006-12-05",
+      "type": "EP",
+      "mbReleaseGroupId": "b4df526c-02d9-308f-b315-cd0949556c49",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "QWERTY",
+      "releaseDate": "2007-01-09",
+      "type": "Single",
+      "mbReleaseGroupId": "687e51f1-48db-49b5-b23b-b208dd46d006",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "What I’ve Done",
+      "releaseDate": "2007-04-02",
+      "type": "Single",
+      "mbReleaseGroupId": "15324beb-dd28-3206-9b58-ce811c2b189e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Minutes to Midnight",
+      "releaseDate": "2007-05-11",
+      "type": "Album",
+      "mbReleaseGroupId": "a4201f5c-f0d7-319c-ba9d-ba0bac38da7a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Bleed It Out",
+      "releaseDate": "2007-07-03",
+      "type": "Single",
+      "mbReleaseGroupId": "4a929d43-df44-382c-b704-fd06b4202e28",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "No More Sorrow",
+      "releaseDate": "2007-07-15",
+      "type": "Single",
+      "mbReleaseGroupId": "a89402e6-892a-42f2-858a-e11f9b2c0a57",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Shadow of the Day",
+      "releaseDate": "2007-09-10",
+      "type": "Single",
+      "mbReleaseGroupId": "ca632e89-a872-3a89-9bf4-5e99eb2c87e5",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Given Up",
+      "releaseDate": "2008-02-15",
+      "type": "Single",
+      "mbReleaseGroupId": "6a49f798-cabb-4332-b395-ef91f667341d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "We Made It",
+      "releaseDate": "2008-05-03",
+      "type": "Single",
+      "mbReleaseGroupId": "c9fe1c3e-b66b-3d58-830a-7a5130bbd784",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Leave Out All the Rest",
+      "releaseDate": "2008-06-24",
+      "type": "Single",
+      "mbReleaseGroupId": "688a6e98-07b3-3ff6-8292-507c9dd5b845",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mmm...Cookies: Sweet Hamster Like Jewels from America!",
+      "releaseDate": "2008-12-04",
+      "type": "EP",
+      "mbReleaseGroupId": "8d3bcff8-b394-3698-a02f-9693055b1094",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "New Divide",
+      "releaseDate": "2009-05-18",
+      "type": "Single",
+      "mbReleaseGroupId": "4741866d-c3a5-47ca-944d-732c2cc9e651",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "LP Underground 9: Demos",
+      "releaseDate": "2009-11-23",
+      "type": "EP",
+      "mbReleaseGroupId": "cbfe4c73-b945-415a-a29a-48992b9e5166",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Dreams on Shady Park",
+      "releaseDate": "2010",
+      "type": "Album",
+      "mbReleaseGroupId": "fba61390-3193-4c3b-8ac5-bb58d77658ee",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "8-Bit Rebellion!",
+      "releaseDate": "2010-04-26",
+      "type": "Album",
+      "mbReleaseGroupId": "46ebc164-3817-43dc-a392-dbb1127c611b",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "The Catalyst",
+      "releaseDate": "2010-08-02",
+      "type": "Single",
+      "mbReleaseGroupId": "7592466f-430c-40ce-968d-5d09d5ebc30c",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Blackout",
+      "releaseDate": "2010-09",
+      "type": "Single",
+      "mbReleaseGroupId": "763923ad-9cc2-4831-acbb-977033dc095e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "A Thousand Suns",
+      "releaseDate": "2010-09-08",
+      "type": "Album",
+      "mbReleaseGroupId": "65404106-2976-4f98-a0e2-4e76923ea06d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Wretches and Kings",
+      "releaseDate": "2010-09-08",
+      "type": "Single",
+      "mbReleaseGroupId": "c1279d84-6d93-40da-8ea4-dd9b7c4f2aff",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Waiting for the End",
+      "releaseDate": "2010-09-09",
+      "type": "Single",
+      "mbReleaseGroupId": "b2574506-cca8-4e0a-8f3a-7b57675e80e0",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "LP Underground X: Demos",
+      "releaseDate": "2010-11-17",
+      "type": "EP",
+      "mbReleaseGroupId": "26f1859a-216b-4164-8c9c-82ab8bc4bdaf",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "2011 North American Tour EP",
+      "releaseDate": "2010-12-20",
+      "type": "EP",
+      "mbReleaseGroupId": "9d5eec4c-1b34-480c-be13-c2f8d230eb85",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "The Catalyst",
+      "releaseDate": "2011",
+      "type": "Single",
+      "mbReleaseGroupId": "ca0c39b1-02c3-4db5-ab1f-6330f2470eb8",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Burning in the Skies",
+      "releaseDate": "2011-03-18",
+      "type": "Single",
+      "mbReleaseGroupId": "724f2b14-d25b-4c94-9912-c2fe4d742928",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Iridescent",
+      "releaseDate": "2011-05-27",
+      "type": "Single",
+      "mbReleaseGroupId": "aad22bea-05ae-42b6-801f-cb66e2702e16",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Not Alone",
+      "releaseDate": "2011-10-21",
+      "type": "Single",
+      "mbReleaseGroupId": "165797af-ea88-4bc6-af8f-02f11720cc90",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Underground Eleven",
+      "releaseDate": "2011-11-15",
+      "type": "EP",
+      "mbReleaseGroupId": "c3f681f5-d2be-45b9-ac01-76336c2e6ef6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Burn It Down",
+      "releaseDate": "2012-04-16",
+      "type": "Single",
+      "mbReleaseGroupId": "ba7639f8-c3d2-48a8-9353-c66775feb64d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Lies Greed Misery",
+      "releaseDate": "2012-05-24",
+      "type": "Single",
+      "mbReleaseGroupId": "e39c7a37-0bd3-4dd2-a2c2-120336be9649",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Living Things",
+      "releaseDate": "2012-06-20",
+      "type": "Album",
+      "mbReleaseGroupId": "af682b63-021e-4806-afac-9aa4380fc6bd",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Castle of Glass",
+      "releaseDate": "2012-10",
+      "type": "Single",
+      "mbReleaseGroupId": "6d1e53cb-2286-4487-b048-f7b370900bfe",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Lost in the Echo",
+      "releaseDate": "2012-10-05",
+      "type": "Single",
+      "mbReleaseGroupId": "00e7d9c9-851e-4c20-9b25-f281c7b449ea",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Powerless",
+      "releaseDate": "2012-10-31",
+      "type": "Single",
+      "mbReleaseGroupId": "13689778-9441-4ead-8480-1ff56739858c",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Underground 12",
+      "releaseDate": "2012-11-16",
+      "type": "EP",
+      "mbReleaseGroupId": "34f8d024-8df6-4fd1-a62c-0c4d92e83357",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I'll Be Gone",
+      "releaseDate": "2012-12-05",
+      "type": "Single",
+      "mbReleaseGroupId": "4318e8ce-1f28-4c6c-9e4a-4deac7623f18",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "A Light That Never Comes",
+      "releaseDate": "2013-09-16",
+      "type": "Single",
+      "mbReleaseGroupId": "962cd4e1-a33d-49e8-a01f-dbd21e80f5c4",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Underground XIII",
+      "releaseDate": "2013-11-18",
+      "type": "EP",
+      "mbReleaseGroupId": "20887455-01c4-4bdc-b18b-c6d104c9586c",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Guilty All the Same",
+      "releaseDate": "2014-03-06",
+      "type": "Single",
+      "mbReleaseGroupId": "ebcabfe1-2248-457e-8997-bee6da47a7e6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Until It’s Gone",
+      "releaseDate": "2014-05-06",
+      "type": "Single",
+      "mbReleaseGroupId": "06452b17-a738-4d2e-87db-4262466738b4",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Wastelands",
+      "releaseDate": "2014-06-02",
+      "type": "Single",
+      "mbReleaseGroupId": "808a11b7-3cec-458a-ba81-d1a833c1e6a8",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Rebellion",
+      "releaseDate": "2014-06-04",
+      "type": "Single",
+      "mbReleaseGroupId": "fc95dfb9-0ee4-4cee-8a98-3967b75e2c66",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Final Masquerade",
+      "releaseDate": "2014-06-09",
+      "type": "Single",
+      "mbReleaseGroupId": "69f64486-0a4a-4598-8e4f-1a556d3ec443",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "The Hunting Party",
+      "releaseDate": "2014-06-13",
+      "type": "Album",
+      "mbReleaseGroupId": "20292abb-7023-495b-8081-4b7be106a3b1",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Star Profile: Linkin Park",
+      "releaseDate": "2014-10-17",
+      "type": "EP",
+      "mbReleaseGroupId": "b5ca9c5c-76b6-4787-842d-c3a6c3dfeac5",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "White Noise",
+      "releaseDate": "2014-10-17",
+      "type": "Single",
+      "mbReleaseGroupId": "888effd7-c056-4b8a-aa99-3908c6703e56",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Underground XIV",
+      "releaseDate": "2014-11-21",
+      "type": "EP",
+      "mbReleaseGroupId": "c60f6d17-ec14-4317-9821-f63d43df81ef",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Darker Than Blood",
+      "releaseDate": "2015-04-14",
+      "type": "Single",
+      "mbReleaseGroupId": "5cd679f4-8f5e-457b-a901-976a255946d0",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Underground 15",
+      "releaseDate": "2015-11-25",
+      "type": "EP",
+      "mbReleaseGroupId": "b4dd55a3-11e0-4c43-8b71-398ba3883848",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "TooLeGit (2010 demo)",
+      "releaseDate": "2015-12-15",
+      "type": "Single",
+      "mbReleaseGroupId": "caa1b938-45fd-4c4d-9fcc-3a32d77ca7e9",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Grudgematch (2009 demo)",
+      "releaseDate": "2016-02-16",
+      "type": "Single",
+      "mbReleaseGroupId": "34b739df-4c9a-42bd-a283-03cc0a037080",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hurry (1999 demo)",
+      "releaseDate": "2016-04-15",
+      "type": "Single",
+      "mbReleaseGroupId": "d7ab2c4d-c5d8-4c9a-a36a-c65f5b73e329",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Grr (1999 demo)",
+      "releaseDate": "2016-06-15",
+      "type": "Single",
+      "mbReleaseGroupId": "8b00ca57-51f5-4e6c-bab8-362cef06c4cf",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Attached (2003 demo)",
+      "releaseDate": "2016-08-04",
+      "type": "Single",
+      "mbReleaseGroupId": "677de8aa-f13d-4064-9b8e-7c4f7fd86c4f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Chair (1999 Part of Me demo)",
+      "releaseDate": "2016-10-14",
+      "type": "Single",
+      "mbReleaseGroupId": "ec4f5c8a-f329-48dd-a7e1-05c3e9e406d3",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Underground Sixteen",
+      "releaseDate": "2016-11-21",
+      "type": "EP",
+      "mbReleaseGroupId": "a2acd0d4-8fd5-4a25-8c60-964cc04aac86",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Sorry for Now",
+      "releaseDate": "2017",
+      "type": "Single",
+      "mbReleaseGroupId": "f16f4e90-06bd-47c8-b95a-8157b83c8136",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Heavy",
+      "releaseDate": "2017-02-16",
+      "type": "Single",
+      "mbReleaseGroupId": "806eb235-7c24-406d-b2d1-acde1b62c4f8",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Battle Symphony",
+      "releaseDate": "2017-03-16",
+      "type": "Single",
+      "mbReleaseGroupId": "0d3c5b45-b84e-45ee-b33d-e808302b654a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Good Goodbye",
+      "releaseDate": "2017-04-14",
+      "type": "Single",
+      "mbReleaseGroupId": "a126b34e-b907-44ab-9555-892c92f17977",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Invisible",
+      "releaseDate": "2017-05-10",
+      "type": "Single",
+      "mbReleaseGroupId": "35bc45b7-ccbc-476e-a2ed-9cbcc020a605",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "One More Light",
+      "releaseDate": "2017-05-19",
+      "type": "Album",
+      "mbReleaseGroupId": "b976c959-d13e-487c-85d7-cab70ed7c842",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Numb (Crystal Mad Bootleg)",
+      "releaseDate": "2018-09",
+      "type": "Single",
+      "mbReleaseGroupId": "c4d11b0c-0a9d-47dd-8b38-be3bb846214f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "She Couldn’t",
+      "releaseDate": "2020-08-13",
+      "type": "Single",
+      "mbReleaseGroupId": "a2ad755d-17a2-4e36-b89d-fe03863fd11d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "In the End (demo)",
+      "releaseDate": "2020-10-01",
+      "type": "Single",
+      "mbReleaseGroupId": "ae294fe7-61ab-4d2e-9ec0-2834e2fe5cc2",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Lost",
+      "releaseDate": "2023-02-10",
+      "type": "Single",
+      "mbReleaseGroupId": "d81eeeb3-3f08-43ca-aede-e59601417836",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Fighting Myself",
+      "releaseDate": "2023-03-24",
+      "type": "Single",
+      "mbReleaseGroupId": "ca384432-6a42-4155-bb60-cb1508d5b6a2",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Friendly Fire",
+      "releaseDate": "2024-02-23",
+      "type": "Single",
+      "mbReleaseGroupId": "ad1af392-25c3-402a-9a7b-6b238f5b535f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Friendly Fire / QWERTY",
+      "releaseDate": "2024-05-31",
+      "type": "Single",
+      "mbReleaseGroupId": "48f69c06-d064-499f-9eda-5b2b0dd70fee",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "The Emptiness Machine",
+      "releaseDate": "2024-09-05",
+      "type": "Single",
+      "mbReleaseGroupId": "e206fe3e-e2d4-465a-9997-90339a566e36",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Heavy Is the Crown",
+      "releaseDate": "2024-09-24",
+      "type": "Single",
+      "mbReleaseGroupId": "7b1f541e-a11a-4239-bb94-6d7e69b2afae",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Over Each Other",
+      "releaseDate": "2024-10-24",
+      "type": "Single",
+      "mbReleaseGroupId": "87a7a01f-a603-4bdf-aea5-c21679993602",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Two Faced",
+      "releaseDate": "2024-11-14",
+      "type": "Single",
+      "mbReleaseGroupId": "3ae042d1-26df-4232-adcc-6e61cac802b3",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "From Zero",
+      "releaseDate": "2024-11-15",
+      "type": "Album",
+      "mbReleaseGroupId": "a3159fb4-2ad3-4678-ba51-36fbc8b8430d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Up From the Bottom",
+      "releaseDate": "2025-03-27",
+      "type": "Single",
+      "mbReleaseGroupId": "2f4b5970-2c36-44c6-8716-b53a11d7f976",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Unshatter",
+      "releaseDate": "2025-04-25",
+      "type": "Single",
+      "mbReleaseGroupId": "135fb48a-f286-474f-b904-94a3882d0f78",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    }
+  ],
+  "lastUpdated": "2026-03-20T17:31:52.757Z"
+}

@@ -88,8 +88,8 @@ async function main() {
   }
   log("  Hubs: " + Object.values(nodes).filter(n=>n.tier===0).length + ", Sats: " + Object.values(nodes).filter(n=>n.tier===1).length + ", Edges: " + edges.length);
 
-  // PASS 2: MB crawl
-  log("PASS 2: MB crawl merge...");
+  // PASS 2a: MB crawl (featured/indirect 엣지)
+  log("PASS 2a: MB featured-edges merge...");
   const edgesPath = path.join(CACHE_DIR, "featured-edges.json");
   const artistsPath = path.join(CACHE_DIR, "new-artists.json");
   if (fs.existsSync(edgesPath)) {
@@ -108,10 +108,53 @@ async function main() {
       if (edges.length > pl) ec++;
     }
     log("  tier-2 nodes: " + nc + ", edges: " + ec);
+  } else {
+    log("  featured-edges.json 없음 — 건너뜀");
   }
 
-  // PASS 3: mb_ note
-  log("PASS 3: mb_ nodes (name-only, no Spotify — 403 blocked)");
+  // PASS 2b: WRITER 엣지 (crawl-writer-credits.ts 결과)
+  log("PASS 2b: WRITER/PRODUCER writer-edges merge...");
+  const writerEdgesPath = path.join(CACHE_DIR, "writer-edges.json");
+  const writerArtistsPath = path.join(CACHE_DIR, "writer-artists.json");
+  if (fs.existsSync(writerEdgesPath)) {
+    const writerEdges = JSON.parse(fs.readFileSync(writerEdgesPath, "utf-8")) as any[];
+    const writerArtists = fs.existsSync(writerArtistsPath)
+      ? JSON.parse(fs.readFileSync(writerArtistsPath, "utf-8")) as any[]
+      : [];
+    const writerArtistMap = new Map(writerArtists.map((a: any) => [a.mbid, a]));
+    let wnc=0, wec=0;
+    for (const we of writerEdges) {
+      const targetId = we.targetMbid; // MB ID를 노드 ID로 사용
+      if (!nodes[targetId]) {
+        const wa = writerArtistMap.get(targetId) as any;
+        nodes[targetId] = {
+          id: targetId, name: we.targetName, nameKo: we.targetName,
+          image: null, genres: [], popularity: 0,
+          previewUrl: null, previewTrackName: null, spotifyUrl: null, tier: 2
+        };
+        wnc++;
+      }
+      const roleLabel = we.role === "composer" ? "작곡"
+        : we.role === "lyricist" ? "작사"
+        : we.role === "arranger" ? "편곡"
+        : "프로듀서";
+      const label = `${roleLabel} (${we.count}곡 참여)`;
+      const pl = edges.length;
+      addEdge({
+        source: we.source, target: targetId,
+        weight: we.weight,
+        relation: (we.relation as EdgeRelation) || "WRITER",
+        label
+      });
+      if (edges.length > pl) wec++;
+    }
+    log("  WRITER tier-2 nodes: " + wnc + ", WRITER/PRODUCER edges: " + wec);
+  } else {
+    log("  writer-edges.json 없음 — 건너뜀 (먼저 npx tsx scripts/crawl-writer-credits.ts 실행)");
+  }
+
+  // PASS 3: mb_ 노드 현황
+  log("PASS 3: mb_ 및 MBID 노드 현황");
   log("  mb_ count: " + Object.values(nodes).filter(n=>n.id.startsWith("mb_")).length);
   log("  total nodes: " + Object.keys(nodes).length + ", edges: " + edges.length);
 
