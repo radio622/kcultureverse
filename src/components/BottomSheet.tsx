@@ -15,8 +15,8 @@ interface Props {
   children: React.ReactNode;
 }
 
-const PEEK_HEIGHT    = 72;         // 미니플레이어 높이
-const EXPANDED_VH   = 42;         // 확장 시 뷰포트 비율 (38 → 42로 증가: 카드 컴팩트화에 맞춰 여유 확보)
+const PEEK_HEIGHT    = 54;         // 미니플레이어+핸들 통합 높이 (72 -> 54로 축소)
+const EXPANDED_VH   = 40;         // 컴팩트해진 레이아웃에 맞춰 시트 확장 비율 소폭 조정
 const DRAG_THRESHOLD = 44;         // 상태 전환 트리거 드래그 거리 (px)
 
 export default function BottomSheet({ state, onStateChange, children }: Props) {
@@ -85,7 +85,7 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
     >
-      {/* ── 드래그 핸들 ─────────────────────────────── */}
+      {/* ── 드래그 핸들 (공간 비차지, 오버레이) ────────── */}
       <div
         role="button"
         aria-label={state === "expanded" ? "시트 닫기" : "시트 열기"}
@@ -94,26 +94,26 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
           else if (state === "expanded") onStateChange("peek");
         }}
         style={{
-          width: "100%",
-          height: 28,
+          position: "absolute",
+          top: 0, left: 0, right: 0,
+          height: 20,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           cursor: "grab",
-          flexShrink: 0,
+          zIndex: 10,
         }}
       >
         <div style={{
-          width: 36,
+          width: 32,
           height: 4,
           borderRadius: 2,
           background: "rgba(255,255,255,0.18)",
-          transition: "background 0.2s ease",
         }} />
       </div>
 
-      {/* ── 콘텐츠 (핸들 아래 영역) ─────────────────── */}
-      <div style={{ overflow: "hidden", height: "calc(100% - 28px)", display: "flex", flexDirection: "column" }}>
+      {/* ── 콘텐츠 영역 (핸들 공간 없이 전체 사용) ─────── */}
+      <div style={{ paddingTop: 14, overflow: "hidden", height: "100%", display: "flex", flexDirection: "column" }}>
         {/* expanded일 때만 리스트 보임 — AnimatePresence로 부드럽게 */}
         <AnimatePresence>
           {state !== "collapsed" && (
