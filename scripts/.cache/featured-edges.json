@@ -1,0 +1,1202 @@
+[
+  {
+    "source": "3Nrfpe0tUJi4K4DXYWgMUX",
+    "sourceName": "BTS",
+    "target": "b3977da4-f899-4328-921b-ecc599a5618a",
+    "targetName": "j‐hope",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3Nrfpe0tUJi4K4DXYWgMUX",
+    "sourceName": "BTS",
+    "target": "d2582c77-6b0f-4b2f-802f-8f3cad1a5fec",
+    "targetName": "Jimin",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3Nrfpe0tUJi4K4DXYWgMUX",
+    "sourceName": "BTS",
+    "target": "09720eec-3871-49d5-932d-eb7542768cd3",
+    "targetName": "JIN",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3Nrfpe0tUJi4K4DXYWgMUX",
+    "sourceName": "BTS",
+    "target": "23c8056b-ee13-4cfc-a772-2f5292e35bb5",
+    "targetName": "Jung Kook",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3Nrfpe0tUJi4K4DXYWgMUX",
+    "sourceName": "BTS",
+    "target": "58f1e354-ecbc-4fd3-aa25-97eb1d9bd8b9",
+    "targetName": "RM",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3Nrfpe0tUJi4K4DXYWgMUX",
+    "sourceName": "BTS",
+    "target": "b629da42-c668-49d2-be67-498605ee2a13",
+    "targetName": "SUGA",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3Nrfpe0tUJi4K4DXYWgMUX",
+    "sourceName": "BTS",
+    "target": "83096042-3785-481e-8843-dee69f1aad12",
+    "targetName": "V",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "41MozSoPIsD1dJM0CLPjZF",
+    "sourceName": "BLACKPINK",
+    "target": "dfca5842-4616-4ee1-a704-d4c65b0bbcfb",
+    "targetName": "YG Family",
+    "relation": "INDIRECT",
+    "weight": 0.2
+  },
+  {
+    "source": "41MozSoPIsD1dJM0CLPjZF",
+    "sourceName": "BLACKPINK",
+    "target": "779351de-0da5-4943-928b-495a3c40e8c0",
+    "targetName": "JENNIE",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "41MozSoPIsD1dJM0CLPjZF",
+    "sourceName": "BLACKPINK",
+    "target": "f906154a-7011-49c3-8f6a-44ca83311b08",
+    "targetName": "JISOO",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "41MozSoPIsD1dJM0CLPjZF",
+    "sourceName": "BLACKPINK",
+    "target": "30aeb57f-bb16-47fa-86ca-79fc57b4d12c",
+    "targetName": "LISA",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "41MozSoPIsD1dJM0CLPjZF",
+    "sourceName": "BLACKPINK",
+    "target": "7f233cda-eacb-4235-b681-5f7be343a1a2",
+    "targetName": "ROSÉ",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3HqSLMAZ3g3d5poNaI7GOU",
+    "sourceName": "IU",
+    "target": "c51b232e-779d-483d-91de-f140f268b97b",
+    "targetName": "이유 갓지 않은 이유",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3yY2jUvSFTDMzPDqBOkO0E",
+    "sourceName": "Jay Park",
+    "target": "6bfe9806-b477-4750-8bd2-b1d0acf901a9",
+    "targetName": "Mark Wakefield",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3yY2jUvSFTDMzPDqBOkO0E",
+    "sourceName": "Jay Park",
+    "target": "f1dd0051-5578-45a7-a733-03113626407f",
+    "targetName": "Rob Bourdon",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3yY2jUvSFTDMzPDqBOkO0E",
+    "sourceName": "Jay Park",
+    "target": "2d4a1dd1-2cd8-4553-bf0b-74b8c9179633",
+    "targetName": "Brad Delson",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3yY2jUvSFTDMzPDqBOkO0E",
+    "sourceName": "Jay Park",
+    "target": "c8975bbf-2778-47ae-accf-c584e644450d",
+    "targetName": "David Michael Farrell",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3yY2jUvSFTDMzPDqBOkO0E",
+    "sourceName": "Jay Park",
+    "target": "d07bca29-d980-4100-8cad-065a05f2b343",
+    "targetName": "Joseph “Joe” Hahn",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3yY2jUvSFTDMzPDqBOkO0E",
+    "sourceName": "Jay Park",
+    "target": "c262b6bf-be56-4b26-bceb-42d7a27342f3",
+    "targetName": "Mike Shinoda",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3yY2jUvSFTDMzPDqBOkO0E",
+    "sourceName": "Jay Park",
+    "target": "415e30a0-116b-4a4f-8cbf-8d0f6406bbab",
+    "targetName": "Chester Bennington",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3yY2jUvSFTDMzPDqBOkO0E",
+    "sourceName": "Jay Park",
+    "target": "1cc9d454-9ee8-4d29-bc8e-c4190cf352f6",
+    "targetName": "Emily Armstrong",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3yY2jUvSFTDMzPDqBOkO0E",
+    "sourceName": "Jay Park",
+    "target": "3b49abe4-6b0e-47f8-a8db-1bdc538f6ca7",
+    "targetName": "Colin Brittain",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2w9zwq3AkvD4mVLDyo3i1L",
+    "sourceName": "Epik High",
+    "target": "07bf69d9-5db8-40b7-a0a1-33bca0372b31",
+    "targetName": "삼자돼면",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2w9zwq3AkvD4mVLDyo3i1L",
+    "sourceName": "Epik High",
+    "target": "9e0346de-34fc-4ec6-bcb7-c5b6c72340f4",
+    "targetName": "Mithra 眞",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2w9zwq3AkvD4mVLDyo3i1L",
+    "sourceName": "Epik High",
+    "target": "0fad358b-6147-46fc-be41-032500786ed1",
+    "targetName": "Tablo",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2w9zwq3AkvD4mVLDyo3i1L",
+    "sourceName": "Epik High",
+    "target": "e3b65f52-c41a-479c-94e5-371902acd2a8",
+    "targetName": "DJ Tukutz",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6liAMWkB0u95sm91IkwMpK",
+    "sourceName": "Heize",
+    "target": "5600f201-03f4-459e-a1ac-d7ce7b45db4c",
+    "targetName": "언프리티 랩스타 2",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6WeDO4GynFmK4OxwkBzMW8",
+    "sourceName": "The Black Skirts",
+    "target": "dae724b5-c4f8-4e0b-b950-55ccfa4bbf57",
+    "targetName": "조휴일",
+    "relation": "INDIRECT",
+    "weight": 0.2
+  },
+  {
+    "source": "6WeDO4GynFmK4OxwkBzMW8",
+    "sourceName": "The Black Skirts",
+    "target": "bc9b7d01-814a-4d1d-aae0-b194a8b2bcbe",
+    "targetName": "DJ HotBoyzZ",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3tVQdUvClmAT7URs9V3rsp",
+    "sourceName": "pH-1",
+    "target": "276e89b9-fd2a-47c2-8689-d09e3b5c9b1b",
+    "targetName": "H1GHR MUSIC",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3tVQdUvClmAT7URs9V3rsp",
+    "sourceName": "pH-1",
+    "target": "71d43211-ac38-4b6e-844e-7b57af174f16",
+    "targetName": "Sous Chefs",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6OSMGFNb20nNBw4a2vWxMT",
+    "sourceName": "Autumn Vacation",
+    "target": "f9b7f80d-e88a-48f6-a7b2-a2567ced76b4",
+    "targetName": "Dylan McCartney",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6OSMGFNb20nNBw4a2vWxMT",
+    "sourceName": "Autumn Vacation",
+    "target": "d1d0a14b-4bb6-4fa4-8f4d-54e1e772a1ff",
+    "targetName": "John Hoffman",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6OSMGFNb20nNBw4a2vWxMT",
+    "sourceName": "Autumn Vacation",
+    "target": "e1461cec-1f3e-40bf-8a56-cc2cc78e878a",
+    "targetName": "Evan the Wolff",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6OSMGFNb20nNBw4a2vWxMT",
+    "sourceName": "Autumn Vacation",
+    "target": "6f98c38a-ccc5-4042-9750-927b0a3aadf5",
+    "targetName": "Peyton Dabney",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3WbKkfwmDLgVwR9ExchFVC",
+    "sourceName": "Nell",
+    "target": "b6ac48de-1e24-4cc4-ae21-ea50630ffd28",
+    "targetName": "정재원",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3WbKkfwmDLgVwR9ExchFVC",
+    "sourceName": "Nell",
+    "target": "026d0290-159d-44da-be5f-aa5234d53273",
+    "targetName": "김종완",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3WbKkfwmDLgVwR9ExchFVC",
+    "sourceName": "Nell",
+    "target": "be012d6e-0ac7-45e2-93a3-ce8046275053",
+    "targetName": "이재경",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "3WbKkfwmDLgVwR9ExchFVC",
+    "sourceName": "Nell",
+    "target": "0ea71c61-7916-4ab6-b992-e9b9ce43c4cd",
+    "targetName": "이정훈",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "target": "529cd49e-4e53-43e0-8133-2c8a786d6b54",
+    "targetName": "이용희",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "target": "8513c556-9c2b-46cf-bd94-9ca33f9ab4cc",
+    "targetName": "이용석",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "target": "b2fd016a-7495-4604-9ad3-54dfaebfee1a",
+    "targetName": "연진",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "target": "bf64b8d3-b485-4350-8b28-189cf13fd1ff",
+    "targetName": "배기준",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "target": "cd9da017-9e1b-4804-b7dd-6203a99dba10",
+    "targetName": "강민성",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2XFSeoCf8No50etmN8b4Sy",
+    "sourceName": "Linus's Blanket",
+    "target": "45e3ea17-6885-4e8f-9dc3-19274d429f2c",
+    "targetName": "이상준",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "6d2aee20-01e8-4a2e-b240-70df67e42c3f",
+    "targetName": "John Hannah",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "9c2f67de-9d73-483e-a323-d4dbdfba9255",
+    "targetName": "Brian Johnstone",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "9abc748c-5820-48ba-a436-9af9a2ad5cc6",
+    "targetName": "Roger Fisher",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "fbdf8890-da91-4f2d-bdab-68e2f69f4933",
+    "targetName": "Steve Fossen",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "5d8a6a6f-44ae-4421-865f-470600f4db65",
+    "targetName": "Ann Wilson",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "d1153c78-ade9-44bb-b85c-1880dc7687f2",
+    "targetName": "Nancy Wilson",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "424bc8f4-cdc2-4fcf-bc83-f5b41158ae84",
+    "targetName": "Michael Derosier",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "cb475c61-3e5e-44eb-bcc1-047be797e883",
+    "targetName": "Howard Leese",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "91470a46-d262-4dd8-919e-c0a978b9f02e",
+    "targetName": "Mark Andes",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "3fea812c-c628-46c3-a415-303c2d548e4c",
+    "targetName": "Denny Carmassi",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "5db874af-0951-419b-8caf-d735f019d45e",
+    "targetName": "Denny Fongheiser",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "639b7de5-b412-4f79-9e08-7abd0b0d4267",
+    "targetName": "Fernando Saunders",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "a4c7e2c6-61d7-4d56-a4d9-9fe2eda37731",
+    "targetName": "Jon Bayless",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "dbf1189b-88cc-498a-808e-c80c3fad5f7f",
+    "targetName": "Frank Cox",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "978d3049-e48b-4c38-9399-5f932c06c480",
+    "targetName": "Scott Olson",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "6360055d-8ccd-4b5f-a710-26d71723fb0e",
+    "targetName": "Ben Smith",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "87f8487d-b235-4b07-ae3c-a2c71d7f4d16",
+    "targetName": "Tom Kellock",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "8080e7ca-5f51-4668-bbe7-e75c96aabf42",
+    "targetName": "Mike Inez",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "d3f83561-cab4-4930-a5b1-18145c34ccff",
+    "targetName": "Gilby Clarke",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "8392953e-1878-41c3-95de-cade07e7dcd6",
+    "targetName": "Darian Sahanaja",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "34003a66-ccaf-4d7f-a842-b12bcd23ebec",
+    "targetName": "Craig Bartock",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "7e5c9c47-4bf2-45ef-8916-75589308689f",
+    "targetName": "Ric Markmann",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "dace94f7-dbb3-49d6-a958-652dec6bb559",
+    "targetName": "Dan Rothchild",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "34a08eb1-b1d0-4ff2-a74c-a67e79ed3f5a",
+    "targetName": "Chris Joyner",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4O5NReb5AzwlP3dFQGeTuD",
+    "sourceName": "Julia's Heart",
+    "target": "93e879fd-3042-4cfc-8543-82a0bf8f1b81",
+    "targetName": "Dan Walker",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6OwKE9Ez6ALxpTaKcT5ayv",
+    "sourceName": "AKMU",
+    "target": "810a4fc2-e368-4212-8494-a3934be6973d",
+    "targetName": "이찬혁",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6OwKE9Ez6ALxpTaKcT5ayv",
+    "sourceName": "AKMU",
+    "target": "f9462118-b634-4deb-b331-57f15178978c",
+    "targetName": "이수현",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4Kxlr1PRlDKEB0ekOCyHgX",
+    "sourceName": "BIGBANG",
+    "target": "55aaa2e0-1e56-4159-a409-58c6858ab272",
+    "targetName": "승리",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4Kxlr1PRlDKEB0ekOCyHgX",
+    "sourceName": "BIGBANG",
+    "target": "bb7246a8-40b6-4397-8322-448aaa2d33a3",
+    "targetName": "T.O.P",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4Kxlr1PRlDKEB0ekOCyHgX",
+    "sourceName": "BIGBANG",
+    "target": "b4f66d7f-3282-404e-a682-97374d63b5ab",
+    "targetName": "G‐Dragon",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4Kxlr1PRlDKEB0ekOCyHgX",
+    "sourceName": "BIGBANG",
+    "target": "268b782c-b6c7-41a4-b2ef-36cddd76b6ad",
+    "targetName": "강대성",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4Kxlr1PRlDKEB0ekOCyHgX",
+    "sourceName": "BIGBANG",
+    "target": "d84e5667-3cbe-4556-b551-9d7e4be95d71",
+    "targetName": "TAEYANG",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "52Gsa9Zypqztm2DeNkQfCm",
+    "sourceName": "Seo Taiji",
+    "target": "53e00ee1-9db4-4505-aa80-1318f76d6513",
+    "targetName": "Trash",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "52Gsa9Zypqztm2DeNkQfCm",
+    "sourceName": "Seo Taiji",
+    "target": "d407f94c-b369-4234-8356-c8eef68e3eb4",
+    "targetName": "Dementia",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "52Gsa9Zypqztm2DeNkQfCm",
+    "sourceName": "Seo Taiji",
+    "target": "3f77449d-48e4-4ceb-b869-69af48da877b",
+    "targetName": "X JAPAN",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "52Gsa9Zypqztm2DeNkQfCm",
+    "sourceName": "Seo Taiji",
+    "target": "64ea444d-4384-4da4-b9ea-0bf0f65ab1df",
+    "targetName": "Dead Wire",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "52Gsa9Zypqztm2DeNkQfCm",
+    "sourceName": "Seo Taiji",
+    "target": "513b6df2-f44c-4484-b99d-97f79266cb4a",
+    "targetName": "LOUDNESS",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "52Gsa9Zypqztm2DeNkQfCm",
+    "sourceName": "Seo Taiji",
+    "target": "54a68526-680f-44eb-a41a-9d754b35c0e5",
+    "targetName": "HEAVENS",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "52Gsa9Zypqztm2DeNkQfCm",
+    "sourceName": "Seo Taiji",
+    "target": "07ceb4a7-8664-4679-a854-cd7487ab72ef",
+    "targetName": "D.T.R",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "30abfdb5-4d3d-410b-8d4c-fa7b5a936cdd",
+    "targetName": "Pete Zulu",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "32829164-bf72-4ffb-b11c-a94ddb7cd03d",
+    "targetName": "Mr Scott",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "7dee548e-5f80-4634-bf25-69ef2d012790",
+    "targetName": "Olga",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "e7f6af9b-a315-43d2-acb9-64b22e827717",
+    "targetName": "Dean James",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "e83db8d2-ff69-48e3-8523-bf6492116939",
+    "targetName": "Teddy Toy Doll",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "d37892d7-5439-4fe7-9507-b2b5a7921456",
+    "targetName": "Happy Bob",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "aaf14cd0-e845-4f6e-b6b7-d50bafd367d1",
+    "targetName": "Little Paul",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "d4d48c03-6ff5-4968-8f1f-922ce2560dcb",
+    "targetName": "Marty",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "663eff5e-b8e1-468c-a9ae-b32ca206d21f",
+    "targetName": "K'Cee",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "e396e996-16dd-4596-b646-857ce9e5ddd6",
+    "targetName": "Gary Fun",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "3675c0bd-4f25-4eeb-80d0-d50229d92ec4",
+    "targetName": "Dave the Nut",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "0c512a9b-2315-4fa8-86c4-5f7bb161deb0",
+    "targetName": "Tommy Goober",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "29619283-e788-4bc0-b10c-8f67eb5ce92b",
+    "targetName": "Duncan Redmonds",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "32660f03-5543-493a-8230-b7a70dd21553",
+    "targetName": "Malcolm Dick",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7sS12h1hMwOqXiB5vYdlu8",
+    "sourceName": "Toy",
+    "target": "1cda76a3-33f3-4fb2-977d-a03b5da6d8c5",
+    "targetName": "Flip",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4hDVt8U6lhZNnXpFcXwYwS",
+    "sourceName": "Yoon Mirae",
+    "target": "56047f4c-878c-4d8f-b723-196c7bcf8975",
+    "targetName": "이준혁",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "64RfnYDHtR3ZaLdtxAjPDA",
+    "sourceName": "Deux",
+    "target": "5e3398f7-dc76-4858-91c4-b063516b7348",
+    "targetName": "김성재",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "64RfnYDHtR3ZaLdtxAjPDA",
+    "sourceName": "Deux",
+    "target": "570d2da3-c665-4d18-842b-6b7c657dec6b",
+    "targetName": "이현도",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "41lcf5k3PkUdxupYLkcjCd",
+    "sourceName": "dosii",
+    "target": "bbd8f6bb-09cd-4277-96a3-b6537979b145",
+    "targetName": "최종혁",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "41lcf5k3PkUdxupYLkcjCd",
+    "sourceName": "dosii",
+    "target": "b65226e7-dc95-4f98-b662-62d0820d5d60",
+    "targetName": "전지혜",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6S4fsREHT1NEjTb3lYD2pG",
+    "sourceName": "THORNAPPLE",
+    "target": "76e9262a-7cf2-4418-a2bc-83033c5c8ae2",
+    "targetName": "방요셉",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6S4fsREHT1NEjTb3lYD2pG",
+    "sourceName": "THORNAPPLE",
+    "target": "4a88f0dd-ac10-40ac-9b0b-104569f478f7",
+    "targetName": "한승찬",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6S4fsREHT1NEjTb3lYD2pG",
+    "sourceName": "THORNAPPLE",
+    "target": "2cef43d7-953d-48e8-bda0-be2e8f6cbcd4",
+    "targetName": "심재현",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "6S4fsREHT1NEjTb3lYD2pG",
+    "sourceName": "THORNAPPLE",
+    "target": "999edb04-ab8e-4938-97f9-b3d26e9f8fbe",
+    "targetName": "윤성현",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5WKUZJPvN1SScyggtPFShK",
+    "sourceName": "Nerd Connection",
+    "target": "d397c03c-8378-4e08-a2cb-5d0a37fbe887",
+    "targetName": "최승원",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5WKUZJPvN1SScyggtPFShK",
+    "sourceName": "Nerd Connection",
+    "target": "d3d07c2d-6367-46b7-9f1e-f39a4d1ea493",
+    "targetName": "박재현",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5WKUZJPvN1SScyggtPFShK",
+    "sourceName": "Nerd Connection",
+    "target": "6e025dcb-ad1e-4e57-b865-381f97a01ee0",
+    "targetName": "서영주",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5WKUZJPvN1SScyggtPFShK",
+    "sourceName": "Nerd Connection",
+    "target": "bd3f1d9f-0f93-46f2-bb46-ce9827a32c11",
+    "targetName": "신연태",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "79da3a8c-00c6-4fa7-9578-34e17e06d04d",
+    "targetName": "Dick Taylor",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "0d69ebbe-02bb-43a7-bee2-47d6c098bc6b",
+    "targetName": "Tony Chapman",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "a704bc81-1d32-4b21-a1fd-ffaa6a1d86e1",
+    "targetName": "Brian Jones",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "c13e1fe3-27e9-480f-b3b3-8bbb594c18ee",
+    "targetName": "Ian Stewart",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "b5ffc3aa-b868-4b88-905f-d73d51dbe51c",
+    "targetName": "Mick Jagger",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "f0ed72a3-ae8f-4cf7-b51d-2696a2330230",
+    "targetName": "Keith Richards",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "4b782d7e-fa42-411f-bb5a-a7c4aeea2c2d",
+    "targetName": "Mick Avory",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "2d33fef2-f1c4-4123-af0e-12fd690b3687",
+    "targetName": "Bill Wyman",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "f581a3dc-3319-4656-8b97-66d560482f4a",
+    "targetName": "Charlie Watts",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "c7a99436-6da3-4190-8ce7-9cd44d62fcd4",
+    "targetName": "Mick Taylor",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "7EVlq3yUVHbHZZsaYSOcXt",
+    "sourceName": "Meaningful Stone",
+    "target": "92ed8183-8f22-42b2-af4e-d44137610fa0",
+    "targetName": "Ronnie Wood",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2kxVxKOgoefmgkwoHipHsn",
+    "sourceName": "Silica Gel",
+    "target": "bb8f54dd-8893-4ca7-bce1-41982210fa8f",
+    "targetName": "최웅희",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2kxVxKOgoefmgkwoHipHsn",
+    "sourceName": "Silica Gel",
+    "target": "aba85691-7f63-4373-b0cc-a30cc8866e0a",
+    "targetName": "김건재",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2kxVxKOgoefmgkwoHipHsn",
+    "sourceName": "Silica Gel",
+    "target": "92c9d8c8-6399-4a8d-ada5-25c94b3f08b7",
+    "targetName": "Hanjoo Kim",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5KOhn3Gjbd4DUavli5No5f",
+    "sourceName": "cotoba",
+    "target": "8687dd3f-866a-4940-b80e-caca9a4301dd",
+    "targetName": "euPhemia",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5KOhn3Gjbd4DUavli5No5f",
+    "sourceName": "cotoba",
+    "target": "2a9c4217-0191-44e1-89bd-51af924d7709",
+    "targetName": "Marker",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5KOhn3Gjbd4DUavli5No5f",
+    "sourceName": "cotoba",
+    "target": "ea98dfe0-c65d-4228-9baf-153cbd380a23",
+    "targetName": "Dafne",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5KOhn3Gjbd4DUavli5No5f",
+    "sourceName": "cotoba",
+    "target": "b8c39b3a-c917-45fa-9b39-c00027faba2f",
+    "targetName": "됸쥬",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5KOhn3Gjbd4DUavli5No5f",
+    "sourceName": "cotoba",
+    "target": "03b7ae4a-26e7-4a99-afcb-5daad85beb2d",
+    "targetName": "쥬나나",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5KOhn3Gjbd4DUavli5No5f",
+    "sourceName": "cotoba",
+    "target": "a23658e3-0685-44e3-9ccd-dc3d3c4796ca",
+    "targetName": "세이",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5KOhn3Gjbd4DUavli5No5f",
+    "sourceName": "cotoba",
+    "target": "3e53513d-7c07-4cf3-bec1-c2559e0654dd",
+    "targetName": "민서",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "5KOhn3Gjbd4DUavli5No5f",
+    "sourceName": "cotoba",
+    "target": "da089ba9-eec3-4285-a47e-567153bb2f7c",
+    "targetName": "혜림",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "64sY7LsUjNE3ifONkftTXC",
+    "sourceName": "ADOY",
+    "target": "1ca5a375-a8ff-4291-b32c-bf50e8172075",
+    "targetName": "정다영",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "64sY7LsUjNE3ifONkftTXC",
+    "sourceName": "ADOY",
+    "target": "0a59616a-b42d-4828-b580-4ba6cfb211cc",
+    "targetName": "오주환",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "64sY7LsUjNE3ifONkftTXC",
+    "sourceName": "ADOY",
+    "target": "4e059631-cad9-42d9-bc08-dcf7039ff3ce",
+    "targetName": "지",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "64sY7LsUjNE3ifONkftTXC",
+    "sourceName": "ADOY",
+    "target": "f908c796-3855-4e48-b3bc-f33b7f9727c8",
+    "targetName": "조조",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2ncTglxMHKmCzBKckfzOEv",
+    "sourceName": "ALEPH",
+    "target": "93dbf7a2-df90-4c80-8c72-922253a283d0",
+    "targetName": "Paolo Campitelli",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2ncTglxMHKmCzBKckfzOEv",
+    "sourceName": "ALEPH",
+    "target": "d156c202-8181-4d6f-8311-7cbddf197efa",
+    "targetName": "Donato Bellini",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2ncTglxMHKmCzBKckfzOEv",
+    "sourceName": "ALEPH",
+    "target": "2eeb8f0e-2351-4500-8d32-4ccad988cd44",
+    "targetName": "Marco Manzi",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2ncTglxMHKmCzBKckfzOEv",
+    "sourceName": "ALEPH",
+    "target": "f2e08e93-1538-403f-a171-c108bb2869be",
+    "targetName": "Giancarlo Pasquini",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2ncTglxMHKmCzBKckfzOEv",
+    "sourceName": "ALEPH",
+    "target": "659431b8-de23-4940-879b-55fffb5cb2b9",
+    "targetName": "Luigi Raimondi",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "2ncTglxMHKmCzBKckfzOEv",
+    "sourceName": "ALEPH",
+    "target": "9298d14c-ddf0-40b0-b6df-427e319524b3",
+    "targetName": "Dave Rodgers",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4uU7KfTjcjyKUGWSaTzLu7",
+    "sourceName": "015B",
+    "target": "94c80a22-0682-4ea8-a04c-9294a36ab474",
+    "targetName": "정석원",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "4uU7KfTjcjyKUGWSaTzLu7",
+    "sourceName": "015B",
+    "target": "b6024f7d-eb19-4c7b-98e6-06382460a93c",
+    "targetName": "장호일",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "71kRpwy6xTeG2OXXkRJdkA",
+    "sourceName": "Guckkasten",
+    "target": "008f5153-7926-4021-835f-8c502e878eda",
+    "targetName": "하현우",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "71kRpwy6xTeG2OXXkRJdkA",
+    "sourceName": "Guckkasten",
+    "target": "8add52bc-e5a0-40ed-944d-d5c00d4e1f0c",
+    "targetName": "전규호",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "71kRpwy6xTeG2OXXkRJdkA",
+    "sourceName": "Guckkasten",
+    "target": "b0d8a06a-6e76-47f6-92b9-ac2d2a061ce7",
+    "targetName": "김기범",
+    "relation": "FEATURED",
+    "weight": 0.2
+  },
+  {
+    "source": "71kRpwy6xTeG2OXXkRJdkA",
+    "sourceName": "Guckkasten",
+    "target": "4f22af27-e37d-4d26-992d-fcf0a5c35127",
+    "targetName": "이정길",
+    "relation": "FEATURED",
+    "weight": 0.2
+  }
+]
