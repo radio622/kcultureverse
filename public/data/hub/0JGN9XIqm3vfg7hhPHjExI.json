@@ -4,10 +4,95 @@
     "name": "리쌍",
     "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a5/f8/e0/a5f8e0e1-ff11-1c93-4e6d-31e9ea9bf86e/mzi.kumhcbtw.jpg/600x600bb.jpg",
     "genres": [],
-    "popularity": 0,
+    "popularity": 80,
     "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/50/f4/e4/50f4e44c-70f9-ff67-75f3-e4fb691d8cdc/mzaf_2837304234395498143.plus.aac.p.m4a",
     "previewTrackName": "Ballerino",
     "spotifyUrl": "https://open.spotify.com/artist/0JGN9XIqm3vfg7hhPHjExI"
   },
-  "satellites": []
+  "satellites": [
+    {
+      "spotifyId": "mb_1773976552023_0.1950131599066499",
+      "name": "길",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976552232_0.1910550349733947",
+      "name": "개리",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976552286_0.295895730485941",
+      "name": "Honey Family",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "소속 그룹"
+    },
+    {
+      "spotifyId": "mb_1773976555899_0.08855026121487963",
+      "name": "개리",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링 (3곡 참여)"
+    },
+    {
+      "spotifyId": "mb_1773976555982_0.7289233093878312",
+      "name": "길",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "전담 프로듀서 (2곡 참여)"
+    },
+    {
+      "spotifyId": "mb_1773976556037_0.6397529914811545",
+      "name": "ku-pa-ci",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    },
+    {
+      "spotifyId": "mb_1773976556131_0.7980022230581126",
+      "name": "써니",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
+    }
+  ]
 }

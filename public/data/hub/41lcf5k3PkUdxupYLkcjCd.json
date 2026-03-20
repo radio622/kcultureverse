@@ -11,6 +11,18 @@
   },
   "satellites": [
     {
+      "spotifyId": "mb_1773976596397_0.026656260127004727",
+      "name": "PURPLE KISS",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "소속 그룹"
+    },
+    {
       "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
       "name": "BTS",
       "imageUrl": null,

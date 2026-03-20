@@ -11,40 +11,100 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773890933799_0.7790740134680187",
-      "name": "임현종",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c8/8a/3e/c88a3ec3-d857-2edc-5901-0095b31c1a4a/8809717462291.jpg/300x300bb.jpg",
+      "spotifyId": "mb_1773976328482_0.7158490197010176",
+      "name": "アリラン明電",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
       "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "전담 프로듀서 (2곡 참여)"
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "소속 그룹"
     },
     {
-      "spotifyId": "mb_1773890934072_0.06962841739574632",
-      "name": "전해성",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/31/0b/32310bd6-fb1d-6ce9-0cae-dc1227a87036/cover_KM0021024_1.jpg/300x300bb.jpg",
+      "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
+      "name": "BTS",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "전담 프로듀서 (2곡 참여)"
+      "spotifyUrl": "https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
     },
     {
-      "spotifyId": "mb_1773890934155_0.28551979349498124",
-      "name": "김현아",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d4/e0/d1/d4e0d15c-3b82-76c9-40a8-55d6dec4a088/Trouble_Maker.jpg/300x300bb.jpg",
+      "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
+      "name": "BLACKPINK",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "피처링"
+      "spotifyUrl": "https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "7n2Ycct7Beij7Dj7meI4X0",
+      "name": "TWICE",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/7n2Ycct7Beij7Dj7meI4X0",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "3HqSLMAZ3g3d5poNaI7GOU",
+      "name": "IU",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/3HqSLMAZ3g3d5poNaI7GOU",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "1z4g3DjTBBZKhvAroFlhOM",
+      "name": "Red Velvet",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/1z4g3DjTBBZKhvAroFlhOM",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "4Kxlr1PRlDKEB0ekOCyHgX",
+      "name": "검정치마",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/4Kxlr1PRlDKEB0ekOCyHgX",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "3cjEqqelV9zb41pAfcwrPM",
+      "name": "EXO",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/3cjEqqelV9zb41pAfcwrPM",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
     }
   ]
 }

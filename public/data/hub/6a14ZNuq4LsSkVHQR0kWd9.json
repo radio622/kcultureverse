@@ -1,7 +1,7 @@
 {
   "core": {
     "spotifyId": "6a14ZNuq4LsSkVHQR0kWd9",
-    "name": "through the sloe",
+    "name": "Through the Sloe",
     "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/13/c1/26/13c126c7-a93c-c2ba-646d-6518593abe16/artwork.jpg/600x600bb.jpg",
     "genres": [],
     "popularity": 80,
@@ -11,52 +11,88 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773890981680_0.41961397046531423",
-      "name": "15인의 소띠들",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/f4/40/b4/f440b48e-6a7e-ea44-cceb-a24deaab80a7/8809784436751.jpg/300x300bb.jpg",
+      "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
+      "name": "BTS",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "피처링"
+      "spotifyUrl": "https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
     },
     {
-      "spotifyId": "mb_1773890981880_0.5450328414783934",
-      "name": "DAMI",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d8/88/96/d88896ec-265a-e8c5-64c9-c6e037418eee/886444819909.jpg/300x300bb.jpg",
+      "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
+      "name": "BLACKPINK",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "피처링"
+      "spotifyUrl": "https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
     },
     {
-      "spotifyId": "mb_1773890981998_0.723590058190591",
-      "name": "정세운",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/66/62/85/6662854b-ab50-b5cb-5369-fffc28afe52d/cover-.jpg/300x300bb.jpg",
+      "spotifyId": "7n2Ycct7Beij7Dj7meI4X0",
+      "name": "TWICE",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "피처링"
+      "spotifyUrl": "https://open.spotify.com/artist/7n2Ycct7Beij7Dj7meI4X0",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
     },
     {
-      "spotifyId": "mb_1773890982080_0.4906599890119516",
-      "name": "송은이",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/cd/05/64/cd05642d-6717-ff12-0056-32af6088312a/888272088465_Cover.jpg/300x300bb.jpg",
+      "spotifyId": "3HqSLMAZ3g3d5poNaI7GOU",
+      "name": "IU",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "피처링"
+      "spotifyUrl": "https://open.spotify.com/artist/3HqSLMAZ3g3d5poNaI7GOU",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "1z4g3DjTBBZKhvAroFlhOM",
+      "name": "Red Velvet",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/1z4g3DjTBBZKhvAroFlhOM",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "4Kxlr1PRlDKEB0ekOCyHgX",
+      "name": "검정치마",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/4Kxlr1PRlDKEB0ekOCyHgX",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
+    },
+    {
+      "spotifyId": "3cjEqqelV9zb41pAfcwrPM",
+      "name": "EXO",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/3cjEqqelV9zb41pAfcwrPM",
+      "relationType": "FALLBACK",
+      "relationKeyword": "K-Culture 추천"
     }
   ]
 }

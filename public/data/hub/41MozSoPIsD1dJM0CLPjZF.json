@@ -1,7 +1,7 @@
 {
   "core": {
     "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
-    "name": "블랙핑크",
+    "name": "BLACKPINK",
     "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4b/2b/ce/4b2bce80-c909-1022-a065-e537863ba49d/8809519881153_cover.jpg/600x600bb.jpg",
     "genres": [],
     "popularity": 80,
@@ -11,9 +11,9 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773889869615_0.8072213535527663",
+      "spotifyId": "mb_1773976096755_0.5963264192710087",
       "name": "YG Family",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/83/46/2f/83462f2e-41ef-f92f-6a4f-935aac6fab4b/edit_120964.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -23,9 +23,9 @@
       "relationKeyword": "공식 콜라보"
     },
     {
-      "spotifyId": "mb_1773889869721_0.9668411911589092",
+      "spotifyId": "mb_1773976096914_0.7584545131952201",
       "name": "JENNIE",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c4/9f/f1/c49ff171-59c6-6cc3-0576-9247f9b1e58b/dj.nmzxiamh.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -35,9 +35,9 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773889869851_0.5629127813735514",
+      "spotifyId": "mb_1773976096963_0.392846494017143",
       "name": "JISOO",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/77/b2/6c/77b26ce3-3233-54e9-e223-ffb32aa49d01/093624833550_cover.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -47,9 +47,9 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773889869907_0.9578788963523558",
+      "spotifyId": "mb_1773976097014_0.25039659749412924",
       "name": "LISA",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/71/31/0f/71310f7d-0cfd-d2b9-3daa-93a1a722e576/4547366759624.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -59,9 +59,9 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773889869958_0.9359794308855653",
+      "spotifyId": "mb_1773976097067_0.8107818267437508",
       "name": "ROSÉ",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/4d/cb/54/4dcb5453-7493-cd68-81f8-fc7ae28101ce/8800287299416_cover.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,

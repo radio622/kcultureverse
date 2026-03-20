@@ -1,7 +1,7 @@
 {
   "core": {
     "spotifyId": "64sY7LsUjNE3ifONkftTXC",
-    "name": "아도이",
+    "name": "ADOY",
     "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3e/cd/9e/3ecd9e69-40d5-febf-f8b9-2ba3a99b88ee/196006101732.jpg/600x600bb.jpg",
     "genres": [],
     "popularity": 80,
@@ -11,7 +11,7 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773909392514_0.5207362771392542",
+      "spotifyId": "mb_1773976786929_0.601794028270335",
       "name": "정다영",
       "imageUrl": null,
       "genres": [],
@@ -23,7 +23,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909392968_0.10436129418439055",
+      "spotifyId": "mb_1773976787036_0.7183630900566331",
       "name": "정다영",
       "imageUrl": null,
       "genres": [],
@@ -35,7 +35,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909393078_0.7544515574598004",
+      "spotifyId": "mb_1773976787086_0.6919264331437008",
       "name": "오주환",
       "imageUrl": null,
       "genres": [],
@@ -47,7 +47,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909393201_0.10776504874734794",
+      "spotifyId": "mb_1773976787140_0.3682579214266076",
       "name": "지",
       "imageUrl": null,
       "genres": [],
@@ -59,7 +59,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909393324_0.2581003423100676",
+      "spotifyId": "mb_1773976787191_0.589070734409808",
       "name": "조조",
       "imageUrl": null,
       "genres": [],
@@ -69,6 +69,30 @@
       "spotifyUrl": "#",
       "relationType": "SAME_GROUP",
       "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976794596_0.6640806656981005",
+      "name": "정다영",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링 (2곡 참여)"
+    },
+    {
+      "spotifyId": "mb_1773976794899_0.3052895604251703",
+      "name": "오주환",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링 (2곡 참여)"
     }
   ]
 }

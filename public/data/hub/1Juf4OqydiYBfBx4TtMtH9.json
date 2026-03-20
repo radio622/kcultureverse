@@ -1,7 +1,7 @@
 {
   "core": {
     "spotifyId": "1Juf4OqydiYBfBx4TtMtH9",
-    "name": "언니네이발관",
+    "name": "언니네 이발관",
     "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5b/34/61/5b346190-7b3a-f4e5-f87b-33b4f620236b/8809259900497.jpg/600x600bb.jpg",
     "genres": [],
     "popularity": 80,
@@ -11,9 +11,81 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773890924092_0.7674608265341916",
-      "name": "임현종",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/c8/8a/3e/c88a3ec3-d857-2edc-5901-0095b31c1a4a/8809717462291.jpg/300x300bb.jpg",
+      "spotifyId": "mb_1773976313225_0.8758438374962223",
+      "name": "이상문",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976313392_0.9300887515274463",
+      "name": "이능룡",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976313448_0.5820499189071083",
+      "name": "이석원",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976313502_0.3794176700663121",
+      "name": "정대욱",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976313564_0.7083629674589356",
+      "name": "김반장",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976313621_0.62302986301127",
+      "name": "류기덕",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976317207_0.689730597069897",
+      "name": "이상문",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -23,9 +95,9 @@
       "relationKeyword": "전담 프로듀서 (2곡 참여)"
     },
     {
-      "spotifyId": "mb_1773890924204_0.9320224616637068",
-      "name": "전해성",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/32/31/0b/32310bd6-fb1d-6ce9-0cae-dc1227a87036/cover_KM0021024_1.jpg/300x300bb.jpg",
+      "spotifyId": "mb_1773976317259_0.8434652052848117",
+      "name": "윤병주",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -33,18 +105,6 @@
       "spotifyUrl": "#",
       "relationType": "PRODUCER",
       "relationKeyword": "전담 프로듀서 (2곡 참여)"
-    },
-    {
-      "spotifyId": "mb_1773890924294_0.6617637293095014",
-      "name": "김현아",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d4/e0/d1/d4e0d15c-3b82-76c9-40a8-55d6dec4a088/Trouble_Maker.jpg/300x300bb.jpg",
-      "genres": [],
-      "popularity": 0,
-      "previewUrl": null,
-      "previewTrackName": null,
-      "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "피처링"
     }
   ]
 }

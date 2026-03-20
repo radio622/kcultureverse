@@ -11,7 +11,7 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773909352817_0.14541745134979178",
+      "spotifyId": "mb_1773976741977_0.47542364346149446",
       "name": "구태훈",
       "imageUrl": null,
       "genres": [],
@@ -23,7 +23,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909353084_0.9214998000004959",
+      "spotifyId": "mb_1773976742085_0.01014441501056862",
       "name": "김진만",
       "imageUrl": null,
       "genres": [],
@@ -35,7 +35,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909353208_0.7316304992732472",
+      "spotifyId": "mb_1773976742136_0.11816863968487812",
       "name": "김윤아",
       "imageUrl": null,
       "genres": [],
@@ -47,7 +47,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909353338_0.3988355652863177",
+      "spotifyId": "mb_1773976742262_0.056709298100156125",
       "name": "이선규",
       "imageUrl": null,
       "genres": [],
@@ -59,8 +59,8 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909354132_0.3878078153666513",
-      "name": "김병찬",
+      "spotifyId": "mb_1773976745604_0.8513656599531964",
+      "name": "김홍집",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
@@ -68,7 +68,19 @@
       "previewTrackName": null,
       "spotifyUrl": "#",
       "relationType": "PRODUCER",
-      "relationKeyword": "전담 프로듀서 (2곡 참여)"
+      "relationKeyword": "전담 프로듀서 (4곡 참여)"
+    },
+    {
+      "spotifyId": "mb_1773976745658_0.44068642316984674",
+      "name": "김윤아",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링 (3곡 참여)"
     }
   ]
 }

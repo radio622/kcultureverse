@@ -1,7 +1,7 @@
 {
   "core": {
     "spotifyId": "5xNWQgdUZS4YN7xAYItpKi",
-    "name": "참깨와 솜사탕",
+    "name": "Colde",
     "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/06/9c/09/069c0975-b958-a946-e070-94cb422d3f01/cover_KM0015908_1.jpg/600x600bb.jpg",
     "genres": [],
     "popularity": 80,
@@ -11,7 +11,7 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773909484937_0.7339171347718214",
+      "spotifyId": "mb_1773976894086_0.547939073330113",
       "name": "OFFONOFF",
       "imageUrl": null,
       "genres": [],
@@ -23,7 +23,7 @@
       "relationKeyword": "소속 그룹"
     },
     {
-      "spotifyId": "mb_1773909485188_0.11364288802564038",
+      "spotifyId": "mb_1773976894300_0.396499152172228",
       "name": "CLUBESKIMO",
       "imageUrl": null,
       "genres": [],

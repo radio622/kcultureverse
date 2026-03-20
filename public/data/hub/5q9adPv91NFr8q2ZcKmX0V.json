@@ -1,7 +1,7 @@
 {
   "core": {
     "spotifyId": "5q9adPv91NFr8q2ZcKmX0V",
-    "name": "유라",
+    "name": "Cosmic Boy",
     "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3c/b9/66/3cb966fc-f06a-d1f7-ea98-bf3920fc54a0/5021732447449.jpg/600x600bb.jpg",
     "genres": [],
     "popularity": 80,
@@ -11,7 +11,7 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773909404464_0.9897952847672198",
+      "spotifyId": "mb_1773976807968_0.5485187062541779",
       "name": "USA for Africa",
       "imageUrl": null,
       "genres": [],
@@ -23,7 +23,7 @@
       "relationKeyword": "공식 콜라보"
     },
     {
-      "spotifyId": "mb_1773909404723_0.03804632592957491",
+      "spotifyId": "mb_1773976808078_0.8773205442498228",
       "name": "Artists United Against Apartheid",
       "imageUrl": null,
       "genres": [],
@@ -35,7 +35,7 @@
       "relationKeyword": "공식 콜라보"
     },
     {
-      "spotifyId": "mb_1773909404843_0.3732063376016236",
+      "spotifyId": "mb_1773976808133_0.10675590841811",
       "name": "Tedham Porterhouse",
       "imageUrl": null,
       "genres": [],
@@ -47,7 +47,7 @@
       "relationKeyword": "공식 콜라보"
     },
     {
-      "spotifyId": "mb_1773909404953_0.8436083205770629",
+      "spotifyId": "mb_1773976808183_0.07218288337503931",
       "name": "Robert Milkwood Thomas",
       "imageUrl": null,
       "genres": [],
@@ -59,7 +59,7 @@
       "relationKeyword": "공식 콜라보"
     },
     {
-      "spotifyId": "mb_1773909405059_0.5641802661459566",
+      "spotifyId": "mb_1773976808319_0.2882664505834297",
       "name": "Jack Frost",
       "imageUrl": null,
       "genres": [],
@@ -71,7 +71,7 @@
       "relationKeyword": "공식 콜라보"
     },
     {
-      "spotifyId": "mb_1773909405247_0.6064516142230572",
+      "spotifyId": "mb_1773976808373_0.5319680960936156",
       "name": "Traveling Wilburys",
       "imageUrl": null,
       "genres": [],
@@ -83,7 +83,7 @@
       "relationKeyword": "소속 그룹"
     },
     {
-      "spotifyId": "mb_1773909405368_0.02064586356481002",
+      "spotifyId": "mb_1773976808430_0.11122678109291184",
       "name": "Golden Chords",
       "imageUrl": null,
       "genres": [],

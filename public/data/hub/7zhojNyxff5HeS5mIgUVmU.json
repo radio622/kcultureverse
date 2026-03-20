@@ -11,6 +11,18 @@
   },
   "satellites": [
     {
+      "spotifyId": "mb_1773976643573_0.6671108819401145",
+      "name": "inaekkum",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "공식 콜라보"
+    },
+    {
       "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
       "name": "BTS",
       "imageUrl": null,

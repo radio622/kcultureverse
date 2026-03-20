@@ -1,7 +1,7 @@
 {
   "core": {
     "spotifyId": "5WKUZJPvN1SScyggtPFShK",
-    "name": "너드커넥션",
+    "name": "Nerd Connection",
     "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7a/f9/77/7af977be-cf12-73f4-7534-a54359205405/cover_KM0019696_1.jpg/600x600bb.jpg",
     "genres": [],
     "popularity": 80,
@@ -11,7 +11,7 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773909330269_0.727726978974563",
+      "spotifyId": "mb_1773976712423_0.1258681717675446",
       "name": "최승원",
       "imageUrl": null,
       "genres": [],
@@ -23,7 +23,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909330517_0.13837336844510895",
+      "spotifyId": "mb_1773976712552_0.5479831074620203",
       "name": "박재현",
       "imageUrl": null,
       "genres": [],
@@ -35,7 +35,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909330639_0.19432171090627004",
+      "spotifyId": "mb_1773976712607_0.7998259517795082",
       "name": "서영주",
       "imageUrl": null,
       "genres": [],
@@ -47,7 +47,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909330798_0.22291495453739796",
+      "spotifyId": "mb_1773976712657_0.7562908535285064",
       "name": "서영주",
       "imageUrl": null,
       "genres": [],
@@ -59,7 +59,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909330903_0.5514760639096631",
+      "spotifyId": "mb_1773976712895_0.07798279759944204",
       "name": "신연태",
       "imageUrl": null,
       "genres": [],
@@ -71,7 +71,7 @@
       "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773909332619_0.3398383719659438",
+      "spotifyId": "mb_1773976716400_0.994007131138917",
       "name": "서영주",
       "imageUrl": null,
       "genres": [],
@@ -80,7 +80,7 @@
       "previewTrackName": null,
       "spotifyUrl": "#",
       "relationType": "PRODUCER",
-      "relationKeyword": "피처링 (2곡 참여)"
+      "relationKeyword": "피처링 (4곡 참여)"
     }
   ]
 }

@@ -11,9 +11,33 @@
   },
   "satellites": [
     {
+      "spotifyId": "mb_1773976482288_0.19342508050226603",
+      "name": "서태지와 아이들",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "소속 그룹"
+    },
+    {
+      "spotifyId": "mb_1773976482403_0.44635115674268655",
+      "name": "Sinawe",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "소속 그룹"
+    },
+    {
       "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
       "name": "BTS",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d7/01/06/d70106f0-31f5-721b-471b-551bf083d677/ticket.ecruyjar.png/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -25,7 +49,7 @@
     {
       "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
       "name": "BLACKPINK",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/00/3e/16/003e1619-3133-a934-3263-5749ee119625/8809519880736_cover.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -37,7 +61,7 @@
     {
       "spotifyId": "7n2Ycct7Beij7Dj7meI4X0",
       "name": "TWICE",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/7a/b6/41/7ab641b0-790c-626c-8a6f-bcbc4fbc299f/20180409_6PM_TWICE_5_MAIN_COVER_IMAGE.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -49,7 +73,7 @@
     {
       "spotifyId": "3HqSLMAZ3g3d5poNaI7GOU",
       "name": "IU",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/e3/56/1e/e3561eb5-de12-790d-569b-53fa22e6b491/cover_KM0019422_1.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -61,7 +85,7 @@
     {
       "spotifyId": "1z4g3DjTBBZKhvAroFlhOM",
       "name": "Red Velvet",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/e2/36/4b/e2364b01-f3f9-c67f-7194-81854a14e540/dj.lcmtrdtw.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
@@ -73,24 +97,12 @@
     {
       "spotifyId": "4Kxlr1PRlDKEB0ekOCyHgX",
       "name": "검정치마",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/be/ce/5c/bece5cff-2caf-6d8a-9c21-3035537d2a4d/Album_cover_1400X1400.jpg/300x300bb.jpg",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
       "spotifyUrl": "https://open.spotify.com/artist/4Kxlr1PRlDKEB0ekOCyHgX",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
-    },
-    {
-      "spotifyId": "3cjEqqelV9zb41pAfcwrPM",
-      "name": "EXO",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/97/f7/95/97f795bb-178f-53c6-8c4e-f1fa0f559846/EXO_DIGITAL_COVER.jpg/300x300bb.jpg",
-      "genres": [],
-      "popularity": 0,
-      "previewUrl": null,
-      "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/3cjEqqelV9zb41pAfcwrPM",
       "relationType": "FALLBACK",
       "relationKeyword": "K-Culture 추천"
     }

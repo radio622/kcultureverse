@@ -11,88 +11,64 @@
   },
   "satellites": [
     {
-      "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
-      "name": "BTS",
+      "spotifyId": "mb_1773976658060_0.6190076665694146",
+      "name": "Dawny",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
-      "name": "BLACKPINK",
+      "spotifyId": "mb_1773976658167_0.824186432316237",
+      "name": "Sorrow",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "7n2Ycct7Beij7Dj7meI4X0",
-      "name": "TWICE",
+      "spotifyId": "mb_1773976661628_0.7827336215045043",
+      "name": "한희정",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/7n2Ycct7Beij7Dj7meI4X0",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "편곡 (2곡 참여)"
     },
     {
-      "spotifyId": "3HqSLMAZ3g3d5poNaI7GOU",
-      "name": "IU",
+      "spotifyId": "mb_1773976661679_0.48825256823836194",
+      "name": "한희정",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/3HqSLMAZ3g3d5poNaI7GOU",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
     },
     {
-      "spotifyId": "1z4g3DjTBBZKhvAroFlhOM",
-      "name": "Red Velvet",
+      "spotifyId": "mb_1773976661732_0.41250835220371707",
+      "name": "Dawny",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/1z4g3DjTBBZKhvAroFlhOM",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
-    },
-    {
-      "spotifyId": "4Kxlr1PRlDKEB0ekOCyHgX",
-      "name": "검정치마",
-      "imageUrl": null,
-      "genres": [],
-      "popularity": 0,
-      "previewUrl": null,
-      "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/4Kxlr1PRlDKEB0ekOCyHgX",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
-    },
-    {
-      "spotifyId": "3cjEqqelV9zb41pAfcwrPM",
-      "name": "EXO",
-      "imageUrl": null,
-      "genres": [],
-      "popularity": 0,
-      "previewUrl": null,
-      "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/3cjEqqelV9zb41pAfcwrPM",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링"
     }
   ]
 }

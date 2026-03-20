@@ -11,88 +11,112 @@
   },
   "satellites": [
     {
-      "spotifyId": "3Nrfpe0tUJi4K4DXYWgMUX",
-      "name": "BTS",
+      "spotifyId": "mb_1773976618758_0.0039524159439614515",
+      "name": "장기하",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "41MozSoPIsD1dJM0CLPjZF",
-      "name": "BLACKPINK",
+      "spotifyId": "mb_1773976618875_0.5223343979564681",
+      "name": "전일준",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "7n2Ycct7Beij7Dj7meI4X0",
-      "name": "TWICE",
+      "spotifyId": "mb_1773976618931_0.44565033476614313",
+      "name": "정중엽",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/7n2Ycct7Beij7Dj7meI4X0",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "3HqSLMAZ3g3d5poNaI7GOU",
-      "name": "IU",
+      "spotifyId": "mb_1773976619044_0.19151994895695634",
+      "name": "이민기",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/3HqSLMAZ3g3d5poNaI7GOU",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "1z4g3DjTBBZKhvAroFlhOM",
-      "name": "Red Velvet",
+      "spotifyId": "mb_1773976619096_0.3047205270620167",
+      "name": "김현호",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/1z4g3DjTBBZKhvAroFlhOM",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "4Kxlr1PRlDKEB0ekOCyHgX",
-      "name": "검정치마",
+      "spotifyId": "mb_1773976622584_0.741140813912363",
+      "name": "장기하",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/4Kxlr1PRlDKEB0ekOCyHgX",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "전담 프로듀서 (5곡 참여)"
     },
     {
-      "spotifyId": "3cjEqqelV9zb41pAfcwrPM",
-      "name": "EXO",
+      "spotifyId": "mb_1773976622718_0.08806000891887067",
+      "name": "장기하",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
-      "spotifyUrl": "https://open.spotify.com/artist/3cjEqqelV9zb41pAfcwrPM",
-      "relationType": "FALLBACK",
-      "relationKeyword": "K-Culture 추천"
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "피처링 (5곡 참여)"
+    },
+    {
+      "spotifyId": "mb_1773976622770_0.6009531258173105",
+      "name": "하세가와 요오헤이",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "편곡 (3곡 참여)"
+    },
+    {
+      "spotifyId": "mb_1773976622822_0.6142779672847781",
+      "name": "하세가와 요오헤이",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "PRODUCER",
+      "relationKeyword": "전담 프로듀서 (3곡 참여)"
     }
   ]
 }

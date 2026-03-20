@@ -1,7 +1,7 @@
 {
   "core": {
     "spotifyId": "4Kxlr1PRlDKEB0ekOCyHgX",
-    "name": "빅뱅",
+    "name": "BIGBANG",
     "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/5b/9b/8e/5b9b8ef2-998e-1210-8454-dfebfbf6271c/BB_COVER_IMAGE_4000.jpg/600x600bb.jpg",
     "genres": [],
     "popularity": 80,
@@ -11,20 +11,8 @@
   },
   "satellites": [
     {
-      "spotifyId": "mb_1773891694566_0.9312147200825885",
-      "name": "조휴일",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/59/85/0b/59850bdc-1a15-bbe8-68b2-63a11e639f22/201_cover.jpg/300x300bb.jpg",
-      "genres": [],
-      "popularity": 0,
-      "previewUrl": null,
-      "previewTrackName": null,
-      "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "공식 콜라보"
-    },
-    {
-      "spotifyId": "mb_1773891694737_0.9899108027423618",
-      "name": "DJ HotBoyzZ",
+      "spotifyId": "mb_1773976442042_0.423898669170094",
+      "name": "승리",
       "imageUrl": null,
       "genres": [],
       "popularity": 0,
@@ -32,43 +20,55 @@
       "previewTrackName": null,
       "spotifyUrl": "#",
       "relationType": "SAME_GROUP",
-      "relationKeyword": "소속 그룹"
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773891696077_0.004773029224638958",
-      "name": "안선영",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/9c/5a/9b/9c5a9b0c-15df-1764-8a80-122c79035094/3000.jpg/300x300bb.jpg",
+      "spotifyId": "mb_1773976442216_0.6127945083923456",
+      "name": "T.O.P",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
       "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "피처링"
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773891696160_0.03044962678166474",
-      "name": "조휴일",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/59/85/0b/59850bdc-1a15-bbe8-68b2-63a11e639f22/201_cover.jpg/300x300bb.jpg",
+      "spotifyId": "mb_1773976442364_0.6317690992134495",
+      "name": "G‐Dragon",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
       "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "피처링"
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     },
     {
-      "spotifyId": "mb_1773891696211_0.9954256974878131",
-      "name": "Verbal Jint",
-      "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3a/e0/33/3ae03343-aab1-a9bd-293b-2b5d297552db/8809784676997.jpg/300x300bb.jpg",
+      "spotifyId": "mb_1773976442446_0.33763330206553477",
+      "name": "강대성",
+      "imageUrl": null,
       "genres": [],
       "popularity": 0,
       "previewUrl": null,
       "previewTrackName": null,
       "spotifyUrl": "#",
-      "relationType": "PRODUCER",
-      "relationKeyword": "피처링"
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
+    },
+    {
+      "spotifyId": "mb_1773976442542_0.739858304477118",
+      "name": "TAEYANG",
+      "imageUrl": null,
+      "genres": [],
+      "popularity": 0,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "#",
+      "relationType": "SAME_GROUP",
+      "relationKeyword": "그룹 멤버"
     }
   ]
 }
