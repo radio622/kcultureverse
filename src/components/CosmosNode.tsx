@@ -17,13 +17,19 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
   // Self-healing: imageUrl이 없으면 브라우저에서 직접 iTunes API fetch (Vercel IP 차단 회피)
   const [resolvedImageUrl, setResolvedImageUrl] = useState<string | null>(artist.imageUrl ?? null);
 
+  // Next.js 페이지 전환 시 컴포넌트가 재사용될 때를 대비해 imageUrl 동기화
+  useEffect(() => {
+    setResolvedImageUrl(artist.imageUrl ?? null);
+    setImgError(false);
+  }, [artist.imageUrl, artist.name]);
+
   useEffect(() => {
     // 이미 이미지가 있거나 에러가 났으면 스킵
     if (resolvedImageUrl || imgError || !artist.name) return;
     let cancelled = false;
 
     fetch(
-      `https://itunes.apple.com/search?term=${encodeURIComponent(artist.name)}&entity=musicArtist&limit=1`,
+      `https://itunes.apple.com/search?term=${encodeURIComponent(artist.name)}&entity=album&attribute=artistTerm&limit=1`,
       { signal: AbortSignal.timeout(5000) }
     )
       .then((r) => r.json())
@@ -110,9 +116,9 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: size * 0.38,
-              fontWeight: 700,
+              fontSize: size * 0.45,
               color: initialColor,
+              fontWeight: 600,
             }}
           >
             {initial}

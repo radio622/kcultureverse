@@ -13,15 +13,20 @@ interface Props {
 
 export default function ArtistCard({ artist, isActive, onTap, onDive }: Props) {
   const [imgError, setImgError] = useState(false);
-  // Self-healing: imageUrl이 없으면 브라우저에서 직접 iTunes API fetch (Vercel IP 차단 회피)
   const [resolvedImageUrl, setResolvedImageUrl] = useState<string | null>(artist.imageUrl ?? null);
+
+  // Next.js 상태 캐싱 시 동기화용
+  useEffect(() => {
+    setResolvedImageUrl(artist.imageUrl ?? null);
+    setImgError(false);
+  }, [artist.imageUrl, artist.name]);
 
   useEffect(() => {
     if (resolvedImageUrl || imgError || !artist.name) return;
     let cancelled = false;
 
     fetch(
-      `https://itunes.apple.com/search?term=${encodeURIComponent(artist.name)}&entity=musicArtist&limit=1`,
+      `https://itunes.apple.com/search?term=${encodeURIComponent(artist.name)}&entity=album&attribute=artistTerm&limit=1`,
       { signal: AbortSignal.timeout(5000) }
     )
       .then((r) => r.json())
