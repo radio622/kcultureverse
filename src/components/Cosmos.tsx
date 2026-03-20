@@ -90,6 +90,7 @@ function shortestDelta(from: number, to: number, half: number): number {
 
 export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, deepSpaceNodes = [], onDeepSpaceTap }: Props) {
   const containerRef   = useRef<HTMLDivElement>(null);
+  const zoomWrapperRef = useRef<HTMLDivElement>(null);
   const universeRef    = useRef<HTMLDivElement>(null);
   
   // 카메라 워프 타겟 (심우주 다이브 시 부드러운 패닝용)
@@ -290,11 +291,17 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
       const mountElapsed = Math.max(0, now - startTimeRef.current);
       const mountFade = Math.min(1, mountElapsed / 1000); // 1초 동안 1로 페이드인
 
-      // ── 우주 레이어 전체를 카메라 오프셋 + 줌 적용 ──────
+      // ── 줌 래퍼: 별+우주+심우주 모든 레이어에 줌 동시 적용 ──
       const zoom = zoomRef.current;
+      const zw = zoomWrapperRef.current;
+      if (zw) {
+        zw.style.transform = `scale(${zoom})`;
+      }
+
+      // ── 우주 레이어 카메라 오프셋 이동 ────────────────────
       const uni = universeRef.current;
       if (uni) {
-        uni.style.transform = `translate(${camX}px, ${camY}px) scale(${zoom})`;
+        uni.style.transform = `translate(${camX}px, ${camY}px)`;
       }
 
       // ── 패럴랙스 별 이동 ──────────────────────────────────
@@ -435,6 +442,17 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
         }}
       />
 
+      {/* ── 줌 래퍼: 별+우주+심우주를 모두 감싸서 핀치줌/휠줌 동시 적용 ── */}
+      <div
+        ref={zoomWrapperRef}
+        style={{
+          position: "absolute",
+          inset: 0,
+          transformOrigin: "50% 50%",
+          willChange: "transform",
+          zIndex: 1,
+        }}
+      >
       {/* ── 배경 별 (패럴랙스 레이어별 다른 속도) ───────────── */}
       {stars.map((star, i) => (
         <div
@@ -622,6 +640,8 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
           </button>
         );
       })}
+
+      </div>{/* zoomWrapperRef 닫기 */}
 
       {/* ── 화면 가장자리 안개 그라데이션 (vignette) ───────── */}
       <div

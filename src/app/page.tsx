@@ -13,6 +13,7 @@ import type { Metadata } from "next";
 import { pickHubArtist, HUB_ARTISTS } from "@/data/hub-artists";
 import type { CosmosData } from "@/lib/types";
 import { buildDeepSpaceNodes } from "@/lib/deep-space";
+import { enrichSatelliteImages } from "@/lib/enrich-satellites";
 import CosmosClient from "@/components/CosmosClient";
 import FloatingSearch from "@/components/FloatingSearch";
 
@@ -51,6 +52,8 @@ export default function HomePage() {
     // JSON의 core 데이터가 다른 아티스트(예: 선우정아)로 오염되었을 수 있으므로
     // hub-artists.ts의 공식 데이터를 강제로 덮어씌움
     cosmosData.core.name = hub.nameKo;
+    // 위성 이미지 보완 (Spotify 403으로 null인 경우 graph.json에서 가져옴)
+    cosmosData.satellites = enrichSatelliteImages(cosmosData.satellites);
   } catch {
     // JSON 없으면 최소한의 코어 데이터로 fallback
     cosmosData = {

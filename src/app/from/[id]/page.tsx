@@ -21,6 +21,7 @@ import CosmosClient from "@/components/CosmosClient";
 import FloatingSearch from "@/components/FloatingSearch";
 import BackButton from "@/components/BackButton";
 import { buildDeepSpaceNodes } from "@/lib/deep-space";
+import { enrichSatelliteImages } from "@/lib/enrich-satellites";
 import { HUB_ARTISTS } from "@/data/hub-artists";
 import type { CosmosData } from "@/lib/types";
 
@@ -91,6 +92,8 @@ export default async function FromPage({ params }: Props) {
     if (hub) {
       prebaked.core.name = hub.nameKo;
     }
+    // 위성 이미지 보완 (Spotify 403으로 null인 경우 graph.json에서 가져옴)
+    prebaked.satellites = enrichSatelliteImages(prebaked.satellites);
   } catch { /* JSON 없음 → 2번으로 */ }
 
   if (prebaked) {
