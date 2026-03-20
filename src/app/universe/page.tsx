@@ -71,15 +71,10 @@ export default function UniversePage() {
   }, []);
 
   // 아티스트 선택 핸들러 (바텀시트 동적 교체, 블랙아웃 없음)
-  const handleArtistSelect = useCallback(async (nodeId: string, skipHistory = false) => {
+  const handleArtistSelect = useCallback(async (nodeId: string) => {
     setFocusedId(nodeId);
     setSheetState("peek");
     setFocusedIndex(null);
-
-    // Next.js 라우터 간섭 방지 처리: URL 안 바꾸고 state만 push
-    if (!skipHistory) {
-      window.history.pushState({ artist: nodeId }, "", "");
-    }
 
     try {
       const res = await fetch(`/api/universe/artist?id=${nodeId}`);
@@ -122,21 +117,6 @@ export default function UniversePage() {
       audio.announce(sat.spotifyId, sat.name);
     }
   }, [satellites, focusedIndex, handleArtistSelect, audio]);
-
-  // 브라우저 뒤로가기/앞으로가기 시 무중단 카메라 이동
-  useEffect(() => {
-    const onPopState = (e: PopStateEvent) => {
-      const state = e.state as { artist?: string } | null;
-      if (state?.artist) {
-        handleArtistSelect(state.artist, true);
-      } else {
-        setSheetState("collapsed");
-        setFocusedId(null);
-      }
-    };
-    window.addEventListener('popstate', onPopState);
-    return () => window.removeEventListener('popstate', onPopState);
-  }, [handleArtistSelect]);
 
   return (
     <>
