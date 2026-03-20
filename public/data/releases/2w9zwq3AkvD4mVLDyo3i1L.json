@@ -1,0 +1,200 @@
+{
+  "spotifyId": "2w9zwq3AkvD4mVLDyo3i1L",
+  "name": "Epik High",
+  "mbid": "57f1cdd6-cf32-4004-a095-3ef043c91b61",
+  "albums": [
+    {
+      "title": "Map of the Human Soul",
+      "releaseDate": "2003-10-21",
+      "type": "Album",
+      "mbReleaseGroupId": "8e171f0d-d5b4-3c86-8fa4-18d717f128c6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "High Society",
+      "releaseDate": "2004-07-26",
+      "type": "Album",
+      "mbReleaseGroupId": "90e37f72-6c4f-3aa8-a74f-8d9d5f5418e7",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Swan Songs",
+      "releaseDate": "2005-10-06",
+      "type": "Album",
+      "mbReleaseGroupId": "8352e499-0520-3547-8b4a-72164b38c742",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Remapping the Human Soul",
+      "releaseDate": "2007-01-23",
+      "type": "Album",
+      "mbReleaseGroupId": "522909c0-29da-3eca-9285-8d5201721a94",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Pieces, Part One",
+      "releaseDate": "2008-04-17",
+      "type": "Album",
+      "mbReleaseGroupId": "2ae2ffd1-5356-3345-9052-c85f0da8ed48",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Lovescream",
+      "releaseDate": "2008-09-30",
+      "type": "EP",
+      "mbReleaseGroupId": "f9695432-389b-47eb-a20a-f517217e4b3e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "魂: Map the Soul",
+      "releaseDate": "2009-03-27",
+      "type": "Album",
+      "mbReleaseGroupId": "e5971df3-edc7-36a2-b8e2-70fa82878778",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "[e]",
+      "releaseDate": "2009-09-16",
+      "type": "Album",
+      "mbReleaseGroupId": "d2739c16-272e-43b9-9998-787fab31be7b",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "춥다 It's Cold - Single",
+      "releaseDate": "2012-10-09",
+      "type": "Single",
+      "mbReleaseGroupId": "71b21357-356b-4476-9c17-03a23ca21e43",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "99",
+      "releaseDate": "2012-10-19",
+      "type": "Album",
+      "mbReleaseGroupId": "6d21b691-58e7-43dd-8de5-d19128de91b4",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "신발장",
+      "releaseDate": "2014-10-21",
+      "type": "Album",
+      "mbReleaseGroupId": "a3335491-e71b-4eb7-8a05-779f12340eaf",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "DON’T HATE ME (Japanese Version)",
+      "releaseDate": "2016-04-27",
+      "type": "Single",
+      "mbReleaseGroupId": "0b690b40-78d8-40ed-8470-a59d1c73951c",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "WE’VE DONE SOMETHING WONDERFUL",
+      "releaseDate": "2017-10-23",
+      "type": "Album",
+      "mbReleaseGroupId": "9704b5fe-33a0-4127-adb0-8c9e9ad3e6da",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "WE'VE DONE SOMETHING WONDERFUL The Instrumentals",
+      "releaseDate": "2017-11-23",
+      "type": "Album",
+      "mbReleaseGroupId": "97d6ed94-58cc-4a41-bd01-188978887436",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Sleeping Beauty",
+      "releaseDate": "2018-06-29",
+      "type": "Single",
+      "mbReleaseGroupId": "73b2f687-90f8-4155-9fd1-6f15fbafef49",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "sleepless in __________",
+      "releaseDate": "2019-03-11",
+      "type": "EP",
+      "mbReleaseGroupId": "4970abae-1cc8-4c37-80e1-7aae24abcb3f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Epik High Is Here 上 (Part 1)",
+      "releaseDate": "2021-01-18",
+      "type": "EP",
+      "mbReleaseGroupId": "3c653eb9-f76c-4015-a420-d3d2d56c09cd",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "비 오는 날 듣기 좋은 노래 (Rain Song)",
+      "releaseDate": "2021-06-29",
+      "type": "Single",
+      "mbReleaseGroupId": "09c4e637-4175-4f6f-b08d-d4ced0224cec",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Face ID",
+      "releaseDate": "2021-11-03",
+      "type": "Single",
+      "mbReleaseGroupId": "4a5ae6b3-c0b9-48d4-80d5-3fd7736b6e3a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Epik High Is Here 下 (Part 2)",
+      "releaseDate": "2022-02-14",
+      "type": "Album",
+      "mbReleaseGroupId": "40c33b9e-030a-4f6a-9b74-9513aa2d17a5",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Strawberry",
+      "releaseDate": "2023-02-01",
+      "type": "EP",
+      "mbReleaseGroupId": "f6d3680a-3fb9-41f2-a223-42acab99f376",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Screen Time",
+      "releaseDate": "2023-11-01",
+      "type": "Single",
+      "mbReleaseGroupId": "61561002-6115-4f9a-8c5f-1c711f15f90e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "PUMP",
+      "releaseDate": "2024-06-24",
+      "type": "Album",
+      "mbReleaseGroupId": "d4dec755-5758-4e36-8053-f83fa57ab0bb",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "부르즈 할리파 (Ours Version)",
+      "releaseDate": "2024-09-12",
+      "type": "Single",
+      "mbReleaseGroupId": "9e2749a9-890f-43c6-a95a-fdca53f1bc2d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    }
+  ],
+  "lastUpdated": "2026-03-20T17:31:56.838Z"
+}

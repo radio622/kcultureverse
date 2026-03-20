@@ -1,0 +1,432 @@
+{
+  "spotifyId": "0L8ExT028jH3ddEcZwqJJ5",
+  "name": "Stray Kids",
+  "mbid": "142b343d-bf5a-428c-a64f-6d1a7566bbe9",
+  "albums": [
+    {
+      "title": "Hellevator",
+      "releaseDate": "2017-11-01",
+      "type": "Single",
+      "mbReleaseGroupId": "d1d75a03-e37d-4f0e-88ba-c922c25ba014",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mixtape",
+      "releaseDate": "2018-01-08",
+      "type": "EP",
+      "mbReleaseGroupId": "fa02755f-09a7-41d3-857c-5e3649af0fd8",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I am NOT",
+      "releaseDate": "2018-03-26",
+      "type": "EP",
+      "mbReleaseGroupId": "be452563-ede0-470c-9694-35dfe6107edd",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I am WHO",
+      "releaseDate": "2018-08-06",
+      "type": "EP",
+      "mbReleaseGroupId": "7c7b66b0-ae09-48e4-81ef-b9f768b0e2b4",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "I am YOU",
+      "releaseDate": "2018-10-22",
+      "type": "EP",
+      "mbReleaseGroupId": "a815fc7d-aa83-4267-a135-dd68210f296c",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Clé 1 : MIROH",
+      "releaseDate": "2019-03-25",
+      "type": "EP",
+      "mbReleaseGroupId": "2e00dae4-6343-4108-aeae-d90a71aa973f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Double Knot",
+      "releaseDate": "2019-10-09",
+      "type": "Single",
+      "mbReleaseGroupId": "73887f2e-fdcc-471d-a71d-9d13d7cbecce",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "어쩌다 발견한 하루 OST Part.7",
+      "releaseDate": "2019-11-07",
+      "type": "Single",
+      "mbReleaseGroupId": "3fdb64c5-dc52-4bff-9e8a-85b275afadbd",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Clé : LEVANTER",
+      "releaseDate": "2019-12-09",
+      "type": "EP",
+      "mbReleaseGroupId": "2f398df5-a88d-4dab-8f08-3d888d5025c1",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mixtape : Gone Days",
+      "releaseDate": "2019-12-26",
+      "type": "Single",
+      "mbReleaseGroupId": "154a46f8-7a5a-4eb0-8b56-f7e358a034a3",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Step Out of Clé",
+      "releaseDate": "2020-01-24",
+      "type": "Single",
+      "mbReleaseGroupId": "479d7da4-9224-44d6-a022-b94f600a672f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "My Pace -Japanese ver.-",
+      "releaseDate": "2020-01-29",
+      "type": "Single",
+      "mbReleaseGroupId": "29c3069b-b484-464e-be59-22bca999ecce",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Double Knot -Japanese ver.-",
+      "releaseDate": "2020-02-18",
+      "type": "Single",
+      "mbReleaseGroupId": "bcc35bfb-5c4f-40b5-b608-620244ed33c0",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "風 (Levanter) -Japanese ver.-",
+      "releaseDate": "2020-03-09",
+      "type": "Single",
+      "mbReleaseGroupId": "8baab8f6-3c53-45eb-9cab-c62d2d310a4e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mixtape : On Track",
+      "releaseDate": "2020-03-25",
+      "type": "Single",
+      "mbReleaseGroupId": "51b88f1b-8c9f-46c7-87a2-24574e3abf45",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "TOP",
+      "releaseDate": "2020-05-13",
+      "type": "Single",
+      "mbReleaseGroupId": "b0a46a42-f420-4e7c-a6e7-f189bb827f73",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "TOP (English ver.)",
+      "releaseDate": "2020-05-20",
+      "type": "Single",
+      "mbReleaseGroupId": "e571513d-bf68-43fa-8660-a4dd94fdd293",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "TOP -Japanese ver.-",
+      "releaseDate": "2020-05-26",
+      "type": "Single",
+      "mbReleaseGroupId": "4ff796a5-a397-4913-9c4d-5476932f090b",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "GO生",
+      "releaseDate": "2020-06-17",
+      "type": "Album",
+      "mbReleaseGroupId": "216ffd78-75ed-48f0-93b1-712d06153020",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "POP OUT BOY! Part.1",
+      "releaseDate": "2020-07-16",
+      "type": "Single",
+      "mbReleaseGroupId": "0d9332b1-9a8e-424b-a912-06192f8af291",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "ALL IN",
+      "releaseDate": "2020-11-04",
+      "type": "EP",
+      "mbReleaseGroupId": "35254504-e4ea-4ed3-9280-4b0e6f96f909",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Going Dumb",
+      "releaseDate": "2021-03-19",
+      "type": "Single",
+      "mbReleaseGroupId": "a491c97d-6a48-4b11-b5ff-e265ae352892",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "킹덤 <FINAL : WHO IS THE KING?>",
+      "releaseDate": "2021-05-28",
+      "type": "EP",
+      "mbReleaseGroupId": "39c06ea3-f290-492a-b83a-738c225cbba2",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mixtape : OH",
+      "releaseDate": "2021-06-25",
+      "type": "Single",
+      "mbReleaseGroupId": "080a71b0-6ffd-4ae3-86ca-f14135d3e967",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "NOEASY",
+      "releaseDate": "2021-08-23",
+      "type": "Album",
+      "mbReleaseGroupId": "dc8b1089-fcdb-4d4a-9a41-ac37d8a03ce7",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Scars",
+      "releaseDate": "2021-10-06",
+      "type": "Single",
+      "mbReleaseGroupId": "f0e8e702-fcc0-464f-b6e2-542f8ade40b0",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Christmas EveL",
+      "releaseDate": "2021-11-29",
+      "type": "EP",
+      "mbReleaseGroupId": "62812a62-f532-490a-9b52-1feccb3fdaba",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "ODDINARY",
+      "releaseDate": "2022-03-18",
+      "type": "EP",
+      "mbReleaseGroupId": "4e2d0346-724c-45b1-896e-4b17b541ce27",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "CIRCUS",
+      "releaseDate": "2022-06-22",
+      "type": "EP",
+      "mbReleaseGroupId": "441435c4-cd3b-4621-828a-b1ad95e9dd4f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mixtape : Time Out",
+      "releaseDate": "2022-08-01",
+      "type": "Single",
+      "mbReleaseGroupId": "e4b349bd-7e18-4b20-9eef-e79b1fdaa883",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "MAXIDENT",
+      "releaseDate": "2022-10-07",
+      "type": "EP",
+      "mbReleaseGroupId": "d5b40a5b-125f-4e2d-926d-746dbc6a2257",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "THE SOUND",
+      "releaseDate": "2023-02-22",
+      "type": "Album",
+      "mbReleaseGroupId": "498d6e37-11ca-4f3d-828a-f20cc0451725",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "★★★★★",
+      "releaseDate": "2023-06-02",
+      "type": "Album",
+      "mbReleaseGroupId": "44419f5b-2816-4cbb-a380-954f54f0751d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Social Path",
+      "releaseDate": "2023-08-30",
+      "type": "Single",
+      "mbReleaseGroupId": "eafc5fc5-5d52-4ba7-8577-bc5f20963a74",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Social Path / Super Bowl -Japanese ver.-",
+      "releaseDate": "2023-09-06",
+      "type": "EP",
+      "mbReleaseGroupId": "e248dce6-bef8-4d1f-a6d8-164de112151f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "樂-STAR",
+      "releaseDate": "2023-11-10",
+      "type": "EP",
+      "mbReleaseGroupId": "c1f6370d-be77-49d3-8ece-b93088bc6b8f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Like Magic",
+      "releaseDate": "2024-02-20",
+      "type": "Single",
+      "mbReleaseGroupId": "7069a5da-8776-4604-85ae-fd6f3348791d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "WHY?",
+      "releaseDate": "2024-04-12",
+      "type": "Single",
+      "mbReleaseGroupId": "baa6e3e0-356b-45ef-a978-0cebd2cfade2",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Lose My Breath",
+      "releaseDate": "2024-05-10",
+      "type": "Single",
+      "mbReleaseGroupId": "562be122-7314-4aef-a41b-a213f6b484fb",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "ATE",
+      "releaseDate": "2024-07-19",
+      "type": "EP",
+      "mbReleaseGroupId": "350ea536-dbf2-437d-913f-40040a3932ab",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "SLASH",
+      "releaseDate": "2024-07-23",
+      "type": "Single",
+      "mbReleaseGroupId": "261ed8c1-ad66-48b0-a3fa-aa01b8c03b9d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "NIGHT",
+      "releaseDate": "2024-10-06",
+      "type": "Single",
+      "mbReleaseGroupId": "f47ab139-20a5-40b4-b2da-7a59202afa9e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Falling Up",
+      "releaseDate": "2024-10-07",
+      "type": "Single",
+      "mbReleaseGroupId": "08ce6dcc-b0d0-4f8b-a9e9-533ba9aff144",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Come Play (from the series Arcane League of Legends)",
+      "releaseDate": "2024-10-16",
+      "type": "Single",
+      "mbReleaseGroupId": "f61af4e1-359a-4b6b-b277-58bec9ebfad0",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "GIANT",
+      "releaseDate": "2024-11-13",
+      "type": "Album",
+      "mbReleaseGroupId": "4b673922-02df-4e60-93a9-c441b55cb80e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "合 (HOP)",
+      "releaseDate": "2024-12-13",
+      "type": "EP",
+      "mbReleaseGroupId": "3b590db0-577c-4581-abff-fa41dffd5537",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mixtape : dominATE",
+      "releaseDate": "2025-03-21",
+      "type": "EP",
+      "mbReleaseGroupId": "eb0b376e-7cab-43b4-99f9-ce39e78fc13f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hollow",
+      "releaseDate": "2025-06-11",
+      "type": "Single",
+      "mbReleaseGroupId": "7ae8ddcb-96d3-4001-b3f0-f2cc5c920287",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Hollow",
+      "releaseDate": "2025-06-18",
+      "type": "EP",
+      "mbReleaseGroupId": "2d4d54d8-5fcf-46b2-98fd-938f35b9146d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "KARMA",
+      "releaseDate": "2025-08-22",
+      "type": "Album",
+      "mbReleaseGroupId": "e2a3d6eb-2011-4f29-9e10-11e2e6f7b3f3",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "In The Dark",
+      "releaseDate": "2025-11-06",
+      "type": "Single",
+      "mbReleaseGroupId": "6fc9a1f5-709d-4180-a01a-aa75c35558d4",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "DO IT",
+      "releaseDate": "2025-11-21",
+      "type": "EP",
+      "mbReleaseGroupId": "ce29b685-a98d-411e-b68f-78c6b4e963c6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Endless Sun",
+      "releaseDate": "2026-03-13",
+      "type": "Single",
+      "mbReleaseGroupId": "4840b7a1-4b5f-4e90-afe6-dc713f7cedb1",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    }
+  ],
+  "lastUpdated": "2026-03-20T17:32:21.062Z"
+}

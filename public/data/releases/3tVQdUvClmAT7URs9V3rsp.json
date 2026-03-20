@@ -1,0 +1,280 @@
+{
+  "spotifyId": "3tVQdUvClmAT7URs9V3rsp",
+  "name": "pH-1",
+  "mbid": "aace796b-0569-49b6-a144-64ea24031962",
+  "albums": [
+    {
+      "title": "Wavy",
+      "releaseDate": "2016-10-21",
+      "type": "Single",
+      "mbReleaseGroupId": "2292aec2-93ee-4ea7-b83a-dec193ad023c",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Perfect",
+      "releaseDate": "2016-11-29",
+      "type": "Single",
+      "mbReleaseGroupId": "a056c9c3-9ec3-4ccd-ae0a-0390704441ac",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Dingo X H1GHR MUSIC",
+      "releaseDate": "2017-09-16",
+      "type": "Single",
+      "mbReleaseGroupId": "f4045fac-1fc5-4b31-9a9e-17469df1208b",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "The Island Kid",
+      "releaseDate": "2017-10-18",
+      "type": "EP",
+      "mbReleaseGroupId": "31b06a93-e304-4790-919e-f94516f8717a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "GATSBY",
+      "releaseDate": "2018-02-04",
+      "type": "Single",
+      "mbReleaseGroupId": "af23f7c1-f0f8-4342-bd71-f1bd53cc7b53",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "가라사대 (GARASADAE)",
+      "releaseDate": "2018-02-09",
+      "type": "Single",
+      "mbReleaseGroupId": "35d0b925-ac8f-4132-86b7-7a6f15a86496",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "ON THE ROAD",
+      "releaseDate": "2018-05-28",
+      "type": "Single",
+      "mbReleaseGroupId": "93fcf241-dfef-44fc-aa56-6dd3ef57051d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "harry",
+      "releaseDate": "2018-06-22",
+      "type": "Single",
+      "mbReleaseGroupId": "25b90203-eb1a-4db8-8643-6280468aaf9a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "loves",
+      "releaseDate": "2018-08-20",
+      "type": "Single",
+      "mbReleaseGroupId": "ebbdb939-a982-4f01-9b25-a1c4b8d64ba3",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Good Luck",
+      "releaseDate": "2018-09-27",
+      "type": "Single",
+      "mbReleaseGroupId": "77ce5e9a-7901-47c5-ba30-4354b33ed951",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "쇼미더머니 777, Episode 2",
+      "releaseDate": "2018-10-13",
+      "type": "Single",
+      "mbReleaseGroupId": "fcd39f9b-3f8a-4bb6-bcfe-65c403625c8e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "staying",
+      "releaseDate": "2018-11-24",
+      "type": "Single",
+      "mbReleaseGroupId": "39a13bca-2803-47a3-8e3b-71b6101856a4",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "HALO",
+      "releaseDate": "2019-03-28",
+      "type": "Album",
+      "mbReleaseGroupId": "be6c9e39-02ff-4f1a-b8fd-5c71234a363a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Summer Episodes",
+      "releaseDate": "2019-07-23",
+      "type": "Single",
+      "mbReleaseGroupId": "40d1eb26-67e3-449d-ba08-d39043d48c98",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Dingo X H1GHR MUSIC",
+      "releaseDate": "2019-08-15",
+      "type": "Single",
+      "mbReleaseGroupId": "a09e44a7-4a7e-4220-9464-3eeea50342c7",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Dingo X CHEEZE & pH-1",
+      "releaseDate": "2019-09-04",
+      "type": "Single",
+      "mbReleaseGroupId": "ed88f95d-9eae-40d1-b58b-7a7b0a99ae6f",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Truman Show (Remix)",
+      "releaseDate": "2019-09-30",
+      "type": "Single",
+      "mbReleaseGroupId": "c124894a-ef65-4e19-ad1b-cd1b28cdbb7d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Nerdy Love",
+      "releaseDate": "2020-01-09",
+      "type": "Single",
+      "mbReleaseGroupId": "f435555c-7a9b-4d44-89a9-8b8e7628ba4d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "X",
+      "releaseDate": "2020-05-08",
+      "type": "Album",
+      "mbReleaseGroupId": "81c7ed9e-24f1-4baa-b573-b3ebb69002bf",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "여기 적어줘",
+      "releaseDate": "2020-05-30",
+      "type": "Single",
+      "mbReleaseGroupId": "aee0edaf-64c5-40c7-9dc4-f3fdefb21007",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "ZERO:ATTITUDE",
+      "releaseDate": "2021-02-15",
+      "type": "Single",
+      "mbReleaseGroupId": "20f56622-68ae-42df-8b96-49fb871b12ac",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mungpal",
+      "releaseDate": "2021-04-11",
+      "type": "Single",
+      "mbReleaseGroupId": "c3406684-5718-40fc-953b-daec15339709",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "365&7",
+      "releaseDate": "2021-04-29",
+      "type": "Single",
+      "mbReleaseGroupId": "f34a5db4-b0f5-443e-8eaa-5ff9091659b7",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "ラブ",
+      "releaseDate": "2021-10-01",
+      "type": "Single",
+      "mbReleaseGroupId": "2a3c7516-b011-4af3-9e1e-a267a0b8e8f6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "LATELY",
+      "releaseDate": "2021-12-23",
+      "type": "Single",
+      "mbReleaseGroupId": "a1660453-6bce-4fa9-9fae-e38e0f3d1ea6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "유니콘 (Original Television Soundtrack), Pt. 1",
+      "releaseDate": "2022-09-02",
+      "type": "Single",
+      "mbReleaseGroupId": "73de523b-1e2e-4612-8360-84f3c690250e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "BUT FOR NOW LEAVE ME ALONE",
+      "releaseDate": "2022-09-15",
+      "type": "Album",
+      "mbReleaseGroupId": "e102b119-de1c-49a4-98c5-2b66a499987d",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Metronome",
+      "releaseDate": "2023-07-05",
+      "type": "Single",
+      "mbReleaseGroupId": "a62801e1-01d6-4403-a25b-98e0df63677e",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "B.O.T.B.",
+      "releaseDate": "2023-09-22",
+      "type": "Single",
+      "mbReleaseGroupId": "d92e4162-cf72-4165-bb69-93ad8cd84205",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "스트릿 우먼 파이터2 - 파이널 퍼포먼스",
+      "releaseDate": "2023-10-31",
+      "type": "Single",
+      "mbReleaseGroupId": "1c5072b7-152d-4297-9068-c9974441e3d4",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "POP OFF",
+      "releaseDate": "2023-11-02",
+      "type": "EP",
+      "mbReleaseGroupId": "1dfab267-d4e0-40f8-af79-8a05772189b4",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "FLAT COKE",
+      "releaseDate": "2024-07-16",
+      "type": "Single",
+      "mbReleaseGroupId": "1f3e6861-e883-4279-bd21-a10d75289bc6",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "HANDS",
+      "releaseDate": "2024-12-23",
+      "type": "Single",
+      "mbReleaseGroupId": "6ebf6727-5bc1-4489-98af-7d692f98ccdd",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "WHAT HAVE WE DONE",
+      "releaseDate": "2025-08-13",
+      "type": "Album",
+      "mbReleaseGroupId": "6b7ac4fe-2f9c-4817-993e-ffb6d0ae8208",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    }
+  ],
+  "lastUpdated": "2026-03-20T17:32:42.729Z"
+}
