@@ -1,21 +1,27 @@
 /**
- * MusicBrainz API 클라이언트
- * 무료, 키 불필요, 정형화된 크레딧/관계 데이터 제공
- * Rate limit: 1 req/s — 반드시 User-Agent 필수
+ * MusicBrainz API 클라이언트 v2
+ *
+ * 변경사항 (Phase 2 패치):
+ *  - getArtistDiscography(): Release Group 기반 정확한 앨범 발매일 연표 수집
+ *  - getComprehensiveCredits(): 전체 앨범 → 핵심 트랙 → Recording + Work 레벨 크레딧 통합 집계
+ *    (작곡/작사는 Work 레벨에 저장됨을 실증 테스트로 확인 완료)
+ *
+ * Rate limit: 1 req/s — User-Agent 필수
+ * 아티스트 1명 처리 시간: 약 3분 (Pre-bake 전용)
  */
 
+import type { AlbumRelease, ArtistDiscography } from "./types";
+
 const MB_API = "https://musicbrainz.org/ws/2";
-const USER_AGENT = "KCultureVerse/1.0 (https://kcultureverse.app)";
+const USER_AGENT = "KCultureVerse/2.0 (https://kcultureverse.app)";
+
+// ── 내부 타입 ─────────────────────────────────────────────────────
 
 interface MBRelation {
-  type: string;       // "member of band", "producer", "composer", "lyricist", "mix", "vocal" 등
-  direction: string;  // "forward" | "backward"
-  artist?: {
-    id: string;
-    name: string;
-    type: string;     // "Person" | "Group"
-    disambiguation?: string;
-  };
+  type: string;
+  direction: string;
+  artist?: { id: string; name: string; type: string; disambiguation?: string };
+  work?: { id: string; title: string };
   attributes?: string[];
 }
 
@@ -33,31 +39,57 @@ interface MBRecording {
   relations?: MBRelation[];
 }
 
+interface MBReleaseGroup {
+  id: string;
+  title: string;
+  "first-release-date": string | null;
+  "primary-type": string;
+  "secondary-types"?: string[];
+}
+
+interface MBRelease {
+  id: string;
+  title: string;
+  date?: string;
+  media?: Array<{
+    tracks?: Array<{
+      number: string;
+      title: string;
+      recording: { id: string; title: string };
+    }>;
+  }>;
+}
+
 export interface MBCredit {
   name: string;
   mbid: string;
-  role: string;       // "producer", "composer", "lyricist", "vocal", "featured", etc.
-  count: number;       // 여러 곡에 등장 시 가중치
+  role: string;       // "producer" | "composer" | "lyricist" | "arranger" | "featured" | ...
+  count: number;      // 여러 곡에 등장 시 가중치
 }
 
-async function mbFetch<T>(path: string): Promise<T | null> {
+// ── 공통 fetch 유틸 ───────────────────────────────────────────────
+
+async function mbFetch<T>(path: string, delayMs = 1100): Promise<T | null> {
+  // MusicBrainz 1 req/s 준수: 호출 전 무조건 대기
+  await new Promise((r) => setTimeout(r, delayMs));
+
   try {
     const res = await fetch(`${MB_API}${path}`, {
-      headers: { 
+      headers: {
         "User-Agent": USER_AGENT,
-        "Accept": "application/json",
+        Accept: "application/json",
       },
-      cache: "force-cache",  // MB 데이터는 거의 안 바뀌므로 공격적 캐싱
-      signal: AbortSignal.timeout(3000), // MB 서버 응답 지연 시 강제 취소
+      cache: "force-cache",
+      signal: AbortSignal.timeout(8000),
     });
 
     if (res.status === 503 || res.status === 429) {
-      // Rate limited — 1초 후 1회 재시도
-      await new Promise(r => setTimeout(r, 1100));
+      console.warn(`[MusicBrainz] Rate limited (${res.status}), 3초 대기 후 재시도...`);
+      await new Promise((r) => setTimeout(r, 3000));
       const retry = await fetch(`${MB_API}${path}`, {
-        headers: { "User-Agent": USER_AGENT, "Accept": "application/json" },
+        headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
         cache: "force-cache",
-        signal: AbortSignal.timeout(3000),
+        signal: AbortSignal.timeout(8000),
       });
       if (!retry.ok) return null;
       return retry.json();
@@ -70,41 +102,39 @@ async function mbFetch<T>(path: string): Promise<T | null> {
   }
 }
 
+// ── 공개 API 함수 ─────────────────────────────────────────────────
+
 /**
- * MusicBrainz에서 아티스트 검색 → MBID 획득
+ * 아티스트 이름으로 MusicBrainz MBID 검색
  */
 export async function searchArtistMBID(artistName: string): Promise<string | null> {
   const q = encodeURIComponent(artistName);
-  const data = await mbFetch<{ artists: { id: string; name: string; disambiguation?: string; score: number }[] }>(
-    `/artist/?query=artist:${q}&fmt=json&limit=3`
-  );
+  const data = await mbFetch<{
+    artists: { id: string; name: string; disambiguation?: string; score: number }[];
+  }>(`/artist/?query=artist:${q}&fmt=json&limit=3`);
 
   if (!data?.artists?.length) return null;
 
-  // 점수가 가장 높고 disambiguation에 "Korean" 이 있으면 우선
-  const korean = data.artists.find(a => 
-    a.score >= 90 && (a.disambiguation?.toLowerCase().includes("korean") || a.disambiguation?.toLowerCase().includes("k-pop"))
+  // 점수 90+ 이면서 Korean/K-Pop 표기 있으면 우선
+  const korean = data.artists.find(
+    (a) =>
+      a.score >= 90 &&
+      (a.disambiguation?.toLowerCase().includes("korean") ||
+        a.disambiguation?.toLowerCase().includes("k-pop"))
   );
   return korean?.id ?? data.artists[0].id;
 }
 
 /**
- * 아티스트의 직접 관계(멤버, 콜라보 등) 가져오기
- * - member of band (그룹 ↔ 솔로 멤버)
- * - collaboration (공식 콜라보)
+ * 아티스트의 직접 관계 (그룹 멤버, 공식 콜라보)
  */
 export async function getArtistRelations(mbid: string): Promise<MBCredit[]> {
-  const data = await mbFetch<MBArtist>(
-    `/artist/${mbid}?inc=artist-rels&fmt=json`
-  );
-
+  const data = await mbFetch<MBArtist>(`/artist/${mbid}?inc=artist-rels&fmt=json`);
   if (!data?.relations) return [];
 
   const credits: MBCredit[] = [];
   for (const rel of data.relations) {
     if (!rel.artist) continue;
-
-    // 그룹-멤버 관계
     if (rel.type === "member of band") {
       credits.push({
         name: rel.artist.name,
@@ -112,9 +142,7 @@ export async function getArtistRelations(mbid: string): Promise<MBCredit[]> {
         role: rel.direction === "backward" ? "member" : "group",
         count: 1,
       });
-    }
-    // 콜라보/리믹스 관계
-    else if (["collaboration", "is person"].includes(rel.type)) {
+    } else if (["collaboration", "is person"].includes(rel.type)) {
       credits.push({
         name: rel.artist.name,
         mbid: rel.artist.id,
@@ -123,78 +151,258 @@ export async function getArtistRelations(mbid: string): Promise<MBCredit[]> {
       });
     }
   }
-
   return credits;
 }
 
 /**
- * 아티스트의 레코딩들에서 크레딧(프로듀서, 작곡가 등) 추출  
- * recording 검색 → 각 recording의 rels에서 역할별 집계
- * 
- * 핵심: MusicBrainz의 recording에는 artist-rels(프로듀서, 보컬, 리믹서 등)이 직접 달려있음
+ * [Phase 2 신규] 아티스트의 전체 앨범 발매일 연표 수집
+ * MusicBrainz Release Group의 first-release-date를 사용 (Spotify보다 훨씬 정확)
  */
-export async function getRecordingCredits(artistName: string, mbid: string): Promise<MBCredit[]> {
-  // 아티스트 MBID로 최근 recording들 검색 (최대 10곡)
+export async function getArtistDiscography(
+  spotifyId: string,
+  artistName: string,
+  mbid: string
+): Promise<ArtistDiscography> {
+  const albums: AlbumRelease[] = [];
+
+  // Release Group 전체 목록 (Album + EP + Single)
+  let offset = 0;
+  const limit = 100;
+
+  while (true) {
+    const data = await mbFetch<{
+      "release-groups": MBReleaseGroup[];
+      "release-group-count": number;
+    }>(
+      `/release-group?artist=${mbid}&type=album|ep|single&limit=${limit}&offset=${offset}&fmt=json`
+    );
+
+    if (!data?.["release-groups"]?.length) break;
+
+    for (const rg of data["release-groups"]) {
+      // 라이브/컴필 등 제외 (Secondary Types 필터)
+      const secondary = rg["secondary-types"] ?? [];
+      if (secondary.some((t) => ["Live", "Compilation", "Remix", "DJ-mix"].includes(t))) continue;
+
+      const type = mapReleaseGroupType(rg["primary-type"]);
+      albums.push({
+        title: rg.title,
+        releaseDate: rg["first-release-date"] || null,
+        type,
+        mbReleaseGroupId: rg.id,
+        source: "musicbrainz",
+        verifyStatus: "auto",
+      });
+    }
+
+    offset += limit;
+    if (offset >= (data["release-group-count"] ?? 0)) break;
+  }
+
+  // 발매일 기준 오름차순 정렬
+  albums.sort((a, b) => {
+    if (!a.releaseDate) return 1;
+    if (!b.releaseDate) return -1;
+    return a.releaseDate.localeCompare(b.releaseDate);
+  });
+
+  return {
+    spotifyId,
+    name: artistName,
+    mbid,
+    albums,
+    lastUpdated: new Date().toISOString(),
+  };
+}
+
+/**
+ * [Phase 2 신규] 전체 앨범 스캔 기반 종합 크레딧 집계
+ *
+ * 파이프라인:
+ *   Release Group 목록 → 대표 Release 1개 → 트랙 목록 →
+ *   각 트랙의 Recording rels (producer/arranger/vocal) →
+ *   Work ID 추출 → Work rels (★ composer / ★ lyricist)
+ *   → 아티스트별 역할+곡수 집계
+ *
+ * 처리량: 앨범 최대 10개 × 트랙 최대 5개 = 최대 50곡
+ *         곡당 최대 3 API 호출 → 최대 150 calls (~2.5분)
+ */
+export async function getComprehensiveCredits(
+  coreArtistName: string,
+  mbid: string
+): Promise<MBCredit[]> {
+  const creditMap = new Map<string, MBCredit>();
+
+  // Step 1: Release Group 목록 (앨범/EP 우선, 싱글은 보조)
+  const rgData = await mbFetch<{
+    "release-groups": MBReleaseGroup[];
+    "release-group-count": number;
+  }>(`/release-group?artist=${mbid}&type=album|ep&limit=25&fmt=json`);
+
+  const releaseGroups = rgData?.["release-groups"] ?? [];
+
+  // 앨범 없으면 싱글로 fallback
+  let targetGroups = releaseGroups.slice(0, 10);
+  if (targetGroups.length === 0) {
+    const singleData = await mbFetch<{ "release-groups": MBReleaseGroup[] }>(
+      `/release-group?artist=${mbid}&type=single&limit=15&fmt=json`
+    );
+    targetGroups = singleData?.["release-groups"]?.slice(0, 10) ?? [];
+  }
+
+  if (targetGroups.length === 0) return [];
+
+  // Step 2: 각 Release Group의 대표 Release → 트랙리스트
+  for (const rg of targetGroups) {
+    const relData = await mbFetch<{ releases: MBRelease[] }>(
+      `/release?release-group=${rg.id}&inc=recordings&limit=1&fmt=json`
+    );
+
+    const release = relData?.releases?.[0];
+    if (!release?.media) continue;
+
+    // 트랙 수집 (미디어당 최대 5트랙)
+    const tracks: { id: string; title: string }[] = [];
+    for (const media of release.media) {
+      for (const track of (media.tracks ?? []).slice(0, 5)) {
+        if (track.recording?.id) {
+          tracks.push({ id: track.recording.id, title: track.recording.title });
+        }
+      }
+      if (tracks.length >= 5) break;
+    }
+
+    // Step 3: 각 트랙의 Recording rels + Work ID 추출
+    for (const track of tracks) {
+      const recData = await mbFetch<MBRecording>(
+        `/recording/${track.id}?inc=artist-rels+work-rels&fmt=json`
+      );
+      if (!recData?.relations) continue;
+
+      let workId: string | null = null;
+
+      for (const rel of recData.relations) {
+        // Recording 레벨 크레딧 (producer, arranger, vocal/피처링)
+        if (rel.artist && rel.artist.id !== mbid) {
+          const role = mapRecordingRelationType(rel.type);
+          if (role) {
+            accumulateCredit(creditMap, rel.artist, role);
+          }
+        }
+        // Work ID 추출 (작곡/작사는 Work 레벨에 저장됨)
+        if (rel.work && !workId) {
+          workId = rel.work.id;
+        }
+      }
+
+      // Step 4: Work 레벨 크레딧 (★ composer / ★ lyricist)
+      if (workId) {
+        const workData = await mbFetch<{ relations?: MBRelation[] }>(
+          `/work/${workId}?inc=artist-rels&fmt=json`
+        );
+        for (const rel of workData?.relations ?? []) {
+          if (rel.artist && rel.artist.id !== mbid) {
+            const role = mapWorkRelationType(rel.type);
+            if (role) {
+              accumulateCredit(creditMap, rel.artist, role);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 빈도 순 정렬 후 반환
+  return Array.from(creditMap.values()).sort((a, b) => b.count - a.count);
+}
+
+/**
+ * [레거시 호환 유지] 기존 Recording 기반 검색 (getArtistFull에서 사용 중)
+ * Phase 2 prebake 완료 후 getComprehensiveCredits로 교체 예정
+ */
+export async function getRecordingCredits(
+  artistName: string,
+  mbid: string
+): Promise<MBCredit[]> {
+  // 기존 recording 검색 API (빠르지만 샘플링 한계 있음)
   const data = await mbFetch<{ recordings: MBRecording[] }>(
-    `/recording/?query=arid:${mbid}&fmt=json&limit=5`
+    `/recording/?query=arid:${mbid}&fmt=json&limit=10`
   );
 
   if (!data?.recordings?.length) return [];
 
-  // 각 recording에서 artist-rels 가져오기 (비동기 병렬, 3곡만)
   const creditMap = new Map<string, MBCredit>();
-  const recordingsToCheck = data.recordings.slice(0, 3);
+  const recordingsToCheck = data.recordings.slice(0, 5);
 
   const recDetails = await Promise.all(
-    recordingsToCheck.map(rec => 
-      mbFetch<MBRecording>(`/recording/${rec.id}?inc=artist-rels+work-level-rels+work-rels&fmt=json`)
+    recordingsToCheck.map((rec) =>
+      mbFetch<MBRecording>(
+        `/recording/${rec.id}?inc=artist-rels+work-level-rels+work-rels&fmt=json`
+      )
     )
   );
 
   for (const recDetail of recDetails) {
     if (!recDetail?.relations) continue;
-
     for (const rel of recDetail.relations) {
-      if (!rel.artist) continue;
-      // 자기 자신 제외
-      if (rel.artist.id === mbid) continue;
-
-      const roleType = mapRelationType(rel.type);
-      if (!roleType) continue;
-
-      const key = `${rel.artist.id}_${roleType}`;
-      const prev = creditMap.get(key);
-      if (prev) {
-        prev.count++;
-      } else {
-        creditMap.set(key, {
-          name: rel.artist.name,
-          mbid: rel.artist.id,
-          role: roleType,
-          count: 1,
-        });
-      }
+      if (!rel.artist || rel.artist.id === mbid) continue;
+      const role = mapRecordingRelationType(rel.type);
+      if (role) accumulateCredit(creditMap, rel.artist, role);
     }
   }
 
-  // 빈도순 정렬
   return Array.from(creditMap.values()).sort((a, b) => b.count - a.count);
 }
 
-/**
- * MusicBrainz relationship type → 우리 앱의 역할 매핑
- */
-function mapRelationType(mbType: string): string | null {
+// ── 내부 헬퍼 ─────────────────────────────────────────────────────
+
+function accumulateCredit(
+  map: Map<string, MBCredit>,
+  artist: { id: string; name: string },
+  role: string
+) {
+  const key = `${artist.id}_${role}`;
+  const prev = map.get(key);
+  if (prev) {
+    prev.count++;
+  } else {
+    map.set(key, { name: artist.name, mbid: artist.id, role, count: 1 });
+  }
+}
+
+/** Recording 레벨 관계 타입 매핑 */
+function mapRecordingRelationType(mbType: string): string | null {
   const mapping: Record<string, string> = {
-    "producer": "producer",
+    producer: "producer",
     "co-producer": "producer",
-    "vocal": "featured",
-    "guest": "featured",
-    // 노이즈 역할(퍼포머, 악기, 믹싱, 레코딩, 리믹서 등)은 과감히 매핑 제외
-    "composer": "composer",
-    "lyricist": "lyricist",
-    "writer": "composer",
-    "arranger": "arranger",
+    "executive producer": "producer",
+    arranger: "arranger",
+    vocal: "featured",
+    guest: "featured",
+    // 노이즈 필터 (엔지니어, 악기 연주자, 믹싱 등 순수 기술직은 위성 제외)
+    // "mix", "recording", "instrument", "mastering" → null 반환으로 자동 필터
   };
   return mapping[mbType] ?? null;
+}
+
+/** Work 레벨 관계 타입 매핑 (작곡/작사 전담) */
+function mapWorkRelationType(mbType: string): string | null {
+  const mapping: Record<string, string> = {
+    composer: "composer",
+    lyricist: "lyricist",
+    writer: "composer",
+    "additional lyrics": "lyricist",
+    translator: "lyricist", // 번역 가사
+  };
+  return mapping[mbType] ?? null;
+}
+
+/** Release Group primary-type → 앱 내 타입 */
+function mapReleaseGroupType(
+  type: string
+): "Album" | "EP" | "Single" | "Other" {
+  if (type === "Album") return "Album";
+  if (type === "EP") return "EP";
+  if (type === "Single") return "Single";
+  return "Other";
 }

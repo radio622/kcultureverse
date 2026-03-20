@@ -76,6 +76,8 @@ export function buildInitialGraph(
       popularity: number;
       previewUrl: string | null;
       spotifyUrl: string | null;
+      /** 크레딧 참여 곡 수 (Phase 2에서 MusicBrainz가 채워줌). 없으면 기본 가중치 적용 */
+      creditCount?: number;
     }>;
   }>
 ): UniverseGraph {
@@ -115,7 +117,16 @@ export function buildInitialGraph(
       const edgeKey = [hub.spotifyId, sat.spotifyId].sort().join("-");
       if (!edgeSet.has(edgeKey)) {
         edgeSet.add(edgeKey);
-        edges.push([hub.spotifyId, sat.spotifyId, 0.7, "hub_satellite"]);
+
+        // 크레딧 참여 곡 수 기반 가중치 (Phase 2 MusicBrainz 크레딧 데이터 활용)
+        //   creditCount 없음: 0.35 (기본 — 같은 그룹/피처링 등)
+        //   1곡: 0.25  5곡: 0.45  10곡: 0.70  15곡+: 0.90 (핵심 프로듀서/작곡가)
+        const creditCount = sat.creditCount ?? 0;
+        const weight = creditCount > 0
+          ? Math.min(0.90, 0.20 + creditCount * 0.05)
+          : 0.35;
+
+        edges.push([hub.spotifyId, sat.spotifyId, weight, "hub_satellite"]);
       }
     }
   }

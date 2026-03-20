@@ -33,7 +33,10 @@ async function main() {
 
     try {
       const raw = fs.readFileSync(jsonPath, "utf-8");
-      const data = JSON.parse(raw) as CosmosData;
+      // raw JSON으로 파싱 (creditCount 필드 포함)
+      const data = JSON.parse(raw) as CosmosData & {
+        satellites: Array<{ creditCount?: number }>;
+      };
 
       hubData.push({
         spotifyId: hub.spotifyId,
@@ -55,6 +58,7 @@ async function main() {
           popularity: s.popularity,
           previewUrl: s.previewUrl,
           spotifyUrl: s.spotifyUrl,
+          creditCount: (s as any).creditCount, // Phase 2 MusicBrainz 크레딧 곡 수
         })),
       });
 

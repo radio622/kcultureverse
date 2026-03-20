@@ -8,7 +8,10 @@
     "start": "next start",
     "seed": "tsx scripts/seed-neo4j.ts",
     "prebake": "tsx scripts/prebake.ts",
-    "add-artist": "tsx scripts/add-artist.ts"
+    "add-artist": "tsx scripts/add-artist.ts",
+    "build-graph": "tsx scripts/build-graph.ts",
+    "compute-layout": "tsx scripts/compute-layout.ts",
+    "universe:rebuild": "tsx scripts/prebake.ts && tsx scripts/build-graph.ts && tsx scripts/compute-layout.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.2",

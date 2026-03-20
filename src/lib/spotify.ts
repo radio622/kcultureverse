@@ -4,7 +4,7 @@
  */
 
 import type { CosmosArtist, CosmosData, SatelliteNode } from './types';
-import { searchSongId, getSongCredits } from './genius';
+// Genius import 제거 — Vercel 서버 IP에서 CAPTCHA 차단 확정 (2026)
 import { searchArtistMBID, getArtistRelations, getRecordingCredits } from './musicbrainz';
 
 const SPOTIFY_API = 'https://api.spotify.com/v1';
@@ -138,7 +138,12 @@ export async function searchArtists(query: string): Promise<CosmosArtist[]> {
 
 /**
  * 아티스트 전체 데이터 조회 (From 페이지용)
- * - 아티스트 상세 + top-tracks (preview_url) + related-artists 병렬 호출
+ * - 위성 수집 레이어:
+ *   Layer 1: MusicBrainz 아티스트 관계 (그룹 멤버, 콜라보)
+ *   Layer 2: MusicBrainz 레코딩 크레딧 (프로듀서/작곡/작사 — Work 레벨 포함)
+ *   Layer 3: Fallback K-POP 추천
+ * [제거됨] Spotify top-tracks: 2024.11 이후 Development Mode에서 403 확정
+ * [제거됨] Genius: Vercel 서버 IP에서 anti-bot CAPTCHA 차단 확정
  */
 const FALLBACK_KPOP_IDS = [
   "3Nrfpe0tUJi4K4DXYWgMUX", // BTS
@@ -220,60 +225,8 @@ export async function getArtistFull(id: string): Promise<CosmosData> {
 
   const satelliteMap = new Map<string, SatelliteNode>(); // spotifyId → node (중복 방지)
 
-  // ═══════════════════════════════════════════════════════════════
-  // LAYER 1: Spotify 피처링 (곡에 함께 크레딧된 아티스트)
-  // ═══════════════════════════════════════════════════════════════
-  const tracksData = await spotifyFetch<{ tracks: (SpotifyTrack & { artists?: { id: string; name: string }[] })[] }>(
-    `/artists/${id}/top-tracks?market=KR`,
-    0
-  ).catch((err) => {
-    console.warn("[Layer 1] Top tracks fetch failed:", err);
-    return { tracks: [] };
-  });
-  const validTracks = tracksData.tracks ?? [];
-
-  // 피처링 트랙별로 곡 이름을 기록하여 관계 설명에 활용
-  const featuredTrackMap = new Map<string, string[]>(); // artistId → [곡 이름들]
-  for (const track of validTracks) {
-    if (!track.artists) continue;
-    const hasCore = track.artists.some(a => a.id === id);
-    if (!hasCore) continue;
-
-    for (const a of track.artists) {
-      if (a.id !== id) {
-        const prevTracks = featuredTrackMap.get(a.id) || [];
-        if (!prevTracks.includes(track.name)) {
-          prevTracks.push(track.name);
-          featuredTrackMap.set(a.id, prevTracks);
-        }
-      }
-    }
-  }
-
-  // 피처링 가중치(곡 수) 기준 정렬
-  const sortedFeatured = Array.from(featuredTrackMap.entries())
-    .sort((a, b) => b[1].length - a[1].length)
-    .slice(0, 6); // 최대 6명
-
-  for (const [artistId, tracks] of sortedFeatured) {
-    const trackNames = tracks.slice(0, 3).join(", ");
-    const keyword = tracks.length >= 2
-      ? `피처링 ${tracks.length}곡: ${trackNames}`
-      : `피처링: ${trackNames}`;
-
-    satelliteMap.set(artistId, {
-      spotifyId: artistId,
-      name: "...",
-      imageUrl: null,
-      genres: [],
-      popularity: 0,
-      previewUrl: null,
-      previewTrackName: null,
-      spotifyUrl: `https://open.spotify.com/artist/${artistId}`,
-      relationType: "FEATURED",
-      relationKeyword: keyword,
-    });
-  }
+  // [Layer 1 제거] Spotify top-tracks — 2024.11 이후 Development Mode 403 확정
+  // MusicBrainz Layer 2에서 피처링(vocal/guest) 크레딧을 포함하여 수집합니다.
 
   // ═══════════════════════════════════════════════════════════════
   // LAYER 2: MusicBrainz 관계 (멤버, 프로듀서, 작곡가 등)
@@ -385,75 +338,8 @@ export async function getArtistFull(id: string): Promise<CosmosData> {
     }
   }
 
-  // ═══════════════════════════════════════════════════════════════
-  // LAYER 3: Genius 보조 (MusicBrainz로도 부족할 경우)
-  // ═══════════════════════════════════════════════════════════════
-  if (satelliteMap.size < 5 && validTracks.length > 0) {
-    const tracksToCheck = validTracks.slice(0, 3);
-    const writerCounts = new Map<string, { count: number; imageUrl: string | null }>();
-    const producerCounts = new Map<string, { count: number; imageUrl: string | null }>();
-
-    await Promise.all(tracksToCheck.map(async (track) => {
-      const songId = await searchSongId(track.name, core.name);
-      if (songId) {
-        const credits = await getSongCredits(songId);
-        credits?.writers?.forEach(w => {
-          if (w.name.toLowerCase() === core.name.toLowerCase()) return;
-          const prev = writerCounts.get(w.name) || { count: 0, imageUrl: w.image_url ?? null };
-          writerCounts.set(w.name, { count: prev.count + 1, imageUrl: w.image_url ?? prev.imageUrl });
-        });
-        credits?.producers?.forEach(p => {
-          if (p.name.toLowerCase() === core.name.toLowerCase()) return;
-          const prev = producerCounts.get(p.name) || { count: 0, imageUrl: p.image_url ?? null };
-          producerCounts.set(p.name, { count: prev.count + 1, imageUrl: p.image_url ?? prev.imageUrl });
-        });
-      }
-    }));
-
-    const allGenius = [
-      ...Array.from(producerCounts.entries()).map(([n, d]) => ({ name: n, count: d.count, img: d.imageUrl, type: "PRODUCER" as const, label: "프로듀서" })),
-      ...Array.from(writerCounts.entries()).map(([n, d]) => ({ name: n, count: d.count, img: d.imageUrl, type: "WRITER" as const, label: "작곡/작사" })),
-    ].filter(g => g.count >= 2) // 🚨 노이즈 방지: 최소 2곡 이상 협업자만 허용
-     .sort((a, b) => b.count - a.count).slice(0, 3);
-
-    for (const g of allGenius) {
-      if (satelliteMap.size >= 15) break;
-      const searchRes = await spotifyFetch<{ artists: { items: SpotifyArtist[] } }>(
-        `/search?type=artist&q=${encodeURIComponent(g.name)}&limit=1&market=KR`,
-        0 // 429 Fast-fail
-      ).catch(() => null);
-
-      const found = searchRes?.artists?.items?.[0];
-      if (found && found.id !== id && !satelliteMap.has(found.id)) {
-        satelliteMap.set(found.id, {
-          spotifyId: found.id,
-          name: found.name,
-          imageUrl: found.images?.[0]?.url ?? g.img ?? null,
-          genres: found.genres ?? [],
-          popularity: found.popularity ?? 0,
-          previewUrl: null,
-          previewTrackName: null,
-          spotifyUrl: found.external_urls?.spotify ?? `https://open.spotify.com/artist/${found.id}`,
-          relationType: g.type,
-          relationKeyword: g.count >= 2 ? `${g.label} (${g.count}곡)` : g.label,
-        });
-      } else if (!found) {
-        const mockId = `mb_${Date.now()}_${Math.random()}`;
-        satelliteMap.set(mockId, {
-          spotifyId: mockId,
-          name: g.name,
-          imageUrl: g.img ?? null,
-          genres: [],
-          popularity: 0,
-          previewUrl: null,
-          previewTrackName: null,
-          spotifyUrl: '#',
-          relationType: g.type,
-          relationKeyword: g.count >= 2 ? `${g.label} (${g.count}곡)` : g.label,
-        });
-      }
-    }
-  }
+  // [Layer 3 제거] Genius API — Vercel 서버 IP에서 anti-bot CAPTCHA 차단 확정 (2026)
+  // 대신 MusicBrainz Phase 2 업그레이드에서 Work 레벨(작곡/작사) 크레딧으로 완전 대체됩니다.
 
   // ═══════════════════════════════════════════════════════════════
   // LAYER 4: Fallback (여전히 부족하면 대표 K-POP 위성으로 채움)

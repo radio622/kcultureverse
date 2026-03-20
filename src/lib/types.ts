@@ -39,10 +39,36 @@ export interface AudioState {
 export interface DeepSpaceNode {
   spotifyId: string;
   name: string;           // nameKo (한글)
-  accent: string;         // 허브 고유 컬러
+  accent: string;         // 허브 고유 콜러
   x: number;              // 사전 계산된 화면 좌표 (px, 중심 기준)
   y: number;
   size: number;           // 노드 크기 (20~34px)
   canDive: boolean;       // pre-baked JSON이 있어 다이브 가능한지
   imageUrl?: string | null;
 }
+
+/**
+ * 앤범 발매일 연표 항목 (MusicBrainz Release Group 기반)
+ * public/data/releases/{spotifyId}.json 에 별도 저장
+ */
+export interface AlbumRelease {
+  title: string;
+  releaseDate: string | null;     // ISO 8601 (YYYY-MM-DD 또는 YYYY)
+  type: "Album" | "EP" | "Single" | "Other";
+  mbReleaseGroupId: string;
+  source: "musicbrainz";
+  /** Admin LLM 팩트체크 파이프라인 연동용 상태 */
+  verifyStatus: "auto" | "verified" | "corrected";
+  /** corrected 상태일 때 수정 전 원본 날짜 보존 */
+  originalDate?: string | null;
+}
+
+/** 아티스트 발매 연표 데이터 파일 (public/data/releases/{spotifyId}.json) */
+export interface ArtistDiscography {
+  spotifyId: string;
+  name: string;
+  mbid: string | null;
+  albums: AlbumRelease[];
+  lastUpdated: string;  // ISO 8601 timestamp
+}
+
