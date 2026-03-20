@@ -147,7 +147,7 @@ async function extractArtistsFromSpotify(
 
 // ── 2. iTunes API로 아티스트 메타데이터 수집 (Rate Limit 보호) ────
 const ITUNES_COUNTRIES = ["KR", "US", "JP", "AU"]; // 차단 시 다른 국가로 fallback
-const API_DELAY_MS = 3000;   // 요청 간 최소 간격 (3초 = Apple 공식 20회/분 제한 준수)
+const API_DELAY_MS = 3100;   // 요청 간 최소 간격 (3.1초 = Apple 공식 20회/분 제한보다 약간 여유있게)
 const MAX_RETRIES = 2;       // 429 시 재시도 횟수
 let lastApiCall = 0;
 
