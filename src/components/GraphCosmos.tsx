@@ -150,7 +150,6 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
   }, []);
 
   // d3 force-graph용 데이터 변환
-  // 호츠는 d3가 자유롭게 배치하도록 놓아두고 시뮬 완료 후 fitView
   const forceData = useMemo(() => ({
     nodes: Object.values(graphData.nodes).map((n) => ({ ...n })),
     links: graphData.edges.map((e) => ({
@@ -161,6 +160,24 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       label: e.label,
     })),
   }), [graphData]);
+
+  // 그래프 엔진 튜닝 (별들이 눈덩이처럼 뭉치지 않고 우주처럼 넓게 퍼지게 함)
+  useEffect(() => {
+    const fg = fgRef.current as any;
+    if (fg && fg.d3Force) {
+      // 1. 서로 거세게 밀어내도록 Charge(반발력) 대폭 증가 (기본값 -30 -> -500)
+      fg.d3Force("charge").strength(-600).distanceMax(800);
+      // 2. 링크(엣지) 길이를 확 늘려 숨통 트이게 함 (기본값 30 -> 120)
+      fg.d3Force("link").distance((link: any) => 150 - (link.weight * 50));
+      // 3. 충돌(겹침) 원천 차단 — 렌더링되는 최대 반지름(36)보다 큰 반경으로 충돌 방어망 설정
+      if (typeof window !== "undefined") {
+        const d3 = require("d3-force");
+        fg.d3Force("collide", d3.forceCollide((node: V5Node) => node.tier === 0 ? 45 : node.tier === 1 ? 30 : 20));
+      }
+      // 물리엔진 재가열(re-heat)하여 새로운 거리로 재배치 (단일 캔버스 내에서만 발생)
+      fg.d3ReheatSimulation();
+    }
+  }, [forceData]);
 
   // 런타임 시뮬레이션 후 최종 좌표를 저장하여 Fly-To 시 참조 (좌표 불일치 버그 해결)
   const simulatedNodesRef = useRef<Map<string, { x: number; y: number }>>(new Map());
