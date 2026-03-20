@@ -118,6 +118,22 @@ export default function UniversePage() {
     }
   }, [satellites, focusedIndex, handleArtistSelect, audio]);
 
+  // 브라우저 뒤로가기/앞으로가기 시 무중단 카메라 이동
+  useEffect(() => {
+    const onPopState = () => {
+      const url = new URL(window.location.href);
+      const artistId = url.searchParams.get('artist');
+      if (artistId) {
+        handleArtistSelect(artistId);
+      } else {
+        setSheetState("collapsed");
+        setFocusedId(null);
+      }
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, [handleArtistSelect]);
+
   return (
     <>
       {/* 별 배경 스타일 */}
@@ -129,7 +145,7 @@ export default function UniversePage() {
       `}</style>
 
       {/* 검색 */}
-      <FloatingSearch />
+      <FloatingSearch onSelect={handleArtistSelect} />
 
       {/* 그래프 상태 안내 */}
       {graphLoading && (

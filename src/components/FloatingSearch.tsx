@@ -28,7 +28,11 @@ function recordCall() {
   callTimestamps.push(Date.now());
 }
 
-export default function FloatingSearch() {
+interface Props {
+  onSelect?: (spotifyId: string) => void;
+}
+
+export default function FloatingSearch({ onSelect }: Props = {}) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -110,6 +114,11 @@ export default function FloatingSearch() {
     setQuery("");
     setResults([]);
 
+    if (onSelect) {
+      onSelect(spotifyId);
+      return;
+    }
+
     // pre-baked JSON이 있는지 먼저 확인 (HEAD 요청)
     try {
       const check = await fetch(`/data/hub/${spotifyId}.json`, { method: "HEAD" });
@@ -121,7 +130,7 @@ export default function FloatingSearch() {
     } catch { /* 없으면 그냥 from 페이지 */ }
 
     router.push(`/from/${spotifyId}`);
-  }, [router]);
+  }, [router, onSelect]);
 
   return (
     <>

@@ -136,6 +136,17 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
   const [highlightPath, setHighlightPath] = useState<Set<string>>(new Set());
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
   const [hoverNode, setHoverNode] = useState<string | null>(null);
+  const [dimensions, setDimensions] = useState<[number, number]>([
+    typeof window !== "undefined" ? window.innerWidth : 375,
+    typeof window !== "undefined" ? window.innerHeight : 812
+  ]);
+
+  // 창 크기 변경에 따른 뷰포트 업데이트
+  useEffect(() => {
+    const handleResize = () => setDimensions([window.innerWidth, window.innerHeight]);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // d3 force-graph용 데이터 변환
   // 호츠는 d3가 자유롭게 배치하도록 놓아두고 시뮬 완료 후 fitView
@@ -150,20 +161,41 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     })),
   }), [graphData]);
 
-  // 시뮬 완료 시: fitView
+  // 런타임 시뮬레이션 후 최종 좌표를 저장하여 Fly-To 시 참조 (좌표 불일치 버그 해결)
+  const simulatedNodesRef = useRef<Map<string, { x: number; y: number }>>(new Map());
+
+  // 시뮬 완료 시: fitView 및 최종 좌표 저장
   const handleEngineStop = useCallback(() => {
     const fg = fgRef.current as { zoomToFit?: (ms: number, padding: number) => void } | null;
     fg?.zoomToFit?.(600, 80);
-  }, []);
+
+    // 시뮬레이션 결과(forceData)의 최종 좌표를 Map에 저장
+    forceData.nodes.forEach(n => {
+      if (typeof n.x === 'number' && typeof n.y === 'number') {
+        simulatedNodesRef.current.set(n.id, { x: n.x, y: n.y });
+      }
+    });
+  }, [forceData.nodes]);
 
   // 포커스된 아티스트로 카메라 Fly-To
   useEffect(() => {
     if (!focusedId || !fgRef.current) return;
-    const node = graphData.nodes[focusedId];
-    if (node?.x === undefined || node?.y === undefined) return;
+    
+    // JSON의 원본 좌표가 아닌, 시뮬레이션 완료 후의 런타임 좌표를 사용!
+    const simNode = simulatedNodesRef.current.get(focusedId);
+    if (!simNode) {
+      // 아직 시뮬레이션 전이거나 맵에 없으면 원본 좌표 fallback
+      const node = graphData.nodes[focusedId];
+      if (node?.x === undefined || node?.y === undefined) return;
+      const fg = fgRef.current as { centerAt: (x: number, y: number, ms: number) => void; zoom: (z: number, ms: number) => void };
+      fg.centerAt(node.x, node.y, 1200);
+      fg.zoom(1.5, 1200);
+      return;
+    }
+
     const fg = fgRef.current as { centerAt: (x: number, y: number, ms: number) => void; zoom: (z: number, ms: number) => void };
-    fg.centerAt(node.x, node.y, 900);
-    fg.zoom(2.8, 900);
+    fg.centerAt(simNode.x, simNode.y, 1200); // 부드러운 이동 (1200ms)
+    fg.zoom(1.5, 1200);
   }, [focusedId, graphData.nodes]);
 
   // 노드 클릭 핸들러 (카메라 Fly-To + 바텀시트 교체 + Pathfinding)
@@ -191,10 +223,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
         fg.zoom(1.5, 600);
       }
     } else {
-      // 일반 클릭: 카메라 이동 + 아티스트 선택
-      if (node.x !== undefined && node.y !== undefined) {
-        fg.centerAt(node.x, node.y, 800);
-      }
+      // 일반 클릭: 아티스트 선택만 처리 (카메라 이동은 focusedId useEffect가 담당)
       setHighlightPath(new Set());
       setHighlightEdges(new Set());
       onArtistSelect(node.id);
@@ -211,6 +240,18 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     setHighlightEdges(new Set());
   }, []);
 
+  // ── Focus Mode: 선택된 노드 + 1-hop 이웃 ─────────────────────
+  const focusSet = useMemo(() => {
+    if (!focusedId) return null;
+    const set = new Set<string>();
+    set.add(focusedId);
+    for (const e of graphData.edges) {
+      if (e.source === focusedId) set.add(e.target);
+      else if (e.target === focusedId) set.add(e.source);
+    }
+    return set;
+  }, [focusedId, graphData.edges]);
+
   // ── LOD 기반 노드 커스텀 렌더링 ─────────────────────────────
   const paintNode = useCallback((
     node: V5Node & { x?: number; y?: number },
@@ -222,6 +263,10 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     const isHub = node.tier === 0;
     const isFocused = node.id === focusedId || highlightPath.has(node.id);
     const isHovered = node.id === hoverNode;
+
+    // Focus Mode Dimming
+    const isDimmed = focusSet && !focusSet.has(node.id);
+    ctx.globalAlpha = isDimmed ? 0.15 : 1;
 
     // LOD 레벨 결정
     const lod = globalScale < 0.6 ? "far" : globalScale < 1.8 ? "mid" : "close";
@@ -249,6 +294,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
           ? "rgba(255,255,255,0.55)"
           : "rgba(255,255,255,0.2)";
       ctx.fill();
+      ctx.globalAlpha = 1;
       return;
     }
 
@@ -288,6 +334,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
         ctx.textBaseline = "top";
         ctx.fillText(node.nameKo || node.name, x, y + radius + 4);
       }
+      ctx.globalAlpha = 1;
       return;
     }
 
@@ -343,7 +390,10 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     ctx.fillRect(x - tw / 2 - 4, y + radius + 3, tw + 8, 16);
     ctx.fillStyle = "#fff";
     ctx.fillText(label, x, y + radius + 5);
-  }, [focusedId, highlightPath, hoverNode]);
+    
+    // 복구
+    ctx.globalAlpha = 1;
+  }, [focusedId, highlightPath, hoverNode, focusSet]);
 
   // 링크 색상
   const linkColor = useCallback((link: { relation: V5EdgeRelation; source: string | { id: string }; target: string | { id: string } }) => {
@@ -351,8 +401,13 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     const tgtId = typeof link.target === "string" ? link.target : link.target.id;
     const edgeKey = [srcId, tgtId].sort().join("||");
     if (highlightEdges.has(edgeKey)) return "#fff";
+    
+    // Focus Mode Dimming
+    const isDimmed = focusSet && (!focusSet.has(srcId) || !focusSet.has(tgtId));
+    if (isDimmed) return "rgba(167,139,250,0.05)";
+    
     return EDGE_COLORS[link.relation] ?? "rgba(255,255,255,0.1)";
-  }, [highlightEdges]);
+  }, [highlightEdges, focusSet]);
 
   // 링크 폭
   const linkWidth = useCallback((link: { relation: V5EdgeRelation; source: string | { id: string }; target: string | { id: string } }) => {
@@ -389,16 +444,34 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       <ForceGraph2D
         ref={fgRef}
         graphData={forceData}
-        // 시뮬: 200 tick 후 완전 종료 → CPU 부하 해소, shadow canvas 정상 동작
+        // 시뮬레이션 런타임에 켜기: 클릭(히트테스트) 정상 동작 및 Fly-To 좌표 갱신 (선택지 B)
         cooldownTicks={200}
         onEngineStop={handleEngineStop}
         // 배경
         backgroundColor="rgba(0,0,0,0)"
-        // 노드: 기본 원형 렌더링 (shadow canvas 히트 테스트 100% 호환)
+        // 노드: 커스텀 LOD 렌더링 및 히트테스트
         nodeId="id"
-        nodeLabel={(node: V5Node) => node.nameKo || node.name}
-        nodeColor={(node: V5Node) => node.accent || (node.tier === 0 ? "#c084fc" : node.tier === 1 ? "#86efac" : "#60a5fa")}
-        nodeRelSize={6}
+        nodeCanvasObjectMode={() => "replace"}
+        nodeCanvasObject={paintNode}
+        nodePointerAreaPaint={(node: V5Node & { x?: number; y?: number }, color: string, ctx: CanvasRenderingContext2D, globalScale: number) => {
+          // Shadow Canvas용 투명 히트맵. LOD 단계별 radius와 완벽히 동기화
+          ctx.beginPath();
+          const lod = globalScale < 0.6 ? "far" : globalScale < 1.8 ? "mid" : "close";
+          const isHub = node.tier === 0;
+          let radius = 1;
+          if (lod === "far") {
+            radius = isHub ? 7 : node.tier === 1 ? 3 : 1.5;
+          } else if (lod === "mid") {
+            radius = isHub ? 22 : node.tier === 1 ? 10 : 5;
+          } else {
+            radius = isHub ? 36 : node.tier === 1 ? 24 : 14;
+          }
+          // 클릭 편의성을 위해 약간의 패딩(1.2) 부여
+          ctx.arc(node.x ?? 0, node.y ?? 0, radius * 1.2, 0, 2 * Math.PI);
+          ctx.fillStyle = color;
+          ctx.fill();
+        }}
+        // 기본 렌더링 로직 제거
         nodeVal={(node: V5Node) => node.tier === 0 ? 12 : node.tier === 1 ? 4 : 1}
         // 링크: 단순화 (파티클/방향 화살표 제거 → shadow canvas 부하 최소화)
         linkColor={() => "rgba(167,139,250,0.15)"}
@@ -415,8 +488,8 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
           }
         }}
         // 스타일
-        width={typeof window !== "undefined" ? window.innerWidth : 375}
-        height={typeof window !== "undefined" ? window.innerHeight : 812}
+        width={dimensions[0]}
+        height={dimensions[1]}
       />
     </div>
   );
