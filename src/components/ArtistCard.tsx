@@ -7,10 +7,11 @@ import type { CosmosArtist } from "@/lib/types";
 interface Props {
   artist: CosmosArtist;
   isActive: boolean;
+  onTap: () => void;
   onDive: () => void;
 }
 
-export default function ArtistCard({ artist, isActive, onDive }: Props) {
+export default function ArtistCard({ artist, isActive, onTap, onDive }: Props) {
   const [imgError, setImgError] = useState(false);
   const displayGenres = artist.genres.slice(0, 2);
   const initial       = artist.name.charAt(0).toUpperCase();
@@ -26,6 +27,7 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
   return (
     <div
       className="glass-card"
+      onClick={onTap}
       style={{
         width: 170,
         padding: "10px",
@@ -42,6 +44,7 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
         transform: isActive ? "translateY(-4px) scale(1.01)" : "translateY(0) scale(1)",
         position: "relative",
         overflow: "hidden",
+        cursor: "pointer",
       }}
     >
       {/* ── 활성 시 상단 강조 줄 ───────────────────── */}
@@ -243,7 +246,7 @@ export default function ArtistCard({ artist, isActive, onDive }: Props) {
 
       {/* ── Dive Into 버튼 ────────────────────────────── */}
       <button
-        onClick={onDive}
+        onClick={(e) => { e.stopPropagation(); onDive(); }}
         style={{
           width: "100%",
           padding: "7px 0",

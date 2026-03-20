@@ -77,14 +77,18 @@ export default function CosmosClient({
   // ── 우주 push-up (바텀시트가 올라올 때 덜 밀려올라가게 축소) ────
   const cosmosShift = sheetState === "expanded" ? -50 : sheetState === "peek" ? -36 : 0;
 
-  // ── 포커스 핸들러 ──────────────────────────────────────────
+   // ── 포커스 핸들러 ────────────────────────────────────
+  // 카드 스크롤 시에는 포커스만 변경 (음악 재생 안 함)
+  const handleSatelliteFocus = useCallback((index: number) => {
+    setFocusedIndex(index);
+  }, []);
+
   const handleFocus = useCallback(
     (index: number | null) => {
       setFocusedIndex(index);
 
-      // ── 코어 클릭 ──────────────────────────────────────────
+      // ── 코어 클릭 ──────────────────────────────────────
       if (index === null) {
-        // 무조건 코어 음악 재생 (최초 진입 시 아무도 포커스되지 않은 상태에서 클릭하는 경우 포함)
         if (data.core.previewUrl) {
           audio.play(data.core.previewUrl, data.core.previewTrackName || data.core.name, data.core.spotifyId);
         } else {
@@ -96,8 +100,6 @@ export default function CosmosClient({
               }
             });
         }
-
-        // 바텀시트 동작: 코어가 이미 활성 상태였다면 토글, 아니면 단순히 펼침
         if (focusedIndex === null) {
           setSheetState(prev => prev === "expanded" ? "collapsed" : "expanded");
         } else {
@@ -106,11 +108,10 @@ export default function CosmosClient({
         return;
       }
 
-      // ── 위성 클릭 ─────────────────────────────────────────
+      // ── 위성 클릭 (코스모스 노드 클릭시에만 음악 재생) ─────────
       const satellite = data.satellites[index];
       if (!satellite) return;
 
-      // 1) 즉시 음악 재생 (사용자 인터랙션이 있는 동안 → autoplay 허용)
       if (satellite.previewUrl) {
         audio.play(satellite.previewUrl, satellite.previewTrackName || satellite.name, satellite.spotifyId);
       } else {
@@ -128,6 +129,29 @@ export default function CosmosClient({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [data, audio]
   );
+
+  // ── 위성 카드 탭 (데크에서 카드 클릭시) — 음악 재생/정지 토글 ──
+  const handleCardTap = useCallback((index: number) => {
+    const satellite = data.satellites[index];
+    if (!satellite) return;
+
+    // 현재 재생 중인 곡과 같으면 정지
+    if (audio.isPlaying && audio.currentArtistId === satellite.spotifyId) {
+      audio.stop();
+      return;
+    }
+
+    // 새 곡 재생
+    if (satellite.previewUrl) {
+      audio.play(satellite.previewUrl, satellite.previewTrackName || satellite.name, satellite.spotifyId);
+    } else {
+      fetch(`/api/spotify/preview?name=${encodeURIComponent(satellite.name)}`)
+        .then(r => r.json())
+        .then(p => {
+          if (p.previewUrl) audio.play(p.previewUrl, p.trackName || satellite.name, satellite.spotifyId);
+        });
+    }
+  }, [data, audio]);
 
   const handleDive = useCallback((spotifyId: string) => {
     window.location.href = `/from/${spotifyId}`;
@@ -313,7 +337,8 @@ export default function CosmosClient({
           <ResonanceDeck
             satellites={data.satellites}
             focusedIndex={focusedIndex}
-            onSnap={handleFocus}
+            onSnap={handleSatelliteFocus}
+            onCardTap={handleCardTap}
             onDive={handleDive}
             isVisible={sheetState === "expanded"}
           />

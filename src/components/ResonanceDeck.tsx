@@ -8,6 +8,7 @@ interface Props {
   satellites: CosmosArtist[];
   focusedIndex: number | null;
   onSnap: (index: number) => void;
+  onCardTap: (index: number) => void;
   onDive: (spotifyId: string) => void;
   isVisible: boolean;
 }
@@ -16,6 +17,7 @@ export default function ResonanceDeck({
   satellites,
   focusedIndex,
   onSnap,
+  onCardTap,
   onDive,
   isVisible,
 }: Props) {
@@ -78,6 +80,7 @@ export default function ResonanceDeck({
           <ArtistCard
             artist={satellite}
             isActive={focusedIndex === i}
+            onTap={() => onCardTap(i)}
             onDive={() => onDive(satellite.spotifyId)}
           />
         </div>

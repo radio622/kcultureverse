@@ -145,58 +145,100 @@ async function extractArtistsFromSpotify(
   });
 }
 
-// ── 2. iTunes API로 아티스트 메타데이터 수집 ─────────────────────
+// ── 2. iTunes API로 아티스트 메타데이터 수집 (Rate Limit 보호) ────
+const ITUNES_COUNTRIES = ["KR", "US", "JP", "AU"]; // 차단 시 다른 국가로 fallback
+const API_DELAY_MS = 1500;   // 요청 간 최소 간격 (1.5초)
+const MAX_RETRIES = 2;       // 429 시 재시도 횟수
+let lastApiCall = 0;
+
+// Rate-limited fetch wrapper
+async function rateLimitedFetch(url: string): Promise<Response | null> {
+  const now = Date.now();
+  const elapsed = now - lastApiCall;
+  if (elapsed < API_DELAY_MS) {
+    await sleep(API_DELAY_MS - elapsed);
+  }
+  lastApiCall = Date.now();
+
+  for (let retry = 0; retry <= MAX_RETRIES; retry++) {
+    try {
+      const res = await fetch(url, {
+        headers: { Accept: "application/json" },
+        signal: AbortSignal.timeout(10000),
+      });
+
+      if (res.ok) return res;
+
+      if (res.status === 429 || res.status === 403) {
+        // Rate limited → 지수적 백오프 후 재시도
+        const backoff = (retry + 1) * 3000; // 3초, 6초
+        console.log(`      ⏳ Rate limited (${res.status}), ${backoff / 1000}초 대기 후 재시도...`);
+        await sleep(backoff);
+        continue;
+      }
+
+      return null; // 다른 에러
+    } catch {
+      return null;
+    }
+  }
+  return null;
+}
+
 async function fetchArtistMetadata(
   nameOrId: string,
   spotifyId: string
 ): Promise<GraphNode | null> {
-  try {
-    // iTunes에서 아티스트 검색
-    const query = encodeURIComponent(nameOrId || spotifyId);
-    const url = `https://itunes.apple.com/search?term=${query}&entity=musicArtist&country=KR&limit=1`;
-    const res = await fetch(url);
-    if (!res.ok) return null;
+  const searchName = nameOrId || spotifyId;
 
-    const data = (await res.json()) as any;
-    const artist = data.results?.[0];
+  for (const country of ITUNES_COUNTRIES) {
+    const query = encodeURIComponent(searchName);
 
-    if (!artist) return null;
+    // 곡 검색 (이미지 + 미리듣기 + 장르를 한번에 가져옴)
+    const songUrl = `https://itunes.apple.com/search?term=${query}&entity=song&country=${country}&limit=5&attribute=artistTerm`;
+    const songRes = await rateLimitedFetch(songUrl);
+    if (!songRes) continue;
 
-    // 아티스트의 곡 검색 (미리듣기 URL + 장르 추출)
-    const songUrl = `https://itunes.apple.com/search?term=${encodeURIComponent(
-      artist.artistName
-    )}&entity=song&country=KR&limit=5`;
-    const songRes = await fetch(songUrl);
     const songData = (await songRes.json()) as any;
     const songs = songData.results || [];
+    if (songs.length === 0) continue;
 
-    const previewUrl = songs[0]?.previewUrl || null;
-    const previewTrackName = songs[0]?.trackName || null;
+    // 아티스트명 유사성 체크
+    const nameLower = searchName.toLowerCase().replace(/[\s\-_]/g, "");
+    const matching = songs.filter((s: any) => {
+      const a = (s.artistName || "").toLowerCase().replace(/[\s\-_]/g, "");
+      return a.includes(nameLower) || nameLower.includes(a);
+    });
+    const useSongs = matching.length > 0 ? matching : songs;
+
+    const previewUrl = useSongs[0]?.previewUrl || null;
+    const previewTrackName = useSongs[0]?.trackName || null;
     const genres = [
       ...new Set(
-        songs
+        useSongs
           .map((s: any) => s.primaryGenreName)
           .filter((g: string) => g && g !== "Music")
       ),
     ] as string[];
 
-    // 아티스트 이미지
-    const imageUrl = (artist.artworkUrl100 || "")
-      .replace("100x100", "400x400")
-      || null;
+    const imageUrl =
+      useSongs[0]?.artworkUrl100?.replace("100x100", "400x400") || null;
+    const resolvedName = useSongs[0]?.artistName || searchName;
 
-    return {
-      name: artist.artistName,
-      nameKo: artist.artistName,
-      image: imageUrl || null,
-      genres,
-      popularity: 50, // iTunes는 인기도를 제공하지 않으므로 기본값
-      previewUrl,
-      spotifyUrl: `https://open.spotify.com/artist/${spotifyId}`,
-    };
-  } catch {
-    return null;
+    if (imageUrl) {
+      return {
+        name: resolvedName,
+        nameKo: resolvedName,
+        image: imageUrl,
+        genres,
+        popularity: 50,
+        previewUrl,
+        spotifyUrl: `https://open.spotify.com/artist/${spotifyId}`,
+      };
+    }
   }
+
+  return null;
 }
 
 // ── 3. Spotify ID로 아티스트 이름 찾기 (기존 캐시 스캔) ──────────
