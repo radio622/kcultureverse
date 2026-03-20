@@ -88,10 +88,14 @@ export default function CosmosClient({
   const handleSatelliteFocus = useCallback((index: number) => {
     setFocusedIndex(index);
     if (swipeTimeoutRef.current) window.clearTimeout(swipeTimeoutRef.current);
-    
+
+    const satellite = data.satellites[index];
+    if (!satellite) return;
+
+    // ✨ 즉각 아티스트 이름 표시 (fetch 대기 전에 MiniPlayer에 바로 반영)
+    audio.announce(satellite.name, satellite.spotifyId);
+
     swipeTimeoutRef.current = window.setTimeout(() => {
-      const satellite = data.satellites[index];
-      if (!satellite) return;
       if (satellite.previewUrl) {
         audio.play(satellite.previewUrl, satellite.previewTrackName || satellite.name, satellite.spotifyId);
       } else {
@@ -99,6 +103,7 @@ export default function CosmosClient({
           .then(r => r.json())
           .then(p => {
             if (p.previewUrl) audio.play(p.previewUrl, p.trackName || satellite.name, satellite.spotifyId);
+            // previewUrl 없으면 이름은 이미 announce로 표시됨 — 음악만 못 나오는 상태 유지
           });
       }
     }, 250);

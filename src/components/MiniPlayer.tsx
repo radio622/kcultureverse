@@ -47,6 +47,12 @@ export default function MiniPlayer({
       style={{
         padding: "0 20px",
         cursor: sheetState === "peek" ? "pointer" : "default",
+        borderBottom: sheetState === "expanded" ? "1px solid rgba(167,139,250,0.12)" : "none",
+        background: (isPlaying && sheetState === "expanded")
+          ? "rgba(167,139,250,0.06)"
+          : "transparent",
+        transition: "background 0.3s ease",
+        marginBottom: sheetState === "expanded" ? 4 : 0,
       }}
     >
       {/* ── 트랙 정보 + 컨트롤 ─────────────────────────── */}

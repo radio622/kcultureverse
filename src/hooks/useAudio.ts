@@ -91,10 +91,23 @@ export function useAudio() {
     }
   }, [fadeOut, fadeIn]);
 
+  // ── Optimistic announce: fetch 대기 중에도 즉각 아티스트 이름 표시 ──
+  // previewUrl이 없어 fetch를 해야 할 때, fetch 시작과 동시에 호출.
+  // play()가 나중에 호출되면 실제 트랙명으로 덮어쓰임.
+  const announce = useCallback((artistName: string, artistId: string) => {
+    setState((prev) => ({
+      ...prev,
+      currentTrackName: artistName,
+      currentArtistId: artistId,
+      isPlaying: true,
+      progress: 0,
+    }));
+  }, []);
+
   const stop = useCallback(() => {
     if (!audioRef.current) return;
     fadeOut(audioRef.current, 400).then(() => {
-      setState((prev) => ({ ...prev, isPlaying: false, progress: 0 }));
+      setState((prev) => ({ ...prev, isPlaying: false, currentTrackName: null, currentArtistId: null, progress: 0 }));
     });
   }, [fadeOut]);
 
@@ -137,6 +150,7 @@ export function useAudio() {
   return {
     play,
     stop,
+    announce,
     isPlaying: state.isPlaying,
     currentTrackName: state.currentTrackName,
     currentArtistId: state.currentArtistId,
