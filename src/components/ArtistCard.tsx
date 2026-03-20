@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { CosmosArtist } from "@/lib/types";
 
@@ -13,10 +13,32 @@ interface Props {
 
 export default function ArtistCard({ artist, isActive, onTap, onDive }: Props) {
   const [imgError, setImgError] = useState(false);
+  // Self-healing: imageUrl이 없으면 브라우저에서 직접 iTunes API fetch (Vercel IP 차단 회피)
+  const [resolvedImageUrl, setResolvedImageUrl] = useState<string | null>(artist.imageUrl ?? null);
+
+  useEffect(() => {
+    if (resolvedImageUrl || imgError || !artist.name) return;
+    let cancelled = false;
+
+    fetch(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(artist.name)}&entity=musicArtist&limit=1`,
+      { signal: AbortSignal.timeout(5000) }
+    )
+      .then((r) => r.json())
+      .then((data) => {
+        if (cancelled) return;
+        const url = data.results?.[0]?.artworkUrl100?.replace("100x100bb", "400x400bb");
+        if (url) setResolvedImageUrl(url);
+      })
+      .catch(() => {});
+
+    return () => { cancelled = true; };
+  }, [artist.name, resolvedImageUrl, imgError]);
+
   const displayGenres = artist.genres.slice(0, 2);
   const initial       = artist.name.charAt(0).toUpperCase();
   const hasPreview    = !!artist.previewUrl;
-  const showImage     = !!artist.imageUrl && !imgError;
+  const showImage     = !!resolvedImageUrl && !imgError;
 
   // 이름 기반 고유 색상
   const hue = (artist.name.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0) * 47) % 360;
@@ -71,7 +93,7 @@ export default function ArtistCard({ artist, isActive, onTap, onDive }: Props) {
       >
         {showImage ? (
           <Image
-            src={artist.imageUrl!}
+            src={resolvedImageUrl!}
             alt={artist.name}
             fill
             style={{ objectFit: "cover" }}

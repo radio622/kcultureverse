@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { CosmosArtist } from "@/lib/types";
 
@@ -14,6 +14,28 @@ interface Props {
 
 export default function CosmosNode({ artist, size, isCore, isFocused, onClick }: Props) {
   const [imgError, setImgError] = useState(false);
+  // Self-healing: imageUrl이 없으면 브라우저에서 직접 iTunes API fetch (Vercel IP 차단 회피)
+  const [resolvedImageUrl, setResolvedImageUrl] = useState<string | null>(artist.imageUrl ?? null);
+
+  useEffect(() => {
+    // 이미 이미지가 있거나 에러가 났으면 스킵
+    if (resolvedImageUrl || imgError || !artist.name) return;
+    let cancelled = false;
+
+    fetch(
+      `https://itunes.apple.com/search?term=${encodeURIComponent(artist.name)}&entity=musicArtist&limit=1`,
+      { signal: AbortSignal.timeout(5000) }
+    )
+      .then((r) => r.json())
+      .then((data) => {
+        if (cancelled) return;
+        const url = data.results?.[0]?.artworkUrl100?.replace("100x100bb", "400x400bb");
+        if (url) setResolvedImageUrl(url);
+      })
+      .catch(() => {}); // 조용한 실패 — 이니셜 fallback 유지
+
+    return () => { cancelled = true; };
+  }, [artist.name, resolvedImageUrl, imgError]);
 
   const glowColor = isCore
     ? "0 0 24px var(--accent-glow), 0 0 48px var(--accent-glow)"
@@ -22,7 +44,7 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
     : "0 0 8px rgba(167, 139, 250, 0.15)";
 
   const initial = artist.name.charAt(0).toUpperCase();
-  const showImage = !!artist.imageUrl && !imgError;
+  const showImage = !!resolvedImageUrl && !imgError;
 
   // 이니셜 배경 색상을 아티스트 이름 기반으로 결정 (같은 아티스트는 항상 같은 색)
   const hue = (artist.name.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0) * 47) % 360;
@@ -71,7 +93,7 @@ export default function CosmosNode({ artist, size, isCore, isFocused, onClick }:
       >
         {showImage ? (
           <Image
-            src={artist.imageUrl!}
+            src={resolvedImageUrl!}
             alt={artist.name}
             width={size}
             height={size}
