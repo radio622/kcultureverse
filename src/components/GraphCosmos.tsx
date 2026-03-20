@@ -125,8 +125,9 @@ function getCachedImage(url: string): HTMLImageElement | null {
   const img = new window.Image();
   img.crossOrigin = "anonymous";
   img.src = url;
-  img.onload = () => imageCache.set(url, img);
-  return null; // 첫 요청 시 null, 로드 완료 후 캐시에서 꺼냄
+  // 로딩 전이라도 중복 요청을 막기 위해 맵에 즉시 등록
+  imageCache.set(url, img);
+  return img; // 호출 단에서 img.complete 로 렌더 여부 결정
 }
 
 // ── 메인 컴포넌트 ───────────────────────────────────────────────
@@ -226,9 +227,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       // 일반 클릭: 아티스트 선택만 처리 (카메라 이동은 focusedId useEffect가 담당)
       setHighlightPath(new Set());
       setHighlightEdges(new Set());
-      onArtistSelect(node.id);
-      // URL을 조용히 변경 — /universe 경로 유지! (/from/ID 로 변경하면 Next.js가 페이지 전환함)
-      window.history.replaceState(null, "", `/universe?artist=${node.id}`);
+      onArtistSelect(node.id); // page.tsx의 handleArtistSelect가 state push를 전담
     }
   }, [pathfindingFrom, graphData, onArtistSelect]);
 

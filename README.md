@@ -341,8 +341,8 @@ Pre-bake 파이프라인 (로컬, 오프라인):
 | 2026-03-20 | MusicBrainz v2 엔진: 62명 허브 아티스트 전체 크레딧 갱신 + Universe Rebuild 완료 |
 | 2026-03-20 | **V5 Universe 아키텍처 도입:** 단일 Canvas SPA로 전환 |
 | 2026-03-20 | `react-force-graph-2d` + `universe-graph-v5.json` 75노드/282엣지 초기 빌드 |
-| 2026-03-20 | **Shadow Canvas 히트 테스트 디버깅:** onNodeClick 정상 동작 확인 |
-| 2026-03-20 | **history.pushState 페이지 전환 버그 수정:** `/universe` 경로 내 URL 유지 |
+| 2026-03-20 | **Shadow Canvas 히트 테스트 디버깅:** onNodeClick 초당 4500회 메모리 누수 픽스 |
+| 2026-03-20 | **V5 Phase 1-5 통합 완료:** 무중단 카메라 Fly-To(Easing 1.2s) + LOD 렌더링 + Focus Mode(1-hop 안개 효과) + 뒤로가기 동기화 |
 
 ---
 
