@@ -277,6 +277,13 @@ export default function Cosmos({ data, focusedIndex, onCoreTap, onSatelliteTap, 
         }
       }
 
+      // ── 카메라 좌표를 Torus 범위로 래핑 ──────────────────────
+      // 코어/위성도 심우주 노드처럼 한 방향으로 계속 스크롤하면 다시 돌아오도록
+      const halfW = UNIVERSE_W / 2;
+      const halfH = UNIVERSE_H / 2;
+      camera.current.x = ((camera.current.x + halfW) % UNIVERSE_W + UNIVERSE_W) % UNIVERSE_W - halfW;
+      camera.current.y = ((camera.current.y + halfH) % UNIVERSE_H + UNIVERSE_H) % UNIVERSE_H - halfH;
+
       const camX = camera.current.x;
       const camY = camera.current.y;
 
