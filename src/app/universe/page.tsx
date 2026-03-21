@@ -525,8 +525,8 @@ export default function UniversePage() {
                              item.relation === "WRITER"     ? "작곡/작사" :
                              item.relation === "SHARED_WRITER"   ? "공유 작가" :
                              item.relation === "SHARED_PRODUCER" ? "공유 작가" :
-                             item.relation === "INDIRECT"   ? "간접연결" :
-                             item.relation === "GENRE_OVERLAP"? "비슷한파동" : "관련"}
+                             item.relation === "INDIRECT"   ? "딥스캔 교류" :
+                             item.relation === "GENRE_OVERLAP"? "장르/테마" : "관련"}
                           </span>
                           {item.label && <span className="relation-desc">{item.label}</span>}
                         </div>
