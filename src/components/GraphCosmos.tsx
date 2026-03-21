@@ -27,6 +27,7 @@ interface Props {
   graphData: UniverseGraphV5;
   onArtistSelect: (nodeId: string) => void;
   focusedId: string | null;
+  onBackgroundClick?: () => void;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -128,7 +129,7 @@ function dijkstra(
 }
 
 // ── 메인 컴포넌트 ─────────────────────────────────────────────
-export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Props) {
+export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBackgroundClick }: Props) {
   const fgRef = useRef<Record<string, unknown>>(null);
 
   // 뷰포트 크기
@@ -645,6 +646,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
             setPathfindingFrom(null);
             setHighlightPath(new Set());
             setHighlightEdges(new Set());
+          }
+          if (onBackgroundClick) {
+            onBackgroundClick();
           }
         }}
         onZoom={({ k }: { k: number }) => setCurrentScale(k)}

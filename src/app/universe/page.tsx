@@ -122,6 +122,13 @@ export default function UniversePage() {
   const detailCache = useRef<Record<string, V5DetailNode>>({});
   const detailLoaded = useRef(false);
 
+  // 마우스 스크롤(드래그) 지원용 Refs
+  const warpListRef = useRef<HTMLUListElement>(null);
+  const isDraggingCard = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+  const hasDragged = useRef(false);
+
   // ── UI 상태 ──────────────────────────────────────────────────
   const [sheetState, setSheetState] = useState<SheetState>("collapsed");
   const [focusedId, setFocusedId] = useState<string | null>(null);
@@ -415,6 +422,7 @@ export default function UniversePage() {
               graphData={graphData}
               onArtistSelect={handleArtistSelect}
               focusedId={focusedId}
+              onBackgroundClick={() => setSheetState("collapsed")}
             />
           </Suspense>
         )}
@@ -449,12 +457,50 @@ export default function UniversePage() {
                   연결된 아티스트가 없습니다
                 </div>
               ) : (
-                <ul className="warp-list">
+                <ul
+                  className="warp-list"
+                  ref={warpListRef}
+                  onMouseDown={(e: React.MouseEvent) => {
+                    isDraggingCard.current = true;
+                    hasDragged.current = false;
+                    if (warpListRef.current) {
+                      startX.current = e.pageX - warpListRef.current.offsetLeft;
+                      scrollLeft.current = warpListRef.current.scrollLeft;
+                      warpListRef.current.style.scrollSnapType = 'none'; // 드래그 부드럽게
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    isDraggingCard.current = false;
+                    if (warpListRef.current) warpListRef.current.style.scrollSnapType = 'x mandatory';
+                  }}
+                  onMouseUp={() => {
+                    isDraggingCard.current = false;
+                    if (warpListRef.current) warpListRef.current.style.scrollSnapType = 'x mandatory';
+                  }}
+                  onMouseMove={(e: React.MouseEvent) => {
+                    if (!isDraggingCard.current) return;
+                    e.preventDefault();
+                    if (warpListRef.current) {
+                      const x = e.pageX - warpListRef.current.offsetLeft;
+                      const walk = (x - startX.current) * 1.5;
+                      if (Math.abs(walk) > 5) hasDragged.current = true;
+                      warpListRef.current.scrollLeft = scrollLeft.current - walk;
+                    }
+                  }}
+                >
                   {hop1List.map((item) => (
                     <li
                       key={item.id}
                       className="warp-item"
-                      onClick={() => handleHopItemTap(item.id)}
+                      onClick={(e) => {
+                        // 드래그 중이었다면 엉뚱한 노드 워프 방지
+                        if (hasDragged.current) {
+                          e.stopPropagation();
+                          e.preventDefault();
+                          return;
+                        }
+                        handleHopItemTap(item.id);
+                      }}
                       role="button"
                       aria-label={`${item.nameKo}로 이동`}
                     >
