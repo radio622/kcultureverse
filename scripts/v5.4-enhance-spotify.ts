@@ -152,9 +152,9 @@ async function main() {
   console.log(`  Phase 1: hub-artists 매칭 ${hubMatched}명\n`);
 
   // Phase 2: Spotify Batch (가능하면)
-  const spotifyIds = data.nodes
+  const spotifyIds: string[] = data.nodes
     .filter((n: any) => n.spotifyId && !n.spotifyId.startsWith("not_found_"))
-    .map((n: any) => n.spotifyId);
+    .map((n: any) => n.spotifyId as string);
   
   console.log("  Phase 2: Spotify Batch 시도...");
   const spotifyData = await trySpotifyBatch([...new Set(spotifyIds)]);
@@ -185,11 +185,20 @@ async function main() {
     
     console.log(`    [${i + 1}/${data.nodes.length}] ${node.name}...`);
     
-    // iTunes 아티스트 검색
-    const itunesArtist = await searchITunes(node.name);
+    // iTunes 아티스트 검색 (영문명 → 한국어명 순으로 시도)
+    let itunesArtist = await searchITunes(node.name);
+    let searchName = node.name;
+    
+    // 영문명 실패 + 한국어명이 다르면 한국어명으로 재시도
+    if (!itunesArtist && node.nameKo && node.nameKo !== node.name) {
+      itunesArtist = await searchITunes(node.nameKo);
+      searchName = node.nameKo;
+      await sleep(200);
+    }
+    
     if (itunesArtist) {
       // iTunes 곡 검색 (프리뷰 + 고화질 아트워크)
-      const preview = await getITunesPreview(node.name);
+      const preview = await getITunesPreview(searchName);
       
       if (!node.image && preview.artworkUrl) {
         node.image = preview.artworkUrl;
@@ -202,7 +211,7 @@ async function main() {
         node.genres = [itunesArtist.primaryGenreName];
       }
       itunesUpdated++;
-      console.log(`      ✅ iTunes 매칭! ${preview.artworkUrl ? "이미지" : ""} ${preview.previewUrl ? "+ 프리뷰" : ""}`);
+      console.log(`      ✅ iTunes 매칭! ${preview.artworkUrl ? "이미지" : ""} ${preview.previewUrl ? "+ 프리뷰" : ""} (${searchName})`);
     } else {
       console.log(`      ⚠️ iTunes 검색 결과 없음`);
     }

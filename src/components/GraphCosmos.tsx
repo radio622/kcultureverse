@@ -535,6 +535,19 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     return () => cancelAnimationFrame(frame);
   }, [focusChangedAt]);
 
+  // ── 초기 로드 시 자동 zoomToFit ─────────────────────────────
+  useEffect(() => {
+    if (!graphData || graphData.nodeCount === 0) return;
+    const fg = fgRef.current as { zoomToFit?: (ms: number, padding: number) => void } | null;
+    if (!fg?.zoomToFit) return;
+    
+    // 약간의 딜레이 후 전체 우주가 화면에 맞게 줌
+    const timer = setTimeout(() => {
+      fg.zoomToFit?.(1000, 80); // 1초 애니메이션, 패딩 80px
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [graphData?.nodeCount]); // graphData 로드 시 1회만
+
   // ── ZoomToFit ───────────────────────────────────────────────
   const handleZoomToFit = useCallback(() => {
     const fg = fgRef.current as { zoomToFit?: (ms: number, padding: number) => void } | null;
