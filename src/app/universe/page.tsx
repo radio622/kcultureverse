@@ -239,15 +239,25 @@ export default function UniversePage() {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
-  // ── Task 4-2: 아티스트 선택 → 1촌 워프 포탈 구성 ─────────────
   const handleArtistSelect = useCallback((nodeId: string) => {
     if (!graphData) return;
     const node = graphData.nodes[nodeId];
     if (!node) return;
 
-    setFocusedId(nodeId);
+    let isSameNode = false;
+    setFocusedId((prev) => {
+      if (prev === nodeId) isSameNode = true;
+      return nodeId;
+    });
+
+    // 이미 선택된 별을 다시 클릭하면 바텀시트 토글 (올리기/내리기)
+    if (isSameNode) {
+      setSheetState((s) => (s === "expanded" ? "peek" : "expanded"));
+      return;
+    }
+
     setFocusedArtistName(node.nameKo || node.name);
-    setSheetState("peek");
+    setSheetState("expanded");
 
     // 탐험 발자국 업데이트
     setBreadcrumbs(prev => {
@@ -313,7 +323,6 @@ export default function UniversePage() {
         @keyframes cosmosP {
           0%, 100% { opacity: 0.4; }
           50%       { opacity: 1; }
-        }
         }
         /* Swipeable Card Deck */
         .warp-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 16px 20px 32px; margin: 0; list-style: none; scrollbar-width: none; -ms-overflow-style: none; }
