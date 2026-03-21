@@ -674,6 +674,10 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
       <div style={{
         position: "absolute", bottom: 100, right: 16, zIndex: 80,
         display: "flex", flexDirection: "column", gap: 8,
+        transition: "opacity 0.3s, transform 0.3s",
+        opacity: sheetState === "expanded" ? 0 : 1,
+        pointerEvents: sheetState === "expanded" ? "none" : "auto",
+        transform: sheetState === "expanded" ? "translateY(10px)" : "translateY(0)"
       }}>
         {/* ZoomToFit — 전체보기 */}
         <button
@@ -704,6 +708,10 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
         borderRadius: 12, padding: "8px 12px",
         backdropFilter: "blur(12px)",
         display: "flex", flexDirection: "column", gap: 4,
+        transition: "opacity 0.3s, transform 0.3s",
+        opacity: sheetState === "expanded" ? 0 : 1,
+        pointerEvents: sheetState === "expanded" ? "none" : "auto",
+        transform: sheetState === "expanded" ? "translateY(10px)" : "translateY(0)"
       }}>
         {([
           { color: "#86efac", label: "그룹 멤버" },
