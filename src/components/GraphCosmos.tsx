@@ -264,7 +264,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     const isOnPath = highlightPath.has(node.id);
     const isHovered = node.id === hoverNode;
     // degree 기반 연속 스케일 — "거대별"인지를 판단하는 것이 아니라 자연스러운 크기 비례
-    const isMajor = deg >= 15; // 연결이 많은 별 (이름 표시 등에만 사용)
+    const isMajor = deg >= 4; // 연결이 일정 수준 이상인 별 (이름 표시 등에만 사용)
 
     // Star Bloom 보간: 0~BLOOM_DURATION_MS
     const bloomProgress = focusChangedAt > 0
