@@ -279,7 +279,7 @@ async function main() {
     nodes.set(mbid, {
       id: mbid, name: raw.name, nameKo: raw.name,
       image: raw.image, genres: raw.genres || [], popularity: raw.popularity || 0,
-      previewUrl: null, previewTrackName: null,
+      previewUrl: raw.previewUrl || null, previewTrackName: raw.previewTrackName || null,
       spotifyUrl: raw.spotifyId ? `https://open.spotify.com/artist/${raw.spotifyId}` : null,
       degree: 0, accent: null,
     });
