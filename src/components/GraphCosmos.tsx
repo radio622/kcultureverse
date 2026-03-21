@@ -150,6 +150,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
   // Hover
   const [hoverNode, setHoverNode] = useState<string | null>(null);
 
+  // 줌 레벨 추적 (Phase 2B: 줌 반응형 엣지)
+  const [currentScale, setCurrentScale] = useState(1);
+
   // Star Bloom 애니메이션 타임스탬프
   const [focusChangedAt, setFocusChangedAt] = useState<number>(0);
   const [prevFocusedId, setPrevFocusedId] = useState<string | null>(null);
@@ -460,9 +463,10 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       return EDGE_COLORS[link.relation] ?? "rgba(255,255,255,0.4)";
     }
 
-    // 기본 모드 (첫 화면): 선을 유령선 레이어로 낮춤
-    return "rgba(255,255,255,0.03)";
-  }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes]);
+    // 기본 모드 (첫 화면): 줌에 따라 투명도 조절
+    const alpha = Math.max(0.01, Math.min(0.08, currentScale * 0.06));
+    return `rgba(255,255,255,${alpha.toFixed(3)})`;
+  }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes, currentScale]);
 
   // ── 링크 폭 ────────────────────────────────────────────────
   const linkWidth = useCallback((link: {
@@ -481,9 +485,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
       return (EDGE_WIDTH[link.relation] ?? 0.5) * 1.5; // 강조 시 선 굵기 1.5배 증가
     }
     
-    // 기본 모드 (안 보일 정도로 얇게)
-    return 0.15;
-  }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes]);
+    // 기본 모드: 줌에 따라 두께 조절 (줌아웃→얇게, 줌인→약간 두껍게)
+    return Math.max(0.05, 0.15 * Math.min(currentScale, 2));
+  }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes, currentScale]);
 
   // ── nodePointerAreaPaint: LOD에 맞는 히트영역 (degree 비례) ─
   const nodePointerAreaPaint = useCallback((
@@ -544,6 +548,14 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
     // 약간의 딜레이 후 전체 우주가 화면에 맞게 줌
     const timer = setTimeout(() => {
       fg.zoomToFit?.(1000, 80); // 1초 애니메이션, 패딩 80px
+      // Phase 2A: 최소 줌 보장 (거대별 클릭 가능)
+      setTimeout(() => {
+        const fgAny = fgRef.current as any;
+        const curZoom = fgAny?.zoom?.();
+        if (curZoom && curZoom < 0.4) {
+          fgAny.zoom(0.4, 600);
+        }
+      }, 1200);
     }, 300);
     return () => clearTimeout(timer);
   }, [graphData?.nodeCount]); // graphData 로드 시 1회만
@@ -635,6 +647,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
             setHighlightEdges(new Set());
           }
         }}
+        onZoom={({ k }: { k: number }) => setCurrentScale(k)}
         width={dimensions[0]}
         height={dimensions[1]}
       />

@@ -85,6 +85,8 @@ interface HopItem {
   label?: string;
   degree: number;
   accent?: string;
+  previewUrl?: string | null;
+  previewTrackName?: string | null;
 }
 
 // GraphCosmos용 통합 그래프 타입
@@ -267,6 +269,7 @@ export default function UniversePage() {
         const nbId = e.source === nodeId ? e.target : e.source;
         const nb = graphData.nodes[nbId];
         if (!nb) return null;
+        const nbDetail = detailCache.current[nbId];
         return {
           id: nbId,
           name: nb.name,
@@ -277,6 +280,8 @@ export default function UniversePage() {
           degree: nb.degree ?? 0,
           accent: nb.accent,
           weight: e.weight,
+          previewUrl: nbDetail?.previewUrl ?? null,
+          previewTrackName: nbDetail?.previewTrackName ?? null,
         };
       })
       .filter(Boolean)
@@ -285,10 +290,14 @@ export default function UniversePage() {
 
     setHop1List(neighbors);
 
-    // 오디오 프리뷰 (detail에서)
+    // 오디오 프리뷰 자동 재생 (detail에서)
     const detail = detailCache.current[nodeId];
     if (detail?.previewUrl) {
-      audio.announce(nodeId, node.nameKo || node.name);
+      audio.play(
+        detail.previewUrl,
+        detail.previewTrackName || node.nameKo || node.name,
+        nodeId
+      );
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graphData, audio]);
@@ -322,6 +331,11 @@ export default function UniversePage() {
         .rel-SHARED_PRODUCER { background: rgba(96,165,250,0.10);  color: rgba(96,165,250,0.7); }
         .rel-INDIRECT   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
         .rel-GENRE_OVERLAP { background: rgba(167,139,250,0.08); color: rgba(167,139,250,0.5); }
+        /* Warp item play button */
+        .warp-play { background: none; border: 1px solid rgba(167,139,250,0.2); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: rgba(167,139,250,0.6); font-size: 10px; flex-shrink: 0; transition: all 0.2s; padding: 0; }
+        .warp-play:hover { background: rgba(167,139,250,0.15); color: #c8b4ff; border-color: rgba(167,139,250,0.4); }
+        .warp-play.playing { background: rgba(167,139,250,0.2); color: #c8b4ff; border-color: rgba(167,139,250,0.5); animation: wpulse 1.5s ease-in-out infinite; }
+        @keyframes wpulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(167,139,250,0.3); } 50% { box-shadow: 0 0 0 4px rgba(167,139,250,0); } }
         /* Breadcrumbs */
         .breadcrumbs-bar { position: fixed; top: 12px; left: 56px; right: 16px; z-index: 90; display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); padding: 4px 8px; }
         .breadcrumbs-bar::-webkit-scrollbar { display: none; }
@@ -458,6 +472,24 @@ export default function UniversePage() {
                           {item.label}
                         </div>
                       </div>
+
+                      {/* 재생 버튼 */}
+                      {item.previewUrl && (
+                        <button
+                          className={`warp-play${audio.currentArtistId === item.id && audio.isPlaying ? " playing" : ""}`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            audio.play(
+                              item.previewUrl!,
+                              item.previewTrackName || item.nameKo || item.name,
+                              item.id
+                            );
+                          }}
+                          aria-label={`${item.nameKo} 미리듣기`}
+                        >
+                          {audio.currentArtistId === item.id && audio.isPlaying ? "⏸" : "▶"}
+                        </button>
+                      )}
 
                       {/* 워프 화살표 */}
                       <div className="warp-fly">→</div>
