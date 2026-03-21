@@ -10,7 +10,8 @@
 
 import fs from "fs";
 import path from "path";
-import csv from "csv-parse/sync";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const csv = require("csv-parse/sync");
 
 const CACHE_DIR = path.join(process.cwd(), "scripts", ".cache", "v5.4");
 const GRAPH_FILE = path.join(CACHE_DIR, "organic-graph.json");
