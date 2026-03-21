@@ -581,6 +581,37 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId }: Pr
         nodeVal={(node: V5Node) => Math.max(2, Math.sqrt(node.degree ?? 0) * 3)}
         linkColor={linkColor}
         linkWidth={linkWidth}
+        linkCanvasObjectMode={() => focusedId ? "after" : undefined}
+        linkCanvasObject={(link: any, ctx: CanvasRenderingContext2D, globalScale: number) => {
+          // 포커스 모드 + 줌이 충분할 때만 레이블 표시
+          if (!focusedId || globalScale < 0.6) return;
+          
+          const srcId = typeof link.source === "string" ? link.source : link.source?.id;
+          const tgtId = typeof link.target === "string" ? link.target : link.target?.id;
+          const key = [srcId, tgtId].sort().join("||");
+          
+          // 포커스된 아티스트의 1촌 엣지만
+          if (!focusEdgeKeys.has(key)) return;
+          
+          const src = typeof link.source === "string" ? null : link.source;
+          const tgt = typeof link.target === "string" ? null : link.target;
+          if (!src?.x || !tgt?.x) return;
+          
+          const midX = (src.x + tgt.x) / 2;
+          const midY = (src.y + tgt.y) / 2;
+          
+          const label = link.label || "";
+          if (!label) return;
+          
+          const fontSize = Math.max(3, 10 / globalScale);
+          ctx.save();
+          ctx.font = `${fontSize}px -apple-system, sans-serif`;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = "rgba(200,180,255,0.4)";
+          ctx.fillText(label, midX, midY - fontSize * 0.8);
+          ctx.restore();
+        }}
         onNodeClick={(node: V5Node) => {
           console.log("🟢 NODE CLICKED:", node.id, node.nameKo || node.name);
           handleNodeClick(node);
