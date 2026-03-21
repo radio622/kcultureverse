@@ -126,6 +126,9 @@ export default function UniversePage() {
   const [focusedArtistName, setFocusedArtistName] = useState<string>("");
   const [hop1List, setHop1List] = useState<HopItem[]>([]);
 
+  // ── 탐험 발자국 (Breadcrumbs) ─────────────────────────────────
+  const [breadcrumbs, setBreadcrumbs] = useState<{id: string; name: string}[]>([]);
+
   // ── Task 4-1: 3분할 로딩 파이프라인 ──────────────────────────
   useEffect(() => {
     let cancelled = false;
@@ -244,6 +247,16 @@ export default function UniversePage() {
     setFocusedArtistName(node.nameKo || node.name);
     setSheetState("peek");
 
+    // 탐험 발자국 업데이트
+    setBreadcrumbs(prev => {
+      // 이미 경로에 있으면 그 지점까지 되돌리기 (뒤로가기 효과)
+      const existIdx = prev.findIndex(b => b.id === nodeId);
+      if (existIdx >= 0) return prev.slice(0, existIdx + 1);
+      // 새 발자국 추가 (최대 10개)
+      const next = [...prev, { id: nodeId, name: node.nameKo || node.name }];
+      return next.length > 10 ? next.slice(-10) : next;
+    });
+
     // URL 업데이트 (페이지 전환 없음)
     window.history.replaceState(null, "", `/universe?artist=${nodeId}`);
 
@@ -305,8 +318,17 @@ export default function UniversePage() {
         .rel-FEATURED   { background: rgba(192,132,252,0.15); color: #c084fc; }
         .rel-PRODUCER   { background: rgba(96,165,250,0.15);  color: #60a5fa; }
         .rel-WRITER     { background: rgba(251,191,36,0.15);  color: #fbbf24; }
+        .rel-SHARED_WRITER   { background: rgba(251,191,36,0.10);  color: rgba(251,191,36,0.7); }
+        .rel-SHARED_PRODUCER { background: rgba(96,165,250,0.10);  color: rgba(96,165,250,0.7); }
         .rel-INDIRECT   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
         .rel-GENRE_OVERLAP { background: rgba(167,139,250,0.08); color: rgba(167,139,250,0.5); }
+        /* Breadcrumbs */
+        .breadcrumbs-bar { position: fixed; top: 12px; left: 56px; right: 16px; z-index: 90; display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); padding: 4px 8px; }
+        .breadcrumbs-bar::-webkit-scrollbar { display: none; }
+        .bc-crumb { flex-shrink: 0; padding: 4px 10px; border-radius: 14px; font-size: 11px; font-weight: 500; color: rgba(200,180,255,0.5); background: rgba(167,139,250,0.08); border: 1px solid rgba(167,139,250,0.12); cursor: pointer; transition: all 0.2s; white-space: nowrap; backdrop-filter: blur(8px); }
+        .bc-crumb:hover { background: rgba(167,139,250,0.18); color: rgba(200,180,255,0.8); }
+        .bc-crumb.active { background: rgba(167,139,250,0.2); color: #c8b4ff; border-color: rgba(167,139,250,0.4); }
+        .bc-arrow { color: rgba(167,139,250,0.25); font-size: 10px; flex-shrink: 0; }
         .universe-focused-header { padding: 12px 16px 4px; }
         .universe-focused-name  { font-size: 18px; font-weight: 700; color: #fff; }
         .universe-hop-count     { font-size: 12px; color: rgba(167,139,250,0.7); margin-top: 2px; }
@@ -316,6 +338,24 @@ export default function UniversePage() {
 
       {/* 검색 */}
       <FloatingSearch onSelect={handleArtistSelect} />
+
+      {/* 탐험 발자국 (Breadcrumbs) */}
+      {breadcrumbs.length > 1 && (
+        <div className="breadcrumbs-bar">
+          {breadcrumbs.map((bc, i) => (
+            <>
+              {i > 0 && <span key={`arrow-${i}`} className="bc-arrow">›</span>}
+              <button
+                key={bc.id}
+                className={`bc-crumb${i === breadcrumbs.length - 1 ? " active" : ""}`}
+                onClick={() => handleArtistSelect(bc.id)}
+              >
+                {bc.name}
+              </button>
+            </>
+          ))}
+        </div>
+      )}
 
       {/* 로딩 상태 안내 */}
       {loadingPhase === "layout" && (
@@ -411,6 +451,8 @@ export default function UniversePage() {
                              item.relation === "FEATURED"   ? "피처링" :
                              item.relation === "PRODUCER"   ? "프로듀서" :
                              item.relation === "WRITER"     ? "작곡/작사" :
+                             item.relation === "SHARED_WRITER"   ? "공유 작사/작곡가" :
+                             item.relation === "SHARED_PRODUCER" ? "공유 프로듀서" :
                              item.relation === "INDIRECT"   ? "간접" : "관련"}
                           </span>
                           {item.label}
