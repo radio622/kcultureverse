@@ -21568,6 +21568,90 @@
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/82/53/d5/8253d5aa-43ce-5103-1eb7-b81b39a1d73e/mzaf_18061176206684687594.plus.aac.p.m4a",
       "previewTrackName": "그녀와의 이별",
       "label": "Him Entertainment"
+    },
+    {
+      "mbid": "c1ceefe2-db42-4d17-b7fc-47c01dc5b0c8",
+      "name": "산울림",
+      "nameKo": "산울림",
+      "depth": 0,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c9/dd/21/c9dd21e6-04a5-98ef-6369-ef7332221a5e/8809259907762.jpg/600x600bb.jpg",
+      "genres": [
+        "록"
+      ],
+      "popularity": 60,
+      "spotifyId": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8e/6f/53/8e6f5394-b684-4e4b-8a78-34a07349fa3d/mzaf_16866145403667526963.plus.aac.p.m4a",
+      "previewTrackName": "너의 의미"
+    },
+    {
+      "mbid": "583ceac1-556a-445c-b522-c2b4f9f9272e",
+      "name": "김창완",
+      "nameKo": "김창완",
+      "depth": 0,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8b/76/a6/8b76a6dc-8dc9-812a-e725-278ce2f9b761/1963621194062.jpg/600x600bb.jpg",
+      "genres": [
+        "포크"
+      ],
+      "popularity": 60,
+      "spotifyId": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fc/bf/04/fcbf040d-bc42-8af6-b48d-1a42cd3ee0f5/mzaf_2657629934260210666.plus.aac.p.m4a",
+      "previewTrackName": "이 말을 하고 싶었어요"
+    },
+    {
+      "mbid": "00f8947b-3895-4453-afea-ef14e5d69203",
+      "name": "조덕배",
+      "nameKo": "조덕배",
+      "depth": 0,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music/30/dd/25/mzi.uhgrdkpa.jpg/600x600bb.jpg",
+      "genres": [
+        "팝"
+      ],
+      "popularity": 60,
+      "spotifyId": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/23/54/2a/23542a79-d6b0-f7c6-abec-bf1588dc858c/mzaf_16812475124588230171.plus.aac.p.m4a",
+      "previewTrackName": "그대 내맘에 들어오며는"
+    },
+    {
+      "mbid": "3776aa71-d6e1-43de-b484-da6d68b0f072",
+      "name": "양희은",
+      "nameKo": "양희은",
+      "depth": 0,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/6d/c1/a8/6dc1a8c9-b127-07c5-fd5e-f69b7b87b6c8/8809435815270_Cover.jpg/600x600bb.jpg",
+      "genres": [
+        "R&B/소울"
+      ],
+      "popularity": 60,
+      "spotifyId": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c2/5f/12/c25f1255-3d39-9b72-a921-4ed2c96336ab/mzaf_8071090477019110190.plus.aac.p.m4a",
+      "previewTrackName": "엄마가 딸에게 (Original ver.) [feat. 김규리]"
+    },
+    {
+      "mbid": "70ed3eab-4f1a-4602-980b-56d5946b9e8b",
+      "name": "오혁",
+      "nameKo": "오혁",
+      "depth": 0,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/55/3d/05/553d05f5-4355-9247-771e-4728537f237c/8809484110463_Cover.jpg/600x600bb.jpg",
+      "genres": [
+        "OST"
+      ],
+      "popularity": 60,
+      "spotifyId": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ac/33/ce/ac33ce6e-0fd5-0bfe-cb19-32caeee7286c/mzaf_7358823655478647683.plus.aac.p.m4a",
+      "previewTrackName": "소녀 (From \"응답하라 1988, Pt. 3\")"
+    },
+    {
+      "mbid": "e4595119-358f-489e-8842-404c03b06be6",
+      "name": "이성경",
+      "nameKo": "이성경",
+      "depth": 0,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d9/c4/fb/d9c4fb2d-315b-6af0-580c-409d14e185ae/cover-.jpg/600x600bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 60,
+      "spotifyId": null,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/23/f0/5b/23f05bea-2543-d95b-eb28-496255be5d04/mzaf_17019926385573021604.plus.aac.p.m4a",
+      "previewTrackName": "러브"
     }
   ],
   "edges": [
@@ -35689,6 +35773,111 @@
       "weight": 0.7,
       "relation": "FEATURED",
       "label": "피처링: All For You"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "c1ceefe2-db42-4d17-b7fc-47c01dc5b0c8",
+      "weight": 0.8,
+      "relation": "COVER",
+      "label": "리메이크: 너의 의미"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "583ceac1-556a-445c-b522-c2b4f9f9272e",
+      "weight": 0.8,
+      "relation": "FEATURED",
+      "label": "피처링: 너의 의미"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "00f8947b-3895-4453-afea-ef14e5d69203",
+      "weight": 0.7,
+      "relation": "COVER",
+      "label": "리메이크: 나의 옛날이야기"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "3776aa71-d6e1-43de-b484-da6d68b0f072",
+      "weight": 0.7,
+      "relation": "COVER",
+      "label": "리메이크: 가을 아침"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "b2ba5630-972f-400b-9c6b-e98bcf4137a8",
+      "weight": 0.8,
+      "relation": "COVER",
+      "label": "리메이크: 잊어야 한다는 마음으로"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "f1f59272-c86f-4227-80b6-dc5ad4c2c76a",
+      "weight": 0.9,
+      "relation": "FEATURED",
+      "label": "콜라보: 소격동"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "70ed3eab-4f1a-4602-980b-56d5946b9e8b",
+      "weight": 0.8,
+      "relation": "FEATURED",
+      "label": "콜라보: 사랑이 잘"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "a1eba844-8c3e-4c61-8f54-f5e086b58c01",
+      "weight": 0.9,
+      "relation": "FEATURED",
+      "label": "피처링: 낙하"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "810a4fc2-e368-4212-8494-a3934be6973d",
+      "weight": 0.7,
+      "relation": "WRITER",
+      "label": "작사/작곡: 낙하, 프라이"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "f93ddcf2-71cb-4b7e-b0b7-deef217c8c82",
+      "weight": 0.7,
+      "relation": "FEATURED",
+      "label": "콜라보: 정바비 참여"
+    },
+    {
+      "source": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "target": "bdbd48f5-abf3-4a4f-9a21-4551dbc3fde9",
+      "weight": 0.6,
+      "relation": "INDIRECT",
+      "label": "인디 씬 프로듀싱 참여"
+    },
+    {
+      "source": "810a4fc2-e368-4212-8494-a3934be6973d",
+      "target": "f2ba0737-6707-4051-935d-26b6cfb4d2a3",
+      "weight": 0.8,
+      "relation": "PRODUCER",
+      "label": "이찬혁비디오: 우산"
+    },
+    {
+      "source": "810a4fc2-e368-4212-8494-a3934be6973d",
+      "target": "e4595119-358f-489e-8842-404c03b06be6",
+      "weight": 0.7,
+      "relation": "PRODUCER",
+      "label": "이찬혁비디오"
+    },
+    {
+      "source": "810a4fc2-e368-4212-8494-a3934be6973d",
+      "target": "6e5c33a2-ec34-48ff-8869-d231554186c6",
+      "weight": 0.7,
+      "relation": "PRODUCER",
+      "label": "이찬혁비디오 리메이크 원곡자"
+    },
+    {
+      "source": "a1eba844-8c3e-4c61-8f54-f5e086b58c01",
+      "target": "6e5c33a2-ec34-48ff-8869-d231554186c6",
+      "weight": 0.6,
+      "relation": "INDIRECT",
+      "label": "음악적 영감 교류"
     }
   ],
   "visited": [

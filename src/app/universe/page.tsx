@@ -314,15 +314,18 @@ export default function UniversePage() {
           0%, 100% { opacity: 0.4; }
           50%       { opacity: 1; }
         }
-        .warp-list { list-style: none; margin: 0; padding: 8px 16px 24px; overflow-y: auto; flex: 1 1 0; min-height: 0; }
-        .warp-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; cursor: pointer; transition: background 0.15s; margin-bottom: 4px; }
-        .warp-item:hover, .warp-item:active { background: rgba(167,139,250,0.12); }
-        .warp-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: rgba(167,139,250,0.15); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; color: rgba(200,180,255,0.8); overflow: hidden; }
-        .warp-info { flex: 1; min-width: 0; }
-        .warp-name { font-size: 14px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .warp-label { font-size: 11px; color: rgba(167,139,250,0.75); margin-top: 2px; }
-        .warp-fly { font-size: 11px; color: rgba(200,180,255,0.4); flex-shrink: 0; }
-        .relation-pill { display: inline-block; padding: 1px 7px; border-radius: 20px; font-size: 10px; font-weight: 500; margin-right: 4px; }
+        }
+        /* Swipeable Card Deck */
+        .warp-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 16px 20px 32px; margin: 0; list-style: none; scrollbar-width: none; -ms-overflow-style: none; }
+        .warp-list::-webkit-scrollbar { display: none; }
+        .warp-item { position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 130px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px 12px; text-align: center; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); scroll-snap-align: center; scroll-margin-inline: 20px; }
+        .warp-item:hover, .warp-item:active { background: rgba(255,255,255,0.07); border-color: rgba(167,139,250,0.4); transform: translateY(-2px); }
+        .warp-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: rgba(167,139,250,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: rgba(200,180,255,0.8); overflow: hidden; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .warp-info { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; flex: 1; min-height: 80px; }
+        .warp-name { font-size: 14px; font-weight: 600; color: #fff; width: 100%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; }
+        .warp-label { font-size: 11px; color: rgba(167,139,250,0.75); display: flex; flex-direction: column; gap: 4px; align-items: center; width: 100%; }
+        .warp-label span.relation-desc { display: block; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.8; }
+        .relation-pill { display: inline-flex; align-items: center; justify-content: center; padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: 600; letter-spacing: -0.2px; }
         .rel-SAME_GROUP { background: rgba(134,239,172,0.15); color: #86efac; }
         .rel-FEATURED   { background: rgba(192,132,252,0.15); color: #c084fc; }
         .rel-PRODUCER   { background: rgba(96,165,250,0.15);  color: #60a5fa; }
@@ -331,11 +334,11 @@ export default function UniversePage() {
         .rel-SHARED_PRODUCER { background: rgba(96,165,250,0.10);  color: rgba(96,165,250,0.7); }
         .rel-INDIRECT   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
         .rel-GENRE_OVERLAP { background: rgba(167,139,250,0.08); color: rgba(167,139,250,0.5); }
-        /* Warp item play button */
-        .warp-play { background: none; border: 1px solid rgba(167,139,250,0.2); border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: rgba(167,139,250,0.6); font-size: 10px; flex-shrink: 0; transition: all 0.2s; padding: 0; }
-        .warp-play:hover { background: rgba(167,139,250,0.15); color: #c8b4ff; border-color: rgba(167,139,250,0.4); }
-        .warp-play.playing { background: rgba(167,139,250,0.2); color: #c8b4ff; border-color: rgba(167,139,250,0.5); animation: wpulse 1.5s ease-in-out infinite; }
-        @keyframes wpulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(167,139,250,0.3); } 50% { box-shadow: 0 0 0 4px rgba(167,139,250,0); } }
+        /* Warp item play button (Card version) */
+        .warp-play { width: 100%; height: 32px; margin-top: auto; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; color: #d8b4ff; font-size: 12px; font-weight: 600; transition: all 0.2s; padding: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .warp-play:hover { background: rgba(167,139,250,0.2); color: #fff; border-color: rgba(167,139,250,0.5); }
+        .warp-play.playing { background: rgba(167,139,250,0.25); color: #fff; border-color: rgba(167,139,250,0.6); animation: wpulse 2s ease-in-out infinite; box-shadow: 0 0 10px rgba(167,139,250,0.3); }
+        @keyframes wpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
         /* Breadcrumbs */
         .breadcrumbs-bar { position: fixed; top: 12px; left: 56px; right: 16px; z-index: 90; display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); padding: 4px 8px; }
         .breadcrumbs-bar::-webkit-scrollbar { display: none; }
@@ -465,34 +468,42 @@ export default function UniversePage() {
                              item.relation === "FEATURED"   ? "피처링" :
                              item.relation === "PRODUCER"   ? "프로듀서" :
                              item.relation === "WRITER"     ? "작곡/작사" :
-                             item.relation === "SHARED_WRITER"   ? "공유 작사/작곡가" :
-                             item.relation === "SHARED_PRODUCER" ? "공유 프로듀서" :
-                             item.relation === "INDIRECT"   ? "간접" : "관련"}
+                             item.relation === "SHARED_WRITER"   ? "공유 작가" :
+                             item.relation === "SHARED_PRODUCER" ? "공유 작가" :
+                             item.relation === "INDIRECT"   ? "간접연결" :
+                             item.relation === "GENRE_OVERLAP"? "비슷한파동" : "관련"}
                           </span>
-                          {item.label}
+                          {item.label && <span className="relation-desc">{item.label}</span>}
                         </div>
                       </div>
 
-                      {/* 재생 버튼 */}
-                      {item.previewUrl && (
+                      {/* 재생 버튼 (Play) - 카드 하단 강조 */}
+                      {item.previewUrl ? (
                         <button
                           className={`warp-play${audio.currentArtistId === item.id && audio.isPlaying ? " playing" : ""}`}
                           onClick={(e) => {
                             e.stopPropagation();
-                            audio.play(
-                              item.previewUrl!,
-                              item.previewTrackName || item.nameKo || item.name,
-                              item.id
-                            );
+                            if (audio.currentArtistId === item.id && audio.isPlaying) {
+                              audio.stop();
+                            } else {
+                              audio.play(
+                                item.previewUrl!,
+                                item.previewTrackName || item.nameKo || item.name,
+                                item.id
+                              );
+                            }
                           }}
                           aria-label={`${item.nameKo} 미리듣기`}
                         >
-                          {audio.currentArtistId === item.id && audio.isPlaying ? "⏸" : "▶"}
+                          {audio.currentArtistId === item.id && audio.isPlaying ? (
+                            <><span>⏸</span> 일시정지</>
+                          ) : (
+                            <><span>▶</span> 미리듣기</>
+                          )}
                         </button>
+                      ) : (
+                        <div style={{ width: '100%', height: 32, marginTop: 'auto' }} /> /* 공간 유지용 */
                       )}
-
-                      {/* 워프 화살표 */}
-                      <div className="warp-fly">→</div>
                     </li>
                   ))}
                 </ul>
