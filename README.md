@@ -1,80 +1,77 @@
 # 🌌 K-Culture Universe
 
-> K-culture 아티스트들의 관계망을 별자리처럼 탐험하는 인터랙티브 음악 우주 지도
+> K-Culture 아티스트들의 관계망을 별자리처럼 탐험하는 인터랙티브 음악 우주 지도
 
-**[frompangyo.vercel.app](https://frompangyo.vercel.app)** — 바로 우주로 이동
-
----
-
-## 개요
-
-BTS, BLACKPINK, NewJeans 등 **372명의 K-culture 아티스트**와 그들의 협업·피처링·작곡·프로듀서 관계를 별자리 우주로 시각화합니다.
-
-- 노드 클릭 → 해당 아티스트 Fly-To + 1촌(직접 연결) 목록 표시
-- 1촌 목록 탭 → 해당 아티스트로 워프
-- 우클릭 두 노드 → 두 아티스트 간 최단 경로 탐색
-- 전체 보기 (⊞), 색상 범례
+**[frompangyo.vercel.app/universe](https://frompangyo.vercel.app/universe)** — 바로 우주로 이동
 
 ---
 
-## 아키텍처 (V5.3)
+## 🚀 V6.5 르네상스 업데이트 하이라이트
+- **초거대 우주 팽창**: 기존 372명에서 **989명의 아티스트(노드)**와 **2,633가닥의 연결선(엣지)**으로 규모 3배 증가
+- **외로운 별 소개팅 시스템**: 장르 기반(Genre Overlap) 우연의 일치 네트워크를 통해 외톨이 노드 비율을 40%에서 5.8%로 축소, 밀도 높은 성단(Cluster) 시각화 달성
+- **PC & Mobile 듀얼 UI 최적화**: 바텀시트 연관 아티스트 뷰 리뉴얼 (컴팩트 사이즈 지정, 마우스 드래그 가로 스와이프 기능, 배경 화면 터치 시 자동 접힘 기능)
+- **음악 미리듣기(Preview) 100% 복구**: iTunes API를 결합한 하이브리드 파이프라인으로 1,000명에 육박하는 아티스트 음악 재생 지원
+
+---
+
+## 🧬 아키텍처 (V6.5)
 
 ### 핵심 원칙
-
 | 원칙 | 설명 |
 |------|------|
-| **Zero Runtime Physics** | 모든 노드 좌표는 빌드 타임에 d3-force로 계산. 브라우저에서 물리엔진 완전 OFF |
-| **3분할 데이터 로딩** | layout(42KB) 즉시 → edges(73KB) 백그라운드 → details(71KB) 후속 |
-| **LOD 3단계 렌더링** | Far(점) / Mid(원+이름) / Close(사진+정보) |
-| **BFS 포커스** | 클릭 시 1촌/2촌 BFS, Hairball 방지(top 15 엣지만) |
-| **MusicBrainz 우선** | Spotify API 403 제한 → MusicBrainz 오픈 DB로 크레딧 수집 |
-
-### 그래프 데이터
-
-```
-public/data/
-  v5-layout.json    — 좌표 + tier (42KB, 즉시 로드)
-  v5-edges.json     — 관계 엣지 (73KB, 백그라운드)
-  v5-details.json   — 이미지/장르/미리듣기 (71KB, 후속)
-  hub/              — 허브 아티스트별 위성 데이터 (62개 JSON)
-  releases/         — 앨범 발매일 데이터 (MusicBrainz)
-```
+| **Zero Runtime Physics** | 모든 노드 좌표는 빌드 타임에 d3-force로 스태틱 렌더링. 디바이스 발열 완벽 차단 |
+| **3분할 데이터 로딩** | layout(124KB) 즉시 → edges(429KB) 백그라운드 → details(295KB) 후속 |
+| **LOD 3단계 렌더링** | Far(점) / Mid(거대별 인플루언서 폰트 노출) / Close(상세 정보 및 렌더링) |
+| **API 이중 스파이더** | Spotify API 한계 돌파를 위해 **MusicBrainz(MBID 발급)** + **iTunes(Cover & Audio)** 결합 |
+| **중앙집중형 Audio** | 싱글톤 useAudio 훅을 통한 끊김 없는 크로스페이드(Fade in/out) 플레이어 경험 |
 
 ### 엣지 관계 유형
-
 | 색상 | 관계 | 설명 |
 |------|------|------|
 | 🟢 `#86efac` | SAME_GROUP | 같은 그룹 멤버 |
-| 🟣 `#c084fc` | FEATURED | 피처링 (최소 1곡) |
-| 🔵 `#60a5fa` | PRODUCER | 프로듀서 (2곡+) |
-| 🟡 `#fbbf24` | WRITER | 작곡·작사 (2곡+) |
-| ⚪ | GENRE_OVERLAP | 장르 유사도 기반 간접 연결 |
-
-### 노드 계층 (Tier)
-
-| Tier | 설명 | 현재 수 |
-|------|------|---------|
-| 0 (Hub) | 메인 등록 아티스트 | 62명 |
-| 1 (Direct) | SAME_GROUP / PRODUCER 직접 연결 | 160명 |
-| 2 (Indirect) | MusicBrainz 크레딧 2촌 | 150명 |
+| 🟣 `#c084fc` | FEATURED | 피처링 앨범 및 콜라보 활동 |
+| 🔵 `#60a5fa` | PRODUCER | 주요 프로듀싱 담당 |
+| 🟡 `#fbbf24` | WRITER | 작사/작곡 |
+| ⚪ | COVER / INDIRECT | 리메이크 및 간접 영감 교류 |
+| 🌫 | GENRE_OVERLAP | 딥스캔 스크립트를 통한 장르 및 플레이리스트(가요톱텐, 인디 라디오 등) 유대감 엣지 |
 
 ---
 
-## 기술 스택
+## 🛠 기술 스택
 
 | 레이어 | 기술 |
 |--------|------|
 | 프레임워크 | Next.js 16 (App Router) |
-| 렌더러 | react-force-graph-2d (Canvas) |
+| 렌더러 | react-force-graph-2d (Canvas) + framer-motion |
 | 레이아웃 계산 | d3-force (빌드 타임 오프라인) |
-| 데이터 소스 | MusicBrainz API + Spotify API + iTunes API |
-| 스타일 | Vanilla CSS (Tailwind 없음) |
+| 자동화 스크립트 | TSX (TypeScript Execute) 런타임 |
+| 데이터 소스 | MusicBrainz API + iTunes API (+ Spotify API) |
+| 스타일 | Vanilla CSS (커스텀 디자인 토큰) |
 | 배포 | Vercel |
-| 언어 | TypeScript |
 
 ---
 
-## 개발 환경 설정
+## 🧪 데이터 파이프라인 스크립트 모음
+
+우주를 팽창시키거나 빌드할 때 사용하는 관리 스크립트들입니다. 모두 `npm run` 또는 `npx tsx`로 실행 가능합니다.
+
+```bash
+# 1. 수동 / CSV 일괄 수집 (가요 톱텐, 한국락 등 수백 명 동시 주입 및 iTunes 스캔)
+npx tsx scripts/v6.4-batch-ingest-csvs.ts
+
+# 2. 딥스캔 매칭 (아이유 꽃갈피, 이찬혁비디오 등 깊은 협업망 완전 수동 하드코딩)
+npx tsx scripts/v6.3-inject-deep-relations.ts
+
+# 3. 우주 소개팅 작전 (장르가 겹치는 외톨이 노드 상호 엣지 강제 결합, Hairball 방지)
+npx tsx scripts/v6.5-socialize-lonely-stars.ts
+
+# 4. JSON 우주 파일 렌더링 및 압축 (배포 직전 필수 실행)
+npx tsx scripts/v5.4-build-universe.ts
+```
+
+---
+
+## 💻 개발 환경 설정
 
 ```bash
 # 클론
@@ -84,67 +81,15 @@ cd kcultureverse
 # 패키지 설치
 npm install
 
-# 환경변수 설정
-cp .env.example .env.local
-# SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET 입력
+# 데이터 압축 빌드
+npx tsx scripts/v5.4-build-universe.ts
 
-# 개발 서버
+# 개발 서버 실행
 npm run dev
-# → http://localhost:3000 (자동으로 /universe 이동)
+# → http://localhost:3000/universe
 ```
 
 ---
 
-## 스크립트 (데이터 파이프라인)
-
-```bash
-# 1. WRITER/PRODUCER 전곡 크레딧 크롤링 (MusicBrainz, ~3시간)
-npm run v5:crawl-writers
-
-# 2. 앨범 발매일 수집 (MusicBrainz, ~18분)
-npm run v5:prebake-disco
-
-# 3. 그래프 빌드 (위 두 작업 완료 후)
-npm run v5:build
-
-# 위 세 가지 순차 실행 (한 번에)
-npm run v5:full-gap-fix
-
-# 피처링/간접 크레딧 크롤링 (선택)
-npm run v5:crawl-credits
-
-# 허브 아티스트 CosmosData prebake
-npm run prebake
-
-# 아티스트 추가
-npm run add-artist
-```
-
----
-
-## 아티스트 추가 방법
-
-`src/data/hub-artists.ts`에 아티스트 정보 추가 후:
-
-```bash
-npm run prebake        # hub JSON 생성
-npm run v5:build       # 그래프 재빌드
-```
-
----
-
-## 환경변수
-
-```env
-SPOTIFY_CLIENT_ID=...
-SPOTIFY_CLIENT_SECRET=...
-```
-
-> Spotify API는 Client Credentials Flow만 사용 (사용자 인증 불필요).
-> **클라이언트에 절대 노출되지 않음** (서버/빌드 스크립트 전용).
-
----
-
-## 라이선스
-
-Private — K-Culture Universe Team
+## 📜 라이선스
+Private — JitiGravity K-Culture Universe Team
