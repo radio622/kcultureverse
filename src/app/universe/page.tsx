@@ -319,6 +319,53 @@ export default function UniversePage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graphData, audio]);
 
+  // ── 스와이프 시 음악 자동재생 옵저버 ──────────────────────────────────
+  useEffect(() => {
+    if (!warpListRef.current) return;
+    const list = warpListRef.current;
+    let timeoutId: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      clearTimeout(timeoutId);
+      // 스크롤이 끝난 뒤 0.4초 후 위치를 파악하여 음악 재생
+      timeoutId = setTimeout(() => {
+        if (isDraggingCard.current || sheetState !== "expanded") return;
+
+        // 리스트의 화면 중앙 X 좌표 계산
+        const listRect = list.getBoundingClientRect();
+        const listCenter = listRect.left + listRect.width / 2;
+        
+        let closestItem: HTMLElement | null = null;
+        let minDiff = Infinity;
+
+        // 가장 중앙에 가까운 warp-item 찾기
+        for (const child of Array.from(list.children)) {
+          const rect = child.getBoundingClientRect();
+          const itemCenter = rect.left + rect.width / 2;
+          const diff = Math.abs(listCenter - itemCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestItem = child as HTMLElement;
+          }
+        }
+
+        // 중앙(오차 80px 내)에 아이템이 확실히 멈춰있으면 자동 재생
+        if (closestItem && minDiff < 80) {
+          const artistId = closestItem.getAttribute("data-id");
+          const url = closestItem.getAttribute("data-url");
+          const track = closestItem.getAttribute("data-track");
+          
+          if (artistId && url && artistId !== audio.currentArtistId) {
+            audio.play(url, track || "", artistId);
+          }
+        }
+      }, 400); 
+    };
+
+    list.addEventListener("scroll", handleScroll, { passive: true });
+    return () => list.removeEventListener("scroll", handleScroll);
+  }, [sheetState, audio]);
+
   // 1촌 워프 포탈 탭 → Fly-To
   const handleHopItemTap = useCallback((id: string) => {
     handleArtistSelect(id);
@@ -365,8 +412,6 @@ export default function UniversePage() {
         .universe-focused-header { padding: 12px 16px 4px; }
         .universe-focused-name  { font-size: 18px; font-weight: 700; color: #fff; }
         .universe-hop-count     { font-size: 12px; color: rgba(167,139,250,0.7); margin-top: 2px; }
-        .canvas-dim { transition: filter 0.3s, opacity 0.3s; }
-        .canvas-dim.dimmed { filter: blur(2px); opacity: 0.6; }
       `}</style>
 
       {/* 검색 */}
@@ -413,9 +458,7 @@ export default function UniversePage() {
       )}
 
       {/* 🌌 Canvas 우주 (절대 언마운트 안 됨) */}
-      <div className={`canvas-dim${sheetState === "expanded" ? " dimmed" : ""}`}
-        style={{ position: "absolute", inset: 0 }}
-      >
+      <div style={{ position: "absolute", inset: 0 }}>
         {graphData && (
           <Suspense fallback={null}>
             <GraphCosmos
@@ -423,6 +466,7 @@ export default function UniversePage() {
               onArtistSelect={handleArtistSelect}
               focusedId={focusedId}
               onBackgroundClick={() => setSheetState("collapsed")}
+              sheetState={sheetState}
             />
           </Suspense>
         )}
@@ -492,6 +536,9 @@ export default function UniversePage() {
                     <li
                       key={item.id}
                       className="warp-item"
+                      data-id={item.id}
+                      data-url={item.previewUrl || ""}
+                      data-track={item.previewTrackName || item.nameKo || item.name}
                       onClick={(e) => {
                         // 드래그 중이었다면 엉뚱한 노드 워프 방지
                         if (hasDragged.current) {

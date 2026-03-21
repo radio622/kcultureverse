@@ -32,6 +32,7 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
 
   // ── 터치 드래그로 상태 전환 ────────────────────────────────
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 터치 시 바텀시트 드래그 방지
     dragStartY.current = e.touches[0].clientY;
     isDragging.current = true;
   }, []);
@@ -56,6 +57,7 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
   // 마우스 드래그도 지원
   const mouseStartY = useRef<number>(0);
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 터치 시 바텀시트 드래그 방지
     mouseStartY.current = e.clientY;
   }, []);
   const handleMouseUp = useCallback((e: React.MouseEvent) => {
@@ -75,7 +77,7 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
       animate={{ height: getHeight() }}
       transition={{ type: "spring", stiffness: 380, damping: 36 }}
       style={{
-        touchAction: "none",
+        touchAction: "pan-x", // 가로 스크롤 허용, 세로 제스처 차단
         // collapsed일 때는 보이지 않게
         pointerEvents: state === "collapsed" ? "none" : "auto",
         overflow: "hidden",

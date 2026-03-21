@@ -28,6 +28,7 @@ interface Props {
   onArtistSelect: (nodeId: string) => void;
   focusedId: string | null;
   onBackgroundClick?: () => void;
+  sheetState?: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
@@ -129,7 +130,7 @@ function dijkstra(
 }
 
 // ── 메인 컴포넌트 ─────────────────────────────────────────────
-export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBackgroundClick }: Props) {
+export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBackgroundClick, sheetState }: Props) {
   const fgRef = useRef<Record<string, unknown>>(null);
 
   // 뷰포트 크기
@@ -211,7 +212,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
     return { hop1, hop2, focusEdgeKeys };
   }, [focusedId, adjList, graphData.nodes]);
 
-  // ── Fly-To: focusedId 변경 시 카메라 이동 ─────────────────
+  // ── Fly-To: focusedId 및 sheetState 변경 시 동적 카메라 이동 ─────────────────
   useEffect(() => {
     if (!focusedId || !fgRef.current || !graphData.nodes[focusedId]) return;
     const node = graphData.nodes[focusedId];
@@ -220,9 +221,22 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
       centerAt: (x: number, y: number, ms: number) => void;
       zoom: (z: number, ms: number) => void;
     };
-    fg.centerAt(node.x, node.y, 1200);
-    fg.zoom(1.8, 1200);
-  }, [focusedId, graphData.nodes]);
+    
+    // 모바일/PC 여부 확인
+    const isMobile = window.innerWidth <= 768;
+    
+    // 바텀 시트가 펼쳐진(expanded) 상태일 경우 시야 확보를 위해 줌아웃 & 상향 이동
+    if (sheetState === "expanded") {
+      const targetZoom = isMobile ? 0.9 : 1.3;
+      const offsetY = isMobile ? 180 : 80;
+      fg.centerAt(node.x, node.y - offsetY / targetZoom, 800);
+      fg.zoom(targetZoom, 800);
+    } else {
+      // 일반 상태 (접혀있거나 peek)
+      fg.centerAt(node.x, node.y, 800);
+      fg.zoom(isMobile ? 1.3 : 1.8, 800);
+    }
+  }, [focusedId, sheetState, graphData.nodes]);
 
   // ── 노드 클릭 핸들러 ─────────────────────────────────────
   const handleNodeClick = useCallback((node: V5Node) => {
