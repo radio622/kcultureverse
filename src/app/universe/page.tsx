@@ -262,7 +262,10 @@ export default function UniversePage() {
   const handleArtistSelect = useCallback((nodeId: string) => {
     if (!graphData) return;
     const node = graphData.nodes[nodeId];
-    if (!node) return;
+    if (!node) {
+      alert("현재 우주에 존재하지 않는 아티스트입니다. (우주 지도는 V6.5 배포 버전 기준 989명을 지원합니다)");
+      return;
+    }
 
     let isSameNode = false;
     setFocusedId((prev) => {

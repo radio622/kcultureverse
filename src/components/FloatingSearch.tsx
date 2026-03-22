@@ -43,12 +43,24 @@ export default function FloatingSearch({ onSelect }: Props = {}) {
   const inputRef = useRef<HTMLInputElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // search-index.json 로컬 인덱스 로드 (1회)
+  // v5-layout과 v5-details를 머지하여 동적 로컬 검색망 구축
   useEffect(() => {
-    fetch("/data/search-index.json")
-      .then(r => r.json())
-      .then((data: SearchEntry[]) => setLocalIndex(data))
-      .catch(() => {/* 실패해도 무시 — Spotify fallback 있음 */});
+    Promise.all([
+      fetch("/data/v5-layout.json").then((r) => r.json()),
+      fetch("/data/v5-details.json").then((r) => r.json()),
+    ])
+      .then(([layoutData, detailsData]) => {
+        const arr = Object.values(layoutData.nodes).map((n: any) => ({
+          spotifyId: n.id, // V6.5 mbid를 폼폼 호환용으로 매핑
+          name: n.nameKo || n.name,
+          imageUrl: detailsData[n.id]?.image || null,
+          genres: detailsData[n.id]?.genres || [],
+        }));
+        setLocalIndex(arr);
+      })
+      .catch(() => {
+        /* 로드 실패 무시 */
+      });
   }, []);
 
   // 패널 열릴 때 input 자동 포커스
@@ -208,6 +220,12 @@ export default function FloatingSearch({ onSelect }: Props = {}) {
             type="search"
             value={query}
             onChange={e => handleSearch(e.target.value)}
+            onKeyDown={e => {
+              if (e.key === "Enter" && results.length > 0) {
+                e.preventDefault();
+                handleSelect(results[0].spotifyId);
+              }
+            }}
             placeholder="아티스트 검색... (BTS, 아이유, 혁오...)"
             autoComplete="off"
             className="search-input"
