@@ -39,8 +39,11 @@ export interface V5Node {
    */
   name: string;
   /**
-   * 한글 공식명. 반드시 설정해야 하며, name(영문)과 동일한 값은 의미 없음.
-   * 양방향 검색(한글/영어)을 위해 FloatingSearch ALIAS_MAP에도 등록 필요.
+   * 한글 공식명. `nameKo || name` 패턴으로 메인 표시명이 결정됨.
+   * - nameKo가 있으면 → 한글이 화면 메인 표시
+   * - nameKo가 없으면 → name(영문)으로 fallback (에러는 아님)
+   * - ⚠️ 양쪽 다 채우는 것을 권장 (한글 검색 발견성 확보)
+   * - name과 동일한 값이면 의미 없음 (name="BTS", nameKo="BTS" → ❌)
    */
   nameKo: string;
   image: string | null;
