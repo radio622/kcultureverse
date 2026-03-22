@@ -114,7 +114,7 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
       </div>
 
       {/* ── 콘텐츠 영역 ────────────────────────────────────── */}
-      <div style={{ paddingTop: 14, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+      <div style={{ paddingTop: 8, overflow: "hidden", display: "flex", flexDirection: "column" }}>
         <AnimatePresence>
           {state !== "collapsed" && (
             <motion.div

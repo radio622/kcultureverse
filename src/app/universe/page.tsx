@@ -478,7 +478,7 @@ export default function UniversePage() {
           50%       { opacity: 1; }
         }
         /* Swipeable Card Deck */
-        .warp-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 16px 20px 32px; margin: 0; list-style: none; scrollbar-width: none; -ms-overflow-style: none; }
+        .warp-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 6px 20px 8px; margin: 0; list-style: none; scrollbar-width: none; -ms-overflow-style: none; }
         .warp-list::-webkit-scrollbar { display: none; }
         .warp-item { position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 130px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px 12px 20px; text-align: center; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); scroll-snap-align: center; scroll-margin-inline: 20px; }
         .warp-item:hover, .warp-item:active { background: rgba(255,255,255,0.07); border-color: rgba(167,139,250,0.4); transform: translateY(-2px); }
@@ -673,7 +673,7 @@ export default function UniversePage() {
               {/* Phase 4: 에디트 제안 버튼 (바텀시트 헤더 우측) */}
               <div style={{
                 display: "flex", justifyContent: "flex-end",
-                padding: "0 16px 4px", marginTop: -4,
+                padding: "0 16px", marginTop: 0,
               }}>
                 <button
                   id="edit-suggest-btn"

@@ -68,7 +68,7 @@ export default function MiniPlayer({
           ? "rgba(167,139,250,0.06)"
           : "transparent",
         transition: "background 0.3s ease",
-        marginBottom: sheetState === "expanded" ? 2 : 0,
+        marginBottom: 0,
       }}
     >
       {/* ── 트랙 정보 + 컨트롤 ─────────────────────────── */}
@@ -147,8 +147,7 @@ export default function MiniPlayer({
               cursor: "pointer",
               color: "var(--text-secondary)",
               fontSize: 16,
-              padding: "4px 8px",
-              minWidth: 44,
+              padding: "0 16px 0", marginTop: 0,             minWidth: 44,
               minHeight: 44,
               display: "flex",
               alignItems: "center",
