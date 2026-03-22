@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/verify-albums",
+      "schedule": "0 17 * * *"
+    }
+  ]
+}

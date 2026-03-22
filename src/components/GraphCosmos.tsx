@@ -43,51 +43,72 @@ const IMG_CACHE_MAX = 50;       // LRU 이미지 캐시 최대 장수
 const MAX_HOP1_EDGES = 15;      // Hairball 방지: hop1 엣지 최대 수
 
 const EDGE_COLORS: Record<V5EdgeRelation, string> = {
-  SAME_GROUP:      "#86efac",                   // 민트 — 그룹 멤버
-  FEATURED:        "#c084fc",                   // 보라 — 피처링
-  PRODUCER:        "#60a5fa",                   // 파랑 — 프로듀서
-  WRITER:          "#fbbf24",                   // 노랑 — 작곡/작사
-  COVER_OFFICIAL:  "#f97316",                   // 주황 — 공식 커버
-  COVER_FULL:      "#fb923c",                   // 연주황 — 풀 커버
-  COVER_PARTIAL:   "rgba(251,146,60,0.5)",      // 연한 주황 — 일부 커버
-  SHARED_WRITER:   "rgba(251,191,36,0.55)",     // 흐린 노랑
-  SHARED_PRODUCER: "rgba(96,165,250,0.55)",     // 흐린 파랑
-  LABEL:           "rgba(167,139,250,0.4)",     // 연보라 — 레이블
-  TV_SHOW:         "rgba(244,114,182,0.45)",    // 핑크 — 방송
-  INDIRECT:        "rgba(255,255,255,0.15)",
-  GENRE_OVERLAP:   "rgba(167,139,250,0.06)",
+  SAME_GROUP:       "#86efac",                   // 민트 — 그룹 멤버
+  FAMILY:           "#f87171",                   // 붉은 — 가족/혈연 (V7.5)
+  FEATURED:         "#c084fc",                   // 보라 — 피처링
+  PRODUCER:         "#60a5fa",                   // 파랑 — 프로듀서
+  WRITER:           "#fbbf24",                   // 노랑 — 작곡/작사
+  COVER_OFFICIAL:   "#f97316",                   // 주황 — 공식 커버
+  ALUMNI_INTIMATE:  "#34d399",                   // 에메랄드 — 동기 동창 (V7.5)
+  AGENCY_MATE:      "rgba(251,207,232,0.7)",     // 연분홍 — 같은 기획사 (V7.5)
+  COVER_FULL:       "#fb923c",                   // 연주황 — 풀 커버
+  ALUMNI:           "rgba(52,211,153,0.4)",      // 흐린 에메랄드 — 학연 (V7.5)
+  COVER_PARTIAL:    "rgba(251,146,60,0.5)",      // 연한 주황 — 일부 커버
+  SHARED_WRITER:    "rgba(251,191,36,0.55)",     // 흐린 노랑
+  SHARED_PRODUCER:  "rgba(96,165,250,0.55)",     // 흐린 파랑
+  EVENT_CO:         "rgba(129,140,248,0.5)",     // 연인디고 — 행사 동반 (V7.5)
+  NEIGHBOR:         "rgba(251,191,36,0.35)",     // 흐린 황금 — 지연 (V7.5)
+  LABEL:            "rgba(167,139,250,0.4)",     // 연보라 — 레이블
+  TV_SHOW:          "rgba(244,114,182,0.45)",    // 핑크 — 방송
+  NEWS_MENTION:     "rgba(255,255,255,0.12)",    // 흐림 — 기사 언급 (V7.5)
+  INDIRECT:         "rgba(255,255,255,0.15)",
+  GENRE_OVERLAP:    "rgba(167,139,250,0.06)",
 };
 
 const EDGE_WIDTH: Record<V5EdgeRelation, number> = {
-  SAME_GROUP:      2.5,
-  FEATURED:        2.0,
-  PRODUCER:        1.5,
-  WRITER:          1.5,
-  COVER_OFFICIAL:  1.8,
-  COVER_FULL:      1.3,
-  COVER_PARTIAL:   1.0,
-  SHARED_WRITER:   0.8,
-  SHARED_PRODUCER: 0.8,
-  LABEL:           0.7,
-  TV_SHOW:         0.7,
-  INDIRECT:        0.5,
-  GENRE_OVERLAP:   0.2,
+  SAME_GROUP:       2.5,
+  FAMILY:           2.8,   // 가족 — 가장 굵게 (V7.5)
+  FEATURED:         2.0,
+  PRODUCER:         1.5,
+  WRITER:           1.5,
+  COVER_OFFICIAL:   1.8,
+  ALUMNI_INTIMATE:  1.5,   // 동기 동창 (V7.5)
+  AGENCY_MATE:      1.3,   // 같은 기획사 (V7.5)
+  COVER_FULL:       1.3,
+  ALUMNI:           1.0,   // 학연 (V7.5)
+  COVER_PARTIAL:    1.0,
+  SHARED_WRITER:    0.8,
+  SHARED_PRODUCER:  0.8,
+  EVENT_CO:         0.8,   // 행사 동반 (V7.5)
+  NEIGHBOR:         0.7,   // 지연 (V7.5)
+  LABEL:            0.7,
+  TV_SHOW:          0.7,
+  NEWS_MENTION:     0.4,   // 기사 언급 (V7.5)
+  INDIRECT:         0.5,
+  GENRE_OVERLAP:    0.2,
 };
 
 const RELATION_LABEL_KO: Record<V5EdgeRelation, string> = {
-  SAME_GROUP:      "그룹 멤버",
-  FEATURED:        "피처링",
-  PRODUCER:        "프로듀서",
-  WRITER:          "작곡/작사",
-  COVER_OFFICIAL:  "공식 커버/리메이크",
-  COVER_FULL:      "풀 커버 (방송/SNS)",
-  COVER_PARTIAL:   "일부 커버",
-  SHARED_WRITER:   "공동 작사/작곡",
-  SHARED_PRODUCER: "공동 프로듀싱",
-  LABEL:           "동일 레이블",
-  TV_SHOW:         "방송/예능 공동 출연",
-  INDIRECT:        "딥스캔 간접 교류",
-  GENRE_OVERLAP:   "장르/테마 유사",
+  SAME_GROUP:       "그룹 멤버",
+  FAMILY:           "가족/혈연",          // V7.5
+  FEATURED:         "피처링",
+  PRODUCER:         "프로듀서",
+  WRITER:           "작곡/작사",
+  COVER_OFFICIAL:   "공식 커버/리메이크",
+  ALUMNI_INTIMATE:  "동기 동창",          // V7.5
+  AGENCY_MATE:      "같은 기획사",        // V7.5
+  COVER_FULL:       "풀 커버 (방송/SNS)",
+  ALUMNI:           "학연 (동문)",        // V7.5
+  COVER_PARTIAL:    "일부 커버",
+  SHARED_WRITER:    "공동 작사/작곡",
+  SHARED_PRODUCER:  "공동 프로듀싱",
+  EVENT_CO:         "행사/페스티벌 동반", // V7.5
+  NEIGHBOR:         "지연 (같은 동네)",   // V7.5
+  LABEL:            "동일 레이블",
+  TV_SHOW:          "방송/예능 공동 출연",
+  NEWS_MENTION:     "기사 동시 언급",     // V7.5
+  INDIRECT:         "딥스캔 간접 교류",
+  GENRE_OVERLAP:    "장르/테마 유사",
 };
 
 // ── LRU 이미지 캐시 ────────────────────────────────────────────
