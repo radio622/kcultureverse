@@ -542,7 +542,20 @@ export default function UniversePage() {
               graphData={graphData}
               onArtistSelect={handleArtistSelect}
               focusedId={focusedId}
-              onBackgroundClick={() => setSheetState("collapsed")}
+              onBackgroundClick={() => {
+                // 아티스트 디셀렉트: 모든 포커스 상태 초기화
+                setFocusedId(null);
+                currentFocusedIdRef.current = null;
+                setFocusedArtistName("");
+                setHop1List([]);
+                setSheetState("collapsed");
+                // 오디오 정지
+                audio.stop();
+                // URL에서 artist 파라미터 제거
+                const url = new URL(window.location.href);
+                url.searchParams.delete("artist");
+                window.history.replaceState({}, "", url.toString());
+              }}
               sheetState={sheetState}
             />
           </Suspense>
