@@ -383,12 +383,17 @@ def bot_2_gemini_curator(artist_name, albums, progress):
         rdate = album.get('release_date', '?')
         album_key = f"{artist_name}::{title}"
 
+        # -01로 끝나는 날짜는 스포티파이가 정확한 일자를 모를 때 대충 채운 것
+        date_warning = ""
+        if rdate.endswith("-01"):
+            date_warning = "\n⚠️ 주의: 위 발매일은 '1일'로 끝나므로 스포티파이가 정확한 날짜를 몰라 임의로 채운 것일 가능성이 매우 높습니다. 반드시 실제 정확한 발매일을 검색하여 교정해주세요."
+
         prompt = f"""아티스트: {artist_name}
 앨범: {title}
-스포티파이 발매일: {rdate}
+스포티파이 발매일: {rdate}{date_warning}
 
 다음 3가지를 신뢰할 수 있는 출처(나무위키, 네이버, MusicBrainz, 멜론, 한국음악저작권협회 등)를 검색하여 조사해주세요:
-1. 이 앨범의 실제 최초 한국 발매일 (스포티파이 날짜가 틀릴 수 있음)
+1. 이 앨범의 실제 최초 한국 발매일 (스포티파이 날짜가 틀릴 수 있음. 특히 1일로 끝나는 날짜는 높은 확률로 부정확합니다)
 2. 앨범 수록곡 각각의 크레딧: 작사, 작곡, 프로듀서, 피처링 아티스트
 3. 이 아티스트의 국적 (한국인 여부)
 
