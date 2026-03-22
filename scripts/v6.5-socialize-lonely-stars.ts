@@ -58,8 +58,8 @@ function main() {
             source: lonely.mbid,
             target: partner.mbid,
             relation: hasOverlap ? "GENRE_OVERLAP" : "INDIRECT",
-            weight: 0.4,
-            label: hasOverlap ? "장르가 비슷한 파동" : "우연한 마주침"
+            weight: 0.15,
+            label: hasOverlap ? "장르 유사성" : "장르 유사성"
           });
           existingEdgeKeys.add(edgeKey);
           degreeMap.set(lonely.mbid, (degreeMap.get(lonely.mbid) || 0) + 1);
