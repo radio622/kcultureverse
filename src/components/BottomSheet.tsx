@@ -15,8 +15,9 @@ interface Props {
   children: React.ReactNode;
 }
 
-const PEEK_HEIGHT    = 54;         // 미니플레이어+핸들 통합 높이 (72 -> 54로 축소)
-const EXPANDED_VH   = 44;         // 컴팩트해진 레이아웃에 맞춰 하단 버튼 잘림 방지를 위해 크기 상향 조정
+const PEEK_HEIGHT    = 54;         // 미니플레이어+핸들 통합 높이
+const EXPANDED_VH   = 44;         // 기본 확장 높이
+const EXPANDED_MAX  = 320;        // 최대 높이(px) — 넓은 화면비에서 카드가 컨테이너 밖으로 넘치는 것 방지
 const DRAG_THRESHOLD = 44;         // 상태 전환 트리거 드래그 거리 (px)
 
 export default function BottomSheet({ state, onStateChange, children }: Props) {
@@ -87,6 +88,7 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
         // collapsed일 때는 보이지 않게
         pointerEvents: state === "collapsed" ? "none" : "auto",
         overflow: "hidden",
+        maxHeight: state === "expanded" ? `min(${EXPANDED_VH}vh, ${EXPANDED_MAX}px)` : undefined,
       }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
