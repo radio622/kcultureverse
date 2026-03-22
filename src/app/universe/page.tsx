@@ -399,10 +399,10 @@ export default function UniversePage() {
         .warp-list::-webkit-scrollbar { display: none; }
         .warp-item { position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 130px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px 12px 20px; text-align: center; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); scroll-snap-align: center; scroll-margin-inline: 20px; }
         .warp-item:hover, .warp-item:active { background: rgba(255,255,255,0.07); border-color: rgba(167,139,250,0.4); transform: translateY(-2px); }
-        .warp-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: rgba(167,139,250,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: rgba(200,180,255,0.8); overflow: hidden; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        .warp-info { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; flex: 1; min-height: 80px; }
-        .warp-name { font-size: 14px; font-weight: 600; color: #fff; width: 100%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; }
-        .warp-label { font-size: 11px; color: rgba(167,139,250,0.75); display: flex; flex-direction: column; gap: 4px; align-items: center; width: 100%; }
+        .warp-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: rgba(167,139,250,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: rgba(200,180,255,0.8); overflow: hidden; margin-bottom: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+        .warp-info { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; flex: 1; min-height: 60px; }
+        .warp-name { font-size: 13px; font-weight: 600; color: #fff; width: 100%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; }
+        .warp-label { font-size: 11px; color: rgba(167,139,250,0.75); display: flex; flex-direction: column; gap: 2px; align-items: center; width: 100%; }
         .warp-label span.relation-desc { display: block; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.8; }
         .relation-pill { display: inline-flex; align-items: center; justify-content: center; padding: 2px 8px; border-radius: 20px; font-size: 10px; font-weight: 600; letter-spacing: -0.2px; }
         .rel-SAME_GROUP { background: rgba(134,239,172,0.15); color: #86efac; }
@@ -591,10 +591,11 @@ export default function UniversePage() {
                       data-track={item.previewTrackName || item.nameKo || item.name}
                       role="group"
                     >
-                      {/* 클릭 가능한 상단 카드 영역 (버튼과 물리적/DOM 분리) */}
-                      <div
+                      {/* 클릭 가능한 상단 카드 영역 (원초적 모바일 터치 오작동 방어를 위해 투명 button화) */}
+                      <button
+                        type="button"
                         className="warp-card-content"
-                        style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%", flex: 1, cursor: "pointer" }}
+                        style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%", flex: 1, cursor: "pointer", background: "transparent", border: "none", padding: 0 }}
                         onClick={(e) => {
                           if (hasDragged.current) {
                             e.preventDefault();
@@ -631,7 +632,7 @@ export default function UniversePage() {
                             {item.label && <span className="relation-desc">{item.label}</span>}
                           </div>
                         </div>
-                      </div>
+                      </button>
 
                       {/* 재생 버튼 (Play) - 카드 하단 강조 */}
                       {item.previewUrl ? (

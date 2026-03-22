@@ -16,7 +16,7 @@ interface Props {
 }
 
 const PEEK_HEIGHT    = 54;         // 미니플레이어+핸들 통합 높이 (72 -> 54로 축소)
-const EXPANDED_VH   = 40;         // 컴팩트해진 레이아웃에 맞춰 시트 확장 비율 소폭 조정
+const EXPANDED_VH   = 44;         // 컴팩트해진 레이아웃에 맞춰 하단 버튼 잘림 방지를 위해 크기 상향 조정
 const DRAG_THRESHOLD = 44;         // 상태 전환 트리거 드래그 거리 (px)
 
 export default function BottomSheet({ state, onStateChange, children }: Props) {
