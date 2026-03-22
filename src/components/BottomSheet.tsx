@@ -24,11 +24,10 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
   const dragStartY   = useRef<number>(0);
   const isDragging   = useRef(false);
 
-  // ── 높이 계산 ──────────────────────────────────────────────
   const getHeight = () => {
     if (state === "collapsed") return 0;
     if (state === "peek")      return PEEK_HEIGHT;
-    return `${EXPANDED_VH}vh`;
+    return "auto"; // 고정 vh 대신 내용물에 딱 맞게(shrink-wrap)
   };
 
   // ── 터치 드래그로 상태 전환 ────────────────────────────────
@@ -88,7 +87,7 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
         // collapsed일 때는 보이지 않게
         pointerEvents: state === "collapsed" ? "none" : "auto",
         overflow: "hidden",
-        maxHeight: state === "expanded" ? `min(${EXPANDED_VH}vh, ${EXPANDED_MAX}px)` : undefined,
+        maxHeight: "85vh", // 화면이 극단적으로 작을 때만 스크롤
       }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
@@ -123,7 +122,7 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
       </div>
 
       {/* ── 콘텐츠 영역 (핸들 공간 없이 전체 사용) ─────── */}
-      <div style={{ paddingTop: 14, overflow: "hidden", height: "100%", display: "flex", flexDirection: "column" }}>
+      <div style={{ paddingTop: 14, overflow: "hidden", display: "flex", flexDirection: "column" }}>
         {/* expanded일 때만 리스트 보임 — AnimatePresence로 부드럽게 */}
         <AnimatePresence>
           {state !== "collapsed" && (
@@ -136,8 +135,8 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                height: "100%",
                 overflow: "hidden",
+                paddingBottom: 24, // 카드덱 아래 기본 여백 제공
               }}
             >
               {children}
