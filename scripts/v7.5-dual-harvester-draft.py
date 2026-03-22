@@ -278,10 +278,17 @@ def bot_1_spotify_harvester(artist_name, token):
                 data = json.loads(r.read().decode())
                 items = data.get('items', [])
                 for item in items:
+                    # 스포티파이 발매일 형식 보정: "1986" → "1986-01-01", "2024-03" → "2024-03-01"
+                    raw_date = item.get('release_date', '')
+                    if len(raw_date) == 4:       # 연도만 (예: "1986")
+                        raw_date = f"{raw_date}-01-01"
+                    elif len(raw_date) == 7:     # 연-월만 (예: "2024-03")
+                        raw_date = f"{raw_date}-01"
+
                     albums_collected.append({
                         'artist_name': artist_name,
                         'album_title': item.get('name', ''),
-                        'release_date': item.get('release_date', ''),
+                        'release_date': raw_date,
                         'cover_image_url': item['images'][0]['url'] if item.get('images') else None,
                         'album_type': item.get('album_type', 'album').capitalize(),
                         'total_tracks': item.get('total_tracks', 0),
