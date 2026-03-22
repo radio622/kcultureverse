@@ -21,14 +21,24 @@ import os
 import re
 import urllib.request
 import urllib.error
-import dotenv
+from typing import Optional, List, Dict
 from datetime import datetime
 
-# .env.local 로드
-dotenv.load_dotenv(".env.local")
+# .env.local 수동 파싱 (dotenv 의존성 없음)
+def load_env_local(path=".env.local"):
+    env = {}
+    with open(path) as f:
+        for line in f:
+            line = line.strip()
+            if '=' in line and not line.startswith('#'):
+                k, v = line.split('=', 1)
+                env[k.strip()] = v.strip().strip('"').strip("'")
+    return env
 
-SUPABASE_URL = os.getenv("NEXT_PUBLIC_SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+_env = load_env_local()
+
+SUPABASE_URL = _env.get("NEXT_PUBLIC_SUPABASE_URL", os.getenv("NEXT_PUBLIC_SUPABASE_URL", ""))
+SUPABASE_KEY = _env.get("SUPABASE_SERVICE_ROLE_KEY", os.getenv("SUPABASE_SERVICE_ROLE_KEY", ""))
 
 if not SUPABASE_URL or not SUPABASE_KEY:
     print("❌ 환경 변수 없음! NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY 필요")
@@ -39,14 +49,14 @@ LAYOUT_PATH      = "public/data/v5-layout.json"
 BATCH_SIZE = 200  # Supabase 한 번에 삽입할 최대 행 수
 
 
-def is_valid_date(d: str) -> bool:
+def is_valid_date(d):
     """YYYY-MM-DD 또는 YYYY-MM 또는 YYYY 형식 확인."""
     if not d:
         return False
     return bool(re.match(r'^\d{4}(-\d{2}(-\d{2})?)?$', d))
 
 
-def normalize_date(d: str) -> str | None:
+def normalize_date(d):
     """
     MusicBrainz 날짜를 DATE 타입으로 변환.
     '1985' → '1985-01-01', '1985-03' → '1985-03-01', '1985-03-22' → '1985-03-22'
@@ -61,9 +71,9 @@ def normalize_date(d: str) -> str | None:
     return d
 
 
-def supabase_upsert(table: str, rows: list[dict]) -> dict:
+def supabase_upsert(table, rows):
     """Supabase REST API를 통한 upsert."""
-    url = f"{SUPABASE_URL}/rest/v1/{table}?on_conflict=artist_id,mbid"
+    url = f"{SUPABASE_URL}/rest/v1/{table}"
     payload = json.dumps(rows).encode("utf-8")
     req = urllib.request.Request(
         url,
@@ -88,19 +98,20 @@ def main():
     print("🎵 album_releases 일괄 INSERT 시작\n")
 
     # 1. 신규 아티스트 데이터 로드
-    rows_to_insert: list[dict] = []
+    rows_to_insert = []
     skipped = 0
 
     if os.path.exists(NEW_ARTISTS_PATH):
         with open(NEW_ARTISTS_PATH) as f:
-            new_artists: dict = json.load(f)
+            new_artists = json.load(f)
 
         print(f"📂 신규 아티스트 데이터: {len(new_artists)}명")
 
         for artist_id, artist_data in new_artists.items():
             artist_name    = artist_data.get("name", "")
             artist_name_ko = artist_data.get("nameKo", "") or ""
-            releases       = artist_data.get("releases", [])
+            # mb_releases 우선, 없으면 releases fallback
+            releases = artist_data.get("mb_releases", []) or artist_data.get("releases", [])
 
             # 세미콜론 포함 → 콜라보 노드, 스킵
             if ";" in artist_name:
