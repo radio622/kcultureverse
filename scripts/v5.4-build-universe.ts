@@ -277,7 +277,7 @@ async function main() {
   for (const mbid of keepNodes) {
     const raw = rawNodes.get(mbid)!;
     nodes.set(mbid, {
-      id: mbid, name: raw.name, nameKo: raw.name,
+      id: mbid, name: raw.name, nameKo: raw.nameKo || raw.name,
       image: raw.image, genres: raw.genres || [], popularity: raw.popularity || 0,
       previewUrl: raw.previewUrl || null, previewTrackName: raw.previewTrackName || null,
       spotifyUrl: raw.spotifyId ? `https://open.spotify.com/artist/${raw.spotifyId}` : null,
