@@ -474,7 +474,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
 
     // Focus Mode: hop1 엣지만 색상 표시, 나머지는 거의 안 보이게
     if (focusedId && graphData.nodes[focusedId]) {
-      if (!focusEdgeKeys.has(key)) return "rgba(167,139,250,0.02)";
+      if (!focusEdgeKeys.has(key)) {
+        return `rgba(167,139,250,${Math.max(0.01, currentScale * 0.015).toFixed(3)})`;
+      }
       return EDGE_COLORS[link.relation] ?? "rgba(255,255,255,0.4)";
     }
 
@@ -493,15 +495,18 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
     const tgtId = typeof link.target === "string" ? link.target : link.target.id;
     const key = [srcId, tgtId].sort().join("||");
     
-    if (highlightEdges.has(key)) return 3;
+    // 줌 스케일에 비례하는 공통 선 두께 배율 (줌아웃 시 가늘어짐)
+    const scaleMultiplier = Math.max(0.2, Math.min(currentScale, 1.5));
+    
+    if (highlightEdges.has(key)) return 3 * scaleMultiplier;
     
     if (focusedId && graphData.nodes[focusedId]) {
-      if (!focusEdgeKeys.has(key)) return 0.05;
-      return (EDGE_WIDTH[link.relation] ?? 0.5) * 1.5; // 강조 시 선 굵기 1.5배 증가
+      if (!focusEdgeKeys.has(key)) return 0.05 * scaleMultiplier;
+      return (EDGE_WIDTH[link.relation] ?? 0.5) * 1.5 * scaleMultiplier; // 강조 시 선 굵기 1.5배 + 줌 배율
     }
     
-    // 기본 모드: 줌에 따라 두께 조절 (줌아웃→얇게, 줌인→약간 두껍게)
-    return Math.max(0.05, 0.15 * Math.min(currentScale, 2));
+    // 기본 모드
+    return Math.max(0.05, 0.15 * scaleMultiplier);
   }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes, currentScale]);
 
   // ── nodePointerAreaPaint: LOD에 맞는 히트영역 (degree 비례) ─

@@ -111,6 +111,19 @@ const GraphCosmos = dynamic(
   }
 );
 
+// 국어 종성(받침) 유무에 따른 조사 선택 함수
+function getJosa(word: string, josa1: string, josa2: string) {
+  if (!word) return josa1;
+  const lastChar = word.charCodeAt(word.length - 1);
+  if (lastChar < 0xac00 || lastChar > 0xd7a3) {
+    // 한글이 아닌 경우(영어, 숫자 등) 일부 발음에 따라 예외 처리
+    const isEnglishConsonant = /[13678LMNR]$/i.test(word);
+    return isEnglishConsonant ? josa2 : josa1;
+  }
+  const hasJongsung = (lastChar - 0xac00) % 28 > 0;
+  return hasJongsung ? josa2 : josa1;
+}
+
 export default function UniversePage() {
   const audio = useAudio();
 
@@ -409,9 +422,12 @@ export default function UniversePage() {
         .bc-crumb:hover { background: rgba(167,139,250,0.18); color: rgba(200,180,255,0.8); }
         .bc-crumb.active { background: rgba(167,139,250,0.2); color: #c8b4ff; border-color: rgba(167,139,250,0.4); }
         .bc-arrow { color: rgba(167,139,250,0.25); font-size: 10px; flex-shrink: 0; }
-        .universe-focused-header { padding: 12px 16px 4px; }
+        .universe-focused-header { padding: 12px 16px 4px; display: flex; justify-content: space-between; alignItems: flex-start; gap: 8px;}
         .universe-focused-name  { font-size: 18px; font-weight: 700; color: #fff; }
         .universe-hop-count     { font-size: 12px; color: rgba(167,139,250,0.7); margin-top: 2px; }
+        .artist-external-link { font-size: 11px; color: rgba(200,180,255,0.7); background: rgba(167,139,250,0.1); padding: 5px 11px; border-radius: 12px; text-decoration: none; transition: 0.2s; white-space: nowrap; border: 1px solid rgba(167,139,250,0.2); display: inline-block; margin-top: 2px; }
+        .artist-external-link:hover { background: rgba(167,139,250,0.2); color: #fff; }
+        .artist-external-link span { font-size: 9px; opacity: 0.7; margin-left: 2px; }
       `}</style>
 
       {/* 검색 */}
@@ -490,10 +506,21 @@ export default function UniversePage() {
             <>
               {/* 헤더 */}
               <div className="universe-focused-header">
-                <div className="universe-focused-name">{focusedArtistName}</div>
-                <div className="universe-hop-count">
-                  연결된 아티스트 {hop1List.length}명
+                <div>
+                  <div className="universe-focused-name">{focusedArtistName}</div>
+                  <div className="universe-hop-count">
+                    연결된 아티스트 {hop1List.length}명
+                  </div>
                 </div>
+                <a
+                  href={detailCache.current[focusedId]?.spotifyUrl || `https://search.naver.com/search.naver?query=${encodeURIComponent(focusedArtistName)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="artist-external-link"
+                  title="외부 탐색"
+                >
+                  {focusedArtistName}{getJosa(focusedArtistName, "로부터", "으로부터")} <span>↗</span>
+                </a>
               </div>
 
               {hop1List.length === 0 ? (
