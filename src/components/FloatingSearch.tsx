@@ -6,9 +6,34 @@ import { useRouter } from "next/navigation";
 interface SearchEntry {
   spotifyId: string;
   name: string;
+  searchTokens: string[];
   imageUrl: string | null;
   genres: string[];
 }
+
+const ALIAS_MAP: Record<string, string[]> = {
+  "BLACKPINK": ["블랙핑크", "블핑"],
+  "AKMU": ["악동뮤지션", "악뮤"],
+  "IU": ["아이유", "이지은"],
+  "BTS": ["방탄소년단", "방탄"],
+  "RM": ["김남준", "알엠"],
+  "JIN": ["김석진", "진"],
+  "SUGA": ["민윤기", "슈가", "Agust D"],
+  "J-HOPE": ["정호석", "제이홉"],
+  "JIMIN": ["박지민", "지민"],
+  "V": ["김태형", "뷔"],
+  "JUNG KOOK": ["전정국", "정국"],
+  "TWICE": ["트와이스"],
+  "EXO": ["엑소"],
+  "BIGBANG": ["빅뱅"],
+  "SEVENTEEN": ["세븐틴"],
+  "G-DRAGON": ["지드래곤", "권지용", "GD"],
+  "ZICO": ["지코", "우지호"],
+  "TAEYEON": ["태연", "김태연"],
+  "E SENS": ["이센스", "강민호"],
+  "The Black Skirts": ["검정치마", "조휴일", "black skirt"],
+  "Baek A": ["백아"]
+};
 
 // 분당 최대 5회 throttle (Spotify 검색 API 보호)
 const THROTTLE_MAX = 5;
@@ -50,12 +75,20 @@ export default function FloatingSearch({ onSelect }: Props = {}) {
       fetch("/data/v5-details.json").then((r) => r.json()),
     ])
       .then(([layoutData, detailsData]) => {
-        const arr = Object.values(layoutData.nodes).map((n: any) => ({
-          spotifyId: n.id, // V6.5 mbid를 폼폼 호환용으로 매핑
-          name: n.nameKo || n.name,
-          imageUrl: detailsData[n.id]?.image || null,
-          genres: detailsData[n.id]?.genres || [],
-        }));
+        const arr = Object.values(layoutData.nodes).map((n: any) => {
+          const primaryName = n.nameKo || n.name;
+          const aliases = ALIAS_MAP[n.name] || ALIAS_MAP[primaryName] || [];
+          
+          return {
+            spotifyId: n.id,
+            name: primaryName,
+            searchTokens: [n.name, n.nameKo, ...aliases]
+              .filter(Boolean)
+              .map((t: string) => t.toLowerCase().replace(/\s+/g, "")),
+            imageUrl: detailsData[n.id]?.image || null,
+            genres: detailsData[n.id]?.genres || [],
+          };
+        });
         setLocalIndex(arr);
       })
       .catch(() => {
@@ -86,10 +119,10 @@ export default function FloatingSearch({ onSelect }: Props = {}) {
     }
 
     debounceRef.current = setTimeout(async () => {
-      // 1. 로컬 인덱스 우선 검색
-      const q = value.toLowerCase();
+      // 1. 로컬 인덱스 검색 (토큰 기반)
+      const q = value.toLowerCase().replace(/\s+/g, "");
       const local = localIndex.filter(a =>
-        a.name.toLowerCase().includes(q) ||
+        a.searchTokens.some(token => token.includes(q)) ||
         a.spotifyId.toLowerCase().includes(q)
       ).slice(0, 8);
 

@@ -386,6 +386,41 @@ export default function UniversePage() {
     handleArtistSelect(id);
   }, [handleArtistSelect]);
 
+  // ── 네이티브 공유 및 클립보드 복사 기능 ──────────────────────────────────
+  const handleShare = useCallback(async () => {
+    const targetId = audio.currentArtistId || currentFocusedIdRef.current;
+    const artistName = targetId && graphData?.nodes[targetId]
+      ? (graphData.nodes[targetId].nameKo || graphData.nodes[targetId].name)
+      : focusedArtistName;
+      
+    // 현재 탐험 중인 아티스트 기준 URL 생성
+    const shareUrl = new URL(window.location.href);
+    if (targetId) {
+      shareUrl.searchParams.set("artist", targetId);
+    }
+
+    const shareData = {
+      title: `${artistName} - K-Culture Universe`,
+      text: `${artistName}의 궤도와 우주 음악적 연결망을 탐험해보세요 🌌`,
+      url: shareUrl.toString()
+    };
+
+    if (navigator.share && /Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.error("공유 취소/실패:", err);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareUrl.toString());
+        alert(`우주 좌표가 복사되었습니다!\n${shareUrl.toString()}`);
+      } catch {
+        alert("링크 복사를 지원하지 않는 환경입니다.");
+      }
+    }
+  }, [audio.currentArtistId, graphData, focusedArtistName]);
+
   return (
     <>
       <style>{`
