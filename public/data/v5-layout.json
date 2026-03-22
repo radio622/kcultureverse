@@ -1,7 +1,7 @@
 {
   "version": "6.1",
   "builtAt": "2026-03-22T05:36:10.683Z",
-  "nodeCount": 1393,
+  "nodeCount": 1392,
   "nodes": [
     {
       "id": "0d79fe8e-ba27-4859-bb8c-2f255f346853",
@@ -351,7 +351,7 @@
       "nameKo": "김사월",
       "x": -5761,
       "y": -132,
-      "degree": 0,
+      "degree": 3,
       "accent": null
     },
     {
@@ -432,7 +432,7 @@
       "nameKo": "아슬",
       "x": 5033,
       "y": -471,
-      "degree": 0,
+      "degree": 3,
       "accent": null
     },
     {
@@ -5967,7 +5967,7 @@
       "nameKo": "Park Yeong Mi",
       "x": 3350,
       "y": 3409,
-      "degree": 0,
+      "degree": 3,
       "accent": null
     },
     {
@@ -6106,15 +6106,6 @@
       "accent": null
     },
     {
-      "id": "batch_S1kgTm9yYW",
-      "name": "KY Noraebang",
-      "nameKo": "KY Noraebang",
-      "x": 2841,
-      "y": 3859,
-      "degree": 0,
-      "accent": null
-    },
-    {
       "id": "a6cc73c6-926d-466e-8235-745e2d94feee",
       "name": "가리온",
       "nameKo": "가리온",
@@ -6192,7 +6183,7 @@
       "nameKo": "",
       "x": -2795,
       "y": 4468,
-      "degree": 0,
+      "degree": 3,
       "accent": null
     },
     {
@@ -11125,7 +11116,7 @@
       "nameKo": "",
       "x": 1517.095899633875,
       "y": -4059.1065839931775,
-      "degree": 20,
+      "degree": 21,
       "accent": "#c084fc"
     },
     {
@@ -11449,7 +11440,7 @@
       "nameKo": "",
       "x": -4427.823374577728,
       "y": 3773.7361705684225,
-      "degree": 95,
+      "degree": 96,
       "accent": "#c084fc"
     },
     {
@@ -11728,7 +11719,7 @@
       "nameKo": "거미",
       "x": -785.4215198721124,
       "y": -5933.306373808417,
-      "degree": 114,
+      "degree": 115,
       "accent": "#c084fc"
     },
     {
