@@ -69,7 +69,11 @@ SPOTIFY_LIMIT = 10
 PAGE_COOLDOWN = 32
 GEMINI_COOLDOWN = 32
 ARTIST_INTERVAL = 600
-GEMINI_MODEL = "gemini-3.1-flash-lite-preview"
+# 제미나이 모델 폴백 체인: 1순위가 429 맞으면 자동으로 2순위로 전환
+GEMINI_MODELS = [
+    "gemini-3.1-flash-lite-preview",  # 1순위: 최신 성능
+    "gemini-2.5-flash-lite",          # 2순위: 백업 (쿼타 독립)
+]
 
 # ── Supabase HTTP 헤더 ────────────────────────────────────────
 SUPA_HEADERS = {
@@ -391,43 +395,57 @@ def bot_2_gemini_curator(artist_name, albums, progress):
 반드시 JSON으로만 응답:
 {{"corrected_date": "YYYY-MM-DD" 또는 null, "is_korean_artist": true/false, "tracks": [{{"title":"곡명","writers":[],"composers":[],"producers":[],"featuring":[]}}], "confidence": 0.0-1.0, "source": "출처"}}"""
 
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent?key={api_key}"
-        body = json.dumps({
-            "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-            "tools": [{"google_search": {}}],
-            "generationConfig": {"temperature": 0.1, "responseMimeType": "application/json"}
-        }).encode('utf-8')
+        # 모델 폴백 체인: 1순위 429 시 자동으로 2순위 시도
+        result_parsed = None
+        used_model = None
+        for model in GEMINI_MODELS:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+            body = json.dumps({
+                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                "tools": [{"google_search": {}}],
+                "generationConfig": {"temperature": 0.1, "responseMimeType": "application/json"}
+            }).encode('utf-8')
 
-        req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
-        try:
-            with urllib.request.urlopen(req, context=CTX) as r:
-                result = json.loads(r.read().decode())
-                text = result['candidates'][0]['content']['parts'][0]['text']
-                parsed = json.loads(text)
-                c_date = parsed.get('corrected_date')
-                is_ko = parsed.get('is_korean_artist')
-                tracks = parsed.get('tracks', [])
-                note = f"tracks:{len(tracks)}, conf:{parsed.get('confidence')}, src:{parsed.get('source','')}"
+            req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
+            try:
+                with urllib.request.urlopen(req, context=CTX) as r:
+                    result = json.loads(r.read().decode())
+                    text = result['candidates'][0]['content']['parts'][0]['text']
+                    result_parsed = json.loads(text)
+                    used_model = model
+                    break  # 성공하면 다음 모델 시도 안 함
+            except urllib.error.HTTPError as e:
+                if e.code == 429:
+                    log.warning(f"   ⚠️ {model} 쿼타 초과 → 다음 모델로 전환")
+                    continue  # 다음 모델 시도
+                else:
+                    log.error(f"   [{i+1}/{len(sorted_albums)}] ❌ {title}: HTTP {e.code}")
+                    break
+            except Exception as e:
+                log.error(f"   [{i+1}/{len(sorted_albums)}] ❌ {title}: {e}")
+                break
 
-                # ✅ Supabase에 검증 결과 저장
-                supabase_update_verification(artist_name, title, c_date, is_ko, note)
+        if result_parsed:
+            c_date = result_parsed.get('corrected_date')
+            is_ko = result_parsed.get('is_korean_artist')
+            tracks = result_parsed.get('tracks', [])
+            conf = result_parsed.get('confidence', 0)
+            # 날짜를 못 찾은 경우 명시적 기록
+            date_status = f"→{c_date}" if c_date else "확인불가(원본유지)"
+            note = f"model:{used_model}, date:{date_status}, tracks:{len(tracks)}, conf:{conf}"
 
-                log.info(
-                    f"   [{i+1}/{len(sorted_albums)}] ✅ {title}: "
-                    f"날짜={'→'+c_date if c_date else '유지'}, 한국={'🇰🇷' if is_ko else '🌍'}, "
-                    f"트랙={len(tracks)}곡"
-                )
-        except Exception as e:
-            log.error(f"   [{i+1}/{len(sorted_albums)}] ❌ {title}: {e}")
-            # ⚠️ 실패한 앨범은 깃발을 꽂지 않음 → 다음 가동 시 자동 재시도됨
-            if i < len(sorted_albums) - 1:
-                log.info(f"   💤 {GEMINI_COOLDOWN}초 쿨타임...")
-                time.sleep(GEMINI_COOLDOWN)
-            continue  # 깃발 없이 다음 앨범으로
+            supabase_update_verification(artist_name, title, c_date, is_ko, note)
+            log.info(
+                f"   [{i+1}/{len(sorted_albums)}] ✅ {title}: "
+                f"날짜={date_status}, 한국={'🇰🇷' if is_ko else '🌍'}, "
+                f"트랙={len(tracks)}곡 [{used_model.split('-')[1]}]"
+            )
 
-        # ✅ 성공한 앨범만 깃발 (재처리 방지)
-        progress.setdefault("verified_albums", []).append(album_key)
-        save_progress(progress)
+            # ✅ 성공 깃발
+            progress.setdefault("verified_albums", []).append(album_key)
+            save_progress(progress)
+        else:
+            log.error(f"   [{i+1}/{len(sorted_albums)}] ❌ {title}: 모든 모델 실패")
 
         if i < len(sorted_albums) - 1:
             log.info(f"   💤 {GEMINI_COOLDOWN}초 쿨타임...")
@@ -482,7 +500,7 @@ def run_dual_harvester_loop():
 if __name__ == "__main__":
     log.info("=" * 60)
     log.info("🤖 K-Culture Universe — Dual Harvester Bot")
-    log.info(f"  모델: {GEMINI_MODEL}")
+    log.info(f"  모델 체인: {' → '.join(GEMINI_MODELS)}")
     log.info(f"  Spotify limit: {SPOTIFY_LIMIT}/page")
     log.info(f"  쿨타임: 페이지 {PAGE_COOLDOWN}s / 제미나이 {GEMINI_COOLDOWN}s / 아티스트 {ARTIST_INTERVAL//60}min")
     log.info(f"  로그: {log_filename}")
