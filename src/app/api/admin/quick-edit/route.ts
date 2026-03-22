@@ -8,7 +8,16 @@ import { auth } from "@/auth";
 import { createSupabaseAdmin } from "@/lib/supabase";
 import OpenAI from "openai";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// OpenAI 클라이언트는 런타임에 지연 초기화 (빌드 시 환경변수 없어도 오류 방지)
+let _openai: OpenAI | null = null;
+function getOpenAI() {
+  if (!_openai) {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) throw new Error("OPENAI_API_KEY가 설정되지 않았습니다");
+    _openai = new OpenAI({ apiKey });
+  }
+  return _openai;
+}
 
 const SYSTEM_PROMPT = `You are a K-Culture Universe data editor assistant.
 Parse the user's Korean or English natural language instruction and output a JSON patch.
@@ -47,7 +56,7 @@ export async function POST(req: NextRequest) {
   };
 
   try {
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAI().chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         { role: "system", content: SYSTEM_PROMPT },

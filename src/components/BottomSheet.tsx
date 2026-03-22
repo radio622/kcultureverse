@@ -16,7 +16,7 @@ interface Props {
 }
 
 const PEEK_HEIGHT     = 54;   // 미니플레이어+핸들
-const EXPANDED_HEIGHT = 228;  // 핸들(20)+미니플레이어(54)+카드영역(130)+패딩(24)
+const EXPANDED_HEIGHT = 290;  // 핸들(20)+미니플레이어(54)+카드영역(192)+패딩(24)
 const DRAG_THRESHOLD  = 44;   // 상태 전환 트리거 드래그 거리 (px)
 
 export default function BottomSheet({ state, onStateChange, children }: Props) {
