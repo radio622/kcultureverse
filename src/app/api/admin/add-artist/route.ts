@@ -2,12 +2,21 @@ import { NextRequest, NextResponse } from "next/server";
 import { exec } from "child_process";
 import { promisify } from "util";
 import path from "path";
+import { auth } from "@/auth";
+
 
 const execAsync = promisify(exec);
 
 export async function POST(req: NextRequest) {
+  // 보안: Admin 전용
+  const session = await auth();
+  if (session?.user?.role !== "admin") {
+    return NextResponse.json({ success: false, error: "Forbidden" }, { status: 403 });
+  }
+
   try {
     const body = await req.json();
+
     const { name, spotifyId, nameKo } = body;
 
     if (!name || !spotifyId) {

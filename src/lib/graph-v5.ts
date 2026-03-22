@@ -8,12 +8,20 @@
  */
 
 export type V5EdgeRelation =
-  | "SAME_GROUP"
-  | "FEATURED"
-  | "PRODUCER"
-  | "WRITER"
-  | "INDIRECT"
-  | "GENRE_OVERLAP";
+  | "SAME_GROUP"       // 그룹 멤버 (1.0)
+  | "FEATURED"         // 피처링 (0.7)
+  | "PRODUCER"         // 프로듀서 (0.7)
+  | "WRITER"           // 작곡/작사 (0.7)
+  | "COVER_OFFICIAL"   // 공식 발매 리메이크/커버 (0.7)
+  | "COVER_FULL"       // 방송/SNS 풀 커버 (0.5)
+  | "COVER_PARTIAL"    // 방송/SNS 일부 커버 (0.3)
+  | "SHARED_WRITER"    // 공동 작가 (0.3)
+  | "SHARED_PRODUCER"  // 공동 프로듀서 (0.3)
+  | "LABEL"            // 같은 레이블 소속 (0.2)
+  | "TV_SHOW"          // 방송/예능 공동 출연 (0.15)
+  | "INDIRECT"         // 딥스캔 간접 교류 (0.1)
+  | "GENRE_OVERLAP";   // 장르/테마 유사 (0.05)
+
 
 export interface V5Node {
   id: string;

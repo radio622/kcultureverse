@@ -6,26 +6,58 @@
 
 ---
 
-## 🚀 V6.9 최신 업데이트 하이라이트
+## 🚀 V7.0.1 최신 업데이트 하이라이트
+
+### V7.0.1 — AI 게이트키퍼 & 프리미엄 탐험 (2026-03-22)
+
+#### 🔐 인증 & 회원 시스템
+- **Google OAuth 소셜 로그인** (Auth.js v5 + JWT 서버리스 세션)
+- **온보딩 모달**: 닉네임, 성별, 연령대, 뉴스레터 동의
+- **멤버십 2단계**: 준회원(로그인만) / 정회원(뉴스레터 동의) — 뉴스레터 해제 시 자동 강등
+- **마이페이지**: 프로필 수정, 뉴스레터 토글, 회원탈퇴
+- **개인정보 처리방침** 페이지 (`/privacy`) — PIPA 대응
+
+#### 🛡️ Admin 관리자 대시보드 (`/admin`)
+| 탭 | 기능 |
+|----|------|
+| 🚀 빠른 수정 | GPT 기반 AI 직통 입력 — 데이터 즉시 반영 |
+| 📋 유저 요청 관리 | 에디트 로그 전체 조회, 필터, 수동 승인·거절 |
+| 👥 회원 관리 | 프로필 목록, 역할 변경 |
+| 📊 우주 통계 | 노드/엣지 수, 요청 추이, 승인률 |
+| 🔄 빌드 제어 | merge-overrides + rebuild 원클릭 |
+| ⏪ 롤백 관리 | data_overrides 개별 패치 되돌리기 |
+
+#### 🤖 AI 게이트키퍼 (유저 에디트 제안)
+- **정회원 전용**: 자연어로 아티스트 정보 수정, 관계 추가, 신규 아티스트 제안
+- **Gemini Flash-Lite** 파싱 → **MusicBrainz + iTunes** 서버 사이드 교차 검증
+- 자동 판정: ✅ 승인 / ⏳ 보류 / ❌ 거절 → Supabase 저장
+- Rate Limit: 정회원 1분 1회
+
+#### 🔗 관계(Edge) 심층 탐색
+- **엣지 타입 13종 확장**: COVER 3종(OFFICIAL/FULL/PARTIAL), SHARED_WRITER/PRODUCER, LABEL, TV_SHOW
+- **엣지 클릭 팝업**: 관계 이름, 가중치 바, glassmorphism 디자인
+- **듀얼 아티스트 관계 검색** (A ↔ B): Dijkstra 최단 경로 + ⚡ 전류 애니메이션
+- 포커스된 1촌 엣지만 클릭 반응 (배경 엣지 차단)
+
+#### 🚀 자율주행 (Auto-Warp)
+- **가중치 확률적 경로 탐색** — Roulette Wheel 알고리즘
+- **Tabu List**(최근 5개) + **랜덤 점프**(5%)로 클러스터 고착 방지
+- **iTunes 릴레이 미리듣기**: 각 정거장에서 30초 미리듣기 자동 재생
+- **Flight Log 실시간 UI** + Supabase `flight_logs` 저장
+- 로그인 유저 전용 게이트
+
+#### 📦 데이터 파이프라인 자동화
+- `merge-overrides.ts`: Supabase `data_overrides` → JSON 자동 머지
+- `rebuild-universe`: merge → build-graph → compute-layout 3단계 파이프라인
 
 ### V6.9 — 대규모 아티스트 확장 (2026-03-22)
-- **우주 규모 대폭발**: **1,213명의 아티스트(노드)**, **3,196가닥의 연결선(엣지)**
-- 18개 CSV 플레이리스트에서 **220명 신규 아티스트** 일괄 편입 (OST 65명, 2010년대 39명, 인디 42명, K-Rock 32명 등)
-- **163명 아티스트 한글 이름 일괄 교정** (최재훈, 안재욱, 이지형, 송골매, 패닉, 윤도현밴드 등)
-- **검색 ALIAS 100쌍+ 확장**: 한글↔영문 양방향 검색 완전 지원
-
-### V6.8 — 데이터 품질 개선 (2026-03-22)
-- GENRE_OVERLAP 1,413개 엣지 가중치 0.4→0.15 하향 (막연한 연결 투명화)
-- "동시대 음악적 파형 공유" 라벨 → "장르 유사성"으로 솔직하게 교체
-
-### V6.5 — 르네상스 업데이트 (2026-03-21)
-- 초거대 우주 팽창: 기존 372명 → 989명으로 3배 증가
-- 외로운 별 소개팅 시스템, 하이브리드 터치/마우스 UI, 동적 카메라 줌-패
-- Web Share API, 지능형 유연 검색 (Alias 매핑)
+- **1,213명의 아티스트**, **3,196가닥의 연결선**
+- 18개 CSV 플레이리스트에서 220명 신규 편입
+- 163명 아티스트 한글 이름 일괄 교정
 
 ---
 
-## 🧬 아키텍처 (V6.9)
+## 🧬 아키텍처 (V7.0.1)
 
 ### 핵심 원칙
 | 원칙 | 설명 |
@@ -33,18 +65,34 @@
 | **Zero Runtime Physics** | 모든 노드 좌표는 빌드 타임에 d3-force로 스태틱 렌더링. 디바이스 발열 완벽 차단 |
 | **3분할 데이터 로딩** | layout(151KB) 즉시 → edges(511KB) 백그라운드 → details(388KB) 후속 |
 | **LOD 3단계 렌더링** | Far(점) / Mid(거대별 인플루언서 폰트 노출) / Close(상세 정보 및 렌더링) |
-| **API 이중 스파이더** | Spotify API 한계 돌파를 위해 **MusicBrainz(MBID 발급)** + **iTunes(Cover & Audio)** 결합 |
-| **중앙집중형 Audio** | 싱글톤 useAudio 훅을 통한 끊김 없는 크로스페이드(Fade in/out) 플레이어 경험 |
+| **AI 게이트키퍼** | 유저 자연어 → Gemini 파싱 → MusicBrainz+iTunes 검증 → 자동 승인/거절 |
+| **Hybrid Auth** | Auth.js v5 + JWT 서버리스 세션 + Supabase user_profiles |
+| **중앙집중형 Audio** | 싱글톤 useAudio 훅 + useAutoWarp 릴레이 미리듣기 |
 
-### 엣지 관계 유형
-| 색상 | 관계 | 설명 |
-|------|------|------|
-| 🟢 `#86efac` | SAME_GROUP | 같은 그룹 멤버 |
-| 🟣 `#c084fc` | FEATURED | 피처링 앨범 및 콜라보 활동 |
-| 🔵 `#60a5fa` | PRODUCER | 주요 프로듀싱 담당 |
-| 🟡 `#fbbf24` | WRITER | 작사/작곡 |
-| ⚪ | COVER / INDIRECT | 리메이크 및 간접 영감 교류 |
-| 🌫 | GENRE_OVERLAP | 딥스캔 스크립트를 통한 장르 및 플레이리스트(가요톱텐, 인디 라디오 등) 유대감 엣지 |
+### 데이터베이스 (Supabase PostgreSQL)
+| 테이블 | 역할 |
+|--------|------|
+| `user_profiles` | 유저 프로필, 멤버십, 뉴스레터 상태 |
+| `universe_edit_logs` | 에디트 제안 로그 + AI 판정 기록 |
+| `data_overrides` | 승인된 오버라이드 패치 |
+| `flight_logs` | 자율주행 비행 기록 |
+
+### 엣지 관계 유형 (13종)
+| 색상 | 관계 | 가중치 |
+|------|------|--------|
+| 🟢 `#86efac` | SAME_GROUP | 1.0 |
+| 🟣 `#c084fc` | FEATURED | 0.7 |
+| 🔵 `#60a5fa` | PRODUCER | 0.7 |
+| 🟡 `#fbbf24` | WRITER | 0.7 |
+| 🟠 `#fb923c` | COVER_OFFICIAL | 0.7 |
+| 🟤 `#a3e635` | COVER_FULL | 0.5 |
+| 🌿 `#6ee7b7` | COVER_PARTIAL | 0.3 |
+| 🔷 `#38bdf8` | SHARED_WRITER | 0.3 |
+| 🔶 `#818cf8` | SHARED_PRODUCER | 0.3 |
+| 🏷 `#f472b6` | LABEL | 0.2 |
+| 📺 `#e879f9` | TV_SHOW | 0.15 |
+| ⚪ | INDIRECT | 0.1~0.3 |
+| 🌫 | GENRE_OVERLAP | 0.15 |
 
 ---
 
@@ -53,33 +101,36 @@
 | 레이어 | 기술 |
 |--------|------|
 | 프레임워크 | Next.js 16 (App Router) |
-| 렌더러 | react-force-graph-2d (Canvas) + framer-motion |
+| 인증 | Auth.js v5 (Google OAuth) + JWT |
+| 렌더러 | react-force-graph-2d (Canvas) |
+| AI | Gemini Flash-Lite (유저) / GPT (Admin) |
+| DB | Supabase (PostgreSQL) |
 | 레이아웃 계산 | d3-force (빌드 타임 오프라인) |
-| 자동화 스크립트 | TSX (TypeScript Execute) 런타임 |
-| 데이터 소스 | MusicBrainz API + iTunes API (+ Spotify API) |
+| 검증 API | MusicBrainz + iTunes Search |
 | 스타일 | Vanilla CSS (커스텀 디자인 토큰) |
-| 배포 | Vercel |
+| 배포 | Vercel (Edge Functions) |
 
 ---
 
 ## 🧪 데이터 파이프라인 스크립트 모음
 
-우주를 팽창시키거나 빌드할 때 사용하는 관리 스크립트들입니다. 모두 `npm run` 또는 `npx tsx`로 실행 가능합니다.
-
 ```bash
-# 1. 수동 / CSV 일괄 수집 (가요 톱텐, 한국락, OST 등 수백 명 동시 주입 및 iTunes 스캔)
+# 1. Supabase data_overrides → JSON 머지
+npx tsx scripts/merge-overrides.ts
+
+# 2. 수동 / CSV 일괄 수집
 npx tsx scripts/v6.4-batch-ingest-csvs.ts
 
-# 2. 딥스캔 매칭 (아이유 꽃갈피, 이찬혁비디오 등 깊은 협업망 완전 수동 하드코딩)
+# 3. 딥스캔 매칭 (수동 하드코딩 관계)
 npx tsx scripts/v6.3-inject-deep-relations.ts
 
-# 3. 우주 소개팅 작전 (장르가 겹치는 외톨이 노드 상호 엣지 강제 결합, Hairball 방지)
+# 4. 우주 소개팅 (외톨이 노드 장르 매칭)
 npx tsx scripts/v6.5-socialize-lonely-stars.ts
 
-# 4. 한글 이름 일괄 교정 (163명+ 아티스트 한글 공식명 주입)
+# 5. 한글 이름 일괄 교정
 python3 scripts/v6.5-fix-korean-names.py
 
-# 5. JSON 우주 파일 렌더링 및 압축 (배포 직전 필수 실행)
+# 6. JSON 우주 파일 빌드
 npx tsx scripts/v5.4-build-universe.ts
 ```
 
@@ -89,9 +140,9 @@ npx tsx scripts/v5.4-build-universe.ts
 
 | 버전 | 문서 | 상태 |
 |--------|------|------|
-| V7.0 | [`docs/V7_ROADMAP.md`](docs/V7_ROADMAP.md) | 📋 계획 중 — AI 게이트키퍼 + 프리미엄 탐험(자율주행) |
-| V6.9 | [`docs/V6.9_ROADMAP.md`](docs/V6.9_ROADMAP.md) | ✅ 완료 — 대규모 아티스트 추가 (220명) |
-| V6.8 | [`docs/V6.8_ROADMAP.md`](docs/V6.8_ROADMAP.md) | ✅ 완료 — 데이터 품질 개선 |
+| V7.0.1 | [`docs/V7.0.1_ROADMAP.md`](docs/V7.0.1_ROADMAP.md) | ✅ 구현 완료 — 전 Phase |
+| V6.9 | [`docs/V6.9_ROADMAP.md`](docs/V6.9_ROADMAP.md) | ✅ 완료 |
+| V6.8 | [`docs/V6.8_ROADMAP.md`](docs/V6.8_ROADMAP.md) | ✅ 완료 |
 
 ---
 
@@ -105,10 +156,15 @@ cd kcultureverse
 # 패키지 설치
 npm install
 
-# 데이터 압축 빌드
+# 환경변수 설정 (.env.local)
+# AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET, AUTH_SECRET,
+# NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
+# OPENAI_API_KEY, GEMINI_API_KEY, ADMIN_EMAILS, ADMIN_PASSPHRASE
+
+# 데이터 빌드
 npx tsx scripts/v5.4-build-universe.ts
 
-# 개발 서버 실행
+# 개발 서버
 npm run dev
 # → http://localhost:3000/universe
 ```

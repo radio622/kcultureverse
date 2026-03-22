@@ -31,7 +31,14 @@ import dynamic from "next/dynamic";
 import BottomSheet, { type SheetState } from "@/components/BottomSheet";
 import MiniPlayer from "@/components/MiniPlayer";
 import FloatingSearch from "@/components/FloatingSearch";
+import UserAvatar from "@/components/UserAvatar";
+import EditSuggestModal from "@/components/EditSuggestModal";
+import AutoWarpPanel from "@/components/AutoWarpPanel";
 import { useAudio } from "@/hooks/useAudio";
+import { useAutoWarp } from "@/hooks/useAutoWarp";
+import { useSession } from "next-auth/react";
+
+
 
 // ── V5 타입 ──────────────────────────────────────────────────────
 interface LayoutNode {
@@ -126,6 +133,8 @@ function getJosa(word: string, josa1: string, josa2: string) {
 
 export default function UniversePage() {
   const audio = useAudio();
+  const { data: session } = useSession();
+
 
   // ── 데이터 상태 ────────────────────────────────────────────────
   const [graphData, setGraphData] = useState<UniverseGraphV5 | null>(null);
@@ -151,6 +160,20 @@ export default function UniversePage() {
 
   // ── 탐험 발자국 (Breadcrumbs) ─────────────────────────────────
   const [breadcrumbs, setBreadcrumbs] = useState<{id: string; name: string}[]>([]);
+
+  // Phase 4: 에디트 제안 모달
+  const [editModalOpen, setEditModalOpen] = useState(false);
+
+  // Phase 7: 자율주행 (handleArtistSelect 참조를 ref로 안전하게 전달)
+  const handleArtistSelectRef = useRef<(nodeId: string) => void>(() => {});
+  const warp = useAutoWarp({
+    graphData,
+    audioPlay: audio.play,
+    audioStop: audio.stop,
+    onNodeFocus: (nodeId: string) => handleArtistSelectRef.current(nodeId),
+  });
+
+
 
   // ── Task 4-1: 3분할 로딩 파이프라인 ──────────────────────────
   useEffect(() => {
@@ -334,6 +357,9 @@ export default function UniversePage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graphData, audio]);
 
+  // Phase 7: ref 동기화
+  handleArtistSelectRef.current = handleArtistSelect;
+
   // ── 스와이프 시 음악 자동재생 옵저버 ──────────────────────────────────
   useEffect(() => {
     if (!warpListRef.current) return;
@@ -385,6 +411,29 @@ export default function UniversePage() {
   const handleHopItemTap = useCallback((id: string) => {
     handleArtistSelect(id);
   }, [handleArtistSelect]);
+
+  // ── Phase 3: 듀얼 아티스트 관계 탐색 ────────────────────────────
+  // A 포커스 → B까지 경로 하이라이트 (GraphCosmos의 Pathfinding 기능 활용)
+  // GraphCosmos 내부 pathfindingFrom 상태 직접 제어가 어려우므로
+  // 표준 방식: A를 선택(포커스) → B를 "두번째 Pathfinding 클릭"과 동일하게 처리하기 위해
+  // GraphCosmos에 dualTarget prop을 추가하거나, 여기서 URL 쿼리로 넘기는 방식 사용.
+  // 현재 아키텍처에서는 A 포커스 후 URL에 pathTo 파라미터를 추가하는 방식이 가장 간결.
+  const [dualPathTarget, setDualPathTarget] = useState<string | null>(null);
+
+  const handleDualSelect = useCallback((idA: string, idB: string) => {
+    if (!graphData) return;
+    if (!graphData.nodes[idA] || !graphData.nodes[idB]) {
+      alert("두 아티스트 중 하나 이상이 현재 우주에 없습니다.");
+      return;
+    }
+    // A를 포커스 → GraphCosmos가 A를 중심으로 BFS 하이라이트
+    handleArtistSelect(idA);
+    // B를 듀얼 타겟으로 저장 → GraphCosmos에 전달
+    setDualPathTarget(idB);
+    // 2초 후 자동 해제 (경로 확인 후 일반 탐색으로)
+    setTimeout(() => setDualPathTarget(null), 8000);
+  }, [graphData, handleArtistSelect]);
+
 
   // ── 네이티브 공유 및 클립보드 복사 기능 ──────────────────────────────────
   const handleShare = useCallback(async () => {
@@ -468,7 +517,41 @@ export default function UniversePage() {
       `}</style>
 
       {/* 검색 */}
-      <FloatingSearch onSelect={handleArtistSelect} />
+      <FloatingSearch onSelect={handleArtistSelect} onDualSelect={handleDualSelect} />
+
+
+      {/* 우측 상단 유저 아바타 (로그인/드롭다운) */}
+      <UserAvatar />
+
+      {/* Phase 7: 자율주행 패널 */}
+      <AutoWarpPanel
+        isWarping={warp.isWarping}
+        flightLog={warp.flightLog}
+        currentStep={warp.currentStep}
+        focusedId={focusedId}
+        focusedName={focusedArtistName}
+        isLoggedIn={!!session?.user}
+        onStart={warp.start}
+        onStop={() => {
+          // Flight Log 저장 (비행 기록이 2정거장 이상일 때만)
+          if (warp.flightLog.length >= 2) {
+            const fl = warp.flightLog;
+            const totalSec = Math.round((fl[fl.length - 1].timestamp - fl[0].timestamp) / 1000);
+            fetch("/api/universe/flight-log", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                startArtist: fl[0].nodeId,
+                path: fl.map(s => ({ nodeId: s.nodeId, name: s.name })),
+                totalStops: fl.length,
+                totalSeconds: totalSec,
+              }),
+            }).catch(() => {}); // 실패해도 무시
+          }
+          warp.stop();
+        }}
+      />
+
 
       {/* 우측 상단 외부 링크 공유 */}
       {focusedId && sheetState !== "collapsed" && (
@@ -542,6 +625,7 @@ export default function UniversePage() {
               graphData={graphData}
               onArtistSelect={handleArtistSelect}
               focusedId={focusedId}
+              dualPathTarget={dualPathTarget}
               onBackgroundClick={() => {
                 // 아티스트 디셀렉트: 모든 포커스 상태 초기화
                 setFocusedId(null);
@@ -549,6 +633,8 @@ export default function UniversePage() {
                 setFocusedArtistName("");
                 setHop1List([]);
                 setSheetState("collapsed");
+                setDualPathTarget(null);
+                warp.stop(); // 자율주행 정지
                 // 오디오 정지
                 audio.stop();
                 // URL에서 artist 파라미터 제거
@@ -584,7 +670,37 @@ export default function UniversePage() {
           {/* 1촌 워프 포탈 목록 */}
           {sheetState === "expanded" && focusedId && (
             <>
+              {/* Phase 4: 에디트 제안 버튼 (바텀시트 헤더 우측) */}
+              <div style={{
+                display: "flex", justifyContent: "flex-end",
+                padding: "0 16px 4px", marginTop: -4,
+              }}>
+                <button
+                  id="edit-suggest-btn"
+                  onClick={() => setEditModalOpen(true)}
+                  style={{
+                    fontSize: 11, fontWeight: 600,
+                    color: "rgba(167,139,250,0.7)",
+                    background: "rgba(167,139,250,0.08)",
+                    border: "1px solid rgba(167,139,250,0.2)",
+                    borderRadius: 14, padding: "5px 12px",
+                    cursor: "pointer", transition: "all 0.2s",
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = "rgba(167,139,250,0.15)";
+                    e.currentTarget.style.color = "#c084fc";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = "rgba(167,139,250,0.08)";
+                    e.currentTarget.style.color = "rgba(167,139,250,0.7)";
+                  }}
+                >
+                  ✨️ 정보 수정 제안
+                </button>
+              </div>
+
               {hop1List.length === 0 ? (
+
                 <div style={{ padding: "20px 16px", color: "rgba(200,180,255,0.4)", fontSize: 13, textAlign: "center" }}>
                   연결된 아티스트가 없습니다
                 </div>
@@ -711,6 +827,14 @@ export default function UniversePage() {
           )}
         </>
       </BottomSheet>
+
+      {/* Phase 4: 에디트 제안 모달 */}
+      <EditSuggestModal
+        isOpen={editModalOpen}
+        onClose={() => setEditModalOpen(false)}
+        artistName={focusedArtistName || undefined}
+      />
     </>
+
   );
 }

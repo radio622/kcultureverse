@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import AuthProvider from "@/components/AuthProvider";
+import SessionGate from "@/components/SessionGate";
 
 export const metadata: Metadata = {
   title: {
@@ -34,10 +36,14 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
-        {/* 전역 ErrorBoundary — 렌더링 오류 시 우주 테마 에러 UI 표시 */}
-        <ErrorBoundary>
-          {children}
-        </ErrorBoundary>
+        <AuthProvider>
+          {/* 전역 ErrorBoundary — 렌더링 오류 시 우주 테마 에러 UI 표시 */}
+          <ErrorBoundary>
+            {/* 온보딩 모달 + 비회원 토스트 안내 (전역) */}
+            <SessionGate />
+            {children}
+          </ErrorBoundary>
+        </AuthProvider>
       </body>
     </html>
   );

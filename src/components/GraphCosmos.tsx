@@ -27,9 +27,12 @@ interface Props {
   graphData: UniverseGraphV5;
   onArtistSelect: (nodeId: string) => void;
   focusedId: string | null;
+  /** Phase 3: 듀얼 관계 탐색 — B 아티스트 ID */
+  dualPathTarget?: string | null;
   onBackgroundClick?: () => void;
   sheetState?: string;
 }
+
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const ForceGraph2D = require("react-force-graph-2d").default;
@@ -40,24 +43,55 @@ const IMG_CACHE_MAX = 50;       // LRU 이미지 캐시 최대 장수
 const MAX_HOP1_EDGES = 15;      // Hairball 방지: hop1 엣지 최대 수
 
 const EDGE_COLORS: Record<V5EdgeRelation, string> = {
-  SAME_GROUP:    "#86efac",                   // 민트 — 그룹 멤버
-  FEATURED:      "#c084fc",                   // 보라 — 피처링
-  PRODUCER:      "#60a5fa",                   // 파랑 — 프로듀서
-  WRITER:        "#fbbf24",                   // 노랑 — 작곡/작사
-  INDIRECT:      "rgba(255,255,255,0.15)",
-  GENRE_OVERLAP: "rgba(167,139,250,0.06)",
+  SAME_GROUP:      "#86efac",                   // 민트 — 그룹 멤버
+  FEATURED:        "#c084fc",                   // 보라 — 피처링
+  PRODUCER:        "#60a5fa",                   // 파랑 — 프로듀서
+  WRITER:          "#fbbf24",                   // 노랑 — 작곡/작사
+  COVER_OFFICIAL:  "#f97316",                   // 주황 — 공식 커버
+  COVER_FULL:      "#fb923c",                   // 연주황 — 풀 커버
+  COVER_PARTIAL:   "rgba(251,146,60,0.5)",      // 연한 주황 — 일부 커버
+  SHARED_WRITER:   "rgba(251,191,36,0.55)",     // 흐린 노랑
+  SHARED_PRODUCER: "rgba(96,165,250,0.55)",     // 흐린 파랑
+  LABEL:           "rgba(167,139,250,0.4)",     // 연보라 — 레이블
+  TV_SHOW:         "rgba(244,114,182,0.45)",    // 핑크 — 방송
+  INDIRECT:        "rgba(255,255,255,0.15)",
+  GENRE_OVERLAP:   "rgba(167,139,250,0.06)",
 };
 
 const EDGE_WIDTH: Record<V5EdgeRelation, number> = {
-  SAME_GROUP:    2.5,
-  FEATURED:      2.0,
-  PRODUCER:      1.5,
-  WRITER:        1.5,
-  INDIRECT:      0.5,
-  GENRE_OVERLAP: 0.2,
+  SAME_GROUP:      2.5,
+  FEATURED:        2.0,
+  PRODUCER:        1.5,
+  WRITER:          1.5,
+  COVER_OFFICIAL:  1.8,
+  COVER_FULL:      1.3,
+  COVER_PARTIAL:   1.0,
+  SHARED_WRITER:   0.8,
+  SHARED_PRODUCER: 0.8,
+  LABEL:           0.7,
+  TV_SHOW:         0.7,
+  INDIRECT:        0.5,
+  GENRE_OVERLAP:   0.2,
+};
+
+const RELATION_LABEL_KO: Record<V5EdgeRelation, string> = {
+  SAME_GROUP:      "그룹 멤버",
+  FEATURED:        "피처링",
+  PRODUCER:        "프로듀서",
+  WRITER:          "작곡/작사",
+  COVER_OFFICIAL:  "공식 커버/리메이크",
+  COVER_FULL:      "풀 커버 (방송/SNS)",
+  COVER_PARTIAL:   "일부 커버",
+  SHARED_WRITER:   "공동 작사/작곡",
+  SHARED_PRODUCER: "공동 프로듀싱",
+  LABEL:           "동일 레이블",
+  TV_SHOW:         "방송/예능 공동 출연",
+  INDIRECT:        "딥스캔 간접 교류",
+  GENRE_OVERLAP:   "장르/테마 유사",
 };
 
 // ── LRU 이미지 캐시 ────────────────────────────────────────────
+
 const imageCache = new Map<string, HTMLImageElement>();
 const imageLRU: string[] = []; // 최근 사용 순서 추적
 
@@ -130,7 +164,8 @@ function dijkstra(
 }
 
 // ── 메인 컴포넌트 ─────────────────────────────────────────────
-export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBackgroundClick, sheetState }: Props) {
+export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dualPathTarget, onBackgroundClick, sheetState }: Props) {
+
   const fgRef = useRef<Record<string, unknown>>(null);
 
   // 뷰포트 크기
@@ -158,6 +193,15 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
   // Star Bloom 애니메이션 타임스탬프
   const [focusChangedAt, setFocusChangedAt] = useState<number>(0);
   const [prevFocusedId, setPrevFocusedId] = useState<string | null>(null);
+
+  // Phase 3: 엣지 클릭 팝업 상태
+  const [edgePopup, setEdgePopup] = useState<{
+    x: number; y: number;
+    source: string; target: string;
+    relation: V5EdgeRelation;
+    label: string;
+    weight: number;
+  } | null>(null);
 
   // focusedId 변경 시 Bloom 트리거
   useEffect(() => {
@@ -238,6 +282,46 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
       fg.zoom(isMobile ? 1.3 : 1.8, 800);
     }
   }, [focusedId, sheetState, graphData.nodes]);
+
+  // ── Phase 3: 듀얼 관계 탐색 — dualPathTarget 변경 시 A→B Dijkstra 경로 하이라이트 ──
+  useEffect(() => {
+    if (!dualPathTarget || !focusedId) return;
+    if (!graphData.nodes[dualPathTarget] || !graphData.nodes[focusedId]) return;
+
+    // Dijkstra로 A(focusedId) → B(dualPathTarget) 최단 경로 계산
+    const path = dijkstra(graphData.nodes, graphData.edges, focusedId, dualPathTarget);
+
+    if (path.length < 2) {
+      // 경로 없음 — pathfindingFrom만 설정해서 토스트 표시
+      setPathfindingFrom(focusedId);
+      return;
+    }
+
+    // 경로 노드 및 엣지 하이라이트
+    const pathSet = new Set(path);
+    const edgeSet = new Set<string>();
+    for (let i = 0; i < path.length - 1; i++) {
+      edgeSet.add([path[i], path[i + 1]].sort().join("||"));
+    }
+    setHighlightPath(pathSet);
+    setHighlightEdges(edgeSet);
+    setPathfindingFrom(null); // 토스트 숨김
+
+    // 카메라: A와 B의 중점으로 패닝
+    const nodeA = graphData.nodes[focusedId];
+    const nodeB = graphData.nodes[dualPathTarget];
+    if (nodeA.x !== undefined && nodeA.y !== undefined &&
+        nodeB.x !== undefined && nodeB.y !== undefined) {
+      const fg = fgRef.current as {
+        centerAt: (x: number, y: number, ms: number) => void;
+        zoom: (z: number, ms: number) => void;
+      };
+      const midX = (nodeA.x + nodeB.x) / 2;
+      const midY = (nodeA.y + nodeB.y) / 2;
+      fg?.centerAt?.(midX, midY, 900);
+      fg?.zoom?.(1.0, 900);
+    }
+  }, [dualPathTarget, focusedId, graphData.nodes, graphData.edges]);
 
   // ── 노드 클릭 핸들러 ─────────────────────────────────────
   const handleNodeClick = useCallback((node: V5Node) => {
@@ -560,6 +644,28 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
     return () => cancelAnimationFrame(frame);
   }, [focusChangedAt]);
 
+  // ── ⚡ 경로 전류 애니메이션 RAF 루프 (~30fps) ──────────────────
+  // highlightEdges가 있을 때만 캔버스를 매 프레임 강제 리드로우
+  const pathAnimRef = useRef<number | null>(null);
+  useEffect(() => {
+    if (highlightEdges.size === 0) {
+      if (pathAnimRef.current) cancelAnimationFrame(pathAnimRef.current);
+      pathAnimRef.current = null;
+      return;
+    }
+    let alive = true;
+    const tick = () => {
+      if (!alive) return;
+      // ForceGraph2D 캔버스 강제 리프레시
+      const fg = fgRef.current as any;
+      // emitParticle 없이도 tickFrame()으로 canvas 업데이트 가능
+      fg?.d3ReheatSimulation?.(); // 아주 살짝 reheat → 캔버스 리드로우
+      pathAnimRef.current = requestAnimationFrame(tick);
+    };
+    pathAnimRef.current = requestAnimationFrame(tick);
+    return () => { alive = false; if (pathAnimRef.current) cancelAnimationFrame(pathAnimRef.current); };
+  }, [highlightEdges.size]);
+
   // ── 초기 로드 시 자동 zoomToFit ─────────────────────────────
   useEffect(() => {
     if (!graphData || graphData.nodeCount === 0) return;
@@ -588,9 +694,81 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
   }, []);
 
   return (
-    <div style={{ position: "absolute", inset: 0, background: "var(--bg-cosmos, #05050f)" }}>
+    <div style={{ position: "absolute", inset: 0, background: "var(--bg-cosmos, #05050f)" }}
+      onClick={() => edgePopup && setEdgePopup(null)}
+    >
+      {/* Phase 3: 엣지 클릭 팝업 */}
+      {edgePopup && (
+        <div
+          onClick={e => e.stopPropagation()}
+          style={{
+            position: "fixed",
+            left: Math.min(edgePopup.x + 12, window.innerWidth - 260),
+            top: Math.min(edgePopup.y - 10, window.innerHeight - 160),
+            zIndex: 200,
+            background: "rgba(7,9,20,0.92)",
+            backdropFilter: "blur(16px)",
+            border: "1px solid rgba(167,139,250,0.25)",
+            borderRadius: 14,
+            padding: "14px 16px",
+            minWidth: 220, maxWidth: 260,
+            boxShadow: "0 8px 32px rgba(0,0,0,0.5)",
+            animation: "edgePopIn 0.15s ease",
+          }}
+        >
+          {/* 닫기 */}
+          <button
+            onClick={() => setEdgePopup(null)}
+            style={{ position: "absolute", top: 8, right: 10, background: "none", border: "none",
+              color: "rgba(255,255,255,0.3)", fontSize: 14, cursor: "pointer", lineHeight: 1 }}
+          >×</button>
+
+          {/* 양쪽 아티스트 */}
+          <div style={{ fontSize: 13, fontWeight: 600, color: "#fff", marginBottom: 8, paddingRight: 16 }}>
+            <span style={{ color: "rgba(200,180,255,0.9)" }}>{edgePopup.source}</span>
+            <span style={{ color: "rgba(255,255,255,0.3)", margin: "0 6px" }}>↔</span>
+            <span style={{ color: "rgba(200,180,255,0.9)" }}>{edgePopup.target}</span>
+          </div>
+
+          {/* 관계 타입 배지 */}
+          <div style={{ marginBottom: 8 }}>
+            <span style={{
+              fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 20,
+              background: `${EDGE_COLORS[edgePopup.relation]}22`,
+              border: `1px solid ${EDGE_COLORS[edgePopup.relation]}66`,
+              color: EDGE_COLORS[edgePopup.relation],
+            }}>
+              {RELATION_LABEL_KO[edgePopup.relation] ?? edgePopup.relation}
+            </span>
+          </div>
+
+          {/* 설명 라벨 */}
+          {edgePopup.label && (
+            <p style={{ margin: "0 0 6px", fontSize: 12, color: "rgba(255,255,255,0.55)", lineHeight: 1.5 }}>
+              {edgePopup.label}
+            </p>
+          )}
+
+          {/* 가중치 바 */}
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", flexShrink: 0 }}>관계 강도</span>
+            <div style={{ flex: 1, height: 4, background: "rgba(255,255,255,0.08)", borderRadius: 2 }}>
+              <div style={{
+                height: "100%", borderRadius: 2,
+                width: `${edgePopup.weight * 100}%`,
+                background: EDGE_COLORS[edgePopup.relation],
+              }} />
+            </div>
+            <span style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", flexShrink: 0 }}>
+              {(edgePopup.weight * 10).toFixed(0)}/10
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* Pathfinding 안내 토스트 */}
       {pathfindingFrom && (
+
         <div style={{
           position: "absolute", top: 60, left: "50%", transform: "translateX(-50%)",
           zIndex: 100, background: "rgba(5,5,15,0.85)",
@@ -614,39 +792,66 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
         nodeVal={(node: V5Node) => Math.max(2, Math.sqrt(node.degree ?? 0) * 3)}
         linkColor={linkColor}
         linkWidth={linkWidth}
-        linkCanvasObjectMode={() => focusedId ? "after" : undefined}
+        linkCanvasObjectMode={() => "after"}
         linkCanvasObject={(link: any, ctx: CanvasRenderingContext2D, globalScale: number) => {
-          // 포커스 모드 + 줌이 충분할 때만 레이블 표시
-          if (!focusedId || globalScale < 0.6) return;
-          
           const srcId = typeof link.source === "string" ? link.source : link.source?.id;
           const tgtId = typeof link.target === "string" ? link.target : link.target?.id;
+          if (!srcId || !tgtId) return;
           const key = [srcId, tgtId].sort().join("||");
-          
-          // 포커스된 아티스트의 1촌 엣지만
-          if (!focusEdgeKeys.has(key)) return;
-          
+
           const src = typeof link.source === "string" ? null : link.source;
           const tgt = typeof link.target === "string" ? null : link.target;
-          if (!src?.x || !tgt?.x) return;
-          
-          const midX = (src.x + tgt.x) / 2;
-          const midY = (src.y + tgt.y) / 2;
-          
-          const label = link.label || "";
-          if (!label) return;
-          
-          const fontSize = Math.max(3, 10 / globalScale);
-          ctx.save();
-          ctx.font = `${fontSize}px -apple-system, sans-serif`;
-          ctx.textAlign = "center";
-          ctx.textBaseline = "middle";
-          ctx.fillStyle = "rgba(200,180,255,0.4)";
-          ctx.fillText(label, midX, midY - fontSize * 0.8);
-          ctx.restore();
+          if (!src?.x || !tgt?.x || !src?.y || !tgt?.y) return;
+
+          // ── ⚡ 경로 전류 애니메이션 (Dijkstra path edges) ──
+          if (highlightEdges.has(key)) {
+            const t = (Date.now() % 2000) / 2000; // 0→1 순환 (2초 주기)
+            const PARTICLES = 3;
+
+            for (let i = 0; i < PARTICLES; i++) {
+              const p = (t + i / PARTICLES) % 1; // 균등 분배
+              const px = src.x + (tgt.x - src.x) * p;
+              const py = src.y + (tgt.y - src.y) * p;
+              const r = Math.max(2, 4 / globalScale);
+
+              // 글로우
+              const glow = ctx.createRadialGradient(px, py, 0, px, py, r * 3);
+              glow.addColorStop(0, "rgba(251,191,36,0.7)");
+              glow.addColorStop(0.5, "rgba(251,191,36,0.2)");
+              glow.addColorStop(1, "transparent");
+              ctx.beginPath();
+              ctx.arc(px, py, r * 3, 0, 2 * Math.PI);
+              ctx.fillStyle = glow;
+              ctx.fill();
+
+              // 코어 점
+              ctx.beginPath();
+              ctx.arc(px, py, r, 0, 2 * Math.PI);
+              ctx.fillStyle = "#fde68a";
+              ctx.fill();
+            }
+          }
+
+          // ── 포커스 1촌 엣지 라벨 ──
+          if (focusedId && globalScale >= 0.6 && focusEdgeKeys.has(key)) {
+            const label = link.label || "";
+            if (label) {
+              const midX = (src.x + tgt.x) / 2;
+              const midY = (src.y + tgt.y) / 2;
+              const fontSize = Math.max(3, 10 / globalScale);
+              ctx.save();
+              ctx.font = `${fontSize}px -apple-system, sans-serif`;
+              ctx.textAlign = "center";
+              ctx.textBaseline = "middle";
+              ctx.fillStyle = "rgba(200,180,255,0.4)";
+              ctx.fillText(label, midX, midY - fontSize * 0.8);
+              ctx.restore();
+            }
+          }
         }}
         onNodeClick={(node: V5Node) => {
           console.log("🟢 NODE CLICKED:", node.id, node.nameKo || node.name);
+          setEdgePopup(null); // 노드 클릭 시 엣지 팝업 닫기
           handleNodeClick(node);
         }}
         onNodeRightClick={(node: V5Node, event: MouseEvent) => {
@@ -661,7 +866,38 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
             document.body.style.cursor = node ? "pointer" : "default";
           }
         }}
+        onLinkClick={(link: any, event: MouseEvent) => {
+          // ① 줌이 너무 멀면 무시 (오클릭 방지)
+          if (currentScale < 0.4) return;
+
+          const srcId = typeof link.source === "string" ? link.source : link.source?.id;
+          const tgtId = typeof link.target === "string" ? link.target : link.target?.id;
+          if (!srcId || !tgtId) return;
+
+          // ② 포커스된 아티스트가 없으면 엣지 팝업 비활성화
+          if (!focusedId) return;
+
+          // ③ 포커스된 아티스트의 1촌 엣지가 아니면 완전 무시
+          // (백그라운드에 깔려있는 다른 아티스트 엣지 클릭 방어)
+          const edgeKey = [srcId, tgtId].sort().join("||");
+          if (!focusEdgeKeys.has(edgeKey)) return;
+
+          const srcNode = graphData.nodes[srcId];
+          const tgtNode = graphData.nodes[tgtId];
+          if (!srcNode || !tgtNode) return;
+
+          setEdgePopup({
+            x: event.clientX,
+            y: event.clientY,
+            source: srcNode.nameKo || srcNode.name,
+            target: tgtNode.nameKo || tgtNode.name,
+            relation: link.relation as V5EdgeRelation,
+            label: link.label ?? "",
+            weight: link.weight ?? 0,
+          });
+        }}
         onBackgroundClick={() => {
+          setEdgePopup(null);
           if (pathfindingFrom) {
             setPathfindingFrom(null);
             setHighlightPath(new Set());

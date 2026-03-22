@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { exec } from "child_process";
 import { promisify } from "util";
+import { auth } from "@/auth";
+
 
 const execAsync = promisify(exec);
 
@@ -15,7 +17,14 @@ const execAsync = promisify(exec);
  *   2. compute-layout.ts — Torus Force-Directed 시뮬레이션 → 좌표 계산
  */
 export async function POST() {
+  // 보안: Admin 전용
+  const session = await auth();
+  if (session?.user?.role !== "admin") {
+    return NextResponse.json({ success: false, error: "Forbidden" }, { status: 403 });
+  }
+
   // 프러덕션 차단
+
   if (process.env.NODE_ENV === "production" && !process.env.ALLOW_ADMIN_REBUILD) {
     return NextResponse.json(
       { success: false, error: "🚨 프러덕션에서는 실행 불가. 로컬(localhost:3000)에서만 사용하세요." },
@@ -25,6 +34,20 @@ export async function POST() {
 
   try {
     console.log("[Admin] universe:rebuild 시작...");
+
+    // Step 0: merge-overrides (Supabase data_overrides → JSON 머지)
+    console.log("[Admin] Step 0: merge-overrides.ts 실행...");
+    let mergeLog = "";
+    try {
+      const mergeResult = await execAsync(
+        "npx tsx scripts/merge-overrides.ts",
+        { cwd: process.cwd(), timeout: 30000 }
+      );
+      mergeLog = [mergeResult.stdout, mergeResult.stderr].filter(Boolean).join("\n");
+    } catch (mergeErr: any) {
+      mergeLog = `merge-overrides 스킵: ${mergeErr.message}`;
+      console.log("[Admin] merge-overrides 스킵 (오류 무시):", mergeErr.message);
+    }
 
     // Step 1: build-graph (hub JSON → graph.json, 크레딧 가중치 반영)
     console.log("[Admin] Step 1: build-graph.ts 실행...");
@@ -41,6 +64,8 @@ export async function POST() {
     );
 
     const combinedLog = [
+      "=== merge-overrides ===",
+      mergeLog,
       "=== build-graph ===",
       graphResult.stdout,
       graphResult.stderr,
