@@ -7,7 +7,7 @@
  * - 실시간 Flight Log (방문 경로 표시)
  * - 로그인 유저 전용 게이트 (로그인 요구 메시지)
  */
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 interface WarpStep {
   nodeId: string;
@@ -48,6 +48,37 @@ export default function AutoWarpPanel({
     return `${m}:${s.toString().padStart(2, "0")}`;
   };
 
+  // 오늘의 우주 기능 상태
+  const [showToday, setShowToday] = useState(false);
+  const [todayData, setTodayData] = useState<any>(null);
+  const [loadingToday, setLoadingToday] = useState(false);
+
+  // 포커싱되거나 워프가 시작되면 패널 닫기
+  useEffect(() => {
+    if (focusedId || isWarping) setShowToday(false);
+  }, [focusedId, isWarping]);
+
+  const handleOpenToday = async () => {
+    if (showToday) {
+      setShowToday(false);
+      return;
+    }
+    setShowToday(true);
+    if (!todayData) {
+      setLoadingToday(true);
+      try {
+        const now = new Date();
+        const res = await fetch(`/api/universe/today-albums?month=${now.getMonth() + 1}&day=${now.getDate()}`);
+        const data = await res.json();
+        setTodayData(data);
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoadingToday(false);
+      }
+    }
+  };
+
   return (
     <div style={{
       position: "fixed",
@@ -59,6 +90,77 @@ export default function AutoWarpPanel({
       alignItems: "flex-end",
       gap: 8,
     }}>
+      {/* 📅 오늘의 우주 패널 (로켓 팝업) */}
+      {showToday && !isWarping && !focusedId && (
+        <div style={{
+          background: "rgba(10,14,26,0.95)",
+          backdropFilter: "blur(16px)",
+          border: "1px solid rgba(167,139,250,0.3)",
+          borderRadius: 14,
+          padding: "16px",
+          width: 260,
+          maxHeight: 380,
+          overflowY: "auto",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+          scrollbarWidth: "none",
+          animation: "fadeSlideUp 0.2s ease",
+          zIndex: 100
+        }}>
+          <h3 style={{ margin: "0 0 8px 0", color: "#c084fc", fontSize: 13, display: "flex", alignItems: "center", gap: 6 }}>
+            📅 오늘의 우주
+            <span style={{fontSize:11, color:"#94a3b8", fontWeight:400}}>
+              {new Date().getMonth()+1}월 {new Date().getDate()}일
+            </span>
+          </h3>
+          <p style={{ margin: "0 0 14px 0", fontSize: 11, color: "#94a3b8", lineHeight: 1.4 }}>
+            과거 오늘 발매된 앨범들입니다.<br/>앨범을 선택해 자율주행을 시작하세요!
+          </p>
+          
+          {loadingToday ? (
+            <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, textAlign: "center", padding: "30px 0" }}>우주 기록 조회 중... 🚀</div>
+          ) : todayData?.albums?.length > 0 ? (
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {todayData.albums.map((a: any) => (
+                <div 
+                  key={a.id} 
+                  onClick={() => {
+                     setShowToday(false);
+                     onStart(a.artist_id);
+                  }}
+                  style={{
+                    background: "rgba(255,255,255,0.03)",
+                    padding: "10px 12px",
+                    borderRadius: 8,
+                    cursor: "pointer",
+                    transition: "all 0.15s ease",
+                    border: "1px solid transparent"
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.border = "1px solid rgba(167,139,250,0.4)";
+                    e.currentTarget.style.background = "rgba(167,139,250,0.08)";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.border = "1px solid transparent";
+                    e.currentTarget.style.background = "rgba(255,255,255,0.03)";
+                  }}
+                >
+                  <div style={{ fontSize: 12, color: "#f8fafc", fontWeight: 600, marginBottom: 4, display: "flex", gap: 5, alignItems: "center" }}>
+                    {a.artist_name} {a.verified && <span style={{fontSize: 9}} title="데이터 검증됨">✅</span>}
+                  </div>
+                  <div style={{ fontSize: 10, color: "#94a3b8", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    {a.album_title} ({a.release_date.substring(0,4)})
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+             <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, textAlign: "center", padding: "30px 0", lineHeight: 1.5 }}>
+              오늘은 발매 앨범 기록이 없습니다.<br/>(우주 기록 보강 중!)
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Flight Log (자율주행 중일 때만) */}
       {isWarping && flightLog.length > 0 && (
         <div style={{
@@ -144,7 +246,7 @@ export default function AutoWarpPanel({
               return;
             }
             if (!focusedId) {
-              alert("아티스트를 먼저 선택한 후 자율주행을 시작하세요. ✦");
+              handleOpenToday();
               return;
             }
             onStart(focusedId);
@@ -162,7 +264,7 @@ export default function AutoWarpPanel({
           onMouseLeave={e => (e.currentTarget.style.background = "rgba(10,14,26,0.85)")}
           title={focusedId
             ? `🚀 ${focusedName}에서 자율주행 시작`
-            : "아티스트 선택 후 자율주행"}
+            : "오늘의 우주 탐험 (아티스트 미선택)"}
         >
           🚀
         </button>

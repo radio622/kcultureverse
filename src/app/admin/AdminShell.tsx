@@ -14,6 +14,7 @@ const TABS = [
   { id: "members", icon: "👥", label: "회원 관리",    href: "/admin/members" },
   { id: "stats",   icon: "📊", label: "우주 통계",    href: "/admin/stats" },
   { id: "build",   icon: "🔄", label: "빌드 제어",    href: "/admin/build" },
+  { id: "calendar",icon: "📅", label: "발매 캘린더",  href: "/admin/calendar" },
   { id: "rollback",icon: "⏪", label: "롤백",         href: "/admin/rollback" },
 ] as const;
 
