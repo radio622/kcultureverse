@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS album_releases (
   source              TEXT        DEFAULT 'musicbrainz', -- musicbrainz | manual | admin
   verified            BOOLEAN     DEFAULT false,
   verified_at         TIMESTAMPTZ,
-  verification_source TEXT,                          -- 'cron_gpt', 'admin_manual', 'namu_wiki' 등
+  is_korean_artist    BOOLEAN     DEFAULT NULL,          -- GPT-5 Nano 판정 (한국 아티스트 여부)
+  verification_source TEXT,                          -- 'cron_gpt5_nano', 'admin_manual' 등
   verification_note   TEXT,                          -- 검증 메모
   created_at          TIMESTAMPTZ DEFAULT NOW(),
   updated_at          TIMESTAMPTZ DEFAULT NOW()

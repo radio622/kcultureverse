@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
   await supabase.from("daily_verification_logs").insert({
     run_date: runDate,
     status: "running",
-    llm_model: "gemini-2.0-flash",
+    llm_model: "gpt-5-nano",
     started_at: new Date().toISOString(),
   });
 
@@ -79,26 +79,28 @@ export async function POST(req: NextRequest) {
     if (result.corrected) {
       correctedCount++;
       logLines.push(
-        `✅ 수정: [${album.artist_name}] "${album.album_title}" ${album.release_date} → ${result.corrected_date}`
+        `✅ 수정: [${album.artist_name}] "${album.album_title}" ${album.release_date} → ${result.corrected_date} (K팝: ${result.is_korean_artist})`
       );
       await supabase
         .from("album_releases")
         .update({
           release_date: result.corrected_date,
+          is_korean_artist: result.is_korean_artist,
           verified: true,
           verified_at: new Date().toISOString(),
-          verification_source: "cron_gemini",
+          verification_source: "cron_gpt5_nano",
           verification_note: result.note,
         })
         .eq("id", album.id);
     } else {
-      logLines.push(`✓ 확인: [${album.artist_name}] "${album.album_title}" ${album.release_date}`);
+      logLines.push(`✓ 확인: [${album.artist_name}] "${album.album_title}" ${album.release_date} (K팝: ${result.is_korean_artist})`);
       await supabase
         .from("album_releases")
         .update({
+          is_korean_artist: result.is_korean_artist,
           verified: true,
           verified_at: new Date().toISOString(),
-          verification_source: "cron_gemini",
+          verification_source: "cron_gpt5_nano",
           verification_note: result.note,
         })
         .eq("id", album.id);
@@ -125,7 +127,7 @@ export async function POST(req: NextRequest) {
   });
 }
 
-// ── 단일 앨범 검증 (MusicBrainz 교차 확인) ─────────────────
+// ── 단일 앨범 검증 (LLM 교차 확인) ─────────────────
 async function verifyAlbum(album: {
   id: number;
   artist_name: string;
@@ -133,45 +135,66 @@ async function verifyAlbum(album: {
   album_title: string;
   release_date: string;
   mbid: string | null;
-}): Promise<{ corrected: boolean; corrected_date?: string; note: string }> {
-  // MusicBrainz first-release-date 재확인 (MBID 있을 경우)
-  if (album.mbid) {
-    try {
-      const resp = await fetch(
-        `https://musicbrainz.org/ws/2/release/${album.mbid}?fmt=json`,
-        {
-          headers: {
-            "User-Agent": "KCultureUniverse/7.4 (contact@kcultureverse.com)",
-          },
-        }
-      );
-      if (resp.ok) {
-        const data = await resp.json();
-        const mbDate: string | undefined = data["date"];
-        if (mbDate && mbDate !== album.release_date && mbDate.length >= 4) {
-          // 연도만 있는 경우 (ex: "1998") 는 단순 참고만
-          if (mbDate.length === 4) {
-            return {
-              corrected: false,
-              note: `MB 연도만 확인됨: ${mbDate}`,
-            };
-          }
-          return {
-            corrected: true,
-            corrected_date: mbDate,
-            note: `MB 재확인: ${album.release_date} → ${mbDate}`,
-          };
-        }
-        return { corrected: false, note: `MB 일치: ${mbDate ?? "n/a"}` };
-      }
-    } catch {
-      // MB API 실패는 조용히 무시하고 검증됨으로 처리
-      return { corrected: false, note: "MB API 오류 — 스킵" };
-    }
-  }
+}): Promise<{ corrected: boolean; corrected_date?: string; is_korean_artist: boolean | null; note: string }> {
+  try {
+    const systemPrompt = `You are a K-pop/K-indie music data expert.
+Verify the release date of the following album and check if the artist is a Korean artist (K-Pop/K-Indie/K-Culture).
+Return ONLY valid JSON in this exact format, with no markdown code blocks:
+{
+  "verified": true/false,
+  "corrected_date": "YYYY-MM-DD" (or null if original is correct),
+  "is_korean_artist": true/false (true if the artist operates primarily in the Korean music scene),
+  "note": "Brief explanation or source"
+}`;
 
-  // MBID 없는 경우: 일단 verified=true로 마킹 (Admin이 수동 확인)
-  return { corrected: false, note: "MBID 없음 — 수동 확인 필요" };
+    const userPrompt = `
+    Artist: ${album.artist_name} ${album.artist_name_ko ? `(${album.artist_name_ko})` : ""}
+    Album: ${album.album_title}
+    Current DB Date: ${album.release_date}
+    
+    Is the release date correct? If it is a re-release or remaster, find the ORIGINAL first release date. Also, is this artist a Korean artist?
+    `;
+
+    const resp = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "gpt-5-nano",
+        messages: [
+          { role: "system", "content": systemPrompt },
+          { role: "user", "content": userPrompt }
+        ],
+        temperature: 0.2
+      })
+    });
+
+    if (!resp.ok) {
+      return { corrected: false, is_korean_artist: null, note: `API 오류: HTTP ${resp.status}` };
+    }
+
+    const data = await resp.json();
+    let content = data.choices?.[0]?.message?.content?.trim() || "";
+    
+    // Markdown JSON code block 제거
+    if (content.startsWith("```json")) {
+      content = content.replace(/^```json/, "").replace(/```$/, "").trim();
+    } else if (content.startsWith("```")) {
+      content = content.replace(/^```/, "").replace(/```$/, "").trim();
+    }
+    
+    const parsed = JSON.parse(content);
+    return {
+      corrected: !parsed.verified,
+      corrected_date: parsed.corrected_date || undefined,
+      is_korean_artist: parsed.is_korean_artist ?? null,
+      note: parsed.note || "LLM Verified"
+    };
+  } catch (error: any) {
+    return { corrected: false, is_korean_artist: null, note: `LLM 호출 에러: ${error.message}` };
+  }
 }
 
 // ── 로그 완료 헬퍼 ─────────────────────────────────────────
