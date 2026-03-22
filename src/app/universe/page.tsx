@@ -495,34 +495,49 @@ export default function UniversePage() {
           <MiniPlayer
             isPlaying={audio.isPlaying}
             trackName={audio.currentTrackName}
+            artistName={
+              audio.currentArtistId
+                ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name)
+                : null
+            }
             progress={audio.progress}
             onStop={audio.stop}
             sheetState={sheetState}
             onExpand={() => setSheetState("expanded")}
+            externalLinkNode={
+              <a
+                href={
+                  detailCache.current[audio.currentArtistId || focusedId || ""]?.spotifyUrl ||
+                  `https://search.naver.com/search.naver?query=${encodeURIComponent(
+                    audio.currentArtistId
+                      ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")
+                      : focusedArtistName
+                  )}`
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="artist-external-link"
+                title="외부 통신 링크"
+                style={{ margin: 0, padding: "4px 8px", fontSize: "10px" }}
+              >
+                {audio.currentArtistId
+                  ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")
+                  : focusedArtistName}
+                {getJosa(
+                  audio.currentArtistId
+                    ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")
+                    : focusedArtistName,
+                  "로부터",
+                  "으로부터"
+                )}{" "}
+                <span>↗</span>
+              </a>
+            }
           />
 
           {/* 1촌 워프 포탈 목록 */}
           {sheetState === "expanded" && focusedId && (
             <>
-              {/* 헤더 */}
-              <div className="universe-focused-header">
-                <div>
-                  <div className="universe-focused-name">{focusedArtistName}</div>
-                  <div className="universe-hop-count">
-                    연결된 아티스트 {hop1List.length}명
-                  </div>
-                </div>
-                <a
-                  href={detailCache.current[focusedId]?.spotifyUrl || `https://search.naver.com/search.naver?query=${encodeURIComponent(focusedArtistName)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="artist-external-link"
-                  title="외부 탐색"
-                >
-                  {focusedArtistName}{getJosa(focusedArtistName, "로부터", "으로부터")} <span>↗</span>
-                </a>
-              </div>
-
               {hop1List.length === 0 ? (
                 <div style={{ padding: "20px 16px", color: "rgba(200,180,255,0.4)", fontSize: 13, textAlign: "center" }}>
                   연결된 아티스트가 없습니다

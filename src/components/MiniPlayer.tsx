@@ -8,6 +8,8 @@ interface Props {
   /** peek 상태에서 탭하면 expanded로 */
   onExpand?: () => void;
   sheetState?: "collapsed" | "peek" | "expanded";
+  artistName?: string | null;
+  externalLinkNode?: React.ReactNode;
 }
 
 export default function MiniPlayer({
@@ -17,6 +19,8 @@ export default function MiniPlayer({
   onStop,
   onExpand,
   sheetState = "peek",
+  artistName,
+  externalLinkNode,
 }: Props) {
 
   // 아무것도 재생 안 하고 peek 상태면: 안내 문구
@@ -103,7 +107,7 @@ export default function MiniPlayer({
               transition: "color 0.3s ease",
             }}
           >
-            {isPlaying ? "⏸ " : ""}{trackName ?? "재생 준비 중..."}
+            {isPlaying ? "⏸ " : ""}{artistName ? `${artistName} - ` : ""}{trackName ?? "재생 준비 중..."}
           </span>
           {/* peek 상태에서 "위로 스와이프" 힌트 */}
           {sheetState === "peek" && (
@@ -138,6 +142,13 @@ export default function MiniPlayer({
           >
             ◼
           </button>
+        )}
+
+        {/* 외부 탐색 버튼 (expanded 상태일 때만) */}
+        {sheetState === "expanded" && externalLinkNode && (
+          <div style={{ flexShrink: 0, marginLeft: "auto" }}>
+            {externalLinkNode}
+          </div>
         )}
       </div>
 
