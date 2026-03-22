@@ -1,3 +1,21 @@
+/**
+ * V6.4 CSV Batch Ingest Script
+ *
+ * ⚠️ 데이터 품질 규칙 (docs/DATA_QUALITY_GUIDE.md 필독!):
+ *
+ * 【규칙 1 — 콜라보 금지】
+ * Spotify CSV에서 "Crush;태연", "10CM;이수현" 등 세미콜론(;)으로 연결된 이름은
+ * 하나의 아티스트가 아닌 "콜라보레이션 곡"이다.
+ * 절대 하나의 노드로 만들지 말 것! → 개별 아티스트 노드 + FEATURED 엣지로 분리 필요.
+ *
+ * 【규칙 2 — 이름 통합】
+ * name(영문)과 nameKo(한글) 모두 반드시 설정할 것.
+ * nameKo가 name과 동일하면 안 됨 (한글 이름이 있는 경우).
+ *
+ * 【규칙 3 — Spotify 발매일 불신】
+ * Spotify의 release_date는 리마스터/재발매 날짜로 원본을 덮어씀.
+ * MusicBrainz first-release-date를 우선 사용할 것.
+ */
 import fs from "fs";
 import path from "path";
 import { parse } from "csv-parse/sync";
@@ -117,6 +135,14 @@ async function main() {
       const names = rawVal.split(",").map((x: string) => x.trim());
       for (const nameKo of names) {
         if (!nameKo || nameKo.toLowerCase() === "various artists") continue;
+
+        // ⚠️ 【규칙 1 — 콜라보 감지】 세미콜론이 있으면 콜라보 곡!
+        // 하나의 노드로 추가하면 안 됨. 개별 분리 필요.
+        // TODO: V7.0.3 Phase 1에서 자동 분리 로직 구현 예정
+        if (nameKo.includes(';')) {
+          console.log(`  ⚠️ [콜라보 감지] "${nameKo}" → 분리 필요 (스킵)`);
+          continue; // 콜라보는 별도 처리. 절대 단일 노드로 만들지 않음!
+        }
         
         // 중복이면 스킵
         if (existingMap.has(nameKo.toLowerCase())) {

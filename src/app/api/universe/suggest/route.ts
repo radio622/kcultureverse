@@ -58,7 +58,13 @@ IMPORTANT RULES:
   - SAME_GROUP (1.0): members of the same group
 - Set confidence based on how clear and verifiable the claim is
 - If the input is unrelated to K-Culture artists, set intent to "IRRELEVANT"
-- Always output valid JSON only, never markdown`;
+- Always output valid JSON only, never markdown
+- 【CRITICAL: COLLAB RULE】 If an artist name contains a semicolon (;) like "Crush;태연",
+  this is NOT a single artist — it's a COLLABORATION between Crush and 태연.
+  In this case, output intent="EDGE_PROPOSAL" with source="Crush", target="태연",
+  relation="FEATURED", weight=0.7. NEVER add a semicolon-separated name as a single artist!
+- 【NAME RULE】 For ARTIST_ADDITION, always provide both "name" (English) and "nameKo" (Korean).
+  nameKo must be different from name. e.g., name="IU", nameKo="아이유".`;
 
 // ── MusicBrainz 검증 ─────────────────────────────────────────
 async function verifyMusicBrainz(artistNames: string[]): Promise<{ found: boolean; details: string }> {

@@ -147,6 +147,15 @@ async function main() {
           // 신규 노드: 기존 노드 중 랜덤 위치 근처에 배치
           const name = data.name as string;
           const nameKo = (data.nameKo as string) || name;
+
+          // ⚠️ 【규칙 1 — 콜라보 감지】 세미콜론이 있으면 콜라보!
+          // 절대 단일 노드로 추가하면 안 됨 (docs/DATA_QUALITY_GUIDE.md)
+          if (name.includes(';') || nameKo.includes(';')) {
+            console.log(`  ⚠️ #${id} 콜라보 감지 → 스킵: "${name}"`);
+            skipped++;
+            break;
+          }
+
           const newId = `override_${id}_${Date.now()}`;
 
           // 랜덤 기존 노드 근처에 배치 (±50 오프셋)

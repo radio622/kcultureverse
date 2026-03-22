@@ -25,7 +25,23 @@ export type V5EdgeRelation =
 
 export interface V5Node {
   id: string;
+  /**
+   * 영문 공식명 (또는 영문 주 표기).
+   *
+   * ⚠️ 데이터 품질 규칙 (docs/DATA_QUALITY_GUIDE.md 참조):
+   *
+   * 1. 【콜라보 금지】 세미콜론(;)이 포함된 이름은 절대 노드로 만들지 않는다.
+   *    "Crush;태연" → ❌ 하나의 노드가 아님! Crush와 태연 각각 개별 노드 + FEATURED 엣지.
+   *
+   * 2. 【name ≠ nameKo】 name은 영문, nameKo는 한글. 둘 다 빈 값이면 안 된다.
+   *    name="IU", nameKo="아이유" (O)
+   *    name="BTS", nameKo="BTS"  (X) ← nameKo가 영문과 동일하면 안 됨
+   */
   name: string;
+  /**
+   * 한글 공식명. 반드시 설정해야 하며, name(영문)과 동일한 값은 의미 없음.
+   * 양방향 검색(한글/영어)을 위해 FloatingSearch ALIAS_MAP에도 등록 필요.
+   */
   nameKo: string;
   image: string | null;
   genres: string[];
