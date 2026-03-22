@@ -39,7 +39,7 @@ export default function MiniPlayer({
       <div
         style={{
           padding: "0 20px",
-          height: 44,
+          height: 38,
           display: "flex",
           alignItems: "center",
           gap: 10,
@@ -68,7 +68,7 @@ export default function MiniPlayer({
           ? "rgba(167,139,250,0.06)"
           : "transparent",
         transition: "background 0.3s ease",
-        marginBottom: sheetState === "expanded" ? 4 : 0,
+        marginBottom: sheetState === "expanded" ? 2 : 0,
       }}
     >
       {/* ── 트랙 정보 + 컨트롤 ─────────────────────────── */}
@@ -77,7 +77,7 @@ export default function MiniPlayer({
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          height: 44,
+          height: 38,
           gap: 12,
         }}
       >

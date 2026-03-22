@@ -397,7 +397,7 @@ export default function UniversePage() {
         /* Swipeable Card Deck */
         .warp-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 16px 20px 32px; margin: 0; list-style: none; scrollbar-width: none; -ms-overflow-style: none; }
         .warp-list::-webkit-scrollbar { display: none; }
-        .warp-item { position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 130px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px 12px; text-align: center; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); scroll-snap-align: center; scroll-margin-inline: 20px; }
+        .warp-item { position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 130px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px 12px 20px; text-align: center; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); scroll-snap-align: center; scroll-margin-inline: 20px; }
         .warp-item:hover, .warp-item:active { background: rgba(255,255,255,0.07); border-color: rgba(167,139,250,0.4); transform: translateY(-2px); }
         .warp-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: rgba(167,139,250,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: rgba(200,180,255,0.8); overflow: hidden; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
         .warp-info { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; flex: 1; min-height: 80px; }
@@ -414,7 +414,7 @@ export default function UniversePage() {
         .rel-INDIRECT   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
         .rel-GENRE_OVERLAP { background: rgba(167,139,250,0.08); color: rgba(167,139,250,0.5); }
         /* Warp item play button (Card version) */
-        .warp-play { width: 100%; height: 32px; margin-top: auto; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; color: #d8b4ff; font-size: 12px; font-weight: 600; transition: all 0.2s; padding: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .warp-play { width: 100%; height: 36px; margin-top: 14px; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; color: #d8b4ff; font-size: 12px; font-weight: 600; transition: all 0.2s; padding: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .warp-play:hover { background: rgba(167,139,250,0.2); color: #fff; border-color: rgba(167,139,250,0.5); }
         .warp-play.playing { background: rgba(167,139,250,0.25); color: #fff; border-color: rgba(167,139,250,0.6); animation: wpulse 2s ease-in-out infinite; box-shadow: 0 0 10px rgba(167,139,250,0.3); }
         @keyframes wpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
@@ -589,47 +589,47 @@ export default function UniversePage() {
                       data-id={item.id}
                       data-url={item.previewUrl || ""}
                       data-track={item.previewTrackName || item.nameKo || item.name}
-                      onClick={(e) => {
-                        // 1. 미리듣기 버튼 탭 시 워프 방지 (이중 캡처 차단)
-                        if ((e.target as HTMLElement).closest('.warp-play')) {
-                          return;
-                        }
-                        // 2. 드래그 중이었다면 엉뚱한 노드 워프 방지
-                        if (hasDragged.current) {
-                          e.stopPropagation();
-                          e.preventDefault();
-                          return;
-                        }
-                        handleHopItemTap(item.id);
-                      }}
-                      role="button"
-                      aria-label={`${item.nameKo}로 이동`}
+                      role="group"
                     >
-                      {/* 아바타 */}
-                      <div className="warp-avatar" style={{
-                        border: `1.5px solid ${item.accent || "rgba(167,139,250,0.3)"}`,
-                      }}>
-                        {item.image
-                          ? <img src={item.image} alt={item.nameKo} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                          : (item.nameKo || item.name).charAt(0)
-                        }
-                      </div>
+                      {/* 클릭 가능한 상단 카드 영역 (버튼과 물리적/DOM 분리) */}
+                      <div
+                        className="warp-card-content"
+                        style={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%", flex: 1, cursor: "pointer" }}
+                        onClick={(e) => {
+                          if (hasDragged.current) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            return;
+                          }
+                          handleHopItemTap(item.id);
+                        }}
+                      >
+                        {/* 아바타 */}
+                        <div className="warp-avatar" style={{
+                          border: `1.5px solid ${item.accent || "rgba(167,139,250,0.3)"}`,
+                        }}>
+                          {item.image
+                            ? <img src={item.image} alt={item.nameKo} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            : (item.nameKo || item.name).charAt(0)
+                          }
+                        </div>
 
-                      {/* 정보 */}
-                      <div className="warp-info">
-                        <div className="warp-name">{item.nameKo || item.name}</div>
-                        <div className="warp-label">
-                          <span className={`relation-pill rel-${item.relation}`}>
-                            {item.relation === "SAME_GROUP" ? "멤버" :
-                             item.relation === "FEATURED"   ? "피처링" :
-                             item.relation === "PRODUCER"   ? "프로듀서" :
-                             item.relation === "WRITER"     ? "작곡/작사" :
-                             item.relation === "SHARED_WRITER"   ? "공유 작가" :
-                             item.relation === "SHARED_PRODUCER" ? "공유 작가" :
-                             item.relation === "INDIRECT"   ? "딥스캔 교류" :
-                             item.relation === "GENRE_OVERLAP"? "장르/테마" : "관련"}
-                          </span>
-                          {item.label && <span className="relation-desc">{item.label}</span>}
+                        {/* 정보 */}
+                        <div className="warp-info">
+                          <div className="warp-name">{item.nameKo || item.name}</div>
+                          <div className="warp-label">
+                            <span className={`relation-pill rel-${item.relation}`}>
+                              {item.relation === "SAME_GROUP" ? "멤버" :
+                               item.relation === "FEATURED"   ? "피처링" :
+                               item.relation === "PRODUCER"   ? "프로듀서" :
+                               item.relation === "WRITER"     ? "작곡/작사" :
+                               item.relation === "SHARED_WRITER"   ? "공유 작가" :
+                               item.relation === "SHARED_PRODUCER" ? "공유 작가" :
+                               item.relation === "INDIRECT"   ? "딥스캔 교류" :
+                               item.relation === "GENRE_OVERLAP"? "장르/테마" : "관련"}
+                            </span>
+                            {item.label && <span className="relation-desc">{item.label}</span>}
+                          </div>
                         </div>
                       </div>
 
