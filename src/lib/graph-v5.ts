@@ -9,16 +9,23 @@
 
 export type V5EdgeRelation =
   | "SAME_GROUP"       // 그룹 멤버 (1.0)
-  | "FEATURED"         // 피처링 (0.7)
+  | "FAMILY"           // 가족/혈연/혼인 (1.0) - V7.5
+  | "FEATURED"         // 피처링/정식 음원 협업 (0.7)
   | "PRODUCER"         // 프로듀서 (0.7)
   | "WRITER"           // 작곡/작사 (0.7)
   | "COVER_OFFICIAL"   // 공식 발매 리메이크/커버 (0.7)
+  | "ALUMNI_INTIMATE"  // 동기 동창 (0.7) - V7.5
+  | "AGENCY_MATE"      // 같은 기획사/레이블 (0.6) - V7.5
   | "COVER_FULL"       // 방송/SNS 풀 커버 (0.5)
+  | "ALUMNI"           // 일반 동문/학연 (0.3 ~ 0.4) - V7.5
   | "COVER_PARTIAL"    // 방송/SNS 일부 커버 (0.3)
   | "SHARED_WRITER"    // 공동 작가 (0.3)
   | "SHARED_PRODUCER"  // 공동 프로듀서 (0.3)
-  | "LABEL"            // 같은 레이블 소속 (0.2)
+  | "EVENT_CO"         // 행사/페스티벌 동반 참석 (0.3) - V7.5
+  | "NEIGHBOR"         // 같은 동네/지연 (0.3) - V7.5
+  | "LABEL"            // 단순 소속/배급사 (0.2)
   | "TV_SHOW"          // 방송/예능 공동 출연 (0.15)
+  | "NEWS_MENTION"     // 기사 동시 언급 (0.15) - V7.5
   | "INDIRECT"         // 딥스캔 간접 교류 (0.1)
   | "GENRE_OVERLAP";   // 장르/테마 유사 (0.05)
 
