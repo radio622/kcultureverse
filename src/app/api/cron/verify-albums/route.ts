@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
   await supabase.from("daily_verification_logs").insert({
     run_date: runDate,
     status: "running",
-    llm_model: "gpt-5-nano",
+    llm_model: "gemini-3.1-flash-lite-preview",
     started_at: new Date().toISOString(),
   });
 
@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
           is_korean_artist: result.is_korean_artist,
           verified: true,
           verified_at: new Date().toISOString(),
-          verification_source: "cron_gpt5_nano",
+          verification_source: "cron_gemini_3.1",
           verification_note: result.note,
         })
         .eq("id", album.id);
@@ -100,7 +100,7 @@ export async function POST(req: NextRequest) {
           is_korean_artist: result.is_korean_artist,
           verified: true,
           verified_at: new Date().toISOString(),
-          verification_source: "cron_gpt5_nano",
+          verification_source: "cron_gemini_3.1",
           verification_note: result.note,
         })
         .eq("id", album.id);
@@ -155,28 +155,27 @@ Return ONLY valid JSON in this exact format, with no markdown code blocks:
     Is the release date correct? If it is a re-release or remaster, find the ORIGINAL first release date. Also, is this artist a Korean artist?
     `;
 
-    const resp = await fetch("https://api.openai.com/v1/chat/completions", {
+    const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${process.env.GEMINI_API_KEY}`, {
       method: "POST",
-      headers: {
-        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`,
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "gpt-5-nano",
-        messages: [
-          { role: "system", "content": systemPrompt },
-          { role: "user", "content": userPrompt }
-        ],
-        temperature: 0.2
+        contents: [{
+          role: "user",
+          parts: [{ text: systemPrompt + "\n\n" + userPrompt }]
+        }],
+        generationConfig: {
+          temperature: 0.1,
+          responseMimeType: "application/json",
+        }
       })
     });
 
     if (!resp.ok) {
-      return { corrected: false, is_korean_artist: null, note: `API 오류: HTTP ${resp.status}` };
+      return { corrected: false, is_korean_artist: null, note: `Gemini API 오류: HTTP ${resp.status}` };
     }
 
     const data = await resp.json();
-    let content = data.choices?.[0]?.message?.content?.trim() || "";
+    let content = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
     
     // Markdown JSON code block 제거
     if (content.startsWith("```json")) {
