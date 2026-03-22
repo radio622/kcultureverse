@@ -589,7 +589,11 @@ export default function UniversePage() {
                       data-url={item.previewUrl || ""}
                       data-track={item.previewTrackName || item.nameKo || item.name}
                       onClick={(e) => {
-                        // 드래그 중이었다면 엉뚱한 노드 워프 방지
+                        // 1. 미리듣기 버튼 탭 시 워프 방지 (이중 캡처 차단)
+                        if ((e.target as HTMLElement).closest('.warp-play')) {
+                          return;
+                        }
+                        // 2. 드래그 중이었다면 엉뚱한 노드 워프 방지
                         if (hasDragged.current) {
                           e.stopPropagation();
                           e.preventDefault();
@@ -631,8 +635,10 @@ export default function UniversePage() {
                       {/* 재생 버튼 (Play) - 카드 하단 강조 */}
                       {item.previewUrl ? (
                         <button
+                          type="button"
                           className={`warp-play${audio.currentArtistId === item.id && audio.isPlaying ? " playing" : ""}`}
                           onClick={(e) => {
+                            e.preventDefault();
                             e.stopPropagation();
                             if (audio.currentArtistId === item.id && audio.isPlaying) {
                               audio.stop();
