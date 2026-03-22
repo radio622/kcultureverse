@@ -7,6 +7,7 @@ interface Props {
   trackName: string | null;
   progress: number;  // 0~1
   onStop: () => void;
+  onTogglePause?: () => void;
   /** peek 상태에서 탭하면 expanded로 */
   onExpand?: () => void;
   sheetState?: "collapsed" | "peek" | "expanded";
@@ -18,6 +19,7 @@ export default function MiniPlayer({
   trackName,
   progress,
   onStop,
+  onTogglePause,
   onExpand,
   sheetState = "peek",
   artistName,
@@ -100,8 +102,13 @@ export default function MiniPlayer({
 
         {/* 트랙명 (클릭하면 재생/정지 토글) */}
         <div
-          onClick={(e) => { if (isPlaying) { e.stopPropagation(); onStop(); } }}
-          style={{ flex: 1, minWidth: 0, cursor: isPlaying ? "pointer" : "default" }}
+          onClick={(e) => { 
+            if (trackName) { 
+              e.stopPropagation(); 
+              onTogglePause?.(); 
+            } 
+          }}
+          style={{ flex: 1, minWidth: 0, cursor: trackName ? "pointer" : "default" }}
         >
           <span
             style={{
@@ -115,7 +122,7 @@ export default function MiniPlayer({
               transition: "color 0.3s ease",
             }}
           >
-            {isPlaying ? "⏸ " : ""}
+            {isPlaying ? "⏸ " : trackName ? "▶ " : ""}
             {isMobile 
               ? <>{trackName ?? "재생 준비 중..."} {artistName ? ` - ${artistName}` : ""}</>
               : <>{artistName ? `${artistName} - ` : ""}{trackName ?? "재생 준비 중..."}</>
@@ -124,7 +131,7 @@ export default function MiniPlayer({
           {/* peek 상태에서 "위로 스와이프" 힌트 */}
           {sheetState === "peek" && (
             <span style={{ fontSize: 10, color: "var(--text-muted)", display: "block", marginTop: 1 }}>
-              {isPlaying ? "탭하면 일시정지" : "탭하면 관련 아티스트 보기"}
+              {isPlaying ? "탭하면 일시정지" : trackName ? "탭하면 계속 재생" : "탭하면 관련 아티스트 보기"}
             </span>
           )}
         </div>

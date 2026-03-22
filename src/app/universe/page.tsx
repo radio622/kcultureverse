@@ -538,6 +538,7 @@ export default function UniversePage() {
             }
             progress={audio.progress}
             onStop={audio.stop}
+            onTogglePause={audio.togglePause}
             sheetState={sheetState}
             onExpand={() => setSheetState("expanded")}
           />
@@ -640,8 +641,8 @@ export default function UniversePage() {
                           onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
-                            if (audio.currentArtistId === item.id && audio.isPlaying) {
-                              audio.stop();
+                            if (audio.currentArtistId === item.id) {
+                              audio.togglePause();
                             } else {
                               audio.play(
                                 item.previewUrl!,
@@ -654,6 +655,8 @@ export default function UniversePage() {
                         >
                           {audio.currentArtistId === item.id && audio.isPlaying ? (
                             <><span>⏸</span> 일시정지</>
+                          ) : audio.currentArtistId === item.id && !audio.isPlaying && audio.currentTrackName ? (
+                            <><span>▶</span> 이어서 듣기</>
                           ) : (
                             <><span>▶</span> 미리듣기</>
                           )}

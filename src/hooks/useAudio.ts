@@ -62,8 +62,20 @@ export function useAudio() {
     }
     const audio = audioRef.current;
 
-    // 같은 곡이면 스킵
-    if (audio.src === previewUrl && !audio.paused) return;
+    // 같은 곡이면 스킵 (일시정지 상태라면 재생부터 재개)
+    if (audio.src === previewUrl) {
+      if (audio.paused) {
+        audio.volume = 0;
+        try {
+          await audio.play();
+          fadeIn(audio, 0.75, 400);
+          setState((prev) => ({ ...prev, isPlaying: true }));
+        } catch {
+          setState((prev) => ({ ...prev, isPlaying: false }));
+        }
+      }
+      return;
+    }
 
     // ✨ 핵심 UI 즉시 갱신 (오디오 다운로드 대기 전에 라벨부터 변경)
     setState((prev) => ({
@@ -111,6 +123,24 @@ export function useAudio() {
     });
   }, [fadeOut]);
 
+  const togglePause = useCallback(() => {
+    if (!audioRef.current || !audioRef.current.src) return;
+    const a = audioRef.current;
+    if (a.paused) {
+      a.volume = 0;
+      a.play().then(() => {
+        fadeIn(a, 0.75, 400);
+        setState((prev) => ({ ...prev, isPlaying: true }));
+      }).catch(() => {
+        setState((prev) => ({ ...prev, isPlaying: false }));
+      });
+    } else {
+      fadeOut(a, 250).then(() => {
+        setState((prev) => ({ ...prev, isPlaying: false }));
+      });
+    }
+  }, [fadeIn, fadeOut]);
+
   // 진행률 업데이트
   useEffect(() => {
     const audio = audioRef.current;
@@ -150,6 +180,7 @@ export function useAudio() {
   return {
     play,
     stop,
+    togglePause,
     announce,
     isPlaying: state.isPlaying,
     currentTrackName: state.currentTrackName,
