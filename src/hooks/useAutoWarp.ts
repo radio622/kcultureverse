@@ -114,13 +114,19 @@ export function useAutoWarp({
       );
       if (!res.ok) return null;
       const data = await res.json();
-      // previewUrl이 있는 곡만 필터
+      // previewUrl이 있는 곡만 필터 — 아티스트명 일치 우선
+      const normalize = (s: string) => s.toLowerCase().replace(/\s+/g, "");
+      const target = normalize(artistName);
       const tracks = (data.results || []).filter(
         (t: any) => t.previewUrl && t.kind === "song"
       );
       if (tracks.length === 0) return null;
-      // 랜덤 선택 (매번 다른 곡)
-      const pick = tracks[Math.floor(Math.random() * tracks.length)];
+      // 아티스트명 일치하는 트랙 우선, 없으면 랜덤
+      const matched = tracks.filter((t: any) =>
+        normalize(t.artistName ?? "").includes(target)
+      );
+      const pool = matched.length > 0 ? matched : tracks;
+      const pick = pool[Math.floor(Math.random() * pool.length)];
       return { previewUrl: pick.previewUrl, trackName: pick.trackName || pick.trackCensoredName };
     } catch {
       return null;

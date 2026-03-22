@@ -434,8 +434,15 @@ export async function getArtistPreviewViaSearch(
     );
     const data = await res.json();
     
-    // previewUrl이 존재하는 트랙 찾기
-    const validTrack = data.results?.find((t: any) => t.previewUrl) ?? null;
+    // previewUrl이 존재하는 트랙 찾기 — 아티스트명 일치 우선, fallback으로 어느 트랙이나 사용
+    const normalize = (s: string) => s.toLowerCase().replace(/\s+/g, "");
+    const target = normalize(artistName);
+    const validTrack =
+      data.results?.find((t: any) =>
+        t.previewUrl && normalize(t.artistName ?? "").includes(target)
+      ) ??
+      data.results?.find((t: any) => t.previewUrl) ?? // fallback: 찾지 못해도 일단 재생
+      null;
     
     return {
       previewUrl: validTrack?.previewUrl ?? null,

@@ -455,14 +455,46 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
         ctx.fill();
       }
 
-      ctx.beginPath();
-      ctx.arc(x, y, displayR, 0, 2 * Math.PI);
-      ctx.fillStyle = isMajor ? "rgba(167,139,250,0.2)" : "rgba(255,255,255,0.08)";
-      ctx.strokeStyle = isFocused ? "#ffffff"
-        : isHop1 ? (node.accent || "#c084fc")
-        : "rgba(255,255,255,0.25)";
-      ctx.lineWidth = isFocused ? 2.5 : isHop1 ? 1.5 : 0.8;
-      ctx.fill(); ctx.stroke();
+      // ── 이미지가 있으면 MID에서도 사진 렌더링 ──
+      if (node.image) {
+        const img = getCachedImage(node.image);
+        if (img?.complete && img.naturalWidth > 0) {
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(x, y, displayR, 0, 2 * Math.PI);
+          // 테두리
+          ctx.strokeStyle = isFocused ? "#ffffff"
+            : isHop1 ? (node.accent || "#c084fc")
+            : "rgba(255,255,255,0.25)";
+          ctx.lineWidth = isFocused ? 2.5 : isHop1 ? 1.5 : 0.8;
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(x, y, displayR, 0, 2 * Math.PI);
+          ctx.clip();
+          ctx.drawImage(img, x - displayR, y - displayR, displayR * 2, displayR * 2);
+          ctx.restore();
+        } else {
+          // 로딩 중: 이니셜 원
+          ctx.beginPath();
+          ctx.arc(x, y, displayR, 0, 2 * Math.PI);
+          ctx.fillStyle = isMajor ? "rgba(167,139,250,0.2)" : "rgba(255,255,255,0.08)";
+          ctx.strokeStyle = isFocused ? "#ffffff"
+            : isHop1 ? (node.accent || "#c084fc")
+            : "rgba(255,255,255,0.25)";
+          ctx.lineWidth = isFocused ? 2.5 : isHop1 ? 1.5 : 0.8;
+          ctx.fill(); ctx.stroke();
+        }
+      } else {
+        // 이미지 없음: 기존 원 렌더링
+        ctx.beginPath();
+        ctx.arc(x, y, displayR, 0, 2 * Math.PI);
+        ctx.fillStyle = isMajor ? "rgba(167,139,250,0.2)" : "rgba(255,255,255,0.08)";
+        ctx.strokeStyle = isFocused ? "#ffffff"
+          : isHop1 ? (node.accent || "#c084fc")
+          : "rgba(255,255,255,0.25)";
+        ctx.lineWidth = isFocused ? 2.5 : isHop1 ? 1.5 : 0.8;
+        ctx.fill(); ctx.stroke();
+      }
 
       // 이름 (큰 별 or 포커스/1촌)
       if (isMajor || isHop1 || isFocused) {
@@ -499,8 +531,8 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       ctx.fill();
     }
 
-    // 이미지 또는 이니셜
-    if (node.image && (isFocused || isHop1 || isMajor)) {
+    // 이미지 또는 이니셜 — 이미지 있으면 조건 없이 항상 사진 표시
+    if (node.image) {
       const img = getCachedImage(node.image);
       const imgAlpha = (isFocused || isHop1) ? bloomProgress : 1;
       ctx.globalAlpha = isVisible ? imgAlpha : 0.07;
@@ -710,9 +742,25 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
 
   // ── ZoomToFit ───────────────────────────────────────────────
   const handleZoomToFit = useCallback(() => {
-    const fg = fgRef.current as { zoomToFit?: (ms: number, padding: number) => void } | null;
-    fg?.zoomToFit?.(800, 60);
-  }, []);
+    const fg = fgRef.current as any;
+    if (!fg) return;
+    if (focusedId && graphData?.nodes[focusedId]) {
+      // 포커스 아티스트가 있으면: 해당 위치로 적당한 커서 zoom
+      const node = graphData.nodes[focusedId];
+      fg.centerAt(node.x, node.y, 600);
+      setTimeout(() => {
+        const cur = fg.zoom?.();
+        if (!cur || cur < 0.8) fg.zoom(1.0, 400);
+      }, 650);
+    } else {
+      // 포커스 없으면: 전체 fit 후 최소 커서
+      fg.zoomToFit?.(800, 60);
+      setTimeout(() => {
+        const cur = fg.zoom?.();
+        if (cur && cur < 0.4) fg.zoom(0.4, 400);
+      }, 900);
+    }
+  }, [focusedId, graphData]);
 
   return (
     <div style={{ position: "absolute", inset: 0, background: "var(--bg-cosmos, #05050f)" }}
@@ -895,13 +943,11 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
           const tgtId = typeof link.target === "string" ? link.target : link.target?.id;
           if (!srcId || !tgtId) return;
 
-          // ② 포커스된 아티스트가 없으면 엣지 팝업 비활성화
-          if (!focusedId) return;
-
-          // ③ 포커스된 아티스트의 1촌 엣지가 아니면 완전 무시
-          // (백그라운드에 깔려있는 다른 아티스트 엣지 클릭 방어)
-          const edgeKey = [srcId, tgtId].sort().join("||");
-          if (!focusEdgeKeys.has(edgeKey)) return;
+          // 포커스된 아티스트가 있으면 1촌 엣지만, 없으면 모든 엣지 허용
+          if (focusedId) {
+            const edgeKey = [srcId, tgtId].sort().join("||");
+            if (!focusEdgeKeys.has(edgeKey)) return;
+          }
 
           const srcNode = graphData.nodes[srcId];
           const tgtNode = graphData.nodes[tgtId];
