@@ -1,0 +1,1394 @@
+{
+  "fixedAt": "2026-03-22T11:38:09.024Z",
+  "totalCollab": 85,
+  "totalNewNodes": 98,
+  "totalNewEdges": 107,
+  "totalRedirectedEdges": 251,
+  "logs": [
+    {
+      "original_id": "batch_U29uIEppY2",
+      "original_name": "Son Jichang;김민종",
+      "parts": [
+        "Son Jichang",
+        "김민종"
+      ],
+      "new_nodes_created": [
+        "Son Jichang"
+      ],
+      "edges_created": [
+        "Son Jichang ↔ 김민종"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_U29uIEppY2hh"
+    },
+    {
+      "original_id": "batch_SW4gSG8gT2",
+      "original_name": "In Ho Ohm;Yi Chul Choi;Chan Kweun Ju",
+      "parts": [
+        "In Ho Ohm",
+        "Yi Chul Choi",
+        "Chan Kweun Ju"
+      ],
+      "new_nodes_created": [
+        "Yi Chul Choi",
+        "Chan Kweun Ju"
+      ],
+      "edges_created": [
+        "In Ho Ohm ↔ Yi Chul Choi",
+        "In Ho Ohm ↔ Chan Kweun Ju",
+        "Yi Chul Choi ↔ Chan Kweun Ju"
+      ],
+      "edges_redirected": 5,
+      "first_artist_id": "batch_SW4gSG8gT2"
+    },
+    {
+      "original_id": "batch_66Gc66eo7Y",
+      "original_name": "로맨틱펀치;이혁",
+      "parts": [
+        "로맨틱펀치",
+        "이혁"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [],
+      "edges_redirected": 6,
+      "first_artist_id": "c2f160fe-e486-4308-97a1-27a81d8dafab"
+    },
+    {
+      "original_id": "batch_7ZWc7IOB7J",
+      "original_name": "한상원;유앤미블루",
+      "parts": [
+        "한상원",
+        "유앤미블루"
+      ],
+      "new_nodes_created": [
+        "유앤미블루"
+      ],
+      "edges_created": [
+        "한상원 ↔ 유앤미블루"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "batch_7ZWc7IOB7J"
+    },
+    {
+      "original_id": "batch_Uy5MLksuO+",
+      "original_name": "S.L.K.;손무현;이도건",
+      "parts": [
+        "S.L.K.",
+        "손무현",
+        "이도건"
+      ],
+      "new_nodes_created": [
+        "S.L.K.",
+        "손무현",
+        "이도건"
+      ],
+      "edges_created": [
+        "S.L.K. ↔ 손무현",
+        "S.L.K. ↔ 이도건",
+        "손무현 ↔ 이도건"
+      ],
+      "edges_redirected": 5,
+      "first_artist_id": "collab_split_Uy5MLksu"
+    },
+    {
+      "original_id": "batch_7JeE7J247Z",
+      "original_name": "엄인호;정경화;김목경;조준형",
+      "parts": [
+        "엄인호",
+        "정경화",
+        "김목경",
+        "조준형"
+      ],
+      "new_nodes_created": [
+        "조준형"
+      ],
+      "edges_created": [
+        "엄인호 ↔ 정경화",
+        "엄인호 ↔ 김목경",
+        "엄인호 ↔ 조준형",
+        "정경화 ↔ 김목경",
+        "정경화 ↔ 조준형",
+        "김목경 ↔ 조준형"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "e19849f2-3b96-45d9-b3f4-7415cb7f9c64"
+    },
+    {
+      "original_id": "batch_7J207Iq57J",
+      "original_name": "이승열;한대수",
+      "parts": [
+        "이승열",
+        "한대수"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "이승열 ↔ 한대수"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "batch_7J207Iq57J"
+    },
+    {
+      "original_id": "batch_Sm8gRGVvay",
+      "original_name": "Jo Deok Hwan;최성원;주찬권",
+      "parts": [
+        "Jo Deok Hwan",
+        "최성원",
+        "주찬권"
+      ],
+      "new_nodes_created": [
+        "Jo Deok Hwan",
+        "최성원",
+        "주찬권"
+      ],
+      "edges_created": [
+        "Jo Deok Hwan ↔ 최성원",
+        "Jo Deok Hwan ↔ 주찬권",
+        "최성원 ↔ 주찬권"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_Sm8gRGVvayBI"
+    },
+    {
+      "original_id": "batch_6rmA6rK97Z",
+      "original_name": "김경호;김종서;윤도현;박완규;Jeong Hongil;윤성기;Kwak dong hyun",
+      "parts": [
+        "김경호",
+        "김종서",
+        "윤도현",
+        "박완규",
+        "Jeong Hongil",
+        "윤성기",
+        "Kwak dong hyun"
+      ],
+      "new_nodes_created": [
+        "윤성기",
+        "Kwak dong hyun"
+      ],
+      "edges_created": [
+        "김경호 ↔ 김종서 (star)",
+        "김경호 ↔ 윤도현 (star)",
+        "김경호 ↔ 박완규 (star)",
+        "김경호 ↔ Jeong Hongil (star)",
+        "김경호 ↔ 윤성기 (star)",
+        "김경호 ↔ Kwak dong hyun (star)"
+      ],
+      "edges_redirected": 5,
+      "first_artist_id": "k90s00s_kim_kyung_ho"
+    },
+    {
+      "original_id": "batch_QmxhY2sgU3",
+      "original_name": "Black Syndrome;김지영",
+      "parts": [
+        "Black Syndrome",
+        "김지영"
+      ],
+      "new_nodes_created": [
+        "Black Syndrome",
+        "김지영"
+      ],
+      "edges_created": [
+        "Black Syndrome ↔ 김지영"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "collab_split_QmxhY2sgU3lu"
+    },
+    {
+      "original_id": "batch_6rCV7ZeI64",
+      "original_name": "강허달림;Park Kwang Sun",
+      "parts": [
+        "강허달림",
+        "Park Kwang Sun"
+      ],
+      "new_nodes_created": [
+        "Park Kwang Sun"
+      ],
+      "edges_created": [
+        "강허달림 ↔ Park Kwang Sun"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "batch_6rCV7ZeI64"
+    },
+    {
+      "original_id": "batch_SWxtaW4gQ2",
+      "original_name": "Ilmin Choi;DAYBREAK",
+      "parts": [
+        "Ilmin Choi",
+        "DAYBREAK"
+      ],
+      "new_nodes_created": [
+        "DAYBREAK"
+      ],
+      "edges_created": [
+        "Ilmin Choi ↔ DAYBREAK"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "batch_SWxtaW4gQ2"
+    },
+    {
+      "original_id": "batch_TGVlIEh5dW",
+      "original_name": "Lee Hyun Suk;KIM sung myun",
+      "parts": [
+        "Lee Hyun Suk",
+        "KIM sung myun"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "Lee Hyun Suk ↔ KIM sung myun"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "batch_TGVlIEh5dW"
+    },
+    {
+      "original_id": "batch_WW9vIFlvdW",
+      "original_name": "Yoo Young Sun & The Connexion;Yoo Young Sun",
+      "parts": [
+        "Yoo Young Sun & The Connexion",
+        "Yoo Young Sun"
+      ],
+      "new_nodes_created": [
+        "Yoo Young Sun"
+      ],
+      "edges_created": [
+        "Yoo Young Sun & The Connexion ↔ Yoo Young Sun"
+      ],
+      "edges_redirected": 6,
+      "first_artist_id": "batch_WW9vIFlvdW"
+    },
+    {
+      "original_id": "batch_QUJUQjtKby",
+      "original_name": "ABTB;Jo Gyouhyun",
+      "parts": [
+        "ABTB",
+        "Jo Gyouhyun"
+      ],
+      "new_nodes_created": [
+        "Jo Gyouhyun"
+      ],
+      "edges_created": [
+        "ABTB ↔ Jo Gyouhyun"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "batch_QUJUQjtKby"
+    },
+    {
+      "original_id": "batch_7Iug7Jyk7L",
+      "original_name": "신윤철;조웅 Joh Ung",
+      "parts": [
+        "신윤철",
+        "조웅 Joh Ung"
+      ],
+      "new_nodes_created": [
+        "조웅 Joh Ung"
+      ],
+      "edges_created": [
+        "신윤철 ↔ 조웅 Joh Ung"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "batch_7Iug7Jyk7L"
+    },
+    {
+      "original_id": "batch_TGludXMnIE",
+      "original_name": "Linus' Blanket;Billy Acoustie",
+      "parts": [
+        "Linus' Blanket",
+        "Billy Acoustie"
+      ],
+      "new_nodes_created": [
+        "Billy Acoustie"
+      ],
+      "edges_created": [
+        "Linus' Blanket ↔ Billy Acoustie"
+      ],
+      "edges_redirected": 6,
+      "first_artist_id": "batch_TGludXMnIE"
+    },
+    {
+      "original_id": "batch_U3RlcmVvIF",
+      "original_name": "Stereo Venus;Rumer",
+      "parts": [
+        "Stereo Venus",
+        "Rumer"
+      ],
+      "new_nodes_created": [
+        "Stereo Venus",
+        "Rumer"
+      ],
+      "edges_created": [
+        "Stereo Venus ↔ Rumer"
+      ],
+      "edges_redirected": 6,
+      "first_artist_id": "collab_split_U3RlcmVvIFZl"
+    },
+    {
+      "original_id": "batch_7ZS87YSw7Y",
+      "original_name": "피터팬컴플렉스;요조",
+      "parts": [
+        "피터팬컴플렉스",
+        "요조"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [],
+      "edges_redirected": 4,
+      "first_artist_id": "indie100_피터팬컴플렉스"
+    },
+    {
+      "original_id": "batch_67aI64KY67",
+      "original_name": "불나방스타쏘세지클럽;한경록;권정열;이주현;나잠 수",
+      "parts": [
+        "불나방스타쏘세지클럽",
+        "한경록",
+        "권정열",
+        "이주현",
+        "나잠 수"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [],
+      "edges_redirected": 3,
+      "first_artist_id": "indie100_불나방스타쏘세지클럽"
+    },
+    {
+      "original_id": "batch_U3VsdGFuIG",
+      "original_name": "Sultan of the Disco;블랙넛(Black Nut)",
+      "parts": [
+        "Sultan of the Disco",
+        "블랙넛(Black Nut)"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [],
+      "edges_redirected": 4,
+      "first_artist_id": "indie100_sultan_of_the_disco"
+    },
+    {
+      "original_id": "batch_7JqU7KGwO+",
+      "original_name": "요조;이상순",
+      "parts": [
+        "요조",
+        "이상순"
+      ],
+      "new_nodes_created": [
+        "이상순"
+      ],
+      "edges_created": [
+        "요조 ↔ 이상순"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "indie100_요조"
+    },
+    {
+      "original_id": "batch_7Zmp7Zic7J",
+      "original_name": "황혜영;남우현",
+      "parts": [
+        "황혜영",
+        "남우현"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [],
+      "edges_redirected": 2,
+      "first_artist_id": "k90s00s_황혜영"
+    },
+    {
+      "original_id": "batch_66as7IyNO+",
+      "original_name": "리쌍;정인",
+      "parts": [
+        "리쌍",
+        "정인"
+      ],
+      "new_nodes_created": [
+        "정인"
+      ],
+      "edges_created": [
+        "리쌍 ↔ 정인"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "003cd25f-0bc2-4187-8584-363fe6c7cf28"
+    },
+    {
+      "original_id": "batch_6rmA6rSR7I",
+      "original_name": "김광석;Bob James",
+      "parts": [
+        "김광석",
+        "Bob James"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [],
+      "edges_redirected": 2,
+      "first_artist_id": "b2ba5630-972f-400b-9c6b-e98bcf4137a8"
+    },
+    {
+      "original_id": "batch_6rOg7J6s6r",
+      "original_name": "고재근;Kim Tae Hyun;Kim Hyun Woo",
+      "parts": [
+        "고재근",
+        "Kim Tae Hyun",
+        "Kim Hyun Woo"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [],
+      "edges_redirected": 4,
+      "first_artist_id": "db7e97cc-dab5-4618-a52b-33e5e62f6e1f"
+    },
+    {
+      "original_id": "batch_Wm9QRDvshp",
+      "original_name": "ZoPD;손승연",
+      "parts": [
+        "ZoPD",
+        "손승연"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [],
+      "edges_redirected": 1,
+      "first_artist_id": "k90s00s_zopd"
+    },
+    {
+      "original_id": "batch_VG95O+q5gO",
+      "original_name": "Toy;김형중",
+      "parts": [
+        "Toy",
+        "김형중"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "Toy ↔ 김형중"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "batch_VG95O0xlZS"
+    },
+    {
+      "original_id": "batch_VG95O0xlZS",
+      "original_name": "Toy;Lee Ji Hyung",
+      "parts": [
+        "Toy",
+        "Lee Ji Hyung"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "Toy ↔ Lee Ji Hyung"
+      ],
+      "edges_redirected": 10,
+      "first_artist_id": "batch_VG95O0xlZS"
+    },
+    {
+      "original_id": "batch_7ISc7J246r",
+      "original_name": "서인국;정은지",
+      "parts": [
+        "서인국",
+        "정은지"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "서인국 ↔ 정은지"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "batch_7ISc7J246r"
+    },
+    {
+      "original_id": "batch_7KCV7J2A7K",
+      "original_name": "정은지;서인국",
+      "parts": [
+        "정은지",
+        "서인국"
+      ],
+      "new_nodes_created": [
+        "서인국"
+      ],
+      "edges_created": [
+        "정은지 ↔ 서인국"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "1eab523e-98ff-4083-aa34-8922740bc696"
+    },
+    {
+      "original_id": "batch_U28hWW9PTi",
+      "original_name": "So!YoON!;Phum Viphurit",
+      "parts": [
+        "So!YoON!",
+        "Phum Viphurit"
+      ],
+      "new_nodes_created": [
+        "Phum Viphurit"
+      ],
+      "edges_created": [
+        "So!YoON! ↔ Phum Viphurit"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "batch_U28hWW9PTi"
+    },
+    {
+      "original_id": "batch_TGVhaCBEb3",
+      "original_name": "Leah Dou;검정치마",
+      "parts": [
+        "Leah Dou",
+        "검정치마"
+      ],
+      "new_nodes_created": [
+        "Leah Dou"
+      ],
+      "edges_created": [
+        "Leah Dou ↔ 검정치마"
+      ],
+      "edges_redirected": 5,
+      "first_artist_id": "collab_split_TGVhaCBEb3U"
+    },
+    {
+      "original_id": "batch_7LyA67mI7J",
+      "original_name": "케빈오;프라이머리",
+      "parts": [
+        "케빈오",
+        "프라이머리"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "케빈오 ↔ 프라이머리"
+      ],
+      "edges_redirected": 7,
+      "first_artist_id": "batch_7LyA67mI7J"
+    },
+    {
+      "original_id": "batch_Q3Jvd2QgTH",
+      "original_name": "Crowd Lu;검정치마",
+      "parts": [
+        "Crowd Lu",
+        "검정치마"
+      ],
+      "new_nodes_created": [
+        "Crowd Lu"
+      ],
+      "edges_created": [
+        "Crowd Lu ↔ 검정치마"
+      ],
+      "edges_redirected": 5,
+      "first_artist_id": "collab_split_Q3Jvd2QgTHU"
+    },
+    {
+      "original_id": "batch_SmVvbiBKaW",
+      "original_name": "Jeon Jin Hee;wave to earth",
+      "parts": [
+        "Jeon Jin Hee",
+        "wave to earth"
+      ],
+      "new_nodes_created": [
+        "wave to earth"
+      ],
+      "edges_created": [
+        "Jeon Jin Hee ↔ wave to earth"
+      ],
+      "edges_redirected": 6,
+      "first_artist_id": "batch_SmVvbiBKaW"
+    },
+    {
+      "original_id": "batch_7ZSE65287J",
+      "original_name": "프라이머리;오혁",
+      "parts": [
+        "프라이머리",
+        "오혁"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "프라이머리 ↔ 오혁"
+      ],
+      "edges_redirected": 5,
+      "first_artist_id": "batch_7ZSE65287J"
+    },
+    {
+      "original_id": "batch_S2FlZGU7TG",
+      "original_name": "Kaede;Lamp;UWANOSORA",
+      "parts": [
+        "Kaede",
+        "Lamp",
+        "UWANOSORA"
+      ],
+      "new_nodes_created": [
+        "Lamp",
+        "UWANOSORA"
+      ],
+      "edges_created": [
+        "Kaede ↔ Lamp",
+        "Kaede ↔ UWANOSORA",
+        "Lamp ↔ UWANOSORA"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "batch_S2FlZGU7TG"
+    },
+    {
+      "original_id": "batch_7IaM6riIO+",
+      "original_name": "소금;차울",
+      "parts": [
+        "소금",
+        "차울"
+      ],
+      "new_nodes_created": [
+        "차울"
+      ],
+      "edges_created": [
+        "소금 ↔ 차울"
+      ],
+      "edges_redirected": 5,
+      "first_artist_id": "batch_7IaM6riIO+"
+    },
+    {
+      "original_id": "batch_7Jyg7ISx7J",
+      "original_name": "유성윤;예빛",
+      "parts": [
+        "유성윤",
+        "예빛"
+      ],
+      "new_nodes_created": [
+        "예빛"
+      ],
+      "edges_created": [
+        "유성윤 ↔ 예빛"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "batch_7Jyg7ISx7J"
+    },
+    {
+      "original_id": "batch_Q3ltYmFscz",
+      "original_name": "Cymbals;内田晴元;小泉一郎",
+      "parts": [
+        "Cymbals",
+        "内田晴元",
+        "小泉一郎"
+      ],
+      "new_nodes_created": [
+        "内田晴元",
+        "小泉一郎"
+      ],
+      "edges_created": [
+        "Cymbals ↔ 内田晴元",
+        "Cymbals ↔ 小泉一郎",
+        "内田晴元 ↔ 小泉一郎"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "batch_Q3ltYmFscz"
+    },
+    {
+      "original_id": "batch_QmFobmdiZW",
+      "original_name": "Bahngbek;방준석;Bek Hyunjin",
+      "parts": [
+        "Bahngbek",
+        "방준석",
+        "Bek Hyunjin"
+      ],
+      "new_nodes_created": [
+        "Bahngbek",
+        "방준석",
+        "Bek Hyunjin"
+      ],
+      "edges_created": [
+        "Bahngbek ↔ 방준석",
+        "Bahngbek ↔ Bek Hyunjin",
+        "방준석 ↔ Bek Hyunjin"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_QmFobmdiZWs"
+    },
+    {
+      "original_id": "batch_Qm9zdWRvbm",
+      "original_name": "Bosudongcooler;hathaw9y",
+      "parts": [
+        "Bosudongcooler",
+        "hathaw9y"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "Bosudongcooler ↔ hathaw9y"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "indie100_bosudongcooler"
+    },
+    {
+      "original_id": "batch_6r+I7JeQIO",
+      "original_name": "꿈에 카메라를 가져올걸;Drain",
+      "parts": [
+        "꿈에 카메라를 가져올걸",
+        "Drain"
+      ],
+      "new_nodes_created": [
+        "Drain"
+      ],
+      "edges_created": [
+        "꿈에 카메라를 가져올걸 ↔ Drain"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "8166da94-a7ae-42db-9ddb-5143d11ab10c"
+    },
+    {
+      "original_id": "batch_67OA7KeE7I",
+      "original_name": "변진섭;신해철",
+      "parts": [
+        "변진섭",
+        "신해철"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "변진섭 ↔ 신해철"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "e7ad2d1f-d143-4aa2-b29b-4ba6b92568b7"
+    },
+    {
+      "original_id": "batch_SG93TDvsoJ",
+      "original_name": "HowL;제이",
+      "parts": [
+        "HowL",
+        "제이"
+      ],
+      "new_nodes_created": [
+        "HowL",
+        "제이"
+      ],
+      "edges_created": [
+        "HowL ↔ 제이"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "collab_split_SG93TA"
+    },
+    {
+      "original_id": "batch_REVBTjvqsJ",
+      "original_name": "DEAN;개코",
+      "parts": [
+        "DEAN",
+        "개코"
+      ],
+      "new_nodes_created": [
+        "DEAN"
+      ],
+      "edges_created": [
+        "DEAN ↔ 개코"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_REVBTg"
+    },
+    {
+      "original_id": "batch_67CV7J6s67",
+      "original_name": "박재범;Hoody;로꼬",
+      "parts": [
+        "박재범",
+        "Hoody",
+        "로꼬"
+      ],
+      "new_nodes_created": [
+        "박재범",
+        "Hoody",
+        "로꼬"
+      ],
+      "edges_created": [
+        "박재범 ↔ Hoody",
+        "박재범 ↔ 로꼬",
+        "Hoody ↔ 로꼬"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_67CV7J6s67KU"
+    },
+    {
+      "original_id": "batch_7YOc7JaRO0",
+      "original_name": "태양;G-DRAGON",
+      "parts": [
+        "태양",
+        "G-DRAGON"
+      ],
+      "new_nodes_created": [
+        "G-DRAGON"
+      ],
+      "edges_created": [
+        "태양 ↔ G-DRAGON"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "91ee77bb-2201-4170-9ae4-d236e9671964"
+    },
+    {
+      "original_id": "batch_7YOc7JewO+",
+      "original_name": "태연;버벌진트",
+      "parts": [
+        "태연",
+        "버벌진트"
+      ],
+      "new_nodes_created": [
+        "태연",
+        "버벌진트"
+      ],
+      "edges_created": [
+        "태연 ↔ 버벌진트"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_7YOc7Jew"
+    },
+    {
+      "original_id": "batch_R0QmVE9QO+",
+      "original_name": "GD&TOP;박봄",
+      "parts": [
+        "GD&TOP",
+        "박봄"
+      ],
+      "new_nodes_created": [
+        "박봄"
+      ],
+      "edges_created": [
+        "GD&TOP ↔ 박봄"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "772b1995-e27e-4dcf-99d9-215e0fa813ac"
+    },
+    {
+      "original_id": "batch_7LCs7Je0O+",
+      "original_name": "찬열;펀치",
+      "parts": [
+        "찬열",
+        "펀치"
+      ],
+      "new_nodes_created": [
+        "찬열",
+        "펀치"
+      ],
+      "edges_created": [
+        "찬열 ↔ 펀치"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_7LCs7Je0"
+    },
+    {
+      "original_id": "batch_7JWE7J207J",
+      "original_name": "아이유;GAIN",
+      "parts": [
+        "아이유",
+        "GAIN"
+      ],
+      "new_nodes_created": [
+        "아이유",
+        "GAIN"
+      ],
+      "edges_created": [
+        "아이유 ↔ GAIN"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_7JWE7J207Jyg"
+    },
+    {
+      "original_id": "batch_67Cx7JWE7J",
+      "original_name": "백아연;Young K",
+      "parts": [
+        "백아연",
+        "Young K"
+      ],
+      "new_nodes_created": [
+        "백아연",
+        "Young K"
+      ],
+      "edges_created": [
+        "백아연 ↔ Young K"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_67Cx7JWE7Jew"
+    },
+    {
+      "original_id": "batch_66Gc6rysO+",
+      "original_name": "로꼬;펀치",
+      "parts": [
+        "로꼬",
+        "펀치"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "로꼬 ↔ 펀치"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_66Gc6rys"
+    },
+    {
+      "original_id": "batch_7KOg7KeAO+",
+      "original_name": "죠지;강혜인",
+      "parts": [
+        "죠지",
+        "강혜인"
+      ],
+      "new_nodes_created": [
+        "죠지",
+        "강혜인"
+      ],
+      "edges_created": [
+        "죠지 ↔ 강혜인"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_7KOg7KeA"
+    },
+    {
+      "original_id": "batch_R1JBWTtQYX",
+      "original_name": "GRAY;Paul Blanco;DeVita",
+      "parts": [
+        "GRAY",
+        "Paul Blanco",
+        "DeVita"
+      ],
+      "new_nodes_created": [
+        "GRAY",
+        "Paul Blanco",
+        "DeVita"
+      ],
+      "edges_created": [
+        "GRAY ↔ Paul Blanco",
+        "GRAY ↔ DeVita",
+        "Paul Blanco ↔ DeVita"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_R1JBWQ"
+    },
+    {
+      "original_id": "batch_6rmA7ZWEO0",
+      "original_name": "김필;Kim Chang-Wan",
+      "parts": [
+        "김필",
+        "Kim Chang-Wan"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "김필 ↔ Kim Chang-Wan"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "a34aa4d8-aeb3-45cd-a578-75f3dcb84906"
+    },
+    {
+      "original_id": "batch_7Zek7J207K",
+      "original_name": "헤이즈;한수지",
+      "parts": [
+        "헤이즈",
+        "한수지"
+      ],
+      "new_nodes_created": [
+        "헤이즈"
+      ],
+      "edges_created": [
+        "헤이즈 ↔ 한수지"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_7Zek7J207KaI"
+    },
+    {
+      "original_id": "batch_66ek65Oc7Y",
+      "original_name": "매드클라운;김나영",
+      "parts": [
+        "매드클라운",
+        "김나영"
+      ],
+      "new_nodes_created": [
+        "매드클라운",
+        "김나영"
+      ],
+      "edges_created": [
+        "매드클라운 ↔ 김나영"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "collab_split_66ek65Oc7YG0"
+    },
+    {
+      "original_id": "batch_7JeQ7ZS97Z",
+      "original_name": "에픽하이;이하이",
+      "parts": [
+        "에픽하이",
+        "이하이"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "에픽하이 ↔ 이하이"
+      ],
+      "edges_redirected": 4,
+      "first_artist_id": "57f1cdd6-cf32-4004-a095-3ef043c91b61"
+    },
+    {
+      "original_id": "batch_7ISc7ZiE7K",
+      "original_name": "서현진;유승우",
+      "parts": [
+        "서현진",
+        "유승우"
+      ],
+      "new_nodes_created": [
+        "서현진",
+        "유승우"
+      ],
+      "edges_created": [
+        "서현진 ↔ 유승우"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_7ISc7ZiE7KeE"
+    },
+    {
+      "original_id": "batch_Q3J1c2g77Y",
+      "original_name": "Crush;펀치",
+      "parts": [
+        "Crush",
+        "펀치"
+      ],
+      "new_nodes_created": [
+        "Crush"
+      ],
+      "edges_created": [
+        "Crush ↔ 펀치"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "collab_split_Q3J1c2g"
+    },
+    {
+      "original_id": "batch_7Iuk66as7L",
+      "original_name": "실리카겔;Japanese Breakfast",
+      "parts": [
+        "실리카겔",
+        "Japanese Breakfast"
+      ],
+      "new_nodes_created": [
+        "Japanese Breakfast"
+      ],
+      "edges_created": [
+        "실리카겔 ↔ Japanese Breakfast"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "indie100_실리카겔"
+    },
+    {
+      "original_id": "batch_7Jqp7JqpO0",
+      "original_name": "용용;LEE DO of ONEUS",
+      "parts": [
+        "용용",
+        "LEE DO of ONEUS"
+      ],
+      "new_nodes_created": [
+        "용용",
+        "LEE DO of ONEUS"
+      ],
+      "edges_created": [
+        "용용 ↔ LEE DO of ONEUS"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_7Jqp7Jqp"
+    },
+    {
+      "original_id": "batch_7J6U64KY67",
+      "original_name": "잔나비;KARINA",
+      "parts": [
+        "잔나비",
+        "KARINA"
+      ],
+      "new_nodes_created": [
+        "KARINA"
+      ],
+      "edges_created": [
+        "잔나비 ↔ KARINA"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "730182f9-2b25-45cc-857a-054c2bbe8ade"
+    },
+    {
+      "original_id": "batch_WUI7WGRpbm",
+      "original_name": "YB;Xdinary Heroes",
+      "parts": [
+        "YB",
+        "Xdinary Heroes"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "YB ↔ Xdinary Heroes"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "aad45bf7-6652-4717-8ce4-395aaf7e6bce"
+    },
+    {
+      "original_id": "batch_T1dBTExPSU",
+      "original_name": "OWALLOIL;Nah",
+      "parts": [
+        "OWALLOIL",
+        "Nah"
+      ],
+      "new_nodes_created": [
+        "Nah"
+      ],
+      "edges_created": [
+        "OWALLOIL ↔ Nah"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "0b9ba7a1-fd68-4f52-bfa1-580448a68b03"
+    },
+    {
+      "original_id": "batch_S2ltIERhbm",
+      "original_name": "Kim Daniel;1of1",
+      "parts": [
+        "Kim Daniel",
+        "1of1"
+      ],
+      "new_nodes_created": [
+        "Kim Daniel",
+        "1of1"
+      ],
+      "edges_created": [
+        "Kim Daniel ↔ 1of1"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_S2ltIERhbmll"
+    },
+    {
+      "original_id": "batch_QklHIE5hdW",
+      "original_name": "BIG Naughty (서동현);이무진",
+      "parts": [
+        "BIG Naughty (서동현)",
+        "이무진"
+      ],
+      "new_nodes_created": [
+        "BIG Naughty (서동현)"
+      ],
+      "edges_created": [
+        "BIG Naughty (서동현) ↔ 이무진"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "collab_split_QklHIE5hdWdo"
+    },
+    {
+      "original_id": "batch_Qm9tYmluZz",
+      "original_name": "Bombing;조광일",
+      "parts": [
+        "Bombing",
+        "조광일"
+      ],
+      "new_nodes_created": [
+        "Bombing",
+        "조광일"
+      ],
+      "edges_created": [
+        "Bombing ↔ 조광일"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_Qm9tYmluZw"
+    },
+    {
+      "original_id": "batch_6rmA7Zqo66",
+      "original_name": "김효린;kimminseong",
+      "parts": [
+        "김효린",
+        "kimminseong"
+      ],
+      "new_nodes_created": [
+        "김효린",
+        "kimminseong"
+      ],
+      "edges_created": [
+        "김효린 ↔ kimminseong"
+      ],
+      "edges_redirected": 3,
+      "first_artist_id": "collab_split_6rmA7Zqo66aw"
+    },
+    {
+      "original_id": "batch_7YGs656Y7L",
+      "original_name": "크래커;김결",
+      "parts": [
+        "크래커",
+        "김결"
+      ],
+      "new_nodes_created": [
+        "크래커",
+        "김결"
+      ],
+      "edges_created": [
+        "크래커 ↔ 김결"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_7YGs656Y7Luk"
+    },
+    {
+      "original_id": "batch_U1VESTtEYW",
+      "original_name": "SUDI;Dannysten;matter",
+      "parts": [
+        "SUDI",
+        "Dannysten",
+        "matter"
+      ],
+      "new_nodes_created": [
+        "SUDI",
+        "Dannysten",
+        "matter"
+      ],
+      "edges_created": [
+        "SUDI ↔ Dannysten",
+        "SUDI ↔ matter",
+        "Dannysten ↔ matter"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_U1VESQ"
+    },
+    {
+      "original_id": "batch_VHdvVHdvO+",
+      "original_name": "TwoTwo;투투(Two Two)",
+      "parts": [
+        "TwoTwo",
+        "투투(Two Two)"
+      ],
+      "new_nodes_created": [
+        "투투(Two Two)"
+      ],
+      "edges_created": [
+        "TwoTwo ↔ 투투(Two Two)"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "k90s00s_twotwo"
+    },
+    {
+      "original_id": "batch_7JyE7IiYO+",
+      "original_name": "위수;이영훈",
+      "parts": [
+        "위수",
+        "이영훈"
+      ],
+      "new_nodes_created": [
+        "이영훈"
+      ],
+      "edges_created": [
+        "위수 ↔ 이영훈"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "batch_7JyE7IiY"
+    },
+    {
+      "original_id": "batch_cEgtMTvrsL",
+      "original_name": "pH-1;백예린",
+      "parts": [
+        "pH-1",
+        "백예린"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "pH-1 ↔ 백예린"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "aace796b-0569-49b6-a144-64ea24031962"
+    },
+    {
+      "original_id": "batch_REVBTjvshK",
+      "original_name": "DEAN;설리;Rad Museum",
+      "parts": [
+        "DEAN",
+        "설리",
+        "Rad Museum"
+      ],
+      "new_nodes_created": [
+        "설리",
+        "Rad Museum"
+      ],
+      "edges_created": [
+        "DEAN ↔ 설리",
+        "DEAN ↔ Rad Museum",
+        "설리 ↔ Rad Museum"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_REVBTg"
+    },
+    {
+      "original_id": "batch_7ZSE66GsO+",
+      "original_name": "프롬;기리보이",
+      "parts": [
+        "프롬",
+        "기리보이"
+      ],
+      "new_nodes_created": [
+        "프롬",
+        "기리보이"
+      ],
+      "edges_created": [
+        "프롬 ↔ 기리보이"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_7ZSE66Gs"
+    },
+    {
+      "original_id": "batch_7KCV7YOc7L",
+      "original_name": "정태춘;박은옥",
+      "parts": [
+        "정태춘",
+        "박은옥"
+      ],
+      "new_nodes_created": [
+        "정태춘",
+        "박은옥"
+      ],
+      "edges_created": [
+        "정태춘 ↔ 박은옥"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_7KCV7YOc7LaY"
+    },
+    {
+      "original_id": "batch_7KCE7J246r",
+      "original_name": "전인권;Heo Sung-Wook",
+      "parts": [
+        "전인권",
+        "Heo Sung-Wook"
+      ],
+      "new_nodes_created": [
+        "Heo Sung-Wook"
+      ],
+      "edges_created": [
+        "전인권 ↔ Heo Sung-Wook"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "batch_SW4gS3dvbi"
+    },
+    {
+      "original_id": "batch_6rmA65y764",
+      "original_name": "김뜻돌;정우",
+      "parts": [
+        "김뜻돌",
+        "정우"
+      ],
+      "new_nodes_created": [],
+      "edges_created": [
+        "김뜻돌 ↔ 정우"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "b071f9fa-14b0-4217-8e97-eb41da73f598"
+    },
+    {
+      "original_id": "batch_U1VNSU47WG",
+      "original_name": "SUMIN;Xin Seha",
+      "parts": [
+        "SUMIN",
+        "Xin Seha"
+      ],
+      "new_nodes_created": [
+        "SUMIN",
+        "Xin Seha"
+      ],
+      "edges_created": [
+        "SUMIN ↔ Xin Seha"
+      ],
+      "edges_redirected": 2,
+      "first_artist_id": "collab_split_U1VNSU4"
+    },
+    {
+      "original_id": "batch_64uk7J2064",
+      "original_name": "다이나믹 듀오;바비 킴",
+      "parts": [
+        "다이나믹 듀오",
+        "바비 킴"
+      ],
+      "new_nodes_created": [
+        "다이나믹 듀오",
+        "바비 킴"
+      ],
+      "edges_created": [
+        "다이나믹 듀오 ↔ 바비 킴"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "collab_split_64uk7J2064KY"
+    },
+    {
+      "original_id": "batch_67mI7KeA64",
+      "original_name": "빈지노;Cautious Clay",
+      "parts": [
+        "빈지노",
+        "Cautious Clay"
+      ],
+      "new_nodes_created": [
+        "Cautious Clay"
+      ],
+      "edges_created": [
+        "빈지노 ↔ Cautious Clay"
+      ],
+      "edges_redirected": 1,
+      "first_artist_id": "ff2f225e-a49e-47ee-866a-d4606c4e3fea"
+    }
+  ]
+}

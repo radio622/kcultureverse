@@ -1,0 +1,5609 @@
+{
+  "stats": {
+    "mb_en_primary_with_ko_alias": 93,
+    "mb_ko_primary": 292,
+    "mb_en_primary_keep_existing_ko": 85,
+    "mb_en_primary_no_ko": 386,
+    "fallback_existing_ko": 107,
+    "fallback_name_is_korean": 195,
+    "no_change_no_korean": 55,
+    "fallback_no_mb_primary": 0
+  },
+  "changed_count": 511,
+  "pending_alias_map": {
+    "BTS": [
+      "방탄소년단"
+    ],
+    "BLACKPINK": [
+      "블랙핑크"
+    ],
+    "IU": [
+      "아이유"
+    ],
+    "ZICO": [
+      "지코"
+    ],
+    "Linkin Park": [
+      "박진영"
+    ],
+    "Epik High": [
+      "에픽하이"
+    ],
+    "Heize": [
+      "장다혜",
+      "헤이즈"
+    ],
+    "The Black Skirts": [
+      "검정치마"
+    ],
+    "NMIXX": [
+      "엔믹스"
+    ],
+    "Stray Kids": [
+      "스트레이 키즈"
+    ],
+    "i‐dle": [
+      "(여자)아이들",
+      "여자아이들"
+    ],
+    "NewJeans": [
+      "뉴진스"
+    ],
+    "Bibi Blocksberg": [
+      "비비"
+    ],
+    "pH-1": [
+      "朴俊元"
+    ],
+    "Various Artists": [
+      "여러 아티스트",
+      "백아"
+    ],
+    "Vacation": [
+      "가을방학"
+    ],
+    "Robert Baksa": [
+      "이박사"
+    ],
+    "RoRo": [
+      "한로로"
+    ],
+    "NELL": [
+      "넬"
+    ],
+    "Linus’ Blanket": [
+      "라이너스의 담요"
+    ],
+    "Deli Spice": [
+      "델리스파이스"
+    ],
+    "through the sloe": [
+      "through the sloe"
+    ],
+    "Heart": [
+      "줄리아하트"
+    ],
+    "You Too": [
+      "브로콜리너마저"
+    ],
+    "AKMU": [
+      "악동뮤지션"
+    ],
+    "BIGBANG": [
+      "빅뱅"
+    ],
+    "Girls’ Generation": [
+      "소녀시대"
+    ],
+    "TAIJI": [
+      "서태지"
+    ],
+    "Sang": [
+      "윤상"
+    ],
+    "The Toy Dolls": [
+      "토이"
+    ],
+    "MIRAE": [
+      "윤미래"
+    ],
+    "Jung-A Lee": [
+      "선우정아"
+    ],
+    "Juk Juk": [
+      "이적"
+    ],
+    "Deux": [
+      "듀스"
+    ],
+    "dosii": [
+      "도시"
+    ],
+    "MOT": [
+      "못"
+    ],
+    "Faces": [
+      "장기하와 얼굴들"
+    ],
+    "SE SO NEON": [
+      "새소년"
+    ],
+    "Sawol": [
+      "김사월"
+    ],
+    "Thornapple": [
+      "쏜애플"
+    ],
+    "Nerd Connection": [
+      "너드 커넥션",
+      "너드커넥션"
+    ],
+    "The Rolling Stones": [
+      "김뜻돌"
+    ],
+    "Mingginyu": [
+      "Mingginyu (밍기뉴)",
+      "밍기뉴"
+    ],
+    "Silica Gel": [
+      "실리카겔"
+    ],
+    "cotoba": [
+      "코토바"
+    ],
+    "ADOY": [
+      "아도이"
+    ],
+    "youra": [
+      "유라"
+    ],
+    "Aseul": [
+      "아슬"
+    ],
+    "Godo": [
+      "이고도"
+    ],
+    "Aleph": [
+      "알레프"
+    ],
+    "015B": [
+      "공일오비"
+    ],
+    "Guckkasten": [
+      "국카스텐"
+    ],
+    "The Garden": [
+      "카더가든"
+    ],
+    "Chamsom": [
+      "참깨와 솜사탕"
+    ],
+    "Nastyona": [
+      "NASTYONA"
+    ],
+    "JEONGMILLA": [
+      "정밀아"
+    ],
+    "DELISPICE": [
+      "델리스파이스"
+    ],
+    "Parannoul": [
+      "파란노을"
+    ],
+    "Maïmon and The Mongoose Band": [
+      "The Mongoose"
+    ],
+    "Rock 'n' Roll Radio": [
+      "Rock N Roll Radio"
+    ],
+    "Lang Lee": [
+      "이랑"
+    ],
+    "Bosudongcooler": [
+      "보수동쿨러"
+    ],
+    "Soumbalgwang": [
+      "소음발광"
+    ],
+    "Life and Time": [
+      "라이프 앤 타임"
+    ],
+    "Decadent": [
+      "DECADENT"
+    ],
+    "Mid-Air Thief": [
+      "공중도둑"
+    ],
+    "John Cranfield": [
+      "Cranfield"
+    ],
+    "10cm": [
+      "10CM"
+    ],
+    "achime": [
+      "Achime"
+    ],
+    "Sultan of the Disco": [
+      "술탄 오브 더 디스코"
+    ],
+    "The Monotones": [
+      "더 모노톤즈"
+    ],
+    "HAEPAARY": [
+      "해파리"
+    ],
+    "KIRARA": [
+      "키라라"
+    ],
+    "Hathaw9y": [
+      "hathaw9y"
+    ],
+    "Noizegarden": [
+      "노이즈가든"
+    ],
+    "Cadejo": [
+      "CADEJO"
+    ],
+    "Rollercoaster": [
+      "롤러코스터"
+    ],
+    "Park Jungwoon": [
+      "박정운"
+    ],
+    "Kim Kyung Ho": [
+      "김경호"
+    ],
+    "Kim Jang-Hoon": [
+      "김장훈"
+    ],
+    "Yangpa": [
+      "양파"
+    ],
+    "Fucked Up": [
+      "UP"
+    ],
+    "Lamb of God": [
+      "god"
+    ],
+    "Bank": [
+      "뱅크"
+    ],
+    "IZI": [
+      "Izi"
+    ],
+    "Clon": [
+      "클론"
+    ],
+    "Five Sense": [
+      "파이브 센스"
+    ],
+    "Kim Won Jun": [
+      "김원준"
+    ],
+    "Kim Tae Hyun": [
+      "김태현"
+    ],
+    "Kim Hyun Woo": [
+      "김현우"
+    ],
+    "KYT-METAL": [
+      "KYT"
+    ],
+    "NRG": [
+      "엔알지"
+    ],
+    "ZoPD": [
+      "조PD"
+    ],
+    "Loveholics": [
+      "러브홀릭"
+    ],
+    "Seo Ji Won": [
+      "서지원"
+    ],
+    "Park Hye Kyung": [
+      "박혜경"
+    ],
+    "Choi Yong Jun": [
+      "최용준"
+    ],
+    "Lee Ji Hyung": [
+      "이지형"
+    ],
+    "TwoTwo": [
+      "투투"
+    ],
+    "KIM sung myun": [
+      "김성면"
+    ],
+    "Can": [
+      "CAN"
+    ],
+    "Kim Hyun Jung": [
+      "김현정"
+    ],
+    "Kim Minwoo": [
+      "김민우"
+    ],
+    "Min Hae Kyung": [
+      "민해경"
+    ],
+    "Lee Sang Woo": [
+      "이상우"
+    ],
+    "TAE JIN AH": [
+      "태진아"
+    ],
+    "No Sa Yeon": [
+      "노사연"
+    ],
+    "Shim Shin": [
+      "심신"
+    ],
+    "Lee Duke Jean": [
+      "이덕진"
+    ],
+    "HYUN JIN YOUNG": [
+      "현진영"
+    ],
+    "Chuli & Miae": [
+      "철이와 미애"
+    ],
+    "Art of Noise": [
+      "Noise"
+    ],
+    "Zam": [
+      "잠"
+    ],
+    "Junesun Kim": [
+      "김준선"
+    ],
+    "Pinocchio": [
+      "피노키오"
+    ],
+    "Shin Hyobum": [
+      "신효범"
+    ],
+    "Hexagonal Water": [
+      "육각수"
+    ],
+    "Panic": [
+      "패닉"
+    ],
+    "Red Hot Chili Peppers": [
+      "H.O.T."
+    ],
+    "Lee Ji Hoon": [
+      "이지훈"
+    ],
+    "Untitle": [
+      "언타이틀"
+    ],
+    "An Jaewook": [
+      "안재욱"
+    ],
+    "YB": [
+      "윤도현밴드"
+    ],
+    "Black Hole": [
+      "블랙홀"
+    ],
+    "LEE HYUN SUK PROJECT": [
+      "이현석 프로젝트"
+    ],
+    "Shin Joong Hyun And Musicpower": [
+      "신중현과 뮤직파워"
+    ],
+    "Bursters": [
+      "BURSTERS"
+    ],
+    "Kuhmo Asiana String Quartet": [
+      "Asiana"
+    ],
+    "Pippi's Band": [
+      "Pippi Band"
+    ],
+    "The MD": [
+      "더 MD"
+    ],
+    "Genie": [
+      "지니"
+    ],
+    "The Rose": [
+      "더 로즈"
+    ],
+    "GgoiJjaDeul": [
+      "꽃자들"
+    ],
+    "In Ho Ohm;Yi Chul Choi;Chan Kweun Ju": [
+      "In Ho Ohm"
+    ],
+    "Yellow Monsters": [
+      "옐로 몬스터즈"
+    ],
+    "Knave": [
+      "네이브"
+    ],
+    "NOVADOX": [
+      "노바독스"
+    ],
+    "Broken Valentine": [
+      "브로큰 발렌타인"
+    ],
+    "Coin Classic": [
+      "coin classic"
+    ],
+    "Galaxy Express": [
+      "갤럭시 익스프레스"
+    ],
+    "9 and the Numbers": [
+      "구와 더 넘버즈"
+    ],
+    "Phonebooth": [
+      "폰부스"
+    ],
+    "Leaves Black": [
+      "리브스 블랙"
+    ],
+    "OOO": [
+      "O.O.O"
+    ],
+    "YEREMY": [
+      "예레미"
+    ],
+    "Moonlight Fairy Reversal Grand Slam": [
+      "달빛요정역전만루홈런"
+    ],
+    "Locust": [
+      "LOCUST"
+    ],
+    "Little Giant Drug": [
+      "Little Giant"
+    ],
+    "Hyunyi with Cinderella": [
+      "현이와 신데렐라"
+    ],
+    "Novasonic": [
+      "노바소닉"
+    ],
+    "KYUNGHO BANG": [
+      "방경호"
+    ],
+    "The Breeze": [
+      "더 브리즈"
+    ],
+    "Lee Jeong Seon": [
+      "이정선"
+    ],
+    "Harlequin": [
+      "할리퀸"
+    ],
+    "Magma": [
+      "마그마"
+    ],
+    "Falcon": [
+      "팔콘"
+    ],
+    "In Kwon Jeon": [
+      "전인권"
+    ],
+    "Choi Jae Hoon": [
+      "최재훈"
+    ],
+    "Lustrouble": [
+      "러스트러블"
+    ],
+    "CNBLUE": [
+      "씨엔블루"
+    ],
+    "The Volunteers": [
+      "더 볼런티어스"
+    ],
+    "SURL": [
+      "설"
+    ],
+    "CRASH": [
+      "크래쉬"
+    ],
+    "Adios Audio": [
+      "아디오스 오디오"
+    ],
+    "Runway": [
+      "런웨이"
+    ],
+    "LOVE & PEACE": [
+      "Love and Peace"
+    ],
+    "Sinchon Blues": [
+      "신촌블루스"
+    ],
+    "Ryu JiHo": [
+      "류지호"
+    ],
+    "The Cross": [
+      "더 크로스"
+    ],
+    "OWALLOIL": [
+      "오왈로일"
+    ],
+    "Yangbans": [
+      "양반들"
+    ],
+    "Kang Sunghee": [
+      "강성희"
+    ],
+    "Three Strangers": [
+      "세명의 이방인"
+    ],
+    "Gate Flowers": [
+      "게이트 플라워즈"
+    ],
+    "BADLAMB": [
+      "배드램"
+    ],
+    "FAKE UNIVERSE": [
+      "페이크 유니버스"
+    ],
+    "Ilmin Choi;DAYBREAK": [
+      "Ilmin Choi"
+    ],
+    "Sky": [
+      "SKY"
+    ],
+    "Lee Hyun Suk;KIM sung myun": [
+      "Lee Hyun Suk"
+    ],
+    "jo dongik": [
+      "조동익"
+    ],
+    "Kim SangMin": [
+      "김상민"
+    ],
+    "Yarn": [
+      "얀"
+    ],
+    "Cho Jang Hyuck": [
+      "조장혁"
+    ],
+    "Kyunghwa Jung": [
+      "정경화"
+    ],
+    "Kim Jung Mi": [
+      "김정미"
+    ],
+    "Yoo Young Sun & The Connexion;Yoo Young Sun": [
+      "Yoo Young Sun & The Connexion"
+    ],
+    "The Poles": [
+      "더 폴스",
+      "더 폴즈"
+    ],
+    "oomool": [
+      "오무울"
+    ],
+    "ABTB;Jo Gyouhyun": [
+      "ABTB"
+    ],
+    "Kim Tae Hwa": [
+      "김태화"
+    ],
+    "Glen Check": [
+      "글렌체크"
+    ],
+    "Choi Min woo": [
+      "최민우"
+    ],
+    "Kim Soo Cheol": [
+      "김수철"
+    ],
+    "Loro's": [
+      "로로스"
+    ],
+    "Breeze": [
+      "브리즈"
+    ],
+    "Luminous Transfixion": [
+      "TransFixion"
+    ],
+    "Jeong Hongil": [
+      "정홍일"
+    ],
+    "Hwal Band": [
+      "활"
+    ],
+    "ROCK-TA PROJECT BAND": [
+      "록타 프로젝트 밴드"
+    ],
+    "Charlie jung Band": [
+      "찰리정밴드"
+    ],
+    "Songolmae": [
+      "송골매"
+    ],
+    "The Green Tea": [
+      "더 그린티"
+    ],
+    "Linus' Blanket;Billy Acoustie": [
+      "Linus' Blanket"
+    ],
+    "Mr Miss": [
+      "미스터미스"
+    ],
+    "Heekyung Na": [
+      "HeeKyung Na"
+    ],
+    "The Marshmallow Kisses": [
+      "더 마쉬멜로우 키세스"
+    ],
+    "Jang YoonJu": [
+      "장윤주"
+    ],
+    "Stereo Venus;Rumer": [
+      "스테레오 비너스"
+    ],
+    "Mei Ehara": [
+      "mei ehara"
+    ],
+    "Aurora Ave.": [
+      "오로라 애비뉴"
+    ],
+    "MORRIE": [
+      "Morrie"
+    ],
+    "Goodmorning Pancake": [
+      "굿모닝 팬케이크"
+    ],
+    "metro trip": [
+      "메트로 트립"
+    ],
+    "Mr.2": [
+      "MR.2"
+    ],
+    "ZaZa": [
+      "Zaza"
+    ],
+    "Toy;Lee Ji Hyung": [
+      "Toy"
+    ],
+    "Daniel Barenboim": [
+      "DANIEL"
+    ],
+    "jisokuryClub": [
+      "지속류클럽"
+    ],
+    "HANRORO": [
+      "한로로"
+    ],
+    "Redoor": [
+      "레도어"
+    ],
+    "So!YoON!;Phum Viphurit": [
+      "So!YoON!"
+    ],
+    "R.I.O.": [
+      "RIO"
+    ],
+    "Zion.T": [
+      "자이언티"
+    ],
+    "LEEHEESANG": [
+      "이희상"
+    ],
+    "Soombee": [
+      "숨비"
+    ],
+    "Jeon Jin Hee;wave to earth": [
+      "Jeon Jin Hee"
+    ],
+    "Switcbak": [
+      "스위치백"
+    ],
+    "Tuesday Beach Club": [
+      "화요비치클럽"
+    ],
+    "Lee Yerin": [
+      "이예린"
+    ],
+    "Shin In Ryu": [
+      "신인류"
+    ],
+    "Raoul N. di Seimbote": [
+      "n@di"
+    ],
+    "pitcher56": [
+      "Pitcher56"
+    ],
+    "Kaede;Lamp;UWANOSORA": [
+      "Kaede"
+    ],
+    "Satellite Lovers": [
+      "새틀라이트 러버즈"
+    ],
+    "Minuano": [
+      "미누아노"
+    ],
+    "Yes": [
+      "yes"
+    ],
+    "yes, mama ok?": [
+      "mama ok?"
+    ],
+    "rourourourous": [
+      "루루루러스"
+    ],
+    "dahlia": [
+      "Dahlia"
+    ],
+    "ROUND TABLE": [
+      "라운드 테이블"
+    ],
+    "Cymbals;内田晴元;小泉一郎": [
+      "Cymbals"
+    ],
+    "Lee Sang Eun": [
+      "이상은"
+    ],
+    "Bosudongcooler;hathaw9y": [
+      "Bosudongcooler"
+    ],
+    "Underwears Band": [
+      "언더웨어즈"
+    ],
+    "Budung": [
+      "부등"
+    ],
+    "huijun woo": [
+      "우희준"
+    ],
+    "Circle": [
+      "써클"
+    ],
+    "Exhibition": [
+      "전람회"
+    ],
+    "The Jadu": [
+      "자두"
+    ],
+    "UN": [
+      "Un"
+    ],
+    "EXO": [
+      "엑소"
+    ],
+    "AOA": [
+      "에이오에이"
+    ],
+    "f(x)": [
+      "에프엑스"
+    ],
+    "TWICE": [
+      "트와이스"
+    ],
+    "SHINee": [
+      "샤이니"
+    ],
+    "Red Velvet": [
+      "레드벨벳"
+    ],
+    "SUPER JUNIOR": [
+      "슈퍼주니어"
+    ],
+    "GOT7": [
+      "갓세븐"
+    ],
+    "EXID": [
+      "이엑스아이디"
+    ],
+    "2PM": [
+      "투피엠"
+    ],
+    "Car Seat Headrest": [
+      "CAR"
+    ],
+    "SS501": [
+      "SS501"
+    ],
+    "Om Ha Jin": [
+      "Ha Jin"
+    ],
+    "Xydo": [
+      "박치웅"
+    ],
+    "Sole": [
+      "SOLE"
+    ],
+    "YEONJUN": [
+      "연준"
+    ],
+    "Eclipse": [
+      "ECLIPSE"
+    ],
+    "WOODZ": [
+      "조승연"
+    ],
+    "PLAVE": [
+      "플레이브"
+    ],
+    "Lucy": [
+      "LUCY"
+    ],
+    "Joha": [
+      "JOHA"
+    ],
+    "Xdinary Heroes": [
+      "엑스디너리 히어로즈"
+    ],
+    "QWER": [
+      "최애의 아이들"
+    ],
+    "SION": [
+      "Sion"
+    ],
+    "Terry Pratchett": [
+      "Terry"
+    ],
+    "Blah Blah Blah": [
+      "blah"
+    ],
+    "Park Jang Hyeon": [
+      "Jang Hyeon"
+    ],
+    "The Blue Sky Boys": [
+      "Blue Sky"
+    ],
+    "ZOO": [
+      "Zoo"
+    ],
+    "C Jamm": [
+      "씨잼",
+      "C JAMM"
+    ],
+    "Kang Tae-Hwan": [
+      "Kang Tae Hwan"
+    ],
+    "j‐hope": [
+      "정호석"
+    ],
+    "RM": [
+      "김남준"
+    ],
+    "V": [
+      "김태형"
+    ],
+    "Pdogg": [
+      "강효원"
+    ],
+    "JENNIE": [
+      "김제니"
+    ],
+    "JISOO": [
+      "Kim Ji-soo"
+    ],
+    "TEDDY": [
+      "Park, Hongjun"
+    ],
+    "KUSH": [
+      "김병훈"
+    ],
+    "LILY": [
+      "릴리"
+    ],
+    "Kriz": [
+      "송시진"
+    ],
+    "MINNIE": [
+      "민니"
+    ],
+    "G‐Dragon": [
+      "권지용"
+    ],
+    "SUNNY": [
+      "써니"
+    ],
+    "TAEYEON": [
+      "김태연",
+      "태연"
+    ],
+    "Tiffany Young": [
+      "스테파니 황"
+    ],
+    "YURI": [
+      "권유리"
+    ],
+    "Keeproots": [
+      "이근수"
+    ],
+    "ROSÉ": [
+      "로제"
+    ],
+    "Block B": [
+      "블락비"
+    ],
+    "Dynamic Duo": [
+      "다이나믹듀오",
+      "다이나믹 듀오"
+    ],
+    "JINI": [
+      "지니"
+    ],
+    "3RACHA": [
+      "쓰리라차"
+    ],
+    "Tiger JK": [
+      "서정권"
+    ],
+    "SOOJIN": [
+      "서수진"
+    ],
+    "JEON SOYEON": [
+      "소연"
+    ],
+    "BreadBeat": [
+      "원정호"
+    ],
+    "Beenzino": [
+      "빈지노"
+    ],
+    "TAEYANG": [
+      "동영배"
+    ],
+    "Bruno Mars": [
+      "브루노 마스"
+    ],
+    "Lucid Fall": [
+      "루시드폴"
+    ],
+    "And": [
+      "김지환"
+    ],
+    "WINNER": [
+      "위너"
+    ],
+    "Don Mills": [
+      "던밀스"
+    ],
+    "Bronze": [
+      "김휘동"
+    ],
+    "BTOB": [
+      "비투비"
+    ],
+    "2NE1": [
+      "투애니원"
+    ],
+    "Postino": [
+      "이준호"
+    ],
+    "Lyn": [
+      "이세진"
+    ],
+    "Primary": [
+      "프라이머리"
+    ],
+    "The Quiett": [
+      "더콰이엇"
+    ],
+    "DJ Pumkin": [
+      "DJ 펌킨"
+    ],
+    "5RACHA": [
+      "파이브라차"
+    ],
+    "BTOB 4U": [
+      "비투비 포유"
+    ],
+    "Illest Konfusion": [
+      "일리스트 컨퓨젼"
+    ],
+    "GSoul": [
+      "골든"
+    ],
+    "Woodie Gochild": [
+      "우디 고차일드"
+    ],
+    "SF9": [
+      "에스에프나인"
+    ]
+  },
+  "changes": [
+    {
+      "id": "0d79fe8e-ba27-4859-bb8c-2f255f346853",
+      "old_name": "BTS",
+      "old_nameKo": "BTS",
+      "new_name": "BTS",
+      "new_nameKo": "",
+      "ko_alias": "방탄소년단",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "48646387-1664-4c9a-9139-9bfd091b823c",
+      "old_name": "BLACKPINK",
+      "old_nameKo": "BLACKPINK",
+      "new_name": "BLACKPINK",
+      "new_nameKo": "",
+      "ko_alias": "블랙핑크",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "b9545342-1e6d-4dae-84ac-013374ad8d7c",
+      "old_name": "IU",
+      "old_nameKo": "아이유",
+      "new_name": "IU",
+      "new_nameKo": "",
+      "ko_alias": "아이유",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "f2215143-d7db-4cf0-9cd4-b0040eb63cbd",
+      "old_name": "Zico",
+      "old_nameKo": "지코",
+      "new_name": "ZICO",
+      "new_nameKo": "",
+      "ko_alias": "지코",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "f59c5520-5f46-4d2c-b2c4-822eabf53419",
+      "old_name": "J.Y. Park",
+      "old_nameKo": "박진영",
+      "new_name": "Linkin Park",
+      "new_nameKo": "박진영",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "8cea34d9-e1a5-4a92-87da-de947f741fe6",
+      "old_name": "Heize",
+      "old_nameKo": "헤이즈",
+      "new_name": "Heize",
+      "new_nameKo": "",
+      "ko_alias": "장다혜",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "142b343d-bf5a-428c-a64f-6d1a7566bbe9",
+      "old_name": "Stray Kids",
+      "old_nameKo": "스트레이 키즈",
+      "new_name": "Stray Kids",
+      "new_nameKo": "",
+      "ko_alias": "스트레이 키즈",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "0068ae6c-7156-40f9-a81f-39294af6a549",
+      "old_name": "(G)I-DLE",
+      "old_nameKo": "여자아이들",
+      "new_name": "i‐dle",
+      "new_nameKo": "",
+      "ko_alias": "(여자)아이들",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "49204a7a-ed85-407a-828f-6fd46f1d8126",
+      "old_name": "NewJeans",
+      "old_nameKo": "뉴진스",
+      "new_name": "NewJeans",
+      "new_nameKo": "",
+      "ko_alias": "뉴진스",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "2c89e930-7769-403f-8145-f215bb8fb5ba",
+      "old_name": "BIBI",
+      "old_nameKo": "비비",
+      "new_name": "Bibi Blocksberg",
+      "new_nameKo": "비비",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "aace796b-0569-49b6-a144-64ea24031962",
+      "old_name": "pH-1",
+      "old_nameKo": "pH-1",
+      "new_name": "pH-1",
+      "new_nameKo": "",
+      "ko_alias": "朴俊元",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "89ad4ac3-39f7-470e-963a-56509c546377",
+      "old_name": "Baek A",
+      "old_nameKo": "백아",
+      "new_name": "Various Artists",
+      "new_nameKo": "",
+      "ko_alias": "여러 아티스트",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "f4afb4d4-0fd9-4875-9381-fd7e24793dc5",
+      "old_name": "Autumn Vacation",
+      "old_nameKo": "가을방학",
+      "new_name": "Vacation",
+      "new_nameKo": "가을방학",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "71a77395-72b2-4584-9d14-e956d023e09d",
+      "old_name": "Lee Baksa",
+      "old_nameKo": "이박사",
+      "new_name": "Robert Baksa",
+      "new_nameKo": "이박사",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "57ce0d45-8e00-447d-95d5-f735ad617eb8",
+      "old_name": "Han Roro",
+      "old_nameKo": "한로로",
+      "new_name": "RoRo",
+      "new_nameKo": "한로로",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "e156615d-3ddd-4491-9584-4b9d971472c4",
+      "old_name": "Nell",
+      "old_nameKo": "넬",
+      "new_name": "NELL",
+      "new_nameKo": "",
+      "ko_alias": "넬",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "c36f5c98-b7c2-4514-a719-486e78f1449c",
+      "old_name": "Linus's Blanket",
+      "old_nameKo": "라이너스의 담요",
+      "new_name": "Linus’ Blanket",
+      "new_nameKo": "라이너스의 담요",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "2ccf313f-ec6a-42fc-9de6-e509b806ac45",
+      "old_name": "Deli Spice",
+      "old_nameKo": "델리스파이스",
+      "new_name": "Deli Spice",
+      "new_nameKo": "",
+      "ko_alias": "델리스파이스",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "2e01c280-9d46-4499-af63-252c4797720a",
+      "old_name": "Through the Sloe",
+      "old_nameKo": "through the sloe",
+      "new_name": "through the sloe",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "bdbd48f5-abf3-4a4f-9a21-4551dbc3fde9",
+      "old_name": "Julia's Heart",
+      "old_nameKo": "줄리아하트",
+      "new_name": "Heart",
+      "new_nameKo": "줄리아하트",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "2050944c-2f1e-402f-a228-b69eda847e69",
+      "old_name": "Broccoli You Too",
+      "old_nameKo": "브로콜리너마저",
+      "new_name": "You Too",
+      "new_nameKo": "브로콜리너마저",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "a1eba844-8c3e-4c61-8f54-f5e086b58c01",
+      "old_name": "AKMU",
+      "old_nameKo": "악동뮤지션",
+      "new_name": "AKMU",
+      "new_nameKo": "",
+      "ko_alias": "악동뮤지션",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "ec2bcb77-b9a1-49e2-bfe7-419586bbef48",
+      "old_name": "BIGBANG",
+      "old_nameKo": "빅뱅",
+      "new_name": "BIGBANG",
+      "new_nameKo": "",
+      "ko_alias": "빅뱅",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "b7442f18-d9be-4185-8b51-482510046156",
+      "old_name": "Girls' Generation",
+      "old_nameKo": "소녀시대",
+      "new_name": "Girls’ Generation",
+      "new_nameKo": "",
+      "ko_alias": "소녀시대",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "f1f59272-c86f-4227-80b6-dc5ad4c2c76a",
+      "old_name": "Seo Taiji",
+      "old_nameKo": "서태지",
+      "new_name": "TAIJI",
+      "new_nameKo": "서태지",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "19a1c6b1-d3ec-4ec7-82ed-1f8e851f7127",
+      "old_name": "Yoon Sang",
+      "old_nameKo": "윤상",
+      "new_name": "Sang",
+      "new_nameKo": "윤상",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "c1c10a2a-241a-403a-a020-61545f31d374",
+      "old_name": "Toy",
+      "old_nameKo": "토이",
+      "new_name": "The Toy Dolls",
+      "new_nameKo": "토이",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "2bbcb6ce-4303-4abe-8cab-eb7e66bb94be",
+      "old_name": "Yoon Mirae",
+      "old_nameKo": "윤미래",
+      "new_name": "MIRAE",
+      "new_nameKo": "윤미래",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "c3d2c730-bd2d-41d3-bdc7-d8af8749a08b",
+      "old_name": "Sunwoo Jung-a",
+      "old_nameKo": "선우정아",
+      "new_name": "Jung-A Lee",
+      "new_nameKo": "선우정아",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "d8491021-9eb4-4ead-be3c-e80451c19884",
+      "old_name": "Lee Juk",
+      "old_nameKo": "이적",
+      "new_name": "Juk Juk",
+      "new_nameKo": "이적",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "6de789df-4a48-4c4f-8055-a9de46565533",
+      "old_name": "dosii",
+      "old_nameKo": "도시",
+      "new_name": "dosii",
+      "new_nameKo": "",
+      "ko_alias": "도시",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "77597bcc-690a-4c19-ae5f-1372d0309659",
+      "old_name": "Mot",
+      "old_nameKo": "못",
+      "new_name": "MOT",
+      "new_nameKo": "못",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "8c7a8406-f15a-408d-b0f6-23be813bdddc",
+      "old_name": "Kiha & The Faces",
+      "old_nameKo": "장기하와 얼굴들",
+      "new_name": "Faces",
+      "new_nameKo": "장기하와 얼굴들",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "717d466b-36b8-4a43-86e9-e8b8c4a658d7",
+      "old_name": "SE SO NEON",
+      "old_nameKo": "새소년",
+      "new_name": "SE SO NEON",
+      "new_nameKo": "",
+      "ko_alias": "새소년",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "3fabd769-087f-47a4-bed9-d75190ae4b36",
+      "old_name": "Kim Sawol",
+      "old_nameKo": "김사월",
+      "new_name": "Sawol",
+      "new_nameKo": "김사월",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "6b5f4f28-6359-48ae-9eee-4cf020ea3062",
+      "old_name": "THORNAPPLE",
+      "old_nameKo": "쏜애플",
+      "new_name": "Thornapple",
+      "new_nameKo": "쏜애플",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "c1304bf7-1002-493c-af8f-47a950813f6a",
+      "old_name": "Nerd Connection",
+      "old_nameKo": "너드커넥션",
+      "new_name": "Nerd Connection",
+      "new_nameKo": "",
+      "ko_alias": "너드 커넥션",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+      "old_name": "Meaningful Stone",
+      "old_nameKo": "김뜻돌",
+      "new_name": "The Rolling Stones",
+      "new_nameKo": "김뜻돌",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "06396b83-be48-47be-87d3-2cafb2234585",
+      "old_name": "mingginyu",
+      "old_nameKo": "밍기뉴",
+      "new_name": "Mingginyu",
+      "new_nameKo": "",
+      "ko_alias": "Mingginyu (밍기뉴)",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "2c8b5bb2-6110-488d-bc15-abb08379d3c6",
+      "old_name": "Silica Gel",
+      "old_nameKo": "실리카겔",
+      "new_name": "Silica Gel",
+      "new_nameKo": "",
+      "ko_alias": "실리카겔",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "047380b5-0e82-4445-9f79-072f987736a3",
+      "old_name": "cotoba",
+      "old_nameKo": "코토바",
+      "new_name": "cotoba",
+      "new_nameKo": "",
+      "ko_alias": "코토바",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "164f2f59-20e9-449d-a951-2d1437fc0917",
+      "old_name": "youra",
+      "old_nameKo": "유라",
+      "new_name": "youra",
+      "new_nameKo": "",
+      "ko_alias": "유라",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "fbcc3381-486f-498e-a128-a7592701cc21",
+      "old_name": "Lee Godo",
+      "old_nameKo": "이고도",
+      "new_name": "Godo",
+      "new_nameKo": "이고도",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "7ab2733a-588e-454c-8326-cd5f984a6186",
+      "old_name": "ALEPH",
+      "old_nameKo": "알레프",
+      "new_name": "Aleph",
+      "new_nameKo": "알레프",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "4cebbc8b-6ae8-4288-b183-b6f11bdd749d",
+      "old_name": "015B",
+      "old_nameKo": "공일오비",
+      "new_name": "015B",
+      "new_nameKo": "",
+      "ko_alias": "공일오비",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "e4d8dddb-21e7-48dc-95af-434ac2385db8",
+      "old_name": "Guckkasten",
+      "old_nameKo": "국카스텐",
+      "new_name": "Guckkasten",
+      "new_nameKo": "",
+      "ko_alias": "국카스텐",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "77bc5aae-3cdf-4942-860a-4ebc67b3c280",
+      "old_name": "Car, the garden",
+      "old_nameKo": "카더가든",
+      "new_name": "The Garden",
+      "new_nameKo": "카더가든",
+      "ko_alias": null,
+      "rule": "mb_en_primary_keep_existing_ko"
+    },
+    {
+      "id": "981eaa5e-ff48-4c68-a991-69c02693ab85",
+      "old_name": "Nastyona",
+      "old_nameKo": "NASTYONA",
+      "new_name": "Nastyona",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "88c0eb05-8eb7-4c03-8dbb-034687d9073f",
+      "old_name": "Maïmon and The Mongoose Band",
+      "old_nameKo": "The Mongoose",
+      "new_name": "Maïmon and The Mongoose Band",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "65ac932a-5639-46a2-980a-4f0141589398",
+      "old_name": "Rock 'n' Roll Radio",
+      "old_nameKo": "Rock N Roll Radio",
+      "new_name": "Rock 'n' Roll Radio",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "360467a9-b8f1-4d24-ae50-9c4d9728f11a",
+      "old_name": "Life and Time",
+      "old_nameKo": "라이프 앤 타임",
+      "new_name": "Life and Time",
+      "new_nameKo": "",
+      "ko_alias": "라이프 앤 타임",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "e19d1605-0f01-48fb-a090-ac5f06f1f779",
+      "old_name": "Decadent",
+      "old_nameKo": "DECADENT",
+      "new_name": "Decadent",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1bd4af1d-c1ed-4b2e-89c9-79fbe655a06c",
+      "old_name": "John Cranfield",
+      "old_nameKo": "Cranfield",
+      "new_name": "John Cranfield",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9f6686f2-7a23-4bf3-9d01-860e4ae9390f",
+      "old_name": "10cm",
+      "old_nameKo": "10CM",
+      "new_name": "10cm",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "408d38ef-7018-4a98-aa90-ff9865bfd4ca",
+      "old_name": "achime",
+      "old_nameKo": "Achime",
+      "new_name": "achime",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "fb04aa85-29ec-499f-9326-5e49da57f5ec",
+      "old_name": "KIRARA",
+      "old_nameKo": "키라라",
+      "new_name": "KIRARA",
+      "new_nameKo": "",
+      "ko_alias": "키라라",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "e1a9187f-6652-47c7-a91e-cb0cf8986b9a",
+      "old_name": "Hathaw9y",
+      "old_nameKo": "hathaw9y",
+      "new_name": "Hathaw9y",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7b73c11f-79eb-45e5-9815-56a796e4fee4",
+      "old_name": "Cadejo",
+      "old_nameKo": "CADEJO",
+      "new_name": "Cadejo",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c63fc1dc-50db-4ced-ab11-91ac0085f53d",
+      "old_name": "TRPP",
+      "old_nameKo": "TRPP",
+      "new_name": "TRPP",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "19202b40-eb93-48a0-b6fc-fce9568182aa",
+      "old_name": "Fucked Up",
+      "old_nameKo": "UP",
+      "new_name": "Fucked Up",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "298909e4-ebcb-47b8-95e9-cc53b087fc65",
+      "old_name": "Lamb of God",
+      "old_nameKo": "god",
+      "new_name": "Lamb of God",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5f0e26b5-775d-42c6-aae3-b6d5789a10b6",
+      "old_name": "IZI",
+      "old_nameKo": "Izi",
+      "new_name": "IZI",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6cc389d3-2f25-4289-bb33-3971e8f90394",
+      "old_name": "Clon",
+      "old_nameKo": "클론",
+      "new_name": "Clon",
+      "new_nameKo": "",
+      "ko_alias": "클론",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "f4d2fc5a-cacb-47c8-b096-ee73864b1aa8",
+      "old_name": "Bob James",
+      "old_nameKo": "Bob James",
+      "new_name": "Bob James",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "62814dab-64fe-4b70-b870-81c0145ba552",
+      "old_name": "S.E.S.",
+      "old_nameKo": "S.E.S.",
+      "new_name": "S.E.S.",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6884f6a9-40d7-46a3-9e5c-fc886b86ffe5",
+      "old_name": "KYT-METAL",
+      "old_nameKo": "KYT",
+      "new_name": "KYT-METAL",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "922b017a-ec28-4112-a0b1-33adc04ca55f",
+      "old_name": "NRG",
+      "old_nameKo": "NRG",
+      "new_name": "NRG",
+      "new_nameKo": "",
+      "ko_alias": "엔알지",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "502e4ed1-eb37-44ac-bf95-84fbc5315ae5",
+      "old_name": "DJ DOC",
+      "old_nameKo": "DJ DOC",
+      "new_name": "DJ DOC",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "13501c7d-d181-45ba-af52-5f101d8516a0",
+      "old_name": "Can",
+      "old_nameKo": "CAN",
+      "new_name": "Can",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "be899560-1570-402e-9f95-3182898a8b70",
+      "old_name": "Art of Noise",
+      "old_nameKo": "Noise",
+      "new_name": "Art of Noise",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "batch_U29uIEppY2",
+      "old_name": "Son Jichang;김민종",
+      "old_nameKo": "Son Jichang",
+      "new_name": "Son Jichang;김민종",
+      "new_nameKo": "Son Jichang;김민종",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "46b7d8a2-b5e6-493a-85a2-b98283ff7f4d",
+      "old_name": "R.ef",
+      "old_nameKo": "R.ef",
+      "new_name": "R.ef",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
+      "old_name": "Red Hot Chili Peppers",
+      "old_nameKo": "H.O.T.",
+      "new_name": "Red Hot Chili Peppers",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "90acc84c-1b52-4ed1-bd4c-2cf7dca1f367",
+      "old_name": "Bursters",
+      "old_nameKo": "BURSTERS",
+      "new_name": "Bursters",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "3f5fa886-2388-420d-8bb8-89ff646cbf58",
+      "old_name": "Kuhmo Asiana String Quartet",
+      "old_nameKo": "Asiana",
+      "new_name": "Kuhmo Asiana String Quartet",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b3cca0ed-b833-4b06-bb68-3356da98e2e8",
+      "old_name": "Pippi's Band",
+      "old_nameKo": "Pippi Band",
+      "new_name": "Pippi's Band",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b4307812-8143-46e0-9075-ffc06b30f3fe",
+      "old_name": "H2O",
+      "old_nameKo": "H2O",
+      "new_name": "H2O",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f6433904-37dc-402c-a913-20f965ea602b",
+      "old_name": "Coin Classic",
+      "old_nameKo": "coin classic",
+      "new_name": "Coin Classic",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "67495722-e5e2-4c19-88a7-905c4942a36a",
+      "old_name": "Phonebooth",
+      "old_nameKo": "폰부스",
+      "new_name": "Phonebooth",
+      "new_nameKo": "",
+      "ko_alias": "폰부스",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "48468074-29e8-46bf-8c63-c71c8ac28dd0",
+      "old_name": "OOO",
+      "old_nameKo": "O.O.O",
+      "new_name": "OOO",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "209a717e-c23d-4253-806c-b91988fff4a6",
+      "old_name": "B612",
+      "old_nameKo": "B612",
+      "new_name": "B612",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f9005165-727f-42bd-9335-7e2b03fa8feb",
+      "old_name": "HERD",
+      "old_nameKo": "HERD",
+      "new_name": "HERD",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "batch_Uy5MLksuO+",
+      "old_name": "S.L.K.;손무현;이도건",
+      "old_nameKo": "S.L.K.",
+      "new_name": "S.L.K.;손무현;이도건",
+      "new_nameKo": "S.L.K.;손무현;이도건",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "046a16c2-2c9a-43d2-8fab-6513635a7efd",
+      "old_name": "Locust",
+      "old_nameKo": "LOCUST",
+      "new_name": "Locust",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "300c1af2-2912-4de8-b94e-383cb0e968d6",
+      "old_name": "Little Giant Drug",
+      "old_nameKo": "Little Giant",
+      "new_name": "Little Giant Drug",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "batch_Sm8gRGVvay",
+      "old_name": "Jo Deok Hwan;최성원;주찬권",
+      "old_nameKo": "Jo Deok Hwan",
+      "new_name": "Jo Deok Hwan;최성원;주찬권",
+      "new_nameKo": "Jo Deok Hwan;최성원;주찬권",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "555ab13f-acf4-415f-835d-1bc854e1236f",
+      "old_name": "CNBLUE",
+      "old_nameKo": "씨엔블루",
+      "new_name": "CNBLUE",
+      "new_nameKo": "",
+      "ko_alias": "씨엔블루",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "9eb897f2-dc0d-47f3-93b9-d05e5fd24f78",
+      "old_name": "LOVE & PEACE",
+      "old_nameKo": "Love and Peace",
+      "new_name": "LOVE & PEACE",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "batch_QmxhY2sgU3",
+      "old_name": "Black Syndrome;김지영",
+      "old_nameKo": "Black Syndrome",
+      "new_name": "Black Syndrome;김지영",
+      "new_nameKo": "Black Syndrome;김지영",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "e1219f90-2de7-470e-b938-562c99097e2a",
+      "old_name": "Sky",
+      "old_nameKo": "SKY",
+      "new_name": "Sky",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "903cbb7b-7db5-4737-8be6-df0ac5b1218f",
+      "old_name": "The Poles",
+      "old_nameKo": "더 폴즈",
+      "new_name": "The Poles",
+      "new_nameKo": "",
+      "ko_alias": "더 폴스",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "9f8b1931-59a1-4427-bc0d-d78d17b833ab",
+      "old_name": "Y2K",
+      "old_nameKo": "Y2K",
+      "new_name": "Y2K",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f0788cc3-ca2f-41a6-bf46-24b5b38e2b96",
+      "old_name": "Glen Check",
+      "old_nameKo": "글렌체크",
+      "new_name": "Glen Check",
+      "new_nameKo": "",
+      "ko_alias": "글렌체크",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "765caa63-45e3-4397-bda5-062cf00d9e6f",
+      "old_name": "Loro's",
+      "old_nameKo": "로로스",
+      "new_name": "Loro's",
+      "new_nameKo": "",
+      "ko_alias": "로로스",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "f07eb265-113e-40ed-aeeb-cfad5328672c",
+      "old_name": "Luminous Transfixion",
+      "old_nameKo": "TransFixion",
+      "new_name": "Luminous Transfixion",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b9b23cb1-b0cf-4048-8882-a26cc0f7ddc9",
+      "old_name": "pomodorosa",
+      "old_nameKo": "pomodorosa",
+      "new_name": "pomodorosa",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4ebc87d8-005d-4f91-bc17-fe792f08432a",
+      "old_name": "mamerico",
+      "old_nameKo": "mamerico",
+      "new_name": "mamerico",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5fa6742f-b0ed-4731-93fc-13c796706d2c",
+      "old_name": "Heekyung Na",
+      "old_nameKo": "HeeKyung Na",
+      "new_name": "Heekyung Na",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "bccaf7a9-1b91-4016-9e7b-45f02e8ec61c",
+      "old_name": "naomi & goro",
+      "old_nameKo": "naomi & goro",
+      "new_name": "naomi & goro",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a4d85e6f-8998-45c8-8f55-53e54246277a",
+      "old_name": "Mei Ehara",
+      "old_nameKo": "mei ehara",
+      "new_name": "Mei Ehara",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "24cf8d03-97a0-4141-9918-cd98b252ec66",
+      "old_name": "MORRIE",
+      "old_nameKo": "Morrie",
+      "new_name": "MORRIE",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "3ad010e3-453d-433d-bb87-f9c19e8424d6",
+      "old_name": "フレネシ",
+      "old_nameKo": "フレネシ",
+      "new_name": "フレネシ",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "batch_U3VsdGFuIG",
+      "old_name": "Sultan of the Disco;블랙넛(Black Nut)",
+      "old_nameKo": "Sultan of the Disco",
+      "new_name": "Sultan of the Disco;블랙넛(Black Nut)",
+      "new_nameKo": "Sultan of the Disco;블랙넛(Black Nut)",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "batch_Wm9QRDvshp",
+      "old_name": "ZoPD;손승연",
+      "old_nameKo": "ZoPD",
+      "new_name": "ZoPD;손승연",
+      "new_nameKo": "ZoPD;손승연",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "179d0709-0c72-4089-9add-3b12e1c53a6c",
+      "old_name": "Mr.2",
+      "old_nameKo": "MR.2",
+      "new_name": "Mr.2",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0a26c4ea-1d27-47ee-a6af-ce4235c7e8c0",
+      "old_name": "ZaZa",
+      "old_nameKo": "Zaza",
+      "new_name": "ZaZa",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "batch_VG95O+q5gO",
+      "old_name": "Toy;김형중",
+      "old_nameKo": "Toy",
+      "new_name": "Toy;김형중",
+      "new_nameKo": "Toy;김형중",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "fac566b2-7a0e-4977-ad92-533f43420975",
+      "old_name": "Daniel Barenboim",
+      "old_nameKo": "DANIEL",
+      "new_name": "Daniel Barenboim",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "2f38efa1-ac38-4a24-8f22-1660a55fba40",
+      "old_name": "R.I.O.",
+      "old_nameKo": "RIO",
+      "new_name": "R.I.O.",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "batch_TGVhaCBEb3",
+      "old_name": "Leah Dou;검정치마",
+      "old_nameKo": "Leah Dou",
+      "new_name": "Leah Dou;검정치마",
+      "new_nameKo": "Leah Dou;검정치마",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "batch_Q3Jvd2QgTH",
+      "old_name": "Crowd Lu;검정치마",
+      "old_nameKo": "Crowd Lu",
+      "new_name": "Crowd Lu;검정치마",
+      "new_nameKo": "Crowd Lu;검정치마",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "472d15fe-ac30-4bba-8cf6-21c3dbac3d55",
+      "old_name": "1415",
+      "old_nameKo": "1415",
+      "new_name": "1415",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "ddd69dc8-cbb9-4d5d-abc4-02161a8814f1",
+      "old_name": "Shin In Ryu",
+      "old_nameKo": "신인류",
+      "new_name": "Shin In Ryu",
+      "new_nameKo": "",
+      "ko_alias": "신인류",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "badc9977-3ef2-44a4-82a9-7a9dc5da61c6",
+      "old_name": "Raoul N. di Seimbote",
+      "old_nameKo": "n@di",
+      "new_name": "Raoul N. di Seimbote",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "dc4968ba-1fe0-43b9-bba0-81c09acd6326",
+      "old_name": "Cibo Matto",
+      "old_nameKo": "Cibo Matto",
+      "new_name": "Cibo Matto",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "14dbdcb4-dbc1-49dc-b950-6815b06c13cf",
+      "old_name": "sugar plant",
+      "old_nameKo": "sugar plant",
+      "new_name": "sugar plant",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "96d2fff6-c279-47d5-b115-9addc8d08387",
+      "old_name": "pitcher56",
+      "old_nameKo": "Pitcher56",
+      "new_name": "pitcher56",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c1d4f2ba-cf39-460c-9528-6b827d3417a1",
+      "old_name": "Yes",
+      "old_nameKo": "yes",
+      "new_name": "Yes",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9a5fee67-6381-438a-981a-ed5ad00c1e1a",
+      "old_name": "yes, mama ok?",
+      "old_nameKo": "mama ok?",
+      "new_name": "yes, mama ok?",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1f1e6c21-998f-4827-8e1e-056b08e86d02",
+      "old_name": "dahlia",
+      "old_nameKo": "Dahlia",
+      "new_name": "dahlia",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "98cbe02a-7746-4aac-ba8c-bdd1b722f295",
+      "old_name": "山本精一と不思議ロボット",
+      "old_nameKo": "山本精一と不思議ロボット",
+      "new_name": "山本精一と不思議ロボット",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "batch_QmFobmdiZW",
+      "old_name": "Bahngbek;방준석;Bek Hyunjin",
+      "old_nameKo": "Bahngbek",
+      "new_name": "Bahngbek;방준석;Bek Hyunjin",
+      "new_nameKo": "Bahngbek;방준석;Bek Hyunjin",
+      "ko_alias": null,
+      "rule": "fallback_name_is_korean"
+    },
+    {
+      "id": "93efbf6f-0757-41d0-9f94-5609b5983a81",
+      "old_name": "UN",
+      "old_nameKo": "Un",
+      "new_name": "UN",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b3785a55-2cf6-497d-b8e3-cfa21a36f997",
+      "old_name": "EXO",
+      "old_nameKo": "엑소",
+      "new_name": "EXO",
+      "new_nameKo": "",
+      "ko_alias": "엑소",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "23492596-1fa6-45b1-8de6-eed4a829483b",
+      "old_name": "AOA",
+      "old_nameKo": "AOA",
+      "new_name": "AOA",
+      "new_nameKo": "",
+      "ko_alias": "에이오에이",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "37fa0bfd-8bf7-422c-a97a-f8deda49b3a4",
+      "old_name": "f(x)",
+      "old_nameKo": "에프엑스",
+      "new_name": "f(x)",
+      "new_nameKo": "",
+      "ko_alias": "에프엑스",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "8da127cc-c432-418f-b356-ef36210d82ac",
+      "old_name": "TWICE",
+      "old_nameKo": "트와이스",
+      "new_name": "TWICE",
+      "new_nameKo": "",
+      "ko_alias": "트와이스",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "70e5098b-c4ae-4cd7-9799-3c1b9b57c753",
+      "old_name": "SHINee",
+      "old_nameKo": "샤이니",
+      "new_name": "SHINee",
+      "new_nameKo": "",
+      "ko_alias": "샤이니",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "4f0cb3b7-6c06-4317-ae35-ddf3106a17ee",
+      "old_name": "Red Velvet",
+      "old_nameKo": "레드벨벳",
+      "new_name": "Red Velvet",
+      "new_nameKo": "",
+      "ko_alias": "레드벨벳",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "772b1995-e27e-4dcf-99d9-215e0fa813ac",
+      "old_name": "GD&TOP",
+      "old_nameKo": "GD&TOP",
+      "new_name": "GD&TOP",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a13898e2-e488-498e-a89c-d0e920f74d4d",
+      "old_name": "SUPER JUNIOR",
+      "old_nameKo": "SUPER JUNIOR",
+      "new_name": "SUPER JUNIOR",
+      "new_nameKo": "",
+      "ko_alias": "슈퍼주니어",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "254658f7-f4eb-4c62-bafb-28f57707517b",
+      "old_name": "EXO-K",
+      "old_nameKo": "EXO-K",
+      "new_name": "EXO-K",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9b94ac1a-b997-4414-9385-96178b5ef99c",
+      "old_name": "2PM",
+      "old_nameKo": "투피엠",
+      "new_name": "2PM",
+      "new_nameKo": "",
+      "ko_alias": "투피엠",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e",
+      "old_name": "Stevie Wonder",
+      "old_nameKo": "Stevie Wonder",
+      "new_name": "Stevie Wonder",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1a4931bc-5c9a-4ddc-88d9-948566c5e370",
+      "old_name": "Family of the Year",
+      "old_nameKo": "Family of the Year",
+      "new_name": "Family of the Year",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "467f69b6-8d6d-4d2c-bfad-e89adf2806ff",
+      "old_name": "George Benson",
+      "old_nameKo": "George Benson",
+      "new_name": "George Benson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0fabbc1d-8d94-4a61-bd1d-1099ad1e4559",
+      "old_name": "Car Seat Headrest",
+      "old_nameKo": "CAR",
+      "new_name": "Car Seat Headrest",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "40fa3a53-cfef-4294-8aa7-b03f06e8277f",
+      "old_name": "Lasse Lindh",
+      "old_nameKo": "Lasse Lindh",
+      "new_name": "Lasse Lindh",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "fbfb43f5-99d8-41eb-83c8-b6f0093f778c",
+      "old_name": "Zior Park",
+      "old_nameKo": "Zior Park",
+      "new_name": "Zior Park",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5d608334-437d-4578-8b8b-833cec951004",
+      "old_name": "Twin Forks",
+      "old_nameKo": "Twin Forks",
+      "new_name": "Twin Forks",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6e1b6de7-d392-461d-8e07-33fa21ac1588",
+      "old_name": "SS501",
+      "old_nameKo": "SS501",
+      "new_name": "SS501",
+      "new_nameKo": "",
+      "ko_alias": "SS501",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "238af7de-7f14-4d70-9a8d-be5129060c8d",
+      "old_name": "Om Ha Jin",
+      "old_nameKo": "Ha Jin",
+      "new_name": "Om Ha Jin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b043d091-9c31-44c4-b646-c79d0c97840f",
+      "old_name": "BewhY",
+      "old_nameKo": "BewhY",
+      "new_name": "BewhY",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "95416832-1e97-4578-abcc-fda9f08fc5bb",
+      "old_name": "New Empire",
+      "old_nameKo": "New Empire",
+      "new_name": "New Empire",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "19576650-f317-4fb3-860c-d4e9fba519dd",
+      "old_name": "YUMI",
+      "old_nameKo": "YUMI",
+      "new_name": "YUMI",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f822be01-4e7e-498d-a7f8-2172a55dacfd",
+      "old_name": "Jess Penner",
+      "old_nameKo": "Jess Penner",
+      "new_name": "Jess Penner",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1598ebde-6518-4b2f-b836-3c38cc8cea8d",
+      "old_name": "Midnight Youth",
+      "old_nameKo": "Midnight Youth",
+      "new_name": "Midnight Youth",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "219eb08f-7cdb-4bdb-ba3d-68f65b0919d4",
+      "old_name": "Xydo",
+      "old_nameKo": "Xydo",
+      "new_name": "Xydo",
+      "new_nameKo": "",
+      "ko_alias": "박치웅",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "7bc3a2d0-7eed-4b42-ae96-7d68c644454d",
+      "old_name": "Sole",
+      "old_nameKo": "SOLE",
+      "new_name": "Sole",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "806b5074-fa30-40dc-84dd-73e0e353e6d5",
+      "old_name": "YEONJUN",
+      "old_nameKo": "YEONJUN",
+      "new_name": "YEONJUN",
+      "new_nameKo": "",
+      "ko_alias": "연준",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "385d09fa-1866-408c-8d15-9c7324494463",
+      "old_name": "Gemini",
+      "old_nameKo": "Gemini",
+      "new_name": "Gemini",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d41bf980-d328-4fc0-89e0-f09e62afe860",
+      "old_name": "Eclipse",
+      "old_nameKo": "ECLIPSE",
+      "new_name": "Eclipse",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "77fb502e-fe10-4e2b-9309-d515e90390c9",
+      "old_name": "T-Max",
+      "old_nameKo": "T-Max",
+      "new_name": "T-Max",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "25c73c37-9517-4144-8ef6-32541e82ff42",
+      "old_name": "WOODZ",
+      "old_nameKo": "WOODZ",
+      "new_name": "WOODZ",
+      "new_nameKo": "",
+      "ko_alias": "조승연",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "aab90af9-fde7-4988-b26b-b2c3c8e2d8e6",
+      "old_name": "PLAVE",
+      "old_nameKo": "PLAVE",
+      "new_name": "PLAVE",
+      "new_nameKo": "",
+      "ko_alias": "플레이브",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "128b3aaa-f932-4eb3-93cd-cf1d56e88be6",
+      "old_name": "Lucy",
+      "old_nameKo": "LUCY",
+      "new_name": "Lucy",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "dbc486af-e37d-4b1e-a24c-49679615dbe7",
+      "old_name": "Dragon Pony",
+      "old_nameKo": "Dragon Pony",
+      "new_name": "Dragon Pony",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b20847c7-1eb4-4fb5-a857-8fbc9f2bcbd1",
+      "old_name": "Balming Tiger",
+      "old_nameKo": "Balming Tiger",
+      "new_name": "Balming Tiger",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "bc61bb87-b30c-4b6f-b29c-e89c1ead973d",
+      "old_name": "Joha",
+      "old_nameKo": "JOHA",
+      "new_name": "Joha",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "dea836e0-66dd-4285-9cab-2272bcda93b8",
+      "old_name": "FTISLAND",
+      "old_nameKo": "FTISLAND",
+      "new_name": "FTISLAND",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d95a463f-e7d3-4c97-98ba-57f75cb4fda2",
+      "old_name": "Xdinary Heroes",
+      "old_nameKo": "Xdinary Heroes",
+      "new_name": "Xdinary Heroes",
+      "new_nameKo": "",
+      "ko_alias": "엑스디너리 히어로즈",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "86bfda70-ad8c-4db4-9041-e4843d918269",
+      "old_name": "QWER",
+      "old_nameKo": "QWER",
+      "new_name": "QWER",
+      "new_nameKo": "",
+      "ko_alias": "최애의 아이들",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "41e505dd-aa5e-468d-99fb-4ab70e34e251",
+      "old_name": "E.ul",
+      "old_nameKo": "E.ul",
+      "new_name": "E.ul",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b6d6e7c2-de24-4ba2-b2cb-52820d663c96",
+      "old_name": "heyden",
+      "old_nameKo": "heyden",
+      "new_name": "heyden",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "59b5ea0e-a532-4128-9b35-7cc38c58e6e8",
+      "old_name": "Potatoi",
+      "old_nameKo": "Potatoi",
+      "new_name": "Potatoi",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "02d2a8ff-4987-45d6-bf32-b72e38d184f3",
+      "old_name": "Lokid",
+      "old_nameKo": "Lokid",
+      "new_name": "Lokid",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "776ec9c4-3a79-4906-bf5b-7a54fccf0aae",
+      "old_name": "SION",
+      "old_nameKo": "Sion",
+      "new_name": "SION",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4e34c605-384f-4faf-b410-4c6ef280a83a",
+      "old_name": "drewboi",
+      "old_nameKo": "drewboi",
+      "new_name": "drewboi",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "44f85621-f8db-45dd-93de-e9f069d28d7d",
+      "old_name": "Terry Pratchett",
+      "old_nameKo": "Terry",
+      "new_name": "Terry Pratchett",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "987ad0a9-fd09-4668-abd1-119bf9a65985",
+      "old_name": "Omega Sapien",
+      "old_nameKo": "Omega Sapien",
+      "new_name": "Omega Sapien",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9b8ccd41-c1bd-4e27-a57b-3c683dad3236",
+      "old_name": "Blah Blah Blah",
+      "old_nameKo": "blah",
+      "new_name": "Blah Blah Blah",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a3379313-8f0e-4661-9ef8-798eb48195e4",
+      "old_name": "Confined White",
+      "old_nameKo": "Confined White",
+      "new_name": "Confined White",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "cd79a875-8acf-41af-b7f3-1b437976463a",
+      "old_name": "Itzel",
+      "old_nameKo": "Itzel",
+      "new_name": "Itzel",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8f8be284-1ca1-4a11-9214-66a270b7c813",
+      "old_name": "SFC.JGR",
+      "old_nameKo": "SFC.JGR",
+      "new_name": "SFC.JGR",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f9affcc7-853d-4ec6-b29e-2f127f9788f9",
+      "old_name": "Park Jang Hyeon",
+      "old_nameKo": "Jang Hyeon",
+      "new_name": "Park Jang Hyeon",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a3f8fcbe-fbb4-4186-87ce-0f313ae2d0d0",
+      "old_name": "The Blue Sky Boys",
+      "old_nameKo": "Blue Sky",
+      "new_name": "The Blue Sky Boys",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b6b0e833-50c9-4b3f-b68b-2baebdbd9a40",
+      "old_name": "ZOO",
+      "old_nameKo": "Zoo",
+      "new_name": "ZOO",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0b66f261-b9e1-4c32-9354-318121edeb65",
+      "old_name": "DJ Soulscape",
+      "old_nameKo": "DJ Soulscape",
+      "new_name": "DJ Soulscape",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f43d7c90-9e87-4b6d-b175-36c5dd09cd15",
+      "old_name": "U&Me Blue",
+      "old_nameKo": "U&Me Blue",
+      "new_name": "U&Me Blue",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5a3a8fd2-fc67-4d79-b598-cd6c06604ba5",
+      "old_name": "C Jamm",
+      "old_nameKo": "C JAMM",
+      "new_name": "C Jamm",
+      "new_nameKo": "",
+      "ko_alias": "씨잼",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "559301c7-89f6-4a17-8886-cd6a62be464e",
+      "old_name": "Kang Tae-Hwan",
+      "old_nameKo": "Kang Tae Hwan",
+      "new_name": "Kang Tae-Hwan",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b3977da4-f899-4328-921b-ecc599a5618a",
+      "old_name": "j‐hope",
+      "old_nameKo": "j‐hope",
+      "new_name": "j‐hope",
+      "new_nameKo": "",
+      "ko_alias": "정호석",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "58f1e354-ecbc-4fd3-aa25-97eb1d9bd8b9",
+      "old_name": "RM",
+      "old_nameKo": "RM",
+      "new_name": "RM",
+      "new_nameKo": "",
+      "ko_alias": "김남준",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "83096042-3785-481e-8843-dee69f1aad12",
+      "old_name": "V",
+      "old_nameKo": "V",
+      "new_name": "V",
+      "new_nameKo": "",
+      "ko_alias": "김태형",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "54d8e9a4-277b-4d3b-8ca1-a79863c1e379",
+      "old_name": "Pdogg",
+      "old_nameKo": "Pdogg",
+      "new_name": "Pdogg",
+      "new_nameKo": "",
+      "ko_alias": "강효원",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "3377f3bb-60fc-4403-aea9-7e800612e060",
+      "old_name": "Halsey",
+      "old_nameKo": "Halsey",
+      "new_name": "Halsey",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "17de4907-ff9c-4311-9eed-d27da800c693",
+      "old_name": "Arcades",
+      "old_nameKo": "Arcades",
+      "new_name": "Arcades",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a6a74741-69a5-4e92-8d9a-a07dc56de074",
+      "old_name": "Marcus McCoan",
+      "old_nameKo": "Marcus McCoan",
+      "new_name": "Marcus McCoan",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f45a06a4-77a6-4930-8ba5-650bcf887d89",
+      "old_name": "Matt Thomson",
+      "old_nameKo": "Matt Thomson",
+      "new_name": "Matt Thomson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b23aacca-23f0-4ed8-9b78-aeed7f4a2bd2",
+      "old_name": "Jo Hill",
+      "old_nameKo": "Jo Hill",
+      "new_name": "Jo Hill",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e0acbfb0-e9f4-4bfc-8eb8-5ad13a17521d",
+      "old_name": "Ryan Lawrie",
+      "old_nameKo": "Ryan Lawrie",
+      "new_name": "Ryan Lawrie",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c24aca53-bd52-4e77-ab50-8cebac94c01f",
+      "old_name": "Bad Milk",
+      "old_nameKo": "Bad Milk",
+      "new_name": "Bad Milk",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "779351de-0da5-4943-928b-495a3c40e8c0",
+      "old_name": "JENNIE",
+      "old_nameKo": "JENNIE",
+      "new_name": "JENNIE",
+      "new_nameKo": "",
+      "ko_alias": "김제니",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "f906154a-7011-49c3-8f6a-44ca83311b08",
+      "old_name": "JISOO",
+      "old_nameKo": "JISOO",
+      "new_name": "JISOO",
+      "new_nameKo": "",
+      "ko_alias": "Kim Ji-soo",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "fd65c60b-2aaa-4537-85c8-18b07c9a12e7",
+      "old_name": "TEDDY",
+      "old_nameKo": "TEDDY",
+      "new_name": "TEDDY",
+      "new_nameKo": "",
+      "ko_alias": "Park, Hongjun",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "36ce89f1-0224-4693-a2cb-f021e13ca6d0",
+      "old_name": "FUTURE BOUNCE",
+      "old_nameKo": "FUTURE BOUNCE",
+      "new_name": "FUTURE BOUNCE",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "ac7d16e5-04de-4a58-8505-6a25e08652e6",
+      "old_name": "LØREN",
+      "old_nameKo": "LØREN",
+      "new_name": "LØREN",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a7f26ee2-d970-400e-b6b9-e960ce783cae",
+      "old_name": "KUSH",
+      "old_nameKo": "KUSH",
+      "new_name": "KUSH",
+      "new_nameKo": "",
+      "ko_alias": "김병훈",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "f34f476a-c24e-4aa3-88e4-05337f31c84f",
+      "old_name": "Yosuke Nobeyama",
+      "old_nameKo": "Yosuke Nobeyama",
+      "new_name": "Yosuke Nobeyama",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "dc281e0e-9e7a-4330-bd21-a70eb5a6fe98",
+      "old_name": "TAEO",
+      "old_nameKo": "TAEO",
+      "new_name": "TAEO",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "554de746-8f43-49ea-bd1f-6e5b6a212b75",
+      "old_name": "Masta Wu",
+      "old_nameKo": "Masta Wu",
+      "new_name": "Masta Wu",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c0cd8f4a-0028-4547-9ebb-7e9606e55fbc",
+      "old_name": "Dominsuk",
+      "old_nameKo": "Dominsuk",
+      "new_name": "Dominsuk",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7a94b31e-abb9-48b5-8454-b17bfff851a0",
+      "old_name": "VVN",
+      "old_nameKo": "VVN",
+      "new_name": "VVN",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9b07f82a-9a6d-404e-afcd-31cbcc144c1d",
+      "old_name": "Jelli Dorman",
+      "old_nameKo": "Jelli Dorman",
+      "new_name": "Jelli Dorman",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "43437382-8ee9-4b53-90e4-e9fe8e673c87",
+      "old_name": "Choice37",
+      "old_nameKo": "Choice37",
+      "new_name": "Choice37",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d07bca29-d980-4100-8cad-065a05f2b343",
+      "old_name": "Joseph “Joe” Hahn",
+      "old_nameKo": "Joseph “Joe” Hahn",
+      "new_name": "Joseph “Joe” Hahn",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9e0346de-34fc-4ec6-bcb7-c5b6c72340f4",
+      "old_name": "Mithra 眞",
+      "old_nameKo": "Mithra 眞",
+      "new_name": "Mithra 眞",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "dcd79b3a-6fc2-4cc9-a42e-215c7d6ec495",
+      "old_name": "Kia Eshghi",
+      "old_nameKo": "Kia Eshghi",
+      "new_name": "Kia Eshghi",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a60df7cd-1a76-417d-adcf-181c48915c69",
+      "old_name": "LILY",
+      "old_nameKo": "LILY",
+      "new_name": "LILY",
+      "new_nameKo": "",
+      "ko_alias": "릴리",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "e51254ad-ee4e-45c9-bf0b-40b6b770f07a",
+      "old_name": "Brown Panda",
+      "old_nameKo": "Brown Panda",
+      "new_name": "Brown Panda",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1d1e2e1c-bd38-4269-a015-e17506830a75",
+      "old_name": "Strong Dragon",
+      "old_nameKo": "Strong Dragon",
+      "new_name": "Strong Dragon",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "45b89d5b-cea1-43ed-b4ed-a85697a12ce0",
+      "old_name": "AFTRSHOK",
+      "old_nameKo": "AFTRSHOK",
+      "new_name": "AFTRSHOK",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9ab95ba4-0889-4e0b-9578-8378693ca68e",
+      "old_name": "Joseph K",
+      "old_nameKo": "Joseph K",
+      "new_name": "Joseph K",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "185f04d9-44c9-471f-a55f-d54aac4d9fad",
+      "old_name": "Kriz",
+      "old_nameKo": "Kriz",
+      "new_name": "Kriz",
+      "new_nameKo": "",
+      "ko_alias": "송시진",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "d0dbe774-9529-4624-930c-e6555805c51b",
+      "old_name": "Fredrik Ödesjö",
+      "old_nameKo": "Fredrik Ödesjö",
+      "new_name": "Fredrik Ödesjö",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "020ccb10-f02f-4e2f-bfb9-52c3190e12cb",
+      "old_name": "Julius Rodriguez",
+      "old_nameKo": "Julius Rodriguez",
+      "new_name": "Julius Rodriguez",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "cce74ae1-2db3-4055-b8d8-f5a4c4192946",
+      "old_name": "Yuka Otsuki",
+      "old_nameKo": "Yuka Otsuki",
+      "new_name": "Yuka Otsuki",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "710c806d-1728-4b8d-b6e4-c67d44003208",
+      "old_name": "Zack Djurich",
+      "old_nameKo": "Zack Djurich",
+      "new_name": "Zack Djurich",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "50259c88-f747-4279-8d97-694cabde390f",
+      "old_name": "MINNIE",
+      "old_nameKo": "MINNIE",
+      "new_name": "MINNIE",
+      "new_nameKo": "",
+      "ko_alias": "민니",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "035e83ba-bd80-49e7-bc5e-b080753c878d",
+      "old_name": "Disko",
+      "old_nameKo": "Disko",
+      "new_name": "Disko",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e4bbb1c2-d188-4402-8d74-062a634df90a",
+      "old_name": "PLZ",
+      "old_nameKo": "PLZ",
+      "new_name": "PLZ",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "cb0aa814-e9b2-4205-a590-3ca91f09e0e1",
+      "old_name": "MOJO",
+      "old_nameKo": "MOJO",
+      "new_name": "MOJO",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "eeac91bf-fd50-4948-85b5-bae95efad255",
+      "old_name": "FCM 667",
+      "old_nameKo": "FCM 667",
+      "new_name": "FCM 667",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "98be0695-56d4-4da8-8d0c-87d83d5ecd55",
+      "old_name": "Gigi",
+      "old_nameKo": "Gigi",
+      "new_name": "Gigi",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c2531c38-56c9-4ac1-9d55-173b01893a3c",
+      "old_name": "Edna Alexander",
+      "old_nameKo": "Edna Alexander",
+      "new_name": "Edna Alexander",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "40e0b44e-7fa9-45d8-8dfb-4e76853b017c",
+      "old_name": "Kevin",
+      "old_nameKo": "Kevin",
+      "new_name": "Kevin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9c2f67de-9d73-483e-a323-d4dbdfba9255",
+      "old_name": "Brian Johnstone",
+      "old_nameKo": "Brian Johnstone",
+      "new_name": "Brian Johnstone",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9abc748c-5820-48ba-a436-9af9a2ad5cc6",
+      "old_name": "Roger Fisher",
+      "old_nameKo": "Roger Fisher",
+      "new_name": "Roger Fisher",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "3fea812c-c628-46c3-a415-303c2d548e4c",
+      "old_name": "Denny Carmassi",
+      "old_nameKo": "Denny Carmassi",
+      "new_name": "Denny Carmassi",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8392953e-1878-41c3-95de-cade07e7dcd6",
+      "old_name": "Darian Sahanaja",
+      "old_nameKo": "Darian Sahanaja",
+      "new_name": "Darian Sahanaja",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7e5c9c47-4bf2-45ef-8916-75589308689f",
+      "old_name": "Ric Markmann",
+      "old_nameKo": "Ric Markmann",
+      "new_name": "Ric Markmann",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "93e879fd-3042-4cfc-8543-82a0bf8f1b81",
+      "old_name": "Dan Walker",
+      "old_nameKo": "Dan Walker",
+      "new_name": "Dan Walker",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "fe44226a-19a9-4b48-8e1c-9e88984a0fbc",
+      "old_name": "Connie & Howie",
+      "old_nameKo": "Connie & Howie",
+      "new_name": "Connie & Howie",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "ba2a81da-f446-42dc-b83d-9e5b835ed0a7",
+      "old_name": "Jack Conrad",
+      "old_nameKo": "Jack Conrad",
+      "new_name": "Jack Conrad",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f7d5bc0d-41f7-4299-aef9-1b2ee3581423",
+      "old_name": "Brian Allen",
+      "old_nameKo": "Brian Allen",
+      "new_name": "Brian Allen",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "bcad7c09-94b1-4501-a429-73a44d10e6cc",
+      "old_name": "Sheron Alton",
+      "old_nameKo": "Sheron Alton",
+      "new_name": "Sheron Alton",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0f70c0e5-612f-4d5f-8eb6-3ba7e435e8b0",
+      "old_name": "Johnny Colla",
+      "old_nameKo": "Johnny Colla",
+      "new_name": "Johnny Colla",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "787af3ca-c0c7-4869-8827-b387811f4188",
+      "old_name": "Martin Page",
+      "old_nameKo": "Martin Page",
+      "new_name": "Martin Page",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "56e15dff-efb3-4240-b252-bfa24b102cbd",
+      "old_name": "The Wild Angel Chorus",
+      "old_nameKo": "The Wild Angel Chorus",
+      "new_name": "The Wild Angel Chorus",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "2449940d-6c7d-4eec-bb08-3bb87916d269",
+      "old_name": "Michael Clark",
+      "old_nameKo": "Michael Clark",
+      "new_name": "Michael Clark",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b4f66d7f-3282-404e-a682-97374d63b5ab",
+      "old_name": "G‐Dragon",
+      "old_nameKo": "G‐Dragon",
+      "new_name": "G‐Dragon",
+      "new_nameKo": "",
+      "ko_alias": "권지용",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "ef5b166a-adb0-426a-88e9-bb017d46cfa0",
+      "old_name": "BIG RON",
+      "old_nameKo": "BIG RON",
+      "new_name": "BIG RON",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5d4ebb6e-7998-4105-b5ad-45d1adb9ab61",
+      "old_name": "INOZZI",
+      "old_nameKo": "INOZZI",
+      "new_name": "INOZZI",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1d65679d-9f9e-480b-8a62-a21f0717a075",
+      "old_name": "Fransisca Hall",
+      "old_nameKo": "Fransisca Hall",
+      "new_name": "Fransisca Hall",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "3c59eca2-15d4-425f-8b5d-043470c83635",
+      "old_name": "SUNNY",
+      "old_nameKo": "SUNNY",
+      "new_name": "SUNNY",
+      "new_nameKo": "",
+      "ko_alias": "써니",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "2b786fb3-a116-4163-9b65-cf56f03c8a7f",
+      "old_name": "TAEYEON",
+      "old_nameKo": "태연",
+      "new_name": "TAEYEON",
+      "new_nameKo": "",
+      "ko_alias": "김태연",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "908fa819-3af6-4373-a051-75e4827605cf",
+      "old_name": "Tiffany Young",
+      "old_nameKo": "Tiffany Young",
+      "new_name": "Tiffany Young",
+      "new_nameKo": "",
+      "ko_alias": "스테파니 황",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "2dbc4ab5-45b5-450c-a85f-4e3a83204b1c",
+      "old_name": "YURI",
+      "old_nameKo": "YURI",
+      "new_name": "YURI",
+      "new_nameKo": "",
+      "ko_alias": "권유리",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "d85f0cd4-cc0e-4f89-ba32-dad6a5ed8c63",
+      "old_name": "Cutfather",
+      "old_nameKo": "Cutfather",
+      "new_name": "Cutfather",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "77de9077-5074-4a07-9fe7-049414715ea9",
+      "old_name": "Pixie Lott",
+      "old_nameKo": "Pixie Lott",
+      "new_name": "Pixie Lott",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f86aa192-057b-48e6-a871-6bd74c381ce6",
+      "old_name": "Joe Belmaati",
+      "old_nameKo": "Joe Belmaati",
+      "new_name": "Joe Belmaati",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "2227ee2a-c60a-4ab2-9841-a2afe0c82b57",
+      "old_name": "Fredrik Häggstam",
+      "old_nameKo": "Fredrik Häggstam",
+      "new_name": "Fredrik Häggstam",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "2b53f377-ef01-4af9-a469-82fdfd138fba",
+      "old_name": "Sebastian Lundberg",
+      "old_nameKo": "Sebastian Lundberg",
+      "new_name": "Sebastian Lundberg",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1c057fa9-e56a-4af2-8279-7d2fd0bd2837",
+      "old_name": "Double J Show",
+      "old_nameKo": "Double J Show",
+      "new_name": "Double J Show",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6ccd14e0-5767-4be5-95c6-212369587875",
+      "old_name": "J-STA",
+      "old_nameKo": "J-STA",
+      "new_name": "J-STA",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "513b6df2-f44c-4484-b99d-97f79266cb4a",
+      "old_name": "LOUDNESS",
+      "old_nameKo": "LOUDNESS",
+      "new_name": "LOUDNESS",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "30abfdb5-4d3d-410b-8d4c-fa7b5a936cdd",
+      "old_name": "Pete Zulu",
+      "old_nameKo": "Pete Zulu",
+      "new_name": "Pete Zulu",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "32829164-bf72-4ffb-b11c-a94ddb7cd03d",
+      "old_name": "Mr Scott",
+      "old_nameKo": "Mr Scott",
+      "new_name": "Mr Scott",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "aaf14cd0-e845-4f6e-b6b7-d50bafd367d1",
+      "old_name": "Little Paul",
+      "old_nameKo": "Little Paul",
+      "new_name": "Little Paul",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "3675c0bd-4f25-4eeb-80d0-d50229d92ec4",
+      "old_name": "Dave the Nut",
+      "old_nameKo": "Dave the Nut",
+      "new_name": "Dave the Nut",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0c512a9b-2315-4fa8-86c4-5f7bb161deb0",
+      "old_name": "Tommy Goober",
+      "old_nameKo": "Tommy Goober",
+      "new_name": "Tommy Goober",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9cd5afb4-694d-4477-b009-190d1868809a",
+      "old_name": "Baz Warne",
+      "old_nameKo": "Baz Warne",
+      "new_name": "Baz Warne",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "57e3d6d6-271d-4e70-854c-65d371ada931",
+      "old_name": "Dave Franklin",
+      "old_nameKo": "Dave Franklin",
+      "new_name": "Dave Franklin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "89c9774c-cfa1-4b05-837b-c5f58a2640d7",
+      "old_name": "Adam Gilbert",
+      "old_nameKo": "Adam Gilbert",
+      "new_name": "Adam Gilbert",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f106fb52-0b54-4135-bdfd-9ccfd7e320cb",
+      "old_name": "Dieterich Buxtehude",
+      "old_nameKo": "Dieterich Buxtehude",
+      "new_name": "Dieterich Buxtehude",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a2a3529b-6425-417e-b7e7-29255b7acd90",
+      "old_name": "Ian McLagan",
+      "old_nameKo": "Ian McLagan",
+      "new_name": "Ian McLagan",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "ba79a959-743f-4173-8e70-5e9127b1e778",
+      "old_name": "山内テツ",
+      "old_nameKo": "山内テツ",
+      "new_name": "山内テツ",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d6388b45-2ddc-44f5-b210-3495beaa5e43",
+      "old_name": "Mike Peters",
+      "old_nameKo": "Mike Peters",
+      "new_name": "Mike Peters",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8f4be405-84d5-4cac-bdf9-bf02d9e04962",
+      "old_name": "Tim Hardin",
+      "old_nameKo": "Tim Hardin",
+      "new_name": "Tim Hardin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "ca3645a8-95ef-48fc-bf74-af434968e36b",
+      "old_name": "Dave Bentley",
+      "old_nameKo": "Dave Bentley",
+      "new_name": "Dave Bentley",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c13e1fe3-27e9-480f-b3b3-8bbb594c18ee",
+      "old_name": "Ian Stewart",
+      "old_nameKo": "Ian Stewart",
+      "new_name": "Ian Stewart",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "757c472d-e86f-44d3-899d-36732f406b1f",
+      "old_name": "Andrew Loog Oldham",
+      "old_nameKo": "Andrew Loog Oldham",
+      "new_name": "Andrew Loog Oldham",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "85ae85b9-0d16-408d-ac3e-df3f7650ef54",
+      "old_name": "Artie Butler",
+      "old_nameKo": "Artie Butler",
+      "new_name": "Artie Butler",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "afdb7919-059d-43c1-b668-ba1d265e7e42",
+      "old_name": "Marvin Gaye",
+      "old_nameKo": "Marvin Gaye",
+      "new_name": "Marvin Gaye",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4afcf321-6cb6-416d-81d3-0659312ce968",
+      "old_name": "Clydie King",
+      "old_nameKo": "Clydie King",
+      "new_name": "Clydie King",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f66eefea-ff87-46b5-947d-b595a4bac5c9",
+      "old_name": "Reverend Gary Davis",
+      "old_nameKo": "Reverend Gary Davis",
+      "new_name": "Reverend Gary Davis",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "14ed9dea-1bb0-4743-ba32-39674a71da89",
+      "old_name": "Marianne Faithfull",
+      "old_nameKo": "Marianne Faithfull",
+      "new_name": "Marianne Faithfull",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "92c9d8c8-6399-4a8d-ada5-25c94b3f08b7",
+      "old_name": "Hanjoo Kim",
+      "old_nameKo": "Hanjoo Kim",
+      "new_name": "Hanjoo Kim",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8687dd3f-866a-4940-b80e-caca9a4301dd",
+      "old_name": "euPhemia",
+      "old_nameKo": "euPhemia",
+      "new_name": "euPhemia",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "556dc695-83ab-4288-8df6-fd841bd6b7d0",
+      "old_name": "Wyatt Shears",
+      "old_nameKo": "Wyatt Shears",
+      "new_name": "Wyatt Shears",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a3f30765-6739-49ea-8f5a-cb3d04d79cdd",
+      "old_name": "Julia Hart",
+      "old_nameKo": "Julia Hart",
+      "new_name": "Julia Hart",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1a6ad7ce-982c-44f6-a0d5-11fc51b7a6b9",
+      "old_name": "Joe Khajadourian",
+      "old_nameKo": "Joe Khajadourian",
+      "new_name": "Joe Khajadourian",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4e4ebde4-0c56-4dec-844b-6c73adcdd92d",
+      "old_name": "Juice WRLD",
+      "old_nameKo": "Juice WRLD",
+      "new_name": "Juice WRLD",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c797247b-d0d3-4f82-a650-a52428f9e390",
+      "old_name": "Josh Carter",
+      "old_nameKo": "Josh Carter",
+      "new_name": "Josh Carter",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5026465c-afe4-47c3-916e-106e859f04f3",
+      "old_name": "Bamily",
+      "old_nameKo": "Bamily",
+      "new_name": "Bamily",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "24d311f8-da82-4068-896b-ca061deaccb6",
+      "old_name": "Carter Lang",
+      "old_nameKo": "Carter Lang",
+      "new_name": "Carter Lang",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1df15ee0-b52b-4315-9cb9-bc5a27a685e9",
+      "old_name": "Jacob Collier",
+      "old_nameKo": "Jacob Collier",
+      "new_name": "Jacob Collier",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b6220b1f-2a14-43ca-a04c-d5a8c8f623e4",
+      "old_name": "Jörgen Elofsson",
+      "old_nameKo": "Jörgen Elofsson",
+      "new_name": "Jörgen Elofsson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4ea585e9-2a11-4dd3-97fc-432f8e234d96",
+      "old_name": "Question",
+      "old_nameKo": "Question",
+      "new_name": "Question",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "46236fe8-c893-489c-8a06-4afef8130f30",
+      "old_name": "Sentimental Scenery",
+      "old_nameKo": "Sentimental Scenery",
+      "new_name": "Sentimental Scenery",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a59390a6-f905-48a9-b15c-233932451313",
+      "old_name": "Keeproots",
+      "old_nameKo": "Keeproots",
+      "new_name": "Keeproots",
+      "new_nameKo": "",
+      "ko_alias": "이근수",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "4619df2e-ec78-4011-9658-47088d82612c",
+      "old_name": "Cliff Lin",
+      "old_nameKo": "Cliff Lin",
+      "new_name": "Cliff Lin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "75d76d49-a20a-4dcb-83d0-a384d1404be0",
+      "old_name": "Chain Reaction",
+      "old_nameKo": "Chain Reaction",
+      "new_name": "Chain Reaction",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f5a2023e-16c0-4f07-9d8a-152111f34a74",
+      "old_name": "Benjamin Anderson",
+      "old_nameKo": "Benjamin Anderson",
+      "new_name": "Benjamin Anderson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4bf0483b-2462-4ffc-a6bd-8c53369a2e45",
+      "old_name": "Jazzyfact",
+      "old_nameKo": "Jazzyfact",
+      "new_name": "Jazzyfact",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "666ca281-e4c6-42b1-bc1b-9592e8d513a6",
+      "old_name": "Trade L",
+      "old_nameKo": "Trade L",
+      "new_name": "Trade L",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b629da42-c668-49d2-be67-498605ee2a13",
+      "old_name": "SUGA",
+      "old_nameKo": "SUGA",
+      "new_name": "SUGA",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9b0996d8-ce15-4e37-834c-b6c43cb8bf14",
+      "old_name": "Max Graham",
+      "old_nameKo": "Max Graham",
+      "new_name": "Max Graham",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "18c3834d-d301-4827-b6dd-fd2f18d44390",
+      "old_name": "Benjy Gibson",
+      "old_nameKo": "Benjy Gibson",
+      "new_name": "Benjy Gibson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b8a7c51f-362c-4dcb-a259-bc6e0095f0a6",
+      "old_name": "Ed Sheeran",
+      "old_nameKo": "Ed Sheeran",
+      "new_name": "Ed Sheeran",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5938fddf-aa23-4da2-871b-b75ab12e1d64",
+      "old_name": "Matthew Tishler",
+      "old_nameKo": "Matthew Tishler",
+      "new_name": "Matthew Tishler",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "dfca5842-4616-4ee1-a704-d4c65b0bbcfb",
+      "old_name": "YG Family",
+      "old_nameKo": "YG Family",
+      "new_name": "YG Family",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7f233cda-eacb-4235-b681-5f7be343a1a2",
+      "old_name": "ROSÉ",
+      "old_nameKo": "ROSÉ",
+      "new_name": "ROSÉ",
+      "new_nameKo": "",
+      "ko_alias": "로제",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "b18f7f84-3eac-456f-ba35-04773bb4d6ef",
+      "old_name": "IDO",
+      "old_nameKo": "IDO",
+      "new_name": "IDO",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b67bf15d-03c3-40a4-9d17-769a964d5005",
+      "old_name": "Łukasz Gottwald",
+      "old_nameKo": "Łukasz Gottwald",
+      "new_name": "Łukasz Gottwald",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "28d83274-26ab-4a6a-b9ff-340f4784e7dd",
+      "old_name": "Victoria Monét",
+      "old_nameKo": "Victoria Monét",
+      "new_name": "Victoria Monét",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b7cfd42b-697f-4b02-95c9-81fc72bb8edd",
+      "old_name": "Jonathan Descartes",
+      "old_nameKo": "Jonathan Descartes",
+      "new_name": "Jonathan Descartes",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0bc6d6e7-0858-4b73-a079-7aa681095f98",
+      "old_name": "Ryan Tedder",
+      "old_nameKo": "Ryan Tedder",
+      "new_name": "Ryan Tedder",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c7bf23ac-8549-4683-813a-d77bef23263f",
+      "old_name": "Ape Drums",
+      "old_nameKo": "Ape Drums",
+      "new_name": "Ape Drums",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "100d14c3-1dae-438d-ae11-7e609f7c3216",
+      "old_name": "Claudia Valentina",
+      "old_nameKo": "Claudia Valentina",
+      "new_name": "Claudia Valentina",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0eb93ee5-2e6a-4ab4-a988-99c9139a664a",
+      "old_name": "Cirkut",
+      "old_nameKo": "Cirkut",
+      "new_name": "Cirkut",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "98d1ec5a-dd97-4c0b-9c83-7928aac89bca",
+      "old_name": "Chris Martin",
+      "old_nameKo": "Chris Martin",
+      "new_name": "Chris Martin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "82b90016-daf2-4642-b402-73cae2bbff1d",
+      "old_name": "Vaughn Oliver",
+      "old_nameKo": "Vaughn Oliver",
+      "new_name": "Vaughn Oliver",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1c29b6ea-a5a5-487c-bd23-5ff7f0c80cf2",
+      "old_name": "Dr. Luke",
+      "old_nameKo": "Dr. Luke",
+      "new_name": "Dr. Luke",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "52735bac-3018-45ad-9cee-7f62042ba08f",
+      "old_name": "Leah Haywood",
+      "old_nameKo": "Leah Haywood",
+      "new_name": "Leah Haywood",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f1dd0051-5578-45a7-a733-03113626407f",
+      "old_name": "Rob Bourdon",
+      "old_nameKo": "Rob Bourdon",
+      "new_name": "Rob Bourdon",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "2d4a1dd1-2cd8-4553-bf0b-74b8c9179633",
+      "old_name": "Brad Delson",
+      "old_nameKo": "Brad Delson",
+      "new_name": "Brad Delson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c8975bbf-2778-47ae-accf-c584e644450d",
+      "old_name": "David Michael Farrell",
+      "old_nameKo": "David Michael Farrell",
+      "new_name": "David Michael Farrell",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c262b6bf-be56-4b26-bceb-42d7a27342f3",
+      "old_name": "Mike Shinoda",
+      "old_nameKo": "Mike Shinoda",
+      "new_name": "Mike Shinoda",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "415e30a0-116b-4a4f-8cbf-8d0f6406bbab",
+      "old_name": "Chester Bennington",
+      "old_nameKo": "Chester Bennington",
+      "new_name": "Chester Bennington",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "bf819ff8-92a4-4464-9fd4-b18ad87fa049",
+      "old_name": "Planet Shiver",
+      "old_nameKo": "Planet Shiver",
+      "new_name": "Planet Shiver",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "35800230-2cb2-4ab1-b6d2-929af85a3d81",
+      "old_name": "Philtre",
+      "old_nameKo": "Philtre",
+      "new_name": "Philtre",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "011fdd2d-0e4f-4340-9286-a2c8dfc7abf3",
+      "old_name": "Pe2ny",
+      "old_nameKo": "Pe2ny",
+      "new_name": "Pe2ny",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b76ffeb4-d778-4398-a49a-8c2b699f78db",
+      "old_name": "Kensie",
+      "old_nameKo": "Kensie",
+      "new_name": "Kensie",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9f92f1e5-7b25-4be2-ab61-76b6db556887",
+      "old_name": "Dynamic Duo",
+      "old_nameKo": "다이나믹 듀오",
+      "new_name": "Dynamic Duo",
+      "new_nameKo": "",
+      "ko_alias": "다이나믹듀오",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "e96e7912-3ab5-4d05-a5e1-94589c5b8c8b",
+      "old_name": "Kebee",
+      "old_nameKo": "Kebee",
+      "new_name": "Kebee",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "be3b8476-48d4-4ff9-9916-757638e8355d",
+      "old_name": "Paloalto",
+      "old_nameKo": "Paloalto",
+      "new_name": "Paloalto",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6c77993b-236a-4bd6-80ad-b7d55c14f15d",
+      "old_name": "unknownDJs",
+      "old_nameKo": "unknownDJs",
+      "new_name": "unknownDJs",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "979cd38d-a2f9-4f52-81aa-bbf276512f88",
+      "old_name": "DJ Friz",
+      "old_nameKo": "DJ Friz",
+      "new_name": "DJ Friz",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f8316cff-2973-4f49-970c-f240e270fbe1",
+      "old_name": "TBNY",
+      "old_nameKo": "TBNY",
+      "new_name": "TBNY",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f02b65be-d66d-4f2c-b37c-08552423844f",
+      "old_name": "JINI",
+      "old_nameKo": "JINI",
+      "new_name": "JINI",
+      "new_nameKo": "",
+      "ko_alias": "지니",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "f1051840-a568-48b9-94f5-b55282581ba3",
+      "old_name": "Deza",
+      "old_nameKo": "Deza",
+      "new_name": "Deza",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "666050d0-5d6e-4436-b451-e2775da0461f",
+      "old_name": "Awrii",
+      "old_nameKo": "Awrii",
+      "new_name": "Awrii",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9bd7b6a6-d0b6-47f5-a62b-04dade95f5d1",
+      "old_name": "LDN Noise",
+      "old_nameKo": "LDN Noise",
+      "new_name": "LDN Noise",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c4de7655-d0de-4dec-a863-9d545c9ae7ba",
+      "old_name": "Greg Bonnick",
+      "old_nameKo": "Greg Bonnick",
+      "new_name": "Greg Bonnick",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5925a362-4ccd-44a4-b282-30ed44847769",
+      "old_name": "Hayden Chapman",
+      "old_nameKo": "Hayden Chapman",
+      "new_name": "Hayden Chapman",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0f2a26ae-903d-4b7c-8fa9-efce2afc5c13",
+      "old_name": "The Wavys",
+      "old_nameKo": "The Wavys",
+      "new_name": "The Wavys",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5bdf3253-7bc1-4cb4-9984-5d244307767a",
+      "old_name": "Jack Brady",
+      "old_nameKo": "Jack Brady",
+      "new_name": "Jack Brady",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1122c2b1-1a38-40be-b50e-072ca5250c4c",
+      "old_name": "Jordan Roman",
+      "old_nameKo": "Jordan Roman",
+      "new_name": "Jordan Roman",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "05574747-639f-402d-b6b1-cf5c3f25926b",
+      "old_name": "RESTART",
+      "old_nameKo": "RESTART",
+      "new_name": "RESTART",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "39ffedaf-7bf1-4f3d-9c9f-825d52032136",
+      "old_name": "BB ELLIOT",
+      "old_nameKo": "BB ELLIOT",
+      "new_name": "BB ELLIOT",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "26164ca9-2e98-464f-8db3-884f136ba567",
+      "old_name": "Dallas Koehike",
+      "old_nameKo": "Dallas Koehike",
+      "new_name": "Dallas Koehike",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "285ab57c-d28e-4233-8240-c6a1a54dd744",
+      "old_name": "JBACH",
+      "old_nameKo": "JBACH",
+      "new_name": "JBACH",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e2efdac7-6569-45c6-93ae-de975a4584fd",
+      "old_name": "The Muze",
+      "old_nameKo": "The Muze",
+      "new_name": "The Muze",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "2650741e-908c-4cae-ba98-0717da3c3ce0",
+      "old_name": "MINO",
+      "old_nameKo": "MINO",
+      "new_name": "MINO",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1adf0b9c-a348-4d5d-9373-f3b52bdb9403",
+      "old_name": "Willie Weeks",
+      "old_nameKo": "Willie Weeks",
+      "new_name": "Willie Weeks",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e6ac2d77-315e-4f92-9513-8b277342534e",
+      "old_name": "Tiger JK",
+      "old_nameKo": "Tiger JK",
+      "new_name": "Tiger JK",
+      "new_nameKo": "",
+      "ko_alias": "서정권",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "28c5fb4a-3675-49c1-9cd8-50e9eadf4397",
+      "old_name": "SOOJIN",
+      "old_nameKo": "SOOJIN",
+      "new_name": "SOOJIN",
+      "new_nameKo": "",
+      "ko_alias": "서수진",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "c62e0aeb-d7e2-406a-9036-d14881661e0e",
+      "old_name": "JEON SOYEON",
+      "old_nameKo": "JEON SOYEON",
+      "new_name": "JEON SOYEON",
+      "new_nameKo": "",
+      "ko_alias": "소연",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "1408021e-97c0-40cd-98dc-75cdc06cbd92",
+      "old_name": "BreadBeat",
+      "old_nameKo": "BreadBeat",
+      "new_name": "BreadBeat",
+      "new_nameKo": "",
+      "ko_alias": "원정호",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "4138c7d5-2343-4380-9366-b2a3f7bf5ed2",
+      "old_name": "JENCI",
+      "old_nameKo": "JENCI",
+      "new_name": "JENCI",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8fb957e7-7534-4f9a-9755-bbf18027d1a2",
+      "old_name": "JAMIE",
+      "old_nameKo": "JAMIE",
+      "new_name": "JAMIE",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "071409d0-ce21-4f03-a111-aec4dbc1590d",
+      "old_name": "Erika de Casier",
+      "old_nameKo": "Erika de Casier",
+      "new_name": "Erika de Casier",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "375dd8d7-0e50-4889-814d-0bea720801da",
+      "old_name": "freekind.",
+      "old_nameKo": "freekind.",
+      "new_name": "freekind.",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "276e89b9-fd2a-47c2-8689-d09e3b5c9b1b",
+      "old_name": "H1GHR MUSIC",
+      "old_nameKo": "H1GHR MUSIC",
+      "new_name": "H1GHR MUSIC",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d8ffd773-4f48-40a8-9a68-7d049e3e98f7",
+      "old_name": "GroovyRoom",
+      "old_nameKo": "GroovyRoom",
+      "new_name": "GroovyRoom",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6f24a757-c6ac-4f4f-adc7-b5aaf4931403",
+      "old_name": "Nora Lee King",
+      "old_nameKo": "Nora Lee King",
+      "new_name": "Nora Lee King",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1b3a1e49-2494-441c-9818-3fbbe73d09b4",
+      "old_name": "Jule Styne",
+      "old_nameKo": "Jule Styne",
+      "new_name": "Jule Styne",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a2442dea-50a3-4292-829c-ac435a48dfdb",
+      "old_name": "Side‐B",
+      "old_nameKo": "Side‐B",
+      "new_name": "Side‐B",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e47945cb-bfb4-40a7-963c-cfdfc8d01b51",
+      "old_name": "Arumi",
+      "old_nameKo": "Arumi",
+      "new_name": "Arumi",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6d2aee20-01e8-4a2e-b240-70df67e42c3f",
+      "old_name": "John Hannah",
+      "old_nameKo": "John Hannah",
+      "new_name": "John Hannah",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5d8a6a6f-44ae-4421-865f-470600f4db65",
+      "old_name": "Ann Wilson",
+      "old_nameKo": "Ann Wilson",
+      "new_name": "Ann Wilson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "dbf1189b-88cc-498a-808e-c80c3fad5f7f",
+      "old_name": "Frank Cox",
+      "old_nameKo": "Frank Cox",
+      "new_name": "Frank Cox",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d70ad734-1a2a-4ade-a799-f2da032fa7d7",
+      "old_name": "Ben Mink",
+      "old_nameKo": "Ben Mink",
+      "new_name": "Ben Mink",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "2eb28509-9359-42d7-afc4-32e78d23e0f8",
+      "old_name": "Ron Nevison",
+      "old_nameKo": "Ron Nevison",
+      "new_name": "Ron Nevison",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "68cff6ec-3751-4bd5-9254-f4a77fe7e08f",
+      "old_name": "Diane Warren",
+      "old_nameKo": "Diane Warren",
+      "new_name": "Diane Warren",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "68c34082-c1d5-4399-af9b-3921ca0a6a1f",
+      "old_name": "James Hetfield",
+      "old_nameKo": "James Hetfield",
+      "new_name": "James Hetfield",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a4a01f5d-18e7-4571-8c3a-76ec0e24e2d7",
+      "old_name": "Ne‐Yo",
+      "old_nameKo": "Ne‐Yo",
+      "new_name": "Ne‐Yo",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d84e5667-3cbe-4556-b551-9d7e4be95d71",
+      "old_name": "TAEYANG",
+      "old_nameKo": "TAEYANG",
+      "new_name": "TAEYANG",
+      "new_nameKo": "",
+      "ko_alias": "동영배",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "9b84d6e3-eca0-4854-ad9f-9eb42a35da43",
+      "old_name": "Israel Cruz",
+      "old_nameKo": "Israel Cruz",
+      "new_name": "Israel Cruz",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a2979509-f2fd-4773-9d49-f9891ca4bc02",
+      "old_name": "YUG JAPAN",
+      "old_nameKo": "YUG JAPAN",
+      "new_name": "YUG JAPAN",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9d850e13-e2b3-400e-ad10-05ef3e4c2083",
+      "old_name": "DAISHI DANCE",
+      "old_nameKo": "DAISHI DANCE",
+      "new_name": "DAISHI DANCE",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "33780ec6-c39e-4592-be25-1ee562c2c947",
+      "old_name": "KOMU",
+      "old_nameKo": "KOMU",
+      "new_name": "KOMU",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "27c07c48-058a-4c0e-89d2-e21cc0f180ac",
+      "old_name": "Nadir Benkahla",
+      "old_nameKo": "Nadir Benkahla",
+      "new_name": "Nadir Benkahla",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5ce426bb-8343-4fe6-b538-c5b2f91239dd",
+      "old_name": "中村彼方",
+      "old_nameKo": "中村彼方",
+      "new_name": "中村彼方",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "74abbec1-0f7d-420e-978f-441e3e6a175c",
+      "old_name": "Ronny Svendsen",
+      "old_nameKo": "Ronny Svendsen",
+      "new_name": "Ronny Svendsen",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d4e8e13c-fb1e-4be5-aeaf-fc4d30a17cf2",
+      "old_name": "E-Tribe",
+      "old_nameKo": "E-Tribe",
+      "new_name": "E-Tribe",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e7f6af9b-a315-43d2-acb9-64b22e827717",
+      "old_name": "Dean James",
+      "old_nameKo": "Dean James",
+      "new_name": "Dean James",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d4d48c03-6ff5-4968-8f1f-922ce2560dcb",
+      "old_name": "Marty",
+      "old_nameKo": "Marty",
+      "new_name": "Marty",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "32660f03-5543-493a-8230-b7a70dd21553",
+      "old_name": "Malcolm Dick",
+      "old_nameKo": "Malcolm Dick",
+      "new_name": "Malcolm Dick",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1cda76a3-33f3-4fb2-977d-a03b5da6d8c5",
+      "old_name": "Flip",
+      "old_nameKo": "Flip",
+      "new_name": "Flip",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "72c536dc-7137-4477-a521-567eeb840fa8",
+      "old_name": "Bob Dylan",
+      "old_nameKo": "Bob Dylan",
+      "new_name": "Bob Dylan",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0d69ebbe-02bb-43a7-bee2-47d6c098bc6b",
+      "old_name": "Tony Chapman",
+      "old_nameKo": "Tony Chapman",
+      "new_name": "Tony Chapman",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d5c79890-36c5-4f1b-bed3-4468eee093f3",
+      "old_name": "Solomon Burke",
+      "old_nameKo": "Solomon Burke",
+      "new_name": "Solomon Burke",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "cad43f86-226e-4e6a-84f9-3219b48ad242",
+      "old_name": "Jerry Wexler",
+      "old_nameKo": "Jerry Wexler",
+      "new_name": "Jerry Wexler",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d82e9822-521a-4e20-bb22-9e944374cd40",
+      "old_name": "Max Romeo",
+      "old_nameKo": "Max Romeo",
+      "new_name": "Max Romeo",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "85fb6de0-6af9-4f30-8896-87c01d0984d5",
+      "old_name": "William Stevenson",
+      "old_nameKo": "William Stevenson",
+      "new_name": "William Stevenson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "125ec42a-7229-4250-afc5-e057484327fe",
+      "old_name": "[unknown]",
+      "old_nameKo": "[unknown]",
+      "new_name": "[unknown]",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "fb147b8f-0144-4418-acaa-90b2d9779840",
+      "old_name": "Pete Townshend",
+      "old_nameKo": "Pete Townshend",
+      "new_name": "Pete Townshend",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f099c1e7-8426-49e6-b7a0-dd8db4331788",
+      "old_name": "Jerry Ragovoy",
+      "old_nameKo": "Jerry Ragovoy",
+      "new_name": "Jerry Ragovoy",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "659431b8-de23-4940-879b-55fffb5cb2b9",
+      "old_name": "Luigi Raimondi",
+      "old_nameKo": "Luigi Raimondi",
+      "new_name": "Luigi Raimondi",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b6211627-0089-4142-b7d1-57d56d1def42",
+      "old_name": "Rogét Chahayed",
+      "old_nameKo": "Rogét Chahayed",
+      "new_name": "Rogét Chahayed",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8ce77888-cd3b-4014-b710-88f83ec93633",
+      "old_name": "MAX",
+      "old_nameKo": "MAX",
+      "new_name": "MAX",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "409bba97-5f56-44be-8daa-1fc2a1e39075",
+      "old_name": "Johnathan Carter Cunningham",
+      "old_nameKo": "Johnathan Carter Cunningham",
+      "new_name": "Johnathan Carter Cunningham",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f2e33434-ec54-4983-a05b-5b15cb3a3a49",
+      "old_name": "Lido",
+      "old_nameKo": "Lido",
+      "new_name": "Lido",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "20877ac4-ce8b-451d-a429-25f8483045e5",
+      "old_name": "Charlie Handsome",
+      "old_nameKo": "Charlie Handsome",
+      "new_name": "Charlie Handsome",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9f41f18b-23b2-4052-af25-0664dbfc9085",
+      "old_name": "Dan Wilson",
+      "old_nameKo": "Dan Wilson",
+      "new_name": "Dan Wilson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "39ecf28d-1fe7-464d-88aa-bbab2cb7c07d",
+      "old_name": "Tom Keil",
+      "old_nameKo": "Tom Keil",
+      "new_name": "Tom Keil",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "ffbf8501-2216-45c9-8933-9de809e06aee",
+      "old_name": "Ramon Zenker",
+      "old_nameKo": "Ramon Zenker",
+      "new_name": "Ramon Zenker",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9b2b66ba-9548-4587-ac79-70273e1022f1",
+      "old_name": "Jake Gosling",
+      "old_nameKo": "Jake Gosling",
+      "new_name": "Jake Gosling",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "13513a8a-e9a8-4367-b9e4-410fef5bed3a",
+      "old_name": "Yelawolf",
+      "old_nameKo": "Yelawolf",
+      "new_name": "Yelawolf",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1890e726-4817-42f4-92e7-ca78bef6692a",
+      "old_name": "Aaron Dessner",
+      "old_nameKo": "Aaron Dessner",
+      "new_name": "Aaron Dessner",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "97585a14-b1a9-4101-a0d5-feb1113d0607",
+      "old_name": "Sara Boe",
+      "old_nameKo": "Sara Boe",
+      "new_name": "Sara Boe",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "afb680f2-b6eb-4cd7-a70b-a63b25c763d5",
+      "old_name": "Bruno Mars",
+      "old_nameKo": "Bruno Mars",
+      "new_name": "Bruno Mars",
+      "new_nameKo": "",
+      "ko_alias": "브루노 마스",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "2d92239c-44c5-47c5-afe0-44baf9b64629",
+      "old_name": "Blair",
+      "old_nameKo": "Blair",
+      "new_name": "Blair",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7d4f8271-5baf-41ad-ac1d-78072d09214d",
+      "old_name": "Thomas Lumpkins",
+      "old_nameKo": "Thomas Lumpkins",
+      "new_name": "Thomas Lumpkins",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5ab74c5f-4975-48ba-93f9-ea9d82dc2959",
+      "old_name": "Cameron Gower Poole",
+      "old_nameKo": "Cameron Gower Poole",
+      "new_name": "Cameron Gower Poole",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b8f913bb-28cc-4bc6-a867-08812814962f",
+      "old_name": "Band Aid 20",
+      "old_nameKo": "Band Aid 20",
+      "new_name": "Band Aid 20",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7223eea9-e33e-42fc-a0ef-0c3a23a2a3f3",
+      "old_name": "Jordan Cohen",
+      "old_nameKo": "Jordan Cohen",
+      "new_name": "Jordan Cohen",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f6fcf1c5-c02e-4c37-91cc-ad27f1dd45f1",
+      "old_name": "Kirk Franklin Singers",
+      "old_nameKo": "Kirk Franklin Singers",
+      "new_name": "Kirk Franklin Singers",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "eecaa1a4-efa6-41f6-9d00-4152bd2a1373",
+      "old_name": "Lucid Fall",
+      "old_nameKo": "Lucid Fall",
+      "new_name": "Lucid Fall",
+      "new_nameKo": "",
+      "ko_alias": "루시드폴",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "d23dd962-392f-4fbd-82c7-625c21d7bb73",
+      "old_name": "And",
+      "old_nameKo": "And",
+      "new_name": "And",
+      "new_nameKo": "",
+      "ko_alias": "김지환",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "b59a038d-634e-4fb2-8735-152f6b7836df",
+      "old_name": "OnePiece",
+      "old_nameKo": "OnePiece",
+      "new_name": "OnePiece",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "56396fbe-e455-4526-a5e4-2a8f9b01c435",
+      "old_name": "Kings of Chaos",
+      "old_nameKo": "Kings of Chaos",
+      "new_name": "Kings of Chaos",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "fd8b631e-5036-497a-a47e-9c4e3bc3d61a",
+      "old_name": "Dave Lopez",
+      "old_nameKo": "Dave Lopez",
+      "new_name": "Dave Lopez",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "aa252115-be34-4392-b030-b243226d57b4",
+      "old_name": "Critikal P",
+      "old_nameKo": "Critikal P",
+      "new_name": "Critikal P",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6826bafa-7a42-4b49-a920-8756002c3492",
+      "old_name": "Jackson Morgan",
+      "old_nameKo": "Jackson Morgan",
+      "new_name": "Jackson Morgan",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "27e7c2e8-badc-4a97-8b93-24b6c530b038",
+      "old_name": "MNEK",
+      "old_nameKo": "MNEK",
+      "new_name": "MNEK",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "24c141cd-d32f-4ea3-9f2a-786ad8411a0d",
+      "old_name": "Jonathan Bach",
+      "old_nameKo": "Jonathan Bach",
+      "new_name": "Jonathan Bach",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "acb2191f-0f55-4ec6-b7ff-ce73dea50f3e",
+      "old_name": "WINNER",
+      "old_nameKo": "위너",
+      "new_name": "WINNER",
+      "new_nameKo": "",
+      "ko_alias": "위너",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "44e68169-daf5-4cd1-9ea9-52a2949d849c",
+      "old_name": "37",
+      "old_nameKo": "37",
+      "new_name": "37",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e6bb5d4c-3221-4004-b7a5-e634ef5bac45",
+      "old_name": "CA$HCOW",
+      "old_nameKo": "CA$HCOW",
+      "new_name": "CA$HCOW",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "56cfcb19-5e55-43fd-b19b-bcbfcc01c8c8",
+      "old_name": "Hotclip",
+      "old_nameKo": "Hotclip",
+      "new_name": "Hotclip",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1f7c665d-3c12-4195-b19a-0a3d764c28c4",
+      "old_name": "P'Skool",
+      "old_nameKo": "P'Skool",
+      "new_name": "P'Skool",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "3bbe3a52-b2fe-4b36-bcce-c8bce9a3ecdb",
+      "old_name": "Ca$hville",
+      "old_nameKo": "Ca$hville",
+      "new_name": "Ca$hville",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "493977b9-04a6-4d9b-8d7e-777250172f9f",
+      "old_name": "Don Mills",
+      "old_nameKo": "Don Mills",
+      "new_name": "Don Mills",
+      "new_nameKo": "",
+      "ko_alias": "던밀스",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "fb289ff0-3717-4b71-b197-8257cf187897",
+      "old_name": "Shimmy Twice",
+      "old_nameKo": "Shimmy Twice",
+      "new_name": "Shimmy Twice",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "04ce47e8-64ea-4d28-a5fd-6ac25d2b24b1",
+      "old_name": "Bronze",
+      "old_nameKo": "Bronze",
+      "new_name": "Bronze",
+      "new_nameKo": "",
+      "ko_alias": "김휘동",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "a17eed36-fd8f-4d71-898b-2da805ac7492",
+      "old_name": "Ethel Merman",
+      "old_nameKo": "Ethel Merman",
+      "new_name": "Ethel Merman",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7728b64d-8925-4a1c-b684-a88c6194a241",
+      "old_name": "BTOB",
+      "old_nameKo": "비투비",
+      "new_name": "BTOB",
+      "new_nameKo": "",
+      "ko_alias": "비투비",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "b228cdc8-0f48-47b5-b812-62fdc416bad3",
+      "old_name": "Dem Jointz",
+      "old_nameKo": "Dem Jointz",
+      "new_name": "Dem Jointz",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "58b599cd-b1de-45e3-863a-3b54194a0f20",
+      "old_name": "HONNE",
+      "old_nameKo": "HONNE",
+      "new_name": "HONNE",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e5a73f56-9202-4e4b-8af2-f7b5bcddfc23",
+      "old_name": "EL CAPITXN",
+      "old_nameKo": "EL CAPITXN",
+      "new_name": "EL CAPITXN",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "fc2195db-7740-45f2-92b8-bf13baa3927a",
+      "old_name": "Imad Royal",
+      "old_nameKo": "Imad Royal",
+      "new_name": "Imad Royal",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "ef2a8c11-a35a-4c61-b750-5cb29c1223f4",
+      "old_name": "Greg Kurstin",
+      "old_nameKo": "Greg Kurstin",
+      "new_name": "Greg Kurstin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "596ffa74-3d08-44ef-b113-765d43d12738",
+      "old_name": "Justin Timberlake",
+      "old_nameKo": "Justin Timberlake",
+      "new_name": "Justin Timberlake",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "fa7b0a1f-f8c0-435a-a2bd-74dccf7c0055",
+      "old_name": "Jordan Johnson",
+      "old_nameKo": "Jordan Johnson",
+      "new_name": "Jordan Johnson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4744de58-e37d-49cb-bf95-c07a2effe462",
+      "old_name": "Stefan Johnson",
+      "old_nameKo": "Stefan Johnson",
+      "new_name": "Stefan Johnson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d93b7dc8-25e5-4da5-aded-bde343c80a95",
+      "old_name": "Michael Uzowuru",
+      "old_nameKo": "Michael Uzowuru",
+      "new_name": "Michael Uzowuru",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "68a6a00d-ace3-4244-8a0a-b98ab2100667",
+      "old_name": "Stuart Price",
+      "old_nameKo": "Stuart Price",
+      "new_name": "Stuart Price",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a2bf9d57-6c7a-405f-8440-b212e20931e6",
+      "old_name": "Ricky Reed",
+      "old_nameKo": "Ricky Reed",
+      "new_name": "Ricky Reed",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5a6131f9-f8db-4722-b4d7-6a0c7183c590",
+      "old_name": "benny blanco",
+      "old_nameKo": "benny blanco",
+      "new_name": "benny blanco",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5b86e022-18e9-48d8-983b-3c1750e0f7e3",
+      "old_name": "Larzz Principato",
+      "old_nameKo": "Larzz Principato",
+      "new_name": "Larzz Principato",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "384dfb61-c597-4303-97be-667b571041f9",
+      "old_name": "Gregory Hein",
+      "old_nameKo": "Gregory Hein",
+      "new_name": "Gregory Hein",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e912a9b9-64e5-4adc-a607-bc97f6f76be9",
+      "old_name": "Chris Braide",
+      "old_nameKo": "Chris Braide",
+      "new_name": "Chris Braide",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9176a2e5-ffb2-4d56-aecc-fdf1ad5d6994",
+      "old_name": "ILYA",
+      "old_nameKo": "ILYA",
+      "new_name": "ILYA",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7c9c8018-bae6-4d06-b201-643f5eb1c39f",
+      "old_name": "Johnny McDaid",
+      "old_nameKo": "Johnny McDaid",
+      "new_name": "Johnny McDaid",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f03d2e87-a331-4ab9-8a62-98c44c54bf08",
+      "old_name": "Citizens of the World Choir",
+      "old_nameKo": "Citizens of the World Choir",
+      "new_name": "Citizens of the World Choir",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "07892c1b-6709-4230-815d-f54f74540faf",
+      "old_name": "Charlie Hugall",
+      "old_nameKo": "Charlie Hugall",
+      "new_name": "Charlie Hugall",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "9be7f096-97ec-4615-8957-8d40b5dcbc41",
+      "old_name": "[traditional]",
+      "old_nameKo": "[traditional]",
+      "new_name": "[traditional]",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "92351dab-ff32-4257-a298-538676e37814",
+      "old_name": "Mikill Pane",
+      "old_nameKo": "Mikill Pane",
+      "new_name": "Mikill Pane",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6622a50e-5206-44d0-9ad5-96047a726dcf",
+      "old_name": "Max Martin",
+      "old_nameKo": "Max Martin",
+      "new_name": "Max Martin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e119e5ff-0de0-421c-a630-0516c6acede8",
+      "old_name": "2NE1",
+      "old_nameKo": "2NE1",
+      "new_name": "2NE1",
+      "new_nameKo": "",
+      "ko_alias": "투애니원",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "df8b2247-0ec1-42f6-9a5b-97e0b120ba0d",
+      "old_name": "Park Bom",
+      "old_nameKo": "Park Bom",
+      "new_name": "Park Bom",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1c1b7f45-ffed-4976-a8fc-10ac0edc3850",
+      "old_name": "Jenna Raine",
+      "old_nameKo": "Jenna Raine",
+      "new_name": "Jenna Raine",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "95203764-45d1-4bb8-bd54-d5b87a83d36f",
+      "old_name": "Kuk Harrell",
+      "old_nameKo": "Kuk Harrell",
+      "new_name": "Kuk Harrell",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4f6721d2-e283-44e4-87c5-913a27abb58f",
+      "old_name": "Dee.P",
+      "old_nameKo": "Dee.P",
+      "new_name": "Dee.P",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4365b48c-7f6a-49ba-a534-5c081c144233",
+      "old_name": "Made in China",
+      "old_nameKo": "Made in China",
+      "new_name": "Made in China",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "bf7de4c0-cb2c-441a-8318-a891b5264fd3",
+      "old_name": "Tyson Trax",
+      "old_nameKo": "Tyson Trax",
+      "new_name": "Tyson Trax",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "a7472b5e-9b6e-48a6-b910-37c940487086",
+      "old_name": "Lucky Daye",
+      "old_nameKo": "Lucky Daye",
+      "new_name": "Lucky Daye",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b77fd504-3010-4771-902f-18b6a5ed0f67",
+      "old_name": "The Runaways",
+      "old_nameKo": "The Runaways",
+      "new_name": "The Runaways",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e27796d9-8bb5-4877-86d2-606b5e735d57",
+      "old_name": "Joel Malka",
+      "old_nameKo": "Joel Malka",
+      "new_name": "Joel Malka",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "46d5046b-d715-4600-9095-a4f74ce6a11e",
+      "old_name": "Simon Jonasson",
+      "old_nameKo": "Simon Jonasson",
+      "new_name": "Simon Jonasson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b154d928-0dca-47d0-9c23-ec71ddb4915e",
+      "old_name": "Albin Tengblad",
+      "old_nameKo": "Albin Tengblad",
+      "new_name": "Albin Tengblad",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "52ad43ec-310f-4497-81e5-2c68b5c1700a",
+      "old_name": "Clyde Lawrence",
+      "old_nameKo": "Clyde Lawrence",
+      "new_name": "Clyde Lawrence",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "37570079-8d59-454a-82ff-3b0ca7774500",
+      "old_name": "Oliver",
+      "old_nameKo": "Oliver",
+      "new_name": "Oliver",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "1a54fe61-7bfb-4397-ae89-861016822d7b",
+      "old_name": "Postino",
+      "old_nameKo": "Postino",
+      "new_name": "Postino",
+      "new_nameKo": "",
+      "ko_alias": "이준호",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "4c9a6b5d-a631-4c28-9c3c-67f4dd2f9845",
+      "old_name": "Lyn",
+      "old_nameKo": "Lyn",
+      "new_name": "Lyn",
+      "new_nameKo": "",
+      "ko_alias": "이세진",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "0b02e401-fc7d-457e-ad50-03e9c28c3f21",
+      "old_name": "ONEO",
+      "old_nameKo": "ONEO",
+      "new_name": "ONEO",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f4fccee7-b634-45ea-8cc9-85386aab69b6",
+      "old_name": "Xero",
+      "old_nameKo": "Xero",
+      "new_name": "Xero",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "e1564e98-978b-4947-8698-f6fd6f8b0181",
+      "old_name": "Fort Minor",
+      "old_nameKo": "Fort Minor",
+      "new_name": "Fort Minor",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "cba83330-32d6-4804-8058-fcf2794afb79",
+      "old_name": "Grey Daze",
+      "old_nameKo": "Grey Daze",
+      "new_name": "Grey Daze",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8c9b2e96-27c7-423c-a5f4-977c86122c07",
+      "old_name": "Eric Kretz",
+      "old_nameKo": "Eric Kretz",
+      "new_name": "Eric Kretz",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c6173567-4229-4a20-a1da-f0f94da30d01",
+      "old_name": "ARK",
+      "old_nameKo": "ARK",
+      "new_name": "ARK",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "0251b8d2-557d-4a4f-b67b-c154785fdf41",
+      "old_name": "Primary",
+      "old_nameKo": "Primary",
+      "new_name": "Primary",
+      "new_nameKo": "",
+      "ko_alias": "프라이머리",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "e9966d7d-8ded-4c65-97c1-f984a2efcea0",
+      "old_name": "The Quiett",
+      "old_nameKo": "The Quiett",
+      "new_name": "The Quiett",
+      "new_nameKo": "",
+      "ko_alias": "더콰이엇",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "889a069f-57c3-4467-a3ce-54c76941734e",
+      "old_name": "The Name",
+      "old_nameKo": "The Name",
+      "new_name": "The Name",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "eb439f05-b33b-4293-aa5c-0d2d1532f420",
+      "old_name": "Eluka",
+      "old_nameKo": "Eluka",
+      "new_name": "Eluka",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "28902343-47f0-4d75-af9a-e7e6f5cd92b5",
+      "old_name": "frottage",
+      "old_nameKo": "frottage",
+      "new_name": "frottage",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7af89438-f068-444c-8f45-3864177b1d64",
+      "old_name": "DJ Pumkin",
+      "old_nameKo": "DJ Pumkin",
+      "new_name": "DJ Pumkin",
+      "new_nameKo": "",
+      "ko_alias": "DJ 펌킨",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "43430a03-9f2c-49d2-9869-34fd523a168b",
+      "old_name": "Topbob",
+      "old_nameKo": "Topbob",
+      "new_name": "Topbob",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b342d50e-401c-4c77-b7e4-2b3e7beaf00a",
+      "old_name": "Johnny Mercer",
+      "old_nameKo": "Johnny Mercer",
+      "new_name": "Johnny Mercer",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "57599060-238d-4ac3-9654-3c785577ba38",
+      "old_name": "Erin",
+      "old_nameKo": "Erin",
+      "new_name": "Erin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c636d725-4a13-403f-87fc-5b931a0c7ce1",
+      "old_name": "Mike Robinson",
+      "old_nameKo": "Mike Robinson",
+      "new_name": "Mike Robinson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8ff4366c-efa1-489c-8251-de34db241c25",
+      "old_name": "Charles Nelson Reilly",
+      "old_nameKo": "Charles Nelson Reilly",
+      "new_name": "Charles Nelson Reilly",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "060dba2d-5633-4500-a451-c42867f43e9d",
+      "old_name": "Alida",
+      "old_nameKo": "Alida",
+      "new_name": "Alida",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c635393c-8b1e-4c5a-b39b-7d4e95176336",
+      "old_name": "Alton Sato",
+      "old_nameKo": "Alton Sato",
+      "new_name": "Alton Sato",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "d927fc29-df21-4343-913b-617eef393690",
+      "old_name": "cAnON.",
+      "old_nameKo": "cAnON.",
+      "new_name": "cAnON.",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6fff3a25-4a0b-421c-8355-6a25a84d2c65",
+      "old_name": "BTOB 4U",
+      "old_nameKo": "BTOB 4U",
+      "new_name": "BTOB 4U",
+      "new_nameKo": "",
+      "ko_alias": "비투비 포유",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "537b0412-c2b6-4634-b5bd-86be56a3913b",
+      "old_name": "Bård Bonsaksen",
+      "old_nameKo": "Bård Bonsaksen",
+      "new_name": "Bård Bonsaksen",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "ed123caf-6520-4479-af0a-b4d2443ef26a",
+      "old_name": "DallasK",
+      "old_nameKo": "DallasK",
+      "new_name": "DallasK",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "28a41b49-4120-4797-9bdc-7f0cbe3bde90",
+      "old_name": "15&",
+      "old_nameKo": "15&",
+      "new_name": "15&",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "6f4316c7-d7d3-4e24-8083-4f0ee30b0767",
+      "old_name": "Carl Barsk",
+      "old_nameKo": "Carl Barsk",
+      "new_name": "Carl Barsk",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "248b783a-504c-4085-9e69-d58e658b40be",
+      "old_name": "Illest Konfusion",
+      "old_nameKo": "Illest Konfusion",
+      "new_name": "Illest Konfusion",
+      "new_nameKo": "",
+      "ko_alias": "일리스트 컨퓨젼",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "c2cdf2a5-cb69-4527-ae16-95a8cafefee8",
+      "old_name": "Stally",
+      "old_nameKo": "Stally",
+      "new_name": "Stally",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "b37f37af-a86c-4794-b4b0-115e5d515718",
+      "old_name": "GSoul",
+      "old_nameKo": "GSoul",
+      "new_name": "GSoul",
+      "new_nameKo": "",
+      "ko_alias": "골든",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "adc8b0d8-874b-4e10-be9f-82d52582b310",
+      "old_name": "Woodie Gochild",
+      "old_nameKo": "Woodie Gochild",
+      "new_name": "Woodie Gochild",
+      "new_nameKo": "",
+      "ko_alias": "우디 고차일드",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "56cd15a1-0d74-438b-8244-c96ffe1cae03",
+      "old_name": "Barbra Streisand",
+      "old_nameKo": "Barbra Streisand",
+      "new_name": "Barbra Streisand",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "ebf3497e-a8f9-4652-81cf-0614ec9b15fc",
+      "old_name": "Jack Gold",
+      "old_nameKo": "Jack Gold",
+      "new_name": "Jack Gold",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "f42e0bc4-0709-4733-a18d-7a6be1dd8b1b",
+      "old_name": "Goddard Lieberson",
+      "old_nameKo": "Goddard Lieberson",
+      "new_name": "Goddard Lieberson",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "234f9903-32a9-47e6-aa20-5686a1b39d61",
+      "old_name": "Kay Medford",
+      "old_nameKo": "Kay Medford",
+      "new_name": "Kay Medford",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "c4ccd6d8-4c40-45ae-82af-2adbf6db592b",
+      "old_name": "Karen Moore",
+      "old_nameKo": "Karen Moore",
+      "new_name": "Karen Moore",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "7a9390eb-76ea-4d3a-a786-7fd09c8ae291",
+      "old_name": "Harry Warren",
+      "old_nameKo": "Harry Warren",
+      "new_name": "Harry Warren",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "2b776e9e-81a0-41b8-bdff-c7adc9aa0e0e",
+      "old_name": "SF9",
+      "old_nameKo": "에스에프나인",
+      "new_name": "SF9",
+      "new_nameKo": "",
+      "ko_alias": "에스에프나인",
+      "rule": "mb_en_primary_with_ko_alias"
+    },
+    {
+      "id": "bb396de9-73b8-4c48-921d-34b3e84d9d3c",
+      "old_name": "THE HUB 88",
+      "old_nameKo": "THE HUB 88",
+      "new_name": "THE HUB 88",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "5123e60d-2ce4-45d1-8ad2-46c176108274",
+      "old_name": "Mitchell Parish",
+      "old_nameKo": "Mitchell Parish",
+      "new_name": "Mitchell Parish",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "37c16e49-0d6f-4fdd-bdd6-63e99607a831",
+      "old_name": "Buddy DeSylva",
+      "old_nameKo": "Buddy DeSylva",
+      "new_name": "Buddy DeSylva",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "4d8d6af8-827e-4947-b04b-7593a336e68d",
+      "old_name": "Gene de Paul",
+      "old_nameKo": "Gene de Paul",
+      "new_name": "Gene de Paul",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "509086c2-9cc8-4e77-89e9-322e34240ffc",
+      "old_name": "Ira Gershwin",
+      "old_nameKo": "Ira Gershwin",
+      "new_name": "Ira Gershwin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "8fb64b2e-db8b-4579-ad08-f324ef1bf494",
+      "old_name": "Jerome Kern",
+      "old_nameKo": "Jerome Kern",
+      "new_name": "Jerome Kern",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    },
+    {
+      "id": "65744963-191a-44ef-a3c7-b693a808a158",
+      "old_name": "George Gershwin",
+      "old_nameKo": "George Gershwin",
+      "new_name": "George Gershwin",
+      "new_nameKo": "",
+      "ko_alias": null,
+      "rule": "mb_en_primary_no_ko"
+    }
+  ]
+}
