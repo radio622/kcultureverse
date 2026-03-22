@@ -145,6 +145,7 @@ export default function UniversePage() {
   // ── UI 상태 ──────────────────────────────────────────────────
   const [sheetState, setSheetState] = useState<SheetState>("collapsed");
   const [focusedId, setFocusedId] = useState<string | null>(null);
+  const currentFocusedIdRef = useRef<string | null>(null); // 최신 포커스 ID 즉각 참조용
   const [focusedArtistName, setFocusedArtistName] = useState<string>("");
   const [hop1List, setHop1List] = useState<HopItem[]>([]);
 
@@ -250,8 +251,10 @@ export default function UniversePage() {
       const artistId = params.get("artist");
       if (artistId) {
         setFocusedId(artistId);
+        currentFocusedIdRef.current = artistId;
       } else {
         setFocusedId(null);
+        currentFocusedIdRef.current = null;
         setSheetState("collapsed");
       }
     };
@@ -267,18 +270,14 @@ export default function UniversePage() {
       return;
     }
 
-    let isSameNode = false;
-    setFocusedId((prev) => {
-      if (prev === nodeId) isSameNode = true;
-      return nodeId;
-    });
-
     // 이미 선택된 별을 다시 클릭하면 바텀시트 토글 (올리기/내리기)
-    if (isSameNode) {
+    if (currentFocusedIdRef.current === nodeId) {
       setSheetState((s) => (s === "expanded" ? "peek" : "expanded"));
       return;
     }
 
+    setFocusedId(nodeId);
+    currentFocusedIdRef.current = nodeId;
     setFocusedArtistName(node.nameKo || node.name);
     setSheetState("expanded");
 

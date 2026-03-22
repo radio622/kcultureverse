@@ -523,10 +523,10 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, onBa
     const isFocused = node.id === focusedId;
     const isHop1 = hop1.has(node.id);
 
-    let r = 6; // 최소 히트 반지름
-    if (lod === "far")        r = 3 + Math.sqrt(deg) * 0.8;
-    else if (lod === "mid")   r = 5 + Math.sqrt(deg) * 2.5;
-    else /* close */          r = isFocused ? 44 : isHop1 ? 30 : 12 + Math.sqrt(deg) * 4;
+    let r = 8; // 최소 히트 반지름 기본 8px 확보
+    if (lod === "far")        r = 6 + Math.sqrt(deg) * 1.5; // 멀리 있을수록 클릭 범위 증폭
+    else if (lod === "mid")   r = 8 + Math.sqrt(deg) * 3;
+    else /* close */          r = isFocused ? 44 : isHop1 ? 30 : 15 + Math.sqrt(deg) * 4;
 
     ctx.beginPath();
     ctx.arc(x, y, r * 1.15, 0, 2 * Math.PI); // 히트 영역은 시각보다 15% 크게
