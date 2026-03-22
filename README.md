@@ -175,6 +175,7 @@ tail -f logs/harvester_*.log   # 실시간 모니터링
 |--------|------|------|
 | V7.5 | [`docs/V7.5_IDEA_SKETCH.md`](docs/V7.5_IDEA_SKETCH.md) | 🔄 진행 중 — 듀얼봇 가동 |
 | V7.5 봇 | [`docs/DUAL_HARVESTER_BOT.md`](docs/DUAL_HARVESTER_BOT.md) | ✅ 정식 가동 중 |
+| V7.4.1 | [`docs/QA_PATCH_PLAN_20260323.md`](docs/QA_PATCH_PLAN_20260323.md) | ✅ 핫픽스 완료 — 이미지/엣지팝업/iTunes/줌 |
 | V7.0.1 | [`docs/V7.0.1_ROADMAP.md`](docs/V7.0.1_ROADMAP.md) | ✅ 구현 완료 — 전 Phase |
 | V6.9 | [`docs/V6.9_ROADMAP.md`](docs/V6.9_ROADMAP.md) | ✅ 완료 |
 | V6.8 | [`docs/V6.8_ROADMAP.md`](docs/V6.8_ROADMAP.md) | ✅ 완료 |
