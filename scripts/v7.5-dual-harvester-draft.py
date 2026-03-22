@@ -347,8 +347,18 @@ def bot_2_gemini_curator(artist_name, albums, progress):
         log.error("   ❌ GEMINI_API_KEY 미설정")
         return
 
-    # 이미 검증한 앨범 건너뜀
-    done_set = set(progress.get("verified_albums", []))
+    # 이미 검증한 앨범 건너뜀 (이중 체크: progress.json + Supabase verified 필드)
+    done_local = set(progress.get("verified_albums", []))
+    # Supabase에서도 이미 verified=true인 앨범 확인 (progress.json 유실 대비)
+    done_db = set()
+    try:
+        vurl = f"{SUPABASE_URL}/rest/v1/album_releases?artist_name=eq.{urllib.parse.quote(artist_name)}&verified=eq.true&select=album_title"
+        vreq = urllib.request.Request(vurl, headers={'apikey': SUPABASE_KEY, 'Authorization': f'Bearer {SUPABASE_KEY}'})
+        with urllib.request.urlopen(vreq, context=CTX) as vr:
+            for row in json.loads(vr.read().decode()):
+                done_db.add(f"{artist_name}::{row['album_title']}")
+    except: pass
+    done_set = done_local | done_db  # 합집합 — 둘 중 하나라도 완료면 건너뜀
     unverified = [a for a in albums if f"{a['artist_name']}::{a['album_title']}" not in done_set]
     if not unverified:
         log.info(f"   ✅ '{artist_name}' 전체 검증 완료 상태")
@@ -402,8 +412,13 @@ def bot_2_gemini_curator(artist_name, albums, progress):
                 )
         except Exception as e:
             log.error(f"   [{i+1}/{len(sorted_albums)}] ❌ {title}: {e}")
+            # ⚠️ 실패한 앨범은 깃발을 꽂지 않음 → 다음 가동 시 자동 재시도됨
+            if i < len(sorted_albums) - 1:
+                log.info(f"   💤 {GEMINI_COOLDOWN}초 쿨타임...")
+                time.sleep(GEMINI_COOLDOWN)
+            continue  # 깃발 없이 다음 앨범으로
 
-        # 검증 완료 깃발 (재처리 방지)
+        # ✅ 성공한 앨범만 깃발 (재처리 방지)
         progress.setdefault("verified_albums", []).append(album_key)
         save_progress(progress)
 
