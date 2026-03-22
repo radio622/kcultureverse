@@ -6,6 +6,17 @@
 
 ---
 
+## 🚀 V7.5 — 듀얼 하베스터 봇 가동 중 (2026-03-23)
+
+### 🤖 자동 데이터 수집·검증 파이프라인 (24시간 백그라운드)
+- **봇 1 (The Harvester)**: Spotify API에서 한글 앨범명·발매일·커버를 10분 간격으로 자동 수집
+- **봇 2 (The Curator)**: Gemini 3.1/2.5 AI가 발매일 교정 + 수록곡 크레딧 추출 + 국적 판정을 실시간 웹 검색으로 자동 검증
+- **모델 폴백 체인**: `gemini-3.1-flash-lite-preview → gemini-2.5-flash-lite` 자동 전환으로 무중단 가동
+- **실시간 반영**: 검증 완료 즉시 `frompangyo.vercel.app` 라이브 사이트에 반영
+- 상세 설계: [`docs/DUAL_HARVESTER_BOT.md`](docs/DUAL_HARVESTER_BOT.md)
+
+---
+
 ## 🚀 V7.0.4 최신 업데이트 하이라이트
 
 ### V7.0.4 — 우주의 일상화와 무결성 확장 (2026-03-23)
@@ -121,7 +132,7 @@
 | 프레임워크 | Next.js 16 (App Router) |
 | 인증 | Auth.js v5 (Google OAuth) + JWT |
 | 렌더러 | react-force-graph-2d (Canvas) |
-| AI | Gemini Flash-Lite (유저) / GPT (Admin) |
+| AI | Gemini 3.1/2.5 Flash-Lite (유저·봇) / GPT (Admin) |
 | DB | Supabase (PostgreSQL) |
 | 레이아웃 계산 | d3-force (빌드 타임 오프라인) |
 | 검증 API | MusicBrainz + iTunes Search |
@@ -150,6 +161,10 @@ python3 scripts/v6.5-fix-korean-names.py
 
 # 6. JSON 우주 파일 빌드
 npx tsx scripts/v5.4-build-universe.ts
+
+# 7. 듀얼 하베스터 봇 (Spotify 수집 + Gemini 검증)
+caffeinate -i python3 scripts/v7.5-dual-harvester-draft.py &
+tail -f logs/harvester_*.log   # 실시간 모니터링
 ```
 
 ---
@@ -158,6 +173,8 @@ npx tsx scripts/v5.4-build-universe.ts
 
 | 버전 | 문서 | 상태 |
 |--------|------|------|
+| V7.5 | [`docs/V7.5_IDEA_SKETCH.md`](docs/V7.5_IDEA_SKETCH.md) | 🔄 진행 중 — 듀얼봇 가동 |
+| V7.5 봇 | [`docs/DUAL_HARVESTER_BOT.md`](docs/DUAL_HARVESTER_BOT.md) | ✅ 정식 가동 중 |
 | V7.0.1 | [`docs/V7.0.1_ROADMAP.md`](docs/V7.0.1_ROADMAP.md) | ✅ 구현 완료 — 전 Phase |
 | V6.9 | [`docs/V6.9_ROADMAP.md`](docs/V6.9_ROADMAP.md) | ✅ 완료 |
 | V6.8 | [`docs/V6.8_ROADMAP.md`](docs/V6.8_ROADMAP.md) | ✅ 완료 |
@@ -178,6 +195,7 @@ npm install
 # AUTH_GOOGLE_ID, AUTH_GOOGLE_SECRET, AUTH_SECRET,
 # NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY,
 # OPENAI_API_KEY, GEMINI_API_KEY, ADMIN_EMAILS, ADMIN_PASSPHRASE
+# SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
 
 # 데이터 빌드
 npx tsx scripts/v5.4-build-universe.ts
