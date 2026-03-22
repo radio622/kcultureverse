@@ -386,7 +386,7 @@ def bot_2_gemini_curator(artist_name, albums, progress):
         # -01로 끝나는 날짜는 스포티파이가 정확한 일자를 모를 때 대충 채운 것
         date_warning = ""
         if rdate.endswith("-01"):
-            date_warning = "\n⚠️ 주의: 위 발매일은 '1일'로 끝나므로 스포티파이가 정확한 날짜를 몰라 임의로 채운 것일 가능성이 매우 높습니다. 반드시 실제 정확한 발매일을 검색하여 교정해주세요."
+            date_warning = "\n⚠️ 주의: 위 발매일은 '1일'로 끝나므로 스포티파이가 정확한 날짜를 몰라 임의로 채운 것일 가능성이 매우 높습니다. 예를 들어 '1986-01-01'은 실제로 1986년 1월 1일이 아니라 단지 1986년에 발매되었다는 뜻이고, '2003-03-01'은 2003년 3월 중 어딘가에 발매되었다는 뜻입니다. 반드시 실제 정확한 발매일을 검색하여 교정해주세요."
 
         prompt = f"""아티스트: {artist_name}
 앨범: {title}
@@ -400,35 +400,44 @@ def bot_2_gemini_curator(artist_name, albums, progress):
 반드시 JSON으로만 응답:
 {{"corrected_date": "YYYY-MM-DD" 또는 null, "is_korean_artist": true/false, "tracks": [{{"title":"곡명","writers":[],"composers":[],"producers":[],"featuring":[]}}], "confidence": 0.0-1.0, "source": "출처"}}"""
 
-        # 모델 폴백 체인: 1순위 429 시 자동으로 2순위 시도
+        # 모델 폴백 체인: 1순위 429 → 2순위, 400(도구 비호환) → 도구 없이 재시도
         result_parsed = None
         used_model = None
         for model in GEMINI_MODELS:
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
-            body = json.dumps({
-                "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-                "tools": [{"google_search": {}}],
-                "generationConfig": {"temperature": 0.1, "responseMimeType": "application/json"}
-            }).encode('utf-8')
+            # 1차: google_search 도구 포함 시도
+            for use_search in [True, False]:
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
+                payload = {
+                    "contents": [{"role": "user", "parts": [{"text": prompt}]}],
+                    "generationConfig": {"temperature": 0.1, "responseMimeType": "application/json"}
+                }
+                if use_search:
+                    payload["tools"] = [{"google_search": {}}]
+                body = json.dumps(payload).encode('utf-8')
 
-            req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
-            try:
-                with urllib.request.urlopen(req, context=CTX) as r:
-                    result = json.loads(r.read().decode())
-                    text = result['candidates'][0]['content']['parts'][0]['text']
-                    result_parsed = json.loads(text)
-                    used_model = model
-                    break  # 성공하면 다음 모델 시도 안 함
-            except urllib.error.HTTPError as e:
-                if e.code == 429:
-                    log.warning(f"   ⚠️ {model} 쿼타 초과 → 다음 모델로 전환")
-                    continue  # 다음 모델 시도
-                else:
-                    log.error(f"   [{i+1}/{len(sorted_albums)}] ❌ {title}: HTTP {e.code}")
+                req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
+                try:
+                    with urllib.request.urlopen(req, context=CTX) as r:
+                        result = json.loads(r.read().decode())
+                        text = result['candidates'][0]['content']['parts'][0]['text']
+                        result_parsed = json.loads(text)
+                        used_model = f"{model}{'(+search)' if use_search else '(no-search)'}"
+                        break
+                except urllib.error.HTTPError as e:
+                    if e.code == 429:
+                        log.warning(f"   ⚠️ {model} 쿼타 초과 → 다음 모델로 전환")
+                        break  # 이 모델은 쿼타 소진 → 다음 모델로
+                    elif e.code == 400 and use_search:
+                        log.warning(f"   ⚠️ {model} google_search 비호환 → 검색 없이 재시도")
+                        continue  # 같은 모델, 검색 도구 없이 재시도
+                    else:
+                        log.error(f"   [{i+1}/{len(sorted_albums)}] ❌ {title}: HTTP {e.code}")
+                        break
+                except Exception as e:
+                    log.error(f"   [{i+1}/{len(sorted_albums)}] ❌ {title}: {e}")
                     break
-            except Exception as e:
-                log.error(f"   [{i+1}/{len(sorted_albums)}] ❌ {title}: {e}")
-                break
+            if result_parsed:
+                break  # 성공했으면 다음 모델 시도 안 함
 
         if result_parsed:
             c_date = result_parsed.get('corrected_date')
