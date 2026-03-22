@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // 3단계 상태
 // collapsed : 바닥에 숨어있음 (보이지 않음)
-// peek      : 미니플레이어만 살짝 노출 (72px)
-// expanded  : 연관 아티스트 카드 전체 표시 (55vh)
+// peek      : 미니플레이어만 살짝 노출 (54px)
+// expanded  : 연관 아티스트 카드 전체 표시 (228px 고정)
 export type SheetState = "collapsed" | "peek" | "expanded";
 
 interface Props {
@@ -15,58 +15,53 @@ interface Props {
   children: React.ReactNode;
 }
 
-const PEEK_HEIGHT    = 54;         // 미니플레이어+핸들 통합 높이
-const EXPANDED_VH   = 44;         // 기본 확장 높이
-const EXPANDED_MAX  = 320;        // 최대 높이(px) — 넓은 화면비에서 카드가 컨테이너 밖으로 넘치는 것 방지
-const DRAG_THRESHOLD = 44;         // 상태 전환 트리거 드래그 거리 (px)
+const PEEK_HEIGHT     = 54;   // 미니플레이어+핸들
+const EXPANDED_HEIGHT = 228;  // 핸들(20)+미니플레이어(54)+카드영역(130)+패딩(24)
+const DRAG_THRESHOLD  = 44;   // 상태 전환 트리거 드래그 거리 (px)
 
 export default function BottomSheet({ state, onStateChange, children }: Props) {
-  const dragStartY   = useRef<number>(0);
-  const isDragging   = useRef(false);
+  const dragStartY  = useRef<number>(0);
+  const isDragging  = useRef(false);
 
   const getHeight = () => {
     if (state === "collapsed") return 0;
     if (state === "peek")      return PEEK_HEIGHT;
-    return "auto"; // 고정 vh 대신 내용물에 딱 맞게(shrink-wrap)
+    return EXPANDED_HEIGHT;
   };
 
   // ── 터치 드래그로 상태 전환 ────────────────────────────────
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 터치 시 바텀시트 드래그 방지
+    if ((e.target as HTMLElement).closest('.warp-list')) return;
     dragStartY.current = e.touches[0].clientY;
     isDragging.current = true;
   }, []);
 
   const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 터치 종료 무시 (드래그/클릭 간섭 방지)
+    if ((e.target as HTMLElement).closest('.warp-list')) return;
     if (!isDragging.current) return;
     isDragging.current = false;
     const delta = e.changedTouches[0].clientY - dragStartY.current;
 
-    // 위로 스와이프 → 다음 단계
     if (delta < -DRAG_THRESHOLD) {
       if (state === "collapsed") onStateChange("peek");
       else if (state === "peek") onStateChange("expanded");
-    }
-    // 아래로 스와이프 → 이전 단계
-    else if (delta > DRAG_THRESHOLD) {
+    } else if (delta > DRAG_THRESHOLD) {
       if (state === "expanded") onStateChange("peek");
       else if (state === "peek") onStateChange("collapsed");
     }
   }, [state, onStateChange]);
 
-  // 마우스 드래그도 지원
+  // ── 마우스 드래그도 지원 ───────────────────────────────────
   const mouseStartY = useRef<number>(0);
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 마우스다운 무시
+    if ((e.target as HTMLElement).closest('.warp-list')) return;
     mouseStartY.current = e.clientY;
     isDragging.current = true;
   }, []);
   const handleMouseUp = useCallback((e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 뗀 것 무시
+    if ((e.target as HTMLElement).closest('.warp-list')) return;
     if (!isDragging.current) return;
     isDragging.current = false;
-    
     const delta = e.clientY - mouseStartY.current;
     if (delta < -DRAG_THRESHOLD) {
       if (state === "collapsed") onStateChange("peek");
@@ -83,23 +78,21 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
       animate={{ height: getHeight() }}
       transition={{ type: "spring", stiffness: 380, damping: 36 }}
       style={{
-        touchAction: "pan-x", // 가로 스크롤 허용, 세로 제스처 차단
-        // collapsed일 때는 보이지 않게
+        touchAction: "pan-x",
         pointerEvents: state === "collapsed" ? "none" : "auto",
         overflow: "hidden",
-        maxHeight: "85vh", // 화면이 극단적으로 작을 때만 스크롤
       }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
     >
-      {/* ── 드래그 핸들 (공간 비차지, 오버레이) ────────── */}
+      {/* ── 드래그 핸들 ────────────────────────────────────── */}
       <div
         role="button"
         aria-label={state === "expanded" ? "시트 닫기" : "시트 열기"}
         onClick={() => {
-          if (state === "peek")     onStateChange("expanded");
+          if (state === "peek")          onStateChange("expanded");
           else if (state === "expanded") onStateChange("peek");
         }}
         style={{
@@ -114,16 +107,14 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
         }}
       >
         <div style={{
-          width: 32,
-          height: 4,
+          width: 32, height: 4,
           borderRadius: 2,
           background: "rgba(255,255,255,0.18)",
         }} />
       </div>
 
-      {/* ── 콘텐츠 영역 (핸들 공간 없이 전체 사용) ─────── */}
+      {/* ── 콘텐츠 영역 ────────────────────────────────────── */}
       <div style={{ paddingTop: 14, overflow: "hidden", display: "flex", flexDirection: "column" }}>
-        {/* expanded일 때만 리스트 보임 — AnimatePresence로 부드럽게 */}
         <AnimatePresence>
           {state !== "collapsed" && (
             <motion.div
@@ -136,7 +127,6 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
                 display: "flex",
                 flexDirection: "column",
                 overflow: "hidden",
-                paddingBottom: 24, // 카드덱 아래 기본 여백 제공
               }}
             >
               {children}

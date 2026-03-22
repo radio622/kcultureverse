@@ -39,7 +39,7 @@ const ForceGraph2D = require("react-force-graph-2d").default;
 
 // ── 상수 ────────────────────────────────────────────────────────
 const BLOOM_DURATION_MS = 600;  // Star Bloom 애니메이션 총 시간
-const IMG_CACHE_MAX = 50;       // LRU 이미지 캐시 최대 장수
+const IMG_CACHE_MAX = 300;      // LRU 이미지 캐시 최대 장수 (756개 이미지 고려해서 확대)
 const MAX_HOP1_EDGES = 15;      // Hairball 방지: hop1 엣지 최대 수
 
 const EDGE_COLORS: Record<V5EdgeRelation, string> = {
@@ -116,7 +116,7 @@ const RELATION_LABEL_KO: Record<V5EdgeRelation, string> = {
 const imageCache = new Map<string, HTMLImageElement>();
 const imageLRU: string[] = []; // 최근 사용 순서 추적
 
-function getCachedImage(url: string): HTMLImageElement | null {
+function getCachedImage(url: string, onLoaded?: () => void): HTMLImageElement | null {
   if (imageCache.has(url)) {
     // LRU 갱신
     const idx = imageLRU.indexOf(url);
@@ -131,6 +131,8 @@ function getCachedImage(url: string): HTMLImageElement | null {
   }
   const img = new window.Image();
   img.crossOrigin = "anonymous";
+  // ✅ 이미지 로드 완료 시 Canvas 재렌더 트리거
+  img.onload = () => { onLoaded?.(); };
   img.src = url;
   imageCache.set(url, img);
   imageLRU.push(url);
@@ -457,7 +459,10 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
 
       // ── 이미지가 있으면 MID에서도 사진 렌더링 ──
       if (node.image) {
-        const img = getCachedImage(node.image);
+        const img = getCachedImage(node.image, () => {
+          // 이미지 로드 완료 시 Canvas 재렌더 (fgRef.refresh)
+          (fgRef.current as any)?.refresh?.();
+        });
         if (img?.complete && img.naturalWidth > 0) {
           ctx.save();
           ctx.beginPath();
@@ -533,7 +538,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
 
     // 이미지 또는 이니셜 — 이미지 있으면 조건 없이 항상 사진 표시
     if (node.image) {
-      const img = getCachedImage(node.image);
+      const img = getCachedImage(node.image, () => {
+        (fgRef.current as any)?.refresh?.();
+      });
       const imgAlpha = (isFocused || isHop1) ? bloomProgress : 1;
       ctx.globalAlpha = isVisible ? imgAlpha : 0.07;
 
