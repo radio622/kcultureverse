@@ -38,6 +38,7 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
   }, []);
 
   const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 터치 종료 무시 (드래그/클릭 간섭 방지)
     if (!isDragging.current) return;
     isDragging.current = false;
     const delta = e.changedTouches[0].clientY - dragStartY.current;
@@ -57,10 +58,15 @@ export default function BottomSheet({ state, onStateChange, children }: Props) {
   // 마우스 드래그도 지원
   const mouseStartY = useRef<number>(0);
   const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 터치 시 바텀시트 드래그 방지
+    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 마우스다운 무시
     mouseStartY.current = e.clientY;
+    isDragging.current = true;
   }, []);
   const handleMouseUp = useCallback((e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest('.warp-list')) return; // 가로 스크롤 영역 뗀 것 무시
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    
     const delta = e.clientY - mouseStartY.current;
     if (delta < -DRAG_THRESHOLD) {
       if (state === "collapsed") onStateChange("peek");
