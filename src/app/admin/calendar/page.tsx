@@ -150,7 +150,7 @@ export default function CalendarPage() {
                       <span>|</span>
                       <span>상태: {a.verified ? <span style={{color:"#10b981", fontWeight: 600}}>✅ 검증됨</span> : <span style={{color:"#f59e0b"}}>⚠️ 미검증</span>}</span>
                       <span>|</span>
-                      <span>K-Culture: {a.is_korean_artist === true ? "🇰🇷" : a.is_korean_artist === false ? "❌" : "➖"}</span>
+                      <span>Korean Artist 여부: {a.is_korean_artist === true ? "🇰🇷" : a.is_korean_artist === false ? "❌" : "➖"}</span>
                     </div>
                     {a.verification_note && (
                       <div style={{ fontSize: 11, color: "rgba(255,255,255,0.6)", fontStyle: "italic", background: "rgba(0,0,0,0.2)", padding: "8px 10px", borderRadius: 6 }}>
@@ -174,7 +174,7 @@ export default function CalendarPage() {
                       <input type="text" value={editDate} onChange={e => setEditDate(e.target.value)} style={s.input} />
                     </div>
                     <div>
-                      <label style={s.label}>K-Pop/K-Indie 여부</label>
+                      <label style={s.label}>Korean Artist 여부</label>
                       <select value={editIsKo === null ? "" : editIsKo.toString()} onChange={e => setEditIsKo(e.target.value === "" ? null : e.target.value === "true")} style={s.input}>
                         <option value="">미정 (판정 보류)</option>
                         <option value="true">한국 아티스트 (O)</option>

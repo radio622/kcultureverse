@@ -79,7 +79,7 @@ export async function POST(req: NextRequest) {
     if (result.corrected) {
       correctedCount++;
       logLines.push(
-        `✅ 수정: [${album.artist_name}] "${album.album_title}" ${album.release_date} → ${result.corrected_date} (K팝: ${result.is_korean_artist})`
+        `✅ 수정: [${album.artist_name}] "${album.album_title}" ${album.release_date} → ${result.corrected_date} (Korean Artist: ${result.is_korean_artist})`
       );
       await supabase
         .from("album_releases")
@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
         })
         .eq("id", album.id);
     } else {
-      logLines.push(`✓ 확인: [${album.artist_name}] "${album.album_title}" ${album.release_date} (K팝: ${result.is_korean_artist})`);
+      logLines.push(`✓ 확인: [${album.artist_name}] "${album.album_title}" ${album.release_date} (Korean Artist: ${result.is_korean_artist})`);
       await supabase
         .from("album_releases")
         .update({
