@@ -10,7 +10,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 
 interface Props {
-  position?: "fixed" | "absolute";
+  position?: "fixed" | "absolute" | "relative";
 }
 
 export default function UserAvatar({ position = "fixed" }: Props) {
@@ -45,7 +45,10 @@ export default function UserAvatar({ position = "fixed" }: Props) {
   return (
     <div
       ref={dropdownRef}
-      style={{ position, top: 16, right: 66, zIndex: 200 }} // 공유 버튼 왼쪽
+      style={position === "relative"
+        ? { position: "relative" }  // 부모 flex 컨테이너가 위치를 담당
+        : { position, top: 16, right: 66, zIndex: 200 }
+      }
     >
       {/* 아바타 버튼 */}
       <button
