@@ -433,6 +433,39 @@ export default function UniversePage() {
       {/* 검색 */}
       <FloatingSearch onSelect={handleArtistSelect} />
 
+      {/* 우측 상단 외부 링크 이동 */}
+      {focusedId && sheetState !== "collapsed" && (
+        <div style={{ position: "fixed", top: 16, right: 16, zIndex: 100 }}>
+          <a
+            href={
+              detailCache.current[audio.currentArtistId || focusedId || ""]?.spotifyUrl ||
+              `https://search.naver.com/search.naver?query=${encodeURIComponent(
+                audio.currentArtistId
+                  ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")
+                  : focusedArtistName
+              )}`
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="artist-external-link"
+            title="외부 통신 링크"
+            style={{ margin: 0, padding: "8px 14px", fontSize: "12px", backdropFilter: "blur(8px)", background: "rgba(10,14,26,0.85)" }}
+          >
+            {audio.currentArtistId
+              ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")
+              : focusedArtistName}
+            {getJosa(
+              audio.currentArtistId
+                ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")
+                : focusedArtistName,
+              "로부터",
+              "으로부터"
+            )}{" "}
+            <span>↗</span>
+          </a>
+        </div>
+      )}
+
       {/* 탐험 발자국 (Breadcrumbs) */}
       {breadcrumbs.length > 1 && (
         <div className="breadcrumbs-bar">
@@ -504,35 +537,6 @@ export default function UniversePage() {
             onStop={audio.stop}
             sheetState={sheetState}
             onExpand={() => setSheetState("expanded")}
-            externalLinkNode={
-              <a
-                href={
-                  detailCache.current[audio.currentArtistId || focusedId || ""]?.spotifyUrl ||
-                  `https://search.naver.com/search.naver?query=${encodeURIComponent(
-                    audio.currentArtistId
-                      ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")
-                      : focusedArtistName
-                  )}`
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className="artist-external-link"
-                title="외부 통신 링크"
-                style={{ margin: 0, padding: "4px 8px", fontSize: "10px" }}
-              >
-                {audio.currentArtistId
-                  ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")
-                  : focusedArtistName}
-                {getJosa(
-                  audio.currentArtistId
-                    ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")
-                    : focusedArtistName,
-                  "로부터",
-                  "으로부터"
-                )}{" "}
-                <span>↗</span>
-              </a>
-            }
           />
 
           {/* 1촌 워프 포탈 목록 */}

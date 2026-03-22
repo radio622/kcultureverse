@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 interface Props {
   isPlaying: boolean;
   trackName: string | null;
@@ -9,7 +11,6 @@ interface Props {
   onExpand?: () => void;
   sheetState?: "collapsed" | "peek" | "expanded";
   artistName?: string | null;
-  externalLinkNode?: React.ReactNode;
 }
 
 export default function MiniPlayer({
@@ -20,8 +21,15 @@ export default function MiniPlayer({
   onExpand,
   sheetState = "peek",
   artistName,
-  externalLinkNode,
 }: Props) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // 아무것도 재생 안 하고 peek 상태면: 안내 문구
   if (!trackName && !isPlaying) {
@@ -107,7 +115,11 @@ export default function MiniPlayer({
               transition: "color 0.3s ease",
             }}
           >
-            {isPlaying ? "⏸ " : ""}{artistName ? `${artistName} - ` : ""}{trackName ?? "재생 준비 중..."}
+            {isPlaying ? "⏸ " : ""}
+            {isMobile 
+              ? <>{trackName ?? "재생 준비 중..."} {artistName ? ` - ${artistName}` : ""}</>
+              : <>{artistName ? `${artistName} - ` : ""}{trackName ?? "재생 준비 중..."}</>
+            }
           </span>
           {/* peek 상태에서 "위로 스와이프" 힌트 */}
           {sheetState === "peek" && (
@@ -142,13 +154,6 @@ export default function MiniPlayer({
           >
             ◼
           </button>
-        )}
-
-        {/* 외부 탐색 버튼 (expanded 상태일 때만) */}
-        {sheetState === "expanded" && externalLinkNode && (
-          <div style={{ flexShrink: 0, marginLeft: "auto" }}>
-            {externalLinkNode}
-          </div>
         )}
       </div>
 
