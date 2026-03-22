@@ -97,39 +97,31 @@ export async function GET(req: NextRequest) {
   });
 }
 
-// ── 공통 쿼리 헬퍼 ─────────────────────────────────────────
+// ── 공통 쿼리 헬퍼 (RPC 방식 — PostgREST는 EXTRACT 미지원) ──
 async function queryAlbums(
   month: number,
   day: number,
   limit: number,
   verifiedOnly: boolean
 ) {
-  let query = supabase
-    .from("album_releases")
-    .select(
-      "artist_id, artist_name, artist_name_ko, album_title, album_title_ko, album_type, release_date, verified, source"
-    )
-    .filter(
-      "EXTRACT(MONTH FROM release_date)",
-      "eq",
-      month
-    )
-    .filter(
-      "EXTRACT(DAY FROM release_date)",
-      "eq",
-      day
-    )
-    .order("release_date", { ascending: true })
-    .limit(limit);
+  // Supabase RPC: get_albums_by_mmdd(p_month, p_day, p_limit)
+  const { data, error } = await supabase.rpc("get_albums_by_mmdd", {
+    p_month: month,
+    p_day: day,
+    p_limit: limit,
+  });
 
-  if (verifiedOnly) {
-    query = query.eq("verified", true);
-  }
-
-  const { data, error } = await query;
   if (error) {
-    console.error("[today-albums] Supabase error:", error.message);
+    console.error("[today-albums] Supabase RPC error:", error.message);
     return [];
   }
-  return data ?? [];
+
+  let results = data ?? [];
+
+  // verified_only 필터 (클라이언트 사이드 — RPC 결과에서 필터)
+  if (verifiedOnly) {
+    results = results.filter((r: { verified: boolean }) => r.verified);
+  }
+
+  return results;
 }
