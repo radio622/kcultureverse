@@ -16,7 +16,7 @@ interface Props {
 }
 
 const PEEK_HEIGHT     = 54;   // 미니플레이어 + 핸들 높이
-const EXPANDED_HEIGHT = 290;  // 핸들(20) + 미니플레이어(54) + 카드영역(192) + 패딩(24)
+const EXPANDED_HEIGHT = 295;  // 핸들(20) + 미니플레이어(40) + 카드영역 + 패딩
 const DRAG_THRESHOLD  = 44;   // 상태 전환 트리거 드래그 거리 (px)
 const SHEET_TOTAL     = 400;  // 시트 컨테이너 전체 높이 (충분히 큰 고정값)
 

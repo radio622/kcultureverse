@@ -625,12 +625,12 @@ export default function UniversePage() {
           50%       { opacity: 1; }
         }
         /* Swipeable Card Deck */
-        .warp-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 6px 20px 8px; margin: 0; list-style: none; scrollbar-width: none; -ms-overflow-style: none; }
+        .warp-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 0px 20px 8px; margin: 0; list-style: none; scrollbar-width: none; -ms-overflow-style: none; }
         .warp-list::-webkit-scrollbar { display: none; }
-        .warp-item { position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 130px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px 12px 20px; text-align: center; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); scroll-snap-align: center; scroll-margin-inline: 20px; }
+        .warp-item { position: relative; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 130px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 12px 12px 20px; text-align: center; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); scroll-snap-align: center; scroll-margin-inline: 20px; }
         .warp-item:hover, .warp-item:active { background: rgba(255,255,255,0.07); border-color: rgba(167,139,250,0.4); transform: translateY(-2px); }
         .warp-avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: rgba(167,139,250,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; color: rgba(200,180,255,0.8); overflow: hidden; margin-bottom: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-        .warp-info { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; flex: 1; min-height: 60px; }
+        .warp-info { display: flex; flex-direction: column; align-items: center; gap: 4px; width: 100%; flex: 1; min-height: 54px; }
         .warp-name { font-size: 13px; font-weight: 600; color: #fff; width: 100%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; }
         .warp-label { font-size: 11px; color: rgba(167,139,250,0.75); display: flex; flex-direction: column; gap: 2px; align-items: center; width: 100%; }
         .warp-label span.relation-desc { display: block; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0.8; }
@@ -644,7 +644,7 @@ export default function UniversePage() {
         .rel-INDIRECT   { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.5); }
         .rel-GENRE_OVERLAP { background: rgba(167,139,250,0.08); color: rgba(167,139,250,0.5); }
         /* Warp item play button (Card version) */
-        .warp-play { width: 100%; height: 36px; margin-top: 14px; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; color: #d8b4ff; font-size: 12px; font-weight: 600; transition: all 0.2s; padding: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .warp-play { width: 100%; height: 36px; margin-top: 10px; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; color: #d8b4ff; font-size: 12px; font-weight: 600; transition: all 0.2s; padding: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .warp-play:hover { background: rgba(167,139,250,0.2); color: #fff; border-color: rgba(167,139,250,0.5); }
         .warp-play.playing { background: rgba(167,139,250,0.25); color: #fff; border-color: rgba(167,139,250,0.6); animation: wpulse 2s ease-in-out infinite; box-shadow: 0 0 10px rgba(167,139,250,0.3); }
         @keyframes wpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
