@@ -152,7 +152,7 @@ async function main() {
             const edgeKey = [existingMbid, anchorMbid].sort().join("::");
             if (!existingEdgeKeys.has(edgeKey)) {
               graph.edges.push({
-                source: existingMbid, target: anchorMbid, relation: "GENRE_OVERLAP", weight: 0.5, label: "같은 플레이리스트 (라디오/모음집)"
+                source: existingMbid, target: anchorMbid, relation: "GENRE_OVERLAP", weight: 0.1, label: "같은 플레이리스트 (라디오/모음집)"
               });
               existingEdgeKeys.add(edgeKey);
               addedEdges++;
@@ -200,7 +200,7 @@ async function main() {
           const edgeKey = [mbid, anchorMbid].sort().join("::");
           if (!existingEdgeKeys.has(edgeKey)) {
             graph.edges.push({
-              source: mbid, target: anchorMbid, relation: "GENRE_OVERLAP", weight: 0.6, label: "같은 플레이리스트 기원"
+              source: mbid, target: anchorMbid, relation: "GENRE_OVERLAP", weight: 0.1, label: "같은 플레이리스트 기원"
             });
             existingEdgeKeys.add(edgeKey);
             addedEdges++;

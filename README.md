@@ -6,6 +6,18 @@
 
 ---
 
+## ✨ V7.7.1 — 데이터 품질 대패치 (2026-03-24)
+
+> 📋 상세: [`docs/PATCH_V7.7.1.md`](docs/PATCH_V7.7.1.md)
+
+- **GENRE_OVERLAP weight 0.5/0.6 → 0.1**: 4,214개 플레이리스트 엣지가 FEATURED(0.7)급으로 과대평가되던 근본 원인 수정. 소스 코드(`v6.4-batch-ingest-csvs.ts`) + 기존 데이터 모두 패치
+- **중복 노드 26건 병합**: 넬/Nell, 새소년/SE SO NEON 등 한/영 이중 등록 제거
+- **콜라보 노드 39건 분해**: `DEAN;개코`, `에픽하이;이하이` 등 세미콜론 복합 노드 → 개별 노드 + FEATURED 엣지
+- **previewUrl 오염 76건 정리**: 동명이곡 trackName 오인 제거
+- **빌드 파이프라인 개선**: `GENRE_OVERLAP` 관계 타입이 `INDIRECT`로 소실되던 문제 수정 → 별도 "장르 유사" 라벨로 보존
+
+---
+
 ## ✨ V7.7 — UI 폴리싱 + 데이터 안정화 (2026-03-23)
 
 ### Phase 1 — 치명적 버그 수정 ✅
@@ -61,7 +73,7 @@
 - **100% K-Culture 영점 조율**: '15&', '에프엑스(f(x))' 같은 영문 그룹이 해외 아티스트로 오인되어 삭제되지 않도록 지속적인 관리 체계 구축
 
 #### 🧬 콜라보 영구 해체 및 유니버스 대확장
-- **1,392명 아티스트 / 8,430 가닥의 인연**: 단 1명의 완전 고립 노드도 없는 역대 최대 규모, 최다 밀집도의 우주 완성
+- **3,576명 아티스트 / 7,129 가닥의 인연**: 중복·콜라보 정리 + V7.7.1 패치로 역대 최고 품질의 우주 완성
 - 기존 혼합콜라보 노드(A & B) 완전 소거. 개별 노드 환원 및 FEATURED(0.7) 엣지로 정교하게 맵핑 완료 (85건 → 0건)
 - 856명 아티스트 전수 조사 후 144건의 한글 닉네임 대거 보강
 
@@ -151,7 +163,7 @@
 | 🏷 `#f472b6` | LABEL | 0.2 |
 | 📺 `#e879f9` | TV_SHOW | 0.15 |
 | ⚪ | INDIRECT | 0.1~0.3 |
-| 🌫 | GENRE_OVERLAP | 0.15 |
+| 🌫 | GENRE_OVERLAP | 0.1 |
 
 ---
 
@@ -189,7 +201,10 @@ npx tsx scripts/v6.5-socialize-lonely-stars.ts
 # 5. 한글 이름 일괄 교정
 python3 scripts/v6.5-fix-korean-names.py
 
-# 6. JSON 우주 파일 빌드
+# 6. 데이터 품질 패치 (V7.7.1)
+python3 scripts/v7.7.1-data-patch.py
+
+# 7. JSON 우주 파일 빌드
 npx tsx scripts/v5.4-build-universe.ts
 
 # 7. 듀얼 하베스터 봇 (Spotify 수집 + Gemini 검증)
@@ -203,6 +218,7 @@ tail -f logs/harvester_*.log   # 실시간 모니터링
 
 | 버전 | 문서 | 상태 |
 |--------|------|------|
+| V7.7.1 | [`docs/PATCH_V7.7.1.md`](docs/PATCH_V7.7.1.md) | ✅ 데이터 품질 4대 패치 완료 |
 | V7.7 | [`docs/V7.7_ROADMAP.md`](docs/V7.7_ROADMAP.md) | ✅ Phase 1+2+3-1 완료 — Phase 3-2~3-5 남음 |
 | V7.5 | [`docs/V7.5_IDEA_SKETCH.md`](docs/V7.5_IDEA_SKETCH.md) | ✅ 봇 401 패치 완료 |
 | V7.5 봇 | [`docs/DUAL_HARVESTER_BOT.md`](docs/DUAL_HARVESTER_BOT.md) | ✅ 정식 가동 중 |

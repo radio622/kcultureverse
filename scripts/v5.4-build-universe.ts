@@ -35,6 +35,7 @@ function mapRelation(raw: string): string {
   if (r === "COMPOSER" || r === "LYRICIST" || r === "WRITER") return "WRITER";
   if (r === "PRODUCER" || r === "CO-PRODUCER") return "PRODUCER";
   if (r === "FEATURED" || r === "VOCAL" || r === "GUEST") return "FEATURED";
+  if (r === "GENRE_OVERLAP") return "GENRE_OVERLAP";
   return "INDIRECT";
 }
 
@@ -44,6 +45,7 @@ function autoLabel(relation: string): string {
     SAME_GROUP: "그룹 멤버", WRITER: "작곡/작사",
     PRODUCER: "프로듀서", FEATURED: "피처링",
     SHARED_WRITER: "공유 작사/작곡가", SHARED_PRODUCER: "공유 프로듀서",
+    GENRE_OVERLAP: "장르 유사",
     INDIRECT: "협업",
   };
   return m[relation] || "관련";
