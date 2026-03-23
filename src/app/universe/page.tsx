@@ -173,7 +173,7 @@ export default function UniversePage() {
   const [arrivedToast, setArrivedToast] = useState<string | null>(null);
 
   // Phase 7: 자율주행 (handleArtistSelect 참조를 ref로 안전하게 전달)
-  const handleArtistSelectRef = useRef<(nodeId: string) => void>(() => {});
+  const handleArtistSelectRef = useRef<(nodeId: string, options?: { isSystem?: boolean; skipAudio?: boolean }) => void>(() => {});
   const warp = useAutoWarp({
     graphData,
     audioPlay: audio.play,
@@ -205,13 +205,14 @@ export default function UniversePage() {
       graphData?.nodes[nodeId]
         ? (graphData.nodes[nodeId].nameKo || graphData.nodes[nodeId].name)
         : nodeId,
-    onNodeFocus: (nodeId) => handleArtistSelectRef.current(nodeId),
+    onNodeFocus: (nodeId) => handleArtistSelectRef.current(nodeId, { isSystem: true, skipAudio: true }),
     audioPlay: audio.play,
     audioSetOnEnded: audio.setOnEnded,
     fetchPreview: fetchPreviewByName,
     onArrived: (steps) => {
+      setDualPathTarget(null);
       const lastName = steps[steps.length - 1]?.name ?? "";
-      setArrivedToast(`🎉 ${lastName}에 도악했습니다!`);
+      setArrivedToast(`🎉 ${lastName}에 도착했습니다!`);
       setTimeout(() => setArrivedToast(null), 4000);
     },
   });
@@ -318,24 +319,8 @@ export default function UniversePage() {
     if (!toId || !fromId) return;
     if (!graphData.nodes[toId] || !graphData.nodes[fromId]) return;
 
-    const path = dijkstra(graphData.nodes, graphData.edges, fromId, toId);
-    if (path.length < 2) {
-      setArrivedToast("두 아티스트 사이의 경로를 찾을 수 없습니다.");
-      setTimeout(() => setArrivedToast(null), 3000);
-      return;
-    }
-
-    // A를 먼저 포커스 (카메라 이동 + 바텀시트 오픈)
-    handleArtistSelectRef.current?.(fromId);
-
-    // 짧은 딜레이 후 여정 시작 (포커스 애니메이션 완료 대기)
-    setTimeout(() => {
-      playQueue.disableQueue();
-      journey.start(path);
-      // 공유 URL 복원
-      const shareUrl = `${window.location.origin}/universe?artist=${fromId}&to=${toId}`;
-      setJourneyShareUrl(shareUrl);
-    }, 800);
+    // handleDualSelect를 호출해 줌아웃(새의 눈) -> 여정 시작 경험 동일 적용
+    handleDualSelect(fromId, toId);
 
     // ?to 파라미터 제거 (중복 실행 방지) — artist 파라미터는 유지
     const url = new URL(window.location.href);
@@ -361,7 +346,7 @@ export default function UniversePage() {
     return () => window.removeEventListener("popstate", onPop);
   }, []);
 
-  const handleArtistSelect = useCallback((nodeId: string) => {
+  const handleArtistSelect = useCallback((nodeId: string, options?: { isSystem?: boolean; skipAudio?: boolean }) => {
     if (!graphData) return;
     const node = graphData.nodes[nodeId];
     if (!node) {
@@ -370,14 +355,17 @@ export default function UniversePage() {
     }
 
     // 이미 선택된 별을 다시 클릭하면 바텀시트 토글 (올리기/내리기)
-    if (currentFocusedIdRef.current === nodeId) {
+    if (currentFocusedIdRef.current === nodeId && !options?.isSystem) {
       setSheetState((s) => (s === "expanded" ? "peek" : "expanded"));
       return;
     }
 
     // 수동 선택: journey / warp 정지 (자동 탐색 중단 후 유저 의도 우선)
-    journey.stop();
-    warp.stop();
+    if (!options?.isSystem) {
+      journey.stop();
+      warp.stop();
+      setDualPathTarget(null);
+    }
 
     setFocusedId(nodeId);
     currentFocusedIdRef.current = nodeId;
@@ -440,19 +428,21 @@ export default function UniversePage() {
     playQueue.setQueue(queueItems, 0);
 
     // 오디오 프리뷰 자동 재생 (detail에서 바로 있으면 재생, 없으면 API fetch)
-    if (detail?.previewUrl) {
-      audio.play(
-        detail.previewUrl,
-        detail.previewTrackName || node.nameKo || node.name,
-        nodeId
-      );
-    } else {
-      // previewUrl 없으면 API에서 즉시 fetch 후 재생
-      fetchPreviewByName(node.nameKo || node.name).then((r) => {
-        if (r?.previewUrl && currentFocusedIdRef.current === nodeId) {
-          audio.play(r.previewUrl, r.trackName || node.nameKo || node.name, nodeId);
-        }
-      });
+    if (!options?.skipAudio) {
+      if (detail?.previewUrl) {
+        audio.play(
+          detail.previewUrl,
+          detail.previewTrackName || node.nameKo || node.name,
+          nodeId
+        );
+      } else {
+        // previewUrl 없으면 API에서 즉시 fetch 후 재생
+        fetchPreviewByName(node.nameKo || node.name).then((r) => {
+          if (r?.previewUrl && currentFocusedIdRef.current === nodeId) {
+            audio.play(r.previewUrl, r.trackName || node.nameKo || node.name, nodeId);
+          }
+        });
+      }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graphData, audio, playQueue, journey, warp, fetchPreviewByName]);
@@ -529,23 +519,30 @@ export default function UniversePage() {
       alert("두 아티스트 중 하나 이상이 현재 우주에 없습니다.");
       return;
     }
-    // A를 포커스 → journey도 시작하므로 먼저 journey.stop() 호출됨 (handleArtistSelect 내부에서)
-    handleArtistSelect(idA);
-    // B를 듀얼 타겟으로 저장 → GraphCosmos에 전달 (경로 하이라이트용)
-    setDualPathTarget(idB);
-    setTimeout(() => setDualPathTarget(null), 12000); // 12초 (여정 완료까지 유지)
+    // 사용자 검색 상호작용이므로 기존 흐름 중지
+    audio.stop();
+    playQueue.disableQueue();
+    warp.stop();
+    journey.stop();
 
-    // V7.7 Phase 3-1: 경로가 있으면 여정 자동 재생도 시작
-    if (graphData.edges.length > 0) {
-      const path = dijkstra(graphData.nodes, graphData.edges, idA, idB);
-      if (path.length >= 2) {
-        playQueue.disableQueue();
-        journey.start(path);
-        // 공유 URL 저장
-        const shareUrl = `${window.location.origin}/universe?artist=${idA}&to=${idB}`;
-        setJourneyShareUrl(shareUrl);
+    // 1. A를 포커스하되 재생 없이 시스템 모드로, B로 듀얼 타겟 설정 -> GraphCosmos에서 Bird's Eye 줌아웃 수행
+    handleArtistSelect(idA, { isSystem: true, skipAudio: true });
+    setDualPathTarget(idB);
+
+    // 2. 3.5초간 한눈에 경로를 감상한 뒤 (Bird's Eye View), 여정 자동 재생 (줌인 포함)
+    setTimeout(() => {
+      setDualPathTarget(null); // BBox 해제, handleArtistSelect 시 카메라는 다시 node Focus로 이동 가능
+      if (graphData.edges.length > 0) {
+        const path = dijkstra(graphData.nodes, graphData.edges, idA, idB);
+        if (path.length >= 2) {
+          journey.start(path); // 내부적으로 handleArtistSelect를 순차 호출하며 카메라 줌인 & 재생
+          // 공유 URL 저장
+          const shareUrl = `${window.location.origin}/universe?artist=${idA}&to=${idB}`;
+          setJourneyShareUrl(shareUrl);
+        }
       }
-    }
+    }, 3500);
+
   }, [graphData, handleArtistSelect, playQueue, journey]);
 
 

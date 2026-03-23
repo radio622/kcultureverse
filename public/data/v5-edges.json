@@ -54400,6 +54400,13 @@
       "weight": 1,
       "relation": "SAME_GROUP",
       "label": "넥스트 멤버: 신해철 (보컬/리더)"
+    },
+    {
+      "source": "collab_split_Ry1EUkFHT04",
+      "target": "ec2bcb77-b9a1-49e2-bfe7-419586bbef48",
+      "weight": 1,
+      "relation": "SAME_GROUP",
+      "label": "빅뱅 멤버: 지드래곤"
     }
   ]
 }

@@ -31,6 +31,7 @@ interface Props {
   dualPathTarget?: string | null;
   onBackgroundClick?: () => void;
   sheetState?: string;
+  cameraTrigger?: number;
 }
 
 
@@ -187,7 +188,7 @@ function dijkstra(
 }
 
 // ── 메인 컴포넌트 ─────────────────────────────────────────────
-export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dualPathTarget, onBackgroundClick, sheetState }: Props) {
+export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dualPathTarget, onBackgroundClick, sheetState, cameraTrigger }: Props) {
 
   const fgRef = useRef<Record<string, unknown>>(null);
 
@@ -205,6 +206,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
   // Pathfinding
   const [pathfindingFrom, setPathfindingFrom] = useState<string | null>(null);
   const [highlightPath, setHighlightPath] = useState<Set<string>>(new Set());
+  const [highlightPathArray, setHighlightPathArray] = useState<string[]>([]);
   const [highlightEdges, setHighlightEdges] = useState<Set<string>>(new Set());
 
   // Hover
@@ -307,7 +309,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       fg.centerAt(node.x, node.y, 800);
       fg.zoom(isMobile ? 1.3 : 1.8, 800);
     }
-  }, [focusedId, sheetState, graphData.nodes]);
+  }, [focusedId, sheetState, cameraTrigger, graphData.nodes]);
 
   // ── Phase 3: 듀얼 관계 탐색 — dualPathTarget 변경 시 A→B Dijkstra 경로 하이라이트 ──
   useEffect(() => {
@@ -330,22 +332,37 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       edgeSet.add([path[i], path[i + 1]].sort().join("||"));
     }
     setHighlightPath(pathSet);
+    setHighlightPathArray(path);
     setHighlightEdges(edgeSet);
     setPathfindingFrom(null); // 토스트 숨김
 
-    // 카메라: A와 B의 중점으로 패닝
-    const nodeA = graphData.nodes[focusedId];
-    const nodeB = graphData.nodes[dualPathTarget];
-    if (nodeA.x !== undefined && nodeA.y !== undefined &&
-        nodeB.x !== undefined && nodeB.y !== undefined) {
-      const fg = fgRef.current as {
-        centerAt: (x: number, y: number, ms: number) => void;
-        zoom: (z: number, ms: number) => void;
-      };
-      const midX = (nodeA.x + nodeB.x) / 2;
-      const midY = (nodeA.y + nodeB.y) / 2;
-      fg?.centerAt?.(midX, midY, 900);
-      fg?.zoom?.(1.0, 900);
+    // 카메라: A와 B 경로 전체가 들어오도록 Bird's Eye View (Zoom-to-fit BBox)
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    path.forEach(id => {
+      const n = graphData.nodes[id];
+      if (n.x !== undefined) {
+        if (n.x < minX) minX = n.x;
+        if (n.x > maxX) maxX = n.x;
+      }
+      if (n.y !== undefined) {
+        if (n.y < minY) minY = n.y;
+        if (n.y > maxY) maxY = n.y;
+      }
+    });
+    if (minX !== Infinity) {
+      const fg = fgRef.current as any;
+      const width = Math.max(10, maxX - minX);
+      const height = Math.max(10, maxY - minY);
+      const midX = (minX + maxX) / 2;
+      const midY = (minY + maxY) / 2;
+      // 화면 꽉 차게 줌 비율 계산
+      const sw = window.innerWidth;
+      const sh = window.innerHeight;
+      const padding = Math.max(sw, sh) * 0.25;
+      const ratio = Math.max((width + padding) / sw, (height + padding) / sh);
+      const targetZoom = Math.min(2.0, Math.max(0.3, 1 / ratio));
+      fg?.centerAt?.(midX, midY - (isMobile ? 10 : 0) / targetZoom, 1200);
+      fg?.zoom?.(targetZoom, 1200);
     }
   }, [dualPathTarget, focusedId, graphData.nodes, graphData.edges]);
 
@@ -361,6 +378,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
     if (pathfindingFrom && pathfindingFrom !== node.id) {
       const path = dijkstra(graphData.nodes, graphData.edges, pathfindingFrom, node.id);
       setHighlightPath(new Set(path));
+      setHighlightPathArray(path);
       const edgeKeys = new Set<string>();
       for (let i = 0; i < path.length - 1; i++) {
         edgeKeys.add([path[i], path[i + 1]].sort().join("||"));
@@ -374,6 +392,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
 
     // 일반 클릭
     setHighlightPath(new Set());
+    setHighlightPathArray([]);
     setHighlightEdges(new Set());
     onArtistSelect(node.id);
   }, [pathfindingFrom, graphData, onArtistSelect]);
@@ -909,29 +928,48 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
 
           // ── ⚡ 경로 전류 애니메이션 (Dijkstra path edges) ──
           if (highlightEdges.has(key)) {
-            const t = (Date.now() % 2000) / 2000; // 0→1 순환 (2초 주기)
-            const PARTICLES = 3;
+            const idxSrc = highlightPathArray.indexOf(srcId);
+            const idxTgt = highlightPathArray.indexOf(tgtId);
+            const isForward = idxSrc !== -1 && idxTgt !== -1 ? idxSrc < idxTgt : true;
+
+            const dx = tgt.x - src.x;
+            const dy = tgt.y - src.y;
+            const dist = Math.max(1, Math.sqrt(dx * dx + dy * dy));
+            
+            // 전류 속도 (픽셀/ms) : 길이에 무관하게 일정한 시각적 속도
+            const speed = 0.08; 
+            const period = dist / speed;
+            
+            // 전역 타임스탬프를 사용해 프레임별 위치 계산
+            const baseT = (Date.now() % period) / period;
+            const dirT = isForward ? baseT : 1 - baseT;
+
+            // 길이에 비례해 적절한 파티클 개수 결정 (최소 1개, 최대 여러 개)
+            const baseParticles = Math.max(1, Math.floor(dist / 35));
+            // 짧은 엣지에서도 전기 흐름이 자연스럽게 이어지도록 보정
+            const PARTICLES = isMobile ? Math.min(3, baseParticles) : baseParticles;
 
             for (let i = 0; i < PARTICLES; i++) {
-              const p = (t + i / PARTICLES) % 1; // 균등 분배
-              const px = src.x + (tgt.x - src.x) * p;
-              const py = src.y + (tgt.y - src.y) * p;
-              const r = Math.max(2, 4 / globalScale);
+              let p = (dirT + i / PARTICLES) % 1;
+              if (p < 0) p += 1;
+              const px = src.x + dx * p;
+              const py = src.y + dy * p;
+              const r = Math.max(1.5, 3 / globalScale);
 
               // 글로우
-              const glow = ctx.createRadialGradient(px, py, 0, px, py, r * 3);
-              glow.addColorStop(0, "rgba(251,191,36,0.7)");
-              glow.addColorStop(0.5, "rgba(251,191,36,0.2)");
+              const glow = ctx.createRadialGradient(px, py, 0, px, py, r * 2.5);
+              glow.addColorStop(0, "rgba(251,191,36,0.9)");
+              glow.addColorStop(0.5, "rgba(251,191,36,0.3)");
               glow.addColorStop(1, "transparent");
               ctx.beginPath();
-              ctx.arc(px, py, r * 3, 0, 2 * Math.PI);
+              ctx.arc(px, py, r * 2.5, 0, 2 * Math.PI);
               ctx.fillStyle = glow;
               ctx.fill();
 
               // 코어 점
               ctx.beginPath();
-              ctx.arc(px, py, r, 0, 2 * Math.PI);
-              ctx.fillStyle = "#fde68a";
+              ctx.arc(px, py, r * 0.8, 0, 2 * Math.PI);
+              ctx.fillStyle = "#fff";
               ctx.fill();
             }
           }
@@ -962,6 +1000,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
           event.preventDefault();
           setPathfindingFrom(node.id);
           setHighlightPath(new Set([node.id]));
+          setHighlightPathArray([node.id]);
           setHighlightEdges(new Set());
         }}
         onNodeHover={(node: V5Node | null) => {
@@ -1018,6 +1057,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
           if (pathfindingFrom) {
             setPathfindingFrom(null);
             setHighlightPath(new Set());
+            setHighlightPathArray([]);
             setHighlightEdges(new Set());
           }
           if (onBackgroundClick) {
