@@ -365,6 +365,10 @@ export default function UniversePage() {
       return;
     }
 
+    // 수동 선택: journey / warp 정지 (자동 탐색 중단 후 유저 의도 우선)
+    journey.stop();
+    warp.stop();
+
     setFocusedId(nodeId);
     currentFocusedIdRef.current = nodeId;
     setFocusedArtistName(node.nameKo || node.name);
@@ -372,10 +376,8 @@ export default function UniversePage() {
 
     // 탐험 발자국 업데이트
     setBreadcrumbs(prev => {
-      // 이미 경로에 있으면 그 지점까지 되돌리기 (뒤로가기 효과)
       const existIdx = prev.findIndex(b => b.id === nodeId);
       if (existIdx >= 0) return prev.slice(0, existIdx + 1);
-      // 새 발자국 추가 (최대 10개)
       const next = [...prev, { id: nodeId, name: node.nameKo || node.name }];
       return next.length > 10 ? next.slice(-10) : next;
     });
@@ -412,7 +414,6 @@ export default function UniversePage() {
     setHop1List(neighbors);
 
     // V7.7: 연속 재생 큐 구성 — 현재 포커스 아티스트부터 시작
-    // 큐 = [현재 아티스트, ...hop1 이웃들 가중치 순]
     const detail = detailCache.current[nodeId];
     const queueItems = [
       {
@@ -426,18 +427,25 @@ export default function UniversePage() {
         previewUrl: n.previewUrl ?? undefined,
       })),
     ];
-    playQueue.setQueue(queueItems, 0); // 인덱스 0 = 현재 아티스트부터 시작
+    playQueue.setQueue(queueItems, 0);
 
-    // 오디오 프리뷰 자동 재생 (detail에서)
+    // 오디오 프리뷰 자동 재생 (detail에서 바로 있으면 재생, 없으면 API fetch)
     if (detail?.previewUrl) {
       audio.play(
         detail.previewUrl,
         detail.previewTrackName || node.nameKo || node.name,
         nodeId
       );
+    } else {
+      // previewUrl 없으면 API에서 즉시 fetch 후 재생
+      fetchPreviewByName(node.nameKo || node.name).then((r) => {
+        if (r?.previewUrl && currentFocusedIdRef.current === nodeId) {
+          audio.play(r.previewUrl, r.trackName || node.nameKo || node.name, nodeId);
+        }
+      });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [graphData, audio, playQueue]);
+  }, [graphData, audio, playQueue, journey, warp, fetchPreviewByName]);
 
 
   // Phase 7: ref 동기화
@@ -502,6 +510,8 @@ export default function UniversePage() {
   // GraphCosmos에 dualTarget prop을 추가하거나, 여기서 URL 쿼리로 넘기는 방식 사용.
   // 현재 아키텍처에서는 A 포커스 후 URL에 pathTo 파라미터를 추가하는 방식이 가장 간결.
   const [dualPathTarget, setDualPathTarget] = useState<string | null>(null);
+  const [journeyShareUrl, setJourneyShareUrl] = useState<string | null>(null); // A→B 공유 URL
+
 
   const handleDualSelect = useCallback((idA: string, idB: string) => {
     if (!graphData) return;
@@ -509,11 +519,11 @@ export default function UniversePage() {
       alert("두 아티스트 중 하나 이상이 현재 우주에 없습니다.");
       return;
     }
-    // A를 포커스 → GraphCosmos가 A를 중심으로 BFS 하이라이트
+    // A를 포커스 → journey도 시작하므로 먼저 journey.stop() 호출됨 (handleArtistSelect 내부에서)
     handleArtistSelect(idA);
     // B를 듀얼 타겟으로 저장 → GraphCosmos에 전달 (경로 하이라이트용)
     setDualPathTarget(idB);
-    setTimeout(() => setDualPathTarget(null), 8000);
+    setTimeout(() => setDualPathTarget(null), 12000); // 12초 (여정 완료까지 유지)
 
     // V7.7 Phase 3-1: 경로가 있으면 여정 자동 재생도 시작
     if (graphData.edges.length > 0) {
@@ -521,9 +531,13 @@ export default function UniversePage() {
       if (path.length >= 2) {
         playQueue.disableQueue();
         journey.start(path);
+        // 공유 URL 저장
+        const shareUrl = `${window.location.origin}/universe?artist=${idA}&to=${idB}`;
+        setJourneyShareUrl(shareUrl);
       }
     }
   }, [graphData, handleArtistSelect, playQueue, journey]);
+
 
 
   // ── 네이티브 공유 및 클립보드 복사 기능 ──────────────────────────────────
@@ -612,8 +626,37 @@ export default function UniversePage() {
       <FloatingSearch onSelect={handleArtistSelect} onDualSelect={handleDualSelect} />
 
 
-      {/* 우측 상단: 유저 아바타 + 공유 버튼 — 하나의 flex 컨테이너로 겹침 방지 */}
+      {/* 우측 상단: 정보 수정 제안 + 공유 버튼 + 유저 아바타 */}
       <div style={{ position: "fixed", top: 16, right: 16, zIndex: 200, display: "flex", alignItems: "center", gap: 8 }}>
+        {/* 정보 수정 제안 버튼 (포커스 + expanded 상태에서만) */}
+        {focusedId && sheetState === "expanded" && (
+          <button
+            id="edit-suggest-btn"
+            onClick={() => setEditModalOpen(true)}
+            title="아티스트 정보 수정 제안"
+            style={{
+              margin: 0, padding: "8px 12px",
+              fontSize: 11, fontWeight: 600,
+              color: "rgba(167,139,250,0.8)",
+              background: "rgba(10,14,26,0.85)",
+              border: "1px solid rgba(167,139,250,0.25)",
+              borderRadius: 20, cursor: "pointer",
+              backdropFilter: "blur(8px)",
+              whiteSpace: "nowrap",
+              transition: "all 0.2s",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = "rgba(167,139,250,0.15)";
+              e.currentTarget.style.borderColor = "rgba(167,139,250,0.5)";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = "rgba(10,14,26,0.85)";
+              e.currentTarget.style.borderColor = "rgba(167,139,250,0.25)";
+            }}
+          >
+            ✨ 정보 수정 제안
+          </button>
+        )}
         {/* 공유 버튼 (포커스 + 바텀시트 열렸을 때만) */}
         {focusedId && sheetState !== "collapsed" && (
           <button
@@ -723,19 +766,57 @@ export default function UniversePage() {
           backdropFilter: "blur(12px)",
           fontSize: 12, color: "rgba(200,180,255,0.9)",
           whiteSpace: "nowrap",
-          pointerEvents: "none",
+          pointerEvents: "auto",
         }}>
-          <span style={{ color: "#a78bfa" }}>🚀</span>
-          {journey.steps[journey.currentStep]?.name || ""}
-          <span style={{ opacity: 0.5 }}>→</span>
-          {journey.steps[journey.steps.length - 1]?.name || ""}
+          <span style={{ color: "#a78bfa", pointerEvents: "none" }}>🚀</span>
+          <span style={{ pointerEvents: "none" }}>
+            {journey.steps[journey.currentStep]?.name || ""}
+          </span>
+          <span style={{ opacity: 0.5, pointerEvents: "none" }}>→</span>
+          <span style={{ pointerEvents: "none" }}>
+            {journey.steps[journey.steps.length - 1]?.name || ""}
+          </span>
           <span style={{
             fontSize: 10, opacity: 0.6,
             background: "rgba(167,139,250,0.15)",
             padding: "2px 7px", borderRadius: 10,
+            pointerEvents: "none",
           }}>
             {journey.currentStep + 1} / {journey.steps.length}
           </span>
+          {/* 공유 버튼 */}
+          {journeyShareUrl && (
+            <button
+              title="이 여정 공유"
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({
+                    title: `${journey.steps[0]?.name} → ${journey.steps[journey.steps.length - 1]?.name} 우주 여정`,
+                    url: journeyShareUrl,
+                  }).catch(() => {});
+                } else {
+                  navigator.clipboard.writeText(journeyShareUrl).then(() => {
+                    setArrivedToast("🔗 여정 링크가 복사되었습니다!");
+                    setTimeout(() => setArrivedToast(null), 2500);
+                  });
+                }
+              }}
+              style={{
+                background: "rgba(167,139,250,0.18)",
+                border: "1px solid rgba(167,139,250,0.4)",
+                borderRadius: 8,
+                color: "#c084fc",
+                padding: "3px 8px",
+                fontSize: 13,
+                cursor: "pointer",
+                display: "flex", alignItems: "center",
+                lineHeight: 1,
+                flexShrink: 0,
+              }}
+            >
+              🔗
+            </button>
+          )}
         </div>
       )}
 
@@ -815,35 +896,6 @@ export default function UniversePage() {
           {/* 1촌 워프 포탈 목록 */}
           {sheetState === "expanded" && focusedId && (
             <>
-              {/* Phase 4: 에디트 제안 버튼 (바텀시트 헤더 우측) */}
-              <div style={{
-                display: "flex", justifyContent: "flex-end",
-                padding: "0 16px", marginTop: 0,
-              }}>
-                <button
-                  id="edit-suggest-btn"
-                  onClick={() => setEditModalOpen(true)}
-                  style={{
-                    fontSize: 11, fontWeight: 600,
-                    color: "rgba(167,139,250,0.7)",
-                    background: "rgba(167,139,250,0.08)",
-                    border: "1px solid rgba(167,139,250,0.2)",
-                    borderRadius: 14, padding: "5px 12px",
-                    cursor: "pointer", transition: "all 0.2s",
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = "rgba(167,139,250,0.15)";
-                    e.currentTarget.style.color = "#c084fc";
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = "rgba(167,139,250,0.08)";
-                    e.currentTarget.style.color = "rgba(167,139,250,0.7)";
-                  }}
-                >
-                  ✨️ 정보 수정 제안
-                </button>
-              </div>
-
               {hop1List.length === 0 ? (
 
                 <div style={{ padding: "20px 16px", color: "rgba(200,180,255,0.4)", fontSize: 13, textAlign: "center" }}>

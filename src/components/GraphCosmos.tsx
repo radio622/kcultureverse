@@ -591,7 +591,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
 
     // 이름 라벨
     if (isFocused || isHop1 || isMajor) {
-      const label = node.nameKo || node.name;
+      const rawLabel = node.nameKo || node.name;
+      // Various Artists 등 오염된 라벨 필터 (MusicBrainz 컴필레이션 오염 방지)
+      const label = rawLabel.toLowerCase().startsWith("various") ? node.name : rawLabel;
       ctx.font = `${isFocused ? 700 : 600} ${isFocused ? 13 : 10}px Inter, sans-serif`;
       const tw = ctx.measureText(label).width;
       // 텍스트 배경
@@ -624,9 +626,12 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
     // Focus Mode: hop1 엣지만 색상 표시, 나머지는 거의 안 보이게
     if (focusedId && graphData.nodes[focusedId]) {
       if (!focusEdgeKeys.has(key)) {
-        return `rgba(167,139,250,${Math.max(0.01, currentScale * 0.015).toFixed(3)})`;
+        // 비포커스 엣지: 줌아웃에서도 약하게 보이도록 최솟값 0.04 보장
+        return `rgba(167,139,250,${Math.max(0.04, currentScale * 0.03).toFixed(3)})`;
       }
-      return EDGE_COLORS[link.relation] ?? "rgba(255,255,255,0.4)";
+      // hop1 포커스 엣지: 원래 색상 + 항상 충분히 보이게
+      const edgeColor = EDGE_COLORS[link.relation] ?? "rgba(255,255,255,0.7)";
+      return edgeColor;
     }
 
     // 기본 모드: weight >= 0.5인 강한 엣지는 줌아웃에서도 최소 가시성 보장
@@ -655,8 +660,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
     if (highlightEdges.has(key)) return 3 * scaleMultiplier;
     
     if (focusedId && graphData.nodes[focusedId]) {
-      if (!focusEdgeKeys.has(key)) return 0.05 * scaleMultiplier;
-      return (EDGE_WIDTH[link.relation] ?? 0.5) * 1.5 * scaleMultiplier; // 강조 시 선 굵기 1.5배 + 줌 배율
+      if (!focusEdgeKeys.has(key)) return 0.08; // 비포커스 엣지: 고정 최솟값
+      // hop1 포커스 엣지: 고정 2px (줌 관계없이 항상 뚜렷하게)
+      return Math.max(1.0, (EDGE_WIDTH[link.relation] ?? 0.5) * 2);
     }
     
     // 기본 모드: weight >= 0.5인 강한 엣지는 줌아웃에서도 최소 두께 보장
@@ -694,16 +700,22 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
   }, [focusedId, hop1]);
 
   // ── d3 force 데이터 (좌표 고정, physics OFF) ─────────────
-  const forceData = useMemo(() => ({
-    nodes: Object.values(graphData.nodes).map((n) => ({ ...n })),
-    links: graphData.edges.map((e) => ({
-      source: e.source,
-      target: e.target,
-      weight: e.weight,
-      relation: e.relation,
-      label: e.label,
-    })),
-  }), [graphData]);
+  const forceData = useMemo(() => {
+    // 양 끝 노드가 실제로 존재하지 않는 엣지 필터링 (node not found 런타임 에러 방지)
+    const validLinks = graphData.edges
+      .filter((e) => graphData.nodes[e.source] && graphData.nodes[e.target])
+      .map((e) => ({
+        source: e.source,
+        target: e.target,
+        weight: e.weight,
+        relation: e.relation,
+        label: e.label,
+      }));
+    return {
+      nodes: Object.values(graphData.nodes).map((n) => ({ ...n })),
+      links: validLinks,
+    };
+  }, [graphData]);
 
   // ── Star Bloom: 애니메이션 중이면 리렌더 강제 ─────────────
   useEffect(() => {

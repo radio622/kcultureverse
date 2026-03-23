@@ -108,21 +108,41 @@ async function mbFetch<T>(path: string, delayMs = 1100): Promise<T | null> {
  * 아티스트 이름으로 MusicBrainz MBID 검색
  */
 export async function searchArtistMBID(artistName: string): Promise<string | null> {
+  // "Various Artists" 오염 방지: 검색어 자체가 오염된 경우 차단
+  const BLOCKED_NAMES = ["various artists", "various", "va", "unknown artist", "unknown"];
+  if (BLOCKED_NAMES.includes(artistName.trim().toLowerCase())) {
+    console.warn(`[MusicBrainz] 차단된 아티스트명: "${artistName}" — 검색 건너뜀`);
+    return null;
+  }
+
   const q = encodeURIComponent(artistName);
   const data = await mbFetch<{
     artists: { id: string; name: string; disambiguation?: string; score: number }[];
-  }>(`/artist/?query=artist:${q}&fmt=json&limit=3`);
+  }>(`/artist/?query=artist:${q}&fmt=json&limit=5`);
 
   if (!data?.artists?.length) return null;
 
+  // "Various Artists" 결과 자체를 필터링 (컴필레이션 앨범 오염 방지)
+  const filtered = data.artists.filter((a) => {
+    const nameLower = a.name.toLowerCase();
+    if (BLOCKED_NAMES.includes(nameLower)) return false;
+    if (nameLower.startsWith("various")) return false;
+    return true;
+  });
+
+  if (!filtered.length) {
+    console.warn(`[MusicBrainz] "${artistName}" 검색 결과가 모두 Various Artists 등으로 필터됨`);
+    return null;
+  }
+
   // 점수 90+ 이면서 Korean/K-Pop 표기 있으면 우선
-  const korean = data.artists.find(
+  const korean = filtered.find(
     (a) =>
       a.score >= 90 &&
       (a.disambiguation?.toLowerCase().includes("korean") ||
         a.disambiguation?.toLowerCase().includes("k-pop"))
   );
-  return korean?.id ?? data.artists[0].id;
+  return korean?.id ?? filtered[0].id;
 }
 
 /**
