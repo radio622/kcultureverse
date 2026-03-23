@@ -15,6 +15,9 @@
 - **실시간 반영**: 검증 완료 즉시 `frompangyo.vercel.app` 라이브 사이트에 반영
 - 상세 설계: [`docs/DUAL_HARVESTER_BOT.md`](docs/DUAL_HARVESTER_BOT.md)
 
+⚠️ **현재 일시 중단 상태 (Paused)**
+> Spotify API Token 갱신 누락(Client Credentials 401 에러)으로 인하여 임시 중지(kill) 처리되었습니다. 44번 아티스트까지 수집이 완료되었고 다음번 기동 시부터 로직 보완 후 이어하기(`scripts/progress.json`) 기능을 적용할 예정입니다. 함께 '수동 미리듣기 30초 후 연속재생 넘어가기' 등 아직 남아있는 UI/기능을 다음 세션에서 진행합니다. (상세 내역은 `docs/QA_ISSUES_20260323.md` 참조)
+
 ---
 
 ## 🚀 V7.0.4 최신 업데이트 하이라이트
