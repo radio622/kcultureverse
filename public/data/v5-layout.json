@@ -108,7 +108,7 @@
       "nameKo": "",
       "x": 790,
       "y": -1094,
-      "degree": 23,
+      "degree": 22,
       "accent": "#a78bfa"
     },
     {
@@ -129,15 +129,7 @@
       "degree": 12,
       "accent": "#a78bfa"
     },
-    {
-      "id": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "name": "Various Artists",
-      "nameKo": "",
-      "x": 590,
-      "y": -724,
-      "degree": 12,
-      "accent": "#a78bfa"
-    },
+    null,
     {
       "id": "f4afb4d4-0fd9-4875-9381-fd7e24793dc5",
       "name": "Vacation",
@@ -324,7 +316,7 @@
       "nameKo": "못",
       "x": 263,
       "y": -304,
-      "degree": 25,
+      "degree": 24,
       "accent": "#a78bfa"
     },
     {
@@ -558,7 +550,7 @@
       "nameKo": "3호선 버터플라이",
       "x": -784,
       "y": 853,
-      "degree": 8,
+      "degree": 9,
       "accent": "#a78bfa"
     },
     {
@@ -873,7 +865,7 @@
       "nameKo": "로맨틱펀치",
       "x": -1507,
       "y": 87,
-      "degree": 9,
+      "degree": 8,
       "accent": null
     },
     {
@@ -1053,7 +1045,7 @@
       "nameKo": "꿈에 카메라를 가져올걸",
       "x": -303,
       "y": 579,
-      "degree": 11,
+      "degree": 10,
       "accent": null
     },
     {
@@ -2358,7 +2350,7 @@
       "nameKo": "철이와 미애",
       "x": -1278,
       "y": -380,
-      "degree": 3,
+      "degree": 4,
       "accent": null
     },
     {
@@ -2403,7 +2395,7 @@
       "nameKo": "김수희",
       "x": -1457,
       "y": -7,
-      "degree": 6,
+      "degree": 7,
       "accent": null
     },
     {
@@ -3105,7 +3097,7 @@
       "nameKo": "사랑과 평화",
       "x": -324,
       "y": 203,
-      "degree": 2,
+      "degree": 3,
       "accent": null
     },
     {
@@ -3888,7 +3880,7 @@
       "nameKo": "송골매",
       "x": -1407,
       "y": 235,
-      "degree": 4,
+      "degree": 5,
       "accent": null
     },
     {
@@ -4113,7 +4105,7 @@
       "nameKo": "소찬휘",
       "x": -232,
       "y": 121,
-      "degree": 3,
+      "degree": 4,
       "accent": null
     },
     {
@@ -5472,7 +5464,7 @@
       "nameKo": "적재",
       "x": -48,
       "y": 2084,
-      "degree": 2,
+      "degree": 3,
       "accent": null
     },
     {
@@ -6489,7 +6481,7 @@
       "nameKo": "정석원",
       "x": 1072,
       "y": -660,
-      "degree": 11,
+      "degree": 12,
       "accent": "#a78bfa"
     },
     {
@@ -6813,7 +6805,7 @@
       "nameKo": "",
       "x": 239,
       "y": -576,
-      "degree": 3,
+      "degree": 2,
       "accent": null
     },
     {
@@ -6930,7 +6922,7 @@
       "nameKo": "",
       "x": 972,
       "y": -1157,
-      "degree": 3,
+      "degree": 2,
       "accent": null
     },
     {
@@ -7137,7 +7129,7 @@
       "nameKo": "황정미",
       "x": 1244,
       "y": -182,
-      "degree": 3,
+      "degree": 2,
       "accent": null
     },
     {
@@ -7236,7 +7228,7 @@
       "nameKo": "",
       "x": 343,
       "y": -1065,
-      "degree": 3,
+      "degree": 2,
       "accent": null
     },
     {
@@ -7659,7 +7651,7 @@
       "nameKo": "",
       "x": 1131,
       "y": -577,
-      "degree": 31,
+      "degree": 30,
       "accent": "#a78bfa"
     },
     {
@@ -7812,7 +7804,7 @@
       "nameKo": "조정치",
       "x": 1134,
       "y": -255,
-      "degree": 15,
+      "degree": 16,
       "accent": "#a78bfa"
     },
     {
@@ -7911,7 +7903,7 @@
       "nameKo": "",
       "x": 1411,
       "y": -242,
-      "degree": 6,
+      "degree": 5,
       "accent": null
     },
     {
@@ -8244,7 +8236,7 @@
       "nameKo": "",
       "x": 1069,
       "y": -325,
-      "degree": 18,
+      "degree": 17,
       "accent": "#a78bfa"
     },
     {
@@ -8388,7 +8380,7 @@
       "nameKo": "",
       "x": 926,
       "y": -1506,
-      "degree": 3,
+      "degree": 2,
       "accent": null
     },
     {
@@ -8397,7 +8389,7 @@
       "nameKo": "",
       "x": 680,
       "y": -748,
-      "degree": 20,
+      "degree": 19,
       "accent": "#a78bfa"
     },
     {
@@ -8424,7 +8416,7 @@
       "nameKo": "서상준",
       "x": 1170,
       "y": 146,
-      "degree": 3,
+      "degree": 4,
       "accent": null
     },
     {
@@ -10089,7 +10081,7 @@
       "nameKo": "",
       "x": 512,
       "y": -975,
-      "degree": 9,
+      "degree": 8,
       "accent": "#a78bfa"
     },
     {
@@ -12432,6 +12424,18 @@
       "y": -4876.835305241265,
       "degree": 85,
       "accent": "#60a5fa"
+    },
+    {
+      "id": "5rHUhS9Ya0S63WI9LFmCSx",
+      "name": "Baek A",
+      "nameKo": "백아",
+      "x": 72,
+      "y": 2004,
+      "degree": 1,
+      "accent": null,
+      "image": "https://i.scdn.co/image/ab6761610000e5eb660a919b0830335ce7374a75",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ee/69/14/ee6914e5-a16a-a744-0010-7aaac7640f26/mzaf_3029644983391590294.plus.aac.p.m4a",
+      "previewTrackName": "조금씩, 천천히, 너에게"
     }
   ]
 }

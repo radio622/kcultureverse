@@ -1,7 +1,7 @@
 {
   "version": "6.1",
-  "builtAt": "2026-03-22T05:36:10.686Z",
-  "edgeCount": 8430,
+  "builtAt": "2026-03-23T05:47:46.257Z",
+  "edgeCount": 8419,
   "edges": [
     {
       "source": "0d79fe8e-ba27-4859-bb8c-2f255f346853",
@@ -1059,27 +1059,6 @@
       "weight": 0.4,
       "relation": "PRODUCER",
       "label": "프로듀서"
-    },
-    {
-      "source": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "target": "c2531c38-56c9-4ac1-9d55-173b01893a3c",
-      "weight": 0.4,
-      "relation": "WRITER",
-      "label": "작곡/작사"
-    },
-    {
-      "source": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "target": "6f24a757-c6ac-4f4f-adc7-b5aaf4931403",
-      "weight": 0.2,
-      "relation": "FEATURED",
-      "label": "피처링"
-    },
-    {
-      "source": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "target": "1b3a1e49-2494-441c-9818-3fbbe73d09b4",
-      "weight": 0.2,
-      "relation": "WRITER",
-      "label": "작곡/작사"
     },
     {
       "source": "e156615d-3ddd-4491-9584-4b9d971472c4",
@@ -6941,13 +6920,6 @@
       "label": "장르 유사성"
     },
     {
-      "source": "bcad7c09-94b1-4501-a429-73a44d10e6cc",
-      "target": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "weight": 0.4,
-      "relation": "INDIRECT",
-      "label": "동시대 음악적 파형 공유"
-    },
-    {
       "source": "0f70c0e5-612f-4d5f-8eb6-3ba7e435e8b0",
       "target": "5925a362-4ccd-44a4-b282-30ed44847769",
       "weight": 0.4,
@@ -7445,13 +7417,6 @@
       "label": "동시대 음악적 파형 공유"
     },
     {
-      "source": "b5a58d28-1102-4c6b-8fc3-8861cf8880fe",
-      "target": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "weight": 0.4,
-      "relation": "INDIRECT",
-      "label": "동시대 음악적 파형 공유"
-    },
-    {
       "source": "d4e8e13c-fb1e-4be5-aeaf-fc4d30a17cf2",
       "target": "1408021e-97c0-40cd-98dc-75cdc06cbd92",
       "weight": 0.4,
@@ -7664,13 +7629,6 @@
     {
       "source": "89c9774c-cfa1-4b05-837b-c5f58a2640d7",
       "target": "100d14c3-1dae-438d-ae11-7e609f7c3216",
-      "weight": 0.4,
-      "relation": "INDIRECT",
-      "label": "동시대 음악적 파형 공유"
-    },
-    {
-      "source": "89c9774c-cfa1-4b05-837b-c5f58a2640d7",
-      "target": "89ad4ac3-39f7-470e-963a-56509c546377",
       "weight": 0.4,
       "relation": "INDIRECT",
       "label": "동시대 음악적 파형 공유"
@@ -18896,14 +18854,6 @@
       "via": "Ylva Dimberg"
     },
     {
-      "source": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "target": "77597bcc-690a-4c19-ae5f-1372d0309659",
-      "weight": 0.3,
-      "relation": "SHARED_WRITER",
-      "label": "공유 작사/작곡가: James Lord Pierpont",
-      "via": "James Lord Pierpont"
-    },
-    {
       "source": "f4afb4d4-0fd9-4875-9381-fd7e24793dc5",
       "target": "77597bcc-690a-4c19-ae5f-1372d0309659",
       "weight": 0.3,
@@ -19422,14 +19372,6 @@
       "relation": "INDIRECT",
       "label": "협업: Jimmy Carroll",
       "via": "Jimmy Carroll"
-    },
-    {
-      "source": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "target": "49204a7a-ed85-407a-828f-6fd46f1d8126",
-      "weight": 0.3,
-      "relation": "INDIRECT",
-      "label": "협업: Katherine Hilgenberg",
-      "via": "Katherine Hilgenberg"
     },
     {
       "source": "c36f5c98-b7c2-4514-a719-486e78f1449c",
@@ -20377,14 +20319,6 @@
     },
     {
       "source": "b8a7c51f-362c-4dcb-a259-bc6e0095f0a6",
-      "target": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "weight": 0.3,
-      "relation": "INDIRECT",
-      "label": "협업: Anna Leddra Chapman",
-      "via": "Anna Leddra Chapman"
-    },
-    {
-      "source": "b8a7c51f-362c-4dcb-a259-bc6e0095f0a6",
       "target": "indie100_불나방스타쏘세지클럽",
       "weight": 0.3,
       "relation": "SHARED_WRITER",
@@ -20446,14 +20380,6 @@
       "relation": "INDIRECT",
       "label": "협업: Conor Blake",
       "via": "Conor Blake"
-    },
-    {
-      "source": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "target": "28c5fb4a-3675-49c1-9cd8-50e9eadf4397",
-      "weight": 0.3,
-      "relation": "INDIRECT",
-      "label": "협업: Rob Knox",
-      "via": "Rob Knox"
     },
     {
       "source": "7f233cda-eacb-4235-b681-5f7be343a1a2",
@@ -20958,14 +20884,6 @@
       "relation": "INDIRECT",
       "label": "협업: Jared Cotter",
       "via": "Jared Cotter"
-    },
-    {
-      "source": "bb396de9-73b8-4c48-921d-34b3e84d9d3c",
-      "target": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "weight": 0.3,
-      "relation": "INDIRECT",
-      "label": "협업: Chris Brown",
-      "via": "Chris Brown"
     },
     {
       "source": "6b5f4f28-6359-48ae-9eee-4cf020ea3062",
@@ -21542,14 +21460,6 @@
       "relation": "INDIRECT",
       "label": "협업: Andrew Keener",
       "via": "Andrew Keener"
-    },
-    {
-      "source": "35800230-2cb2-4ab1-b6d2-929af85a3d81",
-      "target": "89ad4ac3-39f7-470e-963a-56509c546377",
-      "weight": 0.3,
-      "relation": "INDIRECT",
-      "label": "협업: Henry Blossom",
-      "via": "Henry Blossom"
     },
     {
       "source": "071409d0-ce21-4f03-a111-aec4dbc1590d",
@@ -54413,6 +54323,13 @@
       "target": "94c80a22-0682-4ea8-a04c-9294a36ab474",
       "weight": 0.05,
       "relation": "GENRE_OVERLAP"
+    },
+    {
+      "source": "5rHUhS9Ya0S63WI9LFmCSx",
+      "target": "afb62c90-f551-4436-b257-37f799dd8a2d",
+      "weight": 0.85,
+      "relation": "FEATURED",
+      "label": "조금씩, 천천히, 너에게 (피처링)"
     }
   ]
 }
