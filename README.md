@@ -10,12 +10,21 @@
 
 ### Phase 1 — 치명적 버그 수정 ✅
 - **1-1 엣지 실종 복구**: `weight >= 0.5` 강관계만 줌아웃 시 유지 → 헤어볼 방지 + 맵 가독성 회복
-- **1-2 봇 401 패치**: `SpotifyTokenManager` 클래스 (만료 5분 전 자동 갱신 + 401 즉시 강제 갱신) + `progress.json` 원자적 저장. **봇 재가동 가능 상태**
+- **1-2 봇 401 패치**: `SpotifyTokenManager` 클래스 (만료 5분 전 자동 갱신 + 401 즉시 강제 갱신) + `progress.json` 원자적 저장
 - **1-3 히트박스 교정**: PC 마우스 정밀 인식 + 줌아웃 시에도 엣지 클릭 팝업 표시 유지
 
 ### Phase 2 — 청취 몰입감 + UI 폴리싱 ✅
-- **2-1 라디오식 연속 재생**: `usePlayQueue` 훅 신설 — 아티스트 포커스 시 1촌 이웃을 큐로 자동 구성. 트랙 종료 시 다음 아티스트 미리듣기 자동 재생. iOS Safari `ended` 미발화 대비 완료
-- **2-2 바텀시트 리팩토링**: `height` 애니메이션(Layout Thrashing) → `translateY` GPU 가속으로 전환. `will-change: transform` + iOS safe-area 정밀 처리. 60fps 유지
+- **2-1 라디오식 연속 재생**: `usePlayQueue` 훅 신설 — 아티스트 포커스 시 1촌 이웃을 큐로 자동 구성. 트랙 종료 시 다음 아티스트 미리듣기 자동 재생
+- **2-2 바텀시트 리팩토링**: `height` 애니메이션 → `translateY` GPU 가속 전환. 60fps 유지
+
+### Phase 3 — 바이럴 + 지형지물 확장 🔄
+- **3-1 A→B 우주 여정 자동 재생** ✅ — `useJourneyPlayer` 신설. Dijkstra 최단 경로 순회 + 미리듣기 자동 재생 + 여정 진행 바 UI + 🔗 공유 버튼. `/universe?artist=A&to=B` URL 공유 가능
+
+### 🐞 핫픽스 (2026-03-23 추가)
+- **엣지 렌더링 완전 복구**: `v5-edges.json` → 잘못된 노드 참조 엣지 자동 필터링 (`node not found` 에러 제거)
+- **아티스트 포커스 전환**: 여정/자율주행 중 수동 클릭 시 즉시 정지 후 전환. previewUrl 없는 아티스트도 API fetch 후 자동 재생
+- **Various Artists 오염 방지**: MusicBrainz 검색 결과 + 렌더링 양쪽에 차단 필터 추가
+- **UI 개선**: 정보 수정 제안 버튼 → 우측 상단 이동. 바텀시트 카드 덱 여백 축소
 
 ### 🤖 듀얼 하베스터 봇 (재가동 대기)
 - **봇 1 (The Harvester)**: Spotify API → 한글 앨범명·발매일·커버 자동 수집 (10분 간격)
