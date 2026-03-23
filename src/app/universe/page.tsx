@@ -36,7 +36,9 @@ import EditSuggestModal from "@/components/EditSuggestModal";
 import AutoWarpPanel from "@/components/AutoWarpPanel";
 import { useAudio } from "@/hooks/useAudio";
 import { useAutoWarp } from "@/hooks/useAutoWarp";
+import { usePlayQueue } from "@/hooks/usePlayQueue";
 import { useSession } from "next-auth/react";
+
 
 
 
@@ -173,9 +175,25 @@ export default function UniversePage() {
     onNodeFocus: (nodeId: string) => handleArtistSelectRef.current(nodeId),
   });
 
+  // V7.7: 연속 재생 큐
+  // /api/spotify/preview?name= 엔드포인트로 previewUrl 조회
+  const fetchPreviewByName = useCallback(async (name: string) => {
+    try {
+      const res = await fetch(`/api/spotify/preview?name=${encodeURIComponent(name)}`);
+      if (!res.ok) return null;
+      return await res.json() as { previewUrl?: string; trackName?: string };
+    } catch {
+      return null;
+    }
+  }, []);
+
+  const playQueue = usePlayQueue({
+    audioPlay: audio.play,
+    audioSetOnEnded: audio.setOnEnded,
+    fetchPreview: fetchPreviewByName,
+  });
 
 
-  // ── Task 4-1: 3분할 로딩 파이프라인 ──────────────────────────
   useEffect(() => {
     let cancelled = false;
 
@@ -345,8 +363,24 @@ export default function UniversePage() {
 
     setHop1List(neighbors);
 
-    // 오디오 프리뷰 자동 재생 (detail에서)
+    // V7.7: 연속 재생 큐 구성 — 현재 포커스 아티스트부터 시작
+    // 큐 = [현재 아티스트, ...hop1 이웃들 가중치 순]
     const detail = detailCache.current[nodeId];
+    const queueItems = [
+      {
+        artistId: nodeId,
+        artistName: node.nameKo || node.name,
+        previewUrl: detail?.previewUrl ?? undefined,
+      },
+      ...neighbors.map((n) => ({
+        artistId: n.id,
+        artistName: n.nameKo || n.name,
+        previewUrl: n.previewUrl ?? undefined,
+      })),
+    ];
+    playQueue.setQueue(queueItems, 0); // 인덱스 0 = 현재 아티스트부터 시작
+
+    // 오디오 프리뷰 자동 재생 (detail에서)
     if (detail?.previewUrl) {
       audio.play(
         detail.previewUrl,
@@ -355,7 +389,8 @@ export default function UniversePage() {
       );
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [graphData, audio]);
+  }, [graphData, audio, playQueue]);
+
 
   // Phase 7: ref 동기화
   handleArtistSelectRef.current = handleArtistSelect;
@@ -796,6 +831,8 @@ export default function UniversePage() {
                           onClick={(e) => {
                             e.preventDefault();
                             e.stopPropagation();
+                            // V7.7: 수동 클릭 시 연속 재생 큐 비활성화 (사용자 의도 우선)
+                            playQueue.disableQueue();
                             if (audio.currentArtistId === item.id) {
                               audio.togglePause();
                             } else {

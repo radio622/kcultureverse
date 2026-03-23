@@ -94,31 +94,67 @@ def load_progress():
     return {"harvested_artists": [], "verified_albums": [], "last_updated": None}
 
 def save_progress(progress):
+    """V7.7: 원자적 저장 — .tmp 설쓸 후 os.replace()로 교체
+    잘못된 시간에 중단되더라도 progress.json이 손상되지 않습니다."""
     progress["last_updated"] = datetime.now().isoformat()
-    with open(PROGRESS_FILE, 'w', encoding='utf-8') as f:
+    tmp_path = PROGRESS_FILE + '.tmp'
+    with open(tmp_path, 'w', encoding='utf-8') as f:
         json.dump(progress, f, ensure_ascii=False, indent=2)
+    os.replace(tmp_path, PROGRESS_FILE)  # 원자적 교체 (실패 없는 os 수준 연산)
+
 
 
 # ══════════════════════════════════════════════════════════════
-# 🔑 스포티파이 토큰 발급
+# 🔑 스포티파이 토큰 매니저 (V7.7: 만료 5분 전 자동 갱신)
 # ══════════════════════════════════════════════════════════════
-def get_spotify_token():
-    data = urllib.parse.urlencode({
-        "grant_type": "client_credentials",
-        "client_id": ENV.get("SPOTIFY_CLIENT_ID"),
-        "client_secret": ENV.get("SPOTIFY_CLIENT_SECRET")
-    }).encode()
-    req = urllib.request.Request(
-        "https://accounts.spotify.com/api/token",
-        data=data,
-        headers={"Content-Type": "application/x-www-form-urlencoded"}
-    )
-    try:
-        with urllib.request.urlopen(req, context=CTX) as r:
-            return json.loads(r.read().decode())['access_token']
-    except Exception as e:
-        log.error(f"❌ 스포티파이 토큰 발급 실패: {e}")
-        return None
+class SpotifyTokenManager:
+    """
+    Spotify Client Credentials 토큰을 자동 관리합니다.
+    - 만료 300초 전 선제 재발급 (get_token 호출 시 자동)
+    - 401 네트워크 에러 시 force_refresh() 호출 규약
+    """
+    def __init__(self):
+        self._token = None
+        self._expires_at = 0.0  # Unix timestamp
+
+    def get_token(self):  # -> Optional[str]
+        """유효한 토큰을 반환합니다. 만료 임박 시 자동 재발급. 실패 시 None."""
+        if time.time() >= self._expires_at - 300:
+            log.info("🔑 토큰 만료 임박 (or 미발급) → 재발급 시작...")
+            self._refresh()
+        return self._token
+
+    def force_refresh(self):
+        """401 에러 시 즉시 강제 재발급."""
+        log.warning("🔑 토큰 강제 재발급 (401 복구)...")
+        self._refresh()
+
+    def _refresh(self):
+        data = urllib.parse.urlencode({
+            "grant_type": "client_credentials",
+            "client_id": ENV.get("SPOTIFY_CLIENT_ID"),
+            "client_secret": ENV.get("SPOTIFY_CLIENT_SECRET")
+        }).encode()
+        req = urllib.request.Request(
+            "https://accounts.spotify.com/api/token",
+            data=data,
+            headers={"Content-Type": "application/x-www-form-urlencoded"}
+        )
+        try:
+            with urllib.request.urlopen(req, context=CTX) as r:
+                resp = json.loads(r.read().decode())
+                self._token = resp['access_token']
+                expires_in = resp.get('expires_in', 3600)
+                self._expires_at = time.time() + expires_in
+                log.info(f"✅ 토큰 갱신 완료 (유효 {expires_in // 60}분)")
+        except Exception as e:
+            log.error(f"❌ 스포티파이 토큰 발급 실패: {e}")
+            self._token = None
+            self._expires_at = 0.0
+
+# 전역 토큰 매니저 인스턴스 (메인 루프와 콜백 함수가 공유)
+token_manager = SpotifyTokenManager()
+
 
 
 # ══════════════════════════════════════════════════════════════
@@ -311,9 +347,20 @@ def bot_1_spotify_harvester(artist_name, token):
                 retry_after = int(e.headers.get('Retry-After', 60))
                 log.warning(f"   🚨 Rate Limit! {retry_after}초 대기...")
                 time.sleep(retry_after)
+            elif e.code == 401:
+                # V7.7: 토큰 만료 → 즉시 갱신 후 현재 페이지에서 재시도
+                log.warning("   트토큰 만료(401) → 재발급 후 재시도")
+                token_manager.force_refresh()
+                token = token_manager.get_token()
+                if not token:
+                    log.error("   ❌ 토큰 재발급 실패 → 아티스트 건너때")
+                    break
+                # Authorization 헤더 갱신 후 동일 URL 재시도 (컨티뉴)
+                continue
             else:
                 log.error(f"   ❌ HTTP {e.code}")
                 break
+
         except Exception as e:
             log.error(f"   ❌ {e}")
             break
@@ -484,7 +531,8 @@ def run_dual_harvester_loop():
 
         artists_queue = fetch_artists_ordered_by_edge(progress)
 
-        token = get_spotify_token()
+        # V7.7: 루프 시작 시 토큰 자동 발급 (이후 매 아티스트마다 get_token()으로 스마트 갱신)
+        token = token_manager.get_token()
         if not token:
             log.error("❌ 토큰 실패. 10분 후 재시도")
             time.sleep(ARTIST_INTERVAL)
@@ -492,6 +540,12 @@ def run_dual_harvester_loop():
 
         for idx, target in enumerate(artists_queue):
             log.info(f"\n🎯 [{idx+1}/{len(artists_queue)}] {target}")
+
+            # V7.7: 매 아티스트마다 토큰 유효성 확인 (만료 임박시 자동 갱신)
+            token = token_manager.get_token()
+            if not token:
+                log.error("❌ 토큰 없음 → 아티스트 건너때")
+                continue
 
             albums = bot_1_spotify_harvester(target, token)
             progress.setdefault("harvested_artists", []).append(target)

@@ -10,15 +10,18 @@ interface AudioState {
 }
 
 export function useAudio() {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const fadeRef = useRef<number>(0);
-  const progressRef = useRef<number>(0);
+  const audioRef     = useRef<HTMLAudioElement | null>(null);
+  const fadeRef      = useRef<number>(0);
+  const progressRef  = useRef<number>(0);
+  const onEndedRef   = useRef<(() => void) | null>(null);  // V7.7: 연속 재생 훅 연결용
+  const endFiredRef  = useRef(false);                      // iOS 중복 발화 방지
   const [state, setState] = useState<AudioState>({
     isPlaying: false,
     currentTrackName: null,
     currentArtistId: null,
     progress: 0,
   });
+
 
   // 볼륨 페이드 유틸
   const fadeOut = useCallback((audio: HTMLAudioElement, ms: number): Promise<void> => {
@@ -93,6 +96,8 @@ export function useAudio() {
 
     audio.src = previewUrl;
     audio.volume = 0;
+    endFiredRef.current = false;  // 새 곡 시작 시 ended 플래그 초기화
+
 
     try {
       await audio.play();
@@ -151,11 +156,22 @@ export function useAudio() {
         const p = audio.currentTime / audio.duration;
         progressRef.current = p;
         setState((prev) => ({ ...prev, progress: p }));
+        // V7.7: iOS Safari에서 ended 이벤트가 발화 안 하는 경우 대비
+        // progress ≥ 0.97 도달 시 ended와 동일하게 처리
+        if (p >= 0.97 && !endFiredRef.current) {
+          endFiredRef.current = true;
+          setState((prev) => ({ ...prev, isPlaying: false, progress: 1 }));
+          onEndedRef.current?.();
+        }
       }
     };
 
     const onEnded = () => {
-      setState((prev) => ({ ...prev, isPlaying: false, progress: 0 }));
+      if (!endFiredRef.current) {
+        endFiredRef.current = true;
+        setState((prev) => ({ ...prev, isPlaying: false, progress: 0 }));
+        onEndedRef.current?.();
+      }
     };
 
     audio.addEventListener("timeupdate", onTimeUpdate);
@@ -177,11 +193,17 @@ export function useAudio() {
     };
   }, []);
 
+  // V7.7: 외부 훅(usePlayQueue 등)이 ended 이벤트를 수신할 수 있도록 콜백 등록
+  const setOnEnded = useCallback((cb: (() => void) | null) => {
+    onEndedRef.current = cb;
+  }, []);
+
   return {
     play,
     stop,
     togglePause,
     announce,
+    setOnEnded,
     isPlaying: state.isPlaying,
     currentTrackName: state.currentTrackName,
     currentArtistId: state.currentArtistId,

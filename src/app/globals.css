@@ -139,6 +139,7 @@ body {
 }
 
 /* ── Bottom Sheet ─────────────────────────────────────────────── */
+/* V7.7: height 애니메이션 제거, translateY (GPU) 방식으로 전환     */
 .bottom-sheet {
   position: fixed;
   left: 0;
@@ -150,11 +151,13 @@ body {
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid rgba(167, 139, 250, 0.25);
   border-radius: 20px 20px 0 0;
-  transition: height var(--transition-normal);
   /* iOS safe area */
   padding-bottom: env(safe-area-inset-bottom);
   box-shadow: 0 -10px 40px rgba(0,0,0,0.5);
+  /* GPU 레이어 사전 생성 힌트 — translateY 60fps 확보 */
+  will-change: transform;
 }
+
 
 .bottom-sheet__handle {
   display: flex;

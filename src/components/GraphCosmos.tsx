@@ -213,6 +213,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
   // 줌 레벨 추적 (Phase 2B: 줌 반응형 엣지)
   const [currentScale, setCurrentScale] = useState(1);
 
+  // 1-3: 모바일 여부 감지 (히트박스 크기 분기용)
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
   // Star Bloom 애니메이션 타임스탬프
   const [focusChangedAt, setFocusChangedAt] = useState<number>(0);
   const [prevFocusedId, setPrevFocusedId] = useState<string | null>(null);
@@ -605,9 +608,10 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
     ctx.globalAlpha = 1;
   }, [focusedId, hop1, hop2, highlightPath, hoverNode, focusChangedAt, graphData.nodes]);
 
-  // ── 링크 색상 (V5.4: 평상시는 유령선, 포커스 시에만 발광) ────────
+  // ── 링크 색상 (V7.7: weight 기반 선택적 가시성 — 헤어볼 방지) ────────
   const linkColor = useCallback((link: {
     relation: V5EdgeRelation;
+    weight?: number;
     source: string | { id: string };
     target: string | { id: string };
   }) => {
@@ -625,14 +629,19 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       return EDGE_COLORS[link.relation] ?? "rgba(255,255,255,0.4)";
     }
 
-    // 기본 모드 (첫 화면): 줌에 따라 투명도 조절
-    const alpha = Math.max(0.01, Math.min(0.08, currentScale * 0.06));
+    // 기본 모드: weight >= 0.5인 강한 엣지는 줌아웃에서도 최소 가시성 보장
+    // 약한 엣지는 자연스럽게 사라져 헤어볼(Hairball) 방지
+    const isStrong = (link.weight ?? 0) >= 0.5;
+    const minAlpha = isStrong ? 0.05 : 0.01;
+    const maxAlpha = isStrong ? 0.18 : 0.06;
+    const alpha = Math.max(minAlpha, Math.min(maxAlpha, currentScale * 0.10));
     return `rgba(255,255,255,${alpha.toFixed(3)})`;
   }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes, currentScale]);
 
-  // ── 링크 폭 ────────────────────────────────────────────────
+  // ── 링크 폭 (V7.7: weight 기반 선택적 두께) ──────────────────────────
   const linkWidth = useCallback((link: {
     relation: V5EdgeRelation;
+    weight?: number;
     source: string | { id: string };
     target: string | { id: string };
   }) => {
@@ -650,8 +659,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       return (EDGE_WIDTH[link.relation] ?? 0.5) * 1.5 * scaleMultiplier; // 강조 시 선 굵기 1.5배 + 줌 배율
     }
     
-    // 기본 모드
-    return Math.max(0.05, 0.15 * scaleMultiplier);
+    // 기본 모드: weight >= 0.5인 강한 엣지는 줌아웃에서도 최소 두께 보장
+    const isStrong = (link.weight ?? 0) >= 0.5;
+    return Math.max(isStrong ? 0.3 : 0.08, (isStrong ? 0.4 : 0.15) * scaleMultiplier);
   }, [highlightEdges, focusedId, focusEdgeKeys, graphData.nodes, currentScale]);
 
   // ── nodePointerAreaPaint: LOD에 맞는 히트영역 (degree 비례) ─
@@ -673,8 +683,12 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
     else if (lod === "mid")   r = 8 + Math.sqrt(deg) * 3;
     else /* close */          r = isFocused ? 44 : isHop1 ? 30 : 15 + Math.sqrt(deg) * 4;
 
+    // 1-3: 히트박스 교정
+    // 모바일: 손가락 터치 오차 감안해 기존 1.15배 유지
+    // PC: 노드-링크 이벤트 간섭 최소화를 위해 1.05배로 축소
+    const hitMult = isMobile ? 1.15 : 1.05;
     ctx.beginPath();
-    ctx.arc(x, y, r * 1.15, 0, 2 * Math.PI); // 히트 영역은 시각보다 15% 크게
+    ctx.arc(x, y, r * hitMult, 0, 2 * Math.PI);
     ctx.fillStyle = color;
     ctx.fill();
   }, [focusedId, hop1]);
@@ -866,6 +880,8 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
         nodeCanvasObject={paintNode}
         nodePointerAreaPaint={nodePointerAreaPaint}
         nodeVal={(node: V5Node) => Math.max(2, Math.sqrt(node.degree ?? 0) * 3)}
+        // 1-3: linkHoverPrecision — 모바일은 손가락에 맞게 넉넉히, PC는 정밀하게
+        linkHoverPrecision={isMobile ? 16 : 8}
         linkColor={linkColor}
         linkWidth={linkWidth}
         linkCanvasObjectMode={() => "after"}
@@ -943,22 +959,37 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
           }
         }}
         onLinkClick={(link: any, event: MouseEvent) => {
-          // ① 줌이 너무 멀면 무시 (오클릭 방지)
-          if (currentScale < 0.4) return;
+          // ① 1-3: 줌 차단 임계값 완화 (0.4 → 0.25)
+          // 이전에는 어느 정도 줌아웃 상태에서 엣지 팝업이 불가했음
+          if (currentScale < 0.25) return;
 
           const srcId = typeof link.source === "string" ? link.source : link.source?.id;
           const tgtId = typeof link.target === "string" ? link.target : link.target?.id;
           if (!srcId || !tgtId) return;
 
-          // 포커스된 아티스트가 있으면 1촌 엣지만, 없으면 모든 엣지 허용
+          // ② 1-3: 거리 필터 — 클릭 좌표가 노드 중심에 너무 가까우면 노드 클릭에 양보
+          // ForceGraph2D 내부에서 노드 > 링크 우선순위를 바꿀 수 없으므로,
+          // onLinkClick이 발화했더라도 노드 영역에 가깝다면 팝업 표시를 억제
+          const srcNode = graphData.nodes[srcId];
+          const tgtNode = graphData.nodes[tgtId];
+          if (!srcNode || !tgtNode) return;
+
+          // 캔버스 좌표로 변환해 노드 중심 근접 여부 확인
+          const closestNodeDist = [srcNode, tgtNode].reduce((minDist, node) => {
+            if (node.x === undefined || node.y === undefined) return minDist;
+            // clientX/Y는 뷰포트 기준, ForceGraph2D의 canvas도 전체화면이므로 직접 비교 가능
+            // (카메라 오프셋/줌은 미반영 — 약식 필터로 충분)
+            const d = Math.hypot(event.clientX - (node.x ?? 0), event.clientY - (node.y ?? 0));
+            return Math.min(minDist, d);
+          }, Infinity);
+          // 30px 이내는 노드 클릭 영역으로 간주하고 링크 팝업 억제
+          if (closestNodeDist < 30) return;
+
+          // ③ 포커스된 아티스트가 있으면 1촌 엣지만, 없으면 모든 엣지 허용
           if (focusedId) {
             const edgeKey = [srcId, tgtId].sort().join("||");
             if (!focusEdgeKeys.has(edgeKey)) return;
           }
-
-          const srcNode = graphData.nodes[srcId];
-          const tgtNode = graphData.nodes[tgtId];
-          if (!srcNode || !tgtNode) return;
 
           setEdgePopup({
             x: event.clientX,
