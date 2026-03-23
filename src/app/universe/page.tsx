@@ -324,10 +324,20 @@ export default function UniversePage() {
       setTimeout(() => setArrivedToast(null), 3000);
       return;
     }
-    // 여정 시작 (playQueue 비활성화 후 journey 모드로)
-    playQueue.disableQueue();
-    journey.start(path);
-    // ?to 파라미터 제거 (중복 실행 방지)
+
+    // A를 먼저 포커스 (카메라 이동 + 바텀시트 오픈)
+    handleArtistSelectRef.current?.(fromId);
+
+    // 짧은 딜레이 후 여정 시작 (포커스 애니메이션 완료 대기)
+    setTimeout(() => {
+      playQueue.disableQueue();
+      journey.start(path);
+      // 공유 URL 복원
+      const shareUrl = `${window.location.origin}/universe?artist=${fromId}&to=${toId}`;
+      setJourneyShareUrl(shareUrl);
+    }, 800);
+
+    // ?to 파라미터 제거 (중복 실행 방지) — artist 파라미터는 유지
     const url = new URL(window.location.href);
     url.searchParams.delete("to");
     window.history.replaceState({}, "", url.toString());
@@ -791,7 +801,8 @@ export default function UniversePage() {
               onClick={() => {
                 if (navigator.share) {
                   navigator.share({
-                    title: `${journey.steps[0]?.name} → ${journey.steps[journey.steps.length - 1]?.name} 우주 여정`,
+                    title: `${journey.steps[0]?.name}${getJosa(journey.steps[0]?.name || "", "로부터", "으로부터")} ${journey.steps[journey.steps.length - 1]?.name}에게`,
+                    text: `K-Culture Universe에서 ${journey.steps[0]?.name}${getJosa(journey.steps[0]?.name || "", "로부터", "으로부터")} ${journey.steps[journey.steps.length - 1]?.name}에게 이어지는 우주 여정을 탐험해보세요.`,
                     url: journeyShareUrl,
                   }).catch(() => {});
                 } else {

@@ -1,7 +1,7 @@
 {
   "version": "6.1",
   "builtAt": "2026-03-22T05:36:10.683Z",
-  "nodeCount": 1392,
+  "nodeCount": 1396,
   "nodes": [
     {
       "id": "0d79fe8e-ba27-4859-bb8c-2f255f346853",
@@ -244,7 +244,7 @@
       "nameKo": "서태지",
       "x": 564,
       "y": -197,
-      "degree": 19,
+      "degree": 22,
       "accent": "#a78bfa"
     },
     {
@@ -289,7 +289,7 @@
       "nameKo": "이적",
       "x": 1553,
       "y": 809,
-      "degree": 3,
+      "degree": 5,
       "accent": null
     },
     {
@@ -1207,7 +1207,7 @@
       "nameKo": "서태지와 아이들",
       "x": -1061,
       "y": -327,
-      "degree": 4,
+      "degree": 7,
       "accent": null
     },
     {
@@ -2485,7 +2485,7 @@
       "nameKo": "패닉",
       "x": -1643,
       "y": -145,
-      "degree": 2,
+      "degree": 4,
       "accent": null
     },
     {
@@ -12436,6 +12436,42 @@
       "image": "https://i.scdn.co/image/ab6761610000e5eb660a919b0830335ce7374a75",
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ee/69/14/ee6914e5-a16a-a744-0010-7aaac7640f26/mzaf_3029644983391590294.plus.aac.p.m4a",
       "previewTrackName": "조금씩, 천천히, 너에게"
+    },
+    {
+      "id": "57YbQhFBBDksLzX08lqVnw",
+      "name": "Kim Jin Pyo",
+      "nameKo": "김진표",
+      "x": -1523,
+      "y": -225,
+      "degree": 2,
+      "accent": null,
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/46/83/81/468381f1-6269-ee5a-9ca8-b5690277cb8e/asset.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f9/99/7c/f9997c35-3376-0f71-f6b8-18e1db2188a5/mzaf_15117394480967463144.plus.aac.p.m4a",
+      "previewTrackName": "Tell Me"
+    },
+    {
+      "id": "0rLTwCxnFXZbMPT3d91I0q",
+      "name": "Yang Hyun-suk",
+      "nameKo": "양현석",
+      "x": -981,
+      "y": -407,
+      "degree": 3,
+      "accent": null,
+      "image": "https://i.scdn.co/image/ab6761610000e5eb19325d0a6975144ee0deb070",
+      "previewUrl": null,
+      "previewTrackName": null
+    },
+    {
+      "id": "6Op1UrYjepK3TvjsjnCeTq",
+      "name": "Lee Juno",
+      "nameKo": "이주노",
+      "x": -1141,
+      "y": -407,
+      "degree": 3,
+      "accent": null,
+      "image": "https://i.scdn.co/image/ab6761610000e5eb9bcad25fa3aaffe443184bb9",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/15/16/f2/1516f218-ac7a-5fb6-0e35-d5a54b11bde8/mzaf_17199550689428850135.plus.aac.p.m4a",
+      "previewTrackName": "출사표"
     }
   ]
 }

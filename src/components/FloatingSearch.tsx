@@ -338,7 +338,8 @@ const ALIAS_MAP: Record<string, string[]> = {
   "Untitle": ["언타이틀"],
   "V": ["김태형", "뷔"],
   "Vacation": ["가을방학"],
-  "Various Artists": ["여러 아티스트", "백아"],
+  "Baek A": ["백아"],
+  "Various Artists": ["여러 아티스트"],
   "WINNER": ["위너"],
   "Woodie Gochild": ["우디 고차일드"],
   "WOODZ": ["조승연"],
@@ -684,11 +685,18 @@ function MiniSearch({
 
   if (selected) {
     return (
-      <div style={{
-        display: "flex", alignItems: "center", gap: 8, padding: "8px 10px",
-        background: "rgba(167,139,250,0.08)", border: "1px solid rgba(167,139,250,0.25)",
-        borderRadius: 12,
-      }}>
+      <div
+        onClick={onClear}
+        title="클릭해서 다른 아티스트 검색"
+        style={{
+          display: "flex", alignItems: "center", gap: 8, padding: "8px 10px",
+          background: "rgba(167,139,250,0.08)", border: "1px solid rgba(167,139,250,0.25)",
+          borderRadius: 12, cursor: "pointer",
+          transition: "background 0.15s",
+        }}
+        onMouseEnter={e => (e.currentTarget.style.background = "rgba(167,139,250,0.14)")}
+        onMouseLeave={e => (e.currentTarget.style.background = "rgba(167,139,250,0.08)")}
+      >
         {selected.imageUrl && (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={selected.imageUrl} alt={selected.name}
@@ -698,10 +706,8 @@ function MiniSearch({
           <div style={{ fontSize: 11, color: "rgba(167,139,250,0.6)", marginBottom: 1 }}>{label}</div>
           <div style={{ fontSize: 13, fontWeight: 600, color: "#e2e8f0" }}>{selected.name}</div>
         </div>
-        <button onClick={onClear} style={{
-          background: "none", border: "none", color: "rgba(255,255,255,0.3)",
-          cursor: "pointer", fontSize: 16, lineHeight: 1, padding: "2px 4px",
-        }}>×</button>
+        {/* 수정 힌트 아이콘 */}
+        <span style={{ fontSize: 11, color: "rgba(167,139,250,0.45)", userSelect: "none" }}>✏️</span>
       </div>
     );
   }

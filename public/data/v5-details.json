@@ -1,6 +1,6 @@
 {
   "version": "6.1",
-  "builtAt": "2026-03-23T05:48:27.413Z",
+  "builtAt": "2026-03-23T05:54:01.013Z",
   "nodes": {
     "0d79fe8e-ba27-4859-bb8c-2f255f346853": {
       "image": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e0/a2/b4/e0a2b443-7969-b57a-a591-cb6172c10aa7/198704943959_Cover.jpg/600x600bb.jpg",
@@ -11239,6 +11239,38 @@
       "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/ee/69/14/ee6914e5-a16a-a744-0010-7aaac7640f26/mzaf_3029644983391590294.plus.aac.p.m4a",
       "previewTrackName": "조금씩, 천천히, 너에게",
       "spotifyUrl": "https://open.spotify.com/artist/5rHUhS9Ya0S63WI9LFmCSx"
+    },
+    "57YbQhFBBDksLzX08lqVnw": {
+      "image": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/46/83/81/468381f1-6269-ee5a-9ca8-b5690277cb8e/asset.jpg/600x600bb.jpg",
+      "genres": [
+        "K-Pop"
+      ],
+      "popularity": 40,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/f9/99/7c/f9997c35-3376-0f71-f6b8-18e1db2188a5/mzaf_15117394480967463144.plus.aac.p.m4a",
+      "previewTrackName": "Tell Me",
+      "spotifyUrl": "https://open.spotify.com/artist/57YbQhFBBDksLzX08lqVnw"
+    },
+    "0rLTwCxnFXZbMPT3d91I0q": {
+      "image": "https://i.scdn.co/image/ab6761610000e5eb19325d0a6975144ee0deb070",
+      "genres": [
+        "K-Pop",
+        "Hip-Hop"
+      ],
+      "popularity": 30,
+      "previewUrl": null,
+      "previewTrackName": null,
+      "spotifyUrl": "https://open.spotify.com/artist/0rLTwCxnFXZbMPT3d91I0q"
+    },
+    "6Op1UrYjepK3TvjsjnCeTq": {
+      "image": "https://i.scdn.co/image/ab6761610000e5eb9bcad25fa3aaffe443184bb9",
+      "genres": [
+        "K-Pop",
+        "Hip-Hop"
+      ],
+      "popularity": 30,
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/15/16/f2/1516f218-ac7a-5fb6-0e35-d5a54b11bde8/mzaf_17199550689428850135.plus.aac.p.m4a",
+      "previewTrackName": "출사표",
+      "spotifyUrl": "https://open.spotify.com/artist/6Op1UrYjepK3TvjsjnCeTq"
     }
   }
 }

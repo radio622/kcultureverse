@@ -1,7 +1,7 @@
 {
   "version": "6.1",
-  "builtAt": "2026-03-23T05:47:46.257Z",
-  "edgeCount": 8419,
+  "builtAt": "2026-03-23T05:54:25.062Z",
+  "edgeCount": 8429,
   "edges": [
     {
       "source": "0d79fe8e-ba27-4859-bb8c-2f255f346853",
@@ -54330,6 +54330,76 @@
       "weight": 0.85,
       "relation": "FEATURED",
       "label": "조금씩, 천천히, 너에게 (피처링)"
+    },
+    {
+      "source": "995e7a1c-3003-4c7a-9c68-66744f6e3c9a",
+      "target": "d8491021-9eb4-4ead-be3c-e80451c19884",
+      "weight": 1,
+      "relation": "SAME_GROUP",
+      "label": "패닉 멤버: 이적"
+    },
+    {
+      "source": "995e7a1c-3003-4c7a-9c68-66744f6e3c9a",
+      "target": "57YbQhFBBDksLzX08lqVnw",
+      "weight": 1,
+      "relation": "SAME_GROUP",
+      "label": "패닉 멤버: 김진표"
+    },
+    {
+      "source": "d8491021-9eb4-4ead-be3c-e80451c19884",
+      "target": "57YbQhFBBDksLzX08lqVnw",
+      "weight": 0.95,
+      "relation": "SAME_GROUP",
+      "label": "패닉 동료: 이적 ↔ 김진표"
+    },
+    {
+      "source": "16a6ff18-4875-4851-94b6-f4f831e73fa7",
+      "target": "f1f59272-c86f-4227-80b6-dc5ad4c2c76a",
+      "weight": 1,
+      "relation": "SAME_GROUP",
+      "label": "서태지와 아이들 멤버: 서태지"
+    },
+    {
+      "source": "16a6ff18-4875-4851-94b6-f4f831e73fa7",
+      "target": "0rLTwCxnFXZbMPT3d91I0q",
+      "weight": 1,
+      "relation": "SAME_GROUP",
+      "label": "서태지와 아이들 멤버: 양현석"
+    },
+    {
+      "source": "16a6ff18-4875-4851-94b6-f4f831e73fa7",
+      "target": "6Op1UrYjepK3TvjsjnCeTq",
+      "weight": 1,
+      "relation": "SAME_GROUP",
+      "label": "서태지와 아이들 멤버: 이주노"
+    },
+    {
+      "source": "f1f59272-c86f-4227-80b6-dc5ad4c2c76a",
+      "target": "0rLTwCxnFXZbMPT3d91I0q",
+      "weight": 0.9,
+      "relation": "SAME_GROUP",
+      "label": "서태지와 아이들 동료"
+    },
+    {
+      "source": "f1f59272-c86f-4227-80b6-dc5ad4c2c76a",
+      "target": "6Op1UrYjepK3TvjsjnCeTq",
+      "weight": 0.9,
+      "relation": "SAME_GROUP",
+      "label": "서태지와 아이들 동료"
+    },
+    {
+      "source": "0rLTwCxnFXZbMPT3d91I0q",
+      "target": "6Op1UrYjepK3TvjsjnCeTq",
+      "weight": 0.9,
+      "relation": "SAME_GROUP",
+      "label": "서태지와 아이들 동료"
+    },
+    {
+      "source": "batch_64Sl7Iqk7Y",
+      "target": "3ec78ccc-6a36-4e24-aea6-b381b064a7d4",
+      "weight": 1,
+      "relation": "SAME_GROUP",
+      "label": "넥스트 멤버: 신해철 (보컬/리더)"
     }
   ]
 }
