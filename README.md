@@ -6,17 +6,22 @@
 
 ---
 
-## 🚀 V7.5 — 듀얼 하베스터 봇 가동 중 (2026-03-23)
+## ✨ V7.7 — UI 폴리싱 + 데이터 안정화 (2026-03-23)
 
-### 🤖 자동 데이터 수집·검증 파이프라인 (24시간 백그라운드)
-- **봇 1 (The Harvester)**: Spotify API에서 한글 앨범명·발매일·커버를 10분 간격으로 자동 수집
-- **봇 2 (The Curator)**: Gemini 3.1/2.5 AI가 발매일 교정 + 수록곡 크레딧 추출 + 국적 판정을 실시간 웹 검색으로 자동 검증
-- **모델 폴백 체인**: `gemini-3.1-flash-lite-preview → gemini-2.5-flash-lite` 자동 전환으로 무중단 가동
-- **실시간 반영**: 검증 완료 즉시 `frompangyo.vercel.app` 라이브 사이트에 반영
+### Phase 1 — 치명적 버그 수정 ✅
+- **1-1 엣지 실종 복구**: `weight >= 0.5` 강관계만 줌아웃 시 유지 → 헤어볼 방지 + 맵 가독성 회복
+- **1-2 봇 401 패치**: `SpotifyTokenManager` 클래스 (만료 5분 전 자동 갱신 + 401 즉시 강제 갱신) + `progress.json` 원자적 저장. **봇 재가동 가능 상태**
+- **1-3 히트박스 교정**: PC 마우스 정밀 인식 + 줌아웃 시에도 엣지 클릭 팝업 표시 유지
+
+### Phase 2 — 청취 몰입감 + UI 폴리싱 ✅
+- **2-1 라디오식 연속 재생**: `usePlayQueue` 훅 신설 — 아티스트 포커스 시 1촌 이웃을 큐로 자동 구성. 트랙 종료 시 다음 아티스트 미리듣기 자동 재생. iOS Safari `ended` 미발화 대비 완료
+- **2-2 바텀시트 리팩토링**: `height` 애니메이션(Layout Thrashing) → `translateY` GPU 가속으로 전환. `will-change: transform` + iOS safe-area 정밀 처리. 60fps 유지
+
+### 🤖 듀얼 하베스터 봇 (재가동 대기)
+- **봇 1 (The Harvester)**: Spotify API → 한글 앨범명·발매일·커버 자동 수집 (10분 간격)
+- **봇 2 (The Curator)**: Gemini AI → 발매일 교정 + 크레딧 추출 + 국적 판정
+- **V7.7 401 패치 적용 완료** — `SpotifyTokenManager`로 토큰 자동 갱신, 재가동 시 44번 아티스트부터 이어서 진행
 - 상세 설계: [`docs/DUAL_HARVESTER_BOT.md`](docs/DUAL_HARVESTER_BOT.md)
-
-⚠️ **현재 일시 중단 상태 (Paused)**
-> Spotify API Token 갱신 누락(Client Credentials 401 에러)으로 인하여 임시 중지(kill) 처리되었습니다. 44번 아티스트까지 수집이 완료되었고 다음번 기동 시부터 로직 보완 후 이어하기(`scripts/progress.json`) 기능을 적용할 예정입니다. 함께 '수동 미리듣기 30초 후 연속재생 넘어가기' 등 아직 남아있는 UI/기능을 다음 세션에서 진행합니다. (상세 내역은 `docs/QA_ISSUES_20260323.md` 참조)
 
 ---
 
@@ -99,7 +104,7 @@
 | **LOD 3단계 렌더링** | Far(점) / Mid(거대별 인플루언서 폰트 노출) / Close(상세 정보 및 렌더링) |
 | **AI 게이트키퍼** | 유저 자연어 → Gemini 파싱 → MusicBrainz+iTunes 검증 → 자동 승인/거절 |
 | **Hybrid Auth** | Auth.js v5 + JWT 서버리스 세션 + Supabase user_profiles |
-| **중앙집중형 Audio** | 싱글톤 useAudio 훅 + useAutoWarp 릴레이 미리듣기 |
+| **중앙집중형 Audio** | 싱글톤 `useAudio` + `usePlayQueue` 라디오 큐 + `useAutoWarp` 릴레이 미리듣기 |
 
 ### 데이터베이스 (Supabase PostgreSQL)
 | 테이블 | 역할 |
@@ -176,7 +181,8 @@ tail -f logs/harvester_*.log   # 실시간 모니터링
 
 | 버전 | 문서 | 상태 |
 |--------|------|------|
-| V7.5 | [`docs/V7.5_IDEA_SKETCH.md`](docs/V7.5_IDEA_SKETCH.md) | 🔄 진행 중 — 듀얼봇 가동 |
+| V7.7 | [`docs/V7.7_ROADMAP.md`](docs/V7.7_ROADMAP.md) | 🔄 Phase 3 진행 중 — Phase 1+2 완료 |
+| V7.5 | [`docs/V7.5_IDEA_SKETCH.md`](docs/V7.5_IDEA_SKETCH.md) | ✅ 봇 401 패치 완료 |
 | V7.5 봇 | [`docs/DUAL_HARVESTER_BOT.md`](docs/DUAL_HARVESTER_BOT.md) | ✅ 정식 가동 중 |
 | V7.4.1 | [`docs/QA_PATCH_PLAN_20260323.md`](docs/QA_PATCH_PLAN_20260323.md) | ✅ 핫픽스 완료 — 이미지/엣지팝업/iTunes/줌 |
 | V7.0.1 | [`docs/V7.0.1_ROADMAP.md`](docs/V7.0.1_ROADMAP.md) | ✅ 구현 완료 — 전 Phase |
