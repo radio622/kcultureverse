@@ -905,7 +905,7 @@ export default function FloatingSearch({ onSelect, onDualSelect }: Props = {}) {
 
       {/* ── 검색 패널 ─────────────────────────────────── */}
       <div style={{
-        position: "fixed", top: 0, left: 0, right: 0, zIndex: 190,
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 210,
         transform: open ? "translateY(0)" : "translateY(-110%)",
         opacity: open ? 1 : 0,
         transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease",
@@ -1080,7 +1080,7 @@ export default function FloatingSearch({ onSelect, onDualSelect }: Props = {}) {
       {/* 배경 클릭으로 닫기 */}
       {open && (
         <div onClick={() => setOpen(false)}
-          style={{ position: "fixed", inset: 0, zIndex: 180, background: "transparent" }} />
+          style={{ position: "fixed", inset: 0, zIndex: 205, background: "transparent" }} />
       )}
 
       <style>{`

@@ -578,7 +578,6 @@ export default function UniverseClient() {
     const josa = getJosa(artistName, "로부터", "으로부터");
     const shareData = {
       title: `${artistName}${josa} 🚀`,
-      text: `${artistName}의 음악 우주를 탐험하세요`,
       url: shareUrl.toString()
     };
 
@@ -616,7 +615,6 @@ export default function UniverseClient() {
         const shareTitle = `${first}${getJosa(first, "로부터", "으로부터")} ${last}에게 🚀`;
         await navigator.share({
           title: shareTitle,
-          text: `${first}에서 ${last}까지, 음악으로 이어지는 우주 여정`,
           url: journeyShareUrl,
         });
       } else {
