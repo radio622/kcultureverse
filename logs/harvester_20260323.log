@@ -1,0 +1,773 @@
+2026-03-23 01:06:49,918 [INFO] ============================================================
+2026-03-23 01:06:49,918 [INFO] 🤖 K-Culture Universe — Dual Harvester Bot
+2026-03-23 01:06:49,918 [INFO]   모델: gemini-3.1-flash-lite-preview
+2026-03-23 01:06:49,919 [INFO]   Spotify limit: 10/page
+2026-03-23 01:06:49,919 [INFO]   쿨타임: 페이지 32s / 제미나이 32s / 아티스트 10min
+2026-03-23 01:06:49,919 [INFO]   로그: /Users/ji/Documents/Jitigravity/scripts/../logs/harvester_20260323.log
+2026-03-23 01:06:49,919 [INFO]   체크포인트: /Users/ji/Documents/Jitigravity/scripts/progress.json
+2026-03-23 01:06:49,919 [INFO] ============================================================
+2026-03-23 01:06:49,919 [INFO] 📂 체크포인트 로드 (마지막: None)
+2026-03-23 01:06:49,919 [INFO] 
+============================================================
+2026-03-23 01:06:49,919 [INFO] 🔄 [사이클 1]
+2026-03-23 01:06:49,919 [INFO] ============================================================
+2026-03-23 01:06:49,919 [INFO] [스케줄러] Supabase에서 아티스트 목록 조회 중...
+2026-03-23 01:06:51,202 [INFO] [스케줄러] 남은 아티스트: 47명 (완료: 0명)
+2026-03-23 01:06:51,411 [INFO] 
+🎯 [1/47] Iron
+2026-03-23 01:06:51,411 [INFO] ▶️ [봇 1] 'Iron' 스포티파이 탐색 시작
+2026-03-23 01:06:52,083 [INFO]    1p: 10개 (누적 10)
+2026-03-23 01:06:52,085 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:07:24,352 [INFO]    2p: 10개 (누적 20)
+2026-03-23 01:07:24,352 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:07:56,622 [INFO]    3p: 10개 (누적 30)
+2026-03-23 01:07:56,622 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:08:28,867 [INFO]    4p: 10개 (누적 40)
+2026-03-23 01:08:28,868 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:09:01,170 [INFO]    5p: 8개 (누적 48)
+2026-03-23 01:09:02,517 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"2010\""}
+2026-03-23 01:09:02,727 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"2003\""}
+2026-03-23 01:09:02,990 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"2000\""}
+2026-03-23 01:09:03,037 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1998\""}
+2026-03-23 01:09:03,082 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1995\""}
+2026-03-23 01:09:03,180 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1993\""}
+2026-03-23 01:09:03,243 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1992\""}
+2026-03-23 01:09:03,363 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1988\""}
+2026-03-23 01:09:03,418 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1986\""}
+2026-03-23 01:09:03,468 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1985\""}
+2026-03-23 01:09:03,517 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1985\""}
+2026-03-23 01:09:03,580 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1984\""}
+2026-03-23 01:09:03,623 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1983\""}
+2026-03-23 01:09:03,674 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1982\""}
+2026-03-23 01:09:03,719 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1981\""}
+2026-03-23 01:09:03,775 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1980\""}
+2026-03-23 01:09:04,144 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1982\""}
+2026-03-23 01:09:04,207 [WARNING]    DB Insert 경고: 400 {"code":"22007","details":null,"hint":null,"message":"invalid input syntax for type date: \"1981\""}
+2026-03-23 01:09:04,736 [INFO] ✅ [봇 1 완료] 'Iron': 48개 수집, 30건 신규 DB 저장
+2026-03-23 01:09:04,747 [INFO]    📅 오늘 해당 없음 → 가까운 날짜부터 순차 검증
+2026-03-23 01:09:04,747 [INFO] ▶️ [봇 2] 'Iron' 딥검증 (48건)
+2026-03-23 01:09:05,168 [ERROR]    [1/48] ❌ Maiden England '88 (2013 Remaster): HTTP Error 429: Too Many Requests
+2026-03-23 01:09:05,168 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:09:37,422 [ERROR]    [2/48] ❌ En Vivo!: HTTP Error 429: Too Many Requests
+2026-03-23 01:09:37,422 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:10:09,656 [ERROR]    [3/48] ❌ Rock City: HTTP Error 429: Too Many Requests
+2026-03-23 01:10:09,657 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:10:41,907 [ERROR]    [4/48] ❌ Somewhere Back in Time (The Best of 1980 - 1989): HTTP Error 429: Too Many Requests
+2026-03-23 01:10:41,911 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:11:14,139 [ERROR]    [5/48] ❌ Ed Hunter: HTTP Error 429: Too Many Requests
+2026-03-23 01:11:14,139 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:11:46,362 [ERROR]    [6/48] ❌ Flight 666: The Original Soundtrack: HTTP Error 429: Too Many Requests
+2026-03-23 01:11:46,364 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:12:18,611 [ERROR]    [7/48] ❌ From Fear to Eternity: The Best of 1990 - 2010: HTTP Error 429: Too Many Requests
+2026-03-23 01:12:18,613 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:12:50,842 [ERROR]    [8/48] ❌ The Writing On The Wall: HTTP Error 429: Too Many Requests
+2026-03-23 01:12:50,842 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:13:23,064 [ERROR]    [9/48] ❌ Speed of Light: HTTP Error 429: Too Many Requests
+2026-03-23 01:13:23,065 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:15:10,647 [INFO] ============================================================
+2026-03-23 01:15:10,647 [INFO] 🤖 K-Culture Universe — Dual Harvester Bot
+2026-03-23 01:15:10,647 [INFO]   모델 체인: gemini-3.1-flash-lite-preview → gemini-2.5-flash-lite
+2026-03-23 01:15:10,647 [INFO]   Spotify limit: 10/page
+2026-03-23 01:15:10,647 [INFO]   쿨타임: 페이지 32s / 제미나이 32s / 아티스트 10min
+2026-03-23 01:15:10,647 [INFO]   로그: /Users/ji/Documents/Jitigravity/scripts/../logs/harvester_20260323.log
+2026-03-23 01:15:10,647 [INFO]   체크포인트: /Users/ji/Documents/Jitigravity/scripts/progress.json
+2026-03-23 01:15:10,647 [INFO] ============================================================
+2026-03-23 01:15:10,647 [INFO] 📂 체크포인트 로드 (마지막: 2026-03-23T01:13:23.064847)
+2026-03-23 01:15:10,647 [INFO] 
+============================================================
+2026-03-23 01:15:10,647 [INFO] 🔄 [사이클 1]
+2026-03-23 01:15:10,647 [INFO] ============================================================
+2026-03-23 01:15:10,647 [INFO] [스케줄러] Supabase에서 아티스트 목록 조회 중...
+2026-03-23 01:15:11,734 [INFO] [스케줄러] 남은 아티스트: 46명 (완료: 1명)
+2026-03-23 01:15:11,947 [INFO] 
+🎯 [1/46] DEAN
+2026-03-23 01:15:11,947 [INFO] ▶️ [봇 1] 'DEAN' 스포티파이 탐색 시작
+2026-03-23 01:15:12,576 [INFO]    1p: 10개 (누적 10)
+2026-03-23 01:15:12,577 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:15:44,877 [INFO]    2p: 7개 (누적 17)
+2026-03-23 01:15:44,878 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:16:17,161 [INFO]    3p: 10개 (누적 27)
+2026-03-23 01:16:17,162 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:16:49,526 [INFO]    4p: 10개 (누적 37)
+2026-03-23 01:16:49,527 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:17:21,650 [INFO]    5p: 10개 (누적 47)
+2026-03-23 01:17:21,650 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:17:54,028 [INFO]    6p: 10개 (누적 57)
+2026-03-23 01:17:54,028 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:18:26,514 [INFO]    7p: 9개 (누적 66)
+2026-03-23 01:18:30,845 [INFO] ✅ [봇 1 완료] 'DEAN': 66개 수집, 66건 신규 DB 저장
+2026-03-23 01:18:30,921 [INFO]    📅 오늘 해당 없음 → 가까운 날짜부터 순차 검증
+2026-03-23 01:18:30,921 [INFO] ▶️ [봇 2] 'DEAN' 딥검증 (66건)
+2026-03-23 01:18:31,185 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:18:31,553 [ERROR]    [1/66] ❌ u n u, Pt. 2: HTTP 400
+2026-03-23 01:18:31,553 [ERROR]    [1/66] ❌ u n u, Pt. 2: 모든 모델 실패
+2026-03-23 01:18:31,553 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:20:08,124 [INFO] ============================================================
+2026-03-23 01:20:08,124 [INFO] 🤖 K-Culture Universe — Dual Harvester Bot
+2026-03-23 01:20:08,124 [INFO]   모델 체인: gemini-3.1-flash-lite-preview → gemini-2.5-flash-lite
+2026-03-23 01:20:08,124 [INFO]   Spotify limit: 10/page
+2026-03-23 01:20:08,124 [INFO]   쿨타임: 페이지 32s / 제미나이 32s / 아티스트 10min
+2026-03-23 01:20:08,124 [INFO]   로그: /Users/ji/Documents/Jitigravity/scripts/../logs/harvester_20260323.log
+2026-03-23 01:20:08,124 [INFO]   체크포인트: /Users/ji/Documents/Jitigravity/scripts/progress.json
+2026-03-23 01:20:08,124 [INFO] ============================================================
+2026-03-23 01:20:08,124 [INFO] 📂 체크포인트 로드 (마지막: 2026-03-23T01:18:30.846334)
+2026-03-23 01:20:08,124 [INFO] 
+============================================================
+2026-03-23 01:20:08,124 [INFO] 🔄 [사이클 1]
+2026-03-23 01:20:08,124 [INFO] ============================================================
+2026-03-23 01:20:08,124 [INFO] [스케줄러] Supabase에서 아티스트 목록 조회 중...
+2026-03-23 01:20:08,547 [INFO] [스케줄러] 남은 아티스트: 45명 (완료: 2명)
+2026-03-23 01:20:08,754 [INFO] 
+🎯 [1/45] GRAY
+2026-03-23 01:20:08,755 [INFO] ▶️ [봇 1] 'GRAY' 스포티파이 탐색 시작
+2026-03-23 01:20:09,371 [INFO]    1p: 10개 (누적 10)
+2026-03-23 01:20:09,371 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:20:41,750 [INFO]    2p: 10개 (누적 20)
+2026-03-23 01:20:41,751 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:21:13,887 [INFO]    3p: 8개 (누적 28)
+2026-03-23 01:21:13,887 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:21:46,197 [INFO]    4p: 10개 (누적 38)
+2026-03-23 01:21:46,198 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:22:18,347 [INFO]    5p: 10개 (누적 48)
+2026-03-23 01:22:18,348 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:22:50,633 [INFO]    6p: 10개 (누적 58)
+2026-03-23 01:22:50,633 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:23:22,960 [INFO]    7p: 10개 (누적 68)
+2026-03-23 01:23:22,960 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:23:55,307 [INFO]    8p: 10개 (누적 78)
+2026-03-23 01:23:55,307 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:24:27,484 [INFO]    9p: 10개 (누적 88)
+2026-03-23 01:24:27,485 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:24:59,816 [INFO]    10p: 7개 (누적 95)
+2026-03-23 01:25:07,214 [INFO] ✅ [봇 1 완료] 'GRAY': 95개 수집, 95건 신규 DB 저장
+2026-03-23 01:25:07,280 [INFO]    📅 오늘(03-23) 앨범 1개 최우선!
+2026-03-23 01:25:07,280 [INFO] ▶️ [봇 2] 'GRAY' 딥검증 (95건)
+2026-03-23 01:25:07,517 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:25:07,870 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:25:09,101 [INFO]    [1/95] ✅ 투유 프로젝트 - 슈가맨 Pt.23: 날짜=→2016-03-23, 한국=🇰🇷, 트랙=1곡 [2.5]
+2026-03-23 01:25:09,102 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:25:41,198 [ERROR]    [2/95] ❌ DIGITAL LOVER (GRAY ver.) inspired by [Crush X 현대카드]: <urlopen error [Errno 54] Connection reset by peer>
+2026-03-23 01:25:41,284 [ERROR]    [2/95] ❌ DIGITAL LOVER (GRAY ver.) inspired by [Crush X 현대카드]: <urlopen error [Errno 54] Connection reset by peer>
+2026-03-23 01:25:41,284 [ERROR]    [2/95] ❌ DIGITAL LOVER (GRAY ver.) inspired by [Crush X 현대카드]: 모든 모델 실패
+2026-03-23 01:25:41,284 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:26:13,527 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:26:13,910 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:26:16,190 [INFO]    [3/95] ✅ G2's Life: 날짜=→2017-03-30, 한국=🇰🇷, 트랙=4곡 [2.5]
+2026-03-23 01:26:16,194 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:26:48,435 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:26:48,780 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:26:51,374 [INFO]    [4/95] ✅ PEOPLE: 날짜=→2020-04-02, 한국=🇰🇷, 트랙=12곡 [2.5]
+2026-03-23 01:26:51,375 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:27:23,619 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:27:23,950 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:27:27,272 [INFO]    [5/95] ✅ grayground. 01: 날짜=→2015-04-07, 한국=🇰🇷, 트랙=8곡 [2.5]
+2026-03-23 01:27:27,274 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:27:59,508 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:27:59,889 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:28:02,249 [INFO]    [6/95] ✅ 메트로놈: 날짜=→2014-04-11, 한국=🇰🇷, 트랙=5곡 [2.5]
+2026-03-23 01:28:02,249 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:28:34,469 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:28:34,881 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:28:36,320 [INFO]    [7/95] ✅ 달리 (feat. GRAY): 날짜=→2018-04-23, 한국=🇰🇷, 트랙=1곡 [2.5]
+2026-03-23 01:28:36,321 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:29:08,571 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:29:08,974 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:29:12,654 [INFO]    [8/95] ✅ Rule Breaker: 날짜=→2023-04-26, 한국=🇰🇷, 트랙=8곡 [2.5]
+2026-03-23 01:29:12,655 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:29:44,899 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:29:45,245 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:31:14,250 [ERROR]    [9/95] ❌ EL TORNADO: Unterminated string starting at: line 3556 column 16 (char 202932)
+2026-03-23 01:31:14,250 [ERROR]    [9/95] ❌ EL TORNADO: 모든 모델 실패
+2026-03-23 01:31:14,250 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:31:46,470 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:31:46,834 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:31:49,451 [INFO]    [10/95] ✅ Kick Off (Solabeam Remix Compilation): 날짜=→2023-04-26, 한국=🇰🇷, 트랙=3곡 [2.5]
+2026-03-23 01:31:49,454 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:32:21,700 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:32:22,061 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:32:25,662 [INFO]    [11/95] ✅ TMI: 날짜=→2019-04-30, 한국=🇰🇷, 트랙=5곡 [2.5]
+2026-03-23 01:32:25,662 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:32:57,901 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:32:58,313 [WARNING]    ⚠️ gemini-2.5-flash-lite google_search 비호환 → 검색 없이 재시도
+2026-03-23 01:33:00,577 [INFO]    [12/95] ✅ 뒤집어버려: 날짜=→2018-05-01, 한국=🇰🇷, 트랙=8곡 [2.5]
+2026-03-23 01:33:00,577 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:33:32,813 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:33:33,195 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:33:33,195 [ERROR]    [13/95] ❌ 깜빡 (Feat. Crush, ELO & JINBO) [Remix]: 모든 모델 실패
+2026-03-23 01:33:33,195 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:34:05,424 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:34:05,787 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:34:05,787 [ERROR]    [14/95] ❌ MODM : Original Saga: 모든 모델 실패
+2026-03-23 01:34:05,788 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:34:37,995 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:34:38,389 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:34:38,390 [ERROR]    [15/95] ❌ Connected: 모든 모델 실패
+2026-03-23 01:34:38,390 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:35:10,652 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:35:11,035 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:35:11,035 [ERROR]    [16/95] ❌ Dingo X GRAY: 모든 모델 실패
+2026-03-23 01:35:11,036 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:35:43,284 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:35:43,519 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:35:43,519 [ERROR]    [17/95] ❌ From The Sol: 모든 모델 실패
+2026-03-23 01:35:43,519 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:36:15,775 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:36:16,132 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:36:16,133 [ERROR]    [18/95] ❌ 깜빡 (Feat. Zion.T, CRUCiAL STAR): 모든 모델 실패
+2026-03-23 01:36:16,133 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:36:48,366 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:36:48,582 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:36:48,582 [ERROR]    [19/95] ❌ Naughty: 모든 모델 실패
+2026-03-23 01:36:48,582 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:37:20,804 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:37:21,187 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:37:21,187 [ERROR]    [20/95] ❌ Parachute (Feat. GRAY): 모든 모델 실패
+2026-03-23 01:37:21,187 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:37:53,418 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:37:53,820 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:37:53,821 [ERROR]    [21/95] ❌ Crush on You: 모든 모델 실패
+2026-03-23 01:37:53,821 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:38:26,059 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:38:26,462 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:38:26,463 [ERROR]    [22/95] ❌ #Ing - #Private: 모든 모델 실패
+2026-03-23 01:38:26,463 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:38:58,701 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:38:59,091 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:38:59,091 [ERROR]    [23/95] ❌ GOOD: 모든 모델 실패
+2026-03-23 01:38:59,091 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:39:31,472 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:39:31,873 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:39:31,874 [ERROR]    [24/95] ❌ Point Of View: U: 모든 모델 실패
+2026-03-23 01:39:31,874 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:40:04,099 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:40:04,310 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:40:04,311 [ERROR]    [25/95] ❌ 더 콜 (The Call) 네 번째 프로젝트: 모든 모델 실패
+2026-03-23 01:40:04,311 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:40:36,557 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:40:36,931 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:40:36,932 [ERROR]    [26/95] ❌ 쇼미더머니 5 Episode 2: 모든 모델 실패
+2026-03-23 01:40:36,932 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:41:09,167 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:41:09,541 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:41:09,542 [ERROR]    [27/95] ❌ 더 콜 (The Call) FINAL Project: 모든 모델 실패
+2026-03-23 01:41:09,542 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:41:41,777 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:41:41,988 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:41:41,988 [ERROR]    [28/95] ❌ RESPECT: 모든 모델 실패
+2026-03-23 01:41:41,988 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:42:14,215 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:42:14,584 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:42:14,585 [ERROR]    [29/95] ❌ My Last: 모든 모델 실패
+2026-03-23 01:42:14,585 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:42:46,826 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:42:47,056 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:42:47,057 [ERROR]    [30/95] ❌ All Day Every Day: 모든 모델 실패
+2026-03-23 01:42:47,057 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:43:19,320 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:43:19,709 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:43:19,710 [ERROR]    [31/95] ❌ 쇼미더머니 4 Episode 1: 모든 모델 실패
+2026-03-23 01:43:19,710 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:43:51,942 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:43:52,329 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:43:52,329 [ERROR]    [32/95] ❌ AWESOME: 모든 모델 실패
+2026-03-23 01:43:52,329 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:44:24,575 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:44:24,943 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:44:24,944 [ERROR]    [33/95] ❌ Rap: 모든 모델 실패
+2026-03-23 01:44:24,944 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:44:57,177 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:44:57,404 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:44:57,404 [ERROR]    [34/95] ❌ I Don't Love You: 모든 모델 실패
+2026-03-23 01:44:57,404 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:45:29,640 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:45:29,856 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:45:29,857 [ERROR]    [35/95] ❌ STAY THE NIGHT (취향저격 그녀 X GRAY): 모든 모델 실패
+2026-03-23 01:45:29,857 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:46:02,082 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:46:02,466 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:46:02,467 [ERROR]    [36/95] ❌ A Real Lady: 모든 모델 실패
+2026-03-23 01:46:02,467 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:46:34,687 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:46:34,919 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:46:34,919 [ERROR]    [37/95] ❌ grayground.: 모든 모델 실패
+2026-03-23 01:46:34,920 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:47:07,156 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:47:07,378 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:47:07,379 [ERROR]    [38/95] ❌ Summer Night: 모든 모델 실패
+2026-03-23 01:47:07,379 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:47:39,585 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:47:39,784 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:47:39,784 [ERROR]    [39/95] ❌ Summer Go Loco: 모든 모델 실패
+2026-03-23 01:47:39,784 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:48:11,996 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:48:12,362 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:48:12,362 [ERROR]    [40/95] ❌ SAY MY NAME: 모든 모델 실패
+2026-03-23 01:48:12,362 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:48:44,610 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:48:44,851 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:48:44,852 [ERROR]    [41/95] ❌ 8 Femmes: 모든 모델 실패
+2026-03-23 01:48:44,852 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:49:17,067 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:49:17,443 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:49:17,444 [ERROR]    [42/95] ❌ EVOLUTION: 모든 모델 실패
+2026-03-23 01:49:17,444 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:49:49,647 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:49:49,852 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:49:49,852 [ERROR]    [43/95] ❌ 시차 (We Are): 모든 모델 실패
+2026-03-23 01:49:49,852 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:50:22,053 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:50:22,421 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:50:22,421 [ERROR]    [44/95] ❌ Somewhere: 모든 모델 실패
+2026-03-23 01:50:22,421 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:50:54,656 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:50:54,857 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:50:54,857 [ERROR]    [45/95] ❌ See The Light (Feat. GRAY): 모든 모델 실패
+2026-03-23 01:50:54,857 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:51:27,088 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:51:27,316 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:51:27,317 [ERROR]    [46/95] ❌ 스트릿 맨 파이터(SMF) Original Vol.3 (계급미션): 모든 모델 실패
+2026-03-23 01:51:27,317 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:51:59,532 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:51:59,912 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:51:59,912 [ERROR]    [47/95] ❌ Mög Från Youtube: 모든 모델 실패
+2026-03-23 01:51:59,912 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:52:32,148 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:52:32,368 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:52:32,368 [ERROR]    [48/95] ❌ 감정기복 II Part. 3 : 심리치료 (Psychotherapy): 모든 모델 실패
+2026-03-23 01:52:32,369 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:53:04,622 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:53:04,860 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:53:04,860 [ERROR]    [49/95] ❌ Malibu: 모든 모델 실패
+2026-03-23 01:53:04,860 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:53:37,090 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:53:37,454 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:53:37,454 [ERROR]    [50/95] ❌ SLIDIN’: 모든 모델 실패
+2026-03-23 01:53:37,454 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:54:09,675 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:54:09,873 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:54:09,873 [ERROR]    [51/95] ❌ Band Wegun Effect: 모든 모델 실패
+2026-03-23 01:54:09,873 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:54:42,151 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:54:42,376 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:54:42,376 [ERROR]    [52/95] ❌ FIVE SENSES: 모든 모델 실패
+2026-03-23 01:54:42,377 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:55:14,589 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:55:14,814 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:55:14,814 [ERROR]    [53/95] ❌ 트웬티트웬티 Part.2: 모든 모델 실패
+2026-03-23 01:55:14,814 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:55:47,063 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:55:47,277 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:55:47,278 [ERROR]    [54/95] ❌ 사인히어(SignHere) episode2: 모든 모델 실패
+2026-03-23 01:55:47,278 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:56:19,520 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:56:19,903 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:56:19,904 [ERROR]    [55/95] ❌ 2018년 평창 동계올림픽 유치기념축제 '다함께 함성': 모든 모델 실패
+2026-03-23 01:56:19,904 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:56:52,113 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:56:52,486 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:56:52,487 [ERROR]    [56/95] ❌ 발레리나 (Music from The Netflix Film): 모든 모델 실패
+2026-03-23 01:56:52,487 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:57:24,692 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:57:25,063 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:57:25,064 [ERROR]    [57/95] ❌ 맛있는 거 옆에: 모든 모델 실패
+2026-03-23 01:57:25,064 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:57:57,274 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:57:57,497 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:57:57,497 [ERROR]    [58/95] ❌ 기억해: 모든 모델 실패
+2026-03-23 01:57:57,497 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:58:29,727 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:58:29,950 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:58:29,950 [ERROR]    [59/95] ❌ Run: 모든 모델 실패
+2026-03-23 01:58:29,950 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:59:02,165 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:59:02,532 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:59:02,533 [ERROR]    [60/95] ❌ Call Me Gray: 모든 모델 실패
+2026-03-23 01:59:02,533 [INFO]    💤 32초 쿨타임...
+2026-03-23 01:59:34,764 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:59:35,126 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 01:59:35,126 [ERROR]    [61/95] ❌ 쇼미더머니 777 Episode 4: 모든 모델 실패
+2026-03-23 01:59:35,126 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:00:07,358 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:00:07,742 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:00:07,742 [ERROR]    [62/95] ❌ SLIDIN' (2Spade Remix): 모든 모델 실패
+2026-03-23 02:00:07,742 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:00:39,957 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:00:40,349 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:00:40,350 [ERROR]    [63/95] ❌ Departure: 모든 모델 실패
+2026-03-23 02:00:40,350 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:01:12,604 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:01:12,988 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:01:12,989 [ERROR]    [64/95] ❌ 사인히어(SignHere) episode6: 모든 모델 실패
+2026-03-23 02:01:12,989 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:01:45,222 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:01:45,446 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:01:45,447 [ERROR]    [65/95] ❌ ODD: 모든 모델 실패
+2026-03-23 02:01:45,447 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:02:17,776 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:02:18,126 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:02:18,126 [ERROR]    [66/95] ❌ Ugly Soul: 모든 모델 실패
+2026-03-23 02:02:18,126 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:02:50,349 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:02:50,550 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:02:50,550 [ERROR]    [67/95] ❌ Flora: 모든 모델 실패
+2026-03-23 02:02:50,550 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:03:22,788 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:03:23,162 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:03:23,162 [ERROR]    [68/95] ❌ Song for you project Vol.3 : GET #MYWAY: 모든 모델 실패
+2026-03-23 02:03:23,162 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:03:55,386 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:03:55,760 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:03:55,761 [ERROR]    [69/95] ❌ 쇼미더머니 10 Episode 3: 모든 모델 실패
+2026-03-23 02:03:55,761 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:04:28,008 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:04:28,389 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:04:28,390 [ERROR]    [70/95] ❌ Goodbye My Twenties: 모든 모델 실패
+2026-03-23 02:04:28,390 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:05:00,605 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:05:00,825 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:05:00,825 [ERROR]    [71/95] ❌ Be Ready: 모든 모델 실패
+2026-03-23 02:05:00,825 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:05:33,040 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:05:33,271 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:05:33,272 [ERROR]    [72/95] ❌ Off The Grid: 모든 모델 실패
+2026-03-23 02:05:33,272 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:06:05,500 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:06:05,722 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:06:05,723 [ERROR]    [73/95] ❌ LOSE CONTROL (Feat. GRAY): 모든 모델 실패
+2026-03-23 02:06:05,723 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:06:37,935 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:06:38,189 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:06:38,189 [ERROR]    [74/95] ❌ Late Night: 모든 모델 실패
+2026-03-23 02:06:38,189 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:07:10,406 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:07:10,788 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:07:10,788 [ERROR]    [75/95] ❌ LOCOMOTIVE: 모든 모델 실패
+2026-03-23 02:07:10,788 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:07:43,027 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:07:43,402 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:07:43,402 [ERROR]    [76/95] ❌ Untouchable: 모든 모델 실패
+2026-03-23 02:07:43,402 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:08:15,640 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:08:16,001 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:08:16,002 [ERROR]    [77/95] ❌ 119 REMIX: 모든 모델 실패
+2026-03-23 02:08:16,002 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:08:48,227 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:08:48,438 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:08:48,438 [ERROR]    [78/95] ❌ Take Me There: 모든 모델 실패
+2026-03-23 02:08:48,438 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:09:20,656 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:09:21,022 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:09:21,022 [ERROR]    [79/95] ❌ 쇼미더머니 9 Final: 모든 모델 실패
+2026-03-23 02:09:21,022 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:09:53,435 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:09:53,810 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:09:53,811 [ERROR]    [80/95] ❌ Nom: 모든 모델 실패
+2026-03-23 02:09:53,811 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:10:26,042 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:10:26,290 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:10:26,290 [ERROR]    [81/95] ❌ SNAKES IN THE GRASS: 모든 모델 실패
+2026-03-23 02:10:26,290 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:10:58,519 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:10:58,905 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:10:58,906 [ERROR]    [82/95] ❌ G2's Life, Pt. 1: 모든 모델 실패
+2026-03-23 02:10:58,906 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:11:31,147 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:11:31,409 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:11:31,409 [ERROR]    [83/95] ❌ Sotaque Carregado Outernational: 모든 모델 실패
+2026-03-23 02:11:31,409 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:12:03,622 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:12:03,987 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:12:03,988 [ERROR]    [84/95] ❌ 이제는 떳떳하다: 모든 모델 실패
+2026-03-23 02:12:03,988 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:12:36,368 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:12:36,598 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:12:36,599 [ERROR]    [85/95] ❌ POW (Feat. GRAY): 모든 모델 실패
+2026-03-23 02:12:36,599 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:13:08,864 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:13:09,274 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:13:09,274 [ERROR]    [86/95] ❌ 슬기로운 감빵생활 (Original Television Soundtrack): 모든 모델 실패
+2026-03-23 02:13:09,274 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:13:41,503 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:13:41,740 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:13:41,741 [ERROR]    [87/95] ❌ 프로젝트 Y (Original Motion Picture Soundtrack): 모든 모델 실패
+2026-03-23 02:13:41,741 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:14:13,981 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:14:14,192 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:14:14,192 [ERROR]    [88/95] ❌ How To Love (feat. GRAY): 모든 모델 실패
+2026-03-23 02:14:14,192 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:14:46,454 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:14:46,696 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:14:46,696 [ERROR]    [89/95] ❌ Alexandrite: 모든 모델 실패
+2026-03-23 02:14:46,696 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:15:18,952 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:15:19,344 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:15:19,344 [ERROR]    [90/95] ❌ Swings #1 Mixtape Vol.II: 모든 모델 실패
+2026-03-23 02:15:19,344 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:15:51,619 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:15:52,033 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:15:52,033 [ERROR]    [91/95] ❌ BUZZIN (Feat. Coogie, GRAY): 모든 모델 실패
+2026-03-23 02:15:52,033 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:16:24,249 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:16:24,474 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:16:24,474 [ERROR]    [92/95] ❌ Island Dreaming: 모든 모델 실패
+2026-03-23 02:16:24,474 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:16:56,706 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:16:56,931 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:16:56,932 [ERROR]    [93/95] ❌ Action!: 모든 모델 실패
+2026-03-23 02:16:56,932 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:17:29,126 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:17:29,327 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:17:29,327 [ERROR]    [94/95] ❌ 감아: 모든 모델 실패
+2026-03-23 02:17:29,327 [INFO]    💤 32초 쿨타임...
+2026-03-23 02:18:01,557 [WARNING]    ⚠️ gemini-3.1-flash-lite-preview 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:18:01,931 [WARNING]    ⚠️ gemini-2.5-flash-lite 쿼타 초과 → 다음 모델로 전환
+2026-03-23 02:18:01,931 [ERROR]    [95/95] ❌ ZOORECA: 모든 모델 실패
+2026-03-23 02:18:01,931 [INFO] ✅ [봇 2 완료] 'GRAY' 95건 완료!
+2026-03-23 02:18:01,931 [INFO] 
+⏳ 10분 대기...
+2026-03-23 02:28:01,935 [INFO] 
+🎯 [2/45] AREA FUMATORI
+2026-03-23 02:28:01,939 [INFO] ▶️ [봇 1] 'AREA FUMATORI' 스포티파이 탐색 시작
+2026-03-23 02:28:02,000 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 02:28:02,005 [INFO] 
+⏳ 10분 대기...
+2026-03-23 02:38:02,014 [INFO] 
+🎯 [3/45] JUNE
+2026-03-23 02:38:02,017 [INFO] ▶️ [봇 1] 'JUNE' 스포티파이 탐색 시작
+2026-03-23 02:38:02,080 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 02:38:02,080 [INFO] 
+⏳ 10분 대기...
+2026-03-23 02:48:02,091 [INFO] 
+🎯 [4/45] Crush
+2026-03-23 02:48:02,094 [INFO] ▶️ [봇 1] 'Crush' 스포티파이 탐색 시작
+2026-03-23 02:48:02,156 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 02:48:02,157 [INFO] 
+⏳ 10분 대기...
+2026-03-23 02:58:02,166 [INFO] 
+🎯 [5/45] ITZY
+2026-03-23 02:58:02,170 [INFO] ▶️ [봇 1] 'ITZY' 스포티파이 탐색 시작
+2026-03-23 02:58:02,374 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 02:58:02,375 [INFO] 
+⏳ 10분 대기...
+2026-03-23 03:08:02,382 [INFO] 
+🎯 [6/45] DAY6
+2026-03-23 03:08:02,385 [INFO] ▶️ [봇 1] 'DAY6' 스포티파이 탐색 시작
+2026-03-23 03:08:02,570 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 03:08:02,571 [INFO] 
+⏳ 10분 대기...
+2026-03-23 03:18:02,575 [INFO] 
+🎯 [7/45] iKON
+2026-03-23 03:18:02,578 [INFO] ▶️ [봇 1] 'iKON' 스포티파이 탐색 시작
+2026-03-23 03:18:02,642 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 03:18:02,642 [INFO] 
+⏳ 10분 대기...
+2026-03-23 03:28:02,649 [INFO] 
+🎯 [8/45] Kim Hwal Sung
+2026-03-23 03:28:02,652 [INFO] ▶️ [봇 1] 'Kim Hwal Sung' 스포티파이 탐색 시작
+2026-03-23 03:28:02,833 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 03:28:02,834 [INFO] 
+⏳ 10분 대기...
+2026-03-23 03:38:02,840 [INFO] 
+🎯 [9/45] Camera Obscura
+2026-03-23 03:38:02,843 [INFO] ▶️ [봇 1] 'Camera Obscura' 스포티파이 탐색 시작
+2026-03-23 03:38:03,049 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 03:38:03,050 [INFO] 
+⏳ 10분 대기...
+2026-03-23 03:48:03,058 [INFO] 
+🎯 [10/45] Cautious Clay
+2026-03-23 03:48:03,061 [INFO] ▶️ [봇 1] 'Cautious Clay' 스포티파이 탐색 시작
+2026-03-23 03:48:03,243 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 03:48:03,244 [INFO] 
+⏳ 10분 대기...
+2026-03-23 03:58:03,252 [INFO] 
+🎯 [11/45] Japanese Breakfast
+2026-03-23 03:58:03,255 [INFO] ▶️ [봇 1] 'Japanese Breakfast' 스포티파이 탐색 시작
+2026-03-23 03:58:03,317 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 03:58:03,317 [INFO] 
+⏳ 10분 대기...
+2026-03-23 04:08:03,325 [INFO] 
+🎯 [12/45] BIG Naughty (서동현)
+2026-03-23 04:08:03,325 [INFO] ▶️ [봇 1] 'BIG Naughty (서동현)' 스포티파이 탐색 시작
+2026-03-23 04:08:03,514 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 04:08:03,515 [INFO] 
+⏳ 10분 대기...
+2026-03-23 04:18:03,524 [INFO] 
+🎯 [13/45] KIKI
+2026-03-23 04:18:03,524 [INFO] ▶️ [봇 1] 'KIKI' 스포티파이 탐색 시작
+2026-03-23 04:18:03,727 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 04:18:03,728 [INFO] 
+⏳ 10분 대기...
+2026-03-23 04:28:03,730 [INFO] 
+🎯 [14/45] DAYBREAK
+2026-03-23 04:28:03,730 [INFO] ▶️ [봇 1] 'DAYBREAK' 스포티파이 탐색 시작
+2026-03-23 04:28:03,915 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 04:28:03,916 [INFO] 
+⏳ 10분 대기...
+2026-03-23 04:38:03,918 [INFO] 
+🎯 [15/45] Hoody
+2026-03-23 04:38:03,918 [INFO] ▶️ [봇 1] 'Hoody' 스포티파이 탐색 시작
+2026-03-23 04:38:04,107 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 04:38:04,108 [INFO] 
+⏳ 10분 대기...
+2026-03-23 04:48:04,106 [INFO] 
+🎯 [16/45] G-DRAGON
+2026-03-23 04:48:04,106 [INFO] ▶️ [봇 1] 'G-DRAGON' 스포티파이 탐색 시작
+2026-03-23 04:48:04,295 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 04:48:04,296 [INFO] 
+⏳ 10분 대기...
+2026-03-23 04:58:04,303 [INFO] 
+🎯 [17/45] B.I
+2026-03-23 04:58:04,304 [INFO] ▶️ [봇 1] 'B.I' 스포티파이 탐색 시작
+2026-03-23 04:58:04,486 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 04:58:04,487 [INFO] 
+⏳ 10분 대기...
+2026-03-23 05:08:04,492 [INFO] 
+🎯 [18/45] DPR LIVE
+2026-03-23 05:08:04,493 [INFO] ▶️ [봇 1] 'DPR LIVE' 스포티파이 탐색 시작
+2026-03-23 05:08:04,679 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 05:08:04,680 [INFO] 
+⏳ 10분 대기...
+2026-03-23 05:18:04,685 [INFO] 
+🎯 [19/45] KARDI
+2026-03-23 05:18:04,685 [INFO] ▶️ [봇 1] 'KARDI' 스포티파이 탐색 시작
+2026-03-23 05:18:04,746 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 05:18:04,746 [INFO] 
+⏳ 10분 대기...
+2026-03-23 05:28:04,755 [INFO] 
+🎯 [20/45] Drain
+2026-03-23 05:28:04,758 [INFO] ▶️ [봇 1] 'Drain' 스포티파이 탐색 시작
+2026-03-23 05:28:04,938 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 05:28:04,938 [INFO] 
+⏳ 10분 대기...
+2026-03-23 05:38:04,945 [INFO] 
+🎯 [21/45] KARINA
+2026-03-23 05:38:04,945 [INFO] ▶️ [봇 1] 'KARINA' 스포티파이 탐색 시작
+2026-03-23 05:38:05,126 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 05:38:05,127 [INFO] 
+⏳ 10분 대기...
+2026-03-23 05:48:05,135 [INFO] 
+🎯 [22/45] Bye Bye Badman
+2026-03-23 05:48:05,136 [INFO] ▶️ [봇 1] 'Bye Bye Badman' 스포티파이 탐색 시작
+2026-03-23 05:48:05,197 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 05:48:05,198 [INFO] 
+⏳ 10분 대기...
+2026-03-23 05:58:05,206 [INFO] 
+🎯 [23/45] AMK
+2026-03-23 05:58:05,209 [INFO] ▶️ [봇 1] 'AMK' 스포티파이 탐색 시작
+2026-03-23 05:58:05,396 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 05:58:05,397 [INFO] 
+⏳ 10분 대기...
+2026-03-23 06:08:05,396 [INFO] 
+🎯 [24/45] DeVita
+2026-03-23 06:08:05,396 [INFO] ▶️ [봇 1] 'DeVita' 스포티파이 탐색 시작
+2026-03-23 06:08:05,578 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 06:08:05,579 [INFO] 
+⏳ 10분 대기...
+2026-03-23 06:18:05,587 [INFO] 
+🎯 [25/45] DPR CREAM
+2026-03-23 06:18:05,590 [INFO] ▶️ [봇 1] 'DPR CREAM' 스포티파이 탐색 시작
+2026-03-23 06:18:05,770 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 06:18:05,771 [INFO] 
+⏳ 10분 대기...
+2026-03-23 06:28:05,772 [INFO] 
+🎯 [26/45] 1TYM
+2026-03-23 06:28:05,773 [INFO] ▶️ [봇 1] '1TYM' 스포티파이 탐색 시작
+2026-03-23 06:28:05,962 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 06:28:05,963 [INFO] 
+⏳ 10분 대기...
+2026-03-23 06:38:05,969 [INFO] 
+🎯 [27/45] dori
+2026-03-23 06:38:05,972 [INFO] ▶️ [봇 1] 'dori' 스포티파이 탐색 시작
+2026-03-23 06:38:06,151 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 06:38:06,151 [INFO] 
+⏳ 10분 대기...
+2026-03-23 06:48:06,159 [INFO] 
+🎯 [28/45] Bombing
+2026-03-23 06:48:06,162 [INFO] ▶️ [봇 1] 'Bombing' 스포티파이 탐색 시작
+2026-03-23 06:48:06,346 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 06:48:06,347 [INFO] 
+⏳ 10분 대기...
+2026-03-23 06:58:06,355 [INFO] 
+🎯 [29/45] Death Of Heather
+2026-03-23 06:58:06,358 [INFO] ▶️ [봇 1] 'Death Of Heather' 스포티파이 탐색 시작
+2026-03-23 06:58:06,415 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 06:58:06,416 [INFO] 
+⏳ 10분 대기...
+2026-03-23 07:08:06,424 [INFO] 
+🎯 [30/45] 24th
+2026-03-23 07:08:06,427 [INFO] ▶️ [봇 1] '24th' 스포티파이 탐색 시작
+2026-03-23 07:08:06,609 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 07:08:06,610 [INFO] 
+⏳ 10분 대기...
+2026-03-23 07:18:06,612 [INFO] 
+🎯 [31/45] BMK
+2026-03-23 07:18:06,615 [INFO] ▶️ [봇 1] 'BMK' 스포티파이 탐색 시작
+2026-03-23 07:18:06,798 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 07:18:06,799 [INFO] 
+⏳ 10분 대기...
+2026-03-23 07:28:06,797 [INFO] 
+🎯 [32/45] CHOI JUNG HOON of JANNABI
+2026-03-23 07:28:06,800 [INFO] ▶️ [봇 1] 'CHOI JUNG HOON of JANNABI' 스포티파이 탐색 시작
+2026-03-23 07:28:06,982 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 07:28:06,983 [INFO] 
+⏳ 10분 대기...
+2026-03-23 07:38:06,981 [INFO] 
+🎯 [33/45] DOOR PLANT
+2026-03-23 07:38:06,984 [INFO] ▶️ [봇 1] 'DOOR PLANT' 스포티파이 탐색 시작
+2026-03-23 07:38:07,047 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 07:38:07,048 [INFO] 
+⏳ 10분 대기...
+2026-03-23 07:48:07,056 [INFO] 
+🎯 [34/45] GAIN
+2026-03-23 07:48:07,059 [INFO] ▶️ [봇 1] 'GAIN' 스포티파이 탐색 시작
+2026-03-23 07:48:07,118 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 07:48:07,119 [INFO] 
+⏳ 10분 대기...
+2026-03-23 07:58:07,127 [INFO] 
+🎯 [35/45] Jo Gyouhyun
+2026-03-23 07:58:07,130 [INFO] ▶️ [봇 1] 'Jo Gyouhyun' 스포티파이 탐색 시작
+2026-03-23 07:58:07,335 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 07:58:07,337 [INFO] 
+⏳ 10분 대기...
+2026-03-23 08:08:07,344 [INFO] 
+🎯 [36/45] Amin. J
+2026-03-23 08:08:07,344 [INFO] ▶️ [봇 1] 'Amin. J' 스포티파이 탐색 시작
+2026-03-23 08:08:07,403 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 08:08:07,403 [INFO] 
+⏳ 10분 대기...
+2026-03-23 08:18:07,412 [INFO] 
+🎯 [37/45] Bek Hyunjin
+2026-03-23 08:18:07,412 [INFO] ▶️ [봇 1] 'Bek Hyunjin' 스포티파이 탐색 시작
+2026-03-23 08:18:07,474 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 08:18:07,474 [INFO] 
+⏳ 10분 대기...
+2026-03-23 08:28:07,482 [INFO] 
+🎯 [38/45] Blue Turtle Land
+2026-03-23 08:28:07,485 [INFO] ▶️ [봇 1] 'Blue Turtle Land' 스포티파이 탐색 시작
+2026-03-23 08:28:07,545 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 08:28:07,545 [INFO] 
+⏳ 10분 대기...
+2026-03-23 08:38:07,554 [INFO] 
+🎯 [39/45] Erøtic Wørms Exhibitiøn
+2026-03-23 08:38:07,557 [INFO] ▶️ [봇 1] 'Erøtic Wørms Exhibitiøn' 스포티파이 탐색 시작
+2026-03-23 08:38:07,626 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 08:38:07,626 [INFO] 
+⏳ 10분 대기...
+2026-03-23 08:48:07,633 [INFO] 
+🎯 [40/45] HowL
+2026-03-23 08:48:07,636 [INFO] ▶️ [봇 1] 'HowL' 스포티파이 탐색 시작
+2026-03-23 08:48:07,819 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 08:48:07,820 [INFO] 
+⏳ 10분 대기...
+2026-03-23 08:58:07,827 [INFO] 
+🎯 [41/45] A.TRAIN
+2026-03-23 08:58:07,830 [INFO] ▶️ [봇 1] 'A.TRAIN' 스포티파이 탐색 시작
+2026-03-23 08:58:08,011 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 08:58:08,012 [INFO] 
+⏳ 10분 대기...
+2026-03-23 09:08:08,011 [INFO] 
+🎯 [42/45] Chan Kweun Ju
+2026-03-23 09:08:08,012 [INFO] ▶️ [봇 1] 'Chan Kweun Ju' 스포티파이 탐색 시작
+2026-03-23 09:08:08,193 [ERROR]    ❌ 검색 에러: HTTP Error 401: Unauthorized
+2026-03-23 09:08:08,194 [INFO] 
+⏳ 10분 대기...
