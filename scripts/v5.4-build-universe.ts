@@ -170,14 +170,14 @@ async function main() {
     if (kCulturePass.has(e.source) && !kCulturePass.has(e.target)) {
       const target = rawNodes.get(e.target);
       const targetDeg = rawDegree.get(e.target) || 0;
-      if (target && (target.depth ?? 99) >= 2 && targetDeg >= 3) {
+      if (target && (target.depth ?? 99) >= 2 && targetDeg >= 1) {
         kCulturePass.add(e.target);
       }
     }
     if (kCulturePass.has(e.target) && !kCulturePass.has(e.source)) {
       const source = rawNodes.get(e.source);
       const sourceDeg = rawDegree.get(e.source) || 0;
-      if (source && (source.depth ?? 99) >= 2 && sourceDeg >= 3) {
+      if (source && (source.depth ?? 99) >= 2 && sourceDeg >= 1) {
         kCulturePass.add(e.source);
       }
     }
@@ -217,8 +217,8 @@ async function main() {
     edgeRelation.set(key, e.relation);
   }
 
-  // 하이브리드 필터: degree < 3인 노드를 "보이지 않는 매개자"로 처리
-  const MIN_DEGREE = 3;
+  // 하이브리드 필터: degree < 1인 노드를 "보이지 않는 매개자"로 처리 (기존 3에서 1로 완화)
+  const MIN_DEGREE = 1;
   const keepNodes = new Set<string>();
   const removeNodes = new Set<string>();
 

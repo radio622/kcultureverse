@@ -436,14 +436,11 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
     if (lod === "far") {
       const r = 1.0 + Math.sqrt(deg) * 0.5; // degree=0→1, degree=25→3.5, degree=100→6
 
-      // 큰 별 or 포커스: 글로우
+      // 큰 별 or 포커스: 라이트 글로우 (그라데이션 제거 → 반투명 원)
       if (isMajor || isFocused) {
-        const glow = ctx.createRadialGradient(x, y, 0, x, y, r * 3);
-        glow.addColorStop(0, (node.accent || "#c084fc") + "60");
-        glow.addColorStop(1, "transparent");
         ctx.beginPath();
         ctx.arc(x, y, r * 3, 0, 2 * Math.PI);
-        ctx.fillStyle = glow;
+        ctx.fillStyle = (node.accent || "#c084fc") + "30";
         ctx.fill();
       }
 
@@ -473,14 +470,11 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       const r = 3 + Math.sqrt(deg) * 2; // degree=0→3, degree=25→13, degree=100→23
       const displayR = isHovered ? r * 1.12 : r;
 
-      // 글로우
+      // 글로우 (그라데이션 제거 → 반투명 원)
       if (isMajor || isFocused || isHop1) {
-        const glow = ctx.createRadialGradient(x, y, 0, x, y, displayR * 2);
-        glow.addColorStop(0, (node.accent || "#c084fc") + "35");
-        glow.addColorStop(1, "transparent");
         ctx.beginPath();
         ctx.arc(x, y, displayR * 2, 0, 2 * Math.PI);
-        ctx.fillStyle = glow;
+        ctx.fillStyle = (node.accent || "#c084fc") + "20";
         ctx.fill();
       }
 
@@ -551,15 +545,11 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       ? r * (0.6 + 0.4 * bloomProgress)
       : r;
 
-    // 글로우 (focused/hop1)
+    // 글로우 (focused/hop1) - 그라데이션 제거
     if (isFocused || isHop1 || isOnPath) {
-      const glowColor = isFocused ? "#ffffff" : (node.accent || "#c084fc");
-      const glow = ctx.createRadialGradient(x, y, 0, x, y, animR * 2);
-      glow.addColorStop(0, glowColor + "40");
-      glow.addColorStop(1, "transparent");
       ctx.beginPath();
-      ctx.arc(x, y, animR * 2, 0, 2 * Math.PI);
-      ctx.fillStyle = glow;
+      ctx.arc(x, y, animR * 1.8, 0, 2 * Math.PI);
+      ctx.fillStyle = isFocused ? "rgba(255,255,255,0.15)" : (node.accent || "#c084fc") + "20";
       ctx.fill();
     }
 
