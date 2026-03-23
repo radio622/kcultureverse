@@ -42,6 +42,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeServerReact: true,
   },
+  // Middleware Edge 번들에서 Node.js 전용 패키지 외부화
+  serverExternalPackages: ["@supabase/supabase-js", "openai"],
 };
 
 export default nextConfig;

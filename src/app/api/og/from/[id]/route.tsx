@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 import { getArtistFull } from "@/lib/spotify";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export async function GET(
   request: NextRequest,
