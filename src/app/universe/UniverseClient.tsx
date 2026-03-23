@@ -300,9 +300,14 @@ export default function UniverseClient() {
   }, []);
 
   // ── URL → focusedId 초기 동기화 ─────────────────────────────
+  // 주의: ?to= 파라미터가 있으면 여정 모드이므로 여기서 포커스하지 않음
+  //       (여정 Effect가 edges 로딩 완료 후 Bird's Eye View → 줌인을 순차 처리)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const artistId = params.get("artist");
+    const toId = params.get("to");
+    // 여정 모드(?to= 존재)에서는 건너뜀 — handleDualSelect가 전담
+    if (toId) return;
     if (artistId && graphData?.nodes[artistId]) {
       handleArtistSelect(artistId);
     }
@@ -567,7 +572,7 @@ export default function UniverseClient() {
 
     const josa = getJosa(artistName, "로부터", "으로부터");
     const shareData = {
-      title: `${artistName}${josa}`,
+      title: `${artistName}${josa} 🚀`,
       text: `${artistName}의 음악 우주를 탐험하세요`,
       url: shareUrl.toString()
     };
@@ -603,7 +608,7 @@ export default function UniverseClient() {
       }
 
       if (navigator.share && /Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-        const shareTitle = `${first}${getJosa(first, "로부터", "으로부터")} ${last}에게`;
+        const shareTitle = `${first}${getJosa(first, "로부터", "으로부터")} ${last}에게 🚀`;
         await navigator.share({
           title: shareTitle,
           text: `${first}에서 ${last}까지, 음악으로 이어지는 우주 여정`,

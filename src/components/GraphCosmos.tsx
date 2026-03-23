@@ -287,6 +287,9 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
   // ── Fly-To: focusedId 및 sheetState 변경 시 동적 카메라 이동 ─────────────────
   useEffect(() => {
     if (!focusedId || !fgRef.current || !graphData.nodes[focusedId]) return;
+    // 여정 Bird's Eye View 중에는 여기서 줌인하지 않음 — dualPathTarget Effect가 전담
+    if (dualPathTarget) return;
+
     const node = graphData.nodes[focusedId];
     if (node.x === undefined || node.y === undefined) return;
     const fg = fgRef.current as {
@@ -301,7 +304,6 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
     if (sheetState === "expanded") {
       const targetZoom = isMobile ? 0.75 : 1.3;
       const offsetY = isMobile ? 150 : 80;
-      // y = y + (offsetY/zoom) 을 하면, 카메라의 중심이 노드보다 아래쪽으로 잡혀서 실제 노드는 화면 위쪽으로 올라갑니다.
       fg.centerAt(node.x, node.y + offsetY / targetZoom, 800);
       fg.zoom(targetZoom, 800);
     } else {
@@ -309,7 +311,7 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       fg.centerAt(node.x, node.y, 800);
       fg.zoom(isMobile ? 1.3 : 1.8, 800);
     }
-  }, [focusedId, sheetState, cameraTrigger, graphData.nodes]);
+  }, [focusedId, sheetState, cameraTrigger, graphData.nodes, dualPathTarget]);
 
   // ── Phase 3: 듀얼 관계 탐색 — dualPathTarget 변경 시 A→B Dijkstra 경로 하이라이트 ──
   useEffect(() => {

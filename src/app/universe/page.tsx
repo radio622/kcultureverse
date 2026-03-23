@@ -87,7 +87,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     const toName = getNodeName(toId);
     if (toName) {
       const josa = getJosa(fromName, "로부터", "으로부터");
-      const title = `${fromName}${josa} ${toName}에게`;
+      const title = `${fromName}${josa} ${toName}에게 🚀`;
       const desc = `${fromName}에서 ${toName}까지, 음악으로 이어지는 우주 여정`;
       const ogImage = `https://frompangyo.vercel.app/api/og/from/${artistId}`;
 
@@ -112,7 +112,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
   // ── 단일 아티스트: ?artist=A → "백아로부터" ──
   const josa = getJosa(fromName, "로부터", "으로부터");
-  const title = `${fromName}${josa}`;
+  const title = `${fromName}${josa} 🚀`;
   const desc = `${fromName}의 음악 우주를 탐험하세요`;
   const ogImage = `https://frompangyo.vercel.app/api/og/from/${artistId}`;
 
