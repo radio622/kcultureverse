@@ -59,7 +59,12 @@ export function useAudio() {
     fadeRef.current = requestAnimationFrame(step);
   }, []);
 
+  // 세대 카운터: stop의 비동기 콜백이 새 play보다 뒤에 실행되는 것을 방지
+  const genRef = useRef(0);
+
   const play = useCallback(async (previewUrl: string, trackName: string, artistId: string) => {
+    const thisGen = ++genRef.current;
+
     if (!audioRef.current) {
       audioRef.current = new Audio();
     }
@@ -72,9 +77,13 @@ export function useAudio() {
         try {
           await audio.play();
           fadeIn(audio, 0.75, 400);
-          setState((prev) => ({ ...prev, isPlaying: true }));
+          if (genRef.current === thisGen) {
+            setState((prev) => ({ ...prev, isPlaying: true }));
+          }
         } catch {
-          setState((prev) => ({ ...prev, isPlaying: false }));
+          if (genRef.current === thisGen) {
+            setState((prev) => ({ ...prev, isPlaying: false }));
+          }
         }
       }
       return;
@@ -89,24 +98,31 @@ export function useAudio() {
       progress: 0
     }));
 
-    // 이전 곡 페이드아웃
+    // 이전 fadeOut/fadeIn 즉시 취소
+    cancelAnimationFrame(fadeRef.current);
+
+    // 이전 곡이 재생 중이면 즉시 정지 (비동기 fadeOut 대신 즉시 전환)
     if (!audio.paused) {
-      await fadeOut(audio, 250);
+      audio.pause();
     }
 
     audio.src = previewUrl;
     audio.volume = 0;
     endFiredRef.current = false;  // 새 곡 시작 시 ended 플래그 초기화
 
-
     try {
       await audio.play();
-      fadeIn(audio, 0.75, 400);
+      // play() 성공 후에도 여전히 이 세대가 최신인지 확인
+      if (genRef.current === thisGen) {
+        fadeIn(audio, 0.75, 400);
+      }
     } catch {
       // autoplay 정책 차단 — 조용히 실패 (이름은 놔두고 애니메이션만 멈춤)
-      setState((prev) => ({ ...prev, isPlaying: false }));
+      if (genRef.current === thisGen) {
+        setState((prev) => ({ ...prev, isPlaying: false }));
+      }
     }
-  }, [fadeOut, fadeIn]);
+  }, [fadeIn]);
 
   // ── Optimistic announce: fetch 대기 중에도 즉각 아티스트 이름 표시 ──
   // previewUrl이 없어 fetch를 해야 할 때, fetch 시작과 동시에 호출.
@@ -121,10 +137,15 @@ export function useAudio() {
     }));
   }, []);
 
+  // 부드러운 정지 (일반 UI 조작용 — 페이드아웃 후 정지)
   const stop = useCallback(() => {
     if (!audioRef.current) return;
+    const stopGen = ++genRef.current; // 새 세대 시작 — 이전 play의 콜백 무효화
     fadeOut(audioRef.current, 400).then(() => {
-      setState((prev) => ({ ...prev, isPlaying: false, currentTrackName: null, currentArtistId: null, progress: 0 }));
+      // 이 세대가 여전히 최신일 때만 상태 업데이트 (중간에 play가 끼어들었으면 무시)
+      if (genRef.current === stopGen) {
+        setState((prev) => ({ ...prev, isPlaying: false, currentTrackName: null, currentArtistId: null, progress: 0 }));
+      }
     });
   }, [fadeOut]);
 
