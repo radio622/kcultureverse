@@ -89,7 +89,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
       const josa = getJosa(fromName, "로부터", "으로부터");
       const title = `${fromName}${josa} ${toName}에게 🚀`;
       const desc = `${fromName}에서 ${toName}까지, 음악으로 이어지는 우주 여정`;
-      const ogImage = `https://frompangyo.vercel.app/api/og/from/${artistId}`;
+      const ogImage = `https://frompangyo.vercel.app/api/og/from/${artistId}?to=${toId}`;
 
       return {
         title,

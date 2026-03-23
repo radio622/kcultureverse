@@ -213,7 +213,12 @@ export default function UniverseClient() {
       setDualPathTarget(null);
       const lastName = steps[steps.length - 1]?.name ?? "";
       setArrivedToast(`🎉 ${lastName}에 도착했습니다!`);
-      setTimeout(() => setArrivedToast(null), 4000);
+      // 5초 후 여정 관련 상태 모두 정리 → 일반 탐색 모드 복귀
+      setTimeout(() => {
+        setArrivedToast(null);
+        setJourneyShareUrl(null);
+        setDualTargetName(null);
+      }, 5000);
     },
   });
 
