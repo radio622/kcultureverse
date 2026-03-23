@@ -37,7 +37,10 @@ import AutoWarpPanel from "@/components/AutoWarpPanel";
 import { useAudio } from "@/hooks/useAudio";
 import { useAutoWarp } from "@/hooks/useAutoWarp";
 import { usePlayQueue } from "@/hooks/usePlayQueue";
+import { useJourneyPlayer } from "@/hooks/useJourneyPlayer";
+import { dijkstra } from "@/lib/dijkstra";
 import { useSession } from "next-auth/react";
+
 
 
 
@@ -166,6 +169,9 @@ export default function UniversePage() {
   // Phase 4: 에디트 제안 모달
   const [editModalOpen, setEditModalOpen] = useState(false);
 
+  // Phase 3-1: 여정 도착 토스트
+  const [arrivedToast, setArrivedToast] = useState<string | null>(null);
+
   // Phase 7: 자율주행 (handleArtistSelect 참조를 ref로 안전하게 전달)
   const handleArtistSelectRef = useRef<(nodeId: string) => void>(() => {});
   const warp = useAutoWarp({
@@ -191,6 +197,23 @@ export default function UniversePage() {
     audioPlay: audio.play,
     audioSetOnEnded: audio.setOnEnded,
     fetchPreview: fetchPreviewByName,
+  });
+
+  // V7.7 Phase 3-1: A→B 여정 플레이어
+  const journey = useJourneyPlayer({
+    getArtistName: (nodeId) =>
+      graphData?.nodes[nodeId]
+        ? (graphData.nodes[nodeId].nameKo || graphData.nodes[nodeId].name)
+        : nodeId,
+    onNodeFocus: (nodeId) => handleArtistSelectRef.current(nodeId),
+    audioPlay: audio.play,
+    audioSetOnEnded: audio.setOnEnded,
+    fetchPreview: fetchPreviewByName,
+    onArrived: (steps) => {
+      const lastName = steps[steps.length - 1]?.name ?? "";
+      setArrivedToast(`🎉 ${lastName}에 도악했습니다!`);
+      setTimeout(() => setArrivedToast(null), 4000);
+    },
   });
 
 
@@ -285,7 +308,32 @@ export default function UniversePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [graphData?.nodeCount]); // graph 로드 직후 1회
 
-  // ── 뒤로가기(popstate) 동기화 ────────────────────────────────
+  // ── URL ?to 파라미터 감지 → 여정 자동 시작 ──────────────────────
+  // /universe?artist=A&to=B → A에서 B까지 자동 여정
+  useEffect(() => {
+    if (!graphData || graphData.edges.length === 0) return; // edges 로딩 완료 후 실행
+    const params = new URLSearchParams(window.location.search);
+    const toId = params.get("to");
+    const fromId = params.get("artist");
+    if (!toId || !fromId) return;
+    if (!graphData.nodes[toId] || !graphData.nodes[fromId]) return;
+
+    const path = dijkstra(graphData.nodes, graphData.edges, fromId, toId);
+    if (path.length < 2) {
+      setArrivedToast("두 아티스트 사이의 경로를 찾을 수 없습니다.");
+      setTimeout(() => setArrivedToast(null), 3000);
+      return;
+    }
+    // 여정 시작 (playQueue 비활성화 후 journey 모드로)
+    playQueue.disableQueue();
+    journey.start(path);
+    // ?to 파라미터 제거 (중복 실행 방지)
+    const url = new URL(window.location.href);
+    url.searchParams.delete("to");
+    window.history.replaceState({}, "", url.toString());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [graphData?.edges.length]); // edges 로딩 완료 시 1회
+
   useEffect(() => {
     const onPop = () => {
       const params = new URLSearchParams(window.location.search);
@@ -463,11 +511,19 @@ export default function UniversePage() {
     }
     // A를 포커스 → GraphCosmos가 A를 중심으로 BFS 하이라이트
     handleArtistSelect(idA);
-    // B를 듀얼 타겟으로 저장 → GraphCosmos에 전달
+    // B를 듀얼 타겟으로 저장 → GraphCosmos에 전달 (경로 하이라이트용)
     setDualPathTarget(idB);
-    // 2초 후 자동 해제 (경로 확인 후 일반 탐색으로)
     setTimeout(() => setDualPathTarget(null), 8000);
-  }, [graphData, handleArtistSelect]);
+
+    // V7.7 Phase 3-1: 경로가 있으면 여정 자동 재생도 시작
+    if (graphData.edges.length > 0) {
+      const path = dijkstra(graphData.nodes, graphData.edges, idA, idB);
+      if (path.length >= 2) {
+        playQueue.disableQueue();
+        journey.start(path);
+      }
+    }
+  }, [graphData, handleArtistSelect, playQueue, journey]);
 
 
   // ── 네이티브 공유 및 클립보드 복사 기능 ──────────────────────────────────
@@ -536,6 +592,7 @@ export default function UniversePage() {
         .warp-play:hover { background: rgba(167,139,250,0.2); color: #fff; border-color: rgba(167,139,250,0.5); }
         .warp-play.playing { background: rgba(167,139,250,0.25); color: #fff; border-color: rgba(167,139,250,0.6); animation: wpulse 2s ease-in-out infinite; box-shadow: 0 0 10px rgba(167,139,250,0.3); }
         @keyframes wpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+        @keyframes toastIn { 0% { opacity: 0; transform: translate(-50%, -44%); } 100% { opacity: 1; transform: translate(-50%, -50%); } }
         /* Breadcrumbs */
         .breadcrumbs-bar { position: fixed; top: 12px; left: 56px; right: 16px; z-index: 90; display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); padding: 4px 8px; }
         .breadcrumbs-bar::-webkit-scrollbar { display: none; }
@@ -649,6 +706,59 @@ export default function UniversePage() {
           <p style={{ fontSize: 12, opacity: 0.6 }}>
             터미널: <code>npm run v5:build</code>
           </p>
+        </div>
+      )}
+
+      {/* V7.7 Phase 3-1: 여정 진행 바 */}
+      {journey.isPlaying && journey.steps.length > 0 && (
+        <div style={{
+          position: "fixed", top: 56, left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 200,
+          display: "flex", alignItems: "center", gap: 8,
+          padding: "7px 14px",
+          background: "rgba(10,14,26,0.88)",
+          border: "1px solid rgba(167,139,250,0.35)",
+          borderRadius: 20,
+          backdropFilter: "blur(12px)",
+          fontSize: 12, color: "rgba(200,180,255,0.9)",
+          whiteSpace: "nowrap",
+          pointerEvents: "none",
+        }}>
+          <span style={{ color: "#a78bfa" }}>🚀</span>
+          {journey.steps[journey.currentStep]?.name || ""}
+          <span style={{ opacity: 0.5 }}>→</span>
+          {journey.steps[journey.steps.length - 1]?.name || ""}
+          <span style={{
+            fontSize: 10, opacity: 0.6,
+            background: "rgba(167,139,250,0.15)",
+            padding: "2px 7px", borderRadius: 10,
+          }}>
+            {journey.currentStep + 1} / {journey.steps.length}
+          </span>
+        </div>
+      )}
+
+      {/* V7.7 Phase 3-1: 도착 토스트 */}
+      {arrivedToast && (
+        <div style={{
+          position: "fixed", top: "40%", left: "50%",
+          transform: "translate(-50%, -50%)",
+          zIndex: 300,
+          padding: "14px 24px",
+          background: "rgba(10,14,26,0.95)",
+          border: "1px solid rgba(167,139,250,0.5)",
+          borderRadius: 24,
+          color: "#e8eaed",
+          fontSize: 16, fontWeight: 600,
+          backdropFilter: "blur(16px)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.5), 0 0 40px rgba(167,139,250,0.15)",
+          animation: "toastIn 0.3s ease",
+          pointerEvents: "none",
+          textAlign: "center",
+          lineHeight: 1.5,
+        }}>
+          {arrivedToast}
         </div>
       )}
 
