@@ -111,5 +111,30 @@ export function usePlayQueue({
     enabledRef.current = true;
   }, []);
 
-  return { setQueue, disableQueue, enableQueue, playNext };
+  // ── 이전 트랙 재생 ────────────────────────────────────────
+  const playPrev = useCallback(async () => {
+    if (!enabledRef.current) return;
+    if (fetchingRef.current) return;
+    const prevIndex = currentRef.current - 1;
+    if (prevIndex < 0) return; // 처음이면 무시
+    currentRef.current = prevIndex;
+    fetchingRef.current = true;
+    const item = queueRef.current[prevIndex];
+    if (!item) { fetchingRef.current = false; return; }
+    try {
+      if (item.previewUrl) {
+        audioPlay(item.previewUrl, item.artistName, item.artistId);
+      } else {
+        const result = await fetchPreview(item.artistName);
+        if (result?.previewUrl && enabledRef.current) {
+          audioPlay(result.previewUrl, result.trackName || item.artistName, item.artistId);
+          queueRef.current[prevIndex] = { ...item, previewUrl: result.previewUrl };
+        }
+      }
+    } finally {
+      fetchingRef.current = false;
+    }
+  }, [audioPlay, fetchPreview]);
+
+  return { setQueue, disableQueue, enableQueue, playNext, playPrev };
 }

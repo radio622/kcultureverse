@@ -8,6 +8,8 @@ interface Props {
   progress: number;  // 0~1
   onStop: () => void;
   onTogglePause?: () => void;
+  onPrev?: () => void;
+  onNext?: () => void;
   /** peek 상태에서 탭하면 expanded로 */
   onExpand?: () => void;
   sheetState?: "collapsed" | "peek" | "expanded";
@@ -20,6 +22,8 @@ export default function MiniPlayer({
   progress,
   onStop,
   onTogglePause,
+  onPrev,
+  onNext,
   onExpand,
   sheetState = "peek",
   artistName,
@@ -136,31 +140,65 @@ export default function MiniPlayer({
           )}
         </div>
 
-        {/* 정지 버튼 */}
-        {isPlaying && (
-          <button
-            onClick={(e) => { e.stopPropagation(); onStop(); }}
-            aria-label="정지"
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              color: "var(--text-secondary)",
-              fontSize: 16,
-              padding: "0 16px 0", marginTop: 0,             minWidth: 44,
-              minHeight: 44,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: 8,
-              transition: "background 0.2s ease",
-            }}
-            onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
-            onMouseLeave={e => (e.currentTarget.style.background = "none")}
-          >
-            ◼
-          </button>
-        )}
+        {/* 트랜스포트 컨트롤: ⏮ ⏹ ⏭ */}
+        <div style={{ display: "flex", alignItems: "center", gap: 0, flexShrink: 0 }}>
+          {/* ⏮ 이전 */}
+          {onPrev && (
+            <button
+              onClick={(e) => { e.stopPropagation(); onPrev(); }}
+              aria-label="이전"
+              style={{
+                background: "none", border: "none", cursor: "pointer",
+                color: "var(--text-secondary)", fontSize: 11, fontWeight: 700,
+                padding: 0, minWidth: 36, minHeight: 36,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                borderRadius: 8, transition: "background 0.2s ease",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "none")}
+            >
+              ⏮
+            </button>
+          )}
+
+          {/* ⏹ 정지 */}
+          {isPlaying && (
+            <button
+              onClick={(e) => { e.stopPropagation(); onStop(); }}
+              aria-label="정지"
+              style={{
+                background: "none", border: "none", cursor: "pointer",
+                color: "var(--text-secondary)", fontSize: 16,
+                padding: 0, minWidth: 36, minHeight: 36,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                borderRadius: 8, transition: "background 0.2s ease",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "none")}
+            >
+              ◼
+            </button>
+          )}
+
+          {/* ⏭ 다음 */}
+          {onNext && (
+            <button
+              onClick={(e) => { e.stopPropagation(); onNext(); }}
+              aria-label="다음"
+              style={{
+                background: "none", border: "none", cursor: "pointer",
+                color: "var(--text-secondary)", fontSize: 11, fontWeight: 700,
+                padding: 0, minWidth: 36, minHeight: 36,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                borderRadius: 8, transition: "background 0.2s ease",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,0.08)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "none")}
+            >
+              ⏭
+            </button>
+          )}
+        </div>
       </div>
 
       {/* ── 진행률 바 ────────────────────────────────── */}

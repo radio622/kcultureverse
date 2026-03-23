@@ -662,7 +662,7 @@ export default function UniverseClient() {
         @keyframes wpulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
         @keyframes toastIn { 0% { opacity: 0; transform: translate(-50%, -44%); } 100% { opacity: 1; transform: translate(-50%, -50%); } }
         /* Breadcrumbs */
-        .breadcrumbs-bar { position: fixed; top: 12px; left: 56px; right: 16px; z-index: 90; display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); padding: 4px 8px; }
+        .breadcrumbs-bar { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 12px); left: 56px; right: 16px; z-index: 90; display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); padding: 4px 8px; }
         .breadcrumbs-bar::-webkit-scrollbar { display: none; }
         .bc-crumb { flex-shrink: 0; padding: 4px 10px; border-radius: 14px; font-size: 11px; font-weight: 500; color: rgba(200,180,255,0.5); background: rgba(167,139,250,0.08); border: 1px solid rgba(167,139,250,0.12); cursor: pointer; transition: all 0.2s; white-space: nowrap; backdrop-filter: blur(8px); }
         .bc-crumb:hover { background: rgba(167,139,250,0.18); color: rgba(200,180,255,0.8); }
@@ -682,7 +682,7 @@ export default function UniverseClient() {
 
       {/* 우측 상단: 정보 수정 제안 + 공유 버튼 + 유저 아바타 */}
       <div style={{
-        position: "fixed", top: 16, right: 16, zIndex: 200,
+        position: "fixed", top: "calc(env(safe-area-inset-top, 0px) + 16px)", right: 16, zIndex: 200,
         display: "flex", alignItems: "center", gap: 8,
         maxWidth: "calc(100vw - 80px)", /* 검색 아이콘 등 좌측 여백 확보 */
         flexWrap: "nowrap",
@@ -821,7 +821,7 @@ export default function UniverseClient() {
       {/* V7.7: 여정 진행 바 + 공유 버튼 통합 */}
       {journeyShareUrl && (
         <div style={{
-          position: "fixed", top: 56, left: "50%",
+          position: "fixed", top: "calc(env(safe-area-inset-top, 0px) + 48px)", left: "50%",
           transform: "translateX(-50%)",
           zIndex: 200,
           display: "flex", alignItems: "center", gap: 8,
@@ -938,6 +938,8 @@ export default function UniverseClient() {
             progress={audio.progress}
             onStop={audio.stop}
             onTogglePause={audio.togglePause}
+            onPrev={() => journey.isPlaying ? journey.skipPrev() : playQueue.playPrev()}
+            onNext={() => journey.isPlaying ? journey.skipNext() : playQueue.playNext()}
             sheetState={sheetState}
             onExpand={() => setSheetState("expanded")}
           />

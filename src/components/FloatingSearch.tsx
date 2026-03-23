@@ -882,7 +882,7 @@ export default function FloatingSearch({ onSelect, onDualSelect }: Props = {}) {
         aria-label="아티스트 검색"
         onClick={() => setOpen(v => !v)}
         style={{
-          position: "fixed", top: 16, left: 16, zIndex: 200,
+          position: "fixed", top: "calc(env(safe-area-inset-top, 0px) + 16px)", left: 16, zIndex: 200,
           width: 42, height: 42, borderRadius: "50%",
           background: open ? "rgba(167,139,250,0.25)" : "rgba(10,14,26,0.7)",
           border: `1px solid ${open ? "rgba(167,139,250,0.5)" : "rgba(255,255,255,0.12)"}`,
@@ -912,7 +912,7 @@ export default function FloatingSearch({ onSelect, onDualSelect }: Props = {}) {
         background: "rgba(7,9,18,0.96)",
         backdropFilter: "blur(20px)",
         borderBottom: "1px solid rgba(167,139,250,0.15)",
-        padding: "68px 16px 20px",
+        padding: "calc(env(safe-area-inset-top, 0px) + 68px) 16px 20px",
       }}>
         <div style={{ maxWidth: 480, margin: "0 auto" }}>
 

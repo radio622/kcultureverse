@@ -50,6 +50,8 @@ export interface UseJourneyPlayerReturn {
   steps: JourneyStep[];
   start: (path: string[]) => void;
   stop: () => void;
+  skipNext: () => void;
+  skipPrev: () => void;
 }
 
 // 장미빛 곡이 없는 아티스트에서의 대기 시간
@@ -200,6 +202,25 @@ export function useJourneyPlayer({
     stepsRef.current = [];
   }, [clearTimers]);
 
+  // ── 수동 건너뛰기 ─────────────────────────────────────────────
+  const skipNext = useCallback(() => {
+    if (!playingRef.current) return;
+    const nextIdx = stepIndexRef.current + 1;
+    if (nextIdx >= pathRef.current.length) return; // 이미 마지막
+    clearTimers();
+    fetchingRef.current = false;
+    executeStep(nextIdx);
+  }, [clearTimers, executeStep]);
+
+  const skipPrev = useCallback(() => {
+    if (!playingRef.current) return;
+    const prevIdx = stepIndexRef.current - 1;
+    if (prevIdx < 0) return; // 이미 처음
+    clearTimers();
+    fetchingRef.current = false;
+    executeStep(prevIdx);
+  }, [clearTimers, executeStep]);
+
   return {
     isPlaying,
     currentStep,
@@ -207,5 +228,7 @@ export function useJourneyPlayer({
     steps,
     start,
     stop,
+    skipNext,
+    skipPrev,
   };
 }
