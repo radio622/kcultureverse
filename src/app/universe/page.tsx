@@ -536,17 +536,17 @@ export default function UniversePage() {
     const shareUrl = `${window.location.origin}/universe?artist=${idA}&to=${idB}`;
     setJourneyShareUrl(shareUrl);
 
-    // 2. 3.5초간 한눈에 경로를 감상한 뒤 (Bird's Eye View), 여정 자동 재생 (줌인 포함)
+    // 2. 4초간 한눈에 경로를 감상한 뒤 (Bird's Eye View), 여정 자동 재생 (줌인 포함)
+    //    줌아웃 애니메이션 1.8s + 전류 흐름 감상 ~2.2s = 4s
     setTimeout(() => {
       setDualPathTarget(null); // BBox 해제, handleArtistSelect 시 카메라는 다시 node Focus로 이동 가능
-      setDualTargetName(null);
       if (graphData.edges.length > 0) {
         const path = dijkstra(graphData.nodes, graphData.edges, idA, idB);
         if (path.length >= 2) {
           journey.start(path); // 내부적으로 handleArtistSelect를 순차 호출하며 카메라 줌인 & 재생
         }
       }
-    }, 3500);
+    }, 4000);
 
   }, [graphData, handleArtistSelect, playQueue, journey]);
 
@@ -669,9 +669,14 @@ export default function UniversePage() {
 
 
       {/* 우측 상단: 정보 수정 제안 + 공유 버튼 + 유저 아바타 */}
-      <div style={{ position: "fixed", top: 16, right: 16, zIndex: 200, display: "flex", alignItems: "center", gap: 8 }}>
-        {/* 정보 수정 제안 버튼 (포커스 + expanded 상태에서만) */}
-        {focusedId && sheetState === "expanded" && (
+      <div style={{
+        position: "fixed", top: 16, right: 16, zIndex: 200,
+        display: "flex", alignItems: "center", gap: 8,
+        maxWidth: "calc(100vw - 80px)", /* 검색 아이콘 등 좌측 여백 확보 */
+        flexWrap: "nowrap",
+      }}>
+        {/* 정보 수정 제안 버튼 (포커스 + expanded 상태에서만, 여정 모드에서는 숨김 — 공간 확보) */}
+        {focusedId && sheetState === "expanded" && !journeyShareUrl && (
           <button
             id="edit-suggest-btn"
             onClick={() => setEditModalOpen(true)}
@@ -705,7 +710,12 @@ export default function UniversePage() {
             onClick={handleJourneyShare}
             className="artist-external-link"
             title="이 여정 궤도 공유"
-            style={{ margin: 0, padding: "8px 14px", fontSize: "12px", backdropFilter: "blur(8px)", background: "rgba(10,14,26,0.85)", cursor: "pointer", border: "1px solid rgba(167,139,250,0.3)" }}
+            style={{
+              margin: 0, padding: "8px 14px", fontSize: "12px",
+              backdropFilter: "blur(8px)", background: "rgba(10,14,26,0.85)",
+              cursor: "pointer", border: "1px solid rgba(167,139,250,0.3)",
+              whiteSpace: "nowrap", flexShrink: 0,
+            }}
           >
             🚀 여정 공유 <span style={{ marginLeft: 4 }}>🔗</span>
           </button>
@@ -714,7 +724,13 @@ export default function UniversePage() {
             onClick={handleShare}
             className="artist-external-link"
             title="현재 좌표 궤도 공유"
-            style={{ margin: 0, padding: "8px 14px", fontSize: "12px", backdropFilter: "blur(8px)", background: "rgba(10,14,26,0.85)", cursor: "pointer", border: "1px solid rgba(167,139,250,0.3)" }}
+            style={{
+              margin: 0, padding: "8px 14px", fontSize: "12px",
+              backdropFilter: "blur(8px)", background: "rgba(10,14,26,0.85)",
+              cursor: "pointer", border: "1px solid rgba(167,139,250,0.3)",
+              whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
+              maxWidth: "min(200px, 50vw)", flexShrink: 1,
+            }}
           >
             {audio.currentArtistId
               ? (graphData?.nodes[audio.currentArtistId]?.nameKo || graphData?.nodes[audio.currentArtistId]?.name || "")

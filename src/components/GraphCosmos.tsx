@@ -355,14 +355,17 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       const height = Math.max(10, maxY - minY);
       const midX = (minX + maxX) / 2;
       const midY = (minY + maxY) / 2;
-      // 화면 꽉 차게 줌 비율 계산
+      // 화면 꽉 차게 줌 비율 계산 — 여유 패딩 포함
       const sw = window.innerWidth;
       const sh = window.innerHeight;
-      const padding = Math.max(sw, sh) * 0.25;
+      const paddingFactor = isMobile ? 0.35 : 0.3; // 모바일은 패딩 넉넉하게
+      const padding = Math.max(sw, sh) * paddingFactor;
       const ratio = Math.max((width + padding) / sw, (height + padding) / sh);
-      const targetZoom = Math.min(2.0, Math.max(0.3, 1 / ratio));
-      fg?.centerAt?.(midX, midY - (isMobile ? 10 : 0) / targetZoom, 1200);
-      fg?.zoom?.(targetZoom, 1200);
+      const targetZoom = Math.min(1.8, Math.max(0.25, 1 / ratio));
+      // 모바일에서 바텀시트 영역 감안, 약간 위쪽으로 센터링
+      const yOffset = isMobile ? 40 / targetZoom : 0;
+      fg?.centerAt?.(midX, midY + yOffset, 1800); // 1.8초로 부드러운 시네마틱 줌아웃
+      fg?.zoom?.(targetZoom, 1800);
     }
   }, [dualPathTarget, focusedId, graphData.nodes, graphData.edges]);
 
@@ -749,9 +752,12 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
     return () => cancelAnimationFrame(frame);
   }, [focusChangedAt]);
 
-  // ── ⚡ 경로 전류 애니메이션 RAF 루프 (~30fps) ──────────────────
+  // ── ⚡ 경로 전류 애니메이션 RAF 루프 ──────────────────────────
   // highlightEdges가 있을 때만 캔버스를 매 프레임 강제 리드로우
+  // 주의: d3ReheatSimulation은 물리 재계산을 유발하므로 사용 금지
+  //       대신 가벼운 refresh() 호출로 캔버스만 리페인트
   const pathAnimRef = useRef<number | null>(null);
+  const lastFrameRef = useRef<number>(0);
   useEffect(() => {
     if (highlightEdges.size === 0) {
       if (pathAnimRef.current) cancelAnimationFrame(pathAnimRef.current);
@@ -759,12 +765,23 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
       return;
     }
     let alive = true;
-    const tick = () => {
+    const TARGET_FPS = 30; // 전류 애니메이션은 30fps이면 충분
+    const FRAME_INTERVAL = 1000 / TARGET_FPS;
+
+    const tick = (now: number) => {
       if (!alive) return;
-      // ForceGraph2D 캔버스 강제 리프레시
-      const fg = fgRef.current as any;
-      // emitParticle 없이도 tickFrame()으로 canvas 업데이트 가능
-      fg?.d3ReheatSimulation?.(); // 아주 살짝 reheat → 캔버스 리드로우
+      // 프레임 스로틀링: ~30fps
+      if (now - lastFrameRef.current >= FRAME_INTERVAL) {
+        lastFrameRef.current = now;
+        const fg = fgRef.current as any;
+        // refresh()는 물리 재가열 없이 캔버스만 다시 그림
+        if (fg?.refresh) {
+          fg.refresh();
+        } else if (fg?.d3ReheatSimulation) {
+          // fallback: refresh 미지원 시 최소한의 reheat
+          fg.d3ReheatSimulation();
+        }
+      }
       pathAnimRef.current = requestAnimationFrame(tick);
     };
     pathAnimRef.current = requestAnimationFrame(tick);
@@ -927,33 +944,39 @@ export default function GraphCosmos({ graphData, onArtistSelect, focusedId, dual
           if (!src?.x || !tgt?.x || !src?.y || !tgt?.y) return;
 
           // ── ⚡ 경로 전류 애니메이션 (Dijkstra path edges) ──
+          // 핵심 원리: 모든 엣지에서 동일한 시각적 속도로, from→to 방향으로만 흐름
           if (highlightEdges.has(key)) {
+            // 방향 결정: highlightPathArray 기준으로 from→to 순서 보장
             const idxSrc = highlightPathArray.indexOf(srcId);
             const idxTgt = highlightPathArray.indexOf(tgtId);
-            const isForward = idxSrc !== -1 && idxTgt !== -1 ? idxSrc < idxTgt : true;
+            const isForward = idxSrc !== -1 && idxTgt !== -1 && idxSrc < idxTgt;
 
-            const dx = tgt.x - src.x;
-            const dy = tgt.y - src.y;
+            // 방향에 맞는 시작점/끝점 결정 (항상 경로 순서대로 흐르게)
+            const startX = isForward ? src.x : tgt.x;
+            const startY = isForward ? src.y : tgt.y;
+            const endX   = isForward ? tgt.x : src.x;
+            const endY   = isForward ? tgt.y : src.y;
+
+            const dx = endX - startX;
+            const dy = endY - startY;
             const dist = Math.max(1, Math.sqrt(dx * dx + dy * dy));
-            
-            // 전류 속도 (픽셀/ms) : 길이에 무관하게 일정한 시각적 속도
-            const speed = 0.08; 
-            const period = dist / speed;
-            
-            // 전역 타임스탬프를 사용해 프레임별 위치 계산
-            const baseT = (Date.now() % period) / period;
-            const dirT = isForward ? baseT : 1 - baseT;
 
-            // 길이에 비례해 적절한 파티클 개수 결정 (최소 1개, 최대 여러 개)
-            const baseParticles = Math.max(1, Math.floor(dist / 35));
-            // 짧은 엣지에서도 전기 흐름이 자연스럽게 이어지도록 보정
-            const PARTICLES = isMobile ? Math.min(3, baseParticles) : baseParticles;
+            // 일정한 시각적 속도: 모든 엣지가 동일한 px/ms 속도로 이동
+            const SPEED_PX_PER_MS = 0.06;
+            // 이 엣지를 완전히 통과하는 데 걸리는 시간(ms)
+            const travelTime = dist / SPEED_PX_PER_MS;
+            // 전역 시간 기반 [0, 1) 정규화 진행도 (travelTime 주기로 순환)
+            const t = ((Date.now() % travelTime) / travelTime);
+
+            // 파티클 개수: 거리에 비례하되 적절한 범위
+            const baseParticles = Math.max(1, Math.round(dist / 40));
+            const PARTICLES = isMobile ? Math.min(3, baseParticles) : Math.min(6, baseParticles);
 
             for (let i = 0; i < PARTICLES; i++) {
-              let p = (dirT + i / PARTICLES) % 1;
-              if (p < 0) p += 1;
-              const px = src.x + dx * p;
-              const py = src.y + dy * p;
+              // 각 파티클은 균등 간격으로 배치, t만큼 이동
+              const p = (t + i / PARTICLES) % 1;
+              const px = startX + dx * p;
+              const py = startY + dy * p;
               const r = Math.max(1.5, 3 / globalScale);
 
               // 글로우
