@@ -920,7 +920,7 @@ export default function FloatingSearch({ onSelect, onDualSelect }: Props = {}) {
           <div style={{ display: "flex", gap: 0, marginBottom: 16, background: "rgba(255,255,255,0.04)", borderRadius: 12, padding: 3 }}>
             {([
               { key: "single", icon: "🔍", label: "아티스트 탐색" },
-              { key: "dual",   icon: "🔗", label: "관계 탐색 A↔B" },
+              { key: "dual",   icon: "🚀", label: "관계 유영" },
             ] as const).map(tab => (
               <button
                 key={tab.key}
@@ -1030,27 +1030,20 @@ export default function FloatingSearch({ onSelect, onDualSelect }: Props = {}) {
             )}
           </>)}
 
-          {/* ── 탭 2: 듀얼 관계 탐색 ── */}
+          {/* ── 탭 2: 관계 유영 ── */}
           {activeTab === "dual" && (
             <div>
-              <p style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", marginBottom: 14, lineHeight: 1.6 }}>
-                두 아티스트를 선택하면 우주에서 연결 경로를 찾아 하이라이트합니다.
-              </p>
-
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <MiniSearch
-                  label="아티스트 A"
+                  label="출발"
                   selected={dualA}
                   localIndex={localIndex}
                   onSelect={setDualA}
                   onClear={() => setDualA(null)}
                 />
 
-                {/* 연결 아이콘 */}
-                <div style={{ textAlign: "center", fontSize: 18, color: "rgba(167,139,250,0.5)", margin: "-2px 0" }}>↕</div>
-
                 <MiniSearch
-                  label="아티스트 B"
+                  label="도착"
                   selected={dualB}
                   localIndex={localIndex}
                   onSelect={setDualB}
@@ -1058,13 +1051,13 @@ export default function FloatingSearch({ onSelect, onDualSelect }: Props = {}) {
                 />
               </div>
 
-              {/* 관계 탐색 실행 버튼 */}
+              {/* 유영 시작 버튼 */}
               <button
                 id="dual-search-go-btn"
                 onClick={handleDualSearch}
                 disabled={!dualA || !dualB}
                 style={{
-                  marginTop: 16, width: "100%", padding: "12px",
+                  marginTop: 14, width: "100%", padding: "12px",
                   borderRadius: 12, border: "none", fontSize: 14, fontWeight: 700,
                   background: dualA && dualB
                     ? "linear-gradient(135deg, #a78bfa, #c084fc)"
@@ -1075,15 +1068,9 @@ export default function FloatingSearch({ onSelect, onDualSelect }: Props = {}) {
                 }}
               >
                 {dualA && dualB
-                  ? `🔗 ${dualA.name} ↔ ${dualB.name} 관계 탐색`
-                  : "두 아티스트를 모두 선택하세요"}
+                  ? `🚀 ${dualA.name} → ${dualB.name} 유영 시작`
+                  : "아티스트 두 명을 선택하세요"}
               </button>
-
-              {/* 힌트: 그래프에 없는 아티스트 안내 */}
-              <p style={{ fontSize: 11, color: "rgba(255,255,255,0.2)", marginTop: 10, textAlign: "center", lineHeight: 1.6 }}>
-                우주에 등록된 아티스트만 경로 탐색이 가능합니다.<br />
-                연결 경로가 없으면 가장 가까운 공통 허브를 표시합니다.
-              </p>
             </div>
           )}
 
