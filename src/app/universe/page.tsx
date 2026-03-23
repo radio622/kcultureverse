@@ -511,11 +511,13 @@ export default function UniversePage() {
   // 현재 아키텍처에서는 A 포커스 후 URL에 pathTo 파라미터를 추가하는 방식이 가장 간결.
   const [dualPathTarget, setDualPathTarget] = useState<string | null>(null);
   const [journeyShareUrl, setJourneyShareUrl] = useState<string | null>(null); // A→B 공유 URL
+  const [dualTargetName, setDualTargetName] = useState<string | null>(null); // 궤도 목표 아티스트 이름
 
 
   const handleDualSelect = useCallback((idA: string, idB: string) => {
     if (!graphData) return;
-    if (!graphData.nodes[idA] || !graphData.nodes[idB]) {
+    const nodeB = graphData.nodes[idB];
+    if (!graphData.nodes[idA] || !nodeB) {
       alert("두 아티스트 중 하나 이상이 현재 우주에 없습니다.");
       return;
     }
@@ -528,17 +530,20 @@ export default function UniversePage() {
     // 1. A를 포커스하되 재생 없이 시스템 모드로, B로 듀얼 타겟 설정 -> GraphCosmos에서 Bird's Eye 줌아웃 수행
     handleArtistSelect(idA, { isSystem: true, skipAudio: true });
     setDualPathTarget(idB);
+    setDualTargetName(nodeB.nameKo || nodeB.name);
+
+    // 즉시 공유 가능하도록 URL 세팅
+    const shareUrl = `${window.location.origin}/universe?artist=${idA}&to=${idB}`;
+    setJourneyShareUrl(shareUrl);
 
     // 2. 3.5초간 한눈에 경로를 감상한 뒤 (Bird's Eye View), 여정 자동 재생 (줌인 포함)
     setTimeout(() => {
       setDualPathTarget(null); // BBox 해제, handleArtistSelect 시 카메라는 다시 node Focus로 이동 가능
+      setDualTargetName(null);
       if (graphData.edges.length > 0) {
         const path = dijkstra(graphData.nodes, graphData.edges, idA, idB);
         if (path.length >= 2) {
           journey.start(path); // 내부적으로 handleArtistSelect를 순차 호출하며 카메라 줌인 & 재생
-          // 공유 URL 저장
-          const shareUrl = `${window.location.origin}/universe?artist=${idA}&to=${idB}`;
-          setJourneyShareUrl(shareUrl);
         }
       }
     }, 3500);
@@ -581,6 +586,36 @@ export default function UniversePage() {
       }
     }
   }, [audio.currentArtistId, graphData, focusedArtistName]);
+
+  // ── 여정 공유 콜백 ───────────────────────────────────────────────
+  const handleJourneyShare = useCallback(async () => {
+    if (!journeyShareUrl) return;
+    try {
+      let first = "";
+      let last = "";
+      if (journey.steps.length > 0) {
+        first = journey.steps[0]?.name || "";
+        last = journey.steps[journey.steps.length - 1]?.name || "";
+      } else if (focusedId && dualTargetName) {
+        first = graphData?.nodes[focusedId]?.nameKo || graphData?.nodes[focusedId]?.name || focusedArtistName;
+        last = dualTargetName;
+      }
+
+      if (navigator.share && /Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+        await navigator.share({
+          title: `${first}${getJosa(first, "로부터", "으로부터")} ${last}에게`,
+          text: `K-Culture Universe에서 ${first}${getJosa(first, "로부터", "으로부터")} ${last}에게 이어지는 우주 여정을 탐험해보세요.`,
+          url: journeyShareUrl,
+        });
+      } else {
+        await navigator.clipboard.writeText(journeyShareUrl);
+        setArrivedToast("🔗 여정 링크가 복사되었습니다!");
+        setTimeout(() => setArrivedToast(null), 2500);
+      }
+    } catch {
+      // ignore
+    }
+  }, [journeyShareUrl, journey.steps, focusedId, dualTargetName, graphData, focusedArtistName]);
 
   return (
     <>
@@ -665,7 +700,16 @@ export default function UniversePage() {
           </button>
         )}
         {/* 공유 버튼 (포커스 + 바텀시트 열렸을 때만) */}
-        {focusedId && sheetState !== "collapsed" && (
+        {journeyShareUrl ? (
+          <button
+            onClick={handleJourneyShare}
+            className="artist-external-link"
+            title="이 여정 궤도 공유"
+            style={{ margin: 0, padding: "8px 14px", fontSize: "12px", backdropFilter: "blur(8px)", background: "rgba(10,14,26,0.85)", cursor: "pointer", border: "1px solid rgba(167,139,250,0.3)" }}
+          >
+            🚀 여정 공유 <span style={{ marginLeft: 4 }}>🔗</span>
+          </button>
+        ) : focusedId && sheetState !== "collapsed" ? (
           <button
             onClick={handleShare}
             className="artist-external-link"
@@ -684,7 +728,7 @@ export default function UniversePage() {
             )}{" "}
             <span style={{ marginLeft: 4 }}>🔗</span>
           </button>
-        )}
+        ) : null}
         {/* 유저 아바타 (로그인/드롭다운) — 항상 표시 */}
         <UserAvatar position="relative" />
       </div>
@@ -791,40 +835,6 @@ export default function UniversePage() {
           }}>
             {journey.currentStep + 1} / {journey.steps.length}
           </span>
-          {/* 공유 버튼 */}
-          {journeyShareUrl && (
-            <button
-              title="이 여정 공유"
-              onClick={() => {
-                if (navigator.share) {
-                  navigator.share({
-                    title: `${journey.steps[0]?.name}${getJosa(journey.steps[0]?.name || "", "로부터", "으로부터")} ${journey.steps[journey.steps.length - 1]?.name}에게`,
-                    text: `K-Culture Universe에서 ${journey.steps[0]?.name}${getJosa(journey.steps[0]?.name || "", "로부터", "으로부터")} ${journey.steps[journey.steps.length - 1]?.name}에게 이어지는 우주 여정을 탐험해보세요.`,
-                    url: journeyShareUrl,
-                  }).catch(() => {});
-                } else {
-                  navigator.clipboard.writeText(journeyShareUrl).then(() => {
-                    setArrivedToast("🔗 여정 링크가 복사되었습니다!");
-                    setTimeout(() => setArrivedToast(null), 2500);
-                  });
-                }
-              }}
-              style={{
-                background: "rgba(167,139,250,0.18)",
-                border: "1px solid rgba(167,139,250,0.4)",
-                borderRadius: 8,
-                color: "#c084fc",
-                padding: "3px 8px",
-                fontSize: 13,
-                cursor: "pointer",
-                display: "flex", alignItems: "center",
-                lineHeight: 1,
-                flexShrink: 0,
-              }}
-            >
-              🔗
-            </button>
-          )}
         </div>
       )}
 
