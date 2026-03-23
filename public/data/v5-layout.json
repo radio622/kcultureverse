@@ -1,7 +1,7 @@
 {
   "version": "6.1",
   "builtAt": "2026-03-22T05:36:10.683Z",
-  "nodeCount": 1396,
+  "nodeCount": 1395,
   "nodes": [
     {
       "id": "0d79fe8e-ba27-4859-bb8c-2f255f346853",
@@ -129,7 +129,6 @@
       "degree": 12,
       "accent": "#a78bfa"
     },
-    null,
     {
       "id": "f4afb4d4-0fd9-4875-9381-fd7e24793dc5",
       "name": "Vacation",
