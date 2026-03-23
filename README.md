@@ -31,7 +31,7 @@
 - **엣지 렌더링 완전 복구**: `v5-edges.json` → 잘못된 노드 참조 엣지 자동 필터링 (`node not found` 에러 제거)
 - **아티스트 포커스 전환**: 여정/자율주행 중 수동 클릭 시 즉시 정지 후 전환. previewUrl 없는 아티스트도 API fetch 후 자동 재생
 - **Various Artists 오염 방지**: MusicBrainz 검색 결과 + 렌더링 양쪽에 차단 필터 추가
-- **여정 공유 & UX 완벽화**: `A→B` 여정 탐색 시 조감도(Bird's Eye View)를 통해 전체 경로를 한눈에 파악 후 자동으로 줌인하여 음악과 함께 여행 시작. 여정 방향과 거리에 정확히 비례하는 전기(Dash) 애니메이션 정교화. 여정 자체를 실시간으로 공유할 수 있는 우측 상단 고정 통합 공유 링크 구현 구현 완료
+- **여정 공유 & UX 완벽화**: `A→B` 여정 탐색 시 조감도(Bird's Eye View, 1.8초 시네마틱)를 통해 전체 경로를 한눈에 파악 후 자동으로 줌인하여 음악과 함께 여행 시작. 모든 엣지에서 동일 속도(0.06px/ms)로 정확한 from→to 방향의 전류 애니메이션. 여정 공유 링크 우측 상단 통합. 모바일 공유 버튼 overflow 방지(maxWidth+여정 모드 시 정보수정 숨김). RAF 루프 `refresh()`+30fps 스로틀 성능 최적화
 - **데이터 & UI 개선**: 패닉, 넥스트, 빅뱅/지드래곤 등 그룹 멤버십 엣지 확보. 지드래곤 등 주요 아티스트 별칭 대량 보강. 정보 수정 제안 버튼 → 우측 상단 분리 이동. 바텀시트 카드 덱 여백 축소하여 좁은 모바일 화면에서도 미리듣기 버튼 가시성 100% 확보
 ### 🤖 듀얼 하베스터 봇 (재가동 대기)
 - **봇 1 (The Harvester)**: Spotify API → 한글 앨범명·발매일·커버 자동 수집 (10분 간격)
@@ -197,7 +197,7 @@ tail -f logs/harvester_*.log   # 실시간 모니터링
 
 | 버전 | 문서 | 상태 |
 |--------|------|------|
-| V7.7 | [`docs/V7.7_ROADMAP.md`](docs/V7.7_ROADMAP.md) | 🔄 Phase 3 진행 중 — Phase 1+2 완료 |
+| V7.7 | [`docs/V7.7_ROADMAP.md`](docs/V7.7_ROADMAP.md) | ✅ Phase 1+2+3-1 완료 — Phase 3-2~3-5 남음 |
 | V7.5 | [`docs/V7.5_IDEA_SKETCH.md`](docs/V7.5_IDEA_SKETCH.md) | ✅ 봇 401 패치 완료 |
 | V7.5 봇 | [`docs/DUAL_HARVESTER_BOT.md`](docs/DUAL_HARVESTER_BOT.md) | ✅ 정식 가동 중 |
 | V7.4.1 | [`docs/QA_PATCH_PLAN_20260323.md`](docs/QA_PATCH_PLAN_20260323.md) | ✅ 핫픽스 완료 — 이미지/엣지팝업/iTunes/줌 |
