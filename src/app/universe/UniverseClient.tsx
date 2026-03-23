@@ -716,22 +716,8 @@ export default function UniverseClient() {
             ✨ 정보 수정 제안
           </button>
         )}
-        {/* 공유 버튼 (포커스 + 바텀시트 열렸을 때만) */}
-        {journeyShareUrl ? (
-          <button
-            onClick={handleJourneyShare}
-            className="artist-external-link"
-            title="이 여정 궤도 공유"
-            style={{
-              margin: 0, padding: "8px 14px", fontSize: "12px",
-              backdropFilter: "blur(8px)", background: "rgba(10,14,26,0.85)",
-              cursor: "pointer", border: "1px solid rgba(167,139,250,0.3)",
-              whiteSpace: "nowrap", flexShrink: 0,
-            }}
-          >
-            🚀 여정 공유 <span style={{ marginLeft: 4 }}>🔗</span>
-          </button>
-        ) : focusedId && sheetState !== "collapsed" ? (
+        {/* 공유 버튼 — 여정 공유는 진행 바에 통합됨. 여기는 일반 아티스트 공유만 */}
+        {!journeyShareUrl && focusedId && sheetState !== "collapsed" ? (
           <button
             onClick={handleShare}
             className="artist-external-link"
@@ -832,7 +818,8 @@ export default function UniverseClient() {
       )}
 
       {/* V7.7 Phase 3-1: 여정 진행 바 */}
-      {journey.isPlaying && journey.steps.length > 0 && (
+      {/* V7.7: 여정 진행 바 + 공유 버튼 통합 */}
+      {journeyShareUrl && (
         <div style={{
           position: "fixed", top: 56, left: "50%",
           transform: "translateX(-50%)",
@@ -846,23 +833,39 @@ export default function UniverseClient() {
           fontSize: 12, color: "rgba(200,180,255,0.9)",
           whiteSpace: "nowrap",
           pointerEvents: "auto",
+          maxWidth: "calc(100vw - 32px)",
         }}>
-          <span style={{ color: "#a78bfa", pointerEvents: "none" }}>🚀</span>
-          <span style={{ pointerEvents: "none" }}>
-            {journey.steps[journey.currentStep]?.name || ""}
-          </span>
-          <span style={{ opacity: 0.5, pointerEvents: "none" }}>→</span>
-          <span style={{ pointerEvents: "none" }}>
-            {journey.steps[journey.steps.length - 1]?.name || ""}
-          </span>
-          <span style={{
-            fontSize: 10, opacity: 0.6,
-            background: "rgba(167,139,250,0.15)",
-            padding: "2px 7px", borderRadius: 10,
-            pointerEvents: "none",
-          }}>
-            {journey.currentStep + 1} / {journey.steps.length}
-          </span>
+          {journey.isPlaying && journey.steps.length > 0 ? (
+            <>
+              <span style={{ color: "#a78bfa" }}>🚀</span>
+              <span>{journey.steps[journey.currentStep]?.name || ""}</span>
+              <span style={{ opacity: 0.5 }}>→</span>
+              <span>{journey.steps[journey.steps.length - 1]?.name || ""}</span>
+              <span style={{
+                fontSize: 10, opacity: 0.6,
+                background: "rgba(167,139,250,0.15)",
+                padding: "2px 7px", borderRadius: 10,
+              }}>
+                {journey.currentStep + 1} / {journey.steps.length}
+              </span>
+            </>
+          ) : (
+            <span style={{ color: "rgba(200,180,255,0.6)" }}>🚀 여정 완료</span>
+          )}
+          {/* 공유 버튼 — 진행 바 안에 통합 */}
+          <button
+            onClick={handleJourneyShare}
+            style={{
+              background: "rgba(167,139,250,0.15)",
+              border: "1px solid rgba(167,139,250,0.3)",
+              borderRadius: 14, padding: "3px 10px",
+              color: "#c8b4ff", fontSize: 11, fontWeight: 600,
+              cursor: "pointer", whiteSpace: "nowrap",
+              transition: "all 0.2s",
+            }}
+          >
+            공유 🔗
+          </button>
         </div>
       )}
 
