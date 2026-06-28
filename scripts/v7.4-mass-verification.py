@@ -52,7 +52,7 @@ def check_llm(album):
     prompt = f"Artist: {album['artist_name']} ({album.get('artist_name_ko','')})\nAlbum: {album['album_title']}\nCurrent Date: {album['release_date']}\nIs release date correct? If remaster, give original. Is this artist Korean?"
     sys = "You are K-pop/K-indie data expert. Return ONLY valid JSON: { \"verified\": bool, \"corrected_date\": \"YYYY-MM-DD\" or null, \"is_korean_artist\": bool, \"note\": \"...\" }"
     
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key={env.get('GEMINI_API_KEY')}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key={env.get('GEMINI_API_KEY')}"
     data = json.dumps({
         "contents": [{"role": "user", "parts": [{"text": sys + "\n\n" + prompt}]}],
         "generationConfig": {"temperature": 0.1, "responseMimeType": "application/json"}

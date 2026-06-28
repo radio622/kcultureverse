@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
   await supabase.from("daily_verification_logs").insert({
     run_date: runDate,
     status: "running",
-    llm_model: "gemini-3.1-flash-lite-preview",
+    llm_model: "gemini-3.5-flash",
     started_at: new Date().toISOString(),
   });
 
@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
           is_korean_artist: result.is_korean_artist,
           verified: true,
           verified_at: new Date().toISOString(),
-          verification_source: "cron_gemini_3.1",
+          verification_source: "cron_gemini_3.5",
           verification_note: result.note,
         })
         .eq("id", album.id);
@@ -100,7 +100,7 @@ export async function POST(req: NextRequest) {
           is_korean_artist: result.is_korean_artist,
           verified: true,
           verified_at: new Date().toISOString(),
-          verification_source: "cron_gemini_3.1",
+          verification_source: "cron_gemini_3.5",
           verification_note: result.note,
         })
         .eq("id", album.id);
@@ -155,7 +155,7 @@ Return ONLY valid JSON in this exact format, with no markdown code blocks:
     Is the release date correct? If it is a re-release or remaster, find the ORIGINAL first release date. Also, is this artist a Korean artist?
     `;
 
-    const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${process.env.GEMINI_API_KEY}`, {
+    const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

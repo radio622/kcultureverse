@@ -1,0 +1,88 @@
+{
+  "spotifyId": "2XFSeoCf8No50etmN8b4Sy",
+  "name": "라이너스의 담요",
+  "mbid": "c36f5c98-b7c2-4514-a719-486e78f1449c",
+  "albums": [
+    {
+      "title": "Semester",
+      "releaseDate": "2003-07-01",
+      "type": "EP",
+      "mbReleaseGroupId": "111d3274-665c-4c48-935f-70f8278fba9a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Labor in Vain",
+      "releaseDate": "2005-06-22",
+      "type": "Single",
+      "mbReleaseGroupId": "539c403b-eb24-4e9d-ae31-7cfba8aec444",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "강아지 이야기",
+      "releaseDate": "2007-09-13",
+      "type": "Single",
+      "mbReleaseGroupId": "csv-강아지이야기-2007",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Show Me Love",
+      "releaseDate": "2011-08-05",
+      "type": "Album",
+      "mbReleaseGroupId": "48cc3086-b014-42d0-8ebc-4165e2f8b45a",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Parade",
+      "releaseDate": "2013-08-29",
+      "type": "Single",
+      "mbReleaseGroupId": "4dce362c-0396-4adb-a37c-da2c77bd2d26",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Magic Moments",
+      "releaseDate": "2014-09-19",
+      "type": "EP",
+      "mbReleaseGroupId": "a8e21275-8b5b-421b-8fc1-ea0333ebf973",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "Mommy",
+      "releaseDate": "2014-12-23",
+      "type": "Single",
+      "mbReleaseGroupId": "csv-mommy-2014",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "초면에 사랑합니다 OST Part 8",
+      "releaseDate": "2019-05-28",
+      "type": "Single",
+      "mbReleaseGroupId": "csv-ost-초면에사랑합니다-2019",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "사랑의 기술 Part.1 : 결혼에 대한 딜레마",
+      "releaseDate": "2019-09-14",
+      "type": "Single",
+      "mbReleaseGroupId": "web-사랑의기술1-2019",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    },
+    {
+      "title": "사랑의 기술 Part.2 : 우주여행",
+      "releaseDate": "2020-05-11",
+      "type": "Single",
+      "mbReleaseGroupId": "web-사랑의기술2-2020",
+      "source": "musicbrainz",
+      "verifyStatus": "auto"
+    }
+  ],
+  "lastUpdated": "2026-03-23T15:35:00.000Z"
+}

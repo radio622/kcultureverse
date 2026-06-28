@@ -71,8 +71,8 @@ GEMINI_COOLDOWN = 32
 ARTIST_INTERVAL = 600
 # 제미나이 모델 폴백 체인: 1순위가 429 맞으면 자동으로 2순위로 전환
 GEMINI_MODELS = [
-    "gemini-3.1-flash-lite-preview",  # 1순위: 최신 성능
-    "gemini-2.5-flash-lite",          # 2순위: 백업 (쿼타 독립)
+    "gemini-3.5-flash",  # 1순위: 최신 성능
+    "gemini-3.1-flash-lite",          # 2순위: 백업 (쿼타 독립)
 ]
 
 # ── Supabase HTTP 헤더 ────────────────────────────────────────

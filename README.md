@@ -6,6 +6,22 @@
 
 ---
 
+## ✨ Gemini 3.5 Flash 모델 전환 및 API 키 갱신 (2026-06-28)
+
+> **이슈**: 구글 구독 변경(Google AI Pro 다운그레이드)으로 기존 API 키가 비활성화되고, `gemini-3.1-flash-lite-preview` 등 프리뷰 모델들이 지원 중단(Deprecated)되어 빌드 및 크론 검증이 실패하는 현상 해결.
+
+* **최신 모델 마이그레이션**:
+  * 기존 프리뷰 모델(`gemini-3.1-flash-lite-preview` / `gemini-2.5-flash-lite`)을 모두 정식 지원 버전인 **`gemini-3.5-flash`**로 업데이트했습니다.
+  * 백업/폴백 체인을 **`gemini-3.1-flash-lite`**로 지정하여 안정성을 확보했습니다.
+* **API 키 갱신**:
+  * 새로 발급된 활성 API 키를 `.env.local` 파일에 반영했습니다. (API 동작 테스트 완료)
+* **영향을 받는 파일**:
+  * API 라우트: `src/app/api/universe/suggest/route.ts`, `src/app/api/cron/verify-albums/route.ts`
+  * 하베스터/검증 스크립트: `scripts/v7.4-mass-verification.py`, `scripts/v7.5-dual-harvester-draft.py`, `scripts/v7.8-dual-harvester.py`
+  * 문서: `README.md`, `docs/DUAL_HARVESTER_BOT.md`, `docs/V7.5_IDEA_SKETCH.md`
+
+---
+
 ## ✨ V7.7.1 — 데이터 품질 대패치 (2026-03-24)
 
 > 📋 상세: [`docs/PATCH_V7.7.1.md`](docs/PATCH_V7.7.1.md) | 🐛 시스테믹 이슈: [`docs/SYSTEMIC_ISSUES.md`](docs/SYSTEMIC_ISSUES.md)
